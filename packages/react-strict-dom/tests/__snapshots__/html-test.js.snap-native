@@ -1,0 +1,6263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`html "a" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  role="link"
+  style={
+    {
+      "color": "blue",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "a" supports additional anchor attributes 1`] = `
+<Text
+  dir="auto"
+  download="download.png"
+  href="https://google.com"
+  onPress={[Function]}
+  referrerPolicy="no-referrer"
+  rel="nofollow"
+  role="link"
+  style={
+    {
+      "color": "blue",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+  target="_blank"
+/>
+`;
+
+exports[`html "a" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "color": "blue",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "a" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  role="link"
+  style={
+    {
+      "color": "blue",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "article" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "article" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "article" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "aside" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "aside" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "b" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "b" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "b" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "bdi" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "bdi" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "bdo" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "bdo" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "blockquote" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "blockquote" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "br" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+>
+  
+
+</Text>
+`;
+
+exports[`html "br" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  
+
+</Text>
+`;
+
+exports[`html "br" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+>
+  
+
+</Text>
+`;
+
+exports[`html "button" ignores and warns about unsupported attributes 1`] = `
+<Pressable
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+  type="button"
+/>
+`;
+
+exports[`html "button" supports additional button attributes 1`] = `
+<Pressable
+  disabled={true}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+  type="submit"
+/>
+`;
+
+exports[`html "button" supports global attributes 1`] = `
+<Pressable
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "borderWidth": 1,
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+  type="button"
+>
+  <Text>
+    children
+  </Text>
+</Pressable>
+`;
+
+exports[`html "button" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+  type="button"
+/>
+`;
+
+exports[`html "code" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "code" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "code" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "div" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "div" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "div" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "em" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "em" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "em" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "fieldset" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "fieldset" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "footer" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "footer" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "form" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "form" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "form" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h1" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h1" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h2" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h2" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h3" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h3" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h4" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h4" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h5" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h5" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h6" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "h6" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "header" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  role="header"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "header" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "header" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  role="header"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "backgroundColor": "black",
+      "height": 1,
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "hr" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "backgroundColor": "black",
+      "direction": "ltr",
+      "display": "none",
+      "height": 1,
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "hr" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "backgroundColor": "black",
+      "height": 1,
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "i" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "i" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "i" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "img" ignores and warns about unsupported attributes 1`] = `
+<Image
+  style={
+    {
+      "objectFit": "fill",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "img" supports additional image attributes 1`] = `
+<Image
+  alt="Alt text"
+  crossOrigin="anonymous"
+  decoding="async"
+  fetchPriority="auto"
+  height={100}
+  loading="lazy"
+  onError={[Function]}
+  onLoad={[Function]}
+  referrerPolicy="no-referrer"
+  src="https://src.jpg"
+  srcSet="https://srcSet-1x.jpg 1x, https://srcSet-2x.jpg 2x"
+  style={
+    {
+      "aspectRatio": 1,
+      "height": 100,
+      "objectFit": "fill",
+      "position": "static",
+      "width": 100,
+    }
+  }
+  width={100}
+/>
+`;
+
+exports[`html "img" supports global attributes 1`] = `
+<Image
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "objectFit": "fill",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Image>
+`;
+
+exports[`html "img" supports inline event handlers 1`] = `
+<Image
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "objectFit": "fill",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "input" ignores and warns about unsupported attributes 1`] = `
+<TextInput
+  dir="auto"
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "input" supports additional input attributes 1`] = `
+<TextInput
+  aria-disabled={true}
+  checked={true}
+  defaultChecked={true}
+  defaultValue="defaultValue"
+  dir="auto"
+  disabled={true}
+  max="10"
+  maxLength="10"
+  min="0"
+  minLength="0"
+  multiple={true}
+  onChange={[Function]}
+  onInput={[Function]}
+  placeholder="Placeholder"
+  readOnly={true}
+  required={true}
+  step={3}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+  tabIndex={-1}
+  type="text"
+  value="value"
+/>
+`;
+
+exports[`html "input" supports global attributes 1`] = `
+<TextInput
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "borderWidth": 1,
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</TextInput>
+`;
+
+exports[`html "input" supports inline event handlers 1`] = `
+<TextInput
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyPress={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onSubmitEditing={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "label" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "label" supports additional label attributes 1`] = `
+<Text
+  for="some-id"
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "label" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "label" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "main" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "main" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "main" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "nav" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "nav" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ol" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "ol" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "optgroup" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "optgroup" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "option" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "option" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "option" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "option" supports input attributes 1`] = `
+<Text
+  defaultValue="defaultValue"
+  disabled={false}
+  label="label"
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+  value="value"
+/>
+`;
+
+exports[`html "p" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "p" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "p" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "pre" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "pre" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "section" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "section" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "section" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "select" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "select" supports additional select attributes 1`] = `
+<Text
+  disabled={false}
+  onChange={[Function]}
+  onInput={[Function]}
+  readOnly={true}
+  required={true}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "select" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "select" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "span" ignores and warns about unsupported attributes 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "span" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "span" supports inline event handlers 1`] = `
+<Text
+  dir="auto"
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "strong" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "strong" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "sub" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "sub" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "sup" supports global attributes 1`] = `
+<Text
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "sup" supports inline event handlers 1`] = `
+<Text
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
+<TextInput
+  dir="auto"
+  multiline={true}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "textarea" supports additional textarea attributes 1`] = `
+<TextInput
+  aria-disabled={true}
+  defaultValue="defaultValue"
+  dir="auto"
+  disabled={true}
+  maxLength="10"
+  minLength="0"
+  multiline={true}
+  onChange={[Function]}
+  onInput={[Function]}
+  placeholder="Placeholder"
+  readOnly={true}
+  required={true}
+  rows={3}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+  tabIndex={-1}
+  value="value"
+/>
+`;
+
+exports[`html "textarea" supports global attributes 1`] = `
+<TextInput
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  multiline={true}
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "borderWidth": 1,
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  children
+</TextInput>
+`;
+
+exports[`html "textarea" supports inline event handlers 1`] = `
+<TextInput
+  dir="auto"
+  multiline={true}
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyPress={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onSubmitEditing={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ul" supports global attributes 1`] = `
+<View
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  aria-activedescendant="activedescendant"
+  aria-atomic={true}
+  aria-autocomplete={true}
+  aria-busy={true}
+  aria-checked={true}
+  aria-colcount={1}
+  aria-colindex={1}
+  aria-colindextext="colindextext"
+  aria-colspan={1}
+  aria-controls="controls"
+  aria-current="current"
+  aria-describedby="describedby"
+  aria-details="details"
+  aria-disabled={true}
+  aria-errormessage="errormessage"
+  aria-expanded={true}
+  aria-flowto="flowto"
+  aria-haspopup="menu"
+  aria-hidden={true}
+  aria-invalid={true}
+  aria-keyshortcuts="Shift+Space"
+  aria-label="Label"
+  aria-labelledby="labelledby"
+  aria-level={2}
+  aria-live={true}
+  aria-modal={true}
+  aria-multiline={true}
+  aria-multiselectable={true}
+  aria-orientation="potrait"
+  aria-owns="owns"
+  aria-placeholder="Placeholder"
+  aria-posinset={1}
+  aria-pressed={true}
+  aria-readonly={true}
+  aria-required={true}
+  aria-roledescription="Description"
+  aria-rowcount={1}
+  aria-rowindex={1}
+  aria-rowindextext="rowindextext"
+  aria-rowspan={1}
+  aria-selected={true}
+  aria-setsize={2}
+  aria-sort="ascending"
+  aria-valuemax={10}
+  aria-valuemin={0}
+  aria-valuenow={5}
+  aria-valuetext="Five"
+  autoCapitalize={true}
+  autoFocus={true}
+  data-testid="some-test-id"
+  dir="ltr"
+  enterKeyHint="go"
+  experimental_layoutConformance="strict"
+  hidden={true}
+  id="some-id"
+  inert={true}
+  inputMode="numeric"
+  lang="en-US"
+  role="article"
+  spellCheck={true}
+  style={
+    {
+      "--custom-property": "inline",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+  tabIndex={0}
+  testID="some-test-id"
+>
+  <Text>
+    children
+  </Text>
+</View>
+`;
+
+exports[`html "ul" supports inline event handlers 1`] = `
+<Pressable
+  onAuxClick={[Function]}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onCopy={[Function]}
+  onCut={[Function]}
+  onFocus={[Function]}
+  onFocusIn={[Function]}
+  onFocusOut={[Function]}
+  onFullscreenChange={[Function]}
+  onFullscreenError={[Function]}
+  onGotPointerCapture={[Function]}
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPaste={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html temporary data-* props support 1`] = `
+<View
+  data-imgperflogname="imgperflogname"
+  data-visualcompletion="visualcompletion"
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;

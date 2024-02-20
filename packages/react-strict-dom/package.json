@@ -1,0 +1,38 @@
+{
+  "name": "react-strict-dom",
+  "version": "0.0.0",
+  "description": "React Strict DOM",
+  "main": "./dist/dom.js",
+  "module": "./dist/dom.js",
+  "react-native": "./dist/native.js",
+  "sideEffects": false,
+  "files": [
+    "*",
+    "!**/__tests__"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean && node ../../scripts/generate-libdef/generateLibdef.js",
+    "build": "rollup --config ../../configs/rollup.config.js",
+    "clean": "del-cli \"./dist/*\"",
+    "dev": "npm run build -- --watch"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "0.5.1",
+    "css-mediaquery": "0.1.2"
+  },
+  "devDependencies": {
+    "@stylexjs/babel-plugin": "0.5.1"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "react-native": ">=0.71.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  }
+}

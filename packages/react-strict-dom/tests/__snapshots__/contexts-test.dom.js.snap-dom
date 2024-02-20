@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contexts Locale default values 1`] = `
+<div
+  dir="ltr"
+  lang="en-US"
+/>
+`;
+
+exports[`contexts Locale set "direction" 1`] = `
+<div
+  dir="rtl"
+/>
+`;
+
+exports[`contexts Locale set "locale" 1`] = `
+<div
+  dir="rtl"
+  lang="ar"
+/>
+`;
+
+exports[`contexts Locale set both "direction" and "locale" (direction wins) 1`] = `
+<div
+  dir="rtl"
+  lang="ar"
+/>
+`;

@@ -1,0 +1,63 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow strict
+ */
+
+import type { StrictAnimation } from "../StrictAnimation";
+import type { StrictElement } from "../StrictElement";
+import type { StrictEventTarget } from "../StrictEventTarget";
+import type { StrictHTMLElement } from "../StrictHTMLElement";
+import type {
+  StrictHTMLInputElement,
+  StrictHTMLOptionElement,
+  StrictHTMLSelectElement,
+  StrictHTMLTextAreaElement,
+} from "../StrictHTMLFormElements";
+import type { StrictHTMLImageElement } from "../StrictHTMLImageElement";
+import type { StrictNode } from "../StrictNode";
+
+
+// EventTarget
+declare var eventTarget: EventTarget;
+(eventTarget: StrictEventTarget);
+
+// Animation extends EventTarget
+// TODO: Uncomment this after D48380371 is in a Flow release
+// declare var animation: Animation;
+// (animation: StrictAnimation);
+
+// Node extends EventTarget
+declare var node: Node;
+(node: StrictNode);
+
+// Element extends Node
+declare var element: Element;
+(element: StrictElement);
+
+// HTMLElement extends Element
+declare var htmlElement: HTMLElement;
+(htmlElement: StrictHTMLElement);
+
+// HTMLInputElement extends HTMLElement
+declare var htmlInputElement: HTMLInputElement;
+(htmlInputElement: StrictHTMLInputElement);
+
+// HTMLOptionElement extends HTMLElement
+declare var htmlOptionElement: HTMLOptionElement;
+(htmlOptionElement: StrictHTMLOptionElement);
+
+// HTMLSelectElement extends HTMLElement
+declare var htmlSelectElement: HTMLSelectElement;
+(htmlSelectElement: StrictHTMLSelectElement);
+
+// HTMLTextAreaElement extends HTMLElement
+declare var htmlTextAreaElement: HTMLTextAreaElement;
+(htmlTextAreaElement: StrictHTMLTextAreaElement);
+
+// HTMLImageElement extends HTMLElement
+declare var htmlImageElement: HTMLImageElement;
+(htmlImageElement: StrictHTMLImageElement);

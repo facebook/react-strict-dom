@@ -1,0 +1,15 @@
+name: performance
+
+on: [pull_request]
+
+jobs:
+  compressed-size:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: necolas/compressed-size-action@master
+      with:
+        name: "runtime library"
+        build-script: "build"
+        pattern: "./packages/react-strict-dom/dist/{dom.js,native.js}"
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"

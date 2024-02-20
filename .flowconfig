@@ -1,0 +1,26 @@
+[version]
+0.225.1
+
+[ignore]
+.*/malformed_package_json/.*
+<PROJECT_ROOT>/.*/__tests__/.*
+<PROJECT_ROOT>/packages/react-strict-dom/dist/dom.www.js.flow
+
+[include]
+
+[libs]
+flow-typed
+
+[options]
+module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict-dom/dist/native.js.flow'
+module.system.node.resolve_dirname=flow_modules
+module.system.node.resolve_dirname=node_modules
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+
+[strict]
+nonstrict-import
+sketchy-null
+unclear-type
+untyped-import
+untyped-type-import
