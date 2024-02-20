@@ -22,34 +22,39 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | br | 🟡 | 🟡 | |
 | button | 🟡 | 🟡 | |
 | code | 🟡 | 🟡 | |
-| dialog | ❌ | ❌ | |
+| dialog | ❌ | ❌ | [#5](https://github.com/facebook/react-strict-dom/issues/5) |
 | div | 🟡 | 🟡 | |
 | em | 🟡 | 🟡 | |
 | footer | 🟡 | 🟡 | |
-| form | ❌ | ❌ | |
+| form | ❌ | ❌ | [#6](https://github.com/facebook/react-strict-dom/issues/6) |
 | h1-6 | 🟡 | 🟡 | |
 | header | 🟡 | 🟡 | |
 | hr | 🟡 | 🟡 | |
 | i | 🟡 | 🟡 | |
 | img | 🟡 | 🟡 | |
 | input | 🟡 | 🟡 | |
+| input[type="checkbox"] | ❌ | ❌ | [#11](https://github.com/facebook/react-strict-dom/issues/11) |
+| input[type="color"] | ❌ | ❌ | [#12](https://github.com/facebook/react-strict-dom/issues/12) |
+| input[type="date"] | ❌ | ❌ | [#13](https://github.com/facebook/react-strict-dom/issues/13) |
+| input[type="file"] | ❌ | ❌ | [#14](https://github.com/facebook/react-strict-dom/issues/14) |
+| input[type="radio"] | ❌ | ❌ | [#15](https://github.com/facebook/react-strict-dom/issues/15) |
 | label | 🟡 | 🟡 | |
 | li | 🟡 | 🟡 | |
 | main | 🟡 | 🟡 | |
 | nav | 🟡 | 🟡 | |
 | ol | 🟡 | 🟡 | |
-| optgroup | ❌ | ❌ | |
-| option | ❌ | ❌ | |
+| optgroup | ❌ | ❌ | [#7](https://github.com/facebook/react-strict-dom/issues/7) |
+| option | ❌ | ❌ | [#8](https://github.com/facebook/react-strict-dom/issues/8) |
 | p | 🟡 | 🟡 | |
 | pre | 🟡 | 🟡 | |
-| progress | ❌ | ❌ | |
+| progress | ❌ | ❌ | [#9](https://github.com/facebook/react-strict-dom/issues/9) |
 | section | 🟡 | 🟡 | |
-| select | ❌ | ❌ | |
+| select | ❌ | ❌ | [#10](https://github.com/facebook/react-strict-dom/issues/10) |
 | span | 🟡 | 🟡 | |
 | strong | 🟡 | 🟡 | |
 | sub | 🟡 | 🟡 | |
 | sup | 🟡 | 🟡 | |
-| svg | ❌ | ❌ | |
+| svg | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
 | textarea | 🟡 | 🟡 | |
 | ul | 🟡 | 🟡 | |
 
@@ -214,24 +219,24 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 
 | Name | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
-| circle | ❌ | ❌ | |
-| clipPath | ❌ | ❌ | |
-| defs | ❌ | ❌ | |
-| ellipse | ❌ | ❌ | |
-| g | ❌ | ❌ | |
-| line | ❌ | ❌ | |
-| linearGradient | ❌ | ❌ | |
-| mask | ❌ | ❌ | |
-| path | ❌ | ❌ | |
-| pattern | ❌ | ❌ | |
-| polygon | ❌ | ❌ | |
-| radialGradient | ❌ | ❌ | |
-| rect | ❌ | ❌ | |
-| stop | ❌ | ❌ | |
-| symbol | ❌ | ❌ | |
-| text | ❌ | ❌ | |
-| title | ❌ | ❌ | |
-| use | ❌ | ❌ | |
+| circle | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| clipPath | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| defs | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| ellipse | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| g | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| line | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| linearGradient | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| mask | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| path | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| pattern | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| polygon | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| radialGradient | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| rect | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| stop | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| symbol | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| text | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| title | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
+| use | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
 
 ### Node
 
@@ -413,7 +418,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | css.createTheme() | 🟡 | 🟡 | |
 | css.defineVars() | 🟡 | 🟡 | |
 | css.firstThatWorks() | 🟡 | 🟡 | |
-| css.keyframes() | ❌ | ❌ | |
+| css.keyframes() | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
 
 | Name | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
@@ -424,14 +429,14 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | alignContent | ✅ | ✅ | |
 | alignItems | ✅ | ✅ | |
 | alignSelf | ✅ | ✅ | |
-| animationDelay | ❌ | ❌ | |
-| animationDirection | ❌ | ❌ | |
-| animationDuration | ❌ | ❌ | |
-| animationFillMode | ❌ | ❌ | |
-| animationIterationCount | ❌ | ❌ | |
-| animationName | ❌ | ❌ | |
-| animationPlayState | ❌ | ❌ | |
-| animationTimingFunction | ❌ | ❌ | |
+| animationDelay | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationDirection | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationDuration | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationFillMode | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationIterationCount | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationName | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationPlayState | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
+| animationTimingFunction | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
 | aspectRatio (string) | 🟡 | 🟡 | |
 | backfaceVisibility | ✅ | ✅ | |
 | backgroundColor | ✅ | ✅ | |
@@ -499,14 +504,14 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | cursor | ❌ | ❌ | |
 | Custom Properties | 🟡 | 🟡 | |
 | direction | ❌ | ❌ | |
-| display: block | 🟡 Partial | 🟡 Partial | |
+| display: block | 🟡 Partial | 🟡 Partial | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
 | display: contents | ❌ | ❌ | |
 | display: flex | ✅ | ✅ | |
-| display: grid | ❌ | ❌ | |
-| display: inline | ❌ | ❌ | |
-| display: inline-block | ❌ | ❌ | |
+| display: grid | ❌ | ❌ | [#1](https://github.com/facebook/react-strict-dom/issues/1) |
+| display: inline | ❌ | ❌ | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
+| display: inline-block | ❌ | ❌ | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
 | display: inline-flex | ❌ | ❌ | |
-| display: inline-grid | ❌ | ❌ | |
+| display: inline-grid | ❌ | ❌ | [#1](https://github.com/facebook/react-strict-dom/issues/1) |
 | display: none | ✅ | ✅ | |
 | drop-shadow() | ❌ | ❌ | |
 | em units | 🟡 | 🟡 | |
