@@ -115,4 +115,4 @@ Please see [COMPATIBILITY.md](./COMPATIBILITY.md) for a detailed look at API com
 
 ## License
 
-React Strict DOM is MIT licensed.
+React Strict DOM is [MIT licensed](https://github.com/facebook/react-strict-dom/blob/main/LICENSE).
