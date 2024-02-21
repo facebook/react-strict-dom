@@ -2,7 +2,7 @@
 
 [![Action status](https://github.com/facebook/react-strict-dom/workflows/tests/badge.svg)](https://github.com/facebook/react-strict-dom/actions)
 
-Development monorepo for "React Strict DOM".
+Development monorepo for "React Strict DOM"
 
 **React Strict DOM** (RSD) is an experimental integration of [React DOM](https://react.dev/) and [StyleX](https://stylexjs.com/) that aims to improve and standardize the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
 
@@ -13,15 +13,15 @@ React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](
 ## Structure
 
 * `.github`
-  * Contains workflows used by GitHub Actions.
-  * Contains issue templates.
+  * Contains workflows used by GitHub Actions
+  * Contains issue templates
 * `apps`
-  * Example applications.
+  * Example applications
   * [examples](https://github.com/facebook/react-strict-dom/blob/main/apps/examples)
 * `configs`
   * Contains configuration files used by the monorepo tooling (compiling, linting, testing, etc.)
 * `packages`
-  * Contains the individual packages managed in the monorepo.
+  * Contains the individual packages managed in the monorepo
   * [eslint-plugin](https://github.com/facebook/react-strict-dom/blob/main/packages/eslint-plugin)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom)
 
