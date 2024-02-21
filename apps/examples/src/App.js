@@ -121,7 +121,7 @@ export default function App(): React.MixedElement {
           <html.h3>h3</html.h3>
           <html.h4>h4</html.h4>
           <html.h5>h5</html.h5>
-          <html.h5>h5</html.h5>
+          <html.h6>h6</html.h6>
 
           <html.span>
             line <html.br /> break
