@@ -111,7 +111,7 @@ function App() {
 
 ## Compatibility
 
-Please see [COMPATIBILITY.md](./COMPATIBILITY.md) for a detailed look at API compatibility for native.  Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
+Please see [COMPATIBILITY.md](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md) for a detailed look at API compatibility for native.  Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
 
 ## License
 
