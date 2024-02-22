@@ -239,10 +239,10 @@ function preprocessCreate<S: { [string]: mixed }>(style: S): S {
       styleValue != null
     ) {
       // have to spread styleValue into a copied object to appease flow
-      const processsedSubStyle = preprocessCreate({ ...styleValue });
+      const processedSubStyle = preprocessCreate({ ...styleValue });
       processedStyle[propName] = new CSSMediaQuery(
         propName,
-        processsedSubStyle
+        processedSubStyle
       );
       continue;
     }
