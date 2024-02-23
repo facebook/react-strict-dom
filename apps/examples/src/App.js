@@ -151,8 +151,6 @@ export default function App(): React.MixedElement {
           <html.div />
           <html.button>button</html.button>
           <html.div />
-          {/*<html.input placeholder="input type:date" type="date" />*/}
-          <html.div />
           <html.input placeholder="input type:email" type="email" />
           <html.div />
           <html.input placeholder="input type:number" type="number" />
