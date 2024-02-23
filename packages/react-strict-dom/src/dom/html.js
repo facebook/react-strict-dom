@@ -26,454 +26,328 @@ import type { StrictReactDOMSelectProps } from '../types/StrictReactDOMSelectPro
 import type { StrictReactDOMTextAreaProps } from '../types/StrictReactDOMTextAreaProps';
 
 import { createStrictDOMComponent as createStrict } from './modules/createStrictDOMComponent';
-import * as stylex from '@stylexjs/stylex';
-
-// set this on the root, probably in the theme context
-// const fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
-
-const styles = stylex.create({
-  // reset all 'block' elements
-  block: {
-    // boxSizing: 'border-box',
-    // borderStyle: 'solid',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0
-  },
-  // reset all 'inline' text elements
-  inline: {
-    // boxSizing: 'border-box',
-    margin: 0,
-    padding: 0,
-    textDecoration: 'none',
-    textAlign: 'inherit',
-    // disable for now as internal web code conflicts
-    // whiteSpace: 'pre-wrap',
-    wordWrap: 'break-word'
-  },
-  // reset all 'inline-block' text elements
-  inlineblock: {
-    borderStyle: 'solid',
-    margin: 0,
-    padding: 0
-  },
-  button: {
-    borderWidth: 1
-  },
-  codePre: {
-    fontFamily: 'monospace, monospace',
-    fontSize: '1em',
-    overflow: 'auto'
-  },
-  heading: {
-    fontSize: '1.5rem',
-    wordWrap: 'break-word'
-  },
-  hr: {
-    backgroundColor: 'black',
-    borderStyle: 'none',
-    borderWidth: 0,
-    boxSizing: 'border-box',
-    height: 1
-  },
-  img: {
-    aspectRatio: 'attr(width) / attr(height)',
-    height: 'auto',
-    maxWidth: '100%'
-  },
-  input: {
-    borderWidth: 1,
-    borderStyle: 'solid'
-  },
-  strong: {
-    fontWeight: 'bolder'
-  },
-  textarea: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    resize: 'vertical'
-  }
-});
+import { defaultStyles } from './runtime';
 
 /**
  * "a" (inline)
  */
-const defaultAnchorProps: StrictReactDOMAnchorProps = { style: styles.inline };
 export const a: React$AbstractComponent<
   StrictReactDOMAnchorProps,
   StrictHTMLElement
-> = createStrict('a', defaultAnchorProps);
+> = createStrict('a', defaultStyles.a);
 
 /**
  * "article" (block)
  */
-const defaultArticleProps: StrictReactDOMProps = { style: styles.block };
 export const article: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('article', defaultArticleProps);
+> = createStrict('article', defaultStyles.article);
 
 /**
  * "aside" (block)
  */
-const defaultAsideProps: StrictReactDOMProps = { style: styles.block };
 export const aside: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('aside', defaultAsideProps);
+> = createStrict('aside', defaultStyles.aside);
 
 /**
  * "b" (inline)
  */
-const defaultBProps: StrictReactDOMProps = { style: styles.inline };
 export const b: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('b', defaultBProps);
+> = createStrict('b', defaultStyles.b);
 
 /**
  * "bdi" (inline)
  */
-const defaultBdiProps: StrictReactDOMProps = { style: styles.inline };
 export const bdi: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdi', defaultBdiProps);
+> = createStrict('bdi', defaultStyles.bdi);
 
 /**
  * "bdo" (inline)
  */
-const defaultBdoProps: StrictReactDOMProps = { style: styles.inline };
 export const bdo: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdo', defaultBdoProps);
+> = createStrict('bdo', defaultStyles.bdo);
 
 /**
  * "blockquote" (block)
  */
-const defaultBlockquoteProps: StrictReactDOMProps = { style: styles.block };
 export const blockquote: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('blockquote', defaultBlockquoteProps);
+> = createStrict('blockquote', defaultStyles.blockquote);
 
 /**
  * "br"
  */
-const defaultBrProps: StrictReactDOMProps = {};
 export const br: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('br', defaultBrProps);
+> = createStrict('br', defaultStyles.br);
 
 /**
  * "button" (inline-block)
  */
-const defaultButtonProps: StrictReactDOMButtonProps = {
-  style: [styles.inlineblock, styles.button],
-  type: 'button'
-};
 export const button: React$AbstractComponent<
   StrictReactDOMButtonProps,
   StrictHTMLElement
-> = createStrict('button', defaultButtonProps);
+> = createStrict('button', defaultStyles.button);
 
 /**
  * "code" (inline)
  */
-const defaultCodeProps: StrictReactDOMProps = {
-  style: [styles.inline, styles.codePre]
-};
 export const code: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('code', defaultCodeProps);
+> = createStrict('code', defaultStyles.code);
 
 /**
  * "div" (block)
  */
-const defaultDivProps: StrictReactDOMProps = { style: styles.block };
 export const div: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('div', defaultDivProps);
+> = createStrict('div', defaultStyles.div);
 
 /**
  * "em" (inline)
  */
-const defaultEmphasisProps: StrictReactDOMProps = { style: styles.inline };
 export const em: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('em', defaultEmphasisProps);
+> = createStrict('em', defaultStyles.em);
 
 /**
  * "fieldset" (block)
  */
-const defaultFieldsetProps: StrictReactDOMProps = { style: styles.block };
 export const fieldset: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('fieldset', defaultFieldsetProps);
+> = createStrict('fieldset', defaultStyles.fieldset);
 
 /**
  * "footer" (block)
  */
-const defaultFooterProps: StrictReactDOMProps = { style: styles.block };
 export const footer: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('footer', defaultFooterProps);
+> = createStrict('footer', defaultStyles.footer);
 
 /**
  * "form" (block)
  */
-const defaultFormProps: StrictReactDOMProps = { style: styles.block };
 export const form: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('form', defaultFormProps);
+> = createStrict('form', defaultStyles.form);
 
 /**
  * "h1-h6" (block)
  */
-const defaultHeadingProps: StrictReactDOMProps = {
-  style: [styles.block, styles.heading]
-};
 export const h1: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h1', defaultHeadingProps);
+> = createStrict('h1', defaultStyles.h1);
 export const h2: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h2', defaultHeadingProps);
+> = createStrict('h2', defaultStyles.h2);
 export const h3: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h3', defaultHeadingProps);
+> = createStrict('h3', defaultStyles.h3);
 export const h4: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h4', defaultHeadingProps);
+> = createStrict('h4', defaultStyles.h4);
 export const h5: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h5', defaultHeadingProps);
+> = createStrict('h5', defaultStyles.h5);
 export const h6: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h6', defaultHeadingProps);
+> = createStrict('h6', defaultStyles.h6);
 
 /**
  * "header" (block)
  */
-const defaultHeaderProps: StrictReactDOMProps = { style: styles.block };
 export const header: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('header', defaultHeaderProps);
+> = createStrict('header', defaultStyles.header);
 
 /**
  * "hr" (block)
  */
-const defaultHrProps: StrictReactDOMProps = {
-  style: [styles.block, styles.hr]
-};
 export const hr: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('hr', defaultHrProps);
+> = createStrict('hr', defaultStyles.hr);
 
 /**
  * "i" (inline)
  */
-const defaultIProps: StrictReactDOMProps = { style: styles.inline };
 export const i: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('i', defaultIProps);
+> = createStrict('i', defaultStyles.i);
 
 /**
  * "img" (inline)
  */
-const defaultImgProps: StrictReactDOMImageProps = { style: styles.img };
 export const img: React$AbstractComponent<
   StrictReactDOMImageProps,
   StrictHTMLImageElement
-> = createStrict('img', defaultImgProps);
+> = createStrict('img', defaultStyles.img);
 
 /**
  * "input" (inline-block)
  */
-const defaultInputProps: StrictReactDOMInputProps = {
-  dir: 'auto',
-  style: [styles.inlineblock, styles.input]
-};
 export const input: React$AbstractComponent<
   StrictReactDOMInputProps,
   StrictHTMLInputElement
-> = createStrict('input', defaultInputProps);
+> = createStrict('input', defaultStyles.input);
 
 /**
  * "label" (inline)
  */
-const defaultLabelProps: StrictReactDOMLabelProps = { style: styles.inline };
 export const label: React$AbstractComponent<
   StrictReactDOMLabelProps,
   StrictHTMLElement
-> = createStrict('label', defaultLabelProps);
+> = createStrict('label', defaultStyles.label);
 
 /**
  * "li" (block)
  */
-const defaultListItemProps: StrictReactDOMProps = { style: styles.block };
 export const li: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('li', defaultListItemProps);
+> = createStrict('li', defaultStyles.li);
 
 /**
  * "main" (block)
  */
-const defaultMainProps: StrictReactDOMProps = { style: styles.block };
 export const main: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('main', defaultMainProps);
+> = createStrict('main', defaultStyles.main);
 
 /**
  * "nav" (block)
  */
-const defaultNavProps: StrictReactDOMProps = { style: styles.block };
 export const nav: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('nav', defaultNavProps);
+> = createStrict('nav', defaultStyles.nav);
 
 /**
  * "ol" (block)
  */
-const defaultOrderedListProps: StrictReactDOMProps = { style: styles.block };
 export const ol: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('ol', defaultOrderedListProps);
+> = createStrict('ol', defaultStyles.ol);
 
 /**
  * "optgroup"
  */
-const defaultOptionGroupProps: StrictReactDOMOptionGroupProps = {};
 export const optgroup: React$AbstractComponent<
   StrictReactDOMOptionGroupProps,
   StrictHTMLElement
-> = createStrict('optgroup', defaultOptionGroupProps);
+> = createStrict('optgroup', defaultStyles.optgroup);
 
 /**
  * "option"
  */
-const defaultOptionProps: StrictReactDOMOptionProps = {};
 export const option: React$AbstractComponent<
   StrictReactDOMOptionProps,
   StrictHTMLElement
-> = createStrict('option', defaultOptionProps);
+> = createStrict('option', defaultStyles.option);
 
 /**
  * "p" (block)
  */
-const defaultParagraphProps: StrictReactDOMProps = { style: styles.block };
 export const p: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('p', defaultParagraphProps);
+> = createStrict('p', defaultStyles.p);
 
 /**
  * "pre" (block)
  */
-const defaultPreProps: StrictReactDOMProps = {
-  style: [styles.block, styles.codePre]
-};
 export const pre: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('pre', defaultPreProps);
+> = createStrict('pre', defaultStyles.pre);
 
 /**
  * "section" (block)
  */
-const defaultSectionProps: StrictReactDOMProps = { style: styles.block };
 export const section: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('section', defaultSectionProps);
+> = createStrict('section', defaultStyles.section);
 
 /**
  * "select" (inline-block)
  */
-const defaultSelectProps: StrictReactDOMSelectProps = {
-  style: [styles.inlineblock]
-};
 export const select: React$AbstractComponent<
   StrictReactDOMSelectProps,
   StrictHTMLSelectElement
-> = createStrict('select', defaultSelectProps);
+> = createStrict('select', defaultStyles.select);
 
 /**
  * "span" (inline)
  */
-const defaultSpanProps: StrictReactDOMProps = { style: styles.inline };
 export const span: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('span', defaultSpanProps);
+> = createStrict('span', defaultStyles.span);
 
 /**
  * "strong" (inline)
  */
-const defaultStrongProps: StrictReactDOMProps = {
-  style: [styles.inline, styles.strong]
-};
 export const strong: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('strong', defaultStrongProps);
+> = createStrict('strong', defaultStyles.strong);
 
 /**
  * "sub" (inline)
  */
-const defaultSubscriptProps: StrictReactDOMProps = { style: styles.inline };
 export const sub: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('sub', defaultSubscriptProps);
+> = createStrict('sub', defaultStyles.sub);
 
 /**
  * "sup" (inline)
  */
-const defaultSuperscriptProps: StrictReactDOMProps = { style: styles.inline };
 export const sup: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('sup', defaultSuperscriptProps);
+> = createStrict('sup', defaultStyles.sup);
 
 /**
  * "textarea" (inline-block)
  */
-const defaultTextareaProps: StrictReactDOMTextAreaProps = {
-  dir: 'auto',
-  style: [styles.inlineblock, styles.textarea]
-};
 export const textarea: React$AbstractComponent<
   StrictReactDOMTextAreaProps,
   StrictHTMLTextAreaElement
-> = createStrict('textarea', defaultTextareaProps);
+> = createStrict('textarea', defaultStyles.textarea);
 
 /**
  * "ul" (block)
  */
-const defaultUnorderedListProps: StrictReactDOMProps = { style: styles.block };
 export const ul: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('ul', defaultUnorderedListProps);
+> = createStrict('ul', defaultStyles.ul);
