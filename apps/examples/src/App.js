@@ -181,7 +181,7 @@ export default function App(): React.MixedElement {
           <html.textarea placeholder="textarea" />
         </ExampleBlock>
 
-        {/* block layout emulation */}
+        {/* variables & themes */}
         <ExampleBlock title="Variables & Theming">
           <html.p style={styles.inheritedText}>Global variables</html.p>
           <html.div style={styles.square} />
@@ -258,6 +258,15 @@ export default function App(): React.MixedElement {
             <html.div style={[styles.relative, styles.p50]}>
               <html.div style={[styles.square, styles.absTopLeft]} />
             </html.div>
+          </html.div>
+        </ExampleBlock>
+
+        {/* visibility */}
+        <ExampleBlock title="Visibility">
+          <html.div style={styles.flex}>
+            <html.div style={[styles.square, styles.visibilityCollapse]} />
+            <html.div style={[styles.square, styles.visibilityHidden]} />
+            <html.div style={[styles.square, styles.visibilityVisible]} />
           </html.div>
         </ExampleBlock>
 
@@ -363,7 +372,7 @@ export default function App(): React.MixedElement {
           <html.span>{imageErrorText}</html.span>
         </ExampleBlock>
 
-        {/* CSS Transitions Shim */}
+        {/* CSS transitions shim */}
         <ExampleBlock title="CSS Transitions">
           <html.p>Color</html.p>
           <html.div
@@ -649,5 +658,14 @@ const styles = css.create({
   }),
   dynamicTransform: (transform: string) => ({
     transform
-  })
+  }),
+  visibilityCollapse: {
+    visibility: 'collapse'
+  },
+  visibilityHidden: {
+    visibility: 'hidden'
+  },
+  visibilityVisible: {
+    visibility: 'visible'
+  }
 });

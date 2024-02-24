@@ -603,6 +603,29 @@ describe('properties: general', () => {
     );
     expect(css.props.call(mockOptions, styles.top)).toMatchSnapshot('top');
   });
+
+  test('visibility', () => {
+    const styles = css.create({
+      collapse: {
+        visibility: 'collapse'
+      },
+      hidden: {
+        visibility: 'hidden'
+      },
+      visible: {
+        visibility: 'visible'
+      }
+    });
+    expect(css.props.call(mockOptions, styles.collapse)).toMatchSnapshot(
+      'collapse'
+    );
+    expect(css.props.call(mockOptions, styles.hidden)).toMatchSnapshot(
+      'hidden'
+    );
+    expect(css.props.call(mockOptions, styles.visible)).toMatchSnapshot(
+      'visible'
+    );
+  });
 });
 
 /**

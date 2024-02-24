@@ -558,6 +558,16 @@ export function props(
       } else if (styleProp === 'paddingInlineEnd') {
         flatStyle.paddingEnd = styleValue;
       }
+      // visibility polyfill
+      // note: we can't polyfill nested visibility changes
+      else if (styleProp === 'visibility') {
+        if (styleValue === 'hidden' || styleValue === 'collapse') {
+          flatStyle.opacity = 0;
+          nativeProps['aria-hidden'] = true;
+          nativeProps.pointerEvents = 'none';
+          nativeProps.tabIndex = -1;
+        }
+      }
       // everything else
       else {
         warnMsg(`Ignoring unsupported style property "${styleProp}"`);

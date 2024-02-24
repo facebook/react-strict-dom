@@ -113,7 +113,7 @@ describe('html', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
-    test('default inherited styles', () => {
+    test('default inherited text styles', () => {
       const inheritableStyles = {
         color: 'red',
         cursor: 'pointer',
@@ -128,7 +128,6 @@ describe('html', () => {
         textAlign: 'right',
         textIndent: '10px',
         textTransform: 'uppercase',
-        visibility: 'hidden',
         whiteSpace: ''
       };
       const root = create(
