@@ -8,7 +8,7 @@ const { addNamed, addNamespace } = require('@babel/helper-module-imports');
 
 module.exports = function ({ types: t }) {
   const packageName = 'react-strict-dom';
-  const packageRuntime = 'react-strict-dom/dist/runtime';
+  const packageRuntime = 'react-strict-dom/dist/dom/runtime';
   const findImportDeclaration = (body, sourceValue) =>
     body.filter(
       (node) =>

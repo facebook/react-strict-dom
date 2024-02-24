@@ -2,16 +2,16 @@
   "name": "react-strict-dom",
   "version": "0.0.2",
   "description": "React Strict DOM",
-  "main": "./dist/dom.js",
-  "module": "./dist/dom.js",
-  "react-native": "./dist/native.js",
+  "main": "./dist/dom/index.js",
+  "module": "./dist/dom/index.js",
+  "react-native": "./dist/native/index.js",
   "sideEffects": false,
   "files": [
     "*",
     "!**/__tests__"
   ],
   "scripts": {
-    "prebuild": "npm run clean && node ../../scripts/generate-libdef/generateLibdef.js",
+    "prebuild": "npm run clean && gen-types -i src/ -o dist",
     "build": "rollup --config ../../configs/rollup.config.js",
     "clean": "del-cli \"./dist/*\"",
     "dev": "npm run build -- --watch"

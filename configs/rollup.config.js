@@ -126,7 +126,10 @@ const webConfigs = [
     external: ['react', 'react-dom', '@stylexjs/stylex'],
     input: require.resolve('../packages/react-strict-dom/src/dom/index.js'),
     output: {
-      file: path.join(__dirname, '../packages/react-strict-dom/dist/dom.js'),
+      file: path.join(
+        __dirname,
+        '../packages/react-strict-dom/dist/dom/index.js'
+      ),
       format: 'es'
     },
     plugins: [...ossPlugins]
@@ -138,7 +141,7 @@ const webConfigs = [
     output: {
       file: path.join(
         __dirname,
-        '../packages/react-strict-dom/dist/runtime.js'
+        '../packages/react-strict-dom/dist/dom/runtime.js'
       ),
       format: 'es'
     },
@@ -168,7 +171,10 @@ const nativeConfigs = [
     external: ['react', 'react-native', '@stylexjs/stylex'],
     input: require.resolve('../packages/react-strict-dom/src/native/index.js'),
     output: {
-      file: path.join(__dirname, '../packages/react-strict-dom/dist/native.js'),
+      file: path.join(
+        __dirname,
+        '../packages/react-strict-dom/dist/native/index.js'
+      ),
       format: 'es'
     },
     plugins: [...nativePlugins, ...ossPlugins]

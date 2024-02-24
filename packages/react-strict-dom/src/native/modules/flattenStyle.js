@@ -12,7 +12,7 @@ import type { Style, Styles } from '../../types/styles';
 // TODO: optimize
 export function flattenStyle(
   style: ?Styles | Style | Array<Styles | Style>
-): ?Style {
+): ?{ ...Style } {
   if (style === null || typeof style !== 'object') {
     return undefined;
   }

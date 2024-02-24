@@ -11,5 +11,5 @@ jobs:
       with:
         name: "runtime library"
         build-script: "build"
-        pattern: "./packages/react-strict-dom/dist/{dom.js,native.js,runtime.js}"
+        pattern: "./packages/react-strict-dom/dist/{dom/index.js,dom/runtime.js,native/index.js}"
         repo-token: "${{ secrets.GITHUB_TOKEN }}"

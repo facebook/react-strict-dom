@@ -1,6 +1,6 @@
 # react-strict-dom dev
 
-[![Action status](https://github.com/facebook/react-strict-dom/workflows/tests/badge.svg)](https://github.com/facebook/react-strict-dom/actions)
+[![Action status](https://github.com/facebook/react-strict-dom/actions/workflows/tests.yml/badge.svg)](https://github.com/facebook/react-strict-dom/actions/workflows/tests.yml)
 
 Development monorepo for "React Strict DOM".
 
