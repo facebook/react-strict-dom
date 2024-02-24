@@ -51,4 +51,7 @@ function Provider(props: ProviderProps): Node {
   );
 }
 
-export const Locale = { Context, Provider };
+export const Locale: $ReadOnly<{
+  Context: React$Context<ContextValue>,
+  Provider: React$ComponentType<ProviderProps>
+}> = { Context, Provider };

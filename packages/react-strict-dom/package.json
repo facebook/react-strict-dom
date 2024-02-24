@@ -13,6 +13,7 @@
   "scripts": {
     "prebuild": "npm run clean && node ../../scripts/generate-libdef/generateLibdef.js",
     "build": "rollup --config ../../configs/rollup.config.js",
+    "build:types": "gen-types -i src/ -o lib",
     "clean": "del-cli \"./dist/*\"",
     "dev": "npm run build -- --watch"
   },
