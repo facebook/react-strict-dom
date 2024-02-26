@@ -85,7 +85,7 @@ const globalAttributes = {
   'aria-modal': true,
   'aria-multiline': true,
   'aria-multiselectable': true,
-  'aria-orientation': 'potrait',
+  'aria-orientation': 'portrait',
   'aria-owns': 'owns',
   'aria-placeholder': 'Placeholder',
   'aria-posinset': 1,

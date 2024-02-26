@@ -151,42 +151,42 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | minLength (input) | ❌ | ❌ | |
 | minLength (textarea) | ❌ | ❌ | |
 | multiple (select) | ❌ | ❌ | |
-| onAuxClick | ❌ | ❌ | |
-| onBeforeInput (input) | ❌ | ❌ | |
-| onBeforeInput (select) | ❌ | ❌ | |
-| onBeforeInput (textarea) | ❌ | ❌ | |
-| onBlur | ❌ | ❌ | |
-| onChange (input) | ✅ | ✅ | |
-| onChange (select) | ❌ | ❌ | |
-| onChange (textarea) | ✅ | ✅ | |
-| onClick | ❌ | ❌ | |
-| onContextMenu | ❌ | ❌ | |
-| onCopy | ❌ | ❌ | |
-| onCut | ❌ | ❌ | |
-| onError (img) | 🟡 | 🟡 | |
-| onFocus | ❌ | ❌ | |
-| onGotPointerCapture | ✅ | ✅ | |
-| onInput (input) | 🟡 | 🟡 | |
-| onInput (select) | ❌ | ❌ | |
-| onInput (textarea) | 🟡 | 🟡 | |
-| onInvalid (input) | ❌ | ❌ | |
-| onInvalid (select) | ❌ | ❌ | |
-| onInvalid (textarea) | ❌ | ❌ | |
-| onKeyDown | ❌ | ❌ | |
-| onKeyUp | ❌ | ❌ | |
-| onLoad (img) | 🟡 | 🟡 | |
-| onLostPointerCapture | ✅ | ✅ | |
-| onPaste | ❌ | ❌ | |
-| onPointerCancel | ✅ | ✅ | |
-| onPointerDown | ✅ | ✅ | |
-| onPointerEnter | ✅ | ✅ | |
-| onPointerLeave | ✅ | ✅ | |
-| onPointerMove | ✅ | ✅ | |
-| onPointerOut | ✅ | ✅ | |
-| onPointerOver | ✅ | ✅ | |
-| onPointerUp | ✅ | ✅ | |
-| onSelect | ❌ | ❌ | |
-| onSelectionChange | ❌ | ❌ | |
+| onAuxClick | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onBeforeInput (input) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onBeforeInput (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onBeforeInput (textarea) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onBlur | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onChange (input) | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onChange (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onChange (textarea) | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onClick | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onContextMenu | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onCopy | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onCut | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onError (img) | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onFocus | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onGotPointerCapture | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInput (input) | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInput (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInput (textarea) | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInvalid (input) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInvalid (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onInvalid (textarea) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onKeyDown | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onKeyUp | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onLoad (img) | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onLostPointerCapture | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPaste | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerCancel | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerDown | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerEnter | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerLeave | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerMove | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerOut | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerOver | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onPointerUp | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onSelect | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onSelectionChange | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | open (dialog) | ❌ | ❌ | |
 | placeholder (input) | 🟡 | 🟡 | |
 | placeholder (textarea) | 🟡 | 🟡 | |
@@ -353,9 +353,9 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 
 | Name | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
-| window.addEventListener() | ❌ | ❌ | |
+| window.addEventListener() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
 | window.devicePixelRatio | ❌ | ❌ | |
-| window.dispatchEvent() | ❌ | ❌ | |
+| window.dispatchEvent() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
 | window.getSelection() | ❌ | ❌ | |
 | window.matchMedia() | ❌ | ❌ | |
 | window.navigator.clipboard | ❌ | ❌ | |
@@ -371,26 +371,26 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | window.performance.measure() | ✅ | ✅ | |
 | window.performance.now() | ✅ | ✅ | |
 | window.performance.timeOrigin | ❌ | ❌ | |
-| window.removeEventListener() | ❌ | ❌ | |
+| window.removeEventListener() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
 
 ### Events
 
 | Name | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
-| event.bubbles | ❌ | ❌ | |
-| event.cancelable | ❌ | ❌ | |
-| event.composed | ❌ | ❌ | |
-| event.composedPath() | ❌ | ❌ | |
-| event.currentTarget | ❌ | ❌ | |
-| event.defaultPrevented | ❌ | ❌ | |
-| event.eventPhase | ❌ | ❌ | |
-| event.isTrusted | ❌ | ❌ | |
-| event.preventDefault() | ❌ | ❌ | |
-| event.stopImmediatePropagation() | ❌ | ❌ | |
-| event.stopPropagation() | ❌ | ❌ | |
-| event.target | ❌ | ❌ | |
-| event.timeStamp | ❌ | ❌ | |
-| event.type | ❌ | ❌ | |
+| event.bubbles | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.cancelable | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.composed | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.composedPath() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.currentTarget | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.defaultPrevented | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.eventPhase | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.isTrusted | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.preventDefault() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.stopImmediatePropagation() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.stopPropagation() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.target | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.timeStamp | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| event.type | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
 
 ### [Minimum Common Web Platform API](https://common-min-api.proposal.wintercg.org/)
 
@@ -402,9 +402,9 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | Crypto | ❌ | ❌ | |
 | CustomEvent() constructor| ❌ | ❌ | |
 | Event() constructor| ❌ | ❌ | |
-| EventTarget.addEventListener() | ❌ | ❌ | |
-| EventTarget.dispatchEvent() | ❌ | ❌ | |
-| EventTarget.removeEventListener() | ❌ | ❌ | |
+| EventTarget.addEventListener() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| EventTarget.dispatchEvent() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
+| EventTarget.removeEventListener() | ❌ | ❌ | [#37](https://github.com/facebook/react-strict-dom/issues/37) |
 | fetch | ✅ Partial | ✅ Partial | |
 | FileReader | ✅ | ✅ | |
 | URL | ❌ | ❌ | |
