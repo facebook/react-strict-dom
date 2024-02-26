@@ -91,7 +91,9 @@ export default function App(): React.MixedElement {
     <ScrollView>
       <html.div style={egStyles.div}>
         <ExampleBlock title="HTML elements">
-          <html.div data-testid="testid">div</html.div>
+          <html.div data-testid="testid" role="none">
+            div
+          </html.div>
           <html.span suppressHydrationWarning={true}>span</html.span>
           <html.p>paragraph</html.p>
 
@@ -147,7 +149,7 @@ export default function App(): React.MixedElement {
           />
 
           <html.div />
-          <html.label>label</html.label>
+          <html.label for="id">label</html.label>
           <html.div />
           <html.button>button</html.button>
           <html.div />

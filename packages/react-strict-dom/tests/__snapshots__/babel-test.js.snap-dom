@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-strict-dom/babel [transform] <html.*> elements aliased imports 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html as h } from 'react-strict-dom';
+function App() {
+  return <div {..._stylex.props(_defaultStyles.div, styles.root)} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] <html.*> elements basic element 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html } from 'react-strict-dom';
+function App() {
+  return <div {..._stylex.props(_defaultStyles.div)} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] <html.*> elements other props 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html } from 'react-strict-dom';
+function App() {
+  return <div role="presentation" {..._stylex.props(_defaultStyles.div)}>
+                <label htmlFor="for" {..._stylex.props(_defaultStyles.label)} />
+                <input dir="auto" {..._stylex.props(_defaultStyles.input)} />
+                <textarea dir="auto" {..._stylex.props(_defaultStyles.textarea)} />
+                <input dir="rtl" {..._stylex.props(_defaultStyles.input)} />
+                <textarea dir="rtl" {..._stylex.props(_defaultStyles.textarea)} />
+                <button type="button" {..._stylex.props(_defaultStyles.button)} />
+                <button type="submit" {..._stylex.props(_defaultStyles.button)} />
+              </div>;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] <html.*> elements repeated imports 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html } from 'react-strict-dom';
+import { html as h } from 'react-strict-dom';
+function App() {
+  return <div {..._stylex.props(_defaultStyles.div, styles.root)}>
+                <span {..._stylex.props(_defaultStyles.span)} />
+              </div>;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: array 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html } from 'react-strict-dom';
+function App() {
+  return <div {..._stylex.props(_defaultStyles.div, styles.one, styles.two)} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: simple 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/runtime";
+import { html } from 'react-strict-dom';
+function App() {
+  return <div {..._stylex.props(_defaultStyles.div, styles.one)} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <View style={{}}> 1`] = `
+"function App() {
+  return <View style={{}} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <div style={{}}> 1`] = `
+"function App() {
+  return <div style={{}} />;
+}
+;"
+`;
+
+exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <div> 1`] = `
+"function App() {
+  return <div />;
+}
+;"
+`;

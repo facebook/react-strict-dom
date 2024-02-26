@@ -131,6 +131,19 @@ const webConfigs = [
     },
     plugins: [...ossPlugins]
   },
+  // Runtime
+  {
+    external: ['react', 'react-dom', '@stylexjs/stylex'],
+    input: require.resolve('../packages/react-strict-dom/src/dom/runtime.js'),
+    output: {
+      file: path.join(
+        __dirname,
+        '../packages/react-strict-dom/dist/runtime.js'
+      ),
+      format: 'es'
+    },
+    plugins: [...ossPlugins]
+  },
   // www build
   {
     external: ['react', 'react-dom', '@stylexjs/stylex'],

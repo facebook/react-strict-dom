@@ -73,6 +73,9 @@ module.exports = {
         '<rootDir>/packages/react-strict-dom/tests/*-test.js',
         '<rootDir>/packages/react-strict-dom/tests/*-test.native.js'
       ],
+      testPathIgnorePatterns: [
+        '<rootDir>/packages/react-strict-dom/tests/babel-test.js'
+      ],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }
