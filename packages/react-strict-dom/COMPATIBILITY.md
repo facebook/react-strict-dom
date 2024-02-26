@@ -631,7 +631,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | userSelect | 🟡 | 🟡 | |
 | v* units | 🟡 | 🟡 | |
 | verticalAlign | 🟡 | ❌ | |
-| visibility | ❌ | ❌ | |
+| visibility | 🟡 | 🟡 | |
 | whiteSpace | ❌ | ❌ | |
 | width | ✅ | ✅ | |
 | wordBreak | ❌ | ❌ | |

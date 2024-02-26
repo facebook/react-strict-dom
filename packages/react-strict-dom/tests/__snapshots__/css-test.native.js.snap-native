@@ -515,6 +515,30 @@ exports[`properties: general vertical-align: top 1`] = `
 }
 `;
 
+exports[`properties: general visibility: collapse 1`] = `
+{
+  "aria-hidden": true,
+  "pointerEvents": "none",
+  "style": {
+    "opacity": 0,
+  },
+  "tabIndex": -1,
+}
+`;
+
+exports[`properties: general visibility: hidden 1`] = `
+{
+  "aria-hidden": true,
+  "pointerEvents": "none",
+  "style": {
+    "opacity": 0,
+  },
+  "tabIndex": -1,
+}
+`;
+
+exports[`properties: general visibility: visible 1`] = `{}`;
+
 exports[`properties: logical direction blockSize: blockSize 1`] = `
 {
   "style": {

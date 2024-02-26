@@ -1266,7 +1266,7 @@ exports[`html style polyfills "transition" properties : width transition start 1
 />
 `;
 
-exports[`html style polyfills default inherited styles 1`] = `
+exports[`html style polyfills default inherited text styles 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={

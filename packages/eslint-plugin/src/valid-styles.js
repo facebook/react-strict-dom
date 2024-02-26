@@ -159,6 +159,7 @@ const allowlistedStylexProps = new Set([
   'transitionTimingFunction',
   'userSelect',
   'verticalAlign',
+  'visibility',
   'width',
   'zIndex'
 ]);

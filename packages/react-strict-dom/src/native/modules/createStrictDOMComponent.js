@@ -424,7 +424,6 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
         textAlign,
         textIndent,
         textTransform,
-        visibility,
         whiteSpace,
         ...nonTextStyles
       } = flattenStyle(extractedStyles) || {};
@@ -468,9 +467,6 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
       }
       if (textTransform != null) {
         textStyles.textTransform = textTransform;
-      }
-      if (visibility != null) {
-        textStyles.visibility = visibility;
       }
       if (whiteSpace != null) {
         textStyles.whiteSpace = whiteSpace;
