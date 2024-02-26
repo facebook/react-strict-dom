@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-strict-dom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint plugin for React Strict DOM",
   "main": "dist/index.js",
   "scripts": {
