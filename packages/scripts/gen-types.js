@@ -59,25 +59,11 @@ async function generateTypes(inputDir, outputDir, rootDir) {
         try {
           let fileContents = await fsPromises.readFile(inputFullPath, 'utf8');
           fileContents = preprocessFileContents(fileContents);
-          let outputFlowContents = await translate.translateFlowToFlowDef(
+          const outputFlowContents = await translate.translateFlowToFlowDef(
             // Workaround for making the script work on Windows
             fileContents.replace(/\r\n/g, '\n'),
             monorepoPackage.prettier
           );
-
-          if (outputFlowContents.includes('__monkey_patch__')) {
-            const lines = outputFlowContents.split('\n');
-            const line = lines.find((line) =>
-              line.includes('__monkey_patch__')
-            );
-            const startIndex = lines.indexOf(line);
-            const endIndex = startIndex + 4;
-
-            outputFlowContents = lines
-              .slice(0, startIndex)
-              .concat(lines.slice(endIndex))
-              .join('\n');
-          }
 
           const tsOutputName = dirent.name
             .replace(/\.js$/, '.d.ts')

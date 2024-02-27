@@ -38,10 +38,12 @@ async function rewriteImportsInFolder(inputDir: string, outputDir: string) {
   await fs.mkdir(outputDir, { recursive: true });
   const dirents = await fs.readdir(inputDir, { withFileTypes: true });
   for (const dirent of dirents) {
-    // We only care about the `stylex` package for now which has
-    // a flat file tree.
     if (dirent.isDirectory()) {
-      continue;
+      const name = String(dirent.name);
+      await rewriteImportsInFolder(
+        path.join(inputDir, name),
+        path.join(outputDir, name)
+      );
     }
     if (typeof dirent.name !== 'string' || !dirent.name.endsWith('.js')) {
       continue;
@@ -50,19 +52,14 @@ async function rewriteImportsInFolder(inputDir: string, outputDir: string) {
     const inputFullPath = path.join(inputDir, fileName);
     const outputFullPath = path.join(outputDir, fileName);
     const inputFile = await fs.readFile(inputFullPath, 'utf8');
-    let outputFile = await translateFlowImportsTo(
+    const outputFile = await translateFlowImportsTo(
       inputFile,
       {},
       {
         sourceMapper: ({ module }) => module.slice(module.lastIndexOf('/') + 1)
       }
     );
-    if (fileName === 'stylex.js') {
-      outputFile = outputFile.replace(
-        'export default (_stylex: IStyleX);\n',
-        ''
-      );
-    }
+
     await fs.writeFile(outputFullPath, outputFile);
   }
 }
