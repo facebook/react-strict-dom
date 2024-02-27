@@ -153,6 +153,54 @@ function resolveTransitionProperty(property: mixed): string[] {
   return [];
 }
 
+//custom radio button component 
+const RadioButton = ({ options, selectedOption, onSelect }) => {
+  return (
+    <View>
+      {options.map((option, index) => (
+        <Pressable
+          key={index}
+          onPress={() => onSelect(option)}
+          style={({ pressed }) => ({
+            opacity: pressed ? 0.5 : 1,
+          })}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <View
+              style={{
+                height: 24,
+                width: 24,
+                borderRadius: 12,
+                borderWidth: 2,
+                borderColor: selectedOption === option ? 'blue' : 'gray',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {selectedOption === option && (
+                <View
+                  style={{
+                    height: 12,
+                    width: 12,
+                    borderRadius: 6,
+                    backgroundColor: 'blue',
+                  }}
+                />
+              )}
+            </View>
+            <Text style={{ marginLeft: 10 }}>{option}</Text>
+          </View>
+        </Pressable>
+      ))}
+    </View>
+  );
+};
+
 const DisplayModeInsideContext = React.createContext('flow');
 
 export function createStrictDOMComponent<T: any, P: StrictProps>(
@@ -263,7 +311,17 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
         if (type === 'password') {
           nativeProps.secureTextEntry = true;
         }
-        if (type === 'checkbox' || type === 'date' || type === 'radio') {
+        if (type === 'radio') {
+          // Render RadioButton component
+          return (
+              <RadioButton
+                  options={props.options}
+                  selectedOption={props.value}
+                  onSelect={props.onChange}
+              />
+          );
+        }
+        if (type === 'checkbox' || type === 'date') {
           errorMsg(
             `<input type="${type}" /> is not implemented in React Native.`
           );
