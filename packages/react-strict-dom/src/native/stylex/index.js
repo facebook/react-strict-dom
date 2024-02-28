@@ -17,7 +17,7 @@ import {
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSMediaQuery } from './CSSMediaQuery';
-import { errorMsg, warnMsg } from '../modules/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/errorMsg';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyle';
 import { parseShadow } from './parseShadow';

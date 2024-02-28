@@ -12,7 +12,7 @@ import type { AnimatedNode } from '../../types/react-native';
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 import { parseTransform } from './parseTransform';
-import { warnMsg } from './errorMsg';
+import { warnMsg } from '../../shared/errorMsg';
 
 type TransitionProperties = $ReadOnlyArray<{
   property: string,

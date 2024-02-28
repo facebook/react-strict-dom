@@ -9,7 +9,7 @@
 
 import type { CallbackRef } from '../../types/react';
 
-import { errorMsg } from './errorMsg';
+import { errorMsg } from '../../shared/errorMsg';
 import { useCallback } from 'react';
 import { useElementCallback } from '../../shared/useElementCallback';
 

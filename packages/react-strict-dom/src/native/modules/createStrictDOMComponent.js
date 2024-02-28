@@ -25,7 +25,7 @@ import { FontSizeContext } from './FontSizeContext';
 import { InheritableStyleContext } from './InheritableStyleContext';
 import { ThemeContext } from './ThemeContext';
 import { flattenStyle } from './flattenStyle';
-import { errorMsg } from './errorMsg';
+import { errorMsg } from '../../shared/errorMsg';
 import { extractStyleThemes } from './extractStyleThemes';
 import { getLocaleDirection } from '../../shared/getLocaleDirection';
 import { mergeRefs } from '../../shared/mergeRefs';
@@ -127,13 +127,11 @@ function validateStrictProps(props: any) {
     const isValidProp = strictAttributeSet.has(key);
     const isUnsupportedProp = unsupportedProps.has(key);
     if (!isValidProp) {
-      console.error(`React Strict DOM: "${key}" is not a valid prop.`);
+      errorMsg(`"${key}" is not a valid prop`);
       delete props[key];
     }
     if (isUnsupportedProp) {
-      console.error(
-        `React Strict DOM: "${key}" is not supported yet on native.`
-      );
+      errorMsg(`"${key}" is not supported yet on native.`);
       delete props[key];
     }
   });

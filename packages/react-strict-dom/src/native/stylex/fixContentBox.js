@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import { warnMsg } from '../modules/errorMsg';
+import { warnMsg } from '../../shared/errorMsg';
 
 type FlatStyle = { [key: string]: mixed };
 type Direction = 0 | 1 | 2 | 3;
