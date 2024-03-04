@@ -4,7 +4,6 @@
 [ignore]
 .*/malformed_package_json/.*
 <PROJECT_ROOT>/.*/__tests__/.*
-<PROJECT_ROOT>/packages/react-strict-dom/dist/dom.www.js.flow
 
 [include]
 
@@ -12,7 +11,7 @@
 flow-typed
 
 [options]
-module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict-dom/dist/native.js.flow'
+module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict-dom/dist/native/index.js.flow'
 module.system.node.resolve_dirname=flow_modules
 module.system.node.resolve_dirname=node_modules
 suppress_type=$FlowIssue
