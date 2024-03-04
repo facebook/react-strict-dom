@@ -141,7 +141,7 @@ const webConfigs = [
     output: {
       file: path.join(
         __dirname,
-        '../packages/react-strict-dom/dist/runtime.js'
+        '../packages/react-strict-dom/dist/dom/runtime.js'
       ),
       format: 'es'
     },

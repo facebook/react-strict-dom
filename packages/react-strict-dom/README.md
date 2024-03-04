@@ -2,9 +2,9 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react-strict-dom/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react-strict-dom.svg?style=flat)](https://www.npmjs.com/package/react-strict-dom)
 
-![web (prod)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/runtime.js?label=web%20(prod)&compression=brotli)
-![web (dev)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom.js?label=web%20(dev)&compression=brotli)
-![native](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/native.js?label=native&compression=brotli)
+![web (prod)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom/runtime.js?label=web%20(prod)&compression=brotli)
+![web (dev)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom/index.js?label=web%20(dev)&compression=brotli)
+![native](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/native/index.js?label=native&compression=brotli)
 
 **React Strict DOM** (RSD) is an experimental integration of [React DOM](https://react.dev/) and [StyleX](https://stylexjs.com/) that aims to improve and standardize the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
 
