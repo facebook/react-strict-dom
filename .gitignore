@@ -4,4 +4,3 @@ build
 coverage
 dist
 node_modules
-lib

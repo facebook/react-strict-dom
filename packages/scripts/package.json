@@ -1,7 +1,8 @@
 {
+  "private": true,
   "name": "react-strict-dom-scripts",
-  "version": "0.5.1",
-  "description": "Helper scripts for stylex monorepo.",
+  "version": "0.0.0",
+  "description": "Helper scripts for React Strict DOM monorepo.",
   "license": "MIT",
   "bin": {
     "gen-types": "./gen-types.js",
