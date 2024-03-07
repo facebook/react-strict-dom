@@ -345,7 +345,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
           nativeComponent = Pressable;
         }
         nativeProps.onPress = ({ nativeEvent }: PressEvent): void => {
-          const event = (nativeEvent: mixed);
+          const event: mixed = nativeEvent;
           let altKey = false;
           let ctrlKey = false;
           let metaKey = false;
@@ -519,7 +519,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
 
       // Mark `styleProps` as writable so we can mutate it
       const styleProps: {
-        style: { [string]: string | number | Animated.Value },
+        style: { [string]: string | number | (typeof Animated)['Value'] },
         [string]: mixed
       } = {
         ..._styleProps,
@@ -630,7 +630,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
           if (isString(value) || isNumber(value)) {
             return [{ property, value }];
           }
-          return ([]: Array<{ property: string, value: string | number }>);
+          return [] as Array<{ property: string, value: string | number }>;
         }
       );
       const animatedPropertyValues = useStyleTransition({
@@ -678,8 +678,8 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
         nativeProps.experimental_layoutConformance = 'strict';
       }
       const element = React.createElement(nativeComponent, {
-        ...(nativeProps: $FlowFixMe),
-        ...(styleProps: $FlowFixMe)
+        ...(nativeProps as $FlowFixMe),
+        ...(styleProps as $FlowFixMe)
       });
       let fontSizeValue = null;
       const fontSizeStyleValue = styleProps.style.fontSize;
@@ -704,8 +704,8 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
           <DisplayModeInsideContext.Provider value={nextDisplayModeInside}>
             <InheritableStyleContext.Provider
               value={flattenStyle([
-                (inheritedStyles: ?Style),
-                (textStyles: ?Style)
+                inheritedStyles as ?Style,
+                textStyles as ?Style
               ])}
             >
               <FontSizeContext.Provider value={fontSizeValue}>

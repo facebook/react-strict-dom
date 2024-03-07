@@ -26,7 +26,7 @@ type Transform =
 export function parseTransform(transform: string): Transform[] {
   const transforms = transform
     .split(')')
-    .flatMap((s) => (s === '' ? ([]: string[]) : [s + ')']));
+    .flatMap((s) => (s === '' ? ([] as string[]) : [s + ')']));
   const parsedTransforms: Transform[] = [];
 
   for (const txf of transforms) {

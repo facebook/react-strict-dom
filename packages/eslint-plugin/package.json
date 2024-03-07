@@ -9,7 +9,7 @@
     "clean": "del-cli \"./dist/*\""
   },
   "dependencies": {
-    "hermes-eslint": "^0.18.2"
+    "hermes-eslint": "^0.20.1"
   },
   "engines": {
     "node": ">=18.0.0"
