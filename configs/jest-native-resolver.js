@@ -34,7 +34,7 @@ module.exports = {
     return testPath;
   },
 
-  testPathForConsistencyCheck: path.posix.join(
+  testPathForConsistencyCheck: path.join(
     'consistency_check',
     '__tests__',
     'example.test.js'
