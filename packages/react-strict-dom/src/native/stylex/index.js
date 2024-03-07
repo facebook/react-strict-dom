@@ -229,7 +229,7 @@ function preprocessPropertyValue(propValue: mixed): mixed {
 }
 
 function preprocessCreate<S: { [string]: mixed }>(style: S): S {
-  const processedStyle: S = ({}: $FlowFixMe);
+  const processedStyle: S = {} as $FlowFixMe;
   for (const propName in style) {
     const styleValue = style[propName];
 
@@ -349,7 +349,7 @@ function _create<S: { [string]: { ... } }>(styles: S): {
   }
   return result;
 }
-export const create: IStyleX['create'] = (_create: $FlowFixMe);
+export const create: IStyleX['create'] = _create as $FlowFixMe;
 
 export const firstThatWorks = <T: string | number>(
   ...values: $ReadOnlyArray<T>
@@ -365,7 +365,7 @@ function _keyframes(k: Keyframes): Keyframes {
   errorMsg('css.keyframes is not supported in React Native.');
   return k;
 }
-export const keyframes: (Keyframes) => string = (_keyframes: $FlowFixMe);
+export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
 
 const timeValuedProperties = [
   'animationDelay',
@@ -681,7 +681,7 @@ export const createTheme = (
 ): CustomProperties => {
   const result: CustomProperties = { $$theme: 'theme' };
   for (const key in baseTokens) {
-    const varName: string = (baseTokens[key]: $FlowFixMe);
+    const varName: string = baseTokens[key] as $FlowFixMe;
     const normalizedKey = varName.replace(/^var\(--(.*)\)$/, '$1');
     result[normalizedKey] = overrides[key];
   }

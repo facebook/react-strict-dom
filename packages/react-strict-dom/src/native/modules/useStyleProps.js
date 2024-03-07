@@ -10,7 +10,7 @@
 import type { Styles } from '../../types/styles';
 
 import * as React from 'react';
-import { Animated, PixelRatio, useWindowDimensions } from 'react-native';
+import { typeof Animated, PixelRatio, useWindowDimensions } from 'react-native';
 import { FontSizeContext } from './FontSizeContext';
 import { ThemeContext } from './ThemeContext';
 import { WritingDirectionContext } from './WritingDirectionContext';
@@ -34,7 +34,7 @@ export function useStyleProps(
   options: StyleOptions
 ): $ReadOnly<{
   style?: $ReadOnly<{
-    [key: string]: string | number | Animated.Value
+    [key: string]: string | number | Animated['Value']
   }>,
   ...
 }> {
@@ -62,7 +62,7 @@ export function useStyleProps(
       viewportWidth: width,
       writingDirection
     },
-    (style: $FlowFixMe)
+    style as $FlowFixMe
   );
 
   return styleProps;

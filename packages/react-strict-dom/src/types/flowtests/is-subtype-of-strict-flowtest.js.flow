@@ -23,7 +23,7 @@ import type { StrictNode } from "../StrictNode";
 
 // EventTarget
 declare var eventTarget: EventTarget;
-(eventTarget: StrictEventTarget);
+(eventTarget as StrictEventTarget);
 
 // Animation extends EventTarget
 // TODO: Uncomment this after D48380371 is in a Flow release
@@ -32,32 +32,32 @@ declare var eventTarget: EventTarget;
 
 // Node extends EventTarget
 declare var node: Node;
-(node: StrictNode);
+(node as StrictNode);
 
 // Element extends Node
 declare var element: Element;
-(element: StrictElement);
+(element as StrictElement);
 
 // HTMLElement extends Element
 declare var htmlElement: HTMLElement;
-(htmlElement: StrictHTMLElement);
+(htmlElement as StrictHTMLElement);
 
 // HTMLInputElement extends HTMLElement
 declare var htmlInputElement: HTMLInputElement;
-(htmlInputElement: StrictHTMLInputElement);
+(htmlInputElement as StrictHTMLInputElement);
 
 // HTMLOptionElement extends HTMLElement
 declare var htmlOptionElement: HTMLOptionElement;
-(htmlOptionElement: StrictHTMLOptionElement);
+(htmlOptionElement as StrictHTMLOptionElement);
 
 // HTMLSelectElement extends HTMLElement
 declare var htmlSelectElement: HTMLSelectElement;
-(htmlSelectElement: StrictHTMLSelectElement);
+(htmlSelectElement as StrictHTMLSelectElement);
 
 // HTMLTextAreaElement extends HTMLElement
 declare var htmlTextAreaElement: HTMLTextAreaElement;
-(htmlTextAreaElement: StrictHTMLTextAreaElement);
+(htmlTextAreaElement as StrictHTMLTextAreaElement);
 
 // HTMLImageElement extends HTMLElement
 declare var htmlImageElement: HTMLImageElement;
-(htmlImageElement: StrictHTMLImageElement);
+(htmlImageElement as StrictHTMLImageElement);

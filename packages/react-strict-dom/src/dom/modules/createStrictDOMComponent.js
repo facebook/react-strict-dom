@@ -35,7 +35,7 @@ export function createStrictDOMComponent<T: StrictHTMLElement, P: StrictProps>(
   // so it needs a type-cast
   const debugStyle: CompiledStyles = {
     $$css: true,
-    'debug::name': (`html-${TagName}`: $FlowFixMe)
+    'debug::name': `html-${TagName}` as $FlowFixMe
   };
 
   const component: React.AbstractComponent<P, T> = React.forwardRef(
@@ -81,7 +81,7 @@ export function createStrictDOMComponent<T: StrictHTMLElement, P: StrictProps>(
         <TagName
           {...hostProps}
           {...hostStyleProps}
-          ref={(forwardedRef: $FlowFixMe)}
+          ref={forwardedRef as $FlowFixMe}
         />
       );
       return element;
