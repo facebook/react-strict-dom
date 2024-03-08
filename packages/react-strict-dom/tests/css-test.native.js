@@ -989,7 +989,7 @@ function resolveCustomPropertyValue(
     }
   });
   return css.props.call({ ...mockOptions, customProperties }, styles.root)
-    .style[key];
+    .style?.[key];
 }
 
 describe('properties: custom property', () => {
@@ -1066,10 +1066,10 @@ describe('properties: custom property', () => {
         'color',
         'var(--testUnfinished'
       ])
-    ).toEqual('var(--testUnfinished');
+    ).toEqual(undefined);
     expect(
       resolveCustomPropertyValue(customProperties, ['color', 'var(bad--input)'])
-    ).toEqual('var(bad--input)');
+    ).toEqual(undefined);
     expect(
       resolveCustomPropertyValue(customProperties, ['color', '--testMulti'])
     ).toEqual('--testMulti');
@@ -1157,7 +1157,7 @@ describe('properties: custom property', () => {
         'color',
         'var(--colorNotFound, rgb( 1 , 1 , 1 ))'
       ])
-    ).toEqual('rgb( 1 , 1 , 1 )');
+    ).toEqual('rgb(1 , 1 , 1)');
   });
 
   test('parses a var and falls back to default value containing a var', () => {
@@ -1171,13 +1171,15 @@ describe('properties: custom property', () => {
   });
 
   test('parses a var and falls back to a default value containing spaces and embedded var', () => {
-    const customProperties = {};
+    const customProperties = {
+      test: '255'
+    };
     expect(
       resolveCustomPropertyValue(customProperties, [
         'color',
         'var(--colorNotFound, rgb(255,255,var(--test))'
       ])
-    ).toEqual('rgb(255,255,var(--test)');
+    ).toEqual('rgb(255,255,255)');
   });
 
   test('basic var value lookup works', () => {
@@ -1251,6 +1253,84 @@ describe('properties: custom property', () => {
       )
     ).toMatchSnapshot();
   });
+
+  test('rgb(a) function with args applied through a single var', () => {
+    const customProperties = { example: '24, 48, 96' };
+    expect(
+      resolveCustomPropertyValue(customProperties, [
+        'color',
+        'rgb(var(--example))'
+      ])
+    ).toEqual('rgb(24, 48, 96)');
+    expect(
+      resolveCustomPropertyValue(customProperties, [
+        'color',
+        'rgba(var(--example), 0.5)'
+      ])
+    ).toEqual('rgba(24, 48, 96, 0.5)');
+  });
+
+  test('rgba function with args applied through multiple (& nested) vars', () => {
+    const customProperties = {
+      red: 255,
+      green: 96,
+      blue: 16,
+      rgb: 'var(--red), var(--green), var(--blue)',
+      alpha: 0.42
+    };
+    expect(
+      resolveCustomPropertyValue(customProperties, [
+        'color',
+        'rgba(var(--rgb), var(--alpha))'
+      ])
+    ).toEqual('rgba(255, 96, 16, 0.42)');
+  });
+
+  test('text shadow with nested/multiple vars', () => {
+    const customProperties = {
+      height: '2px',
+      width: '1px',
+      size: 'var(--width) var(--height)',
+      radius: '3px',
+      red: 'red'
+    };
+    const styles = css.create({
+      test: {
+        textShadow: 'var(--size) var(--radius) var(--red)'
+      }
+    });
+    expect(
+      css.props.call({ ...mockOptions, customProperties }, styles.test).style
+    ).toStrictEqual({
+      textShadowColor: 'red',
+      textShadowOffset: {
+        height: 2,
+        width: 1
+      },
+      textShadowRadius: 3
+    });
+  });
+
+  test('css variable declaration inside a media query', () => {
+    const customProperties = {
+      example: '42px'
+    };
+    const styles = css.create({
+      test: {
+        '@media (min-width: 400px)': {
+          inlineSize: 'var(--example)'
+        }
+      }
+    });
+    expect(
+      css.props.call(
+        { ...mockOptions, viewportWidth: 450, customProperties },
+        styles.test
+      ).style
+    ).toStrictEqual({
+      width: 42
+    });
+  });
 });
 
 /**
@@ -1323,9 +1403,11 @@ describe('units: length', () => {
 expect.extend({
   toMatchWindowDimensions(query, windowSize) {
     const { height, width } = windowSize;
+    const UNEXPECTED_MATCHED_VALUE = 420;
     const EXPECTED_MATCHED_VALUE = 500;
     const { underTest } = css.create({
       underTest: {
+        width: UNEXPECTED_MATCHED_VALUE,
         [`@media ${query}`]: {
           width: EXPECTED_MATCHED_VALUE
         }

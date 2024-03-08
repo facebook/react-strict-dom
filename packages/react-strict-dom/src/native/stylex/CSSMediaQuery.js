@@ -57,14 +57,14 @@ export class CSSMediaQuery {
   }
 
   query: string;
-  matchedStyle: { [string]: mixed };
+  matchedStyle: { +[string]: mixed };
 
-  constructor(query: string, matchedStyle: { [string]: mixed }) {
+  constructor(query: string, matchedStyle: { +[string]: mixed }) {
     this.query = query.replace(MQ_PREFIX, '');
     this.matchedStyle = matchedStyle;
   }
 
-  resolve(matchObject: MatchObject): { [string]: mixed } {
+  resolve(matchObject: MatchObject): { +[string]: mixed } {
     const { width, height, direction } = matchObject;
     const matches = mediaQuery.match(this.query, {
       width,

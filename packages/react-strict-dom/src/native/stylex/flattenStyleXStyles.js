@@ -8,7 +8,7 @@
  */
 
 type InlineStyle = {
-  [key: string]: mixed
+  +[key: string]: mixed
 };
 
 type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
