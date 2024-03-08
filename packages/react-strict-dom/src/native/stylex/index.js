@@ -10,11 +10,6 @@
 import type { IStyleX } from '../../types/styles';
 import type { SpreadOptions } from './SpreadOptions';
 
-import {
-  CSSCustomPropertyValue,
-  createCSSCustomPropertyValue
-} from './CSSCustomPropertyValue';
-
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSMediaQuery } from './CSSMediaQuery';
 import { errorMsg, warnMsg } from '../../shared/errorMsg';
@@ -22,6 +17,15 @@ import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { parseShadow } from './parseShadow';
 import { parseTimeValue } from './parseTimeValue';
+import {
+  resolveVariableReferences,
+  stringContainsVariables
+} from './customProperties';
+import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
+import type {
+  CustomProperties,
+  MutableCustomProperties
+} from './customProperties';
 
 const stylePropertyAllowlistSet = new Set<string>([
   'alignContent',
@@ -210,120 +214,165 @@ function isReactNativeStyleValue(propValue: mixed): boolean {
   return true;
 }
 
-function preprocessPropertyValue(propValue: mixed): mixed {
-  if (typeof propValue === 'string') {
-    const customPropValue = createCSSCustomPropertyValue(propValue);
-    if (customPropValue != null) {
-      return customPropValue;
+function processStyle<S: { +[string]: mixed }>(style: S): S {
+  const result = { ...style };
+
+  const propNames = Object.keys(result);
+  for (let i = 0; i < propNames.length; i++) {
+    const propName = propNames[i];
+    let styleValue = result[propName];
+
+    // Polyfill unitless lineHeight
+    // React Native treats unitless as a 'px' value
+    // Web treats unitless as an 'em' value
+    if (propName === 'lineHeight') {
+      if (
+        typeof styleValue === 'number' ||
+        (typeof styleValue === 'string' &&
+          CSSLengthUnitValue.parse(styleValue) == null)
+      ) {
+        styleValue = styleValue + 'em';
+      }
     }
 
-    const maybeLengthUnitValue = CSSLengthUnitValue.parse(propValue);
-    if (maybeLengthUnitValue != null) {
-      return maybeLengthUnitValue[1] === 'px'
-        ? maybeLengthUnitValue[0]
-        : new CSSLengthUnitValue(...maybeLengthUnitValue);
+    // React Native shadows on iOS cannot polyfill box-shadow
+    if (propName === 'boxShadow' && typeof styleValue === 'string') {
+      warnMsg('"boxShadow" is not supported in React Native.');
+      delete result.boxShadow;
+      continue;
     }
-  }
-
-  return propValue;
-}
-
-function preprocessCreate<S: { [string]: mixed }>(style: S): S {
-  const processedStyle: S = {} as $FlowFixMe;
-  for (const propName in style) {
-    const styleValue = style[propName];
 
     if (
       CSSMediaQuery.isMediaQueryString(propName) &&
       typeof styleValue === 'object' &&
       styleValue != null
     ) {
-      // have to spread styleValue into a copied object to appease flow
-      const processedSubStyle = preprocessCreate({ ...styleValue });
-      processedStyle[propName] = new CSSMediaQuery(propName, processedSubStyle);
+      const processedSubstyle = processStyle(styleValue);
+      result[propName] = new CSSMediaQuery(propName, processedSubstyle);
       continue;
     }
 
-    // React Native shadows on iOS cannot polyfill box-shadow
-    if (propName === 'boxShadow' && typeof styleValue === 'string') {
-      warnMsg('"boxShadow" is not supported in React Native.');
+    if (
+      typeof styleValue === 'object' &&
+      styleValue != null &&
+      Object.hasOwn(styleValue, 'default')
+    ) {
+      // TODO: customize processStyle to be able to override the canidate "prop name"
+      result[propName] = processStyle(styleValue);
+      continue;
     }
-    // React Native only supports non-standard text-shadow styles
-    else if (propName === 'textShadow' && typeof styleValue === 'string') {
-      const parsedShadow = parseShadow(styleValue);
-      if (parsedShadow.length > 1) {
-        warnMsg(
-          'Multiple "textShadow" values are not supported in React Native.'
-        );
+
+    if (typeof styleValue === 'string') {
+      if (stringContainsVariables(styleValue)) {
+        result[propName] = CSSUnparsedValue.parse(propName, styleValue);
+        continue;
       }
-      const { offsetX, offsetY, blurRadius, color } = parsedShadow[0];
-      processedStyle.textShadowColor = color;
-      processedStyle.textShadowOffset = { height: offsetY, width: offsetX };
-      processedStyle.textShadowRadius = blurRadius;
-    } else {
-      processedStyle[propName] = styleValue;
+
+      // React Native only supports non-standard text-shadow styles
+      if (propName === 'textShadow') {
+        const parsedShadow = parseShadow(styleValue);
+        if (parsedShadow.length > 1) {
+          warnMsg(
+            'Multiple "textShadow" values are not supported in React Native.'
+          );
+        }
+        const { offsetX, offsetY, blurRadius, color } = parsedShadow[0];
+        result.textShadowColor = color;
+        result.textShadowOffset = processStyle({
+          height: offsetY,
+          width: offsetX
+        });
+        result.textShadowRadius = blurRadius;
+        propNames.push('textShadowColor', 'textShadowRadius');
+        delete result.textShadow;
+        continue;
+      }
+
+      const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
+      if (maybeLengthUnitValue != null) {
+        result[propName] =
+          maybeLengthUnitValue[1] === 'px'
+            ? maybeLengthUnitValue[0]
+            : new CSSLengthUnitValue(...maybeLengthUnitValue);
+        continue;
+      }
     }
+
+    result[propName] = styleValue;
   }
 
-  // Process values that need to be resolved during render
-  for (const prop in processedStyle) {
-    let value = processedStyle[prop];
-    // Polyfill unitless lineHeight
-    // React Native treats unitless as a 'px' value
-    // Web treats unitless as an 'em' value
-    if (prop === 'lineHeight') {
-      if (
-        typeof value === 'number' ||
-        (typeof value === 'string' && CSSLengthUnitValue.parse(value) == null)
-      ) {
-        value = value + 'em';
-      }
-    }
-    const processedStyleValue = preprocessPropertyValue(value);
-    processedStyle[prop] = processedStyleValue;
-  }
-
-  return processedStyle;
+  return result;
 }
 
-/**
- * Take a value which may be a CSS custom property or a length unit value and resolve it to a final value
- * suitable for passing to React Native.
- */
-function finalizeValue(unfinalizedValue: mixed, options: SpreadOptions): mixed {
-  let styleValue = unfinalizedValue;
+function resolveStyle<S: { +[string]: mixed }>(
+  style: S,
+  options: SpreadOptions
+): S {
+  const customProperties = options.customProperties || {};
 
-  if (
-    typeof styleValue === 'object' &&
-    styleValue != null &&
-    Object.hasOwn(styleValue, 'default')
-  ) {
-    if (options.hover === true && Object.hasOwn(styleValue, ':hover')) {
-      styleValue = preprocessPropertyValue(styleValue[':hover']);
-    } else {
+  const result: { [string]: mixed } = {};
+
+  const stylesToReprocess: { [string]: mixed } = {};
+
+  const propNames = Object.keys(style);
+  for (let i = 0; i < propNames.length; i++) {
+    const propName = propNames[i];
+    const styleValue = style[propName];
+
+    // Resolve the stylex media variant value object syntax
+    if (
+      typeof styleValue === 'object' &&
+      styleValue != null &&
+      Object.hasOwn(styleValue, 'default')
+    ) {
+      let variant = 'default';
+      if (options.hover === true && Object.hasOwn(styleValue, ':hover')) {
+        variant = ':hover';
+      }
       // TODO: resolve media queries
-      styleValue = preprocessPropertyValue(styleValue.default);
+
+      stylesToReprocess[propName] = styleValue[variant];
+      continue;
     }
+
+    // resolve custom property references
+    if (styleValue instanceof CSSUnparsedValue) {
+      const resolvedValue = resolveVariableReferences(
+        propName,
+        styleValue,
+        customProperties
+      );
+      if (resolvedValue != null) {
+        stylesToReprocess[propName] = resolvedValue;
+      }
+      continue;
+    }
+
+    // resolve length units
+    if (styleValue instanceof CSSLengthUnitValue) {
+      result[propName] = styleValue.resolvePixelValue(options);
+      continue;
+    }
+
+    // resolve textShadowOffset nested object values
+    if (
+      propName === 'textShadowOffset' &&
+      typeof styleValue === 'object' &&
+      styleValue != null
+    ) {
+      result[propName] = resolveStyle(styleValue, options);
+    }
+
+    result[propName] = styleValue;
   }
 
-  // resolve custom property references
-  while (styleValue instanceof CSSCustomPropertyValue) {
-    const customProperties = options.customProperties || {};
-    const resolvedValue =
-      customProperties[styleValue.name] ?? styleValue.defaultValue;
-    if (resolvedValue == null) {
-      errorMsg(`Unrecognized custom property "--${styleValue.name}"`);
-      return null;
-    }
-    // preprocess the value again in case the custom property value is a reference to another var or a length type unit
-    styleValue = preprocessPropertyValue(resolvedValue);
+  const propNamesToReprocess = Object.keys(stylesToReprocess);
+  if (propNamesToReprocess.length > 0) {
+    const processedStyles = processStyle(stylesToReprocess);
+    Object.assign(result, resolveStyle(processedStyles, options));
   }
 
-  // resolve length units
-  if (styleValue instanceof CSSLengthUnitValue) {
-    styleValue = styleValue.resolvePixelValue(options);
-  }
-  return styleValue;
+  return result as $FlowIssue;
 }
 
 /**
@@ -341,10 +390,10 @@ function _create<S: { [string]: { ... } }>(styles: S): {
     if (typeof val === 'function') {
       result[styleName] = (...args: $FlowFixMe) => {
         const style = val(...args);
-        return preprocessCreate(style);
+        return processStyle(style);
       };
     } else {
-      result[styleName] = preprocessCreate(styles[styleName]);
+      result[styleName] = processStyle(styles[styleName]);
     }
   }
   return result;
@@ -400,29 +449,16 @@ export function props(
   } = options;
   const nativeProps: { [string]: $FlowFixMe } = {};
 
-  for (const styleProp in flatStyle) {
-    let styleValue = flatStyle[styleProp];
+  flatStyle = CSSMediaQuery.resolveMediaQueries(flatStyle, {
+    width: viewportWidth,
+    height: viewportHeight,
+    direction: writingDirection ?? 'ltr'
+  });
 
-    // resolve media queries
-    if (styleValue instanceof CSSMediaQuery) {
-      const maybeExistingMediaQuery = flatStyle[styleProp];
-      if (maybeExistingMediaQuery instanceof CSSMediaQuery) {
-        const s = flattenStyle([
-          maybeExistingMediaQuery.matchedStyle,
-          styleValue.matchedStyle
-        ]);
-        if (s != null) {
-          maybeExistingMediaQuery.matchedStyle = s;
-        }
-        continue;
-      }
-    }
-    // resolve any outstanding custom properties or length unit values
-    styleValue = finalizeValue(styleValue, options);
-    if (styleValue == null) {
-      delete flatStyle[styleProp];
-      continue;
-    }
+  flatStyle = resolveStyle(flatStyle, options);
+
+  for (const styleProp in flatStyle) {
+    const styleValue = flatStyle[styleProp];
 
     // Filter out any unexpected style property names so RN doesn't crash but give
     // the developer a warning to let them know that there's a new prop we should either
@@ -592,12 +628,6 @@ export function props(
   }
 
   if (flatStyle != null && Object.keys(flatStyle).length > 0) {
-    flatStyle = CSSMediaQuery.resolveMediaQueries(flatStyle, {
-      width: viewportWidth,
-      height: viewportHeight,
-      direction: writingDirection ?? 'ltr'
-    });
-
     // polyfill boxSizing:"content-box"
     const boxSizingValue = flatStyle.boxSizing;
     if (boxSizingValue === 'content-box') {
@@ -655,11 +685,10 @@ export function props(
   return nativeProps;
 }
 
-type CustomProperties = { [string]: string | number };
 type Tokens = { [string]: string };
 let count = 1;
 
-export const __customProperties: CustomProperties = {};
+export const __customProperties: MutableCustomProperties = {};
 
 export const defineVars = (tokens: CustomProperties): Tokens => {
   const result: Tokens = {};
@@ -679,7 +708,7 @@ export const createTheme = (
   baseTokens: Tokens,
   overrides: CustomProperties
 ): CustomProperties => {
-  const result: CustomProperties = { $$theme: 'theme' };
+  const result: MutableCustomProperties = { $$theme: 'theme' };
   for (const key in baseTokens) {
     const varName: string = baseTokens[key] as $FlowFixMe;
     const normalizedKey = varName.replace(/^var\(--(.*)\)$/, '$1');
