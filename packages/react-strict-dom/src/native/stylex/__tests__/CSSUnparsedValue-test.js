@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { CSSUnparsedValue } from '../src/native/stylex/typed-om/CSSUnparsedValue';
-import { CSSVariableReferenceValue } from '../src/native/stylex/typed-om/CSSVariableReferenceValue';
+import { CSSUnparsedValue } from '../typed-om/CSSUnparsedValue';
+import { CSSVariableReferenceValue } from '../typed-om/CSSVariableReferenceValue';
 
 describe('CSSUnparsedValue', () => {
   test('parses variable reference value containing spaces and embedded variables in the fallback', () => {

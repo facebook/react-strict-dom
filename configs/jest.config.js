@@ -31,6 +31,22 @@ module.exports = {
 
   projects: [
     {
+      displayName: 'internals',
+      fakeTimers: {
+        enableGlobally: true
+      },
+      rootDir: process.cwd(),
+      setupFiles: ['<rootDir>/configs/jest-setup.js'],
+      snapshotFormat: {
+        printBasicPrototype: false
+      },
+      testEnvironment: 'jsdom',
+      testMatch: ['<rootDir>/packages/**/__tests__/*-test.js'],
+      transform: {
+        '\\.[jt]sx?$': ['babel-jest', babelConfig()]
+      }
+    },
+    {
       displayName: 'react-strict-dom (DOM)',
       fakeTimers: {
         enableGlobally: true

@@ -45,8 +45,8 @@ import { html } from 'react-strict-dom';
 import { html as h } from 'react-strict-dom';
 function App() {
   return <div {..._stylex.props(_defaultStyles.div, styles.root)}>
-                <span {..._stylex.props(_defaultStyles.span)} />
-              </div>;
+              <span {..._stylex.props(_defaultStyles.span)} />
+            </div>;
 }
 ;"
 `;
