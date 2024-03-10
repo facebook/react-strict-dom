@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { parseTransform } from '../src/native/modules/parseTransform';
+import { parseTransform } from '../parseTransform';
 
 describe('parseTransform', () => {
   it('perspective', () => {

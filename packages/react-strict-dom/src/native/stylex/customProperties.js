@@ -9,6 +9,7 @@
 
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { CSSVariableReferenceValue } from './typed-om/CSSVariableReferenceValue';
+import { errorMsg } from '../../shared/errorMsg';
 
 export type MutableCustomProperties = { [string]: string | number };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
@@ -64,9 +65,8 @@ function resolveVariableReferenceValue(
     }
   }
 
-  console.error(
-    `React Strict DOM: Unrecognized custom property "${variable.variable}"`
-  );
+  errorMsg(`Unrecognized custom property "${variable.variable}"`);
+
   return null;
 }
 

@@ -7,6 +7,10 @@
  * @flow strict
  */
 
+import type {
+  CustomProperties,
+  MutableCustomProperties
+} from './customProperties';
 import type { IStyleX } from '../../types/styles';
 import type { SpreadOptions } from './SpreadOptions';
 
@@ -22,10 +26,6 @@ import {
   stringContainsVariables
 } from './customProperties';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
-import type {
-  CustomProperties,
-  MutableCustomProperties
-} from './customProperties';
 
 const stylePropertyAllowlistSet = new Set<string>([
   'alignContent',
@@ -257,7 +257,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       styleValue != null &&
       Object.hasOwn(styleValue, 'default')
     ) {
-      // TODO: customize processStyle to be able to override the canidate "prop name"
+      // TODO: customize processStyle to be able to override the candidate "prop name"
       result[propName] = processStyle(styleValue);
       continue;
     }
@@ -309,12 +309,10 @@ function resolveStyle<S: { +[string]: mixed }>(
   options: SpreadOptions
 ): S {
   const customProperties = options.customProperties || {};
-
   const result: { [string]: mixed } = {};
-
   const stylesToReprocess: { [string]: mixed } = {};
-
   const propNames = Object.keys(style);
+
   for (let i = 0; i < propNames.length; i++) {
     const propName = propNames[i];
     const styleValue = style[propName];

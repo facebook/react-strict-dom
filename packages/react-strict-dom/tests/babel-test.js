@@ -130,12 +130,12 @@ describe('react-strict-dom/babel', () => {
         import {html} from 'react-strict-dom';
         import {html as h} from 'react-strict-dom';
         function App() {
-            return (
-              <h.div style={[styles.root]}>
-                <html.span />
-              </h.div>
-            );
-          };
+          return (
+            <h.div style={[styles.root]}>
+              <html.span />
+            </h.div>
+          );
+        };
         `)
       ).toMatchSnapshot();
     });

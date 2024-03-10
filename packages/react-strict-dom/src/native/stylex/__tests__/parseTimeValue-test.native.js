@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { parseTimeValue } from '../src/native/stylex/parseTimeValue';
+import { parseTimeValue } from '../parseTimeValue';
 
 // https://github.com/web-platform-tests/wpt/blob/b435252575/css/css-transitions/transition-delay-001.html
 const WPT_TRANSITION_DELAY_TEST_CASES = [
