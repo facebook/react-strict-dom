@@ -22,6 +22,7 @@ const tagNames = [
   'br',
   'button',
   'code',
+  'del',
   'div',
   'em',
   'fieldset',
@@ -38,6 +39,8 @@ const tagNames = [
   'i',
   'img',
   'input',
+  'ins',
+  'kbd',
   'label',
   'main',
   'nav',
@@ -46,6 +49,7 @@ const tagNames = [
   'option',
   'p',
   'pre',
+  's',
   'section',
   'select',
   'span',
@@ -53,6 +57,7 @@ const tagNames = [
   'sub',
   'sup',
   'textarea',
+  'u',
   'ul'
 ];
 

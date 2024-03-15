@@ -109,6 +109,14 @@ export const code: React$AbstractComponent<
 > = createStrict('code', defaultStyles.code);
 
 /**
+ * "del" (inline)
+ */
+export const del: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('del', defaultStyles.del);
+
+/**
  * "div" (block)
  */
 export const div: React$AbstractComponent<
@@ -217,6 +225,22 @@ export const input: React$AbstractComponent<
 > = createStrict('input', defaultStyles.input);
 
 /**
+ * "ins" (inline)
+ */
+export const ins: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('ins', defaultStyles.ins);
+
+/**
+ * "kbd" (inline)
+ */
+export const kbd: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('kbd', defaultStyles.kbd);
+
+/**
  * "label" (inline)
  */
 export const label: React$AbstractComponent<
@@ -289,6 +313,14 @@ export const pre: React$AbstractComponent<
 > = createStrict('pre', defaultStyles.pre);
 
 /**
+ * "s" (inline)
+ */
+export const s: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('s', defaultStyles.s);
+
+/**
  * "section" (block)
  */
 export const section: React$AbstractComponent<
@@ -343,6 +375,14 @@ export const textarea: React$AbstractComponent<
   StrictReactDOMTextAreaProps,
   StrictHTMLTextAreaElement
 > = createStrict('textarea', defaultStyles.textarea);
+
+/**
+ * "u" (inline)
+ */
+export const u: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('u', defaultStyles.u);
 
 /**
  * "ul" (block)
