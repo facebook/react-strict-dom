@@ -53,6 +53,9 @@ const styles = stylex.create({
   input: {
     borderWidth: 1
   },
+  strike: {
+    textDecorationLine: 'line-through'
+  },
   textarea: {
     verticalAlign: 'top'
   }
@@ -153,6 +156,8 @@ export const select: React$AbstractComponent<StrictReactDOMSelectProps, View> =
   createStrict('select');
 export const span: React$AbstractComponent<StrictReactDOMProps, Text> =
   createStrict('span', { dir: 'auto' });
+export const strike: React$AbstractComponent<StrictReactDOMProps, Text> =
+  createStrict('strike', { style: styles.strike });
 export const strong: React$AbstractComponent<StrictReactDOMProps, Text> =
   createStrict('strong', { style: styles.bold });
 export const sub: React$AbstractComponent<StrictReactDOMProps, Text> =

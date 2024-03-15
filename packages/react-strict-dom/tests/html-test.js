@@ -49,6 +49,7 @@ const tagNames = [
   'section',
   'select',
   'span',
+  'strike',
   'strong',
   'sub',
   'sup',

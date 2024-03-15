@@ -113,6 +113,7 @@ const pre: StrictReactDOMPropsStyle = [styles.block, styles.codePre];
 const section: StrictReactDOMPropsStyle = styles.block;
 const select: StrictReactDOMPropsStyle = styles.inlineblock;
 const span: StrictReactDOMPropsStyle = styles.inline;
+const strike: StrictReactDOMPropsStyle = styles.inline;
 const strong: StrictReactDOMPropsStyle = [styles.inline, styles.strong];
 const sub: StrictReactDOMPropsStyle = styles.inline;
 const sup: StrictReactDOMPropsStyle = styles.inline;
@@ -161,6 +162,7 @@ export const defaultStyles = {
   section: section as typeof section,
   select: select as typeof select,
   span: span as typeof span,
+  strike: strike as typeof strike,
   strong: strong as typeof strong,
   sub: sub as typeof sub,
   sup: sup as typeof sup,

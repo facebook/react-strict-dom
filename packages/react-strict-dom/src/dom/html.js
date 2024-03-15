@@ -313,6 +313,14 @@ export const span: React$AbstractComponent<
 > = createStrict('span', defaultStyles.span);
 
 /**
+ * "strike" (inline)
+ */
+export const strike: React$AbstractComponent<
+  StrictReactDOMProps,
+  StrictHTMLElement
+> = createStrict('strike', defaultStyles.strike);
+
+/**
  * "strong" (inline)
  */
 export const strong: React$AbstractComponent<
