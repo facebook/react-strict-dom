@@ -53,8 +53,14 @@ const styles = stylex.create({
   input: {
     borderWidth: 1
   },
+  lineThrough: {
+    textDecorationLine: 'line-through'
+  },
   textarea: {
     verticalAlign: 'top'
+  },
+  underline: {
+    textDecorationLine: 'underline'
   }
 });
 
@@ -88,6 +94,8 @@ export const button: React$AbstractComponent<
 });
 export const code: React$AbstractComponent<StrictReactDOMProps, Text> =
   createStrict('code', { style: styles.code });
+export const del: React$AbstractComponent<StrictReactDOMProps, Text> =
+  createStrict('del', { style: styles.lineThrough });
 export const div: React$AbstractComponent<StrictReactDOMProps, View> =
   createStrict('div');
 export const em: React$AbstractComponent<StrictReactDOMProps, Text> =
@@ -127,6 +135,10 @@ export const input: React$AbstractComponent<
   dir: 'auto',
   style: styles.input
 });
+export const ins: React$AbstractComponent<StrictReactDOMProps, Text> =
+  createStrict('ins', { style: styles.underline });
+export const kbd: React$AbstractComponent<StrictReactDOMProps, Text> =
+  createStrict('kbd', { style: styles.code });
 export const label: React$AbstractComponent<StrictReactDOMLabelProps, Text> =
   createStrict('label');
 export const li: React$AbstractComponent<StrictReactDOMProps, View> =
@@ -147,6 +159,8 @@ export const optgroup: React$AbstractComponent<
   StrictReactDOMOptionGroupProps,
   View
 > = createStrict('optgroup');
+export const s: React$AbstractComponent<StrictReactDOMProps, Text> =
+  createStrict('s', { style: styles.lineThrough });
 export const section: React$AbstractComponent<StrictReactDOMProps, View> =
   createStrict('section');
 export const select: React$AbstractComponent<StrictReactDOMSelectProps, View> =
@@ -166,5 +180,7 @@ export const textarea: React$AbstractComponent<
   dir: 'auto',
   style: styles.input
 });
+export const u: React$AbstractComponent<StrictReactDOMProps, View> =
+  createStrict('u', { style: styles.underline });
 export const ul: React$AbstractComponent<StrictReactDOMProps, View> =
   createStrict('ul');

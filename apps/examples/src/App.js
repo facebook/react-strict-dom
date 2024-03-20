@@ -100,9 +100,10 @@ export default function App(): React.MixedElement {
           <html.div />
 
           <html.span>
-            <html.a href="https://google.com">anchor</html.a>,
-            <html.code>code</html.code>,<html.em>em</html.em>,
-            <html.strong>strong</html.strong>,
+            <html.a href="https://google.com">anchor</html.a>,<html.b>b</html.b>
+            ,<html.code>code</html.code>,<html.del>del</html.del>,
+            <html.em>em</html.em>,<html.i>i</html.i>,<html.ins>ins</html.ins>,
+            <html.kbd>kbd</html.kbd>,<html.strong>strong</html.strong>,
             <html.span>
               H<html.sub>2</html.sub>0
             </html.span>
@@ -110,6 +111,7 @@ export default function App(): React.MixedElement {
             <html.span>
               E=mc<html.sup>2</html.sup>
             </html.span>
+            ,<html.u>u</html.u>
           </html.span>
 
           <html.div />

@@ -90,6 +90,7 @@ const blockquote: StrictReactDOMPropsStyle = styles.block;
 const br: StrictReactDOMPropsStyle = null;
 const button: StrictReactDOMPropsStyle = [styles.inlineblock, styles.button];
 const code: StrictReactDOMPropsStyle = [styles.inline, styles.codePre];
+const del: StrictReactDOMPropsStyle = null;
 const div: StrictReactDOMPropsStyle = styles.block;
 const em: StrictReactDOMPropsStyle = styles.inline;
 const fieldset: StrictReactDOMPropsStyle = styles.block;
@@ -101,6 +102,8 @@ const hr: StrictReactDOMPropsStyle = [styles.block, styles.hr];
 const i: StrictReactDOMPropsStyle = styles.inline;
 const img: StrictReactDOMPropsStyle = styles.img;
 const input: StrictReactDOMPropsStyle = [styles.inlineblock, styles.input];
+const ins: StrictReactDOMPropsStyle = null;
+const kbd: StrictReactDOMPropsStyle = null;
 const label: StrictReactDOMPropsStyle = styles.inline;
 const li: StrictReactDOMPropsStyle = styles.block;
 const main: StrictReactDOMPropsStyle = styles.block;
@@ -110,6 +113,7 @@ const optgroup: StrictReactDOMPropsStyle = null;
 const option: StrictReactDOMPropsStyle = null;
 const p: StrictReactDOMPropsStyle = styles.block;
 const pre: StrictReactDOMPropsStyle = [styles.block, styles.codePre];
+const s: StrictReactDOMPropsStyle = null;
 const section: StrictReactDOMPropsStyle = styles.block;
 const select: StrictReactDOMPropsStyle = styles.inlineblock;
 const span: StrictReactDOMPropsStyle = styles.inline;
@@ -120,6 +124,7 @@ const textarea: StrictReactDOMPropsStyle = [
   styles.inlineblock,
   styles.textarea
 ];
+const u: StrictReactDOMPropsStyle = null;
 const ul: StrictReactDOMPropsStyle = styles.block;
 
 export const defaultStyles = {
@@ -133,6 +138,7 @@ export const defaultStyles = {
   br: br as typeof br,
   button: button as typeof button,
   code: code as typeof code,
+  del: del as typeof del,
   div: div as typeof div,
   em: em as typeof em,
   fieldset: fieldset as typeof fieldset,
@@ -149,6 +155,8 @@ export const defaultStyles = {
   i: i as typeof i,
   img: img as typeof img,
   input: input as typeof input,
+  ins: ins as typeof ins,
+  kbd: kbd as typeof kbd,
   label: label as typeof label,
   li: li as typeof li,
   main: main as typeof main,
@@ -158,6 +166,7 @@ export const defaultStyles = {
   option: option as typeof option,
   p: p as typeof p,
   pre: pre as typeof pre,
+  s: s as typeof s,
   section: section as typeof section,
   select: select as typeof select,
   span: span as typeof span,
@@ -165,5 +174,6 @@ export const defaultStyles = {
   sub: sub as typeof sub,
   sup: sup as typeof sup,
   textarea: textarea as typeof textarea,
+  u: u as typeof u,
   ul: ul as typeof ul
 };
