@@ -20,8 +20,8 @@ import type {
   SpreadElement
 } from 'estree';
 
-// Ignore .web.js files since they indicate web usage only
-const ALLOWED_FILE = '.web.js';
+// List of web-specific file extensions to ignore since they indicate web usage only
+const ALLOWED_FILES = ['.web.js', '.web.jsx', '.web.ts', '.web.tsx'];
 
 const allowlistedStylexProps = new Set([
   'alignContent',
@@ -232,7 +232,11 @@ const rule: RuleModule = {
     }
   },
   create(context: RuleContext) {
-    if (context.getFilename().endsWith(ALLOWED_FILE)) {
+    if (
+      ALLOWED_FILES.some((allowedFile) =>
+        context.getFilename().endsWith(allowedFile)
+      )
+    ) {
       return {};
     }
 
