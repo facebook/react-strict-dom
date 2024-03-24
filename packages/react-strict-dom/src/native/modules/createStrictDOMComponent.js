@@ -233,7 +233,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
       }
       if (href != null && tagName === 'a') {
         nativeProps.onPress = function (e) {
-          Linking.openUrl(href);
+          Linking.openURL(href);
         };
       }
       if (tagName === 'br') {
