@@ -40,7 +40,8 @@ import {
   TextInput,
   Text,
   View,
-  Pressable
+  Pressable,
+  Linking
 } from 'react-native';
 import * as stylex from '../stylex';
 
@@ -232,7 +233,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
       }
       if (href != null && tagName === 'a') {
         nativeProps.onPress = function (e) {
-          errorMsg('<a> "href" handling is not implemented in React Native.');
+          Linking.openUrl(href);
         };
       }
       if (tagName === 'br') {
