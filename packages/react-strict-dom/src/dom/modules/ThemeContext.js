@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import React from 'react';
+import * as React from 'react';
 
 type ProviderValue = {
   customProperties: { ... }
