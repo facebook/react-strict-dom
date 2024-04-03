@@ -9,7 +9,7 @@
 
 'use strict';
 
-import validStyles from './valid-styles';
+const validStyles = require('./valid-styles');
 
 const rules: {
   'valid-styles': typeof validStyles
@@ -17,4 +17,4 @@ const rules: {
   'valid-styles': validStyles
 };
 
-export { rules };
+module.exports = { rules };
