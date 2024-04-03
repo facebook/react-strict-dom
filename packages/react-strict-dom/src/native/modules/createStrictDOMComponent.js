@@ -329,8 +329,8 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
             const { source } = e.nativeEvent;
             onLoad({
               target: {
-                naturalHeight: source.height,
-                naturalWidth: source.width
+                naturalHeight: source?.height,
+                naturalWidth: source?.width
               },
               type: 'load'
             });
