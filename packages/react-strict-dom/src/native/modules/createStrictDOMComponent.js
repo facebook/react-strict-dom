@@ -25,7 +25,7 @@ import { FontSizeContext } from './FontSizeContext';
 import { InheritableStyleContext } from './InheritableStyleContext';
 import { ThemeContext } from './ThemeContext';
 import { flattenStyle } from './flattenStyle';
-import { errorMsg } from '../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/errorMsg';
 import { extractStyleThemes } from './extractStyleThemes';
 import { getLocaleDirection } from '../../shared/getLocaleDirection';
 import { mergeRefs } from '../../shared/mergeRefs';
@@ -131,7 +131,7 @@ function validateStrictProps(props: any) {
       delete props[key];
     }
     if (isUnsupportedProp) {
-      errorMsg(`"${key}" is not supported yet on native.`);
+      warnMsg(`"${key}" is not supported yet on native.`);
       delete props[key];
     }
   });
