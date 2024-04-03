@@ -1119,31 +1119,6 @@ describe('properties: custom property', () => {
     ).toEqual('blue');
   });
 
-  // TODO: this transform should not be supported. Custom properties are case sensitive.
-  test('parses kebab case var to camel case', () => {
-    const customProperties = { testVar: 'red' };
-    expect(
-      resolveCustomPropertyValue(customProperties, ['color', 'var(--test-var)'])
-    ).toEqual('red');
-  });
-
-  // TODO: this transform should not be supported. Custom properties are case sensitive.
-  test('parses kebab case var with a default value', () => {
-    const customProperties = { testVar: 'red' };
-    expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--test-var, blue)'
-      ])
-    ).toEqual('red');
-    expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--not-found, blue)'
-      ])
-    ).toEqual('blue');
-  });
-
   test('parses a var with a default value containing spaces', () => {
     const customProperties = { color: 'rgb(0,0,0)' };
     expect(

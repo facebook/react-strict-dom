@@ -14,15 +14,11 @@ import { errorMsg } from '../../shared/errorMsg';
 export type MutableCustomProperties = { [string]: string | number };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
 
-function camelize(s: string): string {
-  return s.replace(/-./g, (x) => x.toUpperCase()[1]);
-}
-
 function normalizeVariableName(name: string): string {
   if (!name.startsWith('--')) {
     throw new Error("Invalid variable name, must begin with '--'");
   }
-  return camelize(name.substring(2));
+  return name.substring(2);
 }
 
 export function stringContainsVariables(input: string): boolean {
