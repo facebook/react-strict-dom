@@ -28,8 +28,8 @@ import { flattenStyle } from './flattenStyle';
 import { errorMsg } from '../../shared/errorMsg';
 import { extractStyleThemes } from './extractStyleThemes';
 import { getLocaleDirection } from '../../shared/getLocaleDirection';
+import { isPropAllowed } from '../../shared/isPropAllowed';
 import { mergeRefs } from '../../shared/mergeRefs';
-import { strictAttributeSet } from '../../shared/strictAttributes';
 import { useHoverHandlers } from './useHoverHandlers';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import { useStyleProps } from './useStyleProps';
@@ -124,7 +124,7 @@ function isString(str: mixed): boolean %checks {
 
 function validateStrictProps(props: any) {
   Object.keys(props).forEach((key) => {
-    const isValidProp = strictAttributeSet.has(key);
+    const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
     if (!isValidProp) {
       errorMsg(`"${key}" is not a valid prop`);

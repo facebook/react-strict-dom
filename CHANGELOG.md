@@ -4,7 +4,7 @@
 
 ### New features
 
-* [Native] Add `del`, `ins`, `kbd`, `s`, `u` semantic elements ([#57](https://github.com/facebook/react-strict-dom/pull/57))
+* [Native] Add `del`, `ins`, `kbd`, `s`, `u` semantic elements ([#57](https://github.com/facebook/react-strict-dom/pull/57)).
 
 ## 0.0.3 (Mar 10, 2024)
 
