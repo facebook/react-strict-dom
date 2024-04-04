@@ -13,13 +13,13 @@ import type { StrictHTMLElement } from '../../types/StrictHTMLElement';
 
 import * as React from 'react';
 import * as stylex from '@stylexjs/stylex';
-import { strictAttributeSet } from '../../shared/strictAttributes';
 import { errorMsg } from '../../shared/errorMsg';
+import { isPropAllowed } from '../../shared/isPropAllowed';
 
 // $FlowFixMe[unclear-type]
 function validateStrictProps(props: any) {
   Object.keys(props).forEach((key) => {
-    const isValid = strictAttributeSet.has(key);
+    const isValid = isPropAllowed(key);
     if (!isValid) {
       errorMsg(`"${key}" is not a valid prop`);
       delete props[key];

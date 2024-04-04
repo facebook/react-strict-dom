@@ -202,12 +202,11 @@ type EventProps = $ReadOnly<{
 export type StrictReactDOMProps = $ReadOnly<{
   ...AriaProps,
   ...EventProps,
+  ...ReactStrictDOMDataProps,
   autoCapitalize?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters',
   autoFocus?: boolean,
   children?: React$Node,
-  'data-imgperflogname'?: string, // TEMPORARY
   'data-testid'?: string,
-  'data-visualcompletion'?: string, // TEMPORARY
   dir?: 'auto' | 'ltr' | 'rtl',
   elementTiming?: string,
   enterKeyHint?:

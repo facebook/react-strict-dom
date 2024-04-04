@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-export const strictAttributeSet: Set<string> = new Set([
+const strictAttributeSet: Set<string> = new Set([
   'alt', // img
   'aria-activedescendant',
   'aria-atomic',
@@ -62,7 +62,6 @@ export const strictAttributeSet: Set<string> = new Set([
   'checked', // input
   'children',
   'crossOrigin', // img
-  'data-testid',
   'decoding', // img
   'defaultChecked', // input
   'defaultValue', // input, textarea
@@ -142,8 +141,6 @@ export const strictAttributeSet: Set<string> = new Set([
   'value', // input
   'width', // img
 
-  'data-imgperflogname', // TEMPORARY
-  'data-visualcompletion', // TEMPORARY
   'onMouseDown', // TEMPORARY
   'onMouseEnter', // TEMPORARY
   'onMouseLeave', // TEMPORARY
@@ -156,3 +153,7 @@ export const strictAttributeSet: Set<string> = new Set([
   'onTouchMove', // TEMPORARY
   'onTouchStart' // TEMPORARY
 ]);
+
+export function isPropAllowed(key: string): boolean {
+  return strictAttributeSet.has(key) || key.indexOf('data-') > -1;
+}
