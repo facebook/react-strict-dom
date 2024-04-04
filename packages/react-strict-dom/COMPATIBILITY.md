@@ -23,6 +23,7 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | button | 🟡 | 🟡 | |
 | code | 🟡 | 🟡 | |
 | dialog | ❌ | ❌ | [#5](https://github.com/facebook/react-strict-dom/issues/5) |
+| del | 🟡 | 🟡 | |
 | div | 🟡 | 🟡 | |
 | em | 🟡 | 🟡 | |
 | footer | 🟡 | 🟡 | |
@@ -38,6 +39,8 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | input[type="date"] | ❌ | ❌ | [#13](https://github.com/facebook/react-strict-dom/issues/13) |
 | input[type="file"] | ❌ | ❌ | [#14](https://github.com/facebook/react-strict-dom/issues/14) |
 | input[type="radio"] | ❌ | ❌ | [#15](https://github.com/facebook/react-strict-dom/issues/15) |
+| ins | 🟡 | 🟡 | |
+| kbd | 🟡 | 🟡 | |
 | label | 🟡 | 🟡 | |
 | li | 🟡 | 🟡 | |
 | main | 🟡 | 🟡 | |
@@ -48,6 +51,7 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | p | 🟡 | 🟡 | |
 | pre | 🟡 | 🟡 | |
 | progress | ❌ | ❌ | [#9](https://github.com/facebook/react-strict-dom/issues/9) |
+| s | 🟡 | 🟡 | |
 | section | 🟡 | 🟡 | |
 | select | ❌ | ❌ | [#10](https://github.com/facebook/react-strict-dom/issues/10) |
 | span | 🟡 | 🟡 | |
@@ -56,6 +60,7 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | sup | 🟡 | 🟡 | |
 | svg | ❌ | ❌ | [#4](https://github.com/facebook/react-strict-dom/issues/4) |
 | textarea | 🟡 | 🟡 | |
+| u | 🟡 | 🟡 | |
 | ul | 🟡 | 🟡 | |
 
 ### HTML component props
