@@ -387,6 +387,44 @@ describe('html', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
+    test('"img" prop "onLoad"', () => {
+      const onLoad = jest.fn();
+
+      const root = create(<html.img onLoad={onLoad} src="https://src.jpg" />);
+      const element = root.toJSON();
+
+      // Expected event shape
+      element.props.onLoad({
+        nativeEvent: {
+          source: {
+            height: 100,
+            width: 200
+          }
+        }
+      });
+      expect(onLoad).toHaveBeenCalledWith({
+        target: {
+          naturalHeight: 100,
+          naturalWidth: 200
+        },
+        type: 'load'
+      });
+
+      // Fabric event bug
+      element.props.onLoad({
+        nativeEvent: {
+          source: undefined
+        }
+      });
+      expect(onLoad).toHaveBeenCalledWith({
+        target: {
+          naturalHeight: undefined,
+          naturalWidth: undefined
+        },
+        type: 'load'
+      });
+    });
+
     test('"input" prop "autoComplete" value', () => {
       [
         'additional-name',
