@@ -142,6 +142,23 @@ function App() {
 }
 ```
 
+## Other tips
+
+### Supressing logs on React Native
+
+RSD provides comprehensive runtime warnings and errors to inform developers of about prop and style incompatibilities on native. If there are certain logs that you wish to suppress, this can be done by configuring the [React Native LogBox](https://reactnative.dev/docs/debugging#logbox) at the root of the native app. For example:
+
+```js
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs([
+  /Failed prop type: .*/,
+  "React Strict DOM: css.keyframes is not supported in React Native."
+]);
+```
+
+Ignore logs as a last resort and create a task to fix logs that are ignored.
+
 ## Compatibility
 
 Please see [COMPATIBILITY.md](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md) for a detailed look at API compatibility for native.  Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
