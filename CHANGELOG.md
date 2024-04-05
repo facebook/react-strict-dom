@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.5 (Apr 4, 2024)
+
+### Fixes
+
+* Workaround to allow arbitrary `data-*`` types with Flow ([#75](https://github.com/facebook/react-strict-dom/pull/75)).
+* [Native] Fix `html.img`` event bug in Fabric ([#72](https://github.com/facebook/react-strict-dom/pull/72)).
+* [Native] Fix `eslint-plugin`` inconsistent module syntax ([#74](https://github.com/facebook/react-strict-dom/pull/74)).
+
 ## 0.0.4 (Mar 25, 2024)
 
 ### New features
