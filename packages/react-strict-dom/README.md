@@ -159,6 +159,31 @@ LogBox.ignoreLogs([
 
 Ignore logs as a last resort and create a task to fix logs that are ignored.
 
+### Adding Flow types for `data-*` props
+
+Flow does not currently support typing arbitrary `data-*` props ([#71](https://github.com/facebook/react-strict-dom/issues/71)). The workaround is to use a Flow libdef to define the `data-*` props used by your apps (or dependencies) via the `ReactStrictDOMDataProps` type. For example:
+
+```js
+// flow-typed/react-strict-dom.js
+declare type ReactStrictDOMDataProps = {
+  'data-imgperflogname'?: string,
+  'data-impression-id'?: number,
+};
+```
+
+This is a temporary solution until Flow provides a built-in approach to handling `data-*` prop types. **DO NOT** use this workaround to define any non-`data-*` props.
+
+### Adding Flow types for translation strings
+
+Certain prop values are typically user-facing strings, and these are defined within RSD as being of type `Stringish` - just a `string`. But when Flow doesn't know that a translation function produces strings at runtime, you can override the type of `Stringish` to account for this. For example, if using Meta's internationalization framework [Fbt](https://github.com/facebook/fbt):
+
+```js
+// flow-typed/react-strict-dom.js
+declare type Stringish = string | Fbt;
+```
+
+This is the same approach used by React Native, so if you are already re-declaring `Stringish` it will work out-of-the-box with RSD.
+
 ## Compatibility
 
 Please see [COMPATIBILITY.md](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md) for a detailed look at API compatibility for native.  Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
