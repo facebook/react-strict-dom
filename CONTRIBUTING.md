@@ -64,6 +64,13 @@ To run all these automated tests:
 npm run test
 ```
 
+To run the benchmarks for React Native:
+
+```
+npm run benchmark -w react-strict-dom
+```
+
+
 ## Development
 
 Build and automatically rebuild the library on changes:

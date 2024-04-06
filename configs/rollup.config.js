@@ -6,6 +6,7 @@
  */
 
 import { babel } from '@rollup/plugin-babel';
+import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
@@ -104,6 +105,34 @@ const nativeConfigs = [
       format: 'es'
     },
     plugins: [...nativePlugins, ...ossPlugins]
+  },
+  // Build for Node.js benchmarks
+  {
+    external: ['react'],
+    input: require.resolve('../packages/react-strict-dom/src/native/index.js'),
+    output: {
+      file: path.join(
+        __dirname,
+        '../packages/react-strict-dom/build/native-bench.js'
+      ),
+      format: 'commonjs'
+    },
+    plugins: [
+      // alias react-native to mock
+      alias({
+        entries: [
+          {
+            find: 'react-native',
+            replacement: path.resolve(
+              __dirname,
+              '../packages/react-strict-dom/tests/benchmarks/react-native.js'
+            )
+          }
+        ]
+      }),
+      ...nativePlugins,
+      ...ossPlugins
+    ]
   }
 ];
 

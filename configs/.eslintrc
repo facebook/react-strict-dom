@@ -36,10 +36,12 @@
   },
   "ignorePatterns": [
     "apps",
+    "build",
     "coverage",
     "dist",
     "docs",
     "flow-typed",
+    "logs",
     "node_modules"
   ],
   "globals": {

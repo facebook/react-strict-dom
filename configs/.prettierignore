@@ -1,3 +1,5 @@
+build
 coverage
 dist
+log
 node_modules
