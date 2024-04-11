@@ -12,6 +12,7 @@ import type { StrictElement } from "../StrictElement";
 import type { StrictEventTarget } from "../StrictEventTarget";
 import type { StrictHTMLElement } from "../StrictHTMLElement";
 import type {
+  StrictHTMLCollection,
   StrictHTMLInputElement,
   StrictHTMLOptionElement,
   StrictHTMLSelectElement,
@@ -37,6 +38,10 @@ declare var node: Node;
 // Element extends Node
 declare var element: Element;
 (element as StrictElement);
+
+declare var htmlCollection: HTMLCollection<HTMLElement>;
+(htmlCollection as StrictHTMLCollection<HTMLElement>);
+(htmlCollection as StrictHTMLCollection<StrictHTMLElement>);
 
 // HTMLElement extends Element
 declare var htmlElement: HTMLElement;
