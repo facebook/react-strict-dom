@@ -42,9 +42,16 @@ export interface StrictHTMLOptionElement extends StrictHTMLElement {
   text: string;
   value: string;
 }
+
+export interface StrictHTMLCollection<+Elem: StrictHTMLElement> {
+  @@iterator(): Iterator<Elem>;
+  +length: number;
+  +[index: number | string]: Elem;
+}
+
 export interface StrictHTMLSelectElement extends StrictHTMLElement {
   +selectedIndex: number;
-  +selectedOptions: HTMLCollection<StrictHTMLOptionElement>;
+  +selectedOptions: StrictHTMLCollection<StrictHTMLOptionElement>;
 }
 
 export interface StrictHTMLTextAreaElement
