@@ -155,8 +155,8 @@ type StrictClickEvent = $ReadOnly<{
   pageX: number,
   pageY: number,
   shiftKey: boolean,
-  type: 'click',
-  ...
+  stopPropagation: () => void,
+  type: 'click'
 }>;
 
 type EventProps = $ReadOnly<{

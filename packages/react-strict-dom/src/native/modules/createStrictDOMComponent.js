@@ -25,7 +25,7 @@ import { FontSizeContext } from './FontSizeContext';
 import { InheritableStyleContext } from './InheritableStyleContext';
 import { ThemeContext } from './ThemeContext';
 import { flattenStyle } from './flattenStyle';
-import { errorMsg } from '../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/errorMsg';
 import { extractStyleThemes } from './extractStyleThemes';
 import { getLocaleDirection } from '../../shared/getLocaleDirection';
 import { isPropAllowed } from '../../shared/isPropAllowed';
@@ -384,6 +384,9 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
           };
           onClick({
             type: 'click',
+            stopPropagation: () => {
+              warnMsg('stopPropagation is not implemented in React Native');
+            },
             button,
             altKey,
             ctrlKey,
