@@ -113,7 +113,7 @@ export function useStyleTransition(
   }
   if (valueRef.current?.length !== transitionProperties.length) {
     warnMsg(
-      'The number of transition properties must be the same before and after the transition. The transition will not animate.'
+      'invalid style transition. The number of transition properties must be the same before and after the transition.'
     );
     return [];
   }

@@ -237,7 +237,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
 
     // React Native shadows on iOS cannot polyfill box-shadow
     if (propName === 'boxShadow' && typeof styleValue === 'string') {
-      warnMsg('"boxShadow" is not supported in React Native.');
+      warnMsg('unsupported style property "boxShadow".');
       delete result.boxShadow;
       continue;
     }
@@ -273,7 +273,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
         const parsedShadow = parseShadow(styleValue);
         if (parsedShadow.length > 1) {
           warnMsg(
-            'Multiple "textShadow" values are not supported in React Native.'
+            'unsupported multiple values for style property "textShadow".'
           );
         }
         const { offsetX, offsetY, blurRadius, color } = parsedShadow[0];
@@ -409,7 +409,7 @@ type Keyframes = {
 };
 
 function _keyframes(k: Keyframes): Keyframes {
-  errorMsg('css.keyframes is not supported in React Native.');
+  errorMsg('css.keyframes() is not supported.');
   return k;
 }
 export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
@@ -601,7 +601,7 @@ export function props(
       }
       // everything else
       else {
-        warnMsg(`Ignoring unsupported style property "${styleProp}"`);
+        warnMsg(`unsupported style property "${styleProp}"`);
       }
 
       delete flatStyle[styleProp];
@@ -614,9 +614,7 @@ export function props(
     // We check this at resolve time to ensure the render-time styles are safe.
     if (!isReactNativeStyleValue(styleValue)) {
       warnMsg(
-        `Ignoring unsupported style value "${String(
-          styleValue
-        )}" for property "${styleProp}"`
+        `unsupported style value in "${styleProp}:${String(styleValue)}"`
       );
       delete flatStyle[styleProp];
       continue;
@@ -654,12 +652,12 @@ export function props(
     if (positionValue === 'fixed') {
       flatStyle.position = 'absolute';
       warnMsg(
-        '"position" value of "fixed" is not supported in React Native. Falling back to "absolute".'
+        'unsupported style value in "position:fixed". Falling back to "position:absolute".'
       );
     } else if (positionValue === 'sticky') {
       flatStyle.position = 'relative';
       warnMsg(
-        '"position" value of "sticky" is not supported in React Native. Falling back to "relative".'
+        'unsupported style value in "position:sticky". Falling back to "position:relative".'
       );
     }
 

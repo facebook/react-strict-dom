@@ -65,7 +65,7 @@ function resolveVariableReferenceValue(
     }
   }
 
-  errorMsg(`Unrecognized custom property "${variable.variable}"`);
+  errorMsg(`unrecognized custom property "${variable.variable}"`);
 
   return null;
 }

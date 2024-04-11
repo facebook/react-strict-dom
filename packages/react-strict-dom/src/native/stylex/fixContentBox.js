@@ -92,9 +92,9 @@ export function fixContentBox(flatStyle: FlatStyle): FlatStyle {
       }
       if (typeof styleValue !== 'number') {
         warnMsg(
-          `"boxSizing:'content-box'" does not support value "${String(
+          `unsupported style value in "${styleProp}:${String(
             styleValue
-          )}" for property "${styleProp}". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".`
+          )}" when used with "boxSizing:'content-box'". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".`
         );
         return flatStyle;
       }

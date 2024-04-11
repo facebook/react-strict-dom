@@ -127,11 +127,11 @@ function validateStrictProps(props: any) {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
     if (!isValidProp) {
-      errorMsg(`"${key}" is not a valid prop`);
+      errorMsg(`invalid prop "${key}"`);
       delete props[key];
     }
     if (isUnsupportedProp) {
-      errorMsg(`"${key}" is not supported yet on native.`);
+      errorMsg(`unsupported prop "${key}"`);
       delete props[key];
     }
   });
@@ -578,9 +578,7 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
         displayValue !== 'block'
       ) {
         errorMsg(
-          `A "display" style value of ${String(
-            displayValue
-          )} is not supported in React Native`
+          `unsupported style value in "display:${String(displayValue)}"`
         );
       }
 
