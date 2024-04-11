@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.6 (Apr 11, 2024)
+
+### Fixes
+
+* [Native] Provide structured error/warn messages ([#86](https://github.com/facebook/react-strict-dom/pull/86)).
+* [Native] Polyfill click event stopPropagation & preventDefault ([#81](https://github.com/facebook/react-strict-dom/pull/81)).
+* [Native] Ignore more properties in eslint-plugin.
+* [Native] Fix `gap` property names in eslint-plugin  ([#85](https://github.com/facebook/react-strict-dom/pull/85)).
+* Avoid inexact Flow object types ([#82](https://github.com/facebook/react-strict-dom/pull/82)).
+
 ## 0.0.5 (Apr 4, 2024)
 
 ### Fixes
