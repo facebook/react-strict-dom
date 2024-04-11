@@ -383,15 +383,17 @@ export function createStrictDOMComponent<T: any, P: StrictProps>(
             }
           };
           onClick({
-            type: 'click',
-            button,
             altKey,
+            button,
             ctrlKey,
-            metaKey,
-            shiftKey,
             getModifierState,
+            metaKey,
             pageX: nativeEvent.pageX,
-            pageY: nativeEvent.pageY
+            pageY: nativeEvent.pageY,
+            preventDefault() {},
+            shiftKey,
+            stopPropagation() {},
+            type: 'click'
           });
         };
       }
