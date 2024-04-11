@@ -27,6 +27,7 @@ const allowlistedStylexProps = new Set([
   'alignContent',
   'alignItems',
   'alignSelf',
+  'appearance', // web-only
   'aspectRatio',
   'backfaceVisibility',
   'backgroundColor',
@@ -129,7 +130,14 @@ const allowlistedStylexProps = new Set([
   'minWidth',
   'objectFit',
   'opacity',
+  'outlineColor', // web-only
+  'outlineOffset', // web-only
+  'outlineStyle', // web-only
+  'outlineWidth', // web-only
   'overflow',
+  'overflowWrap', // web-only
+  'overflowX', // web-only
+  'overflowY', // web-only
   'padding',
   'paddingBlock',
   'paddingBlockEnd',
@@ -151,6 +159,7 @@ const allowlistedStylexProps = new Set([
   'textShadow',
   'textTransform',
   'top',
+  'touchAction', // web-only
   'transform',
   'transformOrigin',
   'transitionDelay',
@@ -160,7 +169,9 @@ const allowlistedStylexProps = new Set([
   'userSelect',
   'verticalAlign',
   'visibility',
+  'whiteSpace', // web-only
   'width',
+  'wordBreak', // web-only
   'zIndex'
 ]);
 
