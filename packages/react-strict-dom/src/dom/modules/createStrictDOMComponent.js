@@ -21,7 +21,7 @@ function validateStrictProps(props: any) {
   Object.keys(props).forEach((key) => {
     const isValid = isPropAllowed(key);
     if (!isValid) {
-      errorMsg(`"${key}" is not a valid prop`);
+      errorMsg(`invalid prop "${key}"`);
       delete props[key];
     }
   });
