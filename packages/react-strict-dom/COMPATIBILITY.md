@@ -443,6 +443,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | animationPlayState | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
 | animationTimingFunction | ❌ | ❌ | [#3](https://github.com/facebook/react-strict-dom/issues/3) |
 | aspectRatio (string) | 🟡 | 🟡 | |
+| backdropFilter | ❌ | ❌ | |
 | backfaceVisibility | ✅ | ✅ | |
 | backgroundColor | ✅ | ✅ | |
 | backgroundImage | ❌ | ❌ | |
@@ -520,6 +521,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | display: none | ✅ | ✅ | |
 | drop-shadow() | ❌ | ❌ | |
 | em units | 🟡 | 🟡 | |
+| filter | ❌ | ❌ | |
 | flex | ✅ | ✅ | |
 | flexBasis | ✅ | ✅ | |
 | flexDirection | ✅ | ✅ | |
@@ -585,6 +587,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | overflow | ✅ | ✅ | |
 | overflowBlock | ❌ | ❌ | |
 | overflowInline | ❌ | ❌ | |
+| overflowWrap | ❌ | ❌ | |
 | overflowX | ❌ | ❌ | |
 | overflowY | ❌ | ❌ | |
 | padding | ✅ | ✅ | |
