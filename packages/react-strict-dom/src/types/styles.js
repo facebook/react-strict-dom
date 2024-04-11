@@ -19,7 +19,9 @@ import typeof TStyleX from '@stylexjs/stylex';
 
 export type Style = InlineStyles;
 
-export type Styles = StyleXArray<StyleXStyles<> | Theme<VarGroup<{ ... }>>>;
+export type Styles = StyleXArray<
+  StyleXStyles<> | Theme<VarGroup<{ +[string]: mixed }>>
+>;
 
 export type IStyleX = $ReadOnly<{
   create: TStyleX['create'],

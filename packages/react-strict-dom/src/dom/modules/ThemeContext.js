@@ -10,7 +10,7 @@
 import * as React from 'react';
 
 type ProviderValue = {
-  customProperties: { ... }
+  customProperties: { +[string]: ?string | number }
 };
 
 type ProviderProps = {
