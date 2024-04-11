@@ -379,10 +379,10 @@ function resolveStyle<S: { +[string]: mixed }>(
  * which can be done at initialization-time (could potentially be done at
  * compile-time in the future).
  */
-function _create<S: { [string]: { ... } }>(styles: S): {
-  [string]: { ... }
+function _create<S: { +[string]: { +[string]: mixed } }>(styles: S): {
+  [string]: mixed
 } {
-  const result: { [string]: { ... } } = {};
+  const result: { [string]: mixed } = {};
   for (const styleName in styles) {
     const val = styles[styleName];
     if (typeof val === 'function') {
