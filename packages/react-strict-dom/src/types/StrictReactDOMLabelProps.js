@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMLabelProps = {|
+export type StrictReactDOMLabelProps = $ReadOnly<{
   ...StrictReactDOMProps,
   for?: string
-|};
+}>;

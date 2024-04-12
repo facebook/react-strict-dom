@@ -9,27 +9,21 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMTextAreaProps = {|
+export type StrictReactDOMTextAreaProps = $ReadOnly<{
   ...StrictReactDOMProps,
   defaultValue?: Stringish,
   disabled?: boolean,
   maxLength?: number,
   minLength?: number,
-  // $FlowFixMe
-  onBeforeInput?: any,
-  // $FlowFixMe
-  onChange?: any,
-  // $FlowFixMe
-  onInput?: any,
-  // $FlowFixMe
-  onInvalid?: any,
-  // $FlowFixMe
-  onSelect?: any,
-  // $FlowFixMe
-  onSelectionChange?: any,
+  onBeforeInput?: $FlowFixMe,
+  onChange?: $FlowFixMe,
+  onInput?: $FlowFixMe,
+  onInvalid?: $FlowFixMe,
+  onSelect?: $FlowFixMe,
+  onSelectionChange?: $FlowFixMe,
   placeholder?: Stringish,
   readOnly?: boolean,
   required?: boolean,
   rows?: number,
   value?: Stringish
-|};
+}>;

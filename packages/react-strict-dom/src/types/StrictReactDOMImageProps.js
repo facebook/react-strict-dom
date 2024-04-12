@@ -18,10 +18,8 @@ export type StrictReactDOMImageProps = $ReadOnly<{
   fetchPriority?: 'high' | 'low' | 'auto',
   height?: number,
   loading?: 'eager' | 'lazy',
-  // $FlowFixMe
-  onError?: any,
-  // $FlowFixMe
-  onLoad?: any,
+  onError?: $FlowFixMe,
+  onLoad?: $FlowFixMe,
   referrerPolicy?:
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
