@@ -14,6 +14,8 @@ import * as cssRaw from './stylex';
 import { ThemeProvider } from './modules/ThemeContext';
 import { typeof ThemeProvider as TThemeProvider } from './modules/ThemeContext';
 
+export * from '../types/StrictTypes';
+
 const contexts = { ThemeProvider: ThemeProvider as TThemeProvider };
 
 // Export using StyleX types as the shim has divergent types internally.

@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMInputProps = {|
+export type StrictReactDOMInputProps = $ReadOnly<{
   ...StrictReactDOMProps,
   checked?: boolean | 'mixed',
   defaultChecked?: boolean,
@@ -20,18 +20,12 @@ export type StrictReactDOMInputProps = {|
   min?: string | number,
   minLength?: number,
   multiple?: boolean,
-  // $FlowFixMe
-  onBeforeInput?: any,
-  // $FlowFixMe
-  onChange?: any,
-  // $FlowFixMe
-  onInput?: any,
-  // $FlowFixMe
-  onInvalid?: any,
-  // $FlowFixMe
-  onSelect?: any,
-  // $FlowFixMe
-  onSelectionChange?: any,
+  onBeforeInput?: $FlowFixMe,
+  onChange?: $FlowFixMe,
+  onInput?: $FlowFixMe,
+  onInvalid?: $FlowFixMe,
+  onSelect?: $FlowFixMe,
+  onSelectionChange?: $FlowFixMe,
   placeholder?: Stringish,
   readOnly?: number,
   required?: number,
@@ -57,4 +51,4 @@ export type StrictReactDOMInputProps = {|
     | 'url'
     | 'week',
   value?: Stringish | boolean | number
-|};
+}>;

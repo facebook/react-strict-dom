@@ -12,6 +12,8 @@ import * as css from '@stylexjs/stylex';
 import { ThemeProvider } from './modules/ThemeContext';
 import { typeof ThemeProvider as TThemeProvider } from './modules/ThemeContext';
 
+export * from '../types/StrictTypes';
+
 const contexts = { ThemeProvider: ThemeProvider as TThemeProvider };
 
 export { contexts, css, html };

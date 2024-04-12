@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMAnchorProps = {|
+export type StrictReactDOMAnchorProps = $ReadOnly<{
   ...StrictReactDOMProps,
   download?: string,
   href?: string,
@@ -24,4 +24,4 @@ export type StrictReactDOMAnchorProps = {|
     | 'unsafe-url',
   rel?: string,
   target?: '_self' | '_blank' | '_parent' | '_top'
-|};
+}>;

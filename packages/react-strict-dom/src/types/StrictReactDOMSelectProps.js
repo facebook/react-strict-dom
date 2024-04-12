@@ -9,18 +9,13 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMSelectProps = {|
+export type StrictReactDOMSelectProps = $ReadOnly<{
   ...StrictReactDOMProps,
   multiple?: boolean,
   required?: boolean,
-  // $FlowFixMe
-  onBeforeInput?: any,
-  // $FlowFixMe
-  onChange?: any,
-  // $FlowFixMe
-  onInput?: any,
-  // $FlowFixMe
-  onInvalid?: any,
-  // $FlowFixMe
-  onSelect?: any
-|};
+  onBeforeInput?: $FlowFixMe,
+  onChange?: $FlowFixMe,
+  onInput?: $FlowFixMe,
+  onInvalid?: $FlowFixMe,
+  onSelect?: $FlowFixMe
+}>;
