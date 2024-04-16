@@ -1010,6 +1010,15 @@ exports[`styles: pseudo-state :hover syntax: not hovered 1`] = `
 }
 `;
 
+exports[`units: length '0' is resolved to the number 0 1`] = `
+{
+  "style": {
+    "borderRadius": 0,
+    "width": 0,
+  },
+}
+`;
+
 exports[`units: length 10 "em" units are resolved to pixels 1`] = `
 {
   "style": {
