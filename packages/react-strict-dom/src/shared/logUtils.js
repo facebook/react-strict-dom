@@ -8,9 +8,13 @@
  */
 
 export function errorMsg(msg: string) {
-  console.error(`React Strict DOM: ${msg}`);
+  console.error(`[error] React Strict DOM: ${msg}`);
+}
+
+export function logMsg(msg: string) {
+  console.log(`[log] React Strict DOM: ${msg}`);
 }
 
 export function warnMsg(msg: string) {
-  console.warn(`React Strict DOM: ${msg}`);
+  console.warn(`[warn] React Strict DOM: ${msg}`);
 }

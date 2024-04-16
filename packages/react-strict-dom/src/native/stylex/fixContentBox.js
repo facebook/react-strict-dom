@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import { warnMsg } from '../../shared/errorMsg';
+import { warnMsg } from '../../shared/logUtils';
 
 type FlatStyle = { [key: string]: mixed };
 type Direction = 0 | 1 | 2 | 3;

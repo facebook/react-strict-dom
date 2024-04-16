@@ -10,7 +10,7 @@
 import valueParser from 'postcss-value-parser';
 import { CSSStyleValue } from './CSSStyleValue';
 import { CSSVariableReferenceValue } from './CSSVariableReferenceValue';
-import { warnMsg } from '../../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../../shared/logUtils';
 
 type CSSUnparsedSegment = string | CSSVariableReferenceValue;
 
@@ -54,8 +54,8 @@ export class CSSUnparsedValue extends CSSStyleValue {
     depth: number = 0
   ): CSSUnparsedValue {
     if (depth > MAX_RESOLVE_DEPTH) {
-      warnMsg(
-        `Reached maximum recursion limit (${MAX_RESOLVE_DEPTH}) while resolving custom properties — please ensure you don't have a custom property reference cycle.`
+      errorMsg(
+        `reached maximum recursion limit (${MAX_RESOLVE_DEPTH}) while resolving custom properties — please ensure you don't have a custom property reference cycle.`
       );
       return new CSSUnparsedValue([]);
     }

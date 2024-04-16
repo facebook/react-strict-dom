@@ -12,7 +12,7 @@ import type { AnimatedNode } from '../../types/react-native';
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 import { parseTransform } from './parseTransform';
-import { warnMsg } from '../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/logUtils';
 
 type TransitionProperties = $ReadOnlyArray<{
   property: string,
@@ -112,7 +112,7 @@ export function useStyleTransition(
     return [];
   }
   if (valueRef.current?.length !== transitionProperties.length) {
-    warnMsg(
+    errorMsg(
       'invalid style transition. The number of transition properties must be the same before and after the transition.'
     );
     return [];

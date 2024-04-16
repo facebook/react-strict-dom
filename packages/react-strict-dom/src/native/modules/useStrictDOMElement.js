@@ -9,18 +9,18 @@
 
 import type { CallbackRef } from '../../types/react';
 
-import { errorMsg } from '../../shared/errorMsg';
 import { useCallback } from 'react';
 import { useElementCallback } from '../../shared/useElementCallback';
+import { errorMsg } from '../../shared/logUtils';
 
 function errorUnimplemented(name: string) {
-  errorMsg(`node.${name}() is not supported in React Native`);
+  errorMsg(`unsupported method node.${name}()`);
 }
 
 /*
 function errorUnimplementedEvent(name: string) {
-  errorMsg(
-    `event type "${name}" is not supported in React Native`
+  warnMsg(
+    `unsupported event type "${name}"`
   );
 }
 */

@@ -16,7 +16,7 @@ import type { SpreadOptions } from './SpreadOptions';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSMediaQuery } from './CSSMediaQuery';
-import { errorMsg, warnMsg } from '../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { parseShadow } from './parseShadow';

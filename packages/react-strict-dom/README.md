@@ -142,9 +142,23 @@ function App() {
 }
 ```
 
+### Types
+
+Strict versions of most React DOM types are exported from the package.
+
+```jsx
+import type { StrictHTMLElement } from 'react-strict-dom';
+
+function App() {
+  return (
+    <html.div ref={(node: StrictHTMLElement) => {}} />
+  )
+}
+```
+
 ## Other tips
 
-### Supressing logs on React Native
+### Suppressing logs on React Native
 
 RSD provides comprehensive runtime warnings and errors to inform developers of about prop and style incompatibilities on native. If there are certain logs that you wish to suppress, this can be done by configuring the [React Native LogBox](https://reactnative.dev/docs/debugging#logbox) at the root of the native app. Messages follow a common structure, which allows for precise or general suppression. For example:
 
@@ -152,11 +166,17 @@ RSD provides comprehensive runtime warnings and errors to inform developers of a
 import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs([
-  // Precise
-  'React Strict DOM: unsupported prop "onInvalid"',
-  'React Strict DOM: unsupported style value in "display:inline-flex"',
-  // General
-  /React Strict DOM: unsupported style property .*/,
+  // Specific errors
+  '[error] React Strict DOM: css.keyframes() is not supported',
+  // Specific warnings
+  '[warn] React Strict DOM: unsupported prop "onInvalid"',
+  '[warn] React Strict DOM: unsupported style value in "display:inline-flex"',
+  // All warnings of a certain kind
+  /[warn] React Strict DOM: unsupported style property .*/,
+  // All warnings
+  /[warn] React Strict DOM: .*/,
+  // All logs
+  /[log] React Strict DOM: .*/,
 ]);
 ```
 

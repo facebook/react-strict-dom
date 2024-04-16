@@ -9,7 +9,7 @@
 
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { CSSVariableReferenceValue } from './typed-om/CSSVariableReferenceValue';
-import { errorMsg } from '../../shared/errorMsg';
+import { warnMsg } from '../../shared/logUtils';
 
 export type MutableCustomProperties = { [string]: string | number };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
@@ -65,7 +65,7 @@ function resolveVariableReferenceValue(
     }
   }
 
-  errorMsg(`unrecognized custom property "${variable.variable}"`);
+  warnMsg(`unrecognized custom property "${variable.variable}"`);
 
   return null;
 }

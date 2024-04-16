@@ -310,8 +310,8 @@ describe('html', () => {
       act(() => {
         root.update(<html.div style={[styles.transitionWithoutProperty]} />);
       });
-      // no warning as transform start and end value are both missing
-      expect(console.warn).not.toHaveBeenCalled();
+      // no error as transform start and end value are both missing
+      expect(console.error).not.toHaveBeenCalled();
       act(() => {
         root.update(
           <html.div
@@ -323,8 +323,8 @@ describe('html', () => {
           />
         );
       });
-      // warning as transform start value is missing
-      expect(console.warn).toHaveBeenCalled();
+      // error as transform start value is missing
+      expect(console.error).toHaveBeenCalled();
       expect(root.toJSON()).toMatchSnapshot('transition property end');
     });
   });

@@ -176,11 +176,14 @@ const eventHandlers = {
 describe('html', () => {
   beforeEach(() => {
     jest.spyOn(console, 'error');
+    jest.spyOn(console, 'warn');
     console.error.mockImplementation(() => {});
+    console.warn.mockImplementation(() => {});
   });
 
   afterEach(() => {
     console.error.mockRestore();
+    console.warn.mockRestore();
   });
 
   tagNames.forEach((tagName) => {

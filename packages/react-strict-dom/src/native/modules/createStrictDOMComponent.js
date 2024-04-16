@@ -25,7 +25,7 @@ import { FontSizeContext } from './FontSizeContext';
 import { InheritableStyleContext } from './InheritableStyleContext';
 import { ThemeContext } from './ThemeContext';
 import { flattenStyle } from './flattenStyle';
-import { errorMsg } from '../../shared/errorMsg';
+import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
 import { getLocaleDirection } from '../../shared/getLocaleDirection';
 import { isPropAllowed } from '../../shared/isPropAllowed';
@@ -131,7 +131,7 @@ function validateStrictProps(props: $FlowFixMe) {
       delete props[key];
     }
     if (isUnsupportedProp) {
-      errorMsg(`unsupported prop "${key}"`);
+      warnMsg(`unsupported prop "${key}"`);
       delete props[key];
     }
   });
@@ -577,9 +577,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         displayValue !== 'none' &&
         displayValue !== 'block'
       ) {
-        errorMsg(
-          `unsupported style value in "display:${String(displayValue)}"`
-        );
+        warnMsg(`unsupported style value in "display:${String(displayValue)}"`);
       }
 
       if (displayValue === 'flex') {

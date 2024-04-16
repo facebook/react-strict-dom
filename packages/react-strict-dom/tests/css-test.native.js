@@ -1091,8 +1091,8 @@ describe('properties: custom property', () => {
     expect(
       css.props.call({ ...mockOptions, customProperties }, underTest)
     ).toMatchSnapshot();
-    expect(console.error).toHaveBeenCalledWith(
-      'React Strict DOM: unrecognized custom property "--unprovided"'
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining('unrecognized custom property "--unprovided"')
     );
   });
 
