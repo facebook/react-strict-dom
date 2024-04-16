@@ -17,12 +17,12 @@
     "dev": "npm run build -- --watch"
   },
   "dependencies": {
-    "@stylexjs/stylex": "0.5.1",
+    "@stylexjs/stylex": "0.6.0",
     "css-mediaquery": "0.1.2",
     "postcss-value-parser": "^4.1.0"
   },
   "devDependencies": {
-    "@stylexjs/babel-plugin": "0.5.1"
+    "@stylexjs/babel-plugin": "0.6.0"
   },
   "peerDependencies": {
     "react": ">=18.2.0",
