@@ -6519,6 +6519,7 @@ exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
     {
       "borderWidth": 1,
       "position": "static",
+      "verticalAlign": "top",
     }
   }
 />
@@ -6543,6 +6544,7 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
     {
       "borderWidth": 1,
       "position": "static",
+      "verticalAlign": "top",
     }
   }
   tabIndex={-1}
@@ -6621,6 +6623,7 @@ exports[`html "textarea" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
+      "verticalAlign": "top",
       "writingDirection": "ltr",
     }
   }
@@ -6681,6 +6684,7 @@ exports[`html "textarea" supports inline event handlers 1`] = `
     {
       "borderWidth": 1,
       "position": "static",
+      "verticalAlign": "top",
     }
   }
 />

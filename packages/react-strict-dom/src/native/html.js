@@ -57,6 +57,7 @@ const styles = stylex.create({
     textDecorationLine: 'line-through'
   },
   textarea: {
+    borderWidth: 1,
     verticalAlign: 'top'
   },
   underline: {
@@ -178,7 +179,7 @@ export const textarea: React$AbstractComponent<
   TextInput
 > = createStrict('textarea', {
   dir: 'auto',
-  style: styles.input
+  style: styles.textarea
 });
 export const u: React$AbstractComponent<StrictReactDOMProps, View> =
   createStrict('u', { style: styles.underline });

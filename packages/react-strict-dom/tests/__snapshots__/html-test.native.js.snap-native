@@ -726,6 +726,7 @@ exports[`html html prop polyfills "textarea" prop "disabled" 1`] = `
     {
       "borderWidth": 1,
       "position": "static",
+      "verticalAlign": "top",
     }
   }
   tabIndex={-1}
