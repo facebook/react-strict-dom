@@ -604,6 +604,23 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.top)).toMatchSnapshot('top');
   });
 
+  test('text-align-vertical', () => {
+    const styles = css.create({
+      auto: { textAlignVertical: 'auto' },
+      top: { textAlignVertical: 'top' },
+      bottom: { textAlignVertical: 'bottom' },
+      center: { textAlignVertical: 'center' }
+    });
+    expect(css.props.call(mockOptions, styles.auto)).toMatchSnapshot('auto');
+    expect(css.props.call(mockOptions, styles.top)).toMatchSnapshot('top');
+    expect(css.props.call(mockOptions, styles.bottom)).toMatchSnapshot(
+      'bottom'
+    );
+    expect(css.props.call(mockOptions, styles.center)).toMatchSnapshot(
+      'center'
+    );
+  });
+
   test('visibility', () => {
     const styles = css.create({
       collapse: {

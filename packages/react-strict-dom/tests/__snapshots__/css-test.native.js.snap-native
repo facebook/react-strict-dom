@@ -373,6 +373,38 @@ exports[`properties: general position: sticky 1`] = `
 }
 `;
 
+exports[`properties: general text-align-vertical: auto 1`] = `
+{
+  "style": {
+    "textAlignVertical": "auto",
+  },
+}
+`;
+
+exports[`properties: general text-align-vertical: bottom 1`] = `
+{
+  "style": {
+    "textAlignVertical": "bottom",
+  },
+}
+`;
+
+exports[`properties: general text-align-vertical: center 1`] = `
+{
+  "style": {
+    "textAlignVertical": "center",
+  },
+}
+`;
+
+exports[`properties: general text-align-vertical: top 1`] = `
+{
+  "style": {
+    "textAlignVertical": "top",
+  },
+}
+`;
+
 exports[`properties: general text-shadow 1`] = `
 {
   "style": {

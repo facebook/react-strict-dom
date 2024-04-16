@@ -125,6 +125,7 @@ const stylePropertyAllowlistSet = new Set<string>([
   'top',
   'userSelect',
   'verticalAlign', // Android Only
+  'textAlignVertical', // Android Only
   'width',
   // 'writingDirection', // iOS Only
   'zIndex'

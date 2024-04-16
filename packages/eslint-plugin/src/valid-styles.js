@@ -167,7 +167,8 @@ const allowlistedStylexProps = new Set([
   'transitionProperty',
   'transitionTimingFunction',
   'userSelect',
-  'verticalAlign',
+  'verticalAlign', // android-only
+  'textAlignVertical', // android-only
   'visibility',
   'whiteSpace', // web-only
   'width',
