@@ -288,6 +288,12 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
         continue;
       }
 
+      // RN on Android doesn't like the string '0'
+      if (styleValue === '0') {
+        result[propName] = 0;
+        continue;
+      }
+
       const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
       if (maybeLengthUnitValue != null) {
         result[propName] =
