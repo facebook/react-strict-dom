@@ -1360,6 +1360,27 @@ describe('styles: pseudo-state', () => {
 });
 
 /**
+ * Styles: pseudo-elements
+ */
+
+describe('styles: pseudo-element', () => {
+  test('::placeholder syntax', () => {
+    const styles = css.create({
+      root: {
+        '::placeholder': {
+          color: 'red',
+          fontWeight: 'bold'
+        }
+      }
+    });
+
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot(
+      'placeholderTextColor'
+    );
+  });
+});
+
+/**
  * Units: length
  */
 

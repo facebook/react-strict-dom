@@ -298,6 +298,19 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       }
     }
 
+    if (propName === '::placeholder') {
+      if (
+        typeof styleValue === 'object' &&
+        Object.hasOwn(styleValue, 'color')
+      ) {
+        // TODO: On native, we can't apply custom styles to the text
+        // besides the color. Should we warn users on native platforms?
+
+        result['placeholderTextColor'] = styleValue['color'];
+        continue;
+      }
+    }
+
     result[propName] = styleValue;
   }
 
@@ -598,6 +611,10 @@ export function props(
           nativeProps.pointerEvents = 'none';
           nativeProps.tabIndex = -1;
         }
+      }
+      // ::placeholder's color polyfill
+      else if (styleProp === 'placeholderTextColor') {
+        nativeProps.placeholderTextColor = styleValue;
       }
       // everything else
       else {

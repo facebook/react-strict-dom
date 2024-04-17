@@ -430,6 +430,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | :active | ❌ | ❌ | |
 | :focus | ❌ | ❌ | |
 | :hover | 🟡 | 🟡 | |
+| ::placeholder | 🟡 | 🟡 | |
 | % units | ❌ | ❌ | |
 | alignContent | ✅ | ✅ | |
 | alignItems | ✅ | ✅ | |
