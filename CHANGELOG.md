@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.7 (Apr 17, 2024)
+
+### New features
+
+* [Native] Polyfill CSS `::placeholder` support ([#96](https://github.com/facebook/react-strict-dom/pull/96)).
+* Update `@stylexjs/stylex`` 0.6.0 ([#93](https://github.com/facebook/react-strict-dom/pull/93)).
+* Export Element types from package ([#90](https://github.com/facebook/react-strict-dom/pull/90)).
+
+### Fixes
+
+* Fix for Android to convert style string '0' to number ([#91](https://github.com/facebook/react-strict-dom/pull/91)).
+* Fix textarea `verticalAlign` styles not being applied ([#95](https://github.com/facebook/react-strict-dom/pull/95)).
+
 ## 0.0.6 (Apr 11, 2024)
 
 ### Fixes
