@@ -301,6 +301,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
     if (propName === '::placeholder') {
       if (
         typeof styleValue === 'object' &&
+        styleValue != null &&
         Object.hasOwn(styleValue, 'color')
       ) {
         // TODO: On native, we can't apply custom styles to the text
