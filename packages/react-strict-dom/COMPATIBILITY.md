@@ -507,6 +507,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | clamp() | ❌ | ❌ | |
 | clipPath | ❌ | ❌ | |
 | color | ✅ | ✅ | |
+| columnGap | ✅ | ✅ | |
 | contrast() | ❌ | ❌ | |
 | cursor | ❌ | ❌ | |
 | Custom Properties | 🟡 | 🟡 | |
@@ -535,8 +536,6 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | fontVariant | ✅ | ✅ | |
 | fontWeight | 🟡 | 🟡 | |
 | gap | ✅ | ✅ | |
-| gapColumn | ✅ | ✅ | |
-| gapRow | ✅ | ✅ | |
 | grayscale() | ❌ | ❌ | |
 | height | ✅ | ✅ | |
 | hue-rotate() | ❌ | ❌ | |
@@ -615,6 +614,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | rem units | 🟡 | 🟡 | |
 | right | ✅ | ✅ | |
 | rotate | ❌ | ❌ | |
+| rowGap | ✅ | ✅ | |
 | saturate() | ❌ | ❌ | |
 | scale | ❌ | ❌ | |
 | scrollSnap* | ❌ | ❌ | |
