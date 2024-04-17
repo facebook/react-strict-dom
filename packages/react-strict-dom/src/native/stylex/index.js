@@ -306,8 +306,8 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       ) {
         // TODO: On native, we can't apply custom styles to the text
         // besides the color. Should we warn users on native platforms?
-
         result['placeholderTextColor'] = styleValue['color'];
+        delete result['::placeholder'];
         continue;
       }
     }
