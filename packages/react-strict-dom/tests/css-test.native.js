@@ -1360,6 +1360,40 @@ describe('styles: pseudo-state', () => {
 });
 
 /**
+ * Styles: pseudo-elements
+ */
+
+describe('styles: pseudo-element', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'warn');
+    console.warn.mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    console.warn.mockRestore();
+  });
+
+  test('::placeholder syntax', () => {
+    const styles = css.create({
+      root: {
+        '::placeholder': {
+          color: 'red',
+          fontWeight: 'bold'
+        }
+      }
+    });
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot(
+      'placeholderTextColor'
+    );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'unsupported "::placeholder" style property "fontWeight"'
+      )
+    );
+  });
+});
+
+/**
  * Units: length
  */
 

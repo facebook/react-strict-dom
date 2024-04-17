@@ -994,6 +994,12 @@ exports[`properties: logical direction textAlign: start 1`] = `
 }
 `;
 
+exports[`styles: pseudo-element ::placeholder syntax: placeholderTextColor 1`] = `
+{
+  "placeholderTextColor": "red",
+}
+`;
+
 exports[`styles: pseudo-state :hover syntax: hovered 1`] = `
 {
   "style": {

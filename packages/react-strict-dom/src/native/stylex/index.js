@@ -304,6 +304,22 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       }
     }
 
+    if (propName === '::placeholder') {
+      if (typeof styleValue === 'object' && styleValue != null) {
+        const placeholderStyleProps = Object.keys(styleValue);
+        for (let i = 0; i < placeholderStyleProps.length; i++) {
+          const propName = placeholderStyleProps[i];
+          if (propName === 'color') {
+            result['placeholderTextColor'] = styleValue[propName];
+          } else {
+            warnMsg(`unsupported "::placeholder" style property "${propName}"`);
+          }
+        }
+        delete result['::placeholder'];
+        continue;
+      }
+    }
+
     result[propName] = styleValue;
   }
 
@@ -439,12 +455,6 @@ export function props(
   ...
 } {
   const options = this;
-  /* eslint-disable prefer-const */
-  let { lineClamp, ...flatStyle }: { [key: string]: mixed } =
-    flattenStyle(style);
-  let prevStyle = { ...flatStyle };
-  /* eslint-enable prefer-const */
-
   const {
     passthroughProperties = [],
     viewportHeight,
@@ -453,13 +463,22 @@ export function props(
   } = options;
   const nativeProps: { [string]: $FlowFixMe } = {};
 
-  flatStyle = CSSMediaQuery.resolveMediaQueries(flatStyle, {
+  let initialFlatStyle = flattenStyle(style);
+  initialFlatStyle = CSSMediaQuery.resolveMediaQueries(initialFlatStyle, {
     width: viewportWidth,
     height: viewportHeight,
     direction: writingDirection ?? 'ltr'
   });
+  initialFlatStyle = resolveStyle(initialFlatStyle, options);
 
-  flatStyle = resolveStyle(flatStyle, options);
+  /* eslint-disable prefer-const */
+  let {
+    lineClamp,
+    placeholderTextColor,
+    ...flatStyle
+  }: { [key: string]: mixed } = initialFlatStyle;
+  /* eslint-enable prefer-const */
+  const prevStyle = { ...flatStyle };
 
   for (const styleProp in flatStyle) {
     const styleValue = flatStyle[styleProp];
@@ -675,13 +694,15 @@ export function props(
       }
     }
 
-    // $FlowFixMe
     nativeProps.style = flatStyle;
   }
 
   if (lineClamp != null) {
-    // $FlowFixMe
     nativeProps.numberOfLines = lineClamp;
+  }
+
+  if (placeholderTextColor != null) {
+    nativeProps.placeholderTextColor = placeholderTextColor;
   }
 
   return nativeProps;
