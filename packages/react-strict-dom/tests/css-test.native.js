@@ -1394,6 +1394,18 @@ describe('units: length', () => {
       )
     ).toMatchSnapshot();
   });
+
+  test("'0' is resolved to the number 0", () => {
+    const styles = css.create({
+      zeroStringTest: {
+        borderRadius: '0',
+        width: '0'
+      }
+    });
+    expect(
+      css.props.call(mockOptions, styles.zeroStringTest)
+    ).toMatchSnapshot();
+  });
 });
 
 /**
