@@ -535,8 +535,8 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | fontVariant | ✅ | ✅ | |
 | fontWeight | 🟡 | 🟡 | |
 | gap | ✅ | ✅ | |
-| gapColumn | ✅ | ✅ | |
-| gapRow | ✅ | ✅ | |
+| columnGap | ✅ | ✅ | |
+| rowGap | ✅ | ✅ | |
 | grayscale() | ❌ | ❌ | |
 | height | ✅ | ✅ | |
 | hue-rotate() | ❌ | ❌ | |

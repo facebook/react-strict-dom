@@ -74,8 +74,8 @@ const stylePropertyAllowlistSet = new Set<string>([
   'fontWeight',
   'fontVariant',
   'gap',
-  'gapColumn',
-  'gapRow',
+  'columnGap',
+  'rowGap',
   'height',
   // 'includeFontPadding', Android Only
   'justifyContent',
