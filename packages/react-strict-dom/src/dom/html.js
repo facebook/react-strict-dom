@@ -27,6 +27,7 @@ import type { StrictReactDOMTextAreaProps } from '../types/StrictReactDOMTextAre
 
 import { createStrictDOMComponent as createStrict } from './modules/createStrictDOMComponent';
 import { defaultStyles } from './runtime';
+import type { StrictHTMLOptionElement } from '../types/StrictHTMLFormElements';
 
 /**
  * "a" (inline)
@@ -293,8 +294,11 @@ export const optgroup: React$AbstractComponent<
  */
 export const option: React$AbstractComponent<
   StrictReactDOMOptionProps,
-  StrictHTMLElement
-> = createStrict('option', defaultStyles.option);
+  StrictHTMLOptionElement
+> = createStrict<StrictHTMLOptionElement, StrictReactDOMOptionProps>(
+  'option',
+  defaultStyles.option
+);
 
 /**
  * "p" (block)

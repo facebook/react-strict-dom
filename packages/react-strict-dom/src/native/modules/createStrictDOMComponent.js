@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
+ * @flow strict-local
  */
 
 import type { StrictProps } from '../../types/StrictProps';
@@ -46,8 +46,8 @@ import * as stylex from '../stylex';
 
 type ReactNativeProps = {
   ...StrictProps,
-  accessibilityPosInSet?: any,
-  accessibilitySetSize?: any,
+  accessibilityPosInSet?: $FlowFixMe,
+  accessibilitySetSize?: $FlowFixMe,
   caretHidden?: ?boolean,
   experimental_layoutConformance?: 'strict',
   multiline?: ?boolean,
@@ -62,9 +62,9 @@ type ReactNativeProps = {
   ) => void,
   onKeyPress?: ?(event: KeyPressEvent) => mixed,
   onLoad?: ?(event: ImageLoadEvent) => void,
-  onPress?: any,
+  onPress?: $FlowFixMe,
   onSubmitEditing?: ?(event: EditingEvent) => mixed,
-  ref?: any,
+  ref?: $FlowFixMe,
   secureTextEntry?: ?boolean,
   style?: ViewStyleProp | TextStyleProp,
   testID?: ?string
@@ -122,7 +122,7 @@ function isString(str: mixed): boolean %checks {
   return typeof str === 'string';
 }
 
-function validateStrictProps(props: any) {
+function validateStrictProps(props: $FlowFixMe) {
   Object.keys(props).forEach((key) => {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
@@ -153,7 +153,7 @@ function resolveTransitionProperty(property: mixed): string[] {
 
 const DisplayModeInsideContext = React.createContext('flow');
 
-export function createStrictDOMComponent<T: any, P: StrictProps>(
+export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
   defaultProps?: P
 ): React.AbstractComponent<P, T> {
