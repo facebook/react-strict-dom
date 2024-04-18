@@ -549,6 +549,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | insetInlineStart | 🟡 | 🟡 | |
 | invert() | ❌ | ❌ | |
 | justifyContent | ✅ | ✅ | |
+| justifyItems | ❌ | ❌ | |
 | justifySelf | ❌ | ❌ | |
 | left | ✅ | ✅ | |
 | letterSpacing | ✅ | ✅ | |
