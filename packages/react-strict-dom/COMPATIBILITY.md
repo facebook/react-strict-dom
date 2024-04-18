@@ -644,4 +644,4 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | whiteSpace | ❌ | ❌ | |
 | width | ✅ | ✅ | |
 | wordBreak | ❌ | ❌ | |
-| zIndex | ✅ | ✅ | |
+| zIndex | ✅ | ✅ | [#100](https://github.com/facebook/react-strict-dom/issues/100) |
