@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.8 (Apr 18, 2024)
+
+### Fixes
+
+* [Native] Further refinement of log, warn, error messaging.
+* [Native] Fix typos in names of `{row,column}Gap`` properties ([#97](https://github.com/facebook/react-strict-dom/pull/97)).
+* Fix 'html' types across dom and native ([#98](https://github.com/facebook/react-strict-dom/pull/98)).
+* Fix TypeScript types for StrictHTMLCollection ([#99](https://github.com/facebook/react-strict-dom/pull/99)).
+
 ## 0.0.7 (Apr 17, 2024)
 
 ### New features
