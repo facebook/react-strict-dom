@@ -1,0 +1,258 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow strict
+ */
+
+import typeof * as DomHTML from '../../dom/html';
+import typeof * as NativeHTML from '../../native/html';
+
+declare var domHTML: DomHTML;
+domHTML as NativeHTML;
+declare var nativeHTML: NativeHTML;
+nativeHTML as DomHTML;
+
+// Adding all the individual keys as an extra layer of testing
+
+declare var a_dom: DomHTML['a'];
+(a_dom as NativeHTML['a']);
+declare var a_native: NativeHTML['a'];
+(a_native as DomHTML['a']);
+
+declare var article_dom: DomHTML['article'];
+(article_dom as NativeHTML['article']);
+declare var article_native: NativeHTML['article'];
+(article_native as DomHTML['article']);
+
+declare var aside_dom: DomHTML['aside'];
+(aside_dom as NativeHTML['aside']);
+declare var aside_native: NativeHTML['aside'];
+(aside_native as DomHTML['aside']);
+
+declare var b_dom: DomHTML['b'];
+(b_dom as NativeHTML['b']);
+declare var b_native: NativeHTML['b'];
+(b_native as DomHTML['b']);
+
+declare var bdi_dom: DomHTML['bdi'];
+(bdi_dom as NativeHTML['bdi']);
+declare var bdi_native: NativeHTML['bdi'];
+(bdi_native as DomHTML['bdi']);
+
+declare var bdo_dom: DomHTML['bdo'];
+(bdo_dom as NativeHTML['bdo']);
+declare var bdo_native: NativeHTML['bdo'];
+(bdo_native as DomHTML['bdo']);
+
+declare var blockquote_dom: DomHTML['blockquote'];
+(blockquote_dom as NativeHTML['blockquote']);
+declare var blockquote_native: NativeHTML['blockquote'];
+(blockquote_native as DomHTML['blockquote']);
+
+declare var br_dom: DomHTML['br'];
+(br_dom as NativeHTML['br']);
+declare var br_native: NativeHTML['br'];
+(br_native as DomHTML['br']);
+
+declare var button_dom: DomHTML['button'];
+(button_dom as NativeHTML['button']);
+declare var button_native: NativeHTML['button'];
+(button_native as DomHTML['button']);
+
+declare var code_dom: DomHTML['code'];
+(code_dom as NativeHTML['code']);
+declare var code_native: NativeHTML['code'];
+(code_native as DomHTML['code']);
+
+declare var del_dom: DomHTML['del'];
+(del_dom as NativeHTML['del']);
+declare var del_native: NativeHTML['del'];
+(del_native as DomHTML['del']);
+
+declare var div_dom: DomHTML['div'];
+(div_dom as NativeHTML['div']);
+declare var div_native: NativeHTML['div'];
+(div_native as DomHTML['div']);
+
+declare var em_dom: DomHTML['em'];
+(em_dom as NativeHTML['em']);
+declare var em_native: NativeHTML['em'];
+(em_native as DomHTML['em']);
+
+declare var fieldset_dom: DomHTML['fieldset'];
+(fieldset_dom as NativeHTML['fieldset']);
+declare var fieldset_native: NativeHTML['fieldset'];
+(fieldset_native as DomHTML['fieldset']);
+
+declare var footer_dom: DomHTML['footer'];
+(footer_dom as NativeHTML['footer']);
+declare var footer_native: NativeHTML['footer'];
+(footer_native as DomHTML['footer']);
+
+declare var form_dom: DomHTML['form'];
+(form_dom as NativeHTML['form']);
+declare var form_native: NativeHTML['form'];
+(form_native as DomHTML['form']);
+
+declare var h1_dom: DomHTML['h1'];
+(h1_dom as NativeHTML['h1']);
+declare var h1_native: NativeHTML['h1'];
+(h1_native as DomHTML['h1']);
+
+declare var h2_dom: DomHTML['h2'];
+(h2_dom as NativeHTML['h2']);
+declare var h2_native: NativeHTML['h2'];
+(h2_native as DomHTML['h2']);
+
+declare var h3_dom: DomHTML['h3'];
+(h3_dom as NativeHTML['h3']);
+declare var h3_native: NativeHTML['h3'];
+(h3_native as DomHTML['h3']);
+
+declare var h4_dom: DomHTML['h4'];
+(h4_dom as NativeHTML['h4']);
+declare var h4_native: NativeHTML['h4'];
+(h4_native as DomHTML['h4']);
+
+declare var h5_dom: DomHTML['h5'];
+(h5_dom as NativeHTML['h5']);
+declare var h5_native: NativeHTML['h5'];
+(h5_native as DomHTML['h5']);
+
+declare var h6_dom: DomHTML['h6'];
+(h6_dom as NativeHTML['h6']);
+declare var h6_native: NativeHTML['h6'];
+(h6_native as DomHTML['h6']);
+
+declare var header_dom: DomHTML['header'];
+(header_dom as NativeHTML['header']);
+declare var header_native: NativeHTML['header'];
+(header_native as DomHTML['header']);
+
+declare var hr_dom: DomHTML['hr'];
+(hr_dom as NativeHTML['hr']);
+declare var hr_native: NativeHTML['hr'];
+(hr_native as DomHTML['hr']);
+
+declare var i_dom: DomHTML['i'];
+(i_dom as NativeHTML['i']);
+declare var i_native: NativeHTML['i'];
+(i_native as DomHTML['i']);
+
+declare var img_dom: DomHTML['img'];
+(img_dom as NativeHTML['img']);
+declare var img_native: NativeHTML['img'];
+(img_native as DomHTML['img']);
+
+declare var input_dom: DomHTML['input'];
+(input_dom as NativeHTML['input']);
+declare var input_native: NativeHTML['input'];
+(input_native as DomHTML['input']);
+
+declare var ins_dom: DomHTML['ins'];
+(ins_dom as NativeHTML['ins']);
+declare var ins_native: NativeHTML['ins'];
+(ins_native as DomHTML['ins']);
+
+declare var kbd_dom: DomHTML['kbd'];
+(kbd_dom as NativeHTML['kbd']);
+declare var kbd_native: NativeHTML['kbd'];
+(kbd_native as DomHTML['kbd']);
+
+declare var label_dom: DomHTML['label'];
+(label_dom as NativeHTML['label']);
+declare var label_native: NativeHTML['label'];
+(label_native as DomHTML['label']);
+
+declare var li_dom: DomHTML['li'];
+(li_dom as NativeHTML['li']);
+declare var li_native: NativeHTML['li'];
+(li_native as DomHTML['li']);
+
+declare var main_dom: DomHTML['main'];
+(main_dom as NativeHTML['main']);
+declare var main_native: NativeHTML['main'];
+(main_native as DomHTML['main']);
+
+declare var nav_dom: DomHTML['nav'];
+(nav_dom as NativeHTML['nav']);
+declare var nav_native: NativeHTML['nav'];
+(nav_native as DomHTML['nav']);
+
+declare var ol_dom: DomHTML['ol'];
+(ol_dom as NativeHTML['ol']);
+declare var ol_native: NativeHTML['ol'];
+(ol_native as DomHTML['ol']);
+
+declare var p_dom: DomHTML['p'];
+(p_dom as NativeHTML['p']);
+declare var p_native: NativeHTML['p'];
+(p_native as DomHTML['p']);
+
+declare var pre_dom: DomHTML['pre'];
+(pre_dom as NativeHTML['pre']);
+declare var pre_native: NativeHTML['pre'];
+(pre_native as DomHTML['pre']);
+
+declare var option_dom: DomHTML['option'];
+(option_dom as NativeHTML['option']);
+declare var option_native: NativeHTML['option'];
+(option_native as DomHTML['option']);
+
+declare var optgroup_dom: DomHTML['optgroup'];
+(optgroup_dom as NativeHTML['optgroup']);
+declare var optgroup_native: NativeHTML['optgroup'];
+(optgroup_native as DomHTML['optgroup']);
+
+declare var s_dom: DomHTML['s'];
+(s_dom as NativeHTML['s']);
+declare var s_native: NativeHTML['s'];
+(s_native as DomHTML['s']);
+
+declare var section_dom: DomHTML['section'];
+(section_dom as NativeHTML['section']);
+declare var section_native: NativeHTML['section'];
+(section_native as DomHTML['section']);
+
+declare var select_dom: DomHTML['select'];
+(select_dom as NativeHTML['select']);
+declare var select_native: NativeHTML['select'];
+(select_native as DomHTML['select']);
+
+declare var span_dom: DomHTML['span'];
+(span_dom as NativeHTML['span']);
+declare var span_native: NativeHTML['span'];
+(span_native as DomHTML['span']);
+
+declare var strong_dom: DomHTML['strong'];
+(strong_dom as NativeHTML['strong']);
+declare var strong_native: NativeHTML['strong'];
+(strong_native as DomHTML['strong']);
+
+declare var sub_dom: DomHTML['sub'];
+(sub_dom as NativeHTML['sub']);
+declare var sub_native: NativeHTML['sub'];
+(sub_native as DomHTML['sub']);
+
+declare var sup_dom: DomHTML['sup'];
+(sup_dom as NativeHTML['sup']);
+declare var sup_native: NativeHTML['sup'];
+(sup_native as DomHTML['sup']);
+
+declare var textarea_dom: DomHTML['textarea'];
+(textarea_dom as NativeHTML['textarea']);
+declare var textarea_native: NativeHTML['textarea'];
+(textarea_native as DomHTML['textarea']);
+
+declare var u_dom: DomHTML['u'];
+(u_dom as NativeHTML['u']);
+declare var u_native: NativeHTML['u'];
+(u_native as DomHTML['u']);
+
+declare var ul_dom: DomHTML['ul'];
+(ul_dom as NativeHTML['ul']);
+declare var ul_native: NativeHTML['ul'];
+(ul_native as DomHTML['ul']);

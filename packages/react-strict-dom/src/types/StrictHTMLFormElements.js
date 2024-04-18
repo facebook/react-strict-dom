@@ -36,10 +36,10 @@ export interface StrictHTMLInputElement
 export interface StrictHTMLOptionElement extends StrictHTMLElement {
   defaultSelected: boolean;
   disabled: boolean;
-  index: number;
-  label: string;
-  selected: boolean;
-  text: string;
+  +index: number;
+  +label: string;
+  +selected: boolean;
+  +text: string;
   value: string;
 }
 

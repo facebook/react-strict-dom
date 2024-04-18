@@ -7,8 +7,6 @@
  * @flow strict
  */
 
-import type { StrictElement } from './StrictElement';
-import type { ReactRef } from './Utilities';
 import type { Styles } from './styles';
 
 type IDRef = string;
@@ -231,7 +229,6 @@ export type StrictReactDOMProps = $ReadOnly<{
     | 'decimal'
     | 'search',
   lang?: string,
-  ref?: ReactRef<StrictElement>,
   role?: AriaRole,
   spellCheck?: boolean,
   style?: ?Styles,

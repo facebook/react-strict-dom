@@ -7,14 +7,14 @@
  * @flow strict
  */
 
-import type { StrictReactDOMProps } from '../types/StrictReactDOMProps';
-
 import type { StrictHTMLElement } from '../types/StrictHTMLElement';
 import type { StrictHTMLImageElement } from '../types/StrictHTMLImageElement';
 import type { StrictHTMLInputElement } from '../types/StrictHTMLFormElements';
+import type { StrictHTMLOptionElement } from '../types/StrictHTMLFormElements';
 import type { StrictHTMLSelectElement } from '../types/StrictHTMLFormElements';
 import type { StrictHTMLTextAreaElement } from '../types/StrictHTMLFormElements';
 
+import type { StrictReactDOMProps } from '../types/StrictReactDOMProps';
 import type { StrictReactDOMAnchorProps } from '../types/StrictReactDOMAnchorProps';
 import type { StrictReactDOMButtonProps } from '../types/StrictReactDOMButtonProps';
 import type { StrictReactDOMImageProps } from '../types/StrictReactDOMImageProps';
@@ -293,8 +293,11 @@ export const optgroup: React$AbstractComponent<
  */
 export const option: React$AbstractComponent<
   StrictReactDOMOptionProps,
-  StrictHTMLElement
-> = createStrict('option', defaultStyles.option);
+  StrictHTMLOptionElement
+> = createStrict<StrictHTMLOptionElement, StrictReactDOMOptionProps>(
+  'option',
+  defaultStyles.option
+);
 
 /**
  * "p" (block)
