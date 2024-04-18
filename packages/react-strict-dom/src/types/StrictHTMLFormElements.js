@@ -7,6 +7,7 @@
  * @flow strict
  */
 
+import type { StrictHTMLCollection } from './StrictHTMLCollection';
 import type { StrictHTMLElement } from './StrictHTMLElement';
 
 type SelectionDirection = 'backward' | 'forward' | 'none';
@@ -41,12 +42,6 @@ export interface StrictHTMLOptionElement extends StrictHTMLElement {
   +selected: boolean;
   +text: string;
   value: string;
-}
-
-export interface StrictHTMLCollection<+Elem: StrictHTMLElement> {
-  @@iterator(): Iterator<Elem>;
-  +length: number;
-  +[index: number | string]: Elem;
 }
 
 export interface StrictHTMLSelectElement extends StrictHTMLElement {

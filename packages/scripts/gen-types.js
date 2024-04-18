@@ -121,7 +121,11 @@ function preprocessFileContents(inputCode) {
 }
 
 function postProcessTSOutput(outputCode) {
-  const result = outputCode.replace(/<>/g, '');
+  // `flow-api-translator` doesn't translate this Flow syntax correctly
+  const result = outputCode
+    .replace(/@@iterator\(\):/, '[Symbol.iterator]():')
+    .replace(/\bIterator</, 'IterableIterator<')
+    .replace(/<>/g, '');
 
   return result;
 }

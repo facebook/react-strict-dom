@@ -7,24 +7,23 @@
  * @flow strict
  */
 
-import type { StrictAnimation } from "../StrictAnimation";
-import type { StrictElement } from "../StrictElement";
-import type { StrictEventTarget } from "../StrictEventTarget";
-import type { StrictHTMLElement } from "../StrictHTMLElement";
-import type {
-  StrictHTMLCollection,
-  StrictHTMLInputElement,
-  StrictHTMLOptionElement,
-  StrictHTMLSelectElement,
-  StrictHTMLTextAreaElement,
-} from "../StrictHTMLFormElements";
-import type { StrictHTMLImageElement } from "../StrictHTMLImageElement";
-import type { StrictNode } from "../StrictNode";
+import type { StrictAnimation } from '../StrictAnimation';
+import type { StrictElement } from '../StrictElement';
+import type { StrictEventTarget } from '../StrictEventTarget';
 
+import type { StrictHTMLCollection } from '../StrictHTMLCollection';
+import type { StrictHTMLElement } from '../StrictHTMLElement';
+import type { StrictHTMLImageElement } from '../StrictHTMLImageElement';
+import type { StrictHTMLInputElement } from '../StrictHTMLFormElements';
+import type { StrictHTMLOptionElement } from '../StrictHTMLFormElements';
+import type { StrictHTMLSelectElement } from '../StrictHTMLFormElements';
+import type { StrictHTMLTextAreaElement } from '../StrictHTMLFormElements';
+
+import type { StrictNode } from '../StrictNode';
 
 // EventTarget
 declare var eventTarget: EventTarget;
-(eventTarget as StrictEventTarget);
+eventTarget as StrictEventTarget;
 
 // Animation extends EventTarget
 // TODO: Uncomment this after D48380371 is in a Flow release
@@ -33,36 +32,36 @@ declare var eventTarget: EventTarget;
 
 // Node extends EventTarget
 declare var node: Node;
-(node as StrictNode);
+node as StrictNode;
 
 // Element extends Node
 declare var element: Element;
-(element as StrictElement);
+element as StrictElement;
 
 declare var htmlCollection: HTMLCollection<HTMLElement>;
-(htmlCollection as StrictHTMLCollection<HTMLElement>);
-(htmlCollection as StrictHTMLCollection<StrictHTMLElement>);
+htmlCollection as StrictHTMLCollection<HTMLElement>;
+htmlCollection as StrictHTMLCollection<StrictHTMLElement>;
 
 // HTMLElement extends Element
 declare var htmlElement: HTMLElement;
-(htmlElement as StrictHTMLElement);
-
-// HTMLInputElement extends HTMLElement
-declare var htmlInputElement: HTMLInputElement;
-(htmlInputElement as StrictHTMLInputElement);
-
-// HTMLOptionElement extends HTMLElement
-declare var htmlOptionElement: HTMLOptionElement;
-(htmlOptionElement as StrictHTMLOptionElement);
-
-// HTMLSelectElement extends HTMLElement
-declare var htmlSelectElement: HTMLSelectElement;
-(htmlSelectElement as StrictHTMLSelectElement);
-
-// HTMLTextAreaElement extends HTMLElement
-declare var htmlTextAreaElement: HTMLTextAreaElement;
-(htmlTextAreaElement as StrictHTMLTextAreaElement);
+htmlElement as StrictHTMLElement;
 
 // HTMLImageElement extends HTMLElement
 declare var htmlImageElement: HTMLImageElement;
-(htmlImageElement as StrictHTMLImageElement);
+htmlImageElement as StrictHTMLImageElement;
+
+// HTMLInputElement extends HTMLElement
+declare var htmlInputElement: HTMLInputElement;
+htmlInputElement as StrictHTMLInputElement;
+
+// HTMLOptionElement extends HTMLElement
+declare var htmlOptionElement: HTMLOptionElement;
+htmlOptionElement as StrictHTMLOptionElement;
+
+// HTMLSelectElement extends HTMLElement
+declare var htmlSelectElement: HTMLSelectElement;
+htmlSelectElement as StrictHTMLSelectElement;
+
+// HTMLTextAreaElement extends HTMLElement
+declare var htmlTextAreaElement: HTMLTextAreaElement;
+htmlTextAreaElement as StrictHTMLTextAreaElement;
