@@ -11,16 +11,16 @@ import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMImageProps = $ReadOnly<{
   ...StrictReactDOMProps,
-  alt?: Stringish,
-  crossOrigin?: 'anonymous' | 'use-credentials',
-  decoding?: 'sync' | 'async' | 'auto',
-  draggable?: boolean,
-  fetchPriority?: 'high' | 'low' | 'auto',
+  alt?: ?Stringish,
+  crossOrigin?: ?('anonymous' | 'use-credentials'),
+  decoding?: ?('async' | 'auto' | 'sync'),
+  draggable?: ?boolean,
+  fetchPriority?: ?('high' | 'low' | 'auto'),
   height?: number,
-  loading?: 'eager' | 'lazy',
+  loading?: ?('eager' | 'lazy'),
   onError?: $FlowFixMe,
   onLoad?: $FlowFixMe,
-  referrerPolicy?:
+  referrerPolicy?: ?(
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
     | 'origin'
@@ -28,7 +28,8 @@ export type StrictReactDOMImageProps = $ReadOnly<{
     | 'same-origin'
     | 'strict-origin'
     | 'strict-origin-when-cross-origin'
-    | 'unsafe-url',
+    | 'unsafe-url'
+  ),
   src?: string,
   srcSet?: string,
   width?: number

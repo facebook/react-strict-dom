@@ -11,8 +11,8 @@ import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMOptionProps = $ReadOnly<{
   ...StrictReactDOMProps,
-  disabled?: boolean,
-  label?: Stringish,
-  selected?: boolean,
-  value?: Stringish
+  disabled?: ?boolean,
+  label?: ?Stringish,
+  selected?: ?boolean,
+  value?: ?Stringish
 }>;

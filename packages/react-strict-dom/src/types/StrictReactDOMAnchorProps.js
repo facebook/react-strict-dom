@@ -11,9 +11,9 @@ import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMAnchorProps = $ReadOnly<{
   ...StrictReactDOMProps,
-  download?: string,
+  download?: ?string,
   href?: string,
-  referrerPolicy?:
+  referrerPolicy?: ?(
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
     | 'origin'
@@ -21,7 +21,8 @@ export type StrictReactDOMAnchorProps = $ReadOnly<{
     | 'same-origin'
     | 'strict-origin'
     | 'strict-origin-when-cross-origin'
-    | 'unsafe-url',
-  rel?: string,
-  target?: '_self' | '_blank' | '_parent' | '_top'
+    | 'unsafe-url'
+  ),
+  rel?: ?string,
+  target?: ?('_self' | '_blank' | '_parent' | '_top')
 }>;

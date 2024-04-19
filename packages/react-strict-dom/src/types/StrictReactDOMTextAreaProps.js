@@ -11,19 +11,19 @@ import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMTextAreaProps = $ReadOnly<{
   ...StrictReactDOMProps,
-  defaultValue?: Stringish,
-  disabled?: boolean,
-  maxLength?: number,
-  minLength?: number,
+  defaultValue?: ?Stringish,
+  disabled?: ?boolean,
+  maxLength?: ?number,
+  minLength?: ?number,
   onBeforeInput?: $FlowFixMe,
   onChange?: $FlowFixMe,
   onInput?: $FlowFixMe,
   onInvalid?: $FlowFixMe,
   onSelect?: $FlowFixMe,
   onSelectionChange?: $FlowFixMe,
-  placeholder?: Stringish,
-  readOnly?: boolean,
-  required?: boolean,
-  rows?: number,
-  value?: Stringish
+  placeholder?: ?Stringish,
+  readOnly?: ?boolean,
+  required?: ?boolean,
+  rows?: ?number,
+  value?: ?Stringish
 }>;

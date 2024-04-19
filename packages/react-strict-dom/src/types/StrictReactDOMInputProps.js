@@ -11,25 +11,25 @@ import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMInputProps = $ReadOnly<{
   ...StrictReactDOMProps,
-  checked?: boolean | 'mixed',
-  defaultChecked?: boolean,
-  defaultValue?: Stringish,
-  disabled?: boolean,
-  max?: string | number,
-  maxLength?: number,
-  min?: string | number,
-  minLength?: number,
-  multiple?: boolean,
+  checked?: ?(boolean | 'mixed'),
+  defaultChecked?: ?boolean,
+  defaultValue?: ?Stringish,
+  disabled?: ?boolean,
+  max?: ?(string | number),
+  maxLength?: ?number,
+  min?: ?(string | number),
+  minLength?: ?number,
+  multiple?: ?boolean,
   onBeforeInput?: $FlowFixMe,
   onChange?: $FlowFixMe,
   onInput?: $FlowFixMe,
   onInvalid?: $FlowFixMe,
   onSelect?: $FlowFixMe,
   onSelectionChange?: $FlowFixMe,
-  placeholder?: Stringish,
-  readOnly?: number,
-  required?: number,
-  step?: number | 'any',
+  placeholder?: ?Stringish,
+  readOnly?: ?number,
+  required?: ?number,
+  step?: ?(number | 'any'),
   type?:
     | 'checkbox'
     | 'color'
@@ -50,5 +50,5 @@ export type StrictReactDOMInputProps = $ReadOnly<{
     | 'time'
     | 'url'
     | 'week',
-  value?: Stringish | boolean | number
+  value?: ?(Stringish | boolean | number)
 }>;
