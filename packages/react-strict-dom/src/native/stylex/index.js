@@ -16,10 +16,10 @@ import type { SpreadOptions } from './SpreadOptions';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSMediaQuery } from './CSSMediaQuery';
+import { CSSTextShadow } from './CSSTextShadow';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
-import { parseShadow } from './parseShadow';
 import { parseTimeValue } from './parseTimeValue';
 import {
   resolveVariableReferences,
@@ -222,26 +222,6 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
     const propName = propNames[i];
     let styleValue = result[propName];
 
-    // Polyfill unitless lineHeight
-    // React Native treats unitless as a 'px' value
-    // Web treats unitless as an 'em' value
-    if (propName === 'lineHeight') {
-      if (
-        typeof styleValue === 'number' ||
-        (typeof styleValue === 'string' &&
-          CSSLengthUnitValue.parse(styleValue) == null)
-      ) {
-        styleValue = styleValue + 'em';
-      }
-    }
-
-    // React Native shadows on iOS cannot polyfill box-shadow
-    if (propName === 'boxShadow' && typeof styleValue === 'string') {
-      warnMsg('unsupported style property "boxShadow".');
-      delete result.boxShadow;
-      continue;
-    }
-
     if (
       CSSMediaQuery.isMediaQueryString(propName) &&
       typeof styleValue === 'object' &&
@@ -262,29 +242,35 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       continue;
     }
 
+    // Polyfill unitless lineHeight
+    // React Native treats unitless as a 'px' value
+    // Web treats unitless as an 'em' value
+    if (propName === 'lineHeight') {
+      if (
+        typeof styleValue === 'number' ||
+        (typeof styleValue === 'string' &&
+          CSSLengthUnitValue.parse(styleValue) == null)
+      ) {
+        styleValue = styleValue + 'em';
+      }
+    }
+
     if (typeof styleValue === 'string') {
       if (stringContainsVariables(styleValue)) {
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
       }
 
+      // React Native shadows on iOS cannot polyfill box-shadow
+      if (propName === 'boxShadow') {
+        warnMsg('unsupported style property "boxShadow".');
+        delete result.boxShadow;
+        continue;
+      }
+
       // React Native only supports non-standard text-shadow styles
       if (propName === 'textShadow') {
-        const parsedShadow = parseShadow(styleValue);
-        if (parsedShadow.length > 1) {
-          warnMsg(
-            'unsupported multiple values for style property "textShadow".'
-          );
-        }
-        const { offsetX, offsetY, blurRadius, color } = parsedShadow[0];
-        result.textShadowColor = color;
-        result.textShadowOffset = processStyle({
-          height: offsetY,
-          width: offsetX
-        });
-        result.textShadowRadius = blurRadius;
-        propNames.push('textShadowColor', 'textShadowRadius');
-        delete result.textShadow;
+        result[propName] = new CSSTextShadow(styleValue);
         continue;
       }
 
@@ -374,13 +360,12 @@ function resolveStyle<S: { +[string]: mixed }>(
       continue;
     }
 
-    // resolve textShadowOffset nested object values
-    if (
-      propName === 'textShadowOffset' &&
-      typeof styleValue === 'object' &&
-      styleValue != null
-    ) {
-      result[propName] = resolveStyle(styleValue, options);
+    // resolve textShadow
+    if (styleValue instanceof CSSTextShadow) {
+      const textShadowStyles = styleValue.resolve();
+      Object.assign(result, textShadowStyles);
+      stylesToReprocess.textShadowOffset = textShadowStyles.textShadowOffset;
+      continue;
     }
 
     result[propName] = styleValue;
