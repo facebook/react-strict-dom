@@ -44,7 +44,7 @@ function parseValue(str: string) {
   };
 }
 
-type ParsedShadow = {
+export type ParsedShadow = {
   inset: boolean,
   offsetX: number | string,
   offsetY: number | string,
