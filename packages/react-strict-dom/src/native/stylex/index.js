@@ -220,7 +220,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
   const propNames = Object.keys(result);
   for (let i = 0; i < propNames.length; i++) {
     const propName = propNames[i];
-    let styleValue = result[propName];
+    const styleValue = result[propName];
 
     if (
       CSSMediaQuery.isMediaQueryString(propName) &&
@@ -240,19 +240,6 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
       // TODO: customize processStyle to be able to override the candidate "prop name"
       result[propName] = processStyle(styleValue);
       continue;
-    }
-
-    // Polyfill unitless lineHeight
-    // React Native treats unitless as a 'px' value
-    // Web treats unitless as an 'em' value
-    if (propName === 'lineHeight') {
-      if (
-        typeof styleValue === 'number' ||
-        (typeof styleValue === 'string' &&
-          CSSLengthUnitValue.parse(styleValue) == null)
-      ) {
-        styleValue = styleValue + 'em';
-      }
     }
 
     if (typeof styleValue === 'string') {
@@ -352,6 +339,34 @@ function resolveStyle<S: { +[string]: mixed }>(
         stylesToReprocess[propName] = resolvedValue;
       }
       continue;
+    }
+
+    // Polyfill unitless lineHeight
+    // React Native treats unitless as a 'px' value
+    // Web treats unitless as fontSize multiplier
+    if (propName === 'lineHeight') {
+      if (
+        typeof styleValue === 'number' ||
+        (typeof styleValue === 'string' &&
+          CSSLengthUnitValue.parse(styleValue) == null)
+      ) {
+        const lineHeightValue = parseFloat(styleValue);
+        // Only convert unitless lineHeight if fontSize exists
+        if (style.fontSize != null) {
+          if (style.fontSize instanceof CSSLengthUnitValue) {
+            const { value: fontSizeValue, unit: fontSizeUnit } = style.fontSize;
+            const value = new CSSLengthUnitValue(
+              lineHeightValue * fontSizeValue,
+              fontSizeUnit
+            );
+            stylesToReprocess[propName] = value;
+            result[propName] = value;
+          } else if (typeof style.fontSize === 'number') {
+            result[propName] = lineHeightValue * style.fontSize;
+          }
+          continue;
+        }
+      }
     }
 
     // resolve length units
