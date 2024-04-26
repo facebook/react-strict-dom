@@ -1291,11 +1291,11 @@ exports[`html style polyfills default inherited text styles 1`] = `
           "color": "red",
           "direction": "rtl",
           "fontFamily": "Arial",
-          "fontSize": "1em",
+          "fontSize": 32,
           "fontStyle": "italic",
           "fontVariant": "variant",
           "fontWeight": "300",
-          "lineHeight": 1.6,
+          "lineHeight": 48,
           "position": "static",
           "textAlign": "right",
           "textTransform": "uppercase",
@@ -1303,7 +1303,29 @@ exports[`html style polyfills default inherited text styles 1`] = `
         }
       }
     >
-      Text should inherit div styles
+      Text should 
+      <Text
+        dir="auto"
+        style={
+          {
+            "color": "red",
+            "direction": "rtl",
+            "fontFamily": "Arial",
+            "fontSize": 64,
+            "fontStyle": "italic",
+            "fontVariant": "variant",
+            "fontWeight": "300",
+            "lineHeight": 96,
+            "position": "static",
+            "textAlign": "right",
+            "textTransform": "uppercase",
+            "userSelect": "auto",
+          }
+        }
+      >
+        inherit
+      </Text>
+       div styles
     </Text>
     <TextInput
       dir="auto"
@@ -1314,11 +1336,11 @@ exports[`html style polyfills default inherited text styles 1`] = `
           "color": "red",
           "direction": "rtl",
           "fontFamily": "Arial",
-          "fontSize": "1em",
+          "fontSize": 16,
           "fontStyle": "italic",
           "fontVariant": "variant",
           "fontWeight": "300",
-          "lineHeight": 1.6,
+          "lineHeight": 24,
           "position": "static",
           "textAlign": "right",
           "textTransform": "uppercase",

@@ -272,6 +272,7 @@ exports[`properties: general line-height: rem 1`] = `
 exports[`properties: general line-height: unitless number 1`] = `
 {
   "style": {
+    "fontSize": 16,
     "lineHeight": 24,
   },
 }
@@ -280,6 +281,7 @@ exports[`properties: general line-height: unitless number 1`] = `
 exports[`properties: general line-height: unitless string 1`] = `
 {
   "style": {
+    "fontSize": 16,
     "lineHeight": 24,
   },
 }

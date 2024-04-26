@@ -114,26 +114,39 @@ describe('html', () => {
     });
 
     test('default inherited text styles', () => {
-      const inheritableStyles = {
-        color: 'red',
-        cursor: 'pointer',
-        direction: 'rtl',
-        fontFamily: 'Arial',
-        fontSize: '1em',
-        fontStyle: 'italic',
-        fontVariant: 'variant',
-        fontWeight: 'bold',
-        letterSpace: '10px',
-        lineHeight: 1.6,
-        textAlign: 'right',
-        textIndent: '10px',
-        textTransform: 'uppercase',
-        whiteSpace: ''
-      };
+      const styles = css.create({
+        inheritable: {
+          color: 'red',
+          cursor: 'pointer',
+          direction: 'rtl',
+          fontFamily: 'Arial',
+          fontSize: '1em',
+          fontStyle: 'italic',
+          fontVariant: 'variant',
+          fontWeight: 'bold',
+          letterSpace: '10px',
+          lineHeight: 1.5,
+          textAlign: 'right',
+          textIndent: '10px',
+          textTransform: 'uppercase',
+          whiteSpace: 'pre'
+        },
+        alsoInheritable: {
+          fontWeight: 300
+        },
+        text: {
+          fontSize: '2em'
+        }
+      });
+      // This also tests that unitless line-height is correctly inherited, including
+      // through nested text elements.
       const root = create(
-        <html.div style={inheritableStyles}>
-          <html.div style={{ fontWeight: 300 }}>
-            <html.span>Text should inherit div styles</html.span>
+        <html.div style={styles.inheritable}>
+          <html.div style={styles.alsoInheritable}>
+            <html.span style={styles.text}>
+              Text should <html.span style={styles.text}>inherit</html.span> div
+              styles
+            </html.span>
             <html.input placeholder="Input should inherit div styles" />
           </html.div>
         </html.div>

@@ -309,9 +309,11 @@ describe('properties: general', () => {
   test('line-height', () => {
     const styles = css.create({
       numeric: {
+        fontSize: 16,
         lineHeight: 1.5
       },
       string: {
+        fontSize: 16,
         lineHeight: '1.5'
       },
       rem: {

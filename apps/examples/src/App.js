@@ -185,31 +185,21 @@ export default function App(): React.MixedElement {
           <html.textarea placeholder="textarea" />
         </ExampleBlock>
 
-        {/* variables & themes */}
-        <ExampleBlock title="Variables & Theming">
-          <html.p style={styles.inheritedText}>Global variables</html.p>
-          <html.div style={styles.square} />
-
-          <html.p style={[themedTokens, styles.inheritedText]}>
-            Direct theming
-          </html.p>
-          <html.div style={[themedTokens, styles.square]} />
-
-          <html.div style={themedTokens}>
-            <html.p style={styles.inheritedText}>Inherit theming</html.p>
-            <html.div style={styles.square} />
-          </html.div>
-
-          <html.div style={themedTokens}>
-            <html.div style={themedTokensAlt}>
-              <html.p style={styles.inheritedText}>Nested theming</html.p>
-              <html.div style={styles.square} />
-            </html.div>
-          </html.div>
+        <ExampleBlock title="CSS Animations">
+          <html.div
+            style={[
+              styles.square,
+              styles.bgRed,
+              animate && styles.keyframeAnimation
+            ]}
+          />
+          <html.button onClick={() => setAnimate(!animate)}>
+            {animate ? 'Reset' : 'Start'}
+          </html.button>
         </ExampleBlock>
 
         {/* block layout emulation */}
-        <ExampleBlock title="Layout">
+        <ExampleBlock title="CSS Layout">
           <html.p>display:block emulation</html.p>
           <html.div>
             <html.div style={styles.square} />
@@ -253,8 +243,8 @@ export default function App(): React.MixedElement {
           </html.div>
         </ExampleBlock>
 
-        {/* positioning (static by default) */}
-        <ExampleBlock title="Position">
+        {/* CSS positioning (static by default) */}
+        <ExampleBlock title="CSS Position">
           <html.div style={[styles.p50, styles.relative]}>
             <html.div style={styles.p50}>
               <html.div style={[styles.square, styles.absTopLeft]} />
@@ -265,115 +255,16 @@ export default function App(): React.MixedElement {
           </html.div>
         </ExampleBlock>
 
-        {/* visibility */}
-        <ExampleBlock title="Visibility">
-          <html.div style={styles.flex}>
-            <html.div style={[styles.square, styles.visibilityCollapse]} />
-            <html.div style={[styles.square, styles.visibilityHidden]} />
-            <html.div style={[styles.square, styles.visibilityVisible]} />
+        {/* CSS text */}
+        <ExampleBlock title="CSS Text styles">
+          <html.div style={styles.lineHeightUnitless}>
+            <html.span style={styles.text}>
+              <html.span style={styles.text}>line-height</html.span> (unitless)
+            </html.span>
           </html.div>
-        </ExampleBlock>
-
-        {/* event emulation */}
-        <ExampleBlock title="Events">
-          <html.input
-            onChange={(e) => {
-              console.log(e.type, e.target.value);
-            }}
-            onKeyDown={(e) => {
-              console.log(e.type, e.key);
-            }}
-            onInput={(e) => {
-              console.log(e.type, e.target.value);
-            }}
-          />
-          <html.textarea
-            onChange={(e) => {
-              console.log(e.type, e.target.value);
-            }}
-            onKeyDown={(e) => {
-              console.log(e.type, e.key);
-            }}
-            onInput={(e) => {
-              console.log(e.type, e.target.value);
-            }}
-          />
-          <html.div
-            onClick={(e) => {
-              setClickData((data) => ({
-                color: data.color === 'red' ? 'blue' : 'red',
-                text: 'click'
-              }));
-              setClickEventData({
-                altKey: e.altKey,
-                button: e.button,
-                ctrlKey: e.ctrlKey,
-                metaKey: e.metaKey,
-                pageX: e.pageX,
-                pageY: e.pageY,
-                shiftKey: e.shiftKey
-              });
-            }}
-            style={[styles.h100, styles.dynamicBg(clickData.color)]}
-          >
-            <html.span style={styles.bgWhite}>{clickData.text}</html.span>
-            <html.div style={styles.flex}>
-              <html.div style={styles.flexGrow}>
-                <html.div>
-                  <html.span>
-                    {clickEventData.altKey ? '✅' : '🚫'} altKey
-                  </html.span>
-                </html.div>
-                <html.div>
-                  <html.span>
-                    {clickEventData.ctrlKey ? '✅' : '🚫'} ctrlKey
-                  </html.span>
-                </html.div>
-                <html.div>
-                  <html.span>
-                    {clickEventData.metaKey ? '✅' : '🚫'} metaKey
-                  </html.span>
-                </html.div>
-                <html.div>
-                  <html.span>
-                    {clickEventData.shiftKey ? '✅' : '🚫'} shiftKey
-                  </html.span>
-                </html.div>
-              </html.div>
-              <html.div style={styles.flexGrow}>
-                <html.div>
-                  <html.span>button: {clickEventData.button}</html.span>
-                </html.div>
-                <html.div>
-                  <html.span>pageX: {clickEventData.pageX}</html.span>
-                </html.div>
-                <html.div>
-                  <html.span>pageY: {clickEventData.pageY}</html.span>
-                </html.div>
-              </html.div>
-            </html.div>
+          <html.div style={styles.lineHeightEm}>
+            <html.span style={styles.text}>line-height (em)</html.span>
           </html.div>
-
-          <html.img
-            onLoad={(e) => {
-              setImageLoadText(`${e.type}: loaded`);
-            }}
-            width={150}
-            height={150}
-            src="http://placehold.jp/150x150.png"
-            style={styles.objContain}
-          />
-          <html.span>{imageLoadText}</html.span>
-          <html.img
-            onError={(e) => {
-              setImageErrorText(`${e.type}: errored`);
-            }}
-            width={150}
-            height={150}
-            src="http://error"
-            style={styles.objContain}
-          />
-          <html.span>{imageErrorText}</html.span>
         </ExampleBlock>
 
         {/* CSS transitions shim */}
@@ -492,20 +383,144 @@ export default function App(): React.MixedElement {
             Toggle
           </html.button>
         </ExampleBlock>
-        <ExampleBlock title="Keyframe Animations">
-          <html.div
-            style={[
-              styles.square,
-              styles.bgRed,
-              animate && styles.keyframeAnimation
-            ]}
-          />
-          <html.button onClick={() => setAnimate(!animate)}>
-            {animate ? 'Reset' : 'Start'}
-          </html.button>
+
+        {/* visibility */}
+        <ExampleBlock title="CSS Visibility">
+          <html.div style={styles.flex}>
+            <html.div style={[styles.square, styles.visibilityCollapse]} />
+            <html.div style={[styles.square, styles.visibilityHidden]} />
+            <html.div style={[styles.square, styles.visibilityVisible]} />
+          </html.div>
         </ExampleBlock>
-        <ExampleBlock title="Hover">
+
+        {/* variables & themes */}
+        <ExampleBlock title="CSS Variables & Theming">
+          <html.p style={styles.inheritedText}>Global variables</html.p>
+          <html.div style={styles.square} />
+
+          <html.p style={[themedTokens, styles.inheritedText]}>
+            Direct theming
+          </html.p>
+          <html.div style={[themedTokens, styles.square]} />
+
+          <html.div style={themedTokens}>
+            <html.p style={styles.inheritedText}>Inherit theming</html.p>
+            <html.div style={styles.square} />
+          </html.div>
+
+          <html.div style={themedTokens}>
+            <html.div style={themedTokensAlt}>
+              <html.p style={styles.inheritedText}>Nested theming</html.p>
+              <html.div style={styles.square} />
+            </html.div>
+          </html.div>
+        </ExampleBlock>
+
+        {/* hover */}
+        <ExampleBlock title="CSS :hover">
           <html.div style={styles.squareHover} />
+        </ExampleBlock>
+
+        {/* event emulation */}
+        <ExampleBlock title="DOM Events">
+          <html.input
+            onChange={(e) => {
+              console.log(e.type, e.target.value);
+            }}
+            onKeyDown={(e) => {
+              console.log(e.type, e.key);
+            }}
+            onInput={(e) => {
+              console.log(e.type, e.target.value);
+            }}
+          />
+          <html.textarea
+            onChange={(e) => {
+              console.log(e.type, e.target.value);
+            }}
+            onKeyDown={(e) => {
+              console.log(e.type, e.key);
+            }}
+            onInput={(e) => {
+              console.log(e.type, e.target.value);
+            }}
+          />
+          <html.div
+            onClick={(e) => {
+              setClickData((data) => ({
+                color: data.color === 'red' ? 'blue' : 'red',
+                text: 'click'
+              }));
+              setClickEventData({
+                altKey: e.altKey,
+                button: e.button,
+                ctrlKey: e.ctrlKey,
+                metaKey: e.metaKey,
+                pageX: e.pageX,
+                pageY: e.pageY,
+                shiftKey: e.shiftKey
+              });
+            }}
+            style={[styles.h100, styles.dynamicBg(clickData.color)]}
+          >
+            <html.span style={styles.bgWhite}>{clickData.text}</html.span>
+            <html.div style={styles.flex}>
+              <html.div style={styles.flexGrow}>
+                <html.div>
+                  <html.span>
+                    {clickEventData.altKey ? '✅' : '🚫'} altKey
+                  </html.span>
+                </html.div>
+                <html.div>
+                  <html.span>
+                    {clickEventData.ctrlKey ? '✅' : '🚫'} ctrlKey
+                  </html.span>
+                </html.div>
+                <html.div>
+                  <html.span>
+                    {clickEventData.metaKey ? '✅' : '🚫'} metaKey
+                  </html.span>
+                </html.div>
+                <html.div>
+                  <html.span>
+                    {clickEventData.shiftKey ? '✅' : '🚫'} shiftKey
+                  </html.span>
+                </html.div>
+              </html.div>
+              <html.div style={styles.flexGrow}>
+                <html.div>
+                  <html.span>button: {clickEventData.button}</html.span>
+                </html.div>
+                <html.div>
+                  <html.span>pageX: {clickEventData.pageX}</html.span>
+                </html.div>
+                <html.div>
+                  <html.span>pageY: {clickEventData.pageY}</html.span>
+                </html.div>
+              </html.div>
+            </html.div>
+          </html.div>
+
+          <html.img
+            onLoad={(e) => {
+              setImageLoadText(`${e.type}: loaded`);
+            }}
+            width={150}
+            height={150}
+            src="http://placehold.jp/150x150.png"
+            style={styles.objContain}
+          />
+          <html.span>{imageLoadText}</html.span>
+          <html.img
+            onError={(e) => {
+              setImageErrorText(`${e.type}: errored`);
+            }}
+            width={150}
+            height={150}
+            src="http://error"
+            style={styles.objContain}
+          />
+          <html.span>{imageErrorText}</html.span>
         </ExampleBlock>
       </html.div>
     </ScrollView>
@@ -671,5 +686,21 @@ const styles = css.create({
   },
   visibilityVisible: {
     visibility: 'visible'
+  },
+  lineHeightUnitless: {
+    lineHeight: 2,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid'
+  },
+  lineHeightEm: {
+    lineHeight: '2em',
+    borderWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid'
+  },
+  text: {
+    fontSize: '2em',
+    backgroundColor: 'rgba(255,0,0,0.25)'
   }
 });
