@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`html block layout override of flex layout: block layout override of flex 1`] = `
+exports[`<html.*> block layout override of flex layout: block layout override of flex 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
@@ -27,7 +27,7 @@ exports[`html block layout override of flex layout: block layout override of fle
 </View>
 `;
 
-exports[`html default block layout: block layout 1`] = `
+exports[`<html.*> default block layout: block layout 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
@@ -38,7 +38,7 @@ exports[`html default block layout: block layout 1`] = `
 />
 `;
 
-exports[`html default flex layout: flex layout 1`] = `
+exports[`<html.*> default flex layout: flex layout 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
@@ -75,7 +75,7 @@ exports[`html default flex layout: flex layout 1`] = `
 </View>
 `;
 
-exports[`html hover styles onMouseEnter 1`] = `
+exports[`<html.*> hover styles onMouseEnter 1`] = `
 <View
   experimental_layoutConformance="strict"
   onMouseEnter={[Function]}
@@ -91,7 +91,7 @@ exports[`html hover styles onMouseEnter 1`] = `
 />
 `;
 
-exports[`html hover styles onMouseLeave 1`] = `
+exports[`<html.*> hover styles onMouseLeave 1`] = `
 <View
   experimental_layoutConformance="strict"
   onMouseEnter={[Function]}
@@ -107,7 +107,7 @@ exports[`html hover styles onMouseLeave 1`] = `
 />
 `;
 
-exports[`html hover styles onPointerEnter 1`] = `
+exports[`<html.*> hover styles onPointerEnter 1`] = `
 <View
   experimental_layoutConformance="strict"
   onMouseEnter={[Function]}
@@ -123,7 +123,7 @@ exports[`html hover styles onPointerEnter 1`] = `
 />
 `;
 
-exports[`html hover styles onPointerLeave 1`] = `
+exports[`<html.*> hover styles onPointerLeave 1`] = `
 <View
   experimental_layoutConformance="strict"
   onMouseEnter={[Function]}
@@ -139,7 +139,7 @@ exports[`html hover styles onPointerLeave 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "img" loading options 1`] = `
+exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
   decoding="async"
@@ -156,7 +156,7 @@ exports[`html html prop polyfills "img" loading options 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "img" loading options with srcSet 1`] = `
+exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
   decoding="async"
@@ -173,7 +173,7 @@ exports[`html html prop polyfills "img" loading options with srcSet 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "additional-name" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 1`] = `
 <TextInput
   autoComplete="additional-name"
   dir="auto"
@@ -186,7 +186,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "additional
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "address-line1" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`] = `
 <TextInput
   autoComplete="address-line1"
   dir="auto"
@@ -199,7 +199,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "address-li
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "address-line2" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`] = `
 <TextInput
   autoComplete="address-line2"
   dir="auto"
@@ -212,7 +212,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "address-li
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "bday" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
 <TextInput
   autoComplete="bday"
   dir="auto"
@@ -225,7 +225,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "bday" 1`] 
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-day" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
 <TextInput
   autoComplete="bday-day"
   dir="auto"
@@ -238,7 +238,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-day" 
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-month" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] = `
 <TextInput
   autoComplete="bday-month"
   dir="auto"
@@ -251,7 +251,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-month
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-year" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = `
 <TextInput
   autoComplete="bday-year"
   dir="auto"
@@ -264,7 +264,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "bday-year"
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-csc" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
 <TextInput
   autoComplete="cc-csc"
   dir="auto"
@@ -277,7 +277,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-csc" 1`
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
 <TextInput
   autoComplete="cc-exp"
   dir="auto"
@@ -290,7 +290,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp" 1`
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp-month" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`] = `
 <TextInput
   autoComplete="cc-exp-month"
   dir="auto"
@@ -303,7 +303,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp-mon
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp-year" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] = `
 <TextInput
   autoComplete="cc-exp-year"
   dir="auto"
@@ -316,7 +316,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-exp-yea
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-number" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = `
 <TextInput
   autoComplete="cc-number"
   dir="auto"
@@ -329,7 +329,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "cc-number"
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "country" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
 <TextInput
   autoComplete="country"
   dir="auto"
@@ -342,7 +342,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "country" 1
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "current-password" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password" 1`] = `
 <TextInput
   autoComplete="current-password"
   dir="auto"
@@ -355,7 +355,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "current-pa
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "email" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
 <TextInput
   autoComplete="email"
   dir="auto"
@@ -368,7 +368,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "email" 1`]
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "family-name" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] = `
 <TextInput
   autoComplete="family-name"
   dir="auto"
@@ -381,7 +381,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "family-nam
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "given-name" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] = `
 <TextInput
   autoComplete="given-name"
   dir="auto"
@@ -394,7 +394,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "given-name
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "honorific-prefix" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix" 1`] = `
 <TextInput
   autoComplete="honorific-prefix"
   dir="auto"
@@ -407,7 +407,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "honorific-
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "honorific-suffix" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix" 1`] = `
 <TextInput
   autoComplete="honorific-suffix"
   dir="auto"
@@ -420,7 +420,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "honorific-
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "name" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
 <TextInput
   autoComplete="name"
   dir="auto"
@@ -433,7 +433,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "name" 1`] 
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "new-password" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`] = `
 <TextInput
   autoComplete="new-password"
   dir="auto"
@@ -446,7 +446,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "new-passwo
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "nickname" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
 <TextInput
   autoComplete="nickname"
   dir="auto"
@@ -459,7 +459,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "nickname" 
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "off" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 <TextInput
   autoComplete="off"
   dir="auto"
@@ -472,7 +472,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "off" 1`] =
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "one-time-code" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`] = `
 <TextInput
   autoComplete="one-time-code"
   dir="auto"
@@ -485,7 +485,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "one-time-c
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "organization" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`] = `
 <TextInput
   autoComplete="organization"
   dir="auto"
@@ -498,7 +498,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "organizati
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "organization-title" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-title" 1`] = `
 <TextInput
   autoComplete="organization-title"
   dir="auto"
@@ -511,7 +511,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "organizati
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "postal-code" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] = `
 <TextInput
   autoComplete="postal-code"
   dir="auto"
@@ -524,7 +524,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "postal-cod
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "sex" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
 <TextInput
   autoComplete="sex"
   dir="auto"
@@ -537,7 +537,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "sex" 1`] =
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "street-address" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1`] = `
 <TextInput
   autoComplete="street-address"
   dir="auto"
@@ -550,7 +550,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "street-add
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "tel" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
 <TextInput
   autoComplete="tel"
   dir="auto"
@@ -563,7 +563,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "tel" 1`] =
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "tel-country-code" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code" 1`] = `
 <TextInput
   autoComplete="tel-country-code"
   dir="auto"
@@ -576,7 +576,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "tel-countr
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "tel-national" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`] = `
 <TextInput
   autoComplete="tel-national"
   dir="auto"
@@ -589,7 +589,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "tel-nation
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "url" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
 <TextInput
   autoComplete="url"
   dir="auto"
@@ -602,7 +602,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "url" 1`] =
 />
 `;
 
-exports[`html html prop polyfills "input" prop "autoComplete" value: "username" 1`] = `
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
 <TextInput
   autoComplete="username"
   dir="auto"
@@ -615,7 +615,7 @@ exports[`html html prop polyfills "input" prop "autoComplete" value: "username" 
 />
 `;
 
-exports[`html html prop polyfills "input" prop "disabled" 1`] = `
+exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 <TextInput
   aria-disabled={true}
   dir="auto"
@@ -631,7 +631,7 @@ exports[`html html prop polyfills "input" prop "disabled" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "email" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 <TextInput
   dir="auto"
   inputMode="email"
@@ -645,7 +645,7 @@ exports[`html html prop polyfills "input" prop "type" value: "email" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "number" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
 <TextInput
   dir="auto"
   inputMode="numeric"
@@ -659,7 +659,7 @@ exports[`html html prop polyfills "input" prop "type" value: "number" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "password" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
 <TextInput
   dir="auto"
   secureTextEntry={true}
@@ -673,7 +673,7 @@ exports[`html html prop polyfills "input" prop "type" value: "password" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "search" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
 <TextInput
   dir="auto"
   inputMode="search"
@@ -687,7 +687,7 @@ exports[`html html prop polyfills "input" prop "type" value: "search" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "tel" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
 <TextInput
   dir="auto"
   inputMode="tel"
@@ -701,7 +701,7 @@ exports[`html html prop polyfills "input" prop "type" value: "tel" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "input" prop "type" value: "url" 1`] = `
+exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
 <TextInput
   dir="auto"
   inputMode="url"
@@ -715,7 +715,7 @@ exports[`html html prop polyfills "input" prop "type" value: "url" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills "textarea" prop "disabled" 1`] = `
+exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
 <TextInput
   aria-disabled={true}
   dir="auto"
@@ -733,7 +733,35 @@ exports[`html html prop polyfills "textarea" prop "disabled" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value 1`] = `
+exports[`<html.*> prop polyfills global "dir" prop: "ltr" 1`] = `
+<View
+  dir="ltr"
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "direction": "ltr",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "dir" prop: "rtl" 1`] = `
+<View
+  dir="rtl"
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "direction": "rtl",
+      "position": "static",
+      "writingDirection": "rtl",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 <View
   experimental_layoutConformance="strict"
   hidden={true}
@@ -746,7 +774,7 @@ exports[`html html prop polyfills hidden value 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "false" 1`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 <TextInput
   dir="auto"
   hidden={false}
@@ -759,7 +787,7 @@ exports[`html html prop polyfills hidden value: "false" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "false" 2`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 <TextInput
   dir="auto"
   hidden="false"
@@ -773,7 +801,7 @@ exports[`html html prop polyfills hidden value: "false" 2`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "hidden" 1`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 <TextInput
   dir="auto"
   hidden="hidden"
@@ -787,7 +815,7 @@ exports[`html html prop polyfills hidden value: "hidden" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "true" 1`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 <TextInput
   dir="auto"
   hidden={true}
@@ -801,7 +829,7 @@ exports[`html html prop polyfills hidden value: "true" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "true" 2`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 <TextInput
   dir="auto"
   hidden="true"
@@ -815,7 +843,7 @@ exports[`html html prop polyfills hidden value: "true" 2`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: "until-found" 1`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 <TextInput
   dir="auto"
   hidden="until-found"
@@ -828,7 +856,7 @@ exports[`html html prop polyfills hidden value: "until-found" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills hidden value: display set 1`] = `
+exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 <View
   experimental_layoutConformance="strict"
   hidden={true}
@@ -847,7 +875,7 @@ exports[`html html prop polyfills hidden value: display set 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "decimal" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
 <TextInput
   dir="auto"
   inputMode="decimal"
@@ -860,7 +888,7 @@ exports[`html html prop polyfills inputMode value: "decimal" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "email" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
 <TextInput
   dir="auto"
   inputMode="email"
@@ -873,7 +901,7 @@ exports[`html html prop polyfills inputMode value: "email" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "numeric" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
 <TextInput
   dir="auto"
   inputMode="numeric"
@@ -886,7 +914,7 @@ exports[`html html prop polyfills inputMode value: "numeric" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "search" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
 <TextInput
   dir="auto"
   inputMode="search"
@@ -899,7 +927,7 @@ exports[`html html prop polyfills inputMode value: "search" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "tel" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
 <TextInput
   dir="auto"
   inputMode="tel"
@@ -912,7 +940,7 @@ exports[`html html prop polyfills inputMode value: "tel" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills inputMode value: "url" 1`] = `
+exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 <TextInput
   dir="auto"
   inputMode="url"
@@ -925,7 +953,7 @@ exports[`html html prop polyfills inputMode value: "url" 1`] = `
 />
 `;
 
-exports[`html html prop polyfills tabIndex value 1`] = `
+exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 <TextInput
   dir="auto"
   style={
@@ -938,7 +966,7 @@ exports[`html html prop polyfills tabIndex value 1`] = `
 />
 `;
 
-exports[`html style polyfills "caretColor" transparent 1`] = `
+exports[`<html.*> style polyfills "caretColor" transparent 1`] = `
 <TextInput
   caretHidden={true}
   dir="auto"
@@ -951,7 +979,7 @@ exports[`html style polyfills "caretColor" transparent 1`] = `
 />
 `;
 
-exports[`html style polyfills "transition" properties : backgroundColor transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties : backgroundColor transition end 1`] = `
 <Animated.View
   style={
     {
@@ -971,7 +999,7 @@ exports[`html style polyfills "transition" properties : backgroundColor transiti
 />
 `;
 
-exports[`html style polyfills "transition" properties : backgroundColor transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties : backgroundColor transition start 1`] = `
 <Animated.View
   style={
     {
@@ -991,7 +1019,7 @@ exports[`html style polyfills "transition" properties : backgroundColor transiti
 />
 `;
 
-exports[`html style polyfills "transition" properties : cubic-bezier timing function 1`] = `
+exports[`<html.*> style polyfills "transition" properties : cubic-bezier timing function 1`] = `
 <Animated.View
   style={
     {
@@ -1011,7 +1039,7 @@ exports[`html style polyfills "transition" properties : cubic-bezier timing func
 />
 `;
 
-exports[`html style polyfills "transition" properties : opacity transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties : opacity transition end 1`] = `
 <Animated.View
   style={
     {
@@ -1031,7 +1059,7 @@ exports[`html style polyfills "transition" properties : opacity transition end 1
 />
 `;
 
-exports[`html style polyfills "transition" properties : opacity transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties : opacity transition start 1`] = `
 <Animated.View
   style={
     {
@@ -1051,7 +1079,7 @@ exports[`html style polyfills "transition" properties : opacity transition start
 />
 `;
 
-exports[`html style polyfills "transition" properties : transform transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties : transform transition end 1`] = `
 <Animated.View
   style={
     {
@@ -1087,7 +1115,7 @@ exports[`html style polyfills "transition" properties : transform transition end
 />
 `;
 
-exports[`html style polyfills "transition" properties : transform transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties : transform transition start 1`] = `
 <Animated.View
   style={
     {
@@ -1123,53 +1151,7 @@ exports[`html style polyfills "transition" properties : transform transition sta
 />
 `;
 
-exports[`html style polyfills "transition" properties : transition all properties 1`] = `
-<Animated.View
-  style={
-    {
-      "opacity": {
-        "inputRange": [
-          0,
-          1,
-        ],
-        "outputRange": [
-          1,
-          1,
-        ],
-      },
-      "position": "static",
-      "transform": [
-        {
-          "translateY": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              0,
-              0,
-            ],
-          },
-        },
-        {
-          "rotateX": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              "0deg",
-              "0deg",
-            ],
-          },
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`html style polyfills "transition" properties : transition multiple properties 1`] = `
+exports[`<html.*> style polyfills "transition" properties : transition all properties 1`] = `
 <Animated.View
   style={
     {
@@ -1215,7 +1197,53 @@ exports[`html style polyfills "transition" properties : transition multiple prop
 />
 `;
 
-exports[`html style polyfills "transition" properties : transition property end 1`] = `
+exports[`<html.*> style polyfills "transition" properties : transition multiple properties 1`] = `
+<Animated.View
+  style={
+    {
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          1,
+        ],
+      },
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              0,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "0deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties : transition property end 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
@@ -1227,7 +1255,7 @@ exports[`html style polyfills "transition" properties : transition property end 
 />
 `;
 
-exports[`html style polyfills "transition" properties : width transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties : width transition end 1`] = `
 <Animated.View
   style={
     {
@@ -1247,7 +1275,7 @@ exports[`html style polyfills "transition" properties : width transition end 1`]
 />
 `;
 
-exports[`html style polyfills "transition" properties : width transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties : width transition start 1`] = `
 <Animated.View
   style={
     {
@@ -1267,7 +1295,7 @@ exports[`html style polyfills "transition" properties : width transition start 1
 />
 `;
 
-exports[`html style polyfills default inherited text styles 1`] = `
+exports[`<html.*> style polyfills default inherited text styles 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
@@ -1351,7 +1379,7 @@ exports[`html style polyfills default inherited text styles 1`] = `
 </View>
 `;
 
-exports[`html style polyfills inherited themes 1`] = `
+exports[`<html.*> style polyfills inherited themes 1`] = `
 [
   <Text
     dir="auto"
@@ -1439,7 +1467,7 @@ exports[`html style polyfills inherited themes 1`] = `
 ]
 `;
 
-exports[`html style polyfills legacy: ThemeProvider 1`] = `
+exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 <Text
   dir="auto"
   style={
