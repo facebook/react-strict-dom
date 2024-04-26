@@ -1030,6 +1030,7 @@ exports[`units: length '0' is resolved to the number 0 1`] = `
 exports[`units: length 10 "em" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -160,
     "width": 160,
   },
 }
@@ -1046,6 +1047,7 @@ exports[`units: length 10 "em" units based on inherited font-size 1`] = `
 exports[`units: length 10 "px" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -10,
     "width": 10,
   },
 }
@@ -1054,6 +1056,7 @@ exports[`units: length 10 "px" units are resolved to pixels 1`] = `
 exports[`units: length 10 "rem" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -160,
     "width": 160,
   },
 }
@@ -1062,6 +1065,7 @@ exports[`units: length 10 "rem" units are resolved to pixels 1`] = `
 exports[`units: length 10 "vh" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -60,
     "width": 60,
   },
 }
@@ -1070,6 +1074,7 @@ exports[`units: length 10 "vh" units are resolved to pixels 1`] = `
 exports[`units: length 10 "vmax" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -60,
     "width": 60,
   },
 }
@@ -1078,6 +1083,7 @@ exports[`units: length 10 "vmax" units are resolved to pixels 1`] = `
 exports[`units: length 10 "vmin" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -32,
     "width": 32,
   },
 }
@@ -1086,6 +1092,7 @@ exports[`units: length 10 "vmin" units are resolved to pixels 1`] = `
 exports[`units: length 10 "vw" units are resolved to pixels 1`] = `
 {
   "style": {
+    "height": -32,
     "width": 32,
   },
 }

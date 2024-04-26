@@ -1402,11 +1402,13 @@ describe('styles: pseudo-element', () => {
 describe('units: length', () => {
   const unitsToTest = ['em', 'px', 'rem', 'vh', 'vmax', 'vmin', 'vw'];
   const value = 10;
+  const negativeValue = -1 * value;
 
   for (const unitToTest of unitsToTest) {
     test(`${value} "${unitToTest}" units are resolved to pixels`, () => {
       const styles = css.create({
         underTest: {
+          height: `${negativeValue}${unitToTest}`,
           width: `${value}${unitToTest}`
         }
       });
