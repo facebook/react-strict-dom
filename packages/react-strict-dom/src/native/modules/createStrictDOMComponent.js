@@ -27,7 +27,6 @@ import { ThemeContext } from './ThemeContext';
 import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
-import { getLocaleDirection } from '../../shared/getLocaleDirection';
 import { isPropAllowed } from '../../shared/isPropAllowed';
 import { mergeRefs } from '../../shared/mergeRefs';
 import { useHoverHandlers } from './useHoverHandlers';
@@ -165,16 +164,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       /**
-       * Resolve writing direction
-       */
-      const langDirection =
-        props.lang != null ? getLocaleDirection(props.lang) : null;
-      const componentDirection = props.dir || langDirection;
-      // const contextDirection = React.useContext(Locale.Context).direction;
-      //const writingDirection =
-      //  componentDirection !== 'auto' ? componentDirection : contextDirection;
-
-      /**
        * Construct props
        */
       const {
@@ -182,6 +171,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         'aria-setsize': ariaSetSize,
         children,
         'data-testid': dataTestID,
+        dir,
         disabled,
         height,
         hidden,
@@ -413,7 +403,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       const {
         color,
         cursor,
-        direction,
         fontFamily,
         fontSize,
         fontStyle,
@@ -434,9 +423,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
       if (cursor != null) {
         textStyles.cursor = cursor;
-      }
-      if (direction != null) {
-        textStyles.direction = direction;
       }
       if (fontFamily != null) {
         textStyles.fontFamily = fontFamily;
@@ -487,6 +473,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
                 styles.aspectRatio(width, height)
             ]
           : null,
+        dir != null && styles.direction(dir),
         // Add default text styles
         nativeComponent === Text && styles.userSelectAuto,
         // Provided styles
@@ -556,15 +543,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           p.style = s;
         }
         nativeProps.children = <Text {...p}>{children}</Text>;
-      }
-
-      // todo: refactor how RTL is done
-      if (componentDirection === 'rtl') {
-        styleProps.style.direction = 'rtl';
-        styleProps.style.writingDirection = 'rtl';
-      } else if (componentDirection === 'ltr') {
-        styleProps.style.direction = 'ltr';
-        styleProps.style.writingDirection = 'ltr';
       }
 
       // polyfill for display:block-as-default
@@ -729,6 +707,10 @@ const styles = stylex.create({
   contentBox: {
     boxSizing: 'content-box'
   },
+  direction: (dir: string) => ({
+    direction: dir,
+    writingDirection: dir
+  }),
   objectFitFill: {
     objectFit: 'fill'
   },

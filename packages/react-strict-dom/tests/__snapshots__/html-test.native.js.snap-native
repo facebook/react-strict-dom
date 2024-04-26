@@ -1317,7 +1317,6 @@ exports[`<html.*> style polyfills default inherited text styles 1`] = `
       style={
         {
           "color": "red",
-          "direction": "rtl",
           "fontFamily": "Arial",
           "fontSize": 32,
           "fontStyle": "italic",
@@ -1337,7 +1336,6 @@ exports[`<html.*> style polyfills default inherited text styles 1`] = `
         style={
           {
             "color": "red",
-            "direction": "rtl",
             "fontFamily": "Arial",
             "fontSize": 64,
             "fontStyle": "italic",
@@ -1362,7 +1360,6 @@ exports[`<html.*> style polyfills default inherited text styles 1`] = `
         {
           "borderWidth": 1,
           "color": "red",
-          "direction": "rtl",
           "fontFamily": "Arial",
           "fontSize": 16,
           "fontStyle": "italic",
