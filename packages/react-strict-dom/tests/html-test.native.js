@@ -9,7 +9,7 @@ import React from 'react';
 import { css, html, contexts } from 'react-strict-dom';
 import { act, create } from 'react-test-renderer';
 
-describe('html', () => {
+describe('<html.*>', () => {
   beforeEach(() => {
     // avoid console messages for these tests
     jest.spyOn(console, 'error');
@@ -342,166 +342,188 @@ describe('html', () => {
     });
   });
 
-  describe('html prop polyfills', () => {
-    test('hidden value', () => {
-      const root = create(<html.div hidden />);
-      expect(root.toJSON()).toMatchSnapshot();
+  describe('prop polyfills', () => {
+    describe('global', () => {
+      test('"dir" prop', () => {
+        ['ltr', 'rtl'].forEach((dir) => {
+          const root = create(<html.div dir={dir} />);
+          expect(root.toJSON()).toMatchSnapshot(`"${dir}"`);
+        });
+      });
 
-      const rootOther = create(<html.div hidden style={{ display: 'flex' }} />);
-      expect(rootOther.toJSON()).toMatchSnapshot('display set');
+      test('"hidden" prop', () => {
+        const root = create(<html.div hidden />);
+        expect(root.toJSON()).toMatchSnapshot();
 
-      [true, false, 'true', 'false', 'hidden', 'until-found'].forEach(
-        (hidden) => {
-          const root = create(<html.input hidden={hidden} />);
-          expect(root.toJSON()).toMatchSnapshot(`"${hidden}"`);
-        }
-      );
-    });
+        const rootOther = create(
+          <html.div hidden style={{ display: 'flex' }} />
+        );
+        expect(rootOther.toJSON()).toMatchSnapshot('display set');
 
-    test('inputMode value', () => {
-      ['decimal', 'email', 'numeric', 'search', 'tel', 'url'].forEach(
-        (inputMode) => {
-          const root = create(<html.input inputMode={inputMode} />);
-          expect(root.toJSON()).toMatchSnapshot(`"${inputMode}"`);
-        }
-      );
-    });
-
-    test('tabIndex value', () => {
-      const root = create(<html.input tabIndex={-1} />);
-      expect(root.toJSON()).toMatchSnapshot();
-    });
-
-    test('"img" loading options', () => {
-      const root = create(
-        <html.img
-          crossOrigin="use-credentials"
-          decoding="async"
-          fetchPriority="auto"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          src="https://src.jpg"
-        />
-      );
-      expect(root.toJSON()).toMatchSnapshot();
-    });
-
-    test('"img" loading options with srcSet', () => {
-      const root = create(
-        <html.img
-          crossOrigin="use-credentials"
-          decoding="async"
-          fetchPriority="auto"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
-        />
-      );
-      expect(root.toJSON()).toMatchSnapshot();
-    });
-
-    test('"img" prop "onLoad"', () => {
-      const onLoad = jest.fn();
-
-      const root = create(<html.img onLoad={onLoad} src="https://src.jpg" />);
-      const element = root.toJSON();
-
-      // Expected event shape
-      element.props.onLoad({
-        nativeEvent: {
-          source: {
-            height: 100,
-            width: 200
+        [true, false, 'true', 'false', 'hidden', 'until-found'].forEach(
+          (hidden) => {
+            const root = create(<html.input hidden={hidden} />);
+            expect(root.toJSON()).toMatchSnapshot(`"${hidden}"`);
           }
-        }
-      });
-      expect(onLoad).toHaveBeenCalledWith({
-        target: {
-          naturalHeight: 100,
-          naturalWidth: 200
-        },
-        type: 'load'
+        );
       });
 
-      // Fabric event bug
-      element.props.onLoad({
-        nativeEvent: {
-          source: undefined
-        }
+      test('"inputMode" prop', () => {
+        ['decimal', 'email', 'numeric', 'search', 'tel', 'url'].forEach(
+          (inputMode) => {
+            const root = create(<html.input inputMode={inputMode} />);
+            expect(root.toJSON()).toMatchSnapshot(`"${inputMode}"`);
+          }
+        );
       });
-      expect(onLoad).toHaveBeenCalledWith({
-        target: {
-          naturalHeight: undefined,
-          naturalWidth: undefined
-        },
-        type: 'load'
+
+      test('"tabIndex" prop', () => {
+        const root = create(<html.input tabIndex={-1} />);
+        expect(root.toJSON()).toMatchSnapshot();
       });
     });
 
-    test('"input" prop "autoComplete" value', () => {
-      [
-        'additional-name',
-        'address-line1',
-        'address-line2',
-        'bday',
-        'bday-day',
-        'bday-month',
-        'bday-year',
-        'cc-csc',
-        'cc-exp',
-        'cc-exp-month',
-        'cc-exp-year',
-        'cc-number',
-        'country',
-        'current-password',
-        'email',
-        'family-name',
-        'given-name',
-        'honorific-prefix',
-        'honorific-suffix',
-        'name',
-        'new-password',
-        'nickname',
-        'off',
-        'one-time-code',
-        'organization',
-        'organization-title',
-        'postal-code',
-        'sex',
-        'street-address',
-        'tel',
-        'tel-country-code',
-        'tel-national',
-        'url',
-        'username'
-      ].forEach((autoComplete) => {
-        const root = create(<html.input autoComplete={autoComplete} />);
-        expect(root.toJSON()).toMatchSnapshot(`"${autoComplete}"`);
+    describe('<img>', () => {
+      test('"src" prop with loading props', () => {
+        const root = create(
+          <html.img
+            crossOrigin="use-credentials"
+            decoding="async"
+            fetchPriority="auto"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            src="https://src.jpg"
+          />
+        );
+        expect(root.toJSON()).toMatchSnapshot();
+      });
+
+      test('"srcSet" prop with loading props', () => {
+        const root = create(
+          <html.img
+            crossOrigin="use-credentials"
+            decoding="async"
+            fetchPriority="auto"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
+          />
+        );
+        expect(root.toJSON()).toMatchSnapshot();
+      });
+
+      test('"onLoad" prop', () => {
+        const onLoad = jest.fn();
+
+        const root = create(<html.img onLoad={onLoad} src="https://src.jpg" />);
+        const element = root.toJSON();
+
+        // Expected event shape
+        element.props.onLoad({
+          nativeEvent: {
+            source: {
+              height: 100,
+              width: 200
+            }
+          }
+        });
+        expect(onLoad).toHaveBeenCalledWith({
+          target: {
+            naturalHeight: 100,
+            naturalWidth: 200
+          },
+          type: 'load'
+        });
+
+        // Fabric event bug
+        element.props.onLoad({
+          nativeEvent: {
+            source: undefined
+          }
+        });
+        expect(onLoad).toHaveBeenCalledWith({
+          target: {
+            naturalHeight: undefined,
+            naturalWidth: undefined
+          },
+          type: 'load'
+        });
       });
     });
 
-    test('"input" prop "disabled"', () => {
-      const root = create(<html.input disabled={true} />);
-      expect(root.toJSON()).toMatchSnapshot();
-    });
+    describe('<input>', () => {
+      test('"autoComplete" prop', () => {
+        [
+          'additional-name',
+          'address-line1',
+          'address-line2',
+          'bday',
+          'bday-day',
+          'bday-month',
+          'bday-year',
+          'cc-csc',
+          'cc-exp',
+          'cc-exp-month',
+          'cc-exp-year',
+          'cc-number',
+          'country',
+          'current-password',
+          'email',
+          'family-name',
+          'given-name',
+          'honorific-prefix',
+          'honorific-suffix',
+          'name',
+          'new-password',
+          'nickname',
+          'off',
+          'one-time-code',
+          'organization',
+          'organization-title',
+          'postal-code',
+          'sex',
+          'street-address',
+          'tel',
+          'tel-country-code',
+          'tel-national',
+          'url',
+          'username'
+        ].forEach((autoComplete) => {
+          const root = create(<html.input autoComplete={autoComplete} />);
+          expect(root.toJSON()).toMatchSnapshot(`"${autoComplete}"`);
+        });
+      });
 
-    test('"input" prop "type" value', () => {
-      ['email', 'number', 'password', 'search', 'tel', 'url'].forEach(
-        (type) => {
-          const root = create(<html.input type={type} />);
-          expect(root.toJSON()).toMatchSnapshot(`"${type}"`);
-        }
-      );
+      test('"disabled" prop', () => {
+        const root = create(<html.input disabled={true} />);
+        expect(root.toJSON()).toMatchSnapshot();
+      });
 
-      ['checkbox', 'date', 'radio'].forEach((type, i) => {
-        create(<html.input type={type} />);
-        expect(console.error).toHaveBeenCalledTimes(i + 1);
+      test('"type" prop', () => {
+        ['email', 'number', 'password', 'search', 'tel', 'url'].forEach(
+          (type) => {
+            const root = create(<html.input type={type} />);
+            expect(root.toJSON()).toMatchSnapshot(`"${type}"`);
+          }
+        );
+
+        ['checkbox', 'date', 'radio'].forEach((type, i) => {
+          create(<html.input type={type} />);
+          expect(console.error).toHaveBeenCalledTimes(i + 1);
+        });
       });
     });
 
-    test('"textarea" prop "disabled"', () => {
-      const root = create(<html.textarea disabled={true} />);
-      expect(root.toJSON()).toMatchSnapshot();
+    describe('<textarea>', () => {
+      test('"disabled" prop', () => {
+        const root = create(<html.textarea disabled={true} />);
+        expect(root.toJSON()).toMatchSnapshot();
+      });
+
+      test.skip('"rows" prop', () => {
+        const root = create(<html.textarea rows={5} />);
+        expect(root.toJSON()).toMatchSnapshot();
+      });
     });
   });
 
