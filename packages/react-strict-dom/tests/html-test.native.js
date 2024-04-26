@@ -118,7 +118,6 @@ describe('<html.*>', () => {
         inheritable: {
           color: 'red',
           cursor: 'pointer',
-          direction: 'rtl',
           fontFamily: 'Arial',
           fontSize: '1em',
           fontStyle: 'italic',

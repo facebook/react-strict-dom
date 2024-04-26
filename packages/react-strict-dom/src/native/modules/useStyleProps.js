@@ -13,7 +13,6 @@ import * as React from 'react';
 import { typeof Animated, PixelRatio, useWindowDimensions } from 'react-native';
 import { FontSizeContext } from './FontSizeContext';
 import { ThemeContext } from './ThemeContext';
-import { WritingDirectionContext } from './WritingDirectionContext';
 import * as stylex from '../stylex';
 
 type StyleOptions = {
@@ -41,7 +40,6 @@ export function useStyleProps(
   const { height, width } = useWindowDimensions();
   const inheritedFontSize = React.useContext(FontSizeContext);
   const inheritedCustomProperties = React.useContext(ThemeContext);
-  const writingDirection = React.useContext(WritingDirectionContext);
   const fontScale = PixelRatio.getFontScale();
   const { customProperties: customPropertiesFromThemes, hover } = options;
 
@@ -59,8 +57,7 @@ export function useStyleProps(
       inheritedFontSize,
       passthroughProperties,
       viewportHeight: height,
-      viewportWidth: width,
-      writingDirection
+      viewportWidth: width
     },
     style as $FlowFixMe
   );

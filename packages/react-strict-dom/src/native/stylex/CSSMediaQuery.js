@@ -11,8 +11,7 @@ import mediaQuery from 'css-mediaquery';
 
 export type MatchObject = {
   width: number,
-  height: number,
-  direction: 'ltr' | 'rtl'
+  height: number
 };
 
 const MQ_PREFIX = '@media';
@@ -65,13 +64,12 @@ export class CSSMediaQuery {
   }
 
   resolve(matchObject: MatchObject): { +[string]: mixed } {
-    const { width, height, direction } = matchObject;
+    const { width, height } = matchObject;
     const matches = mediaQuery.match(this.query, {
       width,
       height,
       orientation: width > height ? 'landscape' : 'portrait',
-      'aspect-ratio': width / height,
-      direction: direction
+      'aspect-ratio': width / height
     });
     return matches ? this.matchedStyle : {};
   }

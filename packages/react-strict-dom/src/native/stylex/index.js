@@ -126,7 +126,7 @@ const stylePropertyAllowlistSet = new Set<string>([
   'userSelect',
   'verticalAlign', // Android Only
   'width',
-  // 'writingDirection', // iOS Only
+  'writingDirection', // iOS Only
   'zIndex'
 
   // DESKTOP: no built-in support for logical properties.
@@ -455,19 +455,13 @@ export function props(
   ...
 } {
   const options = this;
-  const {
-    passthroughProperties = [],
-    viewportHeight,
-    viewportWidth,
-    writingDirection
-  } = options;
+  const { passthroughProperties = [], viewportHeight, viewportWidth } = options;
   const nativeProps: { [string]: $FlowFixMe } = {};
 
   let initialFlatStyle = flattenStyle(style);
   initialFlatStyle = CSSMediaQuery.resolveMediaQueries(initialFlatStyle, {
     width: viewportWidth,
-    height: viewportHeight,
-    direction: writingDirection ?? 'ltr'
+    height: viewportHeight
   });
   initialFlatStyle = resolveStyle(initialFlatStyle, options);
 
