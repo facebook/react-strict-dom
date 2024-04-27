@@ -9,7 +9,7 @@
 
 import type { SpreadOptions } from './SpreadOptions';
 
-const LENGTH_REGEX = /^([0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
+const LENGTH_REGEX = /^(-?[0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
 
 type CSSLengthUnitType = 'em' | 'px' | 'rem' | 'vh' | 'vmax' | 'vmin' | 'vw';
 
@@ -20,8 +20,10 @@ export class CSSLengthUnitValue {
     if (match == null) {
       return null;
     }
+
     const [, value, unit] = match;
     const parsedValue = parseFloat(value);
+
     // $FlowFixMe
     return [parsedValue, unit];
   }
