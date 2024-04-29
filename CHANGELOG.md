@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.9 (Apr 29, 2024)
+
+### Fixes
+
+* [Native] Fix polyfill for CSS units when value is negative ([#108](https://github.com/facebook/react-strict-dom/pull/108)).
+* [Native] Simplify 'dir' prop handling.
+* [Native] Fix polyfill for CSS unitless lineHeight ([#106](https://github.com/facebook/react-strict-dom/pull/106)).
+* [Native] Relax the Flow types for props.
+
 ## 0.0.8 (Apr 18, 2024)
 
 ### Fixes
