@@ -46,7 +46,7 @@ const styles = stylex.create({
     borderWidth: 1
   },
   code: {
-    fontFamily: Platform.select({ ios: 'Menlo', default: 'Courier' })
+    fontFamily: Platform.select({ ios: 'Menlo', default: 'monospace' })
   },
   heading: {
     fontSize: '1.5rem',
