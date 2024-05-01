@@ -602,7 +602,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | paddingLeft | ✅ | ✅ | |
 | pointerRight | ✅ | ✅ | |
 | pointerTop | ✅ | ✅ | |
-| placeContent | ❌ | ❌ | |
+| placeContent | 🟡 | 🟡 | |
 | placeItems | ❌ | ❌ | |
 | placeSelf | ❌ | ❌ | |
 | pointerEvents | ✅ | ✅ | |
