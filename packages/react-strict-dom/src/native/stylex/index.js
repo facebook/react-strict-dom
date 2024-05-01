@@ -660,61 +660,41 @@ export function props(
           continue;
         }
 
-        switch (align) {
-          case 'center':
-            flatStyle.alignContent = 'center';
-            break;
-          case 'start':
-          case 'flex-start': // This value is treated like `start`
+        const commonValidProps = [
+          'end',
+          'start',
+          'center',
+          'flex-end', // This value is treated like `end`
+          'flex-start', // This value is treated like `start`
+          'space-evenly',
+          'space-around',
+          'space-between'
+        ];
+
+        if (commonValidProps.includes(align) || align === 'stretch') {
+          if (align.endsWith('start')) {
             flatStyle.alignContent = 'flex-start';
-            break;
-          case 'end':
-          case 'flex-end': // This value is treated like `end`
+          } else if (align.endsWith('end')) {
             flatStyle.alignContent = 'flex-end';
-            break;
-          case 'space-evenly':
-            flatStyle.alignContent = 'space-evenly';
-            break;
-          case 'space-between':
-            flatStyle.alignContent = 'space-between';
-            break;
-          case 'space-around':
-            flatStyle.alignContent = 'space-around';
-            break;
-          case 'stretch':
-            flatStyle.alignContent = 'stretch';
-            break;
-          default:
-            warnMsg(
-              `unsupported "${styleProp}" style property value "${align}"`
-            );
+          } else {
+            flatStyle.alignContent = align;
+          }
+        } else {
+          warnMsg(`unsupported "${styleProp}" style property value "${align}"`);
         }
 
-        switch (justify) {
-          case 'center':
-            flatStyle.justifyContent = 'center';
-            break;
-          case 'start':
-          case 'flex-start': // This value is treated like `start`
+        if (commonValidProps.includes(justify)) {
+          if (justify.endsWith('start')) {
             flatStyle.justifyContent = 'flex-start';
-            break;
-          case 'end':
-          case 'flex-end': // This value is treated like `end`
+          } else if (justify.endsWith('end')) {
             flatStyle.justifyContent = 'flex-end';
-            break;
-          case 'space-evenly':
-            flatStyle.justifyContent = 'space-evenly';
-            break;
-          case 'space-between':
-            flatStyle.justifyContent = 'space-between';
-            break;
-          case 'space-around':
-            flatStyle.justifyContent = 'space-around';
-            break;
-          default:
-            warnMsg(
-              `unsupported "${styleProp}" style property value "${justify}"`
-            );
+          } else {
+            flatStyle.justifyContent = justify;
+          }
+        } else {
+          warnMsg(
+            `unsupported "${styleProp}" style property value "${justify}"`
+          );
         }
       }
       // everything else
