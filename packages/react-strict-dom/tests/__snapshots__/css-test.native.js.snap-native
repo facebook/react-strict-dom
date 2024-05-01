@@ -327,6 +327,30 @@ exports[`properties: general object-fit: scaleDown 1`] = `
 }
 `;
 
+exports[`properties: general placeContent: center 1`] = `
+{
+  "style": {
+    "alignContent": "center",
+    "justifyContent": "center",
+  },
+}
+`;
+
+exports[`properties: general placeContent: flexStart 1`] = `
+{
+  "style": {
+    "alignContent": "flex-start",
+    "justifyContent": "flex-start",
+  },
+}
+`;
+
+exports[`properties: general placeContent: invalid 1`] = `{}`;
+
+exports[`properties: general placeContent: safeCenter 1`] = `{}`;
+
+exports[`properties: general placeContent: stretch 1`] = `{}`;
+
 exports[`properties: general pointer-events 1`] = `
 {
   "style": {

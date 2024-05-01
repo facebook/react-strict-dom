@@ -618,6 +618,52 @@ export function props(
           nativeProps.tabIndex = -1;
         }
       }
+      // placeContent polyfill
+      else if (styleProp === 'placeContent') {
+        // These values are supported in RN for both alignContent and justifyContent.
+        if (
+          // positional alignment
+          styleValue === 'center' ||
+          styleValue === 'flex-end' ||
+          styleValue === 'flex-start' ||
+          // distributed alignment
+          styleValue === 'space-around' ||
+          styleValue === 'space-between' ||
+          styleValue === 'space-evenly'
+        ) {
+          flatStyle.alignContent = styleValue;
+          flatStyle.justifyContent = styleValue;
+        }
+        // None of these values are supported in RN for both properties.
+        else if (
+          // global values
+          styleValue === 'inherit' ||
+          styleValue === 'initial' ||
+          styleValue === 'revert' ||
+          styleValue === 'revert-layer' ||
+          styleValue === 'unset' ||
+          // normal alignment
+          styleValue === 'normal' ||
+          // positional alignment
+          styleValue === 'end' ||
+          styleValue === 'start' ||
+          // distributed alignment
+          styleValue === 'stretch' ||
+          // overflow alignment
+          styleValue === 'safe center' ||
+          styleValue === 'unsafe center'
+        ) {
+          warnMsg(
+            `unsupported style value in "${styleProp}:${String(styleValue)}"`
+          );
+        }
+        // Multiple, different values are invalid.
+        else {
+          errorMsg(
+            `invalid style value in "${styleProp}:${String(styleValue)}"`
+          );
+        }
+      }
       // everything else
       else {
         warnMsg(`unsupported style property "${styleProp}"`);

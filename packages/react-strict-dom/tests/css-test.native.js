@@ -65,11 +65,14 @@ describe('unsupported style values', () => {
 
 describe('properties: general', () => {
   beforeEach(() => {
+    jest.spyOn(console, 'error');
     jest.spyOn(console, 'warn');
+    console.error.mockImplementation(() => {});
     console.warn.mockImplementation(() => {});
   });
 
   afterEach(() => {
+    console.error.mockRestore();
     console.warn.mockRestore();
   });
 
@@ -428,6 +431,46 @@ describe('properties: general', () => {
     });
     expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalled();
+  });
+
+  test('placeContent', () => {
+    const styles = css.create({
+      center: { placeContent: 'center' },
+      flexStart: { placeContent: 'flex-start' },
+      stretch: { placeContent: 'stretch' },
+      safeCenter: { placeContent: 'safe center' },
+      invalid: { placeContent: 'flex-start flex-end' }
+    });
+    expect(css.props.call(mockOptions, styles.center)).toMatchSnapshot(
+      'center'
+    );
+    expect(css.props.call(mockOptions, styles.flexStart)).toMatchSnapshot(
+      'flexStart'
+    );
+    expect(css.props.call(mockOptions, styles.stretch)).toMatchSnapshot(
+      'stretch'
+    );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'unsupported style value in "placeContent:stretch"'
+      )
+    );
+    expect(css.props.call(mockOptions, styles.safeCenter)).toMatchSnapshot(
+      'safeCenter'
+    );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'unsupported style value in "placeContent:safe center"'
+      )
+    );
+    expect(css.props.call(mockOptions, styles.invalid)).toMatchSnapshot(
+      'invalid'
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'invalid style value in "placeContent:flex-start flex-end"'
+      )
+    );
   });
 
   test('pointer-events', () => {

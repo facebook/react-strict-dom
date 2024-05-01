@@ -151,6 +151,7 @@ const allowlistedStylexProps = new Set([
   'paddingTop',
   'pointerEvents',
   'position',
+  'placeContent',
   'right',
   'textAlign',
   'textDecorationColor',
