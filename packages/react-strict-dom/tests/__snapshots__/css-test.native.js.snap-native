@@ -1,59 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CSS shorthand property: place-content invalid: "baseline" 1`] = `
+exports[`CSS shorthand property: place-content invalid: "multiple values" 1`] = `{}`;
+
+exports[`CSS shorthand property: place-content invalid: "stretch" on justify-content 1`] = `{}`;
+
+exports[`CSS shorthand property: place-content: valid: center 1`] = `
 {
   "style": {
+    "alignContent": "center",
     "justifyContent": "center",
   },
 }
 `;
 
-exports[`CSS shorthand property: place-content invalid: "left" on align-content 1`] = `
-{
-  "style": {
-    "justifyContent": "center",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content invalid: "right" on align-content 1`] = `{}`;
-
-exports[`CSS shorthand property: place-content invalid: "stretch" on justify-content 1`] = `
-{
-  "style": {
-    "alignContent": "stretch",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: center end 1`] = `
-{
-  "style": {
-    "alignContent": "center",
-    "justifyContent": "flex-end",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: center flex-start 1`] = `
-{
-  "style": {
-    "alignContent": "center",
-    "justifyContent": "flex-start",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: center space-evenly 1`] = `
-{
-  "style": {
-    "alignContent": "center",
-    "justifyContent": "space-evenly",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: end 1`] = `
+exports[`CSS shorthand property: place-content: valid: flex-end 1`] = `
 {
   "style": {
     "alignContent": "flex-end",
@@ -62,47 +22,11 @@ exports[`CSS shorthand property: place-content: valid: end 1`] = `
 }
 `;
 
-exports[`CSS shorthand property: place-content: valid: end center 1`] = `
-{
-  "style": {
-    "alignContent": "flex-end",
-    "justifyContent": "center",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: end space-around 1`] = `
-{
-  "style": {
-    "alignContent": "flex-end",
-    "justifyContent": "space-around",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: end space-between 1`] = `
-{
-  "style": {
-    "alignContent": "flex-end",
-    "justifyContent": "space-between",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: end space-evenly 1`] = `
-{
-  "style": {
-    "alignContent": "flex-end",
-    "justifyContent": "space-evenly",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: first baseline space-evenly 1`] = `
+exports[`CSS shorthand property: place-content: valid: flex-start 1`] = `
 {
   "style": {
     "alignContent": "flex-start",
-    "justifyContent": "space-evenly",
+    "justifyContent": "flex-start",
   },
 }
 `;
@@ -112,15 +36,6 @@ exports[`CSS shorthand property: place-content: valid: space-around 1`] = `
   "style": {
     "alignContent": "space-around",
     "justifyContent": "space-around",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: space-around start 1`] = `
-{
-  "style": {
-    "alignContent": "space-around",
-    "justifyContent": "flex-start",
   },
 }
 `;
@@ -139,60 +54,6 @@ exports[`CSS shorthand property: place-content: valid: space-evenly 1`] = `
   "style": {
     "alignContent": "space-evenly",
     "justifyContent": "space-evenly",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: space-evenly center 1`] = `
-{
-  "style": {
-    "alignContent": "space-evenly",
-    "justifyContent": "center",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: start center 1`] = `
-{
-  "style": {
-    "alignContent": "flex-start",
-    "justifyContent": "center",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: start end 1`] = `
-{
-  "style": {
-    "alignContent": "flex-start",
-    "justifyContent": "flex-end",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: start space-evenly 1`] = `
-{
-  "style": {
-    "alignContent": "flex-start",
-    "justifyContent": "space-evenly",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: start start 1`] = `
-{
-  "style": {
-    "alignContent": "flex-start",
-    "justifyContent": "flex-start",
-  },
-}
-`;
-
-exports[`CSS shorthand property: place-content: valid: stretch center 1`] = `
-{
-  "style": {
-    "alignContent": "stretch",
-    "justifyContent": "center",
   },
 }
 `;

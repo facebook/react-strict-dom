@@ -620,80 +620,21 @@ export function props(
       }
       // placeContent polyfill
       else if (styleProp === 'placeContent' && typeof styleValue === 'string') {
-        let align = '';
-        let justify = '';
-        const shorthands = styleValue.split(' ');
-
-        // .1 place-content = <'align-content'> <'justify-content'>?
-        if (shorthands.length === 2) {
-          align = shorthands[0];
-          justify = shorthands[1];
-        } else if (shorthands.length === 3) {
-          // .1.1 The fallback alignment for `first baseline` is `start`
-          // See: https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#baseline
-          if (shorthands[0] === 'first' && shorthands[1] === 'baseline') {
-            align = 'flex-start';
-          }
-          // 1.2 The fallback alignment for `last baseline` is `end`
-          // See: https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#baseline
-          else if (shorthands[0] === 'last' && shorthands[1] === 'baseline') {
-            align = 'flex-end';
-          } else {
-            warnMsg(
-              `invalid "${styleProp}" style property value "${styleValue}"`
-            );
-          }
-
-          justify = shorthands[2];
-        }
-        // .1.3 If the second value is not present, the first value is used for both,
-        // provided it is a valid value for both. If it is invalid for one or the other, the whole value will be invalid.
-        // See: https://developer.mozilla.org/en-US/docs/Web/CSS/place-content
-        else if (shorthands.length === 1) {
-          align = shorthands[0];
-          justify = align;
-        } else {
-          warnMsg(
-            `invalid "${styleProp}" style property value "${styleValue}"`
-          );
-          delete flatStyle[styleProp];
-          continue;
-        }
-
-        const commonValidProps = [
-          'end',
-          'start',
+        const supportedValues = [
           'center',
-          'flex-end', // This value is treated like `end`
-          'flex-start', // This value is treated like `start`
+          'flex-end',
+          'flex-start',
           'space-evenly',
           'space-around',
           'space-between'
         ];
 
-        if (commonValidProps.includes(align) || align === 'stretch') {
-          if (align.endsWith('start')) {
-            flatStyle.alignContent = 'flex-start';
-          } else if (align.endsWith('end')) {
-            flatStyle.alignContent = 'flex-end';
-          } else {
-            flatStyle.alignContent = align;
-          }
-        } else {
-          warnMsg(`unsupported "${styleProp}" style property value "${align}"`);
-        }
-
-        if (commonValidProps.includes(justify)) {
-          if (justify.endsWith('start')) {
-            flatStyle.justifyContent = 'flex-start';
-          } else if (justify.endsWith('end')) {
-            flatStyle.justifyContent = 'flex-end';
-          } else {
-            flatStyle.justifyContent = justify;
-          }
+        if (supportedValues.includes(styleValue)) {
+          flatStyle.alignContent = styleValue;
+          flatStyle.justifyContent = styleValue;
         } else {
           warnMsg(
-            `unsupported "${styleProp}" style property value "${justify}"`
+            `unsupported "${styleProp}" style property value "${styleValue}"`
           );
         }
       }

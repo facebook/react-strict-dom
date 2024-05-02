@@ -1549,145 +1549,55 @@ describe('CSS shorthand property:', () => {
 
   test('place-content: valid', () => {
     const styles = css.create({
-      case1: { placeContent: 'end space-between' },
-      case2: { placeContent: 'space-around start' },
-      case3: { placeContent: 'start space-evenly' },
-      case4: { placeContent: 'end center' },
-      case5: { placeContent: 'end' },
-      case6: { placeContent: 'first baseline space-evenly' },
-      case7: { placeContent: 'space-between' },
-      case8: { placeContent: 'space-around' },
-      case9: { placeContent: 'space-evenly' },
-      case10: { placeContent: 'stretch center' },
-      case11: { placeContent: 'start start' },
-      case12: { placeContent: 'start end' },
-      case13: { placeContent: 'start center' },
-      case14: { placeContent: 'end space-around' },
-      case15: { placeContent: 'center end' },
-      case16: { placeContent: 'center space-evenly' },
-      case17: { placeContent: 'center flex-start' },
-      case18: { placeContent: 'end space-evenly' },
-      case19: { placeContent: 'space-evenly center' }
+      case1: { placeContent: 'flex-start' },
+      case2: { placeContent: 'flex-end' },
+      case3: { placeContent: 'center' },
+      case4: { placeContent: 'space-between' },
+      case5: { placeContent: 'space-around' },
+      case6: { placeContent: 'space-evenly' }
     });
     expect(css.props.call(mockOptions, styles.case1)).toMatchSnapshot(
-      'end space-between'
+      'flex-start'
     );
     expect(css.props.call(mockOptions, styles.case2)).toMatchSnapshot(
-      'space-around start'
+      'flex-end'
     );
-    expect(css.props.call(mockOptions, styles.case3)).toMatchSnapshot(
-      'start space-evenly'
-    );
+    expect(css.props.call(mockOptions, styles.case3)).toMatchSnapshot('center');
     expect(css.props.call(mockOptions, styles.case4)).toMatchSnapshot(
-      'end center'
-    );
-    expect(css.props.call(mockOptions, styles.case5)).toMatchSnapshot('end');
-    expect(css.props.call(mockOptions, styles.case6)).toMatchSnapshot(
-      'first baseline space-evenly'
-    );
-    expect(css.props.call(mockOptions, styles.case7)).toMatchSnapshot(
       'space-between'
     );
-    expect(css.props.call(mockOptions, styles.case8)).toMatchSnapshot(
+    expect(css.props.call(mockOptions, styles.case5)).toMatchSnapshot(
       'space-around'
     );
-    expect(css.props.call(mockOptions, styles.case9)).toMatchSnapshot(
+    expect(css.props.call(mockOptions, styles.case6)).toMatchSnapshot(
       'space-evenly'
     );
-    expect(css.props.call(mockOptions, styles.case10)).toMatchSnapshot(
-      'stretch center'
-    );
-    expect(css.props.call(mockOptions, styles.case11)).toMatchSnapshot(
-      'start start'
-    );
-    expect(css.props.call(mockOptions, styles.case12)).toMatchSnapshot(
-      'start end'
-    );
-    expect(css.props.call(mockOptions, styles.case13)).toMatchSnapshot(
-      'start center'
-    );
-    expect(css.props.call(mockOptions, styles.case14)).toMatchSnapshot(
-      'end space-around'
-    );
-    expect(css.props.call(mockOptions, styles.case15)).toMatchSnapshot(
-      'center end'
-    );
-    expect(css.props.call(mockOptions, styles.case16)).toMatchSnapshot(
-      'center space-evenly'
-    );
-    expect(css.props.call(mockOptions, styles.case17)).toMatchSnapshot(
-      'center flex-start'
-    );
-    expect(css.props.call(mockOptions, styles.case18)).toMatchSnapshot(
-      'end space-evenly'
-    );
-    expect(css.props.call(mockOptions, styles.case19)).toMatchSnapshot(
-      'space-evenly center'
-    );
   });
 
-  /* justify-content does not take baseline values */
-  // https://reactnative.dev/docs/next/flexbox#align-content
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#syntax
-  test('place-content invalid: "baseline"', () => {
-    const styles = css.create({
-      case: {
-        placeContent: 'baseline center'
-      }
-    });
-    expect(css.props.call(mockOptions, styles.case)).toMatchSnapshot();
-
-    expect(console.warn).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'unsupported "placeContent" style property value "baseline"'
-      )
-    );
-  });
-
-  /* align-content does not take left and right values */
-  // https://reactnative.dev/docs/next/flexbox#align-content
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#syntax
-  test('place-content invalid: "left" on align-content', () => {
-    const styles = css.create({
-      case: {
-        placeContent: 'left center'
-      }
-    });
-    expect(css.props.call(mockOptions, styles.case)).toMatchSnapshot();
-
-    expect(console.warn).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'unsupported "placeContent" style property value "left"'
-      )
-    );
-  });
-
-  /* align-content does not take left and right values */
-  // https://reactnative.dev/docs/next/flexbox#align-content
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#syntax
-  test('place-content invalid: "right" on align-content', () => {
-    const styles = css.create({
-      case: {
-        placeContent: 'right stretch'
-      }
-    });
-    expect(css.props.call(mockOptions, styles.case)).toMatchSnapshot();
-
-    expect(console.warn).toHaveBeenCalledTimes(2);
-  });
-
+  // justifyContent doesn't support `stretch`
   // https://reactnative.dev/docs/next/flexbox#justify-content
   test('place-content invalid: "stretch" on justify-content', () => {
     const styles = css.create({
-      case: {
-        placeContent: 'stretch'
-      }
+      case: { placeContent: 'stretch' }
     });
     expect(css.props.call(mockOptions, styles.case)).toMatchSnapshot();
 
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining(
         'unsupported "placeContent" style property value "stretch"'
+      )
+    );
+  });
+
+  test('place-content invalid: "multiple values"', () => {
+    const styles = css.create({
+      case: { placeContent: 'flex-start center' }
+    });
+    expect(css.props.call(mockOptions, styles.case)).toMatchSnapshot();
+
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'unsupported "placeContent" style property value "flex-start center"'
       )
     );
   });
