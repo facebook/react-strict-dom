@@ -162,6 +162,20 @@ describe('<html.*>', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
+    test('"caretColor" red', () => {
+      const root = create(<html.input style={{ caretColor: 'red' }} />);
+      expect(root.toJSON()).toMatchSnapshot();
+    });
+
+    test('"caretColor" on unsupported values', () => {
+      create(<html.input style={{ caretColor: 'inherit' }} />);
+      expect(console.warn).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'unsupported style value in "caretColor:inherit"'
+        )
+      );
+    });
+
     test('"transition" properties ', () => {
       const { Easing } = require('react-native');
 

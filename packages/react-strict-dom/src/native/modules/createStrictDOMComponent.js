@@ -591,7 +591,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // This is where we hack in a shim for `transitionProperty`,
       // `transitionDuration`, `transitionDelay`, `transitionTimingFunction`.
       const {
-        caretColor,
         transitionDelay,
         transitionDuration,
         transitionProperty,
@@ -620,15 +619,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           : null
       });
 
-      delete styleProps.style.caretColor;
       delete styleProps.style.transitionDelay;
       delete styleProps.style.transitionDuration;
       delete styleProps.style.transitionProperty;
       delete styleProps.style.transitionTimingFunction;
 
-      if (caretColor === 'transparent' && nativeComponent === TextInput) {
-        nativeProps.caretHidden = true;
-      }
       if (animatedPropertyValues.length > 0) {
         for (const animatedProperty of animatedPropertyValues) {
           // $FlowFixMe[incompatible-type]

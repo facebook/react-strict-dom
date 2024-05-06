@@ -966,9 +966,23 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 />
 `;
 
+exports[`<html.*> style polyfills "caretColor" red 1`] = `
+<TextInput
+  cursorColor="red"
+  dir="auto"
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`<html.*> style polyfills "caretColor" transparent 1`] = `
 <TextInput
   caretHidden={true}
+  cursorColor="transparent"
   dir="auto"
   style={
     {

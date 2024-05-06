@@ -503,7 +503,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | boxSizing | 🟡 Partial | 🟡 Partial | |
 | brightness() | ❌ | ❌ | |
 | calc() | ❌ | ❌ | |
-| caretColor | ❌ | ❌ | |
+| caretColor | 🟡 | ❌ | |
 | clamp() | ❌ | ❌ | |
 | clipPath | ❌ | ❌ | |
 | color | ✅ | ✅ | |

@@ -664,6 +664,26 @@ export function props(
           );
         }
       }
+      // caretColor polyfill
+      else if (styleProp === 'caretColor') {
+        nativeProps.cursorColor = styleValue;
+        if (styleValue === 'transparent') {
+          nativeProps.caretHidden = true;
+        } else if (
+          typeof styleValue === 'undefined' ||
+          // None of these values are supported in RN
+          styleValue === 'auto' ||
+          styleValue === 'inherit' ||
+          styleValue === 'initial' ||
+          styleValue === 'currentcolor' ||
+          styleValue === 'unset'
+        ) {
+          warnMsg(
+            `unsupported style value in "caretColor:${String(styleValue)}"`
+          );
+          delete nativeProps['cursorColor'];
+        }
+      }
       // everything else
       else {
         warnMsg(`unsupported style property "${styleProp}"`);

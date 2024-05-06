@@ -78,6 +78,7 @@ const allowlistedStylexProps = new Set([
   'boxShadow', // web-only
   'boxSizing',
   'clipPath', // web-only
+  'caretColor', // web-only
   'color',
   'cursor', // web-only
   'direction', // web-only
