@@ -185,6 +185,20 @@ exports[`properties: general boxSizing: content-box: width 1`] = `
 }
 `;
 
+exports[`properties: general caretColor: red caret color 1`] = `
+{
+  "cursorColor": "red",
+}
+`;
+
+exports[`properties: general caretColor: transparent caret color 1`] = `
+{
+  "caretHidden": true,
+}
+`;
+
+exports[`properties: general caretColor: unsupported caret color 1`] = `{}`;
+
 exports[`properties: general direction 1`] = `
 {
   "style": {

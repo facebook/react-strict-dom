@@ -248,6 +248,33 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.auto)).toMatchSnapshot('auto');
   });
 
+  test('caretColor', () => {
+    const styles = css.create({
+      transparentCaret: {
+        caretColor: 'transparent'
+      },
+      redCaret: {
+        caretColor: 'red'
+      },
+      unsupportedCaret: {
+        caretColor: 'inherit'
+      }
+    });
+
+    expect(
+      css.props.call(mockOptions, styles.transparentCaret)
+    ).toMatchSnapshot('transparent caret color');
+    expect(css.props.call(mockOptions, styles.redCaret)).toMatchSnapshot(
+      'red caret color'
+    );
+    expect(
+      css.props.call(mockOptions, styles.unsupportedCaret)
+    ).toMatchSnapshot('unsupported caret color');
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining('unsupported style value in "caretColor:inherit"')
+    );
+  });
+
   test('direction', () => {
     const styles = css.create({
       root: {

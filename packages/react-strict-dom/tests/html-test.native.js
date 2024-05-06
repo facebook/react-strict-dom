@@ -157,11 +157,6 @@ describe('<html.*>', () => {
     test.skip('"initial" keyword', () => {});
     test.skip('"unset" keyword', () => {});
 
-    test('"caretColor" transparent', () => {
-      const root = create(<html.input style={{ caretColor: 'transparent' }} />);
-      expect(root.toJSON()).toMatchSnapshot();
-    });
-
     test('"transition" properties ', () => {
       const { Easing } = require('react-native');
 

@@ -21,7 +21,6 @@ type StyleOptions = {
 };
 
 const passthroughProperties = [
-  'caretColor',
   'transitionDelay',
   'transitionDuration',
   'transitionProperty',

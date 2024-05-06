@@ -966,19 +966,6 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "caretColor" transparent 1`] = `
-<TextInput
-  caretHidden={true}
-  dir="auto"
-  style={
-    {
-      "borderWidth": 1,
-      "position": "static",
-    }
-  }
-/>
-`;
-
 exports[`<html.*> style polyfills "transition" properties : backgroundColor transition end 1`] = `
 <Animated.View
   style={

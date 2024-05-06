@@ -569,6 +569,26 @@ export function props(
       } else if (styleProp === 'borderEndEndRadius') {
         flatStyle.borderBottomEndRadius = styleValue;
       }
+      // caretColor polyfill
+      else if (styleProp === 'caretColor') {
+        if (styleValue === 'transparent') {
+          nativeProps.caretHidden = true;
+        } else if (
+          typeof styleValue === 'undefined' ||
+          // None of these values are supported in RN
+          styleValue === 'auto' ||
+          styleValue === 'inherit' ||
+          styleValue === 'initial' ||
+          styleValue === 'currentcolor' ||
+          styleValue === 'unset'
+        ) {
+          warnMsg(
+            `unsupported style value in "${styleProp}:${String(styleValue)}"`
+          );
+        } else {
+          nativeProps.cursorColor = styleValue;
+        }
+      }
       // inset
       else if (styleProp === 'inset') {
         flatStyle.top = flatStyle.top ?? styleValue;
