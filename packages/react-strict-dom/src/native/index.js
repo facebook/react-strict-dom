@@ -8,13 +8,12 @@
  */
 
 import typeof * as TStyleX from '@stylexjs/stylex';
+export * from '../types/StrictTypes';
 
 import * as html from './html';
 import * as cssRaw from './stylex';
 import { ThemeProvider } from './modules/ThemeContext';
 import { typeof ThemeProvider as TThemeProvider } from './modules/ThemeContext';
-
-export * from '../types/StrictTypes';
 
 const contexts = { ThemeProvider: ThemeProvider as TThemeProvider };
 
