@@ -50,6 +50,12 @@ npm run jest
 npm run jest -- --watch
 ```
 
+To update the snapshots:
+
+```
+npm run jest -- -u
+```
+
 (NOTE: if you ever end up in a state where unit test snapshots differ between local and CI, run `npm run jest -- --clearCache`.)
 
 To run all these automated tests:

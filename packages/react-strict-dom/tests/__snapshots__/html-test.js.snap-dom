@@ -5352,7 +5352,7 @@ exports[`html "span" supports inline event handlers 1`] = `
 
 exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 <strong
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xjs9k72"
+  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
 />
 `;
 
@@ -5407,7 +5407,7 @@ exports[`html "strong" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xjs9k72"
+  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5431,7 +5431,7 @@ exports[`html "strong" supports global attributes 1`] = `
 
 exports[`html "strong" supports inline event handlers 1`] = `
 <strong
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xjs9k72"
+  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
