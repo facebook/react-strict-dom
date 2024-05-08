@@ -195,22 +195,36 @@ function isReactNativeStyleValue(propValue: mixed): boolean {
     if (propValue === 'initial') {
       return false;
     }
-    //if (propValue.endsWith('em')) {
-    //  return false;
-    //}
-    //if (propValue.endsWith('rem')) {
-    //  return false;
-    //}
-    // RN on android doesn't like explicitly specified px units
-    if (propValue.endsWith('px')) {
-      return false;
-    }
     // RN doesn't support calc functions
     if (propValue.includes('calc(')) {
       return false;
     }
   }
 
+  return true;
+}
+
+// regex to find spaces outside of brackets
+const spacesRegex = /\s+(?![^()]*\))/g;
+function isReactNativeShortFormValid(
+  propName: string,
+  propValue: mixed
+): boolean {
+  if (
+    propName === 'borderColor' ||
+    propName === 'borderRadius' ||
+    propName === 'borderStyle' ||
+    propName === 'borderWidth' ||
+    propName === 'margin' ||
+    propName === 'padding'
+  ) {
+    if (
+      typeof propValue === 'string' &&
+      propValue.match(spacesRegex) !== null
+    ) {
+      return false;
+    }
+  }
   return true;
 }
 
@@ -680,6 +694,14 @@ export function props(
     if (!isReactNativeStyleValue(styleValue)) {
       warnMsg(
         `unsupported style value in "${styleProp}:${String(styleValue)}"`
+      );
+      delete flatStyle[styleProp];
+      continue;
+    }
+
+    if (!isReactNativeShortFormValid(styleProp, styleValue)) {
+      errorMsg(
+        `invalid style value in "${styleProp}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
       );
       delete flatStyle[styleProp];
       continue;
