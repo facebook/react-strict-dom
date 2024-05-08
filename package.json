@@ -9,6 +9,7 @@
     "fmt:report": "prettier --check \"**/*.js\" --ignore-path ./configs/.prettierignore",
     "jest": "jest --config ./configs/jest.config.js",
     "jest:report": "npm run jest",
+    "jest:update": "jest --config ./configs/jest.config.js -u",
     "lint": "npm run lint:report -- --fix",
     "lint:report": "eslint packages --config ./configs/.eslintrc",
     "test": "npm run flow && npm run lint:report && npm run jest:report",

@@ -71,7 +71,7 @@ const styles = stylex.create({
     borderStyle: 'solid'
   },
   strong: {
-    fontWeight: 'bolder'
+    fontWeight: 'bold'
   },
   textarea: {
     borderWidth: 1,
