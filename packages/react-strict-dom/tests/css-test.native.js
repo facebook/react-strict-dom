@@ -76,7 +76,7 @@ describe('properties: general', () => {
     console.warn.mockRestore();
   });
 
-  test('animation-delay', () => {
+  test('animationDelay', () => {
     const styles = css.create({
       root: {
         animationDelay: '0.3s'
@@ -85,7 +85,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('animation-duration', () => {
+  test('animationDuration', () => {
     const styles = css.create({
       root: {
         animationDuration: '0.5s'
@@ -94,7 +94,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('background-image', () => {
+  test('backgroundImage', () => {
     const styles = css.create({
       root: {
         backgroundImage: 'url(https://placehold.it/300/300)'
@@ -104,7 +104,18 @@ describe('properties: general', () => {
     expect(console.warn).toHaveBeenCalled();
   });
 
-  test('border-style', () => {
+  test('borderColor', () => {
+    const { underTest } = css.create({
+      underTest: {
+        // test for potential false positive on invalid shortform (multiple values / spaces)
+        borderColor: 'rgba(0, 0, 0, 0.5)'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+    expect(console.error).not.toHaveBeenCalled();
+  });
+
+  test('borderStyle', () => {
     const styles = css.create({
       root: {
         borderStyle: 'none',
@@ -120,7 +131,7 @@ describe('properties: general', () => {
     ).toMatchSnapshot();
   });
 
-  test('box-shadow', () => {
+  test('boxShadow', () => {
     const styles = css.create({
       root: {
         boxShadow: '1px 2px 3px 4px red'
@@ -146,7 +157,7 @@ describe('properties: general', () => {
     expect(console.warn).toHaveBeenCalledTimes(3);
   });
 
-  test('box-sizing: content-box', () => {
+  test('boxSizing: content-box', () => {
     const styles = css.create({
       width: {
         boxSizing: 'content-box',
@@ -264,7 +275,7 @@ describe('properties: general', () => {
     expect(console.warn).toHaveBeenCalled();
   });
 
-  test('font-size', () => {
+  test('fontSize', () => {
     const styles = css.create({
       root: {
         fontSize: '2.5rem'
@@ -277,7 +288,7 @@ describe('properties: general', () => {
     ).toMatchSnapshot('fontScale:2');
   });
 
-  test('font-variant', () => {
+  test('fontVariant', () => {
     const styles = css.create({
       root: {
         fontVariant: 'common-ligatures small-caps'
@@ -286,7 +297,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('font-weight', () => {
+  test('fontWeight', () => {
     const styles = css.create({
       root: {
         fontWeight: 900
@@ -300,7 +311,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot();
   });
 
-  test('line-clamp', () => {
+  test('lineClamp', () => {
     const styles = css.create({
       root: {
         lineClamp: 3
@@ -309,7 +320,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('line-height', () => {
+  test('lineHeight', () => {
     const styles = css.create({
       numeric: {
         fontSize: 16,
@@ -336,8 +347,23 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.px)).toMatchSnapshot('px');
   });
 
+  // multiple values are unsupported
+  test('margin with multiple values', () => {
+    const { underTest } = css.create({
+      underTest: {
+        margin: '0 auto'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Shortform properties cannot contain multiple values'
+      )
+    );
+  });
+
   // unsupported
-  test('"marginStart"', () => {
+  test('marginStart', () => {
     const { underTest } = css.create({
       underTest: {
         marginStart: 10
@@ -348,7 +374,7 @@ describe('properties: general', () => {
   });
 
   // unsupported
-  test('"marginEnd"', () => {
+  test('marginEnd', () => {
     const { underTest } = css.create({
       underTest: {
         marginEnd: 10
@@ -359,7 +385,7 @@ describe('properties: general', () => {
   });
 
   // unsupported
-  test('"marginHorizontal"', () => {
+  test('marginHorizontal', () => {
     const { underTest } = css.create({
       underTest: {
         marginHorizontal: 10
@@ -370,7 +396,7 @@ describe('properties: general', () => {
   });
 
   // unsupported
-  test('"marginVertical"', () => {
+  test('marginVertical', () => {
     const { underTest } = css.create({
       underTest: {
         marginVertical: 10
@@ -380,7 +406,7 @@ describe('properties: general', () => {
     expect(console.warn).toHaveBeenCalled();
   });
 
-  test('object-fit', () => {
+  test('objectFit', () => {
     const styles = css.create({
       contain: {
         objectFit: 'contain'
@@ -411,8 +437,23 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.none)).toMatchSnapshot('none');
   });
 
+  // multiple values are unsupported
+  test('padding with multiple values', () => {
+    const { underTest } = css.create({
+      underTest: {
+        padding: '1px 2px 3px'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Shortform properties cannot contain multiple values'
+      )
+    );
+  });
+
   // unsupported
-  test('"paddingHorizontal"', () => {
+  test('paddingHorizontal', () => {
     const { underTest } = css.create({
       underTest: {
         paddingHorizontal: 10
@@ -423,7 +464,7 @@ describe('properties: general', () => {
   });
 
   // unsupported
-  test('"paddingVertical"', () => {
+  test('paddingVertical', () => {
     const { underTest } = css.create({
       underTest: {
         paddingVertical: 10
@@ -473,7 +514,7 @@ describe('properties: general', () => {
     );
   });
 
-  test('pointer-events', () => {
+  test('pointerEvents', () => {
     const styles = css.create({
       root: {
         pointerEvents: 'none'
@@ -536,7 +577,7 @@ describe('properties: general', () => {
     expect(console.warn).not.toHaveBeenCalled();
   });
 
-  test('text-shadow', () => {
+  test('textShadow', () => {
     const styles = css.create({
       root: {
         textShadow: '1px 2px 3px red'
@@ -607,7 +648,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.mixed)).toMatchSnapshot('mixed');
   });
 
-  test('transition-delay', () => {
+  test('transitionDelay', () => {
     const styles = css.create({
       root: {
         transitionDelay: '0.3s'
@@ -616,7 +657,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('transition-duration', () => {
+  test('transitionDuration', () => {
     const styles = css.create({
       root: {
         transitionDuration: '0.5s'
@@ -625,7 +666,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('user-select', () => {
+  test('userSelect', () => {
     const styles = css.create({
       root: {
         userSelect: 'none'
@@ -634,7 +675,7 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
-  test('vertical-align', () => {
+  test('verticalAlign', () => {
     const styles = css.create({
       middle: {
         verticalAlign: 'middle'
