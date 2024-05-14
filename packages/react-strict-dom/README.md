@@ -172,11 +172,11 @@ LogBox.ignoreLogs([
   '[warn] React Strict DOM: unsupported prop "onInvalid"',
   '[warn] React Strict DOM: unsupported style value in "display:inline-flex"',
   // All warnings of a certain kind
-  /[warn] React Strict DOM: unsupported style property .*/,
+  /\[warn\] React Strict DOM: unsupported style property .*/,
   // All warnings
-  /[warn] React Strict DOM: .*/,
+  /\[warn\] React Strict DOM: .*/,
   // All logs
-  /[log] React Strict DOM: .*/,
+  /\[log\] React Strict DOM: .*/,
 ]);
 ```
 
