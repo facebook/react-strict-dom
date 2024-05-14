@@ -11,5 +11,6 @@ export * from '../types/StrictTypes';
 
 import * as html from './html';
 import * as css from '@stylexjs/stylex';
+import { createStrictDOMComponent } from './modules/createStrictDOMComponent';
 
-export { css, html };
+export { css, html, createStrictDOMComponent };

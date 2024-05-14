@@ -14,10 +14,11 @@ import * as html from './html';
 import * as cssRaw from './stylex';
 import { ThemeProvider } from './modules/ThemeContext';
 import { typeof ThemeProvider as TThemeProvider } from './modules/ThemeContext';
+import { createStrictDOMComponent } from './modules/createStrictDOMComponent';
 
 const contexts = { ThemeProvider: ThemeProvider as TThemeProvider };
 
 // Export using StyleX types as the shim has divergent types internally.
 const css: TStyleX = cssRaw as $FlowFixMe;
 
-export { contexts, css, html };
+export { contexts, css, html, createStrictDOMComponent };

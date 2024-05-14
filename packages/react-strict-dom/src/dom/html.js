@@ -34,7 +34,7 @@ import { defaultStyles } from './runtime';
 export const a: React$AbstractComponent<
   StrictReactDOMAnchorProps,
   StrictHTMLElement
-> = createStrict('a', defaultStyles.a);
+> = createStrict('a', { style: defaultStyles.a });
 
 /**
  * "article" (block)
@@ -42,7 +42,7 @@ export const a: React$AbstractComponent<
 export const article: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('article', defaultStyles.article);
+> = createStrict('article', { style: defaultStyles.article });
 
 /**
  * "aside" (block)
@@ -50,7 +50,7 @@ export const article: React$AbstractComponent<
 export const aside: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('aside', defaultStyles.aside);
+> = createStrict('aside', { style: defaultStyles.aside });
 
 /**
  * "b" (inline)
@@ -58,7 +58,7 @@ export const aside: React$AbstractComponent<
 export const b: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('b', defaultStyles.b);
+> = createStrict('b', { style: defaultStyles.b });
 
 /**
  * "bdi" (inline)
@@ -66,7 +66,7 @@ export const b: React$AbstractComponent<
 export const bdi: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdi', defaultStyles.bdi);
+> = createStrict('bdi', { style: defaultStyles.bdi });
 
 /**
  * "bdo" (inline)
@@ -74,7 +74,7 @@ export const bdi: React$AbstractComponent<
 export const bdo: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdo', defaultStyles.bdo);
+> = createStrict('bdo', { style: defaultStyles.bdo });
 
 /**
  * "blockquote" (block)
@@ -82,7 +82,7 @@ export const bdo: React$AbstractComponent<
 export const blockquote: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('blockquote', defaultStyles.blockquote);
+> = createStrict('blockquote', { style: defaultStyles.blockquote });
 
 /**
  * "br"
@@ -90,7 +90,7 @@ export const blockquote: React$AbstractComponent<
 export const br: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('br', defaultStyles.br);
+> = createStrict('br', { style: defaultStyles.br });
 
 /**
  * "button" (inline-block)
@@ -98,7 +98,7 @@ export const br: React$AbstractComponent<
 export const button: React$AbstractComponent<
   StrictReactDOMButtonProps,
   StrictHTMLElement
-> = createStrict('button', defaultStyles.button);
+> = createStrict('button', { style: defaultStyles.button });
 
 /**
  * "code" (inline)
@@ -106,7 +106,7 @@ export const button: React$AbstractComponent<
 export const code: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('code', defaultStyles.code);
+> = createStrict('code', { style: defaultStyles.code });
 
 /**
  * "del" (inline)
@@ -114,7 +114,7 @@ export const code: React$AbstractComponent<
 export const del: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('del', defaultStyles.del);
+> = createStrict('del', { style: defaultStyles.del });
 
 /**
  * "div" (block)
@@ -122,7 +122,7 @@ export const del: React$AbstractComponent<
 export const div: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('div', defaultStyles.div);
+> = createStrict('div', { style: defaultStyles.div });
 
 /**
  * "em" (inline)
@@ -130,7 +130,7 @@ export const div: React$AbstractComponent<
 export const em: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('em', defaultStyles.em);
+> = createStrict('em', { style: defaultStyles.em });
 
 /**
  * "fieldset" (block)
@@ -138,7 +138,7 @@ export const em: React$AbstractComponent<
 export const fieldset: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('fieldset', defaultStyles.fieldset);
+> = createStrict('fieldset', { style: defaultStyles.fieldset });
 
 /**
  * "footer" (block)
@@ -146,7 +146,7 @@ export const fieldset: React$AbstractComponent<
 export const footer: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('footer', defaultStyles.footer);
+> = createStrict('footer', { style: defaultStyles.footer });
 
 /**
  * "form" (block)
@@ -154,7 +154,7 @@ export const footer: React$AbstractComponent<
 export const form: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('form', defaultStyles.form);
+> = createStrict('form', { style: defaultStyles.form });
 
 /**
  * "h1-h6" (block)
@@ -162,27 +162,27 @@ export const form: React$AbstractComponent<
 export const h1: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h1', defaultStyles.h1);
+> = createStrict('h1', { style: defaultStyles.h1 });
 export const h2: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h2', defaultStyles.h2);
+> = createStrict('h2', { style: defaultStyles.h2 });
 export const h3: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h3', defaultStyles.h3);
+> = createStrict('h3', { style: defaultStyles.h3 });
 export const h4: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h4', defaultStyles.h4);
+> = createStrict('h4', { style: defaultStyles.h4 });
 export const h5: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h5', defaultStyles.h5);
+> = createStrict('h5', { style: defaultStyles.h5 });
 export const h6: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('h6', defaultStyles.h6);
+> = createStrict('h6', { style: defaultStyles.h6 });
 
 /**
  * "header" (block)
@@ -190,7 +190,7 @@ export const h6: React$AbstractComponent<
 export const header: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('header', defaultStyles.header);
+> = createStrict('header', { style: defaultStyles.header });
 
 /**
  * "hr" (block)
@@ -198,7 +198,7 @@ export const header: React$AbstractComponent<
 export const hr: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('hr', defaultStyles.hr);
+> = createStrict('hr', { style: defaultStyles.hr });
 
 /**
  * "i" (inline)
@@ -206,7 +206,7 @@ export const hr: React$AbstractComponent<
 export const i: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('i', defaultStyles.i);
+> = createStrict('i', { style: defaultStyles.i });
 
 /**
  * "img" (inline)
@@ -214,7 +214,7 @@ export const i: React$AbstractComponent<
 export const img: React$AbstractComponent<
   StrictReactDOMImageProps,
   StrictHTMLImageElement
-> = createStrict('img', defaultStyles.img);
+> = createStrict('img', { style: defaultStyles.img });
 
 /**
  * "input" (inline-block)
@@ -222,7 +222,7 @@ export const img: React$AbstractComponent<
 export const input: React$AbstractComponent<
   StrictReactDOMInputProps,
   StrictHTMLInputElement
-> = createStrict('input', defaultStyles.input);
+> = createStrict('input', { style: defaultStyles.input });
 
 /**
  * "ins" (inline)
@@ -230,7 +230,7 @@ export const input: React$AbstractComponent<
 export const ins: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('ins', defaultStyles.ins);
+> = createStrict('ins', { style: defaultStyles.ins });
 
 /**
  * "kbd" (inline)
@@ -238,7 +238,7 @@ export const ins: React$AbstractComponent<
 export const kbd: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('kbd', defaultStyles.kbd);
+> = createStrict('kbd', { style: defaultStyles.kbd });
 
 /**
  * "label" (inline)
@@ -246,7 +246,7 @@ export const kbd: React$AbstractComponent<
 export const label: React$AbstractComponent<
   StrictReactDOMLabelProps,
   StrictHTMLElement
-> = createStrict('label', defaultStyles.label);
+> = createStrict('label', { style: defaultStyles.label });
 
 /**
  * "li" (block)
@@ -254,7 +254,7 @@ export const label: React$AbstractComponent<
 export const li: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('li', defaultStyles.li);
+> = createStrict('li', { style: defaultStyles.li });
 
 /**
  * "main" (block)
@@ -262,7 +262,7 @@ export const li: React$AbstractComponent<
 export const main: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('main', defaultStyles.main);
+> = createStrict('main', { style: defaultStyles.main });
 
 /**
  * "nav" (block)
@@ -270,7 +270,7 @@ export const main: React$AbstractComponent<
 export const nav: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('nav', defaultStyles.nav);
+> = createStrict('nav', { style: defaultStyles.nav });
 
 /**
  * "ol" (block)
@@ -278,7 +278,7 @@ export const nav: React$AbstractComponent<
 export const ol: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('ol', defaultStyles.ol);
+> = createStrict('ol', { style: defaultStyles.ol });
 
 /**
  * "optgroup"
@@ -286,7 +286,7 @@ export const ol: React$AbstractComponent<
 export const optgroup: React$AbstractComponent<
   StrictReactDOMOptionGroupProps,
   StrictHTMLElement
-> = createStrict('optgroup', defaultStyles.optgroup);
+> = createStrict('optgroup', { style: defaultStyles.optgroup });
 
 /**
  * "option"
@@ -294,10 +294,9 @@ export const optgroup: React$AbstractComponent<
 export const option: React$AbstractComponent<
   StrictReactDOMOptionProps,
   StrictHTMLOptionElement
-> = createStrict<StrictHTMLOptionElement, StrictReactDOMOptionProps>(
-  'option',
-  defaultStyles.option
-);
+> = createStrict<StrictHTMLOptionElement, StrictReactDOMOptionProps>('option', {
+  style: defaultStyles.option
+});
 
 /**
  * "p" (block)
@@ -305,7 +304,7 @@ export const option: React$AbstractComponent<
 export const p: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('p', defaultStyles.p);
+> = createStrict('p', { style: defaultStyles.p });
 
 /**
  * "pre" (block)
@@ -313,7 +312,7 @@ export const p: React$AbstractComponent<
 export const pre: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('pre', defaultStyles.pre);
+> = createStrict('pre', { style: defaultStyles.pre });
 
 /**
  * "s" (inline)
@@ -321,7 +320,7 @@ export const pre: React$AbstractComponent<
 export const s: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('s', defaultStyles.s);
+> = createStrict('s', { style: defaultStyles.s });
 
 /**
  * "section" (block)
@@ -329,7 +328,7 @@ export const s: React$AbstractComponent<
 export const section: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('section', defaultStyles.section);
+> = createStrict('section', { style: defaultStyles.section });
 
 /**
  * "select" (inline-block)
@@ -337,7 +336,7 @@ export const section: React$AbstractComponent<
 export const select: React$AbstractComponent<
   StrictReactDOMSelectProps,
   StrictHTMLSelectElement
-> = createStrict('select', defaultStyles.select);
+> = createStrict('select', { style: defaultStyles.select });
 
 /**
  * "span" (inline)
@@ -345,7 +344,7 @@ export const select: React$AbstractComponent<
 export const span: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('span', defaultStyles.span);
+> = createStrict('span', { style: defaultStyles.span });
 
 /**
  * "strong" (inline)
@@ -353,7 +352,7 @@ export const span: React$AbstractComponent<
 export const strong: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('strong', defaultStyles.strong);
+> = createStrict('strong', { style: defaultStyles.strong });
 
 /**
  * "sub" (inline)
@@ -361,7 +360,7 @@ export const strong: React$AbstractComponent<
 export const sub: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('sub', defaultStyles.sub);
+> = createStrict('sub', { style: defaultStyles.sub });
 
 /**
  * "sup" (inline)
@@ -369,7 +368,7 @@ export const sub: React$AbstractComponent<
 export const sup: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('sup', defaultStyles.sup);
+> = createStrict('sup', { style: defaultStyles.sup });
 
 /**
  * "textarea" (inline-block)
@@ -377,7 +376,7 @@ export const sup: React$AbstractComponent<
 export const textarea: React$AbstractComponent<
   StrictReactDOMTextAreaProps,
   StrictHTMLTextAreaElement
-> = createStrict('textarea', defaultStyles.textarea);
+> = createStrict('textarea', { style: defaultStyles.textarea });
 
 /**
  * "u" (inline)
@@ -385,7 +384,7 @@ export const textarea: React$AbstractComponent<
 export const u: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('u', defaultStyles.u);
+> = createStrict('u', { style: defaultStyles.u });
 
 /**
  * "ul" (block)
@@ -393,4 +392,4 @@ export const u: React$AbstractComponent<
 export const ul: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('ul', defaultStyles.ul);
+> = createStrict('ul', { style: defaultStyles.ul });

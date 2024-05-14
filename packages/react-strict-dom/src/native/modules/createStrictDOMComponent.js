@@ -154,13 +154,14 @@ const DisplayModeInsideContext = React.createContext('flow');
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
-  defaultProps?: P
+  defaultProps?: Partial<P>,
+  _nativeComponent: React.AbstractComponent<$FlowFixMe, $FlowFixMe> = elements[
+    tagName
+  ] ?? Text
 ): React.AbstractComponent<P, T> {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let nativeComponent =
-        elements[tagName] != null ? elements[tagName] : Text;
-
+      let nativeComponent = _nativeComponent;
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       /**
