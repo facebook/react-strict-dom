@@ -454,7 +454,28 @@ exports[`properties: general textShadow 2`] = `
 exports[`properties: general transform: matrix 1`] = `
 {
   "style": {
-    "transform": "matrix(0.1, 1, -0.3, 1, 0, 0)",
+    "transform": [
+      {
+        "matrix": [
+          0.1,
+          1,
+          0,
+          0,
+          -0.3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+        ],
+      },
+    ],
   },
 }
 `;
@@ -462,11 +483,32 @@ exports[`properties: general transform: matrix 1`] = `
 exports[`properties: general transform: mixed 1`] = `
 {
   "style": {
-    "transform": "
-          rotateX(1deg) rotateY(2deg) rotateZ(3deg) rotate3d(1deg, 2deg, 3deg)
-          scale(1) scaleX(2) scaleY(3) scaleZ(4) scale3d(1,2,3)
-          translateX(1px) translateY(1em) translateZ(1rem) translate3d(1px, 1em, 1rem)
-        ",
+    "transform": [
+      {
+        "rotateX": "1deg",
+      },
+      {
+        "rotateY": "2deg",
+      },
+      {
+        "rotateZ": "3deg",
+      },
+      {
+        "scale": 1,
+      },
+      {
+        "scaleX": 2,
+      },
+      {
+        "scaleY": 3,
+      },
+      {
+        "scaleZ": 4,
+      },
+      {
+        "translateX": 1,
+      },
+    ],
   },
 }
 `;
@@ -474,7 +516,7 @@ exports[`properties: general transform: mixed 1`] = `
 exports[`properties: general transform: none 1`] = `
 {
   "style": {
-    "transform": "none",
+    "transform": [],
   },
 }
 `;
@@ -482,7 +524,11 @@ exports[`properties: general transform: none 1`] = `
 exports[`properties: general transform: perspective 1`] = `
 {
   "style": {
-    "transform": "perspective(10px)",
+    "transform": [
+      {
+        "perspective": 10,
+      },
+    ],
   },
 }
 `;
@@ -490,7 +536,20 @@ exports[`properties: general transform: perspective 1`] = `
 exports[`properties: general transform: rotate 1`] = `
 {
   "style": {
-    "transform": "rotate(10deg) rotateX(20deg) rotateY(30deg) rotateZ(40deg) rotate3d(0, 0.5, 1, 90deg)",
+    "transform": [
+      {
+        "rotate": "10deg",
+      },
+      {
+        "rotateX": "20deg",
+      },
+      {
+        "rotateY": "30deg",
+      },
+      {
+        "rotateZ": "40deg",
+      },
+    ],
   },
 }
 `;
@@ -498,7 +557,20 @@ exports[`properties: general transform: rotate 1`] = `
 exports[`properties: general transform: rotate 2`] = `
 {
   "style": {
-    "transform": "rotate(10deg) rotateX(20deg) rotateY(30deg) rotateZ(40deg) rotate3d(0, 0.5, 1, 90deg)",
+    "transform": [
+      {
+        "rotate": "10deg",
+      },
+      {
+        "rotateX": "20deg",
+      },
+      {
+        "rotateY": "30deg",
+      },
+      {
+        "rotateZ": "40deg",
+      },
+    ],
   },
 }
 `;
@@ -506,7 +578,17 @@ exports[`properties: general transform: rotate 2`] = `
 exports[`properties: general transform: scale 1`] = `
 {
   "style": {
-    "transform": "scale(1, 2) scaleX(1) scaleY(2) scaleZ(3) scale3d(1, 2, 3)",
+    "transform": [
+      {
+        "scaleX": 1,
+      },
+      {
+        "scaleY": 2,
+      },
+      {
+        "scaleZ": 3,
+      },
+    ],
   },
 }
 `;
@@ -514,7 +596,14 @@ exports[`properties: general transform: scale 1`] = `
 exports[`properties: general transform: skew 1`] = `
 {
   "style": {
-    "transform": "skew(10deg, 15deg) skewX(20deg) skewY(30deg)",
+    "transform": [
+      {
+        "skewX": "20deg",
+      },
+      {
+        "skewY": "30deg",
+      },
+    ],
   },
 }
 `;
@@ -522,7 +611,14 @@ exports[`properties: general transform: skew 1`] = `
 exports[`properties: general transform: translate 1`] = `
 {
   "style": {
-    "transform": "translate(10px, 20px) translateX(11px) translateY(12px) translateZ(13px) translate3d(20px, 30px, 40px)",
+    "transform": [
+      {
+        "translateX": 11,
+      },
+      {
+        "translateY": 12,
+      },
+    ],
   },
 }
 `;
