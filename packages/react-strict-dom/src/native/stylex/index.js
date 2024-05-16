@@ -26,6 +26,7 @@ import {
   stringContainsVariables
 } from './customProperties';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
+import { parseTransform } from '../modules/parseTransform';
 
 const stylePropertyAllowlistSet = new Set<string>([
   'alignContent',
@@ -318,6 +319,7 @@ function resolveStyle<S: { +[string]: mixed }>(
   options: SpreadOptions
 ): S {
   const customProperties = options.customProperties || {};
+  const passThroughProperties = options.passthroughProperties || [];
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
   const propNames = Object.keys(style);
@@ -381,6 +383,15 @@ function resolveStyle<S: { +[string]: mixed }>(
           continue;
         }
       }
+    }
+
+    if (
+      propName === 'transform' &&
+      typeof styleValue === 'string' &&
+      passThroughProperties.indexOf('transform') === -1
+    ) {
+      result[propName] = parseTransform(styleValue);
+      continue;
     }
 
     // resolve length units

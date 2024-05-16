@@ -42,6 +42,7 @@ import {
   Pressable
 } from 'react-native';
 import * as stylex from '../stylex';
+import { parseTransform } from './parseTransform';
 
 type ReactNativeProps = {
   ...StrictProps,
@@ -637,6 +638,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         }
         if (nativeComponent === Pressable) {
           nativeComponent = AnimatedPressable;
+        }
+      } else {
+        // shim for `transform` property was done with the animated property in the if condition
+        // above, but if we have reached till here, it means that we are not yet able to shim `transform`
+        // property and going to check it here now.
+        const transformValue = styleProps.style.transform;
+        if (transformValue != null && typeof transformValue === 'string') {
+          styleProps.style.transform = parseTransform(transformValue);
         }
       }
 

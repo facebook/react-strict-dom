@@ -24,7 +24,8 @@ const passthroughProperties = [
   'transitionDelay',
   'transitionDuration',
   'transitionProperty',
-  'transitionTimingFunction'
+  'transitionTimingFunction',
+  'transform' // passing through `transform` at this stage, because we will check it together with transitionProperty later.
 ];
 
 export function useStyleProps(
