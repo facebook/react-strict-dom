@@ -1236,7 +1236,14 @@ exports[`<html.*> style polyfills "transition" properties : transition property 
   style={
     {
       "position": "static",
-      "transform": "translateY(50px) rotateX(90deg)",
+      "transform": [
+        {
+          "translateY": 50,
+        },
+        {
+          "rotateX": "90deg",
+        },
+      ],
     }
   }
 />

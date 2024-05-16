@@ -21,6 +21,7 @@ import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { parseTimeValue } from './parseTimeValue';
+import { parseTransform } from './parseTransform';
 import {
   resolveVariableReferences,
   stringContainsVariables
@@ -381,6 +382,11 @@ function resolveStyle<S: { +[string]: mixed }>(
           continue;
         }
       }
+    }
+
+    if (propName === 'transform' && typeof styleValue === 'string') {
+      result[propName] = parseTransform(styleValue);
+      continue;
     }
 
     // resolve length units

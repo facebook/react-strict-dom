@@ -160,28 +160,28 @@ describe('<html.*>', () => {
     test('"transition" properties ', () => {
       const { Easing } = require('react-native');
 
-      const styles = {
-        backgroundColor: {
-          backgroundColor: 'rgba(0,0,0,0.1)',
+      const styles = css.create({
+        backgroundColor: (backgroundColor) => ({
+          backgroundColor: backgroundColor ?? 'rgba(0,0,0,0.1)',
           transitionDelay: 200,
           transitionDuration: 2000,
           transitionProperty: 'backgroundColor',
           transitionTimingFunction: 'ease-in-out'
-        },
-        opacity: {
-          opacity: 1.0,
+        }),
+        opacity: (opacity, timingFunction) => ({
+          opacity: opacity ?? 1.0,
           transitionDelay: 50,
           transitionDuration: 1000,
           transitionProperty: 'opacity',
-          transitionTimingFunction: 'ease-in'
-        },
-        transform: {
-          transform: 'translateY(0px) rotateX(0deg)',
+          transitionTimingFunction: timingFunction ?? 'ease-in'
+        }),
+        transform: (transform) => ({
+          transform: transform ?? 'translateY(0px) rotateX(0deg)',
           transitionDelay: 0,
           transitionDuration: 1000,
           transitionProperty: 'transform',
           transitionTimingFunction: 'ease-out'
-        },
+        }),
         transitionAll: {
           opacity: 1.0,
           transform: 'translateY(0px) rotateX(0deg)',
@@ -205,14 +205,14 @@ describe('<html.*>', () => {
           transitionProperty: 'transform',
           transitionTimingFunction: 'ease-out'
         },
-        width: {
-          width: 100,
+        width: (width) => ({
+          width: width ?? 100,
           transitionDelay: 0,
           transitionDuration: 500,
           transitionProperty: 'width',
           transitionTimingFunction: 'ease'
-        }
-      };
+        })
+      });
 
       let root;
 
@@ -226,46 +226,38 @@ describe('<html.*>', () => {
 
       // backgroundColor transition
       act(() => {
-        root = create(<html.div style={styles.backgroundColor} />);
+        root = create(<html.div style={styles.backgroundColor()} />);
       });
       expect(root.toJSON()).toMatchSnapshot('backgroundColor transition start');
       expect(Easing.inOut).toHaveBeenCalled();
       act(() => {
         root.update(
-          <html.div
-            style={[
-              styles.backgroundColor,
-              { backgroundColor: 'rgba(255,255,255,0.9)' }
-            ]}
-          />
+          <html.div style={[styles.backgroundColor('rgba(255,255,255,0.9)')]} />
         );
       });
       expect(root.toJSON()).toMatchSnapshot('backgroundColor transition end');
 
       // opacity transition
       act(() => {
-        root = create(<html.div style={styles.opacity} />);
+        root = create(<html.div style={styles.opacity()} />);
       });
       expect(root.toJSON()).toMatchSnapshot('opacity transition start');
       expect(Easing.in).toHaveBeenCalled();
       act(() => {
-        root.update(<html.div style={[styles.opacity, { opacity: 0 }]} />);
+        root.update(<html.div style={[styles.opacity(0)]} />);
       });
       expect(root.toJSON()).toMatchSnapshot('opacity transition end');
 
       // transform transition
       act(() => {
-        root = create(<html.div style={styles.transform} />);
+        root = create(<html.div style={styles.transform()} />);
       });
       expect(root.toJSON()).toMatchSnapshot('transform transition start');
       expect(Easing.out).toHaveBeenCalled();
       act(() => {
         root.update(
           <html.div
-            style={[
-              styles.transform,
-              { transform: 'translateY(50px) rotateX(90deg)' }
-            ]}
+            style={[styles.transform('translateY(50px) rotateX(90deg)')]}
           />
         );
       });
@@ -273,12 +265,12 @@ describe('<html.*>', () => {
 
       // width transition
       act(() => {
-        root = create(<html.div style={styles.width} />);
+        root = create(<html.div style={styles.width()} />);
       });
       expect(root.toJSON()).toMatchSnapshot('width transition start');
       expect(Easing.out).toHaveBeenCalled();
       act(() => {
-        root.update(<html.div style={[styles.width, { width: 200 }]} />);
+        root.update(<html.div style={[styles.width(200)]} />);
       });
       expect(root.toJSON()).toMatchSnapshot('width transition end');
 
@@ -286,10 +278,7 @@ describe('<html.*>', () => {
       act(() => {
         root = create(
           <html.div
-            style={[
-              styles.opacity,
-              { transitionTimingFunction: 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)' }
-            ]}
+            style={styles.opacity(1, 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)')}
           />
         );
       });

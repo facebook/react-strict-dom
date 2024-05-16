@@ -17,6 +17,22 @@ import type {
 
 import typeof TStyleX from '@stylexjs/stylex';
 
+export type Transform =
+  | { matrix: number[] }
+  | { perspective: number }
+  | { rotate: string }
+  | { rotateX: string }
+  | { rotateY: string }
+  | { rotateZ: string }
+  | { scale: number }
+  | { scaleX: number }
+  | { scaleY: number }
+  | { scaleZ: number }
+  | { translateX: number }
+  | { translateY: number }
+  | { skewX: string }
+  | { skewY: string };
+
 export type Style = InlineStyles;
 
 export type Styles = StyleXArray<

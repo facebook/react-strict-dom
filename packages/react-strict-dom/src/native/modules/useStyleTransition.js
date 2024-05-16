@@ -8,15 +8,15 @@
  */
 
 import type { AnimatedNode } from '../../types/react-native';
+import type { Transform } from '../../types/styles';
 
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
-import { parseTransform } from './parseTransform';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 
 type TransitionProperties = $ReadOnlyArray<{
   property: string,
-  value: string | number
+  value: string | number | Transform[]
 }>;
 
 type TransitionConfig = $ReadOnly<{
@@ -66,7 +66,7 @@ function canUseNativeDriver(
     if (property === 'opacity') {
       return true;
     }
-    if (property === 'transform' && typeof value === 'string') {
+    if (property === 'transform' && Array.isArray(value)) {
       return !value.includes('skew');
     }
     return false;
@@ -111,6 +111,7 @@ export function useStyleTransition(
   if (transitionProperties == null) {
     return [];
   }
+
   if (valueRef.current?.length !== transitionProperties.length) {
     errorMsg(
       'invalid style transition. The number of transition properties must be the same before and after the transition.'
@@ -127,232 +128,215 @@ export function useStyleTransition(
           inputRange: INPUT_RANGE,
           outputRange: [+startValue, value]
         });
-      }
+      } else if (typeof value === 'string') {
+        return animatedRef.current.interpolate({
+          inputRange: INPUT_RANGE,
+          outputRange: [String(startValue), value]
+        });
+      } else if (property === 'transform' && Array.isArray(value)) {
+        const transforms = value;
+        const refTransforms = startValue;
 
-      if (typeof value === 'string') {
-        if (property !== 'transform') {
-          return animatedRef.current.interpolate({
-            inputRange: INPUT_RANGE,
-            outputRange: [String(startValue), value]
-          });
-        } else {
-          const parsedTransforms = parseTransform(value);
-          const parsedRefTransforms = parseTransform(String(startValue));
-
-          // Check that there are the same number of transforms
-          if (parsedTransforms.length !== parsedRefTransforms.length) {
-            warnMsg(
-              'The number of transforms must be the same before and after the transition. The transition will not animate.'
-            );
-            return parsedTransforms;
-          }
-
-          // TODO: Figure out how to animate matrix transforms
-          for (const transform of parsedTransforms) {
-            if (transform.matrix != null) {
-              warnMsg(
-                'Matrix transforms cannot be animated. The transition will not animate.'
-              );
-              return parsedTransforms;
-            }
-          }
-
-          // Check that the transforms have the same types in the same order
-          for (let i = 0; i < parsedTransforms.length; i++) {
-            if (
-              (parsedTransforms[i].perspective != null &&
-                parsedRefTransforms[i].perspective == null) ||
-              (parsedTransforms[i].rotate != null &&
-                parsedRefTransforms[i].rotate == null) ||
-              (parsedTransforms[i].rotateX != null &&
-                parsedRefTransforms[i].rotateX == null) ||
-              (parsedTransforms[i].rotateY != null &&
-                parsedRefTransforms[i].rotateY == null) ||
-              (parsedTransforms[i].rotateZ != null &&
-                parsedRefTransforms[i].rotateZ == null) ||
-              (parsedTransforms[i].scale != null &&
-                parsedRefTransforms[i].scale == null) ||
-              (parsedTransforms[i].scaleX != null &&
-                parsedRefTransforms[i].scaleX == null) ||
-              (parsedTransforms[i].scaleY != null &&
-                parsedRefTransforms[i].scaleY == null) ||
-              (parsedTransforms[i].scaleZ != null &&
-                parsedRefTransforms[i].scaleZ == null) ||
-              (parsedTransforms[i].skewX != null &&
-                parsedRefTransforms[i].skewX == null) ||
-              (parsedTransforms[i].skewY != null &&
-                parsedRefTransforms[i].skewY == null) ||
-              (parsedTransforms[i].translateX != null &&
-                parsedRefTransforms[i].translateX == null) ||
-              (parsedTransforms[i].translateY != null &&
-                parsedRefTransforms[i].translateY == null)
-            ) {
-              return parsedTransforms;
-            }
-          }
-
-          // Animate the transforms
-          const animatedTransforms: Array<mixed> = [];
-          for (let i = 0; i < parsedTransforms.length; i++) {
-            const parsedTransform = parsedTransforms[i];
-            const parsedRefTransform = parsedRefTransforms[i];
-
-            if (parsedTransform.perspective != null) {
-              animatedTransforms.push({
-                perspective: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.perspective,
-                    parsedTransform.perspective
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.rotate != null) {
-              const parsedRotate = parsedTransform.rotate;
-              animatedTransforms.push({
-                rotate: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [String(parsedRefTransform.rotate), parsedRotate]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.rotateX != null) {
-              const parsedRotateX = parsedTransform.rotateX;
-              animatedTransforms.push({
-                rotateX: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    String(parsedRefTransform.rotateX),
-                    parsedRotateX
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.rotateY != null) {
-              const parsedRotateY = parsedTransform.rotateY;
-              animatedTransforms.push({
-                rotateY: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    String(parsedRefTransform.rotateY),
-                    parsedRotateY
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.rotateZ != null) {
-              const parsedRotateZ = parsedTransform.rotateZ;
-              animatedTransforms.push({
-                rotateZ: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    String(parsedRefTransform.rotateZ),
-                    parsedRotateZ
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.scale != null) {
-              animatedTransforms.push({
-                scale: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.scale,
-                    parsedTransform.scale
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.scaleX != null) {
-              animatedTransforms.push({
-                scaleX: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.scaleX,
-                    parsedTransform.scaleX
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.scaleY != null) {
-              animatedTransforms.push({
-                scaleY: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.scaleY,
-                    parsedTransform.scaleY
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.scaleZ != null) {
-              animatedTransforms.push({
-                scaleZ: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.scaleZ,
-                    parsedTransform.scaleZ
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.skewX != null) {
-              const parsedSkewX = parsedTransform.skewX;
-              animatedTransforms.push({
-                skewX: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [String(parsedRefTransform.skewX), parsedSkewX]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.skewY != null) {
-              const parsedSkewY = parsedTransform.skewY;
-              animatedTransforms.push({
-                skewY: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [String(parsedRefTransform.skewY), parsedSkewY]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.translateX != null) {
-              animatedTransforms.push({
-                translateX: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.translateX,
-                    parsedTransform.translateX
-                  ]
-                })
-              });
-              continue;
-            }
-            if (parsedTransform.translateY != null) {
-              animatedTransforms.push({
-                translateY: animatedRef.current.interpolate({
-                  inputRange: INPUT_RANGE,
-                  outputRange: [
-                    +parsedRefTransform.translateY,
-                    parsedTransform.translateY
-                  ]
-                })
-              });
-              continue;
-            }
-          }
-          return animatedTransforms;
+        // Check that there are the same number of transforms
+        if (
+          !Array.isArray(refTransforms) ||
+          transforms.length !== refTransforms.length
+        ) {
+          warnMsg(
+            'The number or types of transforms must be the same before and after the transition. The transition will not animate.'
+          );
+          return transforms;
         }
+
+        // TODO: Figure out how to animate matrix transforms
+        for (const transform of transforms) {
+          if (transform.matrix != null) {
+            warnMsg(
+              'Matrix transforms cannot be animated. The transition will not animate.'
+            );
+            return transforms;
+          }
+        }
+
+        // Check that the transforms have the same types in the same order
+        for (let i = 0; i < transforms.length; i++) {
+          if (
+            (transforms[i].perspective != null &&
+              refTransforms[i].perspective == null) ||
+            (transforms[i].rotate != null && refTransforms[i].rotate == null) ||
+            (transforms[i].rotateX != null &&
+              refTransforms[i].rotateX == null) ||
+            (transforms[i].rotateY != null &&
+              refTransforms[i].rotateY == null) ||
+            (transforms[i].rotateZ != null &&
+              refTransforms[i].rotateZ == null) ||
+            (transforms[i].scale != null && refTransforms[i].scale == null) ||
+            (transforms[i].scaleX != null && refTransforms[i].scaleX == null) ||
+            (transforms[i].scaleY != null && refTransforms[i].scaleY == null) ||
+            (transforms[i].scaleZ != null && refTransforms[i].scaleZ == null) ||
+            (transforms[i].skewX != null && refTransforms[i].skewX == null) ||
+            (transforms[i].skewY != null && refTransforms[i].skewY == null) ||
+            (transforms[i].translateX != null &&
+              refTransforms[i].translateX == null) ||
+            (transforms[i].translateY != null &&
+              refTransforms[i].translateY == null)
+          ) {
+            return transforms;
+          }
+        }
+
+        // Animate the transforms
+        const animatedTransforms: Array<mixed> = [];
+        for (let i = 0; i < transforms.length; i++) {
+          const singleTransform = transforms[i];
+          const singleRefTransform = refTransforms[i];
+
+          if (singleTransform.perspective != null) {
+            animatedTransforms.push({
+              perspective: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.perspective,
+                  singleTransform.perspective
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.rotate != null) {
+            animatedTransforms.push({
+              rotate: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [singleRefTransform.rotate, singleTransform.rotate]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.rotateX != null) {
+            animatedTransforms.push({
+              rotateX: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  singleRefTransform.rotateX,
+                  singleTransform.rotateX
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.rotateY != null) {
+            animatedTransforms.push({
+              rotateY: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  singleRefTransform.rotateY,
+                  singleTransform.rotateY
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.rotateZ != null) {
+            animatedTransforms.push({
+              rotateZ: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  singleRefTransform.rotateZ,
+                  singleTransform.rotateZ
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.scale != null) {
+            animatedTransforms.push({
+              scale: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [+singleRefTransform.scale, singleTransform.scale]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.scaleX != null) {
+            animatedTransforms.push({
+              scaleX: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.scaleX,
+                  singleTransform.scaleX
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.scaleY != null) {
+            animatedTransforms.push({
+              scaleY: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.scaleY,
+                  singleTransform.scaleY
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.scaleZ != null) {
+            animatedTransforms.push({
+              scaleZ: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.scaleZ,
+                  singleTransform.scaleZ
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.skewX != null) {
+            animatedTransforms.push({
+              skewX: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [singleRefTransform.skewX, singleTransform.skewX]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.skewY != null) {
+            animatedTransforms.push({
+              skewY: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [singleRefTransform.skewY, singleTransform.skewY]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.translateX != null) {
+            animatedTransforms.push({
+              translateX: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.translateX,
+                  singleTransform.translateX
+                ]
+              })
+            });
+            continue;
+          }
+          if (singleTransform.translateY != null) {
+            animatedTransforms.push({
+              translateY: animatedRef.current.interpolate({
+                inputRange: INPUT_RANGE,
+                outputRange: [
+                  +singleRefTransform.translateY,
+                  singleTransform.translateY
+                ]
+              })
+            });
+            continue;
+          }
+        }
+        return animatedTransforms;
       }
       return null;
     }

@@ -7,21 +7,7 @@
  * @flow strict
  */
 
-type Transform =
-  | { matrix: number[] }
-  | { perspective: number }
-  | { rotate: string }
-  | { rotateX: string }
-  | { rotateY: string }
-  | { rotateZ: string }
-  | { scale: number }
-  | { scaleX: number }
-  | { scaleY: number }
-  | { scaleZ: number }
-  | { translateX: number }
-  | { translateY: number }
-  | { skewX: string }
-  | { skewY: string };
+import type { Transform } from '../../types/styles';
 
 export function parseTransform(transform: string): Transform[] {
   const transforms = transform

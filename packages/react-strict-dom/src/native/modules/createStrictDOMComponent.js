@@ -8,7 +8,7 @@
  */
 
 import type { StrictProps } from '../../types/StrictProps';
-import type { Style } from '../../types/styles';
+import type { Style, Transform } from '../../types/styles';
 import type {
   ChangeEvent,
   EditingEvent,
@@ -602,10 +602,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       const transitionProperties = resolvedTransitionProperty.flatMap(
         (property) => {
           const value = styleProps.style[property];
-          if (isString(value) || isNumber(value)) {
+          if (isString(value) || isNumber(value) || Array.isArray(value)) {
             return [{ property, value }];
           }
-          return [] as Array<{ property: string, value: string | number }>;
+          return [] as Array<{
+            property: string,
+            value: string | number | Transform[]
+          }>;
         }
       );
       const animatedPropertyValues = useStyleTransition({
