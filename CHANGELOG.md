@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.0.11 (May 17, 2024)
+
+### Fixes
+
+* [Native] Fix CSS `transform` style processing ([#124](https://github.com/facebook/react-strict-dom/issues/124)).
+
+## 0.0.10 (May 9, 2024)
+
+* Remove eslint-plugin package ([#89](https://github.com/facebook/react-strict-dom/issues/89)).
+
+### New features
+
+* [Native] Log error for shortform CSS properties with invalid values.
+* [Native] Polyfill CSS `caretColor` support on Android.
+* [Native] Polyfill CSS `placeContent` support.
+
+### Fixes
+
+* [Native] Fix `fontFamily` warning for `<code>` on Android.
+* [Web] Fix `<strong>` font-weight reset.
+* [Web] Remove legacy `ThemeContext` from DOM exports.
+
 ## 0.0.9 (Apr 29, 2024)
 
 ### Fixes
@@ -14,9 +36,9 @@
 ### Fixes
 
 * [Native] Further refinement of log, warn, error messaging.
-* [Native] Fix typos in names of `{row,column}Gap`` properties ([#97](https://github.com/facebook/react-strict-dom/pull/97)).
-* Fix 'html' types across dom and native ([#98](https://github.com/facebook/react-strict-dom/pull/98)).
-* Fix TypeScript types for StrictHTMLCollection ([#99](https://github.com/facebook/react-strict-dom/pull/99)).
+* [Native] Fix typos in names of `{row,column}Gap` properties ([#97](https://github.com/facebook/react-strict-dom/pull/97)).
+* Fix `html` types across DOM and native ([#98](https://github.com/facebook/react-strict-dom/pull/98)).
+* Fix TypeScript types for `StrictHTMLCollection` ([#99](https://github.com/facebook/react-strict-dom/pull/99)).
 
 ## 0.0.7 (Apr 17, 2024)
 
