@@ -65,7 +65,9 @@ function resolveVariableReferenceValue(
     }
   }
 
-  warnMsg(`unrecognized custom property "${variable.variable}"`);
+  if (__DEV__) {
+    warnMsg(`unrecognized custom property "${variable.variable}"`);
+  }
 
   return null;
 }

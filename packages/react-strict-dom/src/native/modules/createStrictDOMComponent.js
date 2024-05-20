@@ -195,7 +195,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         props
       );
       delete nativeProps.suppressHydrationWarning;
-      validateStrictProps(nativeProps);
+      if (__DEV__) {
+        validateStrictProps(nativeProps);
+      }
 
       if (ariaPosInSet != null) {
         nativeProps.accessibilityPosInSet = ariaPosInSet;
@@ -222,7 +224,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
       if (href != null && tagName === 'a') {
         nativeProps.onPress = function (e) {
-          errorMsg('<a> "href" handling is not implemented in React Native.');
+          if (__DEV__) {
+            errorMsg('<a> "href" handling is not implemented in React Native.');
+          }
         };
       }
       if (tagName === 'br') {
@@ -252,9 +256,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           nativeProps.secureTextEntry = true;
         }
         if (type === 'checkbox' || type === 'date' || type === 'radio') {
-          errorMsg(
-            `<input type="${type}" /> is not implemented in React Native.`
-          );
+          if (__DEV__) {
+            errorMsg(
+              `<input type="${type}" /> is not implemented in React Native.`
+            );
+          }
         }
       }
       if (tagName === 'textarea') {
@@ -555,7 +561,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         displayValue !== 'none' &&
         displayValue !== 'block'
       ) {
-        warnMsg(`unsupported style value in "display:${String(displayValue)}"`);
+        if (__DEV__) {
+          warnMsg(
+            `unsupported style value in "display:${String(displayValue)}"`
+          );
+        }
       }
 
       if (displayValue === 'flex') {

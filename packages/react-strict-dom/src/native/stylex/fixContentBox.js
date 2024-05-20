@@ -91,11 +91,13 @@ export function fixContentBox(flatStyle: FlatStyle): FlatStyle {
         continue;
       }
       if (typeof styleValue !== 'number') {
-        warnMsg(
-          `unsupported style value in "${styleProp}:${String(
-            styleValue
-          )}" when used with "boxSizing:'content-box'". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".`
-        );
+        if (__DEV__) {
+          warnMsg(
+            `unsupported style value in "${styleProp}:${String(
+              styleValue
+            )}" when used with "boxSizing:'content-box'". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".`
+          );
+        }
         return flatStyle;
       }
       nextStyle[styleProp] = styleValue + correction;

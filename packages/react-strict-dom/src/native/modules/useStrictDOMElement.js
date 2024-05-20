@@ -14,7 +14,9 @@ import { useElementCallback } from '../../shared/useElementCallback';
 import { errorMsg } from '../../shared/logUtils';
 
 function errorUnimplemented(name: string) {
-  errorMsg(`unsupported method node.${name}()`);
+  if (__DEV__) {
+    errorMsg(`unsupported method node.${name}()`);
+  }
 }
 
 /*

@@ -265,7 +265,9 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
 
       // React Native shadows on iOS cannot polyfill box-shadow
       if (propName === 'boxShadow') {
-        warnMsg('unsupported style property "boxShadow".');
+        if (__DEV__) {
+          warnMsg('unsupported style property "boxShadow".');
+        }
         delete result.boxShadow;
         continue;
       }
@@ -300,7 +302,11 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
           if (propName === 'color') {
             result['placeholderTextColor'] = styleValue[propName];
           } else {
-            warnMsg(`unsupported "::placeholder" style property "${propName}"`);
+            if (__DEV__) {
+              warnMsg(
+                `unsupported "::placeholder" style property "${propName}"`
+              );
+            }
           }
         }
         delete result['::placeholder'];
@@ -451,7 +457,9 @@ type Keyframes = {
 };
 
 function _keyframes(k: Keyframes): Keyframes {
-  errorMsg('css.keyframes() is not supported.');
+  if (__DEV__) {
+    errorMsg('css.keyframes() is not supported.');
+  }
   return k;
 }
 export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
@@ -588,9 +596,11 @@ export function props(
           styleValue === 'currentcolor' ||
           styleValue === 'unset'
         ) {
-          warnMsg(
-            `unsupported style value in "${styleProp}:${String(styleValue)}"`
-          );
+          if (__DEV__) {
+            warnMsg(
+              `unsupported style value in "${styleProp}:${String(styleValue)}"`
+            );
+          }
         } else {
           nativeProps.cursorColor = styleValue;
         }
@@ -693,20 +703,26 @@ export function props(
           styleValue === 'safe center' ||
           styleValue === 'unsafe center'
         ) {
-          warnMsg(
-            `unsupported style value in "${styleProp}:${String(styleValue)}"`
-          );
+          if (__DEV__) {
+            warnMsg(
+              `unsupported style value in "${styleProp}:${String(styleValue)}"`
+            );
+          }
         }
         // Multiple, different values are invalid.
         else {
-          errorMsg(
-            `invalid style value in "${styleProp}:${String(styleValue)}"`
-          );
+          if (__DEV__) {
+            errorMsg(
+              `invalid style value in "${styleProp}:${String(styleValue)}"`
+            );
+          }
         }
       }
       // everything else
       else {
-        warnMsg(`unsupported style property "${styleProp}"`);
+        if (__DEV__) {
+          warnMsg(`unsupported style property "${styleProp}"`);
+        }
       }
 
       delete flatStyle[styleProp];
@@ -718,17 +734,21 @@ export function props(
     // filter.
     // We check this at resolve time to ensure the render-time styles are safe.
     if (!isReactNativeStyleValue(styleValue)) {
-      warnMsg(
-        `unsupported style value in "${styleProp}:${String(styleValue)}"`
-      );
+      if (__DEV__) {
+        warnMsg(
+          `unsupported style value in "${styleProp}:${String(styleValue)}"`
+        );
+      }
       delete flatStyle[styleProp];
       continue;
     }
 
     if (!isReactNativeShortFormValid(styleProp, styleValue)) {
-      errorMsg(
-        `invalid style value in "${styleProp}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
-      );
+      if (__DEV__) {
+        errorMsg(
+          `invalid style value in "${styleProp}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
+        );
+      }
       delete flatStyle[styleProp];
       continue;
     }
@@ -764,14 +784,18 @@ export function props(
     const positionValue = flatStyle.position;
     if (positionValue === 'fixed') {
       flatStyle.position = 'absolute';
-      warnMsg(
-        'unsupported style value in "position:fixed". Falling back to "position:absolute".'
-      );
+      if (__DEV__) {
+        warnMsg(
+          'unsupported style value in "position:fixed". Falling back to "position:absolute".'
+        );
+      }
     } else if (positionValue === 'sticky') {
       flatStyle.position = 'relative';
-      warnMsg(
-        'unsupported style value in "position:sticky". Falling back to "position:relative".'
-      );
+      if (__DEV__) {
+        warnMsg(
+          'unsupported style value in "position:sticky". Falling back to "position:relative".'
+        );
+      }
     }
 
     for (const timeValuedProperty of timeValuedProperties) {

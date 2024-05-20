@@ -9,6 +9,8 @@
 
 import type { SpreadOptions } from './SpreadOptions';
 
+import { warnMsg } from '../../shared/logUtils';
+
 const LENGTH_REGEX = /^(-?[0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
 
 type CSSLengthUnitType = 'em' | 'px' | 'rem' | 'vh' | 'vmax' | 'vmin' | 'vw';
@@ -73,7 +75,9 @@ export class CSSLengthUnitValue {
         return viewportWidth * valuePercent;
       }
       default: {
-        console.error(`[stylex]: Unsupported unit of "${unit}"`);
+        if (__DEV__) {
+          warnMsg(`unsupported unit of "${unit}"`);
+        }
         return 0;
       }
     }

@@ -31,7 +31,9 @@ export class CSSTextShadow {
   constructor(value: string) {
     const parsedShadow = CSSTextShadow.parse(value);
     if (parsedShadow.length > 1) {
-      warnMsg('unsupported multiple values for style property "textShadow".');
+      if (__DEV__) {
+        warnMsg('unsupported multiple values for style property "textShadow".');
+      }
     }
     this.parsedShadow = parsedShadow[0];
   }

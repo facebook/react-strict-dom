@@ -12,8 +12,6 @@ import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import path from 'path';
 
-const isProduction = false;
-
 const babelPlugin = babel({
   babelHelpers: 'bundled',
   configFile: require.resolve('./babel.config.js')
@@ -37,17 +35,8 @@ function ossLicensePlugin() {
   };
 }
 
-const replacePlugin = replace({
-  preventAssignment: true,
-  values: {
-    __DEV__: isProduction ? 'false' : 'true',
-    'process.env.NODE_ENV': isProduction ? "'production'" : "'development'"
-  }
-});
-
 const sharedPlugins = [
   babelPlugin,
-  replacePlugin,
   resolve(),
   // commonjs packages: styleq and css-mediaquery
   commonjs()
@@ -118,6 +107,12 @@ const nativeConfigs = [
       format: 'commonjs'
     },
     plugins: [
+      replace({
+        preventAssignment: true,
+        values: {
+          __DEV__: 'false'
+        }
+      }),
       // alias react-native to mock
       alias({
         entries: [

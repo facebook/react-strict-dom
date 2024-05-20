@@ -113,9 +113,11 @@ export function useStyleTransition(
   }
 
   if (valueRef.current?.length !== transitionProperties.length) {
-    errorMsg(
-      'invalid style transition. The number of transition properties must be the same before and after the transition.'
-    );
+    if (__DEV__) {
+      errorMsg(
+        'invalid style transition. The number of transition properties must be the same before and after the transition.'
+      );
+    }
     return [];
   }
 
@@ -142,18 +144,22 @@ export function useStyleTransition(
           !Array.isArray(refTransforms) ||
           transforms.length !== refTransforms.length
         ) {
-          warnMsg(
-            'The number or types of transforms must be the same before and after the transition. The transition will not animate.'
-          );
+          if (__DEV__) {
+            warnMsg(
+              'The number or types of transforms must be the same before and after the transition. The transition will not animate.'
+            );
+          }
           return transforms;
         }
 
         // TODO: Figure out how to animate matrix transforms
         for (const transform of transforms) {
           if (transform.matrix != null) {
-            warnMsg(
-              'Matrix transforms cannot be animated. The transition will not animate.'
-            );
+            if (__DEV__) {
+              warnMsg(
+                'Matrix transforms cannot be animated. The transition will not animate.'
+              );
+            }
             return transforms;
           }
         }

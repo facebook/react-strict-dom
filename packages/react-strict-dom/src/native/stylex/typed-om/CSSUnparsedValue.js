@@ -54,9 +54,11 @@ export class CSSUnparsedValue extends CSSStyleValue {
     depth: number = 0
   ): CSSUnparsedValue {
     if (depth > MAX_RESOLVE_DEPTH) {
-      errorMsg(
-        `reached maximum recursion limit (${MAX_RESOLVE_DEPTH}) while resolving custom properties — please ensure you don't have a custom property reference cycle.`
-      );
+      if (__DEV__) {
+        errorMsg(
+          `reached maximum recursion limit (${MAX_RESOLVE_DEPTH}) while resolving custom properties — please ensure you don't have a custom property reference cycle.`
+        );
+      }
       return new CSSUnparsedValue([]);
     }
 
@@ -79,11 +81,13 @@ export class CSSUnparsedValue extends CSSStyleValue {
           const args = splitComponentValueListByComma(currentValue.nodes);
           const variableName = CSSUnparsedValue.#resolveVariableName(args[0]);
           if (variableName == null) {
-            warnMsg(
-              `Failed to resolve variable name from '${valueParser.stringify(
-                args[0]
-              )}'`
-            );
+            if (__DEV__) {
+              warnMsg(
+                `Failed to resolve variable name from '${valueParser.stringify(
+                  args[0]
+                )}'`
+              );
+            }
             return new CSSUnparsedValue([]);
           }
 
@@ -97,9 +101,11 @@ export class CSSUnparsedValue extends CSSStyleValue {
               new CSSVariableReferenceValue(variableName, fallbackValue)
             );
           } catch (err) {
-            warnMsg(
-              `Error creating CSSVariableReferenceValue: ${err.toString()}`
-            );
+            if (__DEV__) {
+              warnMsg(
+                `Error creating CSSVariableReferenceValue: ${err.toString()}`
+              );
+            }
             return new CSSUnparsedValue([]);
           }
         } else {
