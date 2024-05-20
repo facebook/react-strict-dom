@@ -147,6 +147,23 @@ const complexStyle = {
   }
 };
 
+const unsupportedStyle = {
+  backgroundColor: 'var(--missingVar)',
+  boxSizing: 'border-box',
+  color: 'currentcolor',
+  display: 'inline',
+  invalid: 'foo',
+  margin: '1px 2px 3px',
+  padding: 10,
+  placeContent: 'unsafe center',
+  position: 'fixed',
+  textShadow: '0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000',
+  width: '100%',
+  '::placeholder': {
+    borderColor: 'red'
+  }
+};
+
 /**
  * css.create()
  */
@@ -173,6 +190,12 @@ test('css.create() big style', () => {
 test('css.create() complex style', () => {
   css.create({
     complexStyle: complexStyle
+  });
+});
+
+test('css.create() unsupported style', () => {
+  css.create({
+    unsupportedStyle: unsupportedStyle
   });
 });
 
@@ -219,6 +242,10 @@ test('css.props() small style', () => {
 
 test('css.props() large style', () => {
   css.props.call(options, styles.bigStyle);
+});
+
+test('css.props() unsupported style', () => {
+  css.props.call(options, styles.unsupportedStyle);
 });
 
 // SMALL MERGE
