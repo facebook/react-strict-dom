@@ -9,9 +9,10 @@
 
 export type SpreadOptions = $ReadOnly<{
   customProperties: $ReadOnly<{ [string]: string | number }>,
-  inheritedFontSize: ?number,
   fontScale: number | void,
   hover?: ?boolean,
+  inheritedCustomProperties: $ReadOnly<{ [string]: string | number }>,
+  inheritedFontSize: ?number,
   passthroughProperties: $ReadOnlyArray<string>,
   viewportHeight: number,
   viewportWidth: number,
