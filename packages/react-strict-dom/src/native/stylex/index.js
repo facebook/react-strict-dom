@@ -325,6 +325,7 @@ function resolveStyle<S: { +[string]: mixed }>(
   options: SpreadOptions
 ): S {
   const customProperties = options.customProperties || {};
+  const inheritedCustomProperties = options.inheritedCustomProperties || {};
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
   const propNames = Object.keys(style);
@@ -354,7 +355,8 @@ function resolveStyle<S: { +[string]: mixed }>(
       const resolvedValue = resolveVariableReferences(
         propName,
         styleValue,
-        customProperties
+        customProperties,
+        inheritedCustomProperties
       );
       if (resolvedValue != null) {
         stylesToReprocess[propName] = resolvedValue;

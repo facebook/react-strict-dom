@@ -12,12 +12,12 @@ import type { Styles } from '../../types/styles';
 import * as React from 'react';
 import { typeof Animated, PixelRatio, useWindowDimensions } from 'react-native';
 import { FontSizeContext } from './FontSizeContext';
-import { ThemeContext } from './ThemeContext';
 import * as stylex from '../stylex';
 
 type StyleOptions = {
-  customProperties?: ?{ [string]: string | number },
-  hover: boolean
+  customProperties: ?$ReadOnly<{ [string]: string | number }>,
+  hover: boolean,
+  inheritedCustomProperties: ?$ReadOnly<{ [string]: string | number }>
 };
 
 const passthroughProperties = [
@@ -26,6 +26,8 @@ const passthroughProperties = [
   'transitionProperty',
   'transitionTimingFunction'
 ];
+
+const emptyObject = {};
 
 export function useStyleProps(
   style: Styles,
@@ -38,21 +40,17 @@ export function useStyleProps(
 }> {
   const { height, width } = useWindowDimensions();
   const inheritedFontSize = React.useContext(FontSizeContext);
-  const inheritedCustomProperties = React.useContext(ThemeContext);
   const fontScale = PixelRatio.getFontScale();
-  const { customProperties: customPropertiesFromThemes, hover } = options;
+  const { customProperties, inheritedCustomProperties, hover } = options;
 
   // Marking it as `any` as Flow slows to a crawl when trying to type this.
   // But we already know that `style` is the correct type so this is still safe.
   const styleProps = stylex.props.call(
     {
-      customProperties: {
-        ...stylex.__customProperties,
-        ...inheritedCustomProperties,
-        ...customPropertiesFromThemes
-      },
+      customProperties: customProperties ?? emptyObject,
       fontScale,
       hover,
+      inheritedCustomProperties: inheritedCustomProperties ?? emptyObject,
       inheritedFontSize,
       passthroughProperties,
       viewportHeight: height,

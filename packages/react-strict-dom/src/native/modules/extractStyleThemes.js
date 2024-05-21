@@ -37,5 +37,8 @@ export function extractStyleThemes(
       }
     }
   }
-  return [styles, theme];
+
+  const themeValue = Object.keys(theme).length > 0 ? theme : null;
+
+  return [styles, themeValue];
 }

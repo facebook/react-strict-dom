@@ -13,7 +13,7 @@
   "scripts": {
     "benchmark": "node tests/benchmarks/benchmarks.node.js",
     "build": "rollup --config ../../configs/rollup.config.js",
-    "clean": "del-cli \"./dist/*\"",
+    "clean": "del-cli \"./build/*\" \"./dist/*\"",
     "dev": "npm run build -- --watch",
     "prebuild": "npm run clean && gen-types -i src/ -o dist"
   },

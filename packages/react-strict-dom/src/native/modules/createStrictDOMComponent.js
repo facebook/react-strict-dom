@@ -403,6 +403,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        * Resolve the style props
        */
       const inheritedStyles: ?Style = React.useContext(InheritableStyleContext);
+      const inheritedCustomProperties = React.useContext(ThemeContext);
+
       const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
         props.style
       );
@@ -509,6 +511,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
       const _styleProps = useStyleProps(renderStyles, {
         customProperties: customPropertiesFromThemes,
+        inheritedCustomProperties,
         hover
       });
 
@@ -676,14 +679,16 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         );
       }
 
-      const inheritedCustomProperties = React.useContext(ThemeContext);
-
       return (
         <ThemeContext.Provider
-          value={{
-            ...inheritedCustomProperties,
-            ...customPropertiesFromThemes
-          }}
+          value={
+            customPropertiesFromThemes != null
+              ? {
+                  ...inheritedCustomProperties,
+                  ...customPropertiesFromThemes
+                }
+              : inheritedCustomProperties
+          }
         >
           <DisplayModeInsideContext.Provider value={nextDisplayModeInside}>
             <InheritableStyleContext.Provider
