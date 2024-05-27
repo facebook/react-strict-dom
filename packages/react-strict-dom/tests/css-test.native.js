@@ -1135,7 +1135,11 @@ describe('properties: custom property', () => {
 
   test('css.defineVars', () => {
     const tokens = css.defineVars({
-      rootColor: 'red'
+      rootColor: 'red',
+      themeAwareColor: {
+        default: 'blue',
+        '@media (prefers-color-scheme: dark)': 'green'
+      }
     });
     expect(tokens).toMatchSnapshot('tokens');
     expect(css.__customProperties).toMatchSnapshot('css.__customProperties');
@@ -1145,6 +1149,12 @@ describe('properties: custom property', () => {
         tokens.rootColor
       ])
     ).toEqual('red');
+    expect(
+      resolveCustomPropertyValue(css.__customProperties, [
+        'color',
+        tokens.themeAwareColor
+      ])
+    ).toEqual('blue');
   });
 
   test('css.createTheme', () => {

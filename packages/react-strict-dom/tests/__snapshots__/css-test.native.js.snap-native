@@ -3,26 +3,35 @@
 exports[`properties: custom property css.createTheme: css.__customProperties 1`] = `
 {
   "rootColor__id__1": "red",
-  "rootColor__id__2": "red",
+  "rootColor__id__3": "red",
+  "themeAwareColor__id__2": {
+    "@media (prefers-color-scheme: dark)": "green",
+    "default": "blue",
+  },
 }
 `;
 
 exports[`properties: custom property css.createTheme: theme 1`] = `
 {
   "$$theme": "theme",
-  "rootColor__id__2": "green",
+  "rootColor__id__3": "green",
 }
 `;
 
 exports[`properties: custom property css.defineVars: css.__customProperties 1`] = `
 {
   "rootColor__id__1": "red",
+  "themeAwareColor__id__2": {
+    "@media (prefers-color-scheme: dark)": "green",
+    "default": "blue",
+  },
 }
 `;
 
 exports[`properties: custom property css.defineVars: tokens 1`] = `
 {
   "rootColor": "var(--rootColor__id__1)",
+  "themeAwareColor": "var(--themeAwareColor__id__2)",
 }
 `;
 

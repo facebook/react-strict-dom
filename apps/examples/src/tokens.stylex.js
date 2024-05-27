@@ -18,5 +18,8 @@ export const tokens: VarGroup<
   }>
 > = css.defineVars({
   squareColor: 'red',
-  textColor: 'darkred'
+  textColor: {
+    default: 'darkred',
+    '@media (prefers-color-scheme: dark)': 'lightred'
+  }
 });

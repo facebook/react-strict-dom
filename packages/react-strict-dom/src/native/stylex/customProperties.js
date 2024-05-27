@@ -56,6 +56,11 @@ function resolveVariableReferenceValue(
   }
 
   if (variableValue != null) {
+    if (typeof variableValue === 'object' && variableValue.default != null) {
+      // TODO: Support dark theme through media queries too.
+      const defaultValue = variableValue.default;
+      return defaultValue;
+    }
     return variableValue;
   } else if (fallbackValue != null) {
     const resolvedFallback = resolveVariableReferences(
