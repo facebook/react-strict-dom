@@ -63,7 +63,7 @@ type ClickEventData = {
   shiftKey: boolean
 };
 
-export default function App(): React.MixedElement {
+function Shell(): React.MixedElement {
   const [clickData, setClickData] = React.useState({ color: 'red', text: '' });
   const [clickEventData, setClickEventData] = React.useState<ClickEventData>({
     altKey: false,
@@ -259,11 +259,11 @@ export default function App(): React.MixedElement {
         <ExampleBlock title="CSS Text styles">
           <html.div style={styles.lineHeightUnitless}>
             <html.span style={styles.text}>
-              <html.span style={styles.text}>line-height</html.span> (unitless)
+              <html.span style={styles.text}>test</html.span> (unitless)
             </html.span>
           </html.div>
           <html.div style={styles.lineHeightEm}>
-            <html.span style={styles.text}>line-height (em)</html.span>
+            <html.span style={styles.text}>test (em)</html.span>
           </html.div>
         </ExampleBlock>
 
@@ -524,6 +524,14 @@ export default function App(): React.MixedElement {
         </ExampleBlock>
       </html.div>
     </ScrollView>
+  );
+}
+
+export default function App(): React.MixedElement {
+  return (
+    <React.StrictMode>
+      <Shell />
+    </React.StrictMode>
   );
 }
 

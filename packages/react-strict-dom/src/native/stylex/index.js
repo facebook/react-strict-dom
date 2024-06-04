@@ -12,8 +12,6 @@ import type {
   MutableCustomProperties
 } from './customProperties';
 import type { IStyleX } from '../../types/styles';
-import type { SpreadOptions } from './SpreadOptions';
-
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSMediaQuery } from './CSSMediaQuery';
 import { CSSTextShadow } from './CSSTextShadow';
@@ -27,6 +25,18 @@ import {
   stringContainsVariables
 } from './customProperties';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
+
+type ResolveStyleOptions = $ReadOnly<{
+  customProperties: $ReadOnly<{ [string]: string | number }>,
+  fontScale: number | void,
+  hover?: ?boolean,
+  inheritedCustomProperties: $ReadOnly<{ [string]: string | number }>,
+  inheritedFontSize: ?number,
+  passthroughProperties: $ReadOnlyArray<string>,
+  viewportHeight: number,
+  viewportWidth: number,
+  writingDirection?: ?'ltr' | 'rtl'
+}>;
 
 const stylePropertyAllowlistSet = new Set<string>([
   'alignContent',
@@ -286,10 +296,7 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
 
       const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
       if (maybeLengthUnitValue != null) {
-        result[propName] =
-          maybeLengthUnitValue[1] === 'px'
-            ? maybeLengthUnitValue[0]
-            : new CSSLengthUnitValue(...maybeLengthUnitValue);
+        result[propName] = new CSSLengthUnitValue(...maybeLengthUnitValue);
         continue;
       }
     }
@@ -322,10 +329,12 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
 
 function resolveStyle<S: { +[string]: mixed }>(
   style: S,
-  options: SpreadOptions
+  options: ResolveStyleOptions
 ): S {
   const customProperties = options.customProperties || {};
   const inheritedCustomProperties = options.inheritedCustomProperties || {};
+  const inheritedFontSize = options.inheritedFontSize;
+
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
   const propNames = Object.keys(style);
@@ -368,27 +377,24 @@ function resolveStyle<S: { +[string]: mixed }>(
     // React Native treats unitless as a 'px' value
     // Web treats unitless as fontSize multiplier
     if (propName === 'lineHeight') {
-      if (
-        typeof styleValue === 'number' ||
-        (typeof styleValue === 'string' &&
-          CSSLengthUnitValue.parse(styleValue) == null)
-      ) {
+      // Other units would already be instanceof CSSLengthUnitValue
+      if (typeof styleValue === 'number' || typeof styleValue === 'string') {
         const lineHeightValue = parseFloat(styleValue);
-        // Only convert unitless lineHeight if fontSize exists
-        if (style.fontSize != null) {
-          if (style.fontSize instanceof CSSLengthUnitValue) {
-            const { value: fontSizeValue, unit: fontSizeUnit } = style.fontSize;
-            const value = new CSSLengthUnitValue(
-              lineHeightValue * fontSizeValue,
-              fontSizeUnit
-            );
-            stylesToReprocess[propName] = value;
-            result[propName] = value;
-          } else if (typeof style.fontSize === 'number') {
-            result[propName] = lineHeightValue * style.fontSize;
-          }
-          continue;
+        if (style.fontSize instanceof CSSLengthUnitValue) {
+          const { value: fontSizeValue, unit: fontSizeUnit } = style.fontSize;
+          const value = new CSSLengthUnitValue(
+            lineHeightValue * fontSizeValue,
+            fontSizeUnit
+          );
+          stylesToReprocess[propName] = value;
+          result[propName] = value;
+        } else if (typeof style.fontSize === 'number') {
+          result[propName] = lineHeightValue * style.fontSize;
+        } else {
+          // Fallback in case no fontSize
+          result[propName] = lineHeightValue * 16;
         }
+        continue;
       }
     }
 
@@ -399,7 +405,12 @@ function resolveStyle<S: { +[string]: mixed }>(
 
     // resolve length units
     if (styleValue instanceof CSSLengthUnitValue) {
-      result[propName] = styleValue.resolvePixelValue(options);
+      result[propName] = styleValue.resolvePixelValue({
+        fontScale: options.fontScale,
+        inheritedFontSize,
+        viewportHeight: options.viewportHeight,
+        viewportWidth: options.viewportWidth
+      });
       continue;
     }
 
@@ -478,7 +489,7 @@ const timeValuedProperties = [
  */
 
 export function props(
-  this: SpreadOptions,
+  this: ResolveStyleOptions,
   ...style: $ReadOnlyArray<?{ [key: string]: mixed }>
 ): {
   style?: { [string]: string | number },

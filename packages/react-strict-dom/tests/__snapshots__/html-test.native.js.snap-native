@@ -1289,11 +1289,12 @@ exports[`<html.*> style polyfills "transition" properties : width transition sta
 />
 `;
 
-exports[`<html.*> style polyfills default inherited text styles 1`] = `
+exports[`<html.*> style polyfills inherited styles 1`] = `
 <View
   experimental_layoutConformance="strict"
   style={
     {
+      "borderColor": "red",
       "position": "static",
     }
   }
@@ -1312,11 +1313,11 @@ exports[`<html.*> style polyfills default inherited text styles 1`] = `
         {
           "color": "red",
           "fontFamily": "Arial",
-          "fontSize": 32,
+          "fontSize": 20,
           "fontStyle": "italic",
           "fontVariant": "variant",
           "fontWeight": "300",
-          "lineHeight": 48,
+          "lineHeight": 30,
           "position": "static",
           "textAlign": "right",
           "textTransform": "uppercase",
@@ -1324,45 +1325,15 @@ exports[`<html.*> style polyfills default inherited text styles 1`] = `
         }
       }
     >
-      Text should 
-      <Text
-        dir="auto"
-        style={
-          {
-            "color": "red",
-            "fontFamily": "Arial",
-            "fontSize": 64,
-            "fontStyle": "italic",
-            "fontVariant": "variant",
-            "fontWeight": "300",
-            "lineHeight": 96,
-            "position": "static",
-            "textAlign": "right",
-            "textTransform": "uppercase",
-            "userSelect": "auto",
-          }
-        }
-      >
-        inherit
-      </Text>
-       div styles
+      Inherits text styles
     </Text>
     <TextInput
       dir="auto"
-      placeholder="Input should inherit div styles"
+      placeholder="Does not inherit text styles"
       style={
         {
           "borderWidth": 1,
-          "color": "red",
-          "fontFamily": "Arial",
-          "fontSize": 16,
-          "fontStyle": "italic",
-          "fontVariant": "variant",
-          "fontWeight": "300",
-          "lineHeight": 24,
           "position": "static",
-          "textAlign": "right",
-          "textTransform": "uppercase",
         }
       }
     />

@@ -7,17 +7,17 @@
  * @flow strict-local
  */
 
+import { typeof Animated } from 'react-native';
 import type { Styles } from '../../types/styles';
 
-import * as React from 'react';
-import { typeof Animated, PixelRatio, useWindowDimensions } from 'react-native';
-import { FontSizeContext } from './FontSizeContext';
+import { PixelRatio, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
+import { useCustomProperties } from './ContextCustomProperties';
 
 type StyleOptions = {
   customProperties: ?$ReadOnly<{ [string]: string | number }>,
   hover: boolean,
-  inheritedCustomProperties: ?$ReadOnly<{ [string]: string | number }>
+  inheritedFontSize: ?number
 };
 
 const passthroughProperties = [
@@ -38,10 +38,11 @@ export function useStyleProps(
   }>,
   ...
 }> {
+  const { customProperties, hover, inheritedFontSize } = options;
+
   const { height, width } = useWindowDimensions();
-  const inheritedFontSize = React.useContext(FontSizeContext);
   const fontScale = PixelRatio.getFontScale();
-  const { customProperties, inheritedCustomProperties, hover } = options;
+  const inheritedCustomProperties = useCustomProperties();
 
   // Marking it as `any` as Flow slows to a crawl when trying to type this.
   // But we already know that `style` is the correct type so this is still safe.
@@ -51,6 +52,7 @@ export function useStyleProps(
       fontScale,
       hover,
       inheritedCustomProperties: inheritedCustomProperties ?? emptyObject,
+      // $FlowFixMe
       inheritedFontSize,
       passthroughProperties,
       viewportHeight: height,

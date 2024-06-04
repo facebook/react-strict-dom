@@ -21,9 +21,18 @@ import type {
 } from '../../types/react-native';
 
 import * as React from 'react';
-import { FontSizeContext } from './FontSizeContext';
-import { InheritableStyleContext } from './InheritableStyleContext';
-import { ThemeContext } from './ThemeContext';
+import {
+  CustomPropertiesProvider,
+  useCustomProperties
+} from './ContextCustomProperties';
+import {
+  DisplayModeInsideProvider,
+  useDisplayModeInside
+} from './ContextDisplayModeInside';
+import {
+  InheritedStylesProvider,
+  useInheritedStyles
+} from './ContextInheritedStyles';
 import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
@@ -149,8 +158,6 @@ function resolveTransitionProperty(property: mixed): string[] {
   }
   return [];
 }
-
-const DisplayModeInsideContext = React.createContext('flow');
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
@@ -402,12 +409,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       /**
        * Resolve the style props
        */
-      const inheritedStyles: ?Style = React.useContext(InheritableStyleContext);
-      const inheritedCustomProperties = React.useContext(ThemeContext);
+      const inheritedCustomProperties = useCustomProperties();
+      const inheritedStyles = useInheritedStyles();
 
       const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
         props.style
       );
+
       const {
         color,
         cursor,
@@ -423,48 +431,53 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         textTransform,
         whiteSpace,
         ...nonTextStyles
-      } = flattenStyle(extractedStyles) || {};
+      } = flattenStyle(extractedStyles);
 
-      const textStyles: { ...Style } = {};
+      const nextInheritedStyles: { ...Style } = {};
       if (color != null) {
-        textStyles.color = color;
+        nextInheritedStyles.color = color;
       }
       if (cursor != null) {
-        textStyles.cursor = cursor;
+        nextInheritedStyles.cursor = cursor;
       }
       if (fontFamily != null) {
-        textStyles.fontFamily = fontFamily;
+        nextInheritedStyles.fontFamily = fontFamily;
       }
       if (fontSize != null) {
-        textStyles.fontSize = fontSize;
+        nextInheritedStyles.fontSize = fontSize;
       }
       if (fontStyle != null) {
-        textStyles.fontStyle = fontStyle;
+        nextInheritedStyles.fontStyle = fontStyle;
       }
       if (fontVariant != null) {
-        textStyles.fontVariant = fontVariant;
+        nextInheritedStyles.fontVariant = fontVariant;
       }
       if (fontWeight != null) {
-        textStyles.fontWeight = fontWeight;
+        nextInheritedStyles.fontWeight = fontWeight;
       }
       if (letterSpace != null) {
-        textStyles.letterSpace = letterSpace;
+        nextInheritedStyles.letterSpace = letterSpace;
       }
       if (lineHeight != null) {
-        textStyles.lineHeight = lineHeight;
+        nextInheritedStyles.lineHeight = lineHeight;
       }
       if (textAlign != null) {
-        textStyles.textAlign = textAlign;
+        nextInheritedStyles.textAlign = textAlign;
       }
       if (textIndent != null) {
-        textStyles.textIndent = textIndent;
+        nextInheritedStyles.textIndent = textIndent;
       }
       if (textTransform != null) {
-        textStyles.textTransform = textTransform;
+        nextInheritedStyles.textTransform = textTransform;
       }
       if (whiteSpace != null) {
-        textStyles.whiteSpace = whiteSpace;
+        nextInheritedStyles.whiteSpace = whiteSpace;
       }
+
+      const hasNextInheritedStyles =
+        nextInheritedStyles != null &&
+        typeof nextInheritedStyles === 'object' &&
+        Object.keys(nextInheritedStyles).length > 0;
 
       const renderStyles = [
         defaultProps?.style ?? null,
@@ -485,11 +498,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         // Add default text styles
         nativeComponent === Text && styles.userSelectAuto,
         // Provided styles
-        nativeComponent === Text || nativeComponent === TextInput
+        nativeComponent === Text
           ? [inheritedStyles, extractedStyles]
           : [nonTextStyles]
       ];
-      const { hover, handlers } = useHoverHandlers(renderStyles);
+
+      const { hover, handlers } = useHoverHandlers(
+        // we include the next inherited styles for non-text
+        // so that any related hover handlers get attached.
+        nativeComponent === Text
+          ? renderStyles
+          : [renderStyles, nextInheritedStyles as $FlowFixMe]
+      );
 
       if (handlers.type === 'HOVERABLE') {
         for (const handler of [
@@ -509,10 +529,12 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           }
         }
       }
+
       const _styleProps = useStyleProps(renderStyles, {
         customProperties: customPropertiesFromThemes,
-        inheritedCustomProperties,
-        hover
+        hover,
+        // $FlowFixMe
+        inheritedFontSize: inheritedStyles?.fontSize
       });
 
       // Mark `styleProps` as writable so we can mutate it
@@ -534,19 +556,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         const p: {
           style?: ?TextStyleProp
         } = {};
-        if (
-          inheritedStyles != null &&
-          typeof inheritedStyles === 'object' &&
-          Object.keys(inheritedStyles).length > 0
-        ) {
+        if (inheritedStyles != null) {
           s = inheritedStyles;
         }
-        if (
-          textStyles != null &&
-          typeof textStyles === 'object' &&
-          Object.keys(textStyles).length > 0
-        ) {
-          s = { ...s, ...textStyles };
+        if (hasNextInheritedStyles) {
+          s = { ...s, ...nextInheritedStyles };
         }
         if (Object.keys(s).length > 0) {
           p.style = s;
@@ -556,7 +570,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // polyfill for display:block-as-default
       let nextDisplayModeInside = 'flow';
-      const displayModeInside = React.useContext(DisplayModeInsideContext);
+      const displayModeInside = useDisplayModeInside();
       const displayValue = styleProps.style.display;
       if (
         displayValue != null &&
@@ -664,46 +678,44 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         // enable W3C flexbox layout
         nativeProps.experimental_layoutConformance = 'strict';
       }
-      const element = React.createElement(nativeComponent, {
+      let element = React.createElement(nativeComponent, {
         ...(nativeProps as $FlowFixMe),
         ...(styleProps as $FlowFixMe)
       });
-      let fontSizeValue = null;
-      const fontSizeStyleValue = styleProps.style.fontSize;
-      if (isNumber(fontSizeStyleValue)) {
-        fontSizeValue = fontSizeStyleValue;
-      }
-      if (isString(fontSizeStyleValue) && fontSizeStyleValue.endsWith('px')) {
-        fontSizeValue = parseFloat(
-          fontSizeStyleValue.slice(0, fontSizeStyleValue.length - 2)
+
+      if (hasNextInheritedStyles) {
+        element = (
+          <InheritedStylesProvider
+            children={element}
+            customProperties={customPropertiesFromThemes}
+            hover={hover}
+            value={nextInheritedStyles}
+          />
         );
       }
 
-      return (
-        <ThemeContext.Provider
-          value={
-            customPropertiesFromThemes != null
-              ? {
-                  ...inheritedCustomProperties,
-                  ...customPropertiesFromThemes
-                }
-              : inheritedCustomProperties
-          }
-        >
-          <DisplayModeInsideContext.Provider value={nextDisplayModeInside}>
-            <InheritableStyleContext.Provider
-              value={flattenStyle([
-                inheritedStyles as ?Style,
-                textStyles as ?Style
-              ])}
-            >
-              <FontSizeContext.Provider value={fontSizeValue}>
-                {element}
-              </FontSizeContext.Provider>
-            </InheritableStyleContext.Provider>
-          </DisplayModeInsideContext.Provider>
-        </ThemeContext.Provider>
-      );
+      if (nextDisplayModeInside !== displayModeInside) {
+        element = (
+          <DisplayModeInsideProvider
+            children={element}
+            value={nextDisplayModeInside}
+          />
+        );
+      }
+
+      if (customPropertiesFromThemes != null) {
+        element = (
+          <CustomPropertiesProvider
+            children={element}
+            value={{
+              ...inheritedCustomProperties,
+              ...customPropertiesFromThemes
+            }}
+          />
+        );
+      }
+
+      return element;
     }
   );
 
