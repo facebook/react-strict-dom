@@ -7,13 +7,18 @@
  * @flow strict
  */
 
-import type { SpreadOptions } from './SpreadOptions';
-
 import { warnMsg } from '../../shared/logUtils';
 
 const LENGTH_REGEX = /^(-?[0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
 
 type CSSLengthUnitType = 'em' | 'px' | 'rem' | 'vh' | 'vmax' | 'vmin' | 'vw';
+
+type ResolvePixelValueOptions = $ReadOnly<{
+  fontScale: number | void,
+  inheritedFontSize: ?number,
+  viewportHeight: number,
+  viewportWidth: number
+}>;
 
 // TODO: this only works on simple values
 export class CSSLengthUnitValue {
@@ -38,7 +43,7 @@ export class CSSLengthUnitValue {
     this.unit = unit;
   }
 
-  resolvePixelValue(options: SpreadOptions): number {
+  resolvePixelValue(options: ResolvePixelValueOptions): number {
     const {
       viewportWidth,
       viewportHeight,

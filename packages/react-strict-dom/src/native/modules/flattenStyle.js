@@ -9,18 +9,20 @@
 
 import type { Style, Styles } from '../../types/styles';
 
+const emptyObject = {};
+
 // TODO: optimize
-export function flattenStyle(
-  style: ?Styles | Style | Array<Styles | Style>
-): ?{ ...Style } {
+export function flattenStyle(style: ?Styles | Style | Array<Styles | Style>): {
+  ...Style
+} {
   if (style === null || typeof style !== 'object') {
-    return undefined;
+    return emptyObject;
   }
 
   if (!Array.isArray(style)) {
     if (style.$$css) {
       // This will never actually happen, but it fixes the types
-      return undefined;
+      return emptyObject;
     }
     return { ...style };
   }

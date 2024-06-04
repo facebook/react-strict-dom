@@ -31,16 +31,14 @@ export function useHoverHandlers(style: Styles): HoverHandlers {
 
   const flatStyle = flattenStyle(style);
   let isHoverStyledElement = false;
-  if (flatStyle != null) {
-    for (const styleValue of Object.values(flatStyle)) {
-      if (
-        styleValue != null &&
-        typeof styleValue === 'object' &&
-        styleValue.hasOwnProperty(':hover')
-      ) {
-        isHoverStyledElement = true;
-        break;
-      }
+  for (const styleValue of Object.values(flatStyle)) {
+    if (
+      styleValue != null &&
+      typeof styleValue === 'object' &&
+      styleValue.hasOwnProperty(':hover')
+    ) {
+      isHoverStyledElement = true;
+      break;
     }
   }
 

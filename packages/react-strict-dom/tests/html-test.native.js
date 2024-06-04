@@ -113,44 +113,98 @@ describe('<html.*>', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
-    test('default inherited text styles', () => {
+    test('inherited styles', () => {
       const styles = css.create({
-        inheritable: {
+        inherits: {
+          borderColor: 'red', // e.g., should not inherit
           color: 'red',
           cursor: 'pointer',
           fontFamily: 'Arial',
-          fontSize: '1em',
+          fontSize: 20,
           fontStyle: 'italic',
           fontVariant: 'variant',
           fontWeight: 'bold',
           letterSpace: '10px',
-          lineHeight: 1.5,
+          lineHeight: '30px',
           textAlign: 'right',
           textIndent: '10px',
           textTransform: 'uppercase',
           whiteSpace: 'pre'
         },
-        alsoInheritable: {
+        alsoInherits: {
           fontWeight: 300
         },
         text: {
-          fontSize: '2em'
+          fontSize: '1.5em'
         }
       });
       // This also tests that unitless line-height is correctly inherited, including
       // through nested text elements.
       const root = create(
-        <html.div style={styles.inheritable}>
-          <html.div style={styles.alsoInheritable}>
-            <html.span style={styles.text}>
-              Text should <html.span style={styles.text}>inherit</html.span> div
-              styles
-            </html.span>
-            <html.input placeholder="Input should inherit div styles" />
+        <html.div style={styles.inherits}>
+          <html.div style={styles.alsoInherits}>
+            <html.span>Inherits text styles</html.span>
+            <html.input placeholder="Does not inherit text styles" />
           </html.div>
         </html.div>
       );
       expect(root.toJSON()).toMatchSnapshot();
+    });
+
+    test('inherited fontSize', () => {
+      const styles = css.create({
+        root: {
+          fontSize: '2em'
+        },
+        nested: {
+          fontSize: '1.5em'
+        }
+      });
+      const root = create(
+        <html.div style={styles.root}>
+          <html.span>text</html.span>
+          <html.span style={styles.nested}>text</html.span>
+        </html.div>
+      );
+      const rootElement = root.toJSON();
+      const firstSpan = rootElement.children[0];
+      const secondSpan = rootElement.children[1];
+      expect(firstSpan.props.style.fontSize).toBe(2 * 16);
+      // check that 'em' values are correctly inherited
+      expect(secondSpan.props.style.fontSize).toBe(1.5 * 2 * 16);
+    });
+
+    test('inherited lineHeight', () => {
+      const styles = css.create({
+        unitlessLineHeight: {
+          lineHeight: 1.5
+        },
+        increaseLineHeight: {
+          lineHeight: 2
+        },
+        increaseFontSize: {
+          fontSize: 20
+        }
+      });
+      const root = create(
+        <html.div style={styles.unitlessLineHeight}>
+          <html.span>
+            <html.span style={styles.increaseFontSize}>text</html.span>
+          </html.span>
+          <html.span style={styles.increaseFontSize}>
+            <html.span style={styles.increaseLineHeight}>text</html.span>
+          </html.span>
+        </html.div>
+      );
+      const rootElement = root.toJSON();
+      const firstSpan = rootElement.children[0];
+      expect(firstSpan.props.style.lineHeight).toBe(1.5 * 16);
+      const firstSpanInner = firstSpan.children[0];
+      expect(firstSpanInner.props.style.lineHeight).toBe(1.5 * 20);
+      const secondSpan = rootElement.children[1];
+      expect(secondSpan.props.style.lineHeight).toBe(1.5 * 20);
+      const secondSpanInner = secondSpan.children[0];
+      expect(secondSpanInner.props.style.lineHeight).toBe(2 * 20);
     });
 
     test.skip('"inherit" keyword', () => {});
