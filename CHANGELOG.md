@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.12 (Jun 3, 2024)
+
+### New features
+
+* [Native] Add support for `css.defineVars`` object values ([#129](https://github.com/facebook/react-strict-dom/issues/129)).
+
+### Fixes
+
+* [Native] Avoid creating copies of `customProperties` ([#127](https://github.com/facebook/react-strict-dom/issues/127)).
+* [Native] Remove `console` log messages from prod builds ([#126](https://github.com/facebook/react-strict-dom/issues/126)).
+
 ## 0.0.11 (May 17, 2024)
 
 ### Fixes
