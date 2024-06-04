@@ -11,7 +11,7 @@
     "!**/__tests__"
   ],
   "scripts": {
-    "benchmarks": "npm run build:benchmarks && node --jitless benchmarks/benchmarks.node.js",
+    "benchmarks": "npm run build:benchmarks && node --jitless benchmarks/run.js",
     "build:benchmarks": "rollup --config ./tools/rollup-benchmarks.config.js",
     "build": "rollup --config ./tools/rollup.config.js",
     "clean": "del-cli \"./build/*\" \"./dist/*\"",

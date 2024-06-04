@@ -52,6 +52,40 @@ const config = [
       // commonjs packages: css-mediaquery
       commonjs()
     ]
+  },
+  {
+    input: require.resolve('../src/native/modules/extractStyleThemes.js'),
+    output: {
+      file: path.join(__dirname, '../build/extractStyleThemes.js'),
+      format: 'commonjs'
+    },
+    plugins: [
+      replace({
+        preventAssignment: true,
+        values: {
+          __DEV__: 'false'
+        }
+      }),
+      babelPlugin,
+      resolve()
+    ]
+  },
+  {
+    input: require.resolve('../src/native/modules/flattenStyle.js'),
+    output: {
+      file: path.join(__dirname, '../build/flattenStyle.js'),
+      format: 'commonjs'
+    },
+    plugins: [
+      replace({
+        preventAssignment: true,
+        values: {
+          __DEV__: 'false'
+        }
+      }),
+      babelPlugin,
+      resolve()
+    ]
   }
 ];
 
