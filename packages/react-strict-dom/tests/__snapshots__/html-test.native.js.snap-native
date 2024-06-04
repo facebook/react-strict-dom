@@ -142,9 +142,6 @@ exports[`<html.*> hover styles onPointerLeave 1`] = `
 exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  decoding="async"
-  fetchPriority="auto"
-  loading="lazy"
   referrerPolicy="no-referrer"
   src="https://src.jpg"
   style={
@@ -159,9 +156,6 @@ exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  decoding="async"
-  fetchPriority="auto"
-  loading="lazy"
   referrerPolicy="no-referrer"
   srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
   style={
@@ -641,7 +635,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
       "position": "static",
     }
   }
-  type="email"
 />
 `;
 
@@ -655,7 +648,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
       "position": "static",
     }
   }
-  type="number"
 />
 `;
 
@@ -669,7 +661,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
       "position": "static",
     }
   }
-  type="password"
 />
 `;
 
@@ -683,7 +674,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
       "position": "static",
     }
   }
-  type="search"
 />
 `;
 
@@ -697,7 +687,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
       "position": "static",
     }
   }
-  type="tel"
 />
 `;
 
@@ -711,7 +700,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
       "position": "static",
     }
   }
-  type="url"
 />
 `;
 

@@ -111,10 +111,76 @@ const roles = {
 };
 
 const unsupportedProps = new Set([
-  'onBeforeInput',
-  'onInvalid',
-  'onSelect',
-  'onSelectionChange'
+  'aria-activedescendant',
+  'aria-atomic',
+  'aria-autocomplete',
+  'aria-colcount',
+  'aria-colindex',
+  'aria-colindextext',
+  'aria-colspan',
+  'aria-controls',
+  'aria-current',
+  'aria-describedby',
+  'aria-details',
+  'aria-errormessage',
+  'aria-expanded',
+  'aria-flowto',
+  'aria-haspopup',
+  'aria-invalid',
+  'aria-keyshortcuts',
+  'aria-level',
+  'aria-multiline',
+  'aria-multiselectable',
+  'aria-orientation',
+  'aria-owns',
+  'aria-placeholder',
+  'aria-pressed',
+  'aria-readonly',
+  'aria-required',
+  'aria-roledescription',
+  'aria-rowcount',
+  'aria-rowindex',
+  'aria-rowindextext',
+  'aria-rowspan',
+  'aria-sort',
+  'checked',
+  'decoding',
+  'defaultChecked',
+  'download',
+  'draggable',
+  'elementTiming',
+  'fetchPriority', // img
+  'inert',
+  'label',
+  'lang',
+  'loading', // img
+  'max', // input
+  'min', // input
+  'multiple', // input, select
+  'onAuxClick',
+  'onBeforeInput', // input, select, textarea
+  'onContextMenu',
+  'onCopy',
+  'onCut',
+  'onFocusIn',
+  'onFocusOut',
+  'onFullscreenChange',
+  'onFullscreenError',
+  'onGotPointerCapture',
+  'onInput', // input, select, textarea
+  'onInvalid', // input, select, textarea
+  'onPaste',
+  'onSelect', // input, select, textarea
+  'onSelectionChange', // input, textarea
+  'onWheel',
+  'readOnly', // input, textarea
+  'rel', // a
+  'required', // input, select, textarea
+  'selected', // option
+  'suppressHydrationWarning',
+  'step', // input
+  'target', // a
+  'type' // button, input
 ]);
 
 function isString(str: mixed): boolean %checks {
@@ -126,11 +192,15 @@ function validateStrictProps(props: $FlowFixMe) {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
     if (!isValidProp) {
-      errorMsg(`invalid prop "${key}"`);
+      if (__DEV__) {
+        errorMsg(`invalid prop "${key}"`);
+      }
       delete props[key];
     }
     if (isUnsupportedProp) {
-      warnMsg(`unsupported prop "${key}"`);
+      if (__DEV__) {
+        warnMsg(`unsupported prop "${key}"`);
+      }
       delete props[key];
     }
   });
@@ -194,10 +264,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         defaultProps,
         props
       );
-      delete nativeProps.suppressHydrationWarning;
-      if (__DEV__) {
-        validateStrictProps(nativeProps);
-      }
+      validateStrictProps(nativeProps);
 
       if (ariaPosInSet != null) {
         nativeProps.accessibilityPosInSet = ariaPosInSet;
