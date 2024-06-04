@@ -7,11 +7,17 @@
  * @flow strict
  */
 
+import type { Style } from '../../types/styles';
+
 import * as React from 'react';
 
-type FontSizeValue = ?number;
+type ProviderValue = ?Style;
 
-const defaultContext = null;
+const defaultContext: ProviderValue = {};
 
-export const FontSizeContext: React$Context<FontSizeValue> =
+export const CSSStyleContext: React$Context<ProviderValue> =
   React.createContext(defaultContext);
+
+if (__DEV__) {
+  CSSStyleContext.displayName = 'CSSStyle';
+}

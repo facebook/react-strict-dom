@@ -11,7 +11,7 @@ import type { Styles } from '../../types/styles';
 
 import * as React from 'react';
 import { typeof Animated, PixelRatio, useWindowDimensions } from 'react-native';
-import { FontSizeContext } from './FontSizeContext';
+import { CSSFontSizeContext } from './CSSFontSizeContext';
 import * as stylex from '../stylex';
 
 type StyleOptions = {
@@ -39,7 +39,7 @@ export function useStyleProps(
   ...
 }> {
   const { height, width } = useWindowDimensions();
-  const inheritedFontSize = React.useContext(FontSizeContext);
+  const inheritedFontSize = React.useContext(CSSFontSizeContext);
   const fontScale = PixelRatio.getFontScale();
   const { customProperties, inheritedCustomProperties, hover } = options;
 

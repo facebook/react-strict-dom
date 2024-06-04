@@ -63,7 +63,7 @@ type ClickEventData = {
   shiftKey: boolean
 };
 
-export default function App(): React.MixedElement {
+function Shell(): React.MixedElement {
   const [clickData, setClickData] = React.useState({ color: 'red', text: '' });
   const [clickEventData, setClickEventData] = React.useState<ClickEventData>({
     altKey: false,
@@ -524,6 +524,14 @@ export default function App(): React.MixedElement {
         </ExampleBlock>
       </html.div>
     </ScrollView>
+  );
+}
+
+export default function App(): React.MixedElement {
+  return (
+    <React.StrictMode>
+      <Shell />
+    </React.StrictMode>
   );
 }
 

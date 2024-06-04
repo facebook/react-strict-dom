@@ -21,9 +21,10 @@ import type {
 } from '../../types/react-native';
 
 import * as React from 'react';
-import { FontSizeContext } from './FontSizeContext';
-import { InheritableStyleContext } from './InheritableStyleContext';
-import { ThemeContext } from './ThemeContext';
+import { CSSCustomPropertiesContext } from './CSSCustomPropertiesContext';
+import { CSSDisplayModeInsideContext } from './CSSDisplayModeInsideContext';
+import { CSSFontSizeContext } from './CSSFontSizeContext';
+import { CSSStyleContext } from './CSSStyleContext';
 import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
@@ -149,8 +150,6 @@ function resolveTransitionProperty(property: mixed): string[] {
   }
   return [];
 }
-
-const DisplayModeInsideContext = React.createContext('flow');
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
@@ -402,8 +401,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       /**
        * Resolve the style props
        */
-      const inheritedStyles: ?Style = React.useContext(InheritableStyleContext);
-      const inheritedCustomProperties = React.useContext(ThemeContext);
+      const inheritedStyles: ?Style = React.useContext(CSSStyleContext);
+      const inheritedCustomProperties = React.useContext(
+        CSSCustomPropertiesContext
+      );
 
       const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
         props.style
@@ -556,7 +557,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // polyfill for display:block-as-default
       let nextDisplayModeInside = 'flow';
-      const displayModeInside = React.useContext(DisplayModeInsideContext);
+      const displayModeInside = React.useContext(CSSDisplayModeInsideContext);
       const displayValue = styleProps.style.display;
       if (
         displayValue != null &&
@@ -664,7 +665,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         // enable W3C flexbox layout
         nativeProps.experimental_layoutConformance = 'strict';
       }
-      const element = React.createElement(nativeComponent, {
+      let element = React.createElement(nativeComponent, {
         ...(nativeProps as $FlowFixMe),
         ...(styleProps as $FlowFixMe)
       });
@@ -679,31 +680,56 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         );
       }
 
-      return (
-        <ThemeContext.Provider
-          value={
-            customPropertiesFromThemes != null
-              ? {
-                  ...inheritedCustomProperties,
-                  ...customPropertiesFromThemes
-                }
-              : inheritedCustomProperties
-          }
-        >
-          <DisplayModeInsideContext.Provider value={nextDisplayModeInside}>
-            <InheritableStyleContext.Provider
-              value={flattenStyle([
-                inheritedStyles as ?Style,
-                textStyles as ?Style
-              ])}
-            >
-              <FontSizeContext.Provider value={fontSizeValue}>
-                {element}
-              </FontSizeContext.Provider>
-            </InheritableStyleContext.Provider>
-          </DisplayModeInsideContext.Provider>
-        </ThemeContext.Provider>
-      );
+      if (fontSizeValue != null) {
+        element = (
+          <CSSFontSizeContext.Provider
+            children={element}
+            value={fontSizeValue}
+          />
+        );
+      }
+
+      if (
+        (inheritedStyles != null &&
+          typeof inheritedStyles === 'object' &&
+          Object.keys(inheritedStyles).length > 0) ||
+        (textStyles != null &&
+          typeof textStyles === 'object' &&
+          Object.keys(textStyles).length > 0)
+      ) {
+        element = (
+          <CSSStyleContext.Provider
+            children={element}
+            value={flattenStyle([
+              inheritedStyles as ?Style,
+              textStyles as ?Style
+            ])}
+          />
+        );
+      }
+
+      if (nextDisplayModeInside !== displayModeInside) {
+        element = (
+          <CSSDisplayModeInsideContext.Provider
+            children={element}
+            value={nextDisplayModeInside}
+          />
+        );
+      }
+
+      if (customPropertiesFromThemes != null) {
+        element = (
+          <CSSCustomPropertiesContext.Provider
+            children={element}
+            value={{
+              ...inheritedCustomProperties,
+              ...customPropertiesFromThemes
+            }}
+          />
+        );
+      }
+
+      return element;
     }
   );
 

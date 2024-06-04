@@ -17,18 +17,28 @@ type ProviderProps = $ReadOnly<{
   customProperties: ProviderValue
 }>;
 
-type TThemeContext = React$Context<ProviderValue>;
+type TCSSCustomPropertiesContext = React$Context<ProviderValue>;
 
 const defaultContext = __customProperties;
 
-export const ThemeContext: TThemeContext = React.createContext(defaultContext);
+export const CSSCustomPropertiesContext: TCSSCustomPropertiesContext =
+  React.createContext(defaultContext);
 
-export function ThemeProvider(props: ProviderProps): React$MixedElement {
+export function CSSCustomPropertiesProvider(
+  props: ProviderProps
+): React$MixedElement {
   const { children, customProperties } = props;
 
   return customProperties ? (
-    <ThemeContext.Provider children={children} value={customProperties} />
+    <CSSCustomPropertiesContext.Provider
+      children={children}
+      value={customProperties}
+    />
   ) : (
     children
   );
+}
+
+if (__DEV__) {
+  CSSCustomPropertiesContext.displayName = 'CSSCustomProperties';
 }
