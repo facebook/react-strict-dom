@@ -152,12 +152,21 @@ describe('<html.*>', () => {
     });
 
     test('inherited fontSize', () => {
+      const tokens = css.defineVars({
+        rootFontSize: '2em',
+        rootFontSizeHover: '3em',
+        nestedFontSize: '1.5em'
+      });
+
       const styles = css.create({
         root: {
-          fontSize: '2em'
+          fontSize: {
+            default: tokens.rootFontSize,
+            ':hover': tokens.rootFontSizeHover
+          }
         },
         nested: {
-          fontSize: '1.5em'
+          fontSize: tokens.nestedFontSize
         }
       });
       const root = create(
@@ -166,12 +175,21 @@ describe('<html.*>', () => {
           <html.span style={styles.nested}>text</html.span>
         </html.div>
       );
-      const rootElement = root.toJSON();
-      const firstSpan = rootElement.children[0];
-      const secondSpan = rootElement.children[1];
+      let rootElement = root.toJSON();
+      let firstSpan = rootElement.children[0];
+      let secondSpan = rootElement.children[1];
       expect(firstSpan.props.style.fontSize).toBe(2 * 16);
       // check that 'em' values are correctly inherited
       expect(secondSpan.props.style.fontSize).toBe(1.5 * 2 * 16);
+      // check hover interaction updates inherited value
+      act(() => {
+        rootElement.props.onMouseEnter();
+      });
+      rootElement = root.toJSON();
+      firstSpan = rootElement.children[0];
+      secondSpan = rootElement.children[1];
+      expect(firstSpan.props.style.fontSize).toBe(3 * 16);
+      expect(secondSpan.props.style.fontSize).toBe(1.5 * 3 * 16);
     });
 
     test('inherited lineHeight', () => {

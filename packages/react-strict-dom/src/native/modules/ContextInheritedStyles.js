@@ -10,14 +10,15 @@
 import type { Style } from '../../types/styles';
 
 import * as React from 'react';
-import { CSSLengthUnitValue } from '../stylex/CSSLengthUnitValue';
-import { PixelRatio, useWindowDimensions } from 'react-native';
 import { flattenStyle } from './flattenStyle';
+import { useStyleProps } from './useStyleProps';
 
 type Value = Style;
 
 type ProviderProps = $ReadOnly<{
   children: React$MixedElement,
+  customProperties: ?$ReadOnly<{ [string]: string | number }>,
+  hover: boolean,
   value: Value
 }>;
 
@@ -34,30 +35,25 @@ if (__DEV__) {
 export function InheritedStylesProvider(
   props: ProviderProps
 ): React$MixedElement {
-  const { children, value } = props;
-  const inheritedStyles = useInheritedStyles();
-  const inheritedFontSize = inheritedStyles?.fontSize;
+  const { children, customProperties, hover, value } = props;
   const valueFontSize = value?.fontSize;
 
-  const { height: viewportHeight, width: viewportWidth } =
-    useWindowDimensions();
+  const inheritedStyles = useInheritedStyles();
 
-  let computedFontSize = null;
-  if (valueFontSize instanceof CSSLengthUnitValue) {
-    computedFontSize = valueFontSize.resolvePixelValue({
-      viewportHeight,
-      viewportWidth,
-      fontScale: PixelRatio.getFontScale(),
-      inheritedFontSize: inheritedFontSize
-    });
-  } else {
-    computedFontSize = valueFontSize || inheritedFontSize;
-  }
+  const computedFontSize = useStyleProps(
+    { fontSize: valueFontSize } as $FlowFixMe,
+    {
+      customProperties,
+      hover
+    }
+  ).style?.fontSize;
+
+  const fontStyle = computedFontSize != null && { fontSize: computedFontSize };
 
   const flatStyle = flattenStyle([
     inheritedStyles as ?Style,
     value as ?Style,
-    computedFontSize != null && { fontSize: computedFontSize }
+    fontStyle as $FlowFixMe
   ]);
 
   return (

@@ -411,7 +411,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        */
       const inheritedCustomProperties = useCustomProperties();
       const inheritedStyles = useInheritedStyles();
-      const inheritedFontSize = inheritedStyles?.fontSize;
 
       const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
         props.style
@@ -504,7 +503,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           : [nonTextStyles]
       ];
 
-      const { hover, handlers } = useHoverHandlers(renderStyles);
+      const { hover, handlers } = useHoverHandlers(
+        // we include the next inherited styles for non-text
+        // so that any related hover handlers get attached.
+        nativeComponent === Text
+          ? renderStyles
+          : [renderStyles, nextInheritedStyles as $FlowFixMe]
+      );
 
       if (handlers.type === 'HOVERABLE') {
         for (const handler of [
@@ -527,10 +532,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       const _styleProps = useStyleProps(renderStyles, {
         customProperties: customPropertiesFromThemes,
-        hover,
-        inheritedCustomProperties: inheritedCustomProperties,
-        // $FlowFixMe
-        inheritedFontSize
+        hover
       });
 
       // Mark `styleProps` as writable so we can mutate it
@@ -683,6 +685,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         element = (
           <InheritedStylesProvider
             children={element}
+            customProperties={customPropertiesFromThemes}
+            hover={hover}
             value={nextInheritedStyles}
           />
         );
