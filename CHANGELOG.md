@@ -1,10 +1,19 @@
 # Changelog
 
+## 0.0.13 (Jun 7, 2024)
+
+### Fixes
+
+* [Native] Fix `fontSize` and `lineHeight` style inheritance polyfills.
+* [Native] Reduce number of Context Providers rendered by default.
+* [Native] Add display names for Context Providers.
+* [Native] Avoid duplicate console messages.
+
 ## 0.0.12 (Jun 3, 2024)
 
 ### New features
 
-* [Native] Add support for `css.defineVars`` object values ([#129](https://github.com/facebook/react-strict-dom/issues/129)).
+* [Native] Add support for `css.defineVars` object values ([#129](https://github.com/facebook/react-strict-dom/issues/129)).
 
 ### Fixes
 
