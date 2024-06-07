@@ -6,9 +6,7 @@
  */
 
 import { babel } from '@rollup/plugin-babel';
-import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
-import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import path from 'path';
 
@@ -53,12 +51,9 @@ const webConfigs = [
   // OSS build
   {
     external: ['react', 'react-dom', '@stylexjs/stylex'],
-    input: require.resolve('../packages/react-strict-dom/src/dom/index.js'),
+    input: require.resolve('../src/dom/index.js'),
     output: {
-      file: path.join(
-        __dirname,
-        '../packages/react-strict-dom/dist/dom/index.js'
-      ),
+      file: path.join(__dirname, '../dist/dom/index.js'),
       format: 'es'
     },
     plugins: [...ossPlugins]
@@ -66,12 +61,9 @@ const webConfigs = [
   // Runtime
   {
     external: ['react', 'react-dom', '@stylexjs/stylex'],
-    input: require.resolve('../packages/react-strict-dom/src/dom/runtime.js'),
+    input: require.resolve('../src/dom/runtime.js'),
     output: {
-      file: path.join(
-        __dirname,
-        '../packages/react-strict-dom/dist/dom/runtime.js'
-      ),
+      file: path.join(__dirname, '../dist/dom/runtime.js'),
       format: 'es'
     },
     plugins: [...ossPlugins]
@@ -85,49 +77,12 @@ const nativeConfigs = [
   // OSS build
   {
     external: ['react', 'react-native', '@stylexjs/stylex'],
-    input: require.resolve('../packages/react-strict-dom/src/native/index.js'),
+    input: require.resolve('../src/native/index.js'),
     output: {
-      file: path.join(
-        __dirname,
-        '../packages/react-strict-dom/dist/native/index.js'
-      ),
+      file: path.join(__dirname, '../dist/native/index.js'),
       format: 'es'
     },
     plugins: [...nativePlugins, ...ossPlugins]
-  },
-  // Build for Node.js benchmarks
-  {
-    external: ['react'],
-    input: require.resolve('../packages/react-strict-dom/src/native/index.js'),
-    output: {
-      file: path.join(
-        __dirname,
-        '../packages/react-strict-dom/build/native-bench.js'
-      ),
-      format: 'commonjs'
-    },
-    plugins: [
-      replace({
-        preventAssignment: true,
-        values: {
-          __DEV__: 'false'
-        }
-      }),
-      // alias react-native to mock
-      alias({
-        entries: [
-          {
-            find: 'react-native',
-            replacement: path.resolve(
-              __dirname,
-              '../packages/react-strict-dom/tests/benchmarks/react-native.js'
-            )
-          }
-        ]
-      }),
-      ...nativePlugins,
-      ...ossPlugins
-    ]
   }
 ];
 

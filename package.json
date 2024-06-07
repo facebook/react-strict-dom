@@ -5,15 +5,15 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "flow": "flow",
-    "fmt": "prettier --write \"**/*.js\" --ignore-path ./configs/.prettierignore",
-    "fmt:report": "prettier --check \"**/*.js\" --ignore-path ./configs/.prettierignore",
-    "jest": "jest --config ./configs/jest.config.js",
-    "jest:report": "npm run jest",
+    "format": "prettier --write \"**/*.js\"",
+    "format:report": "prettier --check \"**/*.js\"",
+    "jest": "npm run jest --workspaces --if-present",
+    "jest:report": "npm run jest:report --workspaces --if-present",
     "lint": "npm run lint:report -- --fix",
-    "lint:report": "eslint packages --config ./configs/.eslintrc",
+    "lint:report": "eslint packages",
     "test": "npm run flow && npm run lint:report && npm run jest:report",
     "postinstall": "npm run jest -- --clearCache && npm run build",
-    "prepare": "husky install configs/husky"
+    "prepare": "husky install tools/husky"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.0",
@@ -25,11 +25,6 @@
     "@babel/preset-env": "^7.22.0",
     "@babel/preset-flow": "^7.22.5",
     "@babel/preset-react": "^7.22.0",
-    "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-replace": "^5.0.2",
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.7.0",
     "babel-plugin-syntax-hermes-parser": "^0.20.1",
@@ -54,8 +49,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": ">=0.71.0",
-    "react-test-renderer": "^18.2.0",
-    "rollup": "^2.75.4"
+    "react-test-renderer": "^18.2.0"
   },
   "engines": {
     "node": ">=16.0.0",
@@ -69,26 +63,7 @@
     "**/*.js": [
       "prettier --write",
       "git update-index --again",
-      "eslint --config ./configs/.eslintrc"
-    ]
-  },
-  "prettier": {
-    "plugins": [
-      "prettier-plugin-hermes-parser"
-    ],
-    "singleQuote": true,
-    "trailingComma": "none",
-    "overrides": [
-      {
-        "files": [
-          "*.js",
-          "*.jsx",
-          "*.flow"
-        ],
-        "options": {
-          "parser": "hermes"
-        }
-      }
+      "eslint --config .eslintrc"
     ]
   },
   "license": "MIT"

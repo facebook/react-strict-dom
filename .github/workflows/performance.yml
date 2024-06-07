@@ -36,7 +36,7 @@ jobs:
         git checkout ${{ github.event.pull_request.base.sha }}
         npm install
         npm run build
-        if npm run benchmark -w react-strict-dom > ${{ env.BASELINE_JSON }}; then
+        if npm run benchmarks -w react-strict-dom > ${{ env.BASELINE_JSON }}; then
           echo "Benchmark ran successfully on base branch"
         else
           echo "{}" > ${{ env.BASELINE_JSON }}  # Empty JSON as default
@@ -47,7 +47,7 @@ jobs:
         git checkout ${{ github.event.pull_request.head.sha }}
         npm install
         npm run build
-        npm run benchmark -w react-strict-dom > ${{ env.PATCH_JSON }}
+        npm run benchmarks -w react-strict-dom > ${{ env.PATCH_JSON }}
     - name: 'Collect results'
       run: |
         echo "## RSD benchmarks (for native)" >> pr_comment

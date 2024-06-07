@@ -10,7 +10,7 @@
 const fs = require('fs');
 const Benchmark = require('benchmark');
 
-const { css } = require('../../build/native-bench');
+const { css } = require('../build/react-strict-dom-for-benchmarks');
 
 /**
  * Test helpers

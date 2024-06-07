@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '20.x'
     - run: npm install
-    - run: npm run fmt:report
+    - run: npm run format:report
 
   type-check:
     runs-on: ubuntu-latest

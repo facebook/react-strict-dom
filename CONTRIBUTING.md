@@ -67,7 +67,7 @@ npm run test
 To run the benchmarks for React Native:
 
 ```
-npm run benchmark -w react-strict-dom
+npm run benchmarks -w react-strict-dom
 ```
 
 

@@ -36,12 +36,12 @@ module.exports = {
         enableGlobally: true
       },
       rootDir: process.cwd(),
-      setupFiles: ['<rootDir>/configs/jest-setup.js'],
+      setupFiles: ['<rootDir>/tools/jest/setup.js'],
       snapshotFormat: {
         printBasicPrototype: false
       },
       testEnvironment: 'jsdom',
-      testMatch: ['<rootDir>/packages/**/__tests__/*-test.js'],
+      testMatch: ['<rootDir>/**/__tests__/*-test.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }
@@ -52,19 +52,16 @@ module.exports = {
         enableGlobally: true
       },
       moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/packages/react-strict-dom/src/dom'
+        '^react-strict-dom$': '<rootDir>/src/dom'
       },
       rootDir: process.cwd(),
-      setupFiles: ['<rootDir>/configs/jest-setup.js'],
+      setupFiles: ['<rootDir>/tools/jest/setup.js'],
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/configs/jest-dom-resolver.js',
+      snapshotResolver: '<rootDir>/tools/jest/dom-snapshot-resolver.js',
       testEnvironment: 'jsdom',
-      testMatch: [
-        '<rootDir>/packages/react-strict-dom/tests/*-test.js',
-        '<rootDir>/packages/react-strict-dom/tests/*-test.dom.js'
-      ],
+      testMatch: ['<rootDir>/tests/*-test.js', '<rootDir>/tests/*-test.dom.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig(null, { target: 'dom' })]
       }
@@ -75,42 +72,20 @@ module.exports = {
         enableGlobally: true
       },
       moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/packages/react-strict-dom/src/native'
+        '^react-strict-dom$': '<rootDir>/src/native'
       },
       rootDir: process.cwd(),
-      setupFiles: ['<rootDir>/configs/jest-setup.js'],
+      setupFiles: ['<rootDir>/tools/jest/setup.js'],
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/configs/jest-native-resolver.js',
-      // snapshotSerializers: ['<rootDir>/configs/jest-native-serializer.js'],
+      snapshotResolver: '<rootDir>/tools/jest/native-snapshot-resolver.js',
       testEnvironment: 'node',
       testMatch: [
-        '<rootDir>/packages/react-strict-dom/tests/*-test.js',
-        '<rootDir>/packages/react-strict-dom/tests/*-test.native.js'
+        '<rootDir>/tests/*-test.js',
+        '<rootDir>/tests/*-test.native.js'
       ],
-      testPathIgnorePatterns: [
-        '<rootDir>/packages/react-strict-dom/tests/babel-test.js'
-      ],
-      transform: {
-        '\\.[jt]sx?$': ['babel-jest', babelConfig()]
-      }
-    },
-    {
-      displayName: 'eslint-plugin-react-strict-dom',
-      fakeTimers: {
-        enableGlobally: true
-      },
-      moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/packages/react-strict-dom/src/native'
-      },
-      rootDir: process.cwd(),
-      setupFiles: ['<rootDir>/configs/jest-setup.js'],
-      snapshotFormat: {
-        printBasicPrototype: false
-      },
-      testEnvironment: 'node',
-      testMatch: ['<rootDir>/packages/eslint-plugin/tests/*-test.js'],
+      testPathIgnorePatterns: ['<rootDir>/tests/babel-test.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }
