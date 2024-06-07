@@ -10,7 +10,7 @@
 import * as React from 'react';
 import { __customProperties } from '../stylex';
 
-type Value = $ReadOnly<{ [string]: string | number }>;
+type Value = $ReadOnly<{ [key: string]: string | number }>;
 
 const defaultContext = __customProperties;
 const ContextCustomProperties: React$Context<Value> =
@@ -22,7 +22,16 @@ if (__DEV__) {
 
 export const CustomPropertiesProvider = ContextCustomProperties.Provider;
 
-export function useCustomProperties(): Value {
-  const context = React.useContext(ContextCustomProperties);
-  return context;
+export function useCustomProperties(customPropertiesFromThemes: ?Value): Value {
+  const inheritedCustomProperties = React.useContext(ContextCustomProperties);
+  if (customPropertiesFromThemes == null) {
+    return inheritedCustomProperties;
+  }
+  // TODO: optimize
+  const customProperties = Object.assign(
+    {},
+    inheritedCustomProperties,
+    customPropertiesFromThemes
+  );
+  return customProperties;
 }

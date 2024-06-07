@@ -15,6 +15,7 @@ type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
 
 type Styles = StylesArray<InlineStyle | false | void | null>;
 
+// TODO: optimize
 export function flattenStyle(...styles: $ReadOnlyArray<Styles>): {
   [key: string]: $FlowFixMe
 } {

@@ -32,14 +32,12 @@ export function stringContainsVariables(input: string): boolean {
 function resolveVariableReferenceValue(
   propName: string,
   variable: CSSVariableReferenceValue,
-  propertyRegistry: CustomProperties,
-  inheritedPropertyRegistry: CustomProperties
+  propertyRegistry: CustomProperties
 ) {
   const variableName = normalizeVariableName(variable.variable);
   const fallbackValue = variable.fallback;
 
-  let variableValue: string | number | null =
-    propertyRegistry[variableName] || inheritedPropertyRegistry[variableName];
+  let variableValue: string | number | null = propertyRegistry[variableName];
 
   // Perform variable resolution on the variable's resolved value if it itself
   // contains variables
@@ -50,8 +48,7 @@ function resolveVariableReferenceValue(
     variableValue = resolveVariableReferences(
       propName,
       CSSUnparsedValue.parse(propName, variableValue),
-      propertyRegistry,
-      inheritedPropertyRegistry
+      propertyRegistry
     );
   }
 
@@ -66,8 +63,7 @@ function resolveVariableReferenceValue(
     const resolvedFallback = resolveVariableReferences(
       propName,
       fallbackValue,
-      propertyRegistry,
-      inheritedPropertyRegistry
+      propertyRegistry
     );
     if (resolvedFallback != null) {
       return resolvedFallback;
@@ -85,8 +81,7 @@ function resolveVariableReferenceValue(
 export function resolveVariableReferences(
   propName: string,
   propValue: CSSUnparsedValue,
-  propertyRegistry: CustomProperties,
-  inheritedPropertyRegistry: CustomProperties
+  propertyRegistry: CustomProperties
 ): string | number | null {
   const result: Array<string | number> = [];
   for (const value of propValue.values()) {
@@ -94,8 +89,7 @@ export function resolveVariableReferences(
       const resolvedValue = resolveVariableReferenceValue(
         propName,
         value,
-        propertyRegistry,
-        inheritedPropertyRegistry
+        propertyRegistry
       );
       if (resolvedValue == null) {
         // Failure to resolve a css variable in a value means the entire value is unparsable so we bail out and
