@@ -12,7 +12,6 @@ import type { Styles } from '../../types/styles';
 
 import { PixelRatio, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
-import { useCustomProperties } from './ContextCustomProperties';
 
 type StyleOptions = {
   customProperties: ?$ReadOnly<{ [string]: string | number }>,
@@ -42,7 +41,6 @@ export function useStyleProps(
 
   const { height, width } = useWindowDimensions();
   const fontScale = PixelRatio.getFontScale();
-  const inheritedCustomProperties = useCustomProperties();
 
   // Marking it as `any` as Flow slows to a crawl when trying to type this.
   // But we already know that `style` is the correct type so this is still safe.
@@ -51,7 +49,6 @@ export function useStyleProps(
       customProperties: customProperties ?? emptyObject,
       fontScale,
       hover,
-      inheritedCustomProperties: inheritedCustomProperties ?? emptyObject,
       // $FlowFixMe
       inheritedFontSize,
       passthroughProperties,

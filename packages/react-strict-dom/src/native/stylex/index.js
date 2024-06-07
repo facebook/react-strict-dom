@@ -30,7 +30,6 @@ type ResolveStyleOptions = $ReadOnly<{
   customProperties: $ReadOnly<{ [string]: string | number }>,
   fontScale: number | void,
   hover?: ?boolean,
-  inheritedCustomProperties: $ReadOnly<{ [string]: string | number }>,
   inheritedFontSize: ?number,
   passthroughProperties: $ReadOnlyArray<string>,
   viewportHeight: number,
@@ -332,7 +331,6 @@ function resolveStyle<S: { +[string]: mixed }>(
   options: ResolveStyleOptions
 ): S {
   const customProperties = options.customProperties || {};
-  const inheritedCustomProperties = options.inheritedCustomProperties || {};
   const inheritedFontSize = options.inheritedFontSize;
 
   const result: { [string]: mixed } = {};
@@ -364,8 +362,7 @@ function resolveStyle<S: { +[string]: mixed }>(
       const resolvedValue = resolveVariableReferences(
         propName,
         styleValue,
-        customProperties,
-        inheritedCustomProperties
+        customProperties
       );
       if (resolvedValue != null) {
         stylesToReprocess[propName] = resolvedValue;

@@ -10,6 +10,7 @@
 import type { Style, Styles } from '../../types/styles';
 
 type CustomProperties = { [string]: string | number };
+
 // TODO: optimize
 export function extractStyleThemes(
   mixOfStyleAndTheme: ?Styles | Style | Array<Styles | Style>

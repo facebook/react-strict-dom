@@ -409,12 +409,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       /**
        * Resolve the style props
        */
-      const inheritedCustomProperties = useCustomProperties();
-      const inheritedStyles = useInheritedStyles();
-
       const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
         props.style
       );
+      const customProperties = useCustomProperties(customPropertiesFromThemes);
+      const inheritedStyles = useInheritedStyles();
 
       const {
         color,
@@ -531,7 +530,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
 
       const _styleProps = useStyleProps(renderStyles, {
-        customProperties: customPropertiesFromThemes,
+        customProperties,
         hover,
         // $FlowFixMe
         inheritedFontSize: inheritedStyles?.fontSize
@@ -687,7 +686,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         element = (
           <InheritedStylesProvider
             children={element}
-            customProperties={customPropertiesFromThemes}
+            customProperties={customProperties}
             hover={hover}
             value={nextInheritedStyles}
           />
@@ -707,10 +706,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         element = (
           <CustomPropertiesProvider
             children={element}
-            value={{
-              ...inheritedCustomProperties,
-              ...customPropertiesFromThemes
-            }}
+            value={customProperties}
           />
         );
       }
