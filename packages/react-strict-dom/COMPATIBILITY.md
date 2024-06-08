@@ -177,7 +177,7 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | onInvalid (input) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onInvalid (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onInvalid (textarea) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
-| onKeyDown | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
+| onKeyDown | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) (`input` and `textarea` only) |
 | onKeyUp | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onLoad (img) | 🟡 | 🟡 | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onLostPointerCapture | ✅ | ✅ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |

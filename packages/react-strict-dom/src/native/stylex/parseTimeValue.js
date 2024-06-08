@@ -9,6 +9,7 @@
 
 type Milliseconds = number;
 
+// TODO: optimize
 export function parseTimeValue(timeValue: string): Milliseconds {
   const trimmedTimeValue = timeValue.trim().toLowerCase();
   if (trimmedTimeValue.endsWith('ms')) {

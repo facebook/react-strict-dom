@@ -59,7 +59,7 @@ const WPT_TRANSITION_DELAY_TEST_CASES = [
 ];
 
 describe('parseTimeValue', () => {
-  it('parses time values to milliseconds', () => {
+  test('parses time values to milliseconds', () => {
     for (const [
       timeValue,
       expectedMilliseconds

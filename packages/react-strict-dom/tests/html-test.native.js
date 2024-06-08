@@ -29,8 +29,14 @@ describe('<html.*>', () => {
   });
 
   test('default flex layout', () => {
+    const styles = css.create({
+      root: {
+        display: 'flex'
+      }
+    });
+
     const root = create(
-      <html.div style={{ display: 'flex' }}>
+      <html.div style={styles.root}>
         <html.div />
         <html.div />
       </html.div>
@@ -39,19 +45,32 @@ describe('<html.*>', () => {
   });
 
   test('block layout override of flex layout', () => {
+    const styles = css.create({
+      root: {
+        flexDirection: 'row',
+        alignItems: 'start',
+        flexShrink: '1',
+        display: 'block'
+      }
+    });
+
     const root = create(
-      <html.div
-        style={{
-          flexDirection: 'row',
-          alignItems: 'start',
-          flexShrink: '1',
-          display: 'block'
-        }}
-      >
+      <html.div style={styles.root}>
         <html.div />
       </html.div>
     );
     expect(root.toJSON()).toMatchSnapshot('block layout override of flex');
+  });
+
+  test('auto-wraps raw strings', () => {
+    const styles = css.create({
+      root: {
+        color: 'black'
+      }
+    });
+
+    const root = create(<html.div style={styles.root}>text</html.div>);
+    expect(root.toJSON()).toMatchSnapshot('auto-wrap raw strings');
   });
 
   describe('style polyfills', () => {
@@ -394,6 +413,50 @@ describe('<html.*>', () => {
       // error as transform start value is missing
       expect(console.error).toHaveBeenCalled();
       expect(root.toJSON()).toMatchSnapshot('transition property end');
+
+      // other transforms
+      act(() => {
+        root = create(
+          <html.div
+            style={styles.transform(
+              'rotate(1deg) rotateX(2deg) rotateY(3deg) rotateZ(4deg)'
+            )}
+          />
+        );
+      });
+      expect(root.toJSON()).toMatchSnapshot('rotate');
+      act(() => {
+        root = create(
+          <html.div
+            style={styles.transform('scale(1) scaleX(2) scaleY(4) scaleZ(6)')}
+          />
+        );
+      });
+      expect(root.toJSON()).toMatchSnapshot('scale');
+      act(() => {
+        root = create(
+          <html.div style={styles.transform('skewX(20px) skewY(21px)')} />
+        );
+      });
+      expect(root.toJSON()).toMatchSnapshot('skew');
+      act(() => {
+        root = create(
+          <html.div
+            style={styles.transform('translateX(11px) translateY(21px)')}
+          />
+        );
+      });
+      expect(root.toJSON()).toMatchSnapshot('translate');
+
+      // other element types
+      act(() => {
+        root = create(<html.span style={styles.backgroundColor()} />);
+      });
+      expect(root.toJSON().type).toBe('Animated.Text');
+      act(() => {
+        root.update(<html.button style={styles.backgroundColor()} />);
+      });
+      expect(root.toJSON().type).toMatchSnapshot('Animated.Pressable');
     });
   });
 
@@ -432,6 +495,49 @@ describe('<html.*>', () => {
         );
       });
 
+      test('"onClick" prop', () => {
+        const onClick = jest.fn();
+        const root = create(<html.div onClick={onClick} />);
+        root.root.children[0].props.onPress({
+          nativeEvent: {
+            altKey: true,
+            button: 0,
+            ctrlKey: true,
+            metaKey: true,
+            shiftKey: true
+          }
+        });
+        expect(onClick).toHaveBeenCalledWith(
+          expect.objectContaining({
+            altKey: true,
+            button: 0,
+            ctrlKey: true,
+            metaKey: true,
+            shiftKey: true,
+            type: 'click'
+          })
+        );
+      });
+
+      test('"onKeyDown" prop', () => {
+        const onKeyDown = jest.fn();
+        const root = create(<html.input onKeyDown={onKeyDown} />);
+        root.root.children[0].props.onKeyPress({ nativeEvent: { key: 'a' } });
+        expect(onKeyDown).toHaveBeenCalledWith(
+          expect.objectContaining({
+            key: 'a',
+            type: 'keydown'
+          })
+        );
+        root.root.children[0].props.onSubmitEditing();
+        expect(onKeyDown).toHaveBeenCalledWith(
+          expect.objectContaining({
+            key: 'Enter',
+            type: 'keydown'
+          })
+        );
+      });
+
       test('"tabIndex" prop', () => {
         const root = create(<html.input tabIndex={-1} />);
         expect(root.toJSON()).toMatchSnapshot();
@@ -467,11 +573,17 @@ describe('<html.*>', () => {
         expect(root.toJSON()).toMatchSnapshot();
       });
 
-      test('"onLoad" prop', () => {
+      test('"onError" and "onLoad" prop', () => {
+        const onError = jest.fn();
         const onLoad = jest.fn();
 
-        const root = create(<html.img onLoad={onLoad} src="https://src.jpg" />);
+        const root = create(
+          <html.img onError={onError} onLoad={onLoad} src="https://src.jpg" />
+        );
         const element = root.toJSON();
+
+        element.props.onError();
+        expect(onError).toHaveBeenCalledWith({ type: 'error' });
 
         // Expected event shape
         element.props.onLoad({
@@ -554,6 +666,37 @@ describe('<html.*>', () => {
         expect(root.toJSON()).toMatchSnapshot();
       });
 
+      test('"onChange" and "onInput" prop', () => {
+        const onChange = jest.fn();
+        const onInput = jest.fn();
+        const root = create(
+          <html.input onChange={onChange} onInput={onInput} />
+        );
+        const element = root.toJSON();
+        element.props.onChange({
+          nativeEvent: {
+            text: 'hello world'
+          }
+        });
+        // onChange and onInput are aliases in React DOM (not spec compliant)
+        expect(onChange).toHaveBeenCalledWith(
+          expect.objectContaining({
+            target: expect.objectContaining({
+              value: 'hello world'
+            }),
+            type: 'change'
+          })
+        );
+        expect(onInput).toHaveBeenCalledWith(
+          expect.objectContaining({
+            target: expect.objectContaining({
+              value: 'hello world'
+            }),
+            type: 'input'
+          })
+        );
+      });
+
       test('"type" prop', () => {
         ['email', 'number', 'password', 'search', 'tel', 'url'].forEach(
           (type) => {
@@ -588,9 +731,14 @@ describe('<html.*>', () => {
     };
 
     test('onMouseEnter', () => {
-      const root = create(<html.div style={hoverStyles} />);
+      const onMouseEnter = jest.fn();
+      const root = create(
+        <html.div onMouseEnter={onMouseEnter} style={hoverStyles} />
+      );
       root.root.children[0].props.onMouseEnter();
       expect(root.toJSON()).toMatchSnapshot();
+      root.root.children[0].props.onMouseEnter();
+      expect(onMouseEnter).toHaveBeenCalled();
     });
 
     test('onMouseLeave', () => {

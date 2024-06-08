@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+      }
+    }
+  >
+    text
+  </Text>
+</View>
+`;
+
 exports[`<html.*> block layout override of flex layout: block layout override of flex 1`] = `
 <View
   experimental_layoutConformance="strict"
@@ -966,6 +987,8 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 />
 `;
 
+exports[`<html.*> style polyfills "transition" properties : Animated.Pressable 1`] = `"Animated.Pressable"`;
+
 exports[`<html.*> style polyfills "transition" properties : backgroundColor transition end 1`] = `
 <Animated.View
   style={
@@ -1061,6 +1084,162 @@ exports[`<html.*> style polyfills "transition" properties : opacity transition s
         ],
       },
       "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties : rotate 1`] = `
+<Animated.View
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "rotate": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "1deg",
+              "1deg",
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "2deg",
+              "2deg",
+            ],
+          },
+        },
+        {
+          "rotateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "3deg",
+              "3deg",
+            ],
+          },
+        },
+        {
+          "rotateZ": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "4deg",
+              "4deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties : scale 1`] = `
+<Animated.View
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "scale": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              1,
+              1,
+            ],
+          },
+        },
+        {
+          "scaleX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              2,
+              2,
+            ],
+          },
+        },
+        {
+          "scaleY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              4,
+              4,
+            ],
+          },
+        },
+        {
+          "scaleZ": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              6,
+              6,
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties : skew 1`] = `
+<Animated.View
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "skewX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "20px",
+              "20px",
+            ],
+          },
+        },
+        {
+          "skewY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "21px",
+              "21px",
+            ],
+          },
+        },
+      ],
     }
   }
 />
@@ -1242,6 +1421,42 @@ exports[`<html.*> style polyfills "transition" properties : transition property 
         },
         {
           "rotateX": "90deg",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties : translate 1`] = `
+<Animated.View
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "translateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              11,
+              11,
+            ],
+          },
+        },
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              21,
+              21,
+            ],
+          },
         },
       ],
     }

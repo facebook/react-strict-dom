@@ -6,8 +6,8 @@
  */
 
 export const Animated = {
-  createAnimatedComponent(c) {
-    return c;
+  createAnimatedComponent(Component) {
+    return `Animated.${Component}`;
   },
   Image: 'Animated.Image',
   View: 'Animated.View',

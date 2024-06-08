@@ -11,24 +11,21 @@ const babelConfig = require('./babel.config.js');
 
 module.exports = {
   collectCoverageFrom: [
-    '**/packages/**/src/**/*.{js,jsx}',
-    '!**/__tests__/**',
-    '!**/node_modules/**',
-    '!**/tests/**',
-    '!**/types/**'
+    '<rootDir>/src/**/*.{js,jsx}',
+    // exclude
+    '!<rootDir>/src/**/__tests__/**',
+    '!<rootDir>/src/native/stylex/typed-om/**',
+    '!<rootDir>/src/shared/logUtils.js',
+    '!<rootDir>/src/types/**'
   ],
-
-  /*
   coverageThreshold: {
     global: {
-      branches: 80,
-      functions: 85,
+      branches: 85,
+      functions: 90,
       lines: 90,
       statements: 90
     }
   },
-  */
-
   projects: [
     {
       displayName: 'internals',

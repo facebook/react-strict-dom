@@ -17,7 +17,7 @@
     "clean": "del-cli \"./build/*\" \"./dist/*\"",
     "dev": "npm run build -- --watch",
     "jest": "jest --config ./tools/jest.config.js",
-    "jest:report": "npm run jest",
+    "jest:report": "jest --config ./tools/jest.config.js --collect-coverage",
     "prebuild": "npm run clean && generate-types -i src/ -o dist"
   },
   "dependencies": {

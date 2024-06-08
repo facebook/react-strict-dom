@@ -61,7 +61,7 @@ npm run jest -- -u
 To run all these automated tests:
 
 ```
-npm run test
+npm test
 ```
 
 To run the benchmarks for React Native:
