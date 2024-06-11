@@ -1658,3 +1658,18 @@ exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
   Expect color:red
 </Text>
 `;
+
+exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
+<Text
+  dir="auto"
+  numberOfLines={3}
+  style={
+    {
+      "position": "static",
+      "userSelect": "none",
+    }
+  }
+>
+  text
+</Text>
+`;
