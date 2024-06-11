@@ -93,6 +93,18 @@ describe('<html.*>', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
+    // See #136
+    test('lineClamp workaround for Android', () => {
+      const styles = css.create({
+        root: {
+          lineClamp: 3
+        }
+      });
+      const root = create(<html.span style={styles.root}>text</html.span>);
+      // expect userSelect:none
+      expect(root.toJSON()).toMatchSnapshot();
+    });
+
     test('inherited themes', () => {
       const tokens = css.defineVars({
         rootColor: 'red',

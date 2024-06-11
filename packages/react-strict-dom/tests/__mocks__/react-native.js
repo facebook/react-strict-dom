@@ -46,6 +46,7 @@ export const Linking = {
 };
 
 export const Platform = {
+  OS: 'android',
   select(obj) {
     return obj.android || obj.ios || obj.native || obj.default;
   }

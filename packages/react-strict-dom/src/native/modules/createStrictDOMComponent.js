@@ -48,6 +48,7 @@ import {
   TextInput,
   Text,
   View,
+  Platform,
   Pressable
 } from 'react-native';
 import * as stylex from '../stylex';
@@ -544,6 +545,16 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         ..._styleProps,
         style: { ..._styleProps.style }
       };
+
+      // Workaround: Android doesn't support ellipsis truncation if text is selectable
+      // See #136
+      if (
+        Platform.OS === 'android' &&
+        styleProps.numberOfLines != null &&
+        styleProps.style.userSelect !== 'none'
+      ) {
+        styleProps.style.userSelect = 'none';
+      }
 
       if (
         isString(children) &&

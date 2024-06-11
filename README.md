@@ -18,12 +18,12 @@ React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](
 * `apps`
   * Example applications.
   * [examples](https://github.com/facebook/react-strict-dom/blob/main/apps/examples)
-* `configs`
-  * Contains configuration files used by the monorepo tooling (compiling, linting, testing, etc.)
 * `packages`
   * Contains the individual packages managed in the monorepo.
   * [eslint-plugin](https://github.com/facebook/react-strict-dom/blob/main/packages/eslint-plugin)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom) ([docs](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/README.md))
+* `tools`
+  * Tools used by the monorepo (pre-commit tasks, etc.)
 
 ## Tasks
 
@@ -34,7 +34,7 @@ React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](
   * Use `npm run dev` to run the dev script in every workspace.
   * Use `npm run dev -w <package-name>` to run the dev script for a specific workspace.
 * `test`
-  * Use `npm run test` to run tests for every workspace.
+  * Use `npm test` to run tests for every workspace.
 
 More details and setup instructions can be found in the [CONTRIBUTING][contributing] guide.
 

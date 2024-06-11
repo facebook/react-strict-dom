@@ -553,7 +553,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | justifySelf | ❌ | ❌ | |
 | left | ✅ | ✅ | |
 | letterSpacing | ✅ | ✅ | |
-| lineClamp | 🟡 | 🟡 | |
+| lineClamp | 🟡 | 🟡 | Disables text-selection on Android ([#136](https://github.com/facebook/react-strict-dom/issues/136)) |
 | lineHeight (unitless) | 🟡 | 🟡 | |
 | margin | ✅ | ✅ | |
 | marginBlock | 🟡 | 🟡 | |
