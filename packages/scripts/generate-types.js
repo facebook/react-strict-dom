@@ -58,11 +58,15 @@ async function generateTypes(inputDir, outputDir, rootDir) {
       if (dirent.name.endsWith('.js') || dirent.name.endsWith('.js.flow')) {
         try {
           let fileContents = await fsPromises.readFile(inputFullPath, 'utf8');
+          const prettierConfig = monorepoPackage.prettier;
+          if (prettierConfig == null) {
+            throw new Error('prettier config not found');
+          }
           fileContents = preprocessFileContents(fileContents);
           const outputFlowContents = await translate.translateFlowToFlowDef(
             // Workaround for making the script work on Windows
             fileContents.replace(/\r\n/g, '\n'),
-            monorepoPackage.prettier
+            prettierConfig
           );
 
           const tsOutputName = dirent.name
