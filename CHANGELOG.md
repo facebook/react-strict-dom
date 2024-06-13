@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.14 (Jun 13, 2024)
+
+### Fixes
+
+* Fix readOnly and required types for `<input>` props.
+* [Native] Fix text truncation ellipsis on Android ([#137](https://github.com/facebook/react-strict-dom/issues/137)).
+* [Native] Remove unused modules.
+
 ## 0.0.13 (Jun 7, 2024)
 
 ### Fixes

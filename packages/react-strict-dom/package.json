@@ -1,6 +1,6 @@
 {
   "name": "react-strict-dom",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "React Strict DOM",
   "main": "./dist/dom/index.js",
   "module": "./dist/dom/index.js",
