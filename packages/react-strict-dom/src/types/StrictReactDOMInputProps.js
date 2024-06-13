@@ -27,8 +27,8 @@ export type StrictReactDOMInputProps = $ReadOnly<{
   onSelect?: $FlowFixMe,
   onSelectionChange?: $FlowFixMe,
   placeholder?: ?Stringish,
-  readOnly?: ?number,
-  required?: ?number,
+  readOnly?: ?boolean,
+  required?: ?boolean,
   step?: ?(number | 'any'),
   type?:
     | 'checkbox'
