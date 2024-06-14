@@ -20,7 +20,6 @@ React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](
   * [examples](https://github.com/facebook/react-strict-dom/blob/main/apps/examples)
 * `packages`
   * Contains the individual packages managed in the monorepo.
-  * [eslint-plugin](https://github.com/facebook/react-strict-dom/blob/main/packages/eslint-plugin)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom) ([docs](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/README.md))
 * `tools`
   * Tools used by the monorepo (pre-commit tasks, etc.)
