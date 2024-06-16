@@ -20,19 +20,30 @@ type ResolvePixelValueOptions = $ReadOnly<{
   viewportWidth: number
 }>;
 
+type ParsedValue = [number, CSSLengthUnitType] | null;
+
+const cache = new Map<string, ParsedValue>();
+
 // TODO: this only works on simple values
 export class CSSLengthUnitValue {
-  static parse(inp: string): [number, CSSLengthUnitType] | null {
-    const match = inp.match(LENGTH_REGEX);
-    if (match == null) {
-      return null;
+  static parse(input: string): ParsedValue {
+    const memoizedValue = cache.get(input);
+    if (memoizedValue !== undefined) {
+      return memoizedValue;
     }
 
-    const [, value, unit] = match;
-    const parsedValue = parseFloat(value);
-
+    const match = input.match(LENGTH_REGEX);
+    if (match == null) {
+      cache.set(input, null);
+      return null;
+    }
+    const value = match[1];
+    const unit = match[2];
+    const parsedFloat = parseFloat(value);
     // $FlowFixMe
-    return [parsedValue, unit];
+    const parsedValue: ParsedValue = [parsedFloat, unit];
+    cache.set(input, parsedValue);
+    return parsedValue;
   }
 
   value: number;

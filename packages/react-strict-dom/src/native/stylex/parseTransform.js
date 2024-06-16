@@ -9,16 +9,26 @@
 
 import type { Transform } from '../../types/styles';
 
+const transformRegex1 =
+  /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px)?\)/;
+const transformRegex2 = /(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/;
+const transformRegex3 = /matrix\((.*)\)/;
+
+const cache = new Map<string, Transform[]>();
+
 export function parseTransform(transform: string): Transform[] {
+  const memoizedValue = cache.get(transform);
+  if (memoizedValue != null) {
+    return memoizedValue;
+  }
+
   const transforms = transform
     .split(')')
     .flatMap((s) => (s === '' ? ([] as string[]) : [s + ')']));
   const parsedTransforms: Transform[] = [];
 
   for (const txf of transforms) {
-    let match = txf.match(
-      /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px)?\)/
-    );
+    let match = txf.match(transformRegex1);
     if (match != null) {
       const value = parseFloat(match[2]);
       if (isNaN(value)) {
@@ -52,7 +62,7 @@ export function parseTransform(transform: string): Transform[] {
       continue;
     }
 
-    match = txf.match(/(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/);
+    match = txf.match(transformRegex2);
     if (match != null) {
       const value = match[2];
       switch (match[1]) {
@@ -80,7 +90,7 @@ export function parseTransform(transform: string): Transform[] {
       continue;
     }
 
-    match = txf.match(/matrix\((.*)\)/);
+    match = txf.match(transformRegex3);
     if (match != null) {
       const matrixValues = match[1].trim().split(/\s*,\s*/);
       if (matrixValues.length !== 6) {
@@ -112,6 +122,8 @@ export function parseTransform(transform: string): Transform[] {
       });
     }
   }
+
+  cache.set(transform, parsedTransforms);
 
   return parsedTransforms;
 }

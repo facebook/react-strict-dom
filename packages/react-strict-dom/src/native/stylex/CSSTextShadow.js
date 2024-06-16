@@ -26,28 +26,31 @@ export class CSSTextShadow {
     return parseShadow(str);
   }
 
-  parsedShadow: ParsedShadow;
+  value: ReactNativeTextShadowProps;
 
   constructor(value: string) {
     const parsedShadow = CSSTextShadow.parse(value);
-    if (parsedShadow.length > 1) {
-      if (__DEV__) {
+    if (__DEV__) {
+      if (parsedShadow.length > 1) {
         warnMsg('unsupported multiple values for style property "textShadow".');
       }
     }
-    this.parsedShadow = parsedShadow[0];
+    const shadow = parsedShadow[0];
+    if (shadow != null) {
+      const { offsetX, offsetY, blurRadius, color } = shadow;
+      const textShadowProps = {
+        textShadowColor: color,
+        textShadowOffset: {
+          height: offsetY,
+          width: offsetX
+        },
+        textShadowRadius: blurRadius
+      };
+      this.value = textShadowProps;
+    }
   }
 
   resolve(): ReactNativeTextShadowProps {
-    const { offsetX, offsetY, blurRadius, color } = this.parsedShadow;
-    const props = {
-      textShadowColor: color,
-      textShadowOffset: {
-        height: offsetY,
-        width: offsetX
-      },
-      textShadowRadius: blurRadius
-    };
-    return props;
+    return this.value;
   }
 }

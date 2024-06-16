@@ -53,9 +53,20 @@ export type ParsedShadow = {
   color: string | null
 };
 
+const cache = new Map<string, Array<ParsedShadow>>();
+
 export function parseShadow(str: string): Array<ParsedShadow> {
-  return str
+  const memoizedValue = cache.get(str);
+  if (memoizedValue != null) {
+    return memoizedValue;
+  }
+
+  const parsedValue = str
     .split(VALUES_REG)
     .map((s) => s.trim())
     .map(parseValue);
+
+  cache.set(str, parsedValue);
+
+  return parsedValue;
 }

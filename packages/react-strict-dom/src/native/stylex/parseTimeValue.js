@@ -9,16 +9,27 @@
 
 type Milliseconds = number;
 
-// TODO: optimize
+const cache = new Map<string, Milliseconds>();
+const msRegex = /ms$/;
+const sRegex = /s$/;
+
 export function parseTimeValue(timeValue: string): Milliseconds {
+  const memoizedValue = cache.get(timeValue);
+  if (memoizedValue != null) {
+    return memoizedValue;
+  }
   const trimmedTimeValue = timeValue.trim().toLowerCase();
   if (trimmedTimeValue.endsWith('ms')) {
-    const msVal = parseFloat(trimmedTimeValue.replace(/ms$/, ''));
-    return Number.isFinite(msVal) ? msVal : 0;
+    const msVal = parseFloat(trimmedTimeValue.replace(msRegex, ''));
+    const normalizedValue = Number.isFinite(msVal) ? msVal : 0;
+    cache.set(timeValue, normalizedValue);
+    return normalizedValue;
   }
   if (trimmedTimeValue.endsWith('s')) {
-    const sVal = parseFloat(trimmedTimeValue.replace(/s$/, ''));
-    return Number.isFinite(sVal) ? sVal * 1000 : 0;
+    const sVal = parseFloat(trimmedTimeValue.replace(sRegex, ''));
+    const normalizedValue = Number.isFinite(sVal) ? sVal * 1000 : 0;
+    cache.set(timeValue, normalizedValue);
+    return normalizedValue;
   }
   return 0;
 }
