@@ -24,7 +24,9 @@ export class CSSVariableReferenceValue extends CSSStyleValue {
   #fallback: CSSUnparsedValue | null;
 
   constructor(variable: string, fallback?: CSSUnparsedValue) {
-    CSSVariableReferenceValue.#validateVariableName(variable);
+    if (__DEV__) {
+      CSSVariableReferenceValue.#validateVariableName(variable);
+    }
     super();
     this.#variable = variable;
     this.#fallback = fallback ?? null;

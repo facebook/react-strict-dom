@@ -11,16 +11,25 @@ import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { CSSVariableReferenceValue } from './typed-om/CSSVariableReferenceValue';
 import { warnMsg } from '../../shared/logUtils';
 
-export type MutableCustomProperties = { [string]: string | number };
+export type MutableCustomProperties = { [key: string]: string | number };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
 
+const cache = new Map<string, string>();
 function camelize(s: string): string {
-  return s.replace(/-./g, (x) => x.toUpperCase()[1]);
+  const memoizedValue = cache.get(s);
+  if (memoizedValue != null) {
+    return memoizedValue;
+  }
+  const result = s.replace(/-./g, (x) => x.toUpperCase()[1]);
+  cache.set(s, result);
+  return result;
 }
 
 function normalizeVariableName(name: string): string {
-  if (!name.startsWith('--')) {
-    throw new Error("Invalid variable name, must begin with '--'");
+  if (__DEV__) {
+    if (!name.startsWith('--')) {
+      throw new Error("Invalid variable name, must begin with '--'");
+    }
   }
   return camelize(name.substring(2));
 }
