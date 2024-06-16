@@ -11,7 +11,6 @@ import type { Style, Styles } from '../../types/styles';
 
 const emptyObject = {};
 
-// TODO: optimize
 export function flattenStyle(style: ?Styles | Style | Array<Styles | Style>): {
   ...Style
 } {
@@ -27,13 +26,12 @@ export function flattenStyle(style: ?Styles | Style | Array<Styles | Style>): {
     return { ...style };
   }
 
+  const flatArray = style.flat(Infinity);
   const result: { ...Style } = {};
-  for (let i = 0, styleLength = style.length; i < styleLength; ++i) {
-    const computedStyle = flattenStyle(style[i]);
-    if (computedStyle) {
-      for (const key in computedStyle) {
-        result[key] = computedStyle[key];
-      }
+  for (let i = 0; i < flatArray.length; i++) {
+    const style = flatArray[i];
+    if (style != null && typeof style === 'object') {
+      Object.assign(result, style);
     }
   }
   return result;

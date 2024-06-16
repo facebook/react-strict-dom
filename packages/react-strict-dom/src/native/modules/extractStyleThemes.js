@@ -9,14 +9,15 @@
 
 import type { Style, Styles } from '../../types/styles';
 
-type CustomProperties = { [string]: string | number };
+type CustomProperties = { [key: string]: string | number };
 
-// TODO: optimize
+const emptyValue = [undefined, undefined];
+
 export function extractStyleThemes(
   mixOfStyleAndTheme: ?Styles | Style | Array<Styles | Style>
 ): [?Array<Styles | Style>, ?CustomProperties] {
   if (mixOfStyleAndTheme === null || typeof mixOfStyleAndTheme !== 'object') {
-    return [undefined, undefined];
+    return emptyValue;
   }
 
   const styles: Array<Styles | Style> = [];
@@ -24,8 +25,8 @@ export function extractStyleThemes(
 
   const flatArray = [mixOfStyleAndTheme].flat(Infinity);
   for (let i = 0, l = flatArray.length; i < l; ++i) {
-    if (typeof flatArray[i] === 'object' && flatArray[i] !== null) {
-      const item = flatArray[i];
+    const item = flatArray[i];
+    if (item !== null && typeof item === 'object') {
       if (item.$$theme != null) {
         for (const key in item) {
           if (typeof item[key] === 'string') {
