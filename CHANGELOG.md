@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.15 (Jun 17, 2024)
+
+### Fixes
+
+* [Native] [Improve performance](https://github.com/facebook/react-strict-dom/pull/140#issuecomment-2171040691) of `css.create` with polyfills by 5-15x.
+* [Native] [Improve performance](https://github.com/facebook/react-strict-dom/pull/140#issuecomment-2171040691) of `css.props` with polyfills by 0.1-0.15x.
+* [Native] CSS variable validation errors are now dev-only.
+
 ## 0.0.14 (Jun 13, 2024)
 
 ### Fixes
