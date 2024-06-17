@@ -9,10 +9,10 @@
 
 import mediaQuery from 'css-mediaquery';
 
-export type MatchObject = {
+export type MatchObject = $ReadOnly<{
   width: number,
   height: number
-};
+}>;
 
 const MQ_PREFIX = '@media';
 

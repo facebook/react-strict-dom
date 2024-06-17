@@ -16,7 +16,7 @@ const transformRegex3 = /matrix\((.*)\)/;
 
 const cache = new Map<string, Transform[]>();
 
-export function parseTransform(transform: string): Transform[] {
+export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
   const memoizedValue = cache.get(transform);
   if (memoizedValue != null) {
     return memoizedValue;

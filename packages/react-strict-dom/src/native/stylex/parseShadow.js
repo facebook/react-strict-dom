@@ -44,18 +44,18 @@ function parseValue(str: string) {
   };
 }
 
-export type ParsedShadow = {
+export type ParsedShadow = $ReadOnly<{
   inset: boolean,
   offsetX: number | string,
   offsetY: number | string,
   blurRadius: number | string,
   spreadRadius: number | string,
   color: string | null
-};
+}>;
 
-const cache = new Map<string, Array<ParsedShadow>>();
+const cache = new Map<string, $ReadOnlyArray<ParsedShadow>>();
 
-export function parseShadow(str: string): Array<ParsedShadow> {
+export function parseShadow(str: string): $ReadOnlyArray<ParsedShadow> {
   const memoizedValue = cache.get(str);
   if (memoizedValue != null) {
     return memoizedValue;

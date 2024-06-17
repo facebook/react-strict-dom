@@ -156,10 +156,6 @@ export class CSSUnparsedValue extends CSSStyleValue {
     return this.#tokens[index];
   }
 
-  set(index: number, value: CSSUnparsedSegment): void {
-    this.#tokens[index] = value;
-  }
-
   get size(): number {
     return this.#tokens.length;
   }

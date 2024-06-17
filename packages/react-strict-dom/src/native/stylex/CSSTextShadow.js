@@ -22,7 +22,7 @@ type ReactNativeTextShadowProps = $ReadOnly<{
 }>;
 
 export class CSSTextShadow {
-  static parse(str: string): Array<ParsedShadow> {
+  static parse(str: string): $ReadOnlyArray<ParsedShadow> {
     return parseShadow(str);
   }
 

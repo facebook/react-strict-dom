@@ -20,7 +20,7 @@ type ResolvePixelValueOptions = $ReadOnly<{
   viewportWidth: number
 }>;
 
-type ParsedValue = [number, CSSLengthUnitType] | null;
+type ParsedValue = [+value: number, +unit: CSSLengthUnitType] | null;
 
 const cache = new Map<string, ParsedValue>();
 

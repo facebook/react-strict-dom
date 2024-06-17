@@ -18,20 +18,20 @@ import type {
 import typeof TStyleX from '@stylexjs/stylex';
 
 export type Transform =
-  | { matrix: number[] }
-  | { perspective: number }
-  | { rotate: string }
-  | { rotateX: string }
-  | { rotateY: string }
-  | { rotateZ: string }
-  | { scale: number }
-  | { scaleX: number }
-  | { scaleY: number }
-  | { scaleZ: number }
-  | { translateX: number }
-  | { translateY: number }
-  | { skewX: string }
-  | { skewY: string };
+  | $ReadOnly<{ matrix: number[] }>
+  | $ReadOnly<{ perspective: number }>
+  | $ReadOnly<{ rotate: string }>
+  | $ReadOnly<{ rotateX: string }>
+  | $ReadOnly<{ rotateY: string }>
+  | $ReadOnly<{ rotateZ: string }>
+  | $ReadOnly<{ scale: number }>
+  | $ReadOnly<{ scaleX: number }>
+  | $ReadOnly<{ scaleY: number }>
+  | $ReadOnly<{ scaleZ: number }>
+  | $ReadOnly<{ translateX: number }>
+  | $ReadOnly<{ translateY: number }>
+  | $ReadOnly<{ skewX: string }>
+  | $ReadOnly<{ skewY: string }>;
 
 export type Style = InlineStyles;
 
