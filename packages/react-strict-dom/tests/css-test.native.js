@@ -277,18 +277,15 @@ describe('properties: general', () => {
 
   test('direction', () => {
     const styles = css.create({
-      root: {
+      ltr: {
         direction: 'ltr'
-      }
-    });
-    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
-
-    const styles2 = css.create({
-      root: {
+      },
+      rtl: {
         direction: 'rtl'
       }
     });
-    expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot();
+    expect(css.props.call(mockOptions, styles.ltr)).toMatchSnapshot('ltr');
+    expect(css.props.call(mockOptions, styles.rtl)).toMatchSnapshot('rtl');
   });
 
   // unsupported

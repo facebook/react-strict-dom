@@ -740,7 +740,7 @@ const styles = stylex.create({
     boxSizing: 'content-box'
   },
   direction: (dir: string) => ({
-    direction: dir,
+    direction: dir !== 'auto' ? dir : undefined,
     writingDirection: dir
   }),
   objectFitFill: {

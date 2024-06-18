@@ -208,7 +208,7 @@ exports[`properties: general caretColor: transparent caret color 1`] = `
 
 exports[`properties: general caretColor: unsupported caret color 1`] = `{}`;
 
-exports[`properties: general direction 1`] = `
+exports[`properties: general direction: ltr 1`] = `
 {
   "style": {
     "direction": "ltr",
@@ -216,7 +216,7 @@ exports[`properties: general direction 1`] = `
 }
 `;
 
-exports[`properties: general direction 2`] = `
+exports[`properties: general direction: rtl 1`] = `
 {
   "style": {
     "direction": "rtl",

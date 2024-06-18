@@ -73,14 +73,13 @@ const styles = stylex.create({
 });
 
 const headingProps = {
-  dir: 'auto',
   style: styles.heading
 };
 
 export const a: React$AbstractComponent<
   StrictReactDOMAnchorProps,
   StrictHTMLElement
-> = createStrict('a', { dir: 'auto', style: styles.a });
+> = createStrict('a', { style: styles.a });
 export const article: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
@@ -96,11 +95,11 @@ export const b: React$AbstractComponent<
 export const bdi: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdi', { dir: 'auto' });
+> = createStrict('bdi');
 export const bdo: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('bdo', { dir: 'auto' });
+> = createStrict('bdo');
 export const blockquote: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
@@ -188,7 +187,6 @@ export const input: React$AbstractComponent<
   StrictReactDOMInputProps,
   StrictHTMLInputElement
 > = createStrict('input', {
-  dir: 'auto',
   style: styles.input
 });
 export const ins: React$AbstractComponent<
@@ -250,7 +248,7 @@ export const select: React$AbstractComponent<
 export const span: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
-> = createStrict('span', { dir: 'auto' });
+> = createStrict('span');
 export const strong: React$AbstractComponent<
   StrictReactDOMProps,
   StrictHTMLElement
@@ -267,7 +265,6 @@ export const textarea: React$AbstractComponent<
   StrictReactDOMTextAreaProps,
   StrictHTMLTextAreaElement
 > = createStrict('textarea', {
-  dir: 'auto',
   style: styles.textarea
 });
 export const u: React$AbstractComponent<

@@ -2,7 +2,6 @@
 
 exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   role="link"
   style={
     {
@@ -17,7 +16,6 @@ exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "a" supports additional anchor attributes 1`] = `
 <Text
-  dir="auto"
   download="download.png"
   href="https://google.com"
   onPress={[Function]}
@@ -120,7 +118,6 @@ exports[`html "a" supports global attributes 1`] = `
 
 exports[`html "a" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -606,7 +603,6 @@ exports[`html "b" supports inline event handlers 1`] = `
 
 exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "position": "static",
@@ -698,7 +694,6 @@ exports[`html "bdi" supports global attributes 1`] = `
 
 exports[`html "bdi" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -750,7 +745,6 @@ exports[`html "bdi" supports inline event handlers 1`] = `
 
 exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "position": "static",
@@ -842,7 +836,6 @@ exports[`html "bdo" supports global attributes 1`] = `
 
 exports[`html "bdo" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -2352,7 +2345,6 @@ exports[`html "form" supports inline event handlers 1`] = `
 
 exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -2448,7 +2440,6 @@ exports[`html "h1" supports global attributes 1`] = `
 
 exports[`html "h1" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -2502,7 +2493,6 @@ exports[`html "h1" supports inline event handlers 1`] = `
 
 exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -2598,7 +2588,6 @@ exports[`html "h2" supports global attributes 1`] = `
 
 exports[`html "h2" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -2652,7 +2641,6 @@ exports[`html "h2" supports inline event handlers 1`] = `
 
 exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -2748,7 +2736,6 @@ exports[`html "h3" supports global attributes 1`] = `
 
 exports[`html "h3" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -2802,7 +2789,6 @@ exports[`html "h3" supports inline event handlers 1`] = `
 
 exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -2898,7 +2884,6 @@ exports[`html "h4" supports global attributes 1`] = `
 
 exports[`html "h4" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -2952,7 +2937,6 @@ exports[`html "h4" supports inline event handlers 1`] = `
 
 exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -3048,7 +3032,6 @@ exports[`html "h5" supports global attributes 1`] = `
 
 exports[`html "h5" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -3102,7 +3085,6 @@ exports[`html "h5" supports inline event handlers 1`] = `
 
 exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "fontSize": 24,
@@ -3198,7 +3180,6 @@ exports[`html "h6" supports global attributes 1`] = `
 
 exports[`html "h6" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -3858,7 +3839,6 @@ exports[`html "img" supports inline event handlers 1`] = `
 
 exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 <TextInput
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -3874,7 +3854,6 @@ exports[`html "input" supports additional input attributes 1`] = `
   checked={true}
   defaultChecked={true}
   defaultValue="defaultValue"
-  dir="auto"
   disabled={true}
   max="10"
   maxLength="10"
@@ -3981,7 +3960,6 @@ exports[`html "input" supports global attributes 1`] = `
 
 exports[`html "input" supports inline event handlers 1`] = `
 <TextInput
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -5940,7 +5918,6 @@ exports[`html "select" supports inline event handlers 1`] = `
 
 exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "position": "static",
@@ -6032,7 +6009,6 @@ exports[`html "span" supports global attributes 1`] = `
 
 exports[`html "span" supports inline event handlers 1`] = `
 <Text
-  dir="auto"
   onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
@@ -6513,7 +6489,6 @@ exports[`html "sup" supports inline event handlers 1`] = `
 
 exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
 <TextInput
-  dir="auto"
   multiline={true}
   style={
     {
@@ -6529,7 +6504,6 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
 <TextInput
   aria-disabled={true}
   defaultValue="defaultValue"
-  dir="auto"
   disabled={true}
   maxLength="10"
   minLength="0"
@@ -6636,7 +6610,6 @@ exports[`html "textarea" supports global attributes 1`] = `
 
 exports[`html "textarea" supports inline event handlers 1`] = `
 <TextInput
-  dir="auto"
   multiline={true}
   onAuxClick={[Function]}
   onBlur={[Function]}

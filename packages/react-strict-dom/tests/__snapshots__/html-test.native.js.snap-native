@@ -197,7 +197,6 @@ exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 1`] = `
 <TextInput
   autoComplete="additional-name"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -210,7 +209,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`] = `
 <TextInput
   autoComplete="address-line1"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -223,7 +221,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`] = `
 <TextInput
   autoComplete="address-line2"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -236,7 +233,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
 <TextInput
   autoComplete="bday"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -249,7 +245,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
 <TextInput
   autoComplete="bday-day"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -262,7 +257,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] = `
 <TextInput
   autoComplete="bday-month"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -275,7 +269,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] =
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = `
 <TextInput
   autoComplete="bday-year"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -288,7 +281,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
 <TextInput
   autoComplete="cc-csc"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -301,7 +293,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
 <TextInput
   autoComplete="cc-exp"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -314,7 +305,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`] = `
 <TextInput
   autoComplete="cc-exp-month"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -327,7 +317,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] = `
 <TextInput
   autoComplete="cc-exp-year"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -340,7 +329,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = `
 <TextInput
   autoComplete="cc-number"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -353,7 +341,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
 <TextInput
   autoComplete="country"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -366,7 +353,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password" 1`] = `
 <TextInput
   autoComplete="current-password"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -379,7 +365,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
 <TextInput
   autoComplete="email"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -392,7 +377,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] = `
 <TextInput
   autoComplete="family-name"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -405,7 +389,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] = `
 <TextInput
   autoComplete="given-name"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -418,7 +401,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] =
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix" 1`] = `
 <TextInput
   autoComplete="honorific-prefix"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -431,7 +413,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix" 1`] = `
 <TextInput
   autoComplete="honorific-suffix"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -444,7 +425,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
 <TextInput
   autoComplete="name"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -457,7 +437,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`] = `
 <TextInput
   autoComplete="new-password"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -470,7 +449,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
 <TextInput
   autoComplete="nickname"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -483,7 +461,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 <TextInput
   autoComplete="off"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -496,7 +473,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`] = `
 <TextInput
   autoComplete="one-time-code"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -509,7 +485,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`] = `
 <TextInput
   autoComplete="organization"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -522,7 +497,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-title" 1`] = `
 <TextInput
   autoComplete="organization-title"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -535,7 +509,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-titl
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] = `
 <TextInput
   autoComplete="postal-code"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -548,7 +521,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
 <TextInput
   autoComplete="sex"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -561,7 +533,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1`] = `
 <TextInput
   autoComplete="street-address"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -574,7 +545,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
 <TextInput
   autoComplete="tel"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -587,7 +557,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code" 1`] = `
 <TextInput
   autoComplete="tel-country-code"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -600,7 +569,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`] = `
 <TextInput
   autoComplete="tel-national"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -613,7 +581,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
 <TextInput
   autoComplete="url"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -626,7 +593,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
 <TextInput
   autoComplete="username"
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -639,7 +605,6 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
 exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 <TextInput
   aria-disabled={true}
-  dir="auto"
   disabled={true}
   readOnly={true}
   style={
@@ -654,7 +619,6 @@ exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="email"
   style={
     {
@@ -668,7 +632,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="numeric"
   style={
     {
@@ -682,7 +645,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
 <TextInput
-  dir="auto"
   secureTextEntry={true}
   style={
     {
@@ -696,7 +658,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="search"
   style={
     {
@@ -710,7 +671,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="tel"
   style={
     {
@@ -724,7 +684,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="url"
   style={
     {
@@ -739,7 +698,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
 exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
 <TextInput
   aria-disabled={true}
-  dir="auto"
   disabled={true}
   multiline={true}
   readOnly={true}
@@ -754,7 +712,35 @@ exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
 />
 `;
 
-exports[`<html.*> prop polyfills global "dir" prop: "ltr" 1`] = `
+exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
+<View
+  dir="auto"
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "direction": undefined,
+      "position": "static",
+      "writingDirection": "auto",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
+<Text
+  dir="auto"
+  style={
+    {
+      "direction": undefined,
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "auto",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 <View
   dir="ltr"
   experimental_layoutConformance="strict"
@@ -768,7 +754,21 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" 1`] = `
 />
 `;
 
-exports[`<html.*> prop polyfills global "dir" prop: "rtl" 1`] = `
+exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
+<Text
+  dir="ltr"
+  style={
+    {
+      "direction": "ltr",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 <View
   dir="rtl"
   experimental_layoutConformance="strict"
@@ -776,6 +776,20 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" 1`] = `
     {
       "direction": "rtl",
       "position": "static",
+      "writingDirection": "rtl",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
+<Text
+  dir="rtl"
+  style={
+    {
+      "direction": "rtl",
+      "position": "static",
+      "userSelect": "auto",
       "writingDirection": "rtl",
     }
   }
@@ -797,7 +811,6 @@ exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 <TextInput
-  dir="auto"
   hidden={false}
   style={
     {
@@ -810,7 +823,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 <TextInput
-  dir="auto"
   hidden="false"
   style={
     {
@@ -824,7 +836,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 <TextInput
-  dir="auto"
   hidden="hidden"
   style={
     {
@@ -838,7 +849,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 <TextInput
-  dir="auto"
   hidden={true}
   style={
     {
@@ -852,7 +862,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 <TextInput
-  dir="auto"
   hidden="true"
   style={
     {
@@ -866,7 +875,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 <TextInput
-  dir="auto"
   hidden="until-found"
   style={
     {
@@ -898,7 +906,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="decimal"
   style={
     {
@@ -911,7 +918,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="email"
   style={
     {
@@ -924,7 +930,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="numeric"
   style={
     {
@@ -937,7 +942,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="search"
   style={
     {
@@ -950,7 +954,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="tel"
   style={
     {
@@ -963,7 +966,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
 
 exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 <TextInput
-  dir="auto"
   inputMode="url"
   style={
     {
@@ -976,7 +978,6 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 
 exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 <TextInput
-  dir="auto"
   style={
     {
       "borderWidth": 1,
@@ -1523,7 +1524,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     }
   >
     <Text
-      dir="auto"
       style={
         {
           "color": "red",
@@ -1543,7 +1543,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
       Inherits text styles
     </Text>
     <TextInput
-      dir="auto"
       placeholder="Does not inherit text styles"
       style={
         {
@@ -1559,7 +1558,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
 exports[`<html.*> style polyfills inherited themes 1`] = `
 [
   <Text
-    dir="auto"
     style={
       {
         "backgroundColor": "pink",
@@ -1572,7 +1570,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     Expect color:red
   </Text>,
   <Text
-    dir="auto"
     style={
       {
         "backgroundColor": "pink",
@@ -1593,7 +1590,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     }
   >
     <Text
-      dir="auto"
       style={
         {
           "backgroundColor": "pink",
@@ -1614,7 +1610,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       }
     >
       <Text
-        dir="auto"
         style={
           {
             "backgroundColor": "pink",
@@ -1629,7 +1624,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     </View>
   </View>,
   <Text
-    dir="auto"
     style={
       {
         "backgroundColor": "pink",
@@ -1646,7 +1640,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
 
 exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "color": "red",
@@ -1661,7 +1654,6 @@ exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 
 exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
 <Text
-  dir="auto"
   numberOfLines={3}
   style={
     {

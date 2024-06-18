@@ -475,9 +475,11 @@ describe('<html.*>', () => {
   describe('prop polyfills', () => {
     describe('global', () => {
       test('"dir" prop', () => {
-        ['ltr', 'rtl'].forEach((dir) => {
-          const root = create(<html.div dir={dir} />);
-          expect(root.toJSON()).toMatchSnapshot(`"${dir}"`);
+        ['auto', 'ltr', 'rtl'].forEach((dir) => {
+          const block = create(<html.div dir={dir} />);
+          const text = create(<html.p dir={dir} />);
+          expect(block.toJSON()).toMatchSnapshot(`"${dir}" block`);
+          expect(text.toJSON()).toMatchSnapshot(`"${dir}" text`);
         });
       });
 
