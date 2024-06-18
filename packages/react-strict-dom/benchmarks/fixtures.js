@@ -59,7 +59,10 @@ const styles = {
     paddingInlineEnd: 'var(--padding)',
     paddingInlineStart: 'var(--padding)',
     verticalAlign: 'top',
-    textDecorationLine: 'underline'
+    textDecorationLine: 'underline',
+    textShadow: '0 0 10px #000',
+    transform: 'rotateX(45deg) scaleY(2) translateX(150px)',
+    transitionDelay: '500ms'
   },
   complex: {
     backgroundColor: 'var(--backgroundColor)',
@@ -80,6 +83,8 @@ const styles = {
     paddingInlineEnd: 'var(--padding)',
     paddingInlineStart: '0.5em',
     textDecorationLine: 'underline',
+    transform: 'rotateX(90deg) scaleY(1.2) translateX(10px)',
+    transitionDuration: '1s',
     verticalAlign: 'top',
     width: 300,
     '::placeholder': {
