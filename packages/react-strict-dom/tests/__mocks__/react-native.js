@@ -89,6 +89,8 @@ export const Text = 'Text';
 
 export const View = 'View';
 
+export const useColorScheme = jest.fn().mockReturnValue('light');
+
 export const useWindowDimensions = jest
   .fn()
   .mockReturnValue({ width: 2000, height: 1000 });

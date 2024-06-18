@@ -27,6 +27,7 @@ import {
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 
 type ResolveStyleOptions = $ReadOnly<{
+  colorScheme: ?('light' | 'dark'),
   customProperties: $ReadOnly<{ [string]: string | number }>,
   fontScale: number | void,
   hover?: ?boolean,
@@ -326,11 +327,14 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
   return result;
 }
 
+const mqDark = '@media (prefers-color-scheme: dark)';
+
 function resolveStyle<S: { +[string]: mixed }>(
   style: S,
   options: ResolveStyleOptions
 ): S {
-  const customProperties = options.customProperties || {};
+  const colorScheme = options.colorScheme || 'light';
+  const customProperties = options.customProperties || __customProperties;
   const inheritedFontSize = options.inheritedFontSize;
 
   const result: { [string]: mixed } = {};
@@ -348,11 +352,13 @@ function resolveStyle<S: { +[string]: mixed }>(
       Object.hasOwn(styleValue, 'default')
     ) {
       let variant = 'default';
+      if (options.colorScheme === 'dark' && Object.hasOwn(styleValue, mqDark)) {
+        variant = mqDark;
+      }
       if (options.hover === true && Object.hasOwn(styleValue, ':hover')) {
         variant = ':hover';
       }
       // TODO: resolve media queries
-
       stylesToReprocess[propName] = styleValue[variant];
       continue;
     }
@@ -362,7 +368,8 @@ function resolveStyle<S: { +[string]: mixed }>(
       const resolvedValue = resolveVariableReferences(
         propName,
         styleValue,
-        customProperties
+        customProperties,
+        colorScheme
       );
       if (resolvedValue != null) {
         stylesToReprocess[propName] = resolvedValue;

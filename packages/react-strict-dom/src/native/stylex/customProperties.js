@@ -41,7 +41,8 @@ export function stringContainsVariables(input: string): boolean {
 function resolveVariableReferenceValue(
   propName: string,
   variable: CSSVariableReferenceValue,
-  propertyRegistry: CustomProperties
+  propertyRegistry: CustomProperties,
+  colorScheme: 'light' | 'dark'
 ) {
   const variableName = normalizeVariableName(variable.variable);
   const fallbackValue = variable.fallback;
@@ -57,14 +58,17 @@ function resolveVariableReferenceValue(
     variableValue = resolveVariableReferences(
       propName,
       CSSUnparsedValue.parse(propName, variableValue),
-      propertyRegistry
+      propertyRegistry,
+      colorScheme
     );
   }
 
   if (variableValue != null) {
     if (typeof variableValue === 'object' && variableValue.default != null) {
-      // TODO: Support dark theme through media queries too.
-      const defaultValue = variableValue.default;
+      let defaultValue = variableValue.default;
+      if (colorScheme === 'dark') {
+        defaultValue = variableValue['@media (prefers-color-scheme: dark)'];
+      }
       return defaultValue;
     }
     return variableValue;
@@ -72,7 +76,8 @@ function resolveVariableReferenceValue(
     const resolvedFallback = resolveVariableReferences(
       propName,
       fallbackValue,
-      propertyRegistry
+      propertyRegistry,
+      colorScheme
     );
     if (resolvedFallback != null) {
       return resolvedFallback;
@@ -90,7 +95,8 @@ function resolveVariableReferenceValue(
 export function resolveVariableReferences(
   propName: string,
   propValue: CSSUnparsedValue,
-  propertyRegistry: CustomProperties
+  propertyRegistry: CustomProperties,
+  colorScheme: 'light' | 'dark' = 'light'
 ): string | number | null {
   const result: Array<string | number> = [];
   for (const value of propValue.values()) {
@@ -98,7 +104,8 @@ export function resolveVariableReferences(
       const resolvedValue = resolveVariableReferenceValue(
         propName,
         value,
-        propertyRegistry
+        propertyRegistry,
+        colorScheme
       );
       if (resolvedValue == null) {
         // Failure to resolve a css variable in a value means the entire value is unparsable so we bail out and

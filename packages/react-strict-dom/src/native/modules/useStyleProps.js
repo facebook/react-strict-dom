@@ -10,7 +10,7 @@
 import { typeof Animated } from 'react-native';
 import type { Styles } from '../../types/styles';
 
-import { PixelRatio, useWindowDimensions } from 'react-native';
+import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
 
 type StyleOptions = {
@@ -40,12 +40,14 @@ export function useStyleProps(
   const { customProperties, hover, inheritedFontSize } = options;
 
   const { height, width } = useWindowDimensions();
+  const colorScheme = useColorScheme();
   const fontScale = PixelRatio.getFontScale();
 
   // Marking it as `any` as Flow slows to a crawl when trying to type this.
   // But we already know that `style` is the correct type so this is still safe.
   const styleProps = stylex.props.call(
     {
+      colorScheme,
       customProperties: customProperties ?? emptyObject,
       fontScale,
       hover,
