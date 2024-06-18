@@ -92,6 +92,8 @@ const Text = 'Text';
 
 const View = 'View';
 
+const useColorScheme = () => 'light';
+
 const useWindowDimensions = () => ({ width: 2000, height: 1000 });
 
 module.exports = {
@@ -106,5 +108,6 @@ module.exports = {
   TextInput,
   Text,
   View,
+  useColorScheme,
   useWindowDimensions
 };

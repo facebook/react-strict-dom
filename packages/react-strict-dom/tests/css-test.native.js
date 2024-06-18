@@ -8,7 +8,6 @@
 import { css } from 'react-strict-dom';
 
 const mockOptions = {
-  customProperties: {},
   hover: false,
   viewportHeight: 600,
   viewportWidth: 320
@@ -1088,18 +1087,16 @@ describe('properties: logical direction', () => {
  * Properties: Custom Properties
  */
 
-function resolveCustomPropertyValue(
-  customProperties,
-  customPropertyDeclaration
-) {
+function resolveCustomPropertyValue(options, customPropertyDeclaration) {
   const [key, value] = customPropertyDeclaration;
   const styles = css.create({
     root: {
       [key]: value
     }
   });
-  return css.props.call({ ...mockOptions, customProperties }, styles.root)
-    .style?.[key];
+  return css.props.call({ ...mockOptions, ...options }, styles.root).style?.[
+    key
+  ];
 }
 
 describe('properties: custom property', () => {
@@ -1119,18 +1116,18 @@ describe('properties: custom property', () => {
   // and expects them to be provided by another system. On native, they
   // can be defined in a JS object and passed into the style resolver.
   test('legacy strings', () => {
-    const customProperties = {
-      rootColor: 'red'
+    const options = {
+      customProperties: {
+        rootColor: 'red'
+      }
     };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--rootColor)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--rootColor)'])
     ).toEqual('red');
   });
 
   test('css.defineVars', () => {
+    const options = {};
     const tokens = css.defineVars({
       rootColor: 'red',
       themeAwareColor: {
@@ -1141,17 +1138,18 @@ describe('properties: custom property', () => {
     expect(tokens).toMatchSnapshot('tokens');
     expect(css.__customProperties).toMatchSnapshot('css.__customProperties');
     expect(
-      resolveCustomPropertyValue(css.__customProperties, [
-        'color',
-        tokens.rootColor
-      ])
+      resolveCustomPropertyValue(options, ['color', tokens.rootColor])
     ).toEqual('red');
     expect(
-      resolveCustomPropertyValue(css.__customProperties, [
+      resolveCustomPropertyValue(options, ['color', tokens.themeAwareColor])
+    ).toEqual('blue');
+    // dark theme
+    expect(
+      resolveCustomPropertyValue({ colorScheme: 'dark' }, [
         'color',
         tokens.themeAwareColor
       ])
-    ).toEqual('blue');
+    ).toEqual('green');
   });
 
   test('css.createTheme', () => {
@@ -1174,106 +1172,93 @@ describe('properties: custom property', () => {
       ...mockOptions,
       customProperties: { ...css.__customProperties, ...theme }
     };
-    expect(css.props.call(options, [theme, styles.root]).style.color).toEqual(
-      'green'
-    );
+    expect(css.props.call(options, styles.root).style.color).toEqual('green');
   });
 
   test('does not parse malformed vars', () => {
-    const customProperties = {};
+    const options = {};
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--testUnfinished'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--testUnfinished'])
     ).toEqual(undefined);
     expect(
-      resolveCustomPropertyValue(customProperties, ['color', 'var(bad--input)'])
+      resolveCustomPropertyValue(options, ['color', 'var(bad--input)'])
     ).toEqual(undefined);
     expect(
-      resolveCustomPropertyValue(customProperties, ['color', '--testMulti'])
+      resolveCustomPropertyValue(options, ['color', '--testMulti'])
     ).toEqual('--testMulti');
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var ( --testMulti)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var ( --testMulti)'])
     ).toEqual('var ( --testMulti)');
   });
 
   test('handles undefined variables', () => {
-    const customProperties = {};
     const { underTest } = css.create({
       underTest: {
         width: 'var(--unprovided)'
       }
     });
-    expect(
-      css.props.call({ ...mockOptions, customProperties }, underTest)
-    ).toMatchSnapshot();
+    expect(css.props.call({ ...mockOptions }, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining('unrecognized custom property "--unprovided"')
     );
   });
 
   test('parses a basic var correctly', () => {
-    const customProperties = { test: 'red' };
+    const options = {
+      customProperties: { test: 'red' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, ['color', 'var(--test)'])
+      resolveCustomPropertyValue(options, ['color', 'var(--test)'])
     ).toEqual('red');
   });
 
   test('parses a var with a default value', () => {
-    const customProperties = { test: 'red' };
+    const options = {
+      customProperties: { test: 'red' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--test, blue)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--test, blue)'])
     ).toEqual('red');
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--not-found, blue)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--not-found, blue)'])
     ).toEqual('blue');
   });
 
   // TODO: this transform should not be supported. Custom properties are case sensitive.
   test('parses kebab case var to camel case', () => {
-    const customProperties = { testVar: 'red' };
+    const options = {
+      customProperties: { testVar: 'red' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, ['color', 'var(--test-var)'])
+      resolveCustomPropertyValue(options, ['color', 'var(--test-var)'])
     ).toEqual('red');
   });
 
   // TODO: this transform should not be supported. Custom properties are case sensitive.
   test('parses kebab case var with a default value', () => {
-    const customProperties = { testVar: 'red' };
+    const options = {
+      customProperties: { testVar: 'red' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--test-var, blue)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--test-var, blue)'])
     ).toEqual('red');
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'var(--not-found, blue)'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'var(--not-found, blue)'])
     ).toEqual('blue');
   });
 
   test('parses a var with a default value containing spaces', () => {
-    const customProperties = { color: 'rgb(0,0,0)' };
+    const options = {
+      customProperties: { color: 'rgb(0,0,0)' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'var(--color, rgb( 1 , 1 , 1 ))'
       ])
     ).toEqual('rgb(0,0,0)');
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'var(--colorNotFound, rgb( 1 , 1 , 1 ))'
       ])
@@ -1281,9 +1266,11 @@ describe('properties: custom property', () => {
   });
 
   test('parses a var and falls back to default value containing a var', () => {
-    const customProperties = { color: 'red' };
+    const options = {
+      customProperties: { color: 'red' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'var(--colorNotFound, var(--color))'
       ])
@@ -1291,11 +1278,13 @@ describe('properties: custom property', () => {
   });
 
   test('parses a var and falls back to a default value containing spaces and embedded var', () => {
-    const customProperties = {
-      test: '255'
+    const options = {
+      customProperties: {
+        test: '255'
+      }
     };
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'var(--colorNotFound, rgb(255,255,var(--test))'
       ])
@@ -1303,49 +1292,45 @@ describe('properties: custom property', () => {
   });
 
   test('basic var value lookup works', () => {
-    const customProperties = { number: 10 };
+    const options = {
+      customProperties: { number: 10 }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'borderWidth',
-        'var(--number)'
-      ])
+      resolveCustomPropertyValue(options, ['borderWidth', 'var(--number)'])
     ).toEqual(10);
   });
 
   test('var value lookup with pixel prop conversion', () => {
-    const customProperties = { pxNumber: '10px' };
+    const options = {
+      customProperties: { pxNumber: '10px' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'borderWidth',
-        'var(--pxNumber)'
-      ])
+      resolveCustomPropertyValue(options, ['borderWidth', 'var(--pxNumber)'])
     ).toEqual(10);
   });
 
   test('var value lookup with em prop conversion', () => {
-    const customProperties = { emNumber: '10em' };
+    const options = {
+      customProperties: { emNumber: '10em' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'borderWidth',
-        'var(--emNumber)'
-      ])
+      resolveCustomPropertyValue(options, ['borderWidth', 'var(--emNumber)'])
     ).toEqual(160);
   });
 
   test('var value lookup with reference to another var', () => {
-    const customProperties = {
-      number: 10,
-      refToNumber: 'var(--number)',
-      refToRefToNumber: 'var(--refToNumber)'
+    const options = {
+      customProperties: {
+        number: 10,
+        refToNumber: 'var(--number)',
+        refToRefToNumber: 'var(--refToNumber)'
+      }
     };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'borderWidth',
-        'var(--refToNumber)'
-      ])
+      resolveCustomPropertyValue(options, ['borderWidth', 'var(--refToNumber)'])
     ).toEqual(10);
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'borderWidth',
         'var(--refToRefToNumber)'
       ])
@@ -1353,7 +1338,10 @@ describe('properties: custom property', () => {
   });
 
   test('var with hover styles', () => {
-    const customProperties = { test: '#333' };
+    const options = {
+      customProperties: { test: '#333' },
+      hover: true
+    };
     const { underTest } = css.create({
       underTest: {
         color: {
@@ -1366,8 +1354,7 @@ describe('properties: custom property', () => {
       css.props.call(
         {
           ...mockOptions,
-          customProperties,
-          hover: true
+          ...options
         },
         underTest
       )
@@ -1375,15 +1362,14 @@ describe('properties: custom property', () => {
   });
 
   test('rgb(a) function with args applied through a single var', () => {
-    const customProperties = { example: '24, 48, 96' };
+    const options = {
+      customProperties: { example: '24, 48, 96' }
+    };
     expect(
-      resolveCustomPropertyValue(customProperties, [
-        'color',
-        'rgb(var(--example))'
-      ])
+      resolveCustomPropertyValue(options, ['color', 'rgb(var(--example))'])
     ).toEqual('rgb(24, 48, 96)');
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'rgba(var(--example), 0.5)'
       ])
@@ -1391,15 +1377,17 @@ describe('properties: custom property', () => {
   });
 
   test('rgba function with args applied through multiple (& nested) vars', () => {
-    const customProperties = {
-      red: 255,
-      green: 96,
-      blue: 16,
-      rgb: 'var(--red), var(--green), var(--blue)',
-      alpha: 0.42
+    const options = {
+      customProperties: {
+        red: 255,
+        green: 96,
+        blue: 16,
+        rgb: 'var(--red), var(--green), var(--blue)',
+        alpha: 0.42
+      }
     };
     expect(
-      resolveCustomPropertyValue(customProperties, [
+      resolveCustomPropertyValue(options, [
         'color',
         'rgba(var(--rgb), var(--alpha))'
       ])
@@ -1407,12 +1395,14 @@ describe('properties: custom property', () => {
   });
 
   test('text shadow with nested/multiple vars', () => {
-    const customProperties = {
-      height: '2px',
-      width: '1px',
-      size: 'var(--width) var(--height)',
-      radius: '3px',
-      red: 'red'
+    const options = {
+      customProperties: {
+        height: '2px',
+        width: '1px',
+        size: 'var(--width) var(--height)',
+        radius: '3px',
+        red: 'red'
+      }
     };
     const styles = css.create({
       test: {
@@ -1420,7 +1410,7 @@ describe('properties: custom property', () => {
       }
     });
     expect(
-      css.props.call({ ...mockOptions, customProperties }, styles.test).style
+      css.props.call({ ...mockOptions, ...options }, styles.test).style
     ).toStrictEqual({
       textShadowColor: 'red',
       textShadowOffset: {
@@ -1432,8 +1422,11 @@ describe('properties: custom property', () => {
   });
 
   test('css variable declaration inside a media query', () => {
-    const customProperties = {
-      example: '42px'
+    const options = {
+      customProperties: {
+        example: '42px'
+      },
+      viewportWidth: 450
     };
     const styles = css.create({
       test: {
@@ -1443,10 +1436,7 @@ describe('properties: custom property', () => {
       }
     });
     expect(
-      css.props.call(
-        { ...mockOptions, viewportWidth: 450, customProperties },
-        styles.test
-      ).style
+      css.props.call({ ...mockOptions, ...options }, styles.test).style
     ).toStrictEqual({
       width: 42
     });
@@ -1648,5 +1638,49 @@ describe('queries: @media', () => {
       width: 0,
       height: 450
     });
+  });
+
+  test('matches a "prefers-color-scheme: dark" query', () => {
+    const tokens = css.defineVars({
+      prefersColor: {
+        default: 'blue',
+        '@media (prefers-color-scheme: dark)': 'darkblue'
+      }
+    });
+
+    const themeTokens = css.defineVars({
+      prefersColor: {
+        default: 'red',
+        '@media (prefers-color-scheme: dark)': 'darkred'
+      }
+    });
+
+    const theme = css.createTheme(themeTokens, {
+      prefersColor: {
+        default: 'green',
+        '@media (prefers-color-scheme: dark)': 'darkgreen'
+      }
+    });
+
+    const { underTest } = css.create({
+      underTest: {
+        backgroundColor: tokens.prefersColor,
+        borderColor: themeTokens.prefersColor,
+        color: {
+          default: 'black',
+          '@media (prefers-color-scheme: dark)': 'white'
+        }
+      }
+    });
+    const props = css.props.call(
+      {
+        customProperties: { ...css.__customProperties, ...theme },
+        colorScheme: 'dark'
+      },
+      underTest
+    );
+    expect(props.style.backgroundColor).toBe('darkblue');
+    expect(props.style.borderColor).toBe('darkgreen');
+    expect(props.style.color).toBe('white');
   });
 });
