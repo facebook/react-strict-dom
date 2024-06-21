@@ -53,10 +53,10 @@ export type ParsedShadow = $ReadOnly<{
   color: string | null
 }>;
 
-const cache = new Map<string, $ReadOnlyArray<ParsedShadow>>();
+const memoizedValues = new Map<string, $ReadOnlyArray<ParsedShadow>>();
 
 export function parseShadow(str: string): $ReadOnlyArray<ParsedShadow> {
-  const memoizedValue = cache.get(str);
+  const memoizedValue = memoizedValues.get(str);
   if (memoizedValue != null) {
     return memoizedValue;
   }
@@ -66,7 +66,7 @@ export function parseShadow(str: string): $ReadOnlyArray<ParsedShadow> {
     .map((s) => s.trim())
     .map(parseValue);
 
-  cache.set(str, parsedValue);
+  memoizedValues.set(str, parsedValue);
 
   return parsedValue;
 }

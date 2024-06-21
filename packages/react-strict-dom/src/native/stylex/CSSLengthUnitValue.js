@@ -22,19 +22,19 @@ type ResolvePixelValueOptions = $ReadOnly<{
 
 type ParsedValue = [+value: number, +unit: CSSLengthUnitType] | null;
 
-const cache = new Map<string, ParsedValue>();
+const memoizedValues = new Map<string, ParsedValue>();
 
 // TODO: this only works on simple values
 export class CSSLengthUnitValue {
   static parse(input: string): ParsedValue {
-    const memoizedValue = cache.get(input);
+    const memoizedValue = memoizedValues.get(input);
     if (memoizedValue !== undefined) {
       return memoizedValue;
     }
 
     const match = input.match(LENGTH_REGEX);
     if (match == null) {
-      cache.set(input, null);
+      memoizedValues.set(input, null);
       return null;
     }
     const value = match[1];
@@ -42,7 +42,7 @@ export class CSSLengthUnitValue {
     const parsedFloat = parseFloat(value);
     // $FlowFixMe
     const parsedValue: ParsedValue = [parsedFloat, unit];
-    cache.set(input, parsedValue);
+    memoizedValues.set(input, parsedValue);
     return parsedValue;
   }
 

@@ -718,7 +718,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
-      "direction": undefined,
       "position": "static",
       "writingDirection": "auto",
     }
@@ -731,7 +730,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
   dir="auto"
   style={
     {
-      "direction": undefined,
       "position": "static",
       "userSelect": "auto",
       "writingDirection": "auto",
@@ -1532,6 +1530,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
           "fontStyle": "italic",
           "fontVariant": "variant",
           "fontWeight": "300",
+          "letterSpacing": 10,
           "lineHeight": 30,
           "position": "static",
           "textAlign": "right",

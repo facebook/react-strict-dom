@@ -36,7 +36,7 @@ function splitComponentValueListByComma(
   return output;
 }
 
-const cache = new Map<string, CSSUnparsedValue>();
+const memoizedValues = new Map<string, CSSUnparsedValue>();
 
 // https://drafts.css-houdini.org/css-typed-om-1/#cssunparsedvalue
 export class CSSUnparsedValue extends CSSStyleValue {
@@ -134,14 +134,14 @@ export class CSSUnparsedValue extends CSSStyleValue {
   // to determine what the value should be parsed to but as we currently are only taking
   // unparsed & variable references we can ignore it for now
   static parse(_property: string, input: string): CSSUnparsedValue {
-    const memoizedValue = cache.get(input);
+    const memoizedValue = memoizedValues.get(input);
     if (memoizedValue != null) {
       return memoizedValue;
     }
     const componentValueList = valueParser(input).nodes;
     const parsedValue =
       CSSUnparsedValue.#resolveUnparsedValue(componentValueList);
-    cache.set(input, parsedValue);
+    memoizedValues.set(input, parsedValue);
     return parsedValue;
   }
 

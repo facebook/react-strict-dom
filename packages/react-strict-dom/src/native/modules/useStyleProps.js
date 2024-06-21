@@ -19,13 +19,6 @@ type StyleOptions = {
   inheritedFontSize: ?number
 };
 
-const passthroughProperties = [
-  'transitionDelay',
-  'transitionDuration',
-  'transitionProperty',
-  'transitionTimingFunction'
-];
-
 const emptyObject = {};
 
 export function useStyleProps(
@@ -53,7 +46,6 @@ export function useStyleProps(
       hover,
       // $FlowFixMe
       inheritedFontSize,
-      passthroughProperties,
       viewportHeight: height,
       viewportWidth: width
     },

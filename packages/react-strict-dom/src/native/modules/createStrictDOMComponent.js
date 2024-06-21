@@ -424,7 +424,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         fontStyle,
         fontVariant,
         fontWeight,
-        letterSpace,
+        letterSpacing,
         lineHeight,
         textAlign,
         textIndent,
@@ -455,8 +455,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       if (fontWeight != null) {
         nextInheritedStyles.fontWeight = fontWeight;
       }
-      if (letterSpace != null) {
-        nextInheritedStyles.letterSpace = letterSpace;
+      if (letterSpacing != null) {
+        nextInheritedStyles.letterSpacing = letterSpacing;
       }
       if (lineHeight != null) {
         nextInheritedStyles.lineHeight = lineHeight;
@@ -494,7 +494,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
                 styles.aspectRatio(width, height)
             ]
           : null,
-        dir != null && styles.direction(dir),
         // Add default text styles
         nativeComponent === Text && styles.userSelectAuto,
         // Provided styles
@@ -554,6 +553,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         styleProps.style.userSelect !== 'none'
       ) {
         styleProps.style.userSelect = 'none';
+      }
+
+      if (dir != null) {
+        if (dir !== 'auto') {
+          styleProps.style.direction = dir;
+        }
+        styleProps.style.writingDirection = dir;
       }
 
       if (
@@ -739,10 +745,6 @@ const styles = stylex.create({
   contentBox: {
     boxSizing: 'content-box'
   },
-  direction: (dir: string) => ({
-    direction: dir !== 'auto' ? dir : undefined,
-    writingDirection: dir
-  }),
   objectFitFill: {
     objectFit: 'fill'
   },

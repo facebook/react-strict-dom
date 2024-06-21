@@ -155,7 +155,7 @@ describe('<html.*>', () => {
           fontStyle: 'italic',
           fontVariant: 'variant',
           fontWeight: 'bold',
-          letterSpace: '10px',
+          letterSpacing: '10px',
           lineHeight: '30px',
           textAlign: 'right',
           textIndent: '10px',
@@ -335,7 +335,7 @@ describe('<html.*>', () => {
       expect(Easing.inOut).toHaveBeenCalled();
       act(() => {
         root.update(
-          <html.div style={[styles.backgroundColor('rgba(255,255,255,0.9)')]} />
+          <html.div style={styles.backgroundColor('rgba(255,255,255,0.9)')} />
         );
       });
       expect(root.toJSON()).toMatchSnapshot('backgroundColor transition end');
@@ -347,7 +347,7 @@ describe('<html.*>', () => {
       expect(root.toJSON()).toMatchSnapshot('opacity transition start');
       expect(Easing.in).toHaveBeenCalled();
       act(() => {
-        root.update(<html.div style={[styles.opacity(0)]} />);
+        root.update(<html.div style={styles.opacity(0)} />);
       });
       expect(root.toJSON()).toMatchSnapshot('opacity transition end');
 
@@ -360,7 +360,7 @@ describe('<html.*>', () => {
       act(() => {
         root.update(
           <html.div
-            style={[styles.transform('translateY(50px) rotateX(90deg)')]}
+            style={styles.transform('translateY(50px) rotateX(90deg)')}
           />
         );
       });
@@ -414,11 +414,10 @@ describe('<html.*>', () => {
       act(() => {
         root.update(
           <html.div
-            style={[
-              styles.transitionWithoutProperty,
+            style={
               // attempt to transition to an end value without a start value
-              { transform: 'translateY(50px) rotateX(90deg)' }
-            ]}
+              styles.transform('translateY(50px) rotateX(90deg)')
+            }
           />
         );
       });

@@ -14,10 +14,10 @@ const mockOptions = {
 };
 
 /**
- * Unsupported values
+ * Values: unsupported
  */
 
-describe('unsupported style values', () => {
+describe('values', () => {
   beforeEach(() => {
     jest.spyOn(console, 'warn');
     console.warn.mockImplementation(() => {});
@@ -27,14 +27,24 @@ describe('unsupported style values', () => {
     console.warn.mockRestore();
   });
 
-  test('calc', () => {
+  test('calc()', () => {
     const { underTest } = css.create({
       underTest: {
         width: 'calc(2 * 1rem)'
       }
     });
-    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalled();
+    expect(css.props.call(mockOptions, underTest).style?.width).toBeUndefined();
+  });
+
+  test('currentcolor', () => {
+    const { underTest } = css.create({
+      underTest: {
+        color: 'currentcolor'
+      }
+    });
+    expect(console.warn).toHaveBeenCalled();
+    expect(css.props.call(mockOptions, underTest).style?.color).toBeUndefined();
   });
 
   test('inherit', () => {
@@ -43,8 +53,10 @@ describe('unsupported style values', () => {
         fontSize: 'inherit'
       }
     });
-    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalled();
+    expect(
+      css.props.call(mockOptions, underTest).style?.fontSize
+    ).toBeUndefined();
   });
 
   test('initial', () => {
@@ -53,8 +65,21 @@ describe('unsupported style values', () => {
         fontSize: 'initial'
       }
     });
-    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalled();
+    expect(
+      css.props.call(mockOptions, underTest).style?.fontSize
+    ).toBeUndefined();
+  });
+
+  test('firstThatWorks', () => {
+    const { underTest } = css.create({
+      underTest: {
+        color: css.firstThatWorks('hsl(0,0,0)', 'rgb(0,0,0)')
+      }
+    });
+    expect(css.props.call(mockOptions, underTest).style.color).toBe(
+      'hsl(0,0,0)'
+    );
   });
 });
 
@@ -259,7 +284,9 @@ describe('properties: general', () => {
         caretColor: 'inherit'
       }
     });
-
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining('unsupported style value in "caretColor:inherit"')
+    );
     expect(
       css.props.call(mockOptions, styles.transparentCaret)
     ).toMatchSnapshot('transparent caret color');
@@ -269,9 +296,6 @@ describe('properties: general', () => {
     expect(
       css.props.call(mockOptions, styles.unsupportedCaret)
     ).toMatchSnapshot('unsupported caret color');
-    expect(console.warn).toHaveBeenCalledWith(
-      expect.stringContaining('unsupported style value in "caretColor:inherit"')
-    );
   });
 
   test('direction', () => {
@@ -377,12 +401,12 @@ describe('properties: general', () => {
         margin: '0 auto'
       }
     });
-    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Shortform properties cannot contain multiple values'
       )
     );
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
   });
 
   // unsupported
@@ -498,42 +522,52 @@ describe('properties: general', () => {
   });
 
   test('placeContent', () => {
-    const styles = css.create({
+    const validStyles = css.create({
       center: { placeContent: 'center' },
       flexStart: { placeContent: 'flex-start' },
-      stretch: { placeContent: 'stretch' },
-      safeCenter: { placeContent: 'safe center' },
-      invalid: { placeContent: 'flex-start flex-end' }
+      longForms: {
+        alignContent: 'flex-start',
+        justifyContent: 'flex-start'
+      }
     });
-    expect(css.props.call(mockOptions, styles.center)).toMatchSnapshot(
+    expect(css.props.call(mockOptions, validStyles.center)).toMatchSnapshot(
       'center'
     );
-    expect(css.props.call(mockOptions, styles.flexStart)).toMatchSnapshot(
+    expect(css.props.call(mockOptions, validStyles.flexStart)).toMatchSnapshot(
       'flexStart'
     );
-    expect(css.props.call(mockOptions, styles.stretch)).toMatchSnapshot(
-      'stretch'
+    expect(
+      css.props.call(mockOptions, [validStyles.longForms, validStyles.center])
+    ).toMatchSnapshot('does not override existing long-forms');
+
+    const inValidStyles = css.create({
+      safeCenter: { placeContent: 'safe center' },
+      stretch: { placeContent: 'stretch' },
+      invalid: { placeContent: 'flex-start flex-end' }
+    });
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'unsupported style value in "placeContent:safe center"'
+      )
     );
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining(
         'unsupported style value in "placeContent:stretch"'
       )
     );
-    expect(css.props.call(mockOptions, styles.safeCenter)).toMatchSnapshot(
-      'safeCenter'
-    );
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining(
-        'unsupported style value in "placeContent:safe center"'
+        'unsupported style value in "placeContent:flex-start flex-end"'
       )
     );
-    expect(css.props.call(mockOptions, styles.invalid)).toMatchSnapshot(
+    expect(
+      css.props.call(mockOptions, inValidStyles.safeCenter)
+    ).toMatchSnapshot('safeCenter');
+    expect(css.props.call(mockOptions, inValidStyles.stretch)).toMatchSnapshot(
+      'stretch'
+    );
+    expect(css.props.call(mockOptions, inValidStyles.invalid)).toMatchSnapshot(
       'invalid'
-    );
-    expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'invalid style value in "placeContent:flex-start flex-end"'
-      )
     );
   });
 
@@ -564,6 +598,7 @@ describe('properties: general', () => {
         position: 'sticky'
       }
     });
+    expect(console.warn).toHaveBeenCalledTimes(2);
     expect(css.props.call(mockOptions, styles.static)).toMatchSnapshot(
       'static'
     );
@@ -574,29 +609,18 @@ describe('properties: general', () => {
       'absolute'
     );
     expect(css.props.call(mockOptions, styles.fixed)).toMatchSnapshot('fixed');
-    expect(console.warn).toHaveBeenCalledTimes(1);
     expect(css.props.call(mockOptions, styles.sticky)).toMatchSnapshot(
       'sticky'
     );
-    expect(console.warn).toHaveBeenCalledTimes(2);
   });
 
-  // passthrough feature
-  test('"transitionProperty" passthrough', () => {
+  test('transitionProperty', () => {
     const { underTest } = css.create({
       underTest: {
         transitionProperty: 'opacity'
       }
     });
-    expect(
-      css.props.call(
-        {
-          ...mockOptions,
-          passthroughProperties: ['transitionProperty']
-        },
-        underTest
-      )
-    ).toMatchSnapshot();
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).not.toHaveBeenCalled();
   });
 
@@ -613,8 +637,8 @@ describe('properties: general', () => {
         textShadow: '1px 2px 3px red, 2px 3px 4px blue'
       }
     });
-    expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalledTimes(1);
+    expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot();
   });
 
   test('transform', () => {
@@ -1394,7 +1418,7 @@ describe('properties: custom property', () => {
     ).toEqual('rgba(255, 96, 16, 0.42)');
   });
 
-  test('text shadow with nested/multiple vars', () => {
+  test('textShadow with nested/multiple vars', () => {
     const options = {
       customProperties: {
         height: '2px',
@@ -1418,6 +1442,27 @@ describe('properties: custom property', () => {
         width: 1
       },
       textShadowRadius: 3
+    });
+  });
+
+  test('transform with nested/multiple vars', () => {
+    const options = {
+      customProperties: {
+        distance: 20,
+        angle: '45deg',
+        translateX: 'translateX(var(--distance))',
+        rotateX: 'rotateX(var(--angle))'
+      }
+    };
+    const styles = css.create({
+      test: {
+        transform: 'var(--translateX) var(--rotateX)'
+      }
+    });
+    expect(
+      css.props.call({ ...mockOptions, ...options }, styles.test).style
+    ).toStrictEqual({
+      transform: [{ translateX: 20 }, { rotateX: '45deg' }]
     });
   });
 
@@ -1492,13 +1537,13 @@ describe('styles: pseudo-element', () => {
         }
       }
     });
-    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot(
-      'placeholderTextColor'
-    );
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining(
         'unsupported "::placeholder" style property "fontWeight"'
       )
+    );
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot(
+      'placeholderTextColor'
     );
   });
 });
