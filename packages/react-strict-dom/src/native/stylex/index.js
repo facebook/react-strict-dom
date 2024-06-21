@@ -18,6 +18,8 @@ import { CSSTextShadow } from './CSSTextShadow';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
+import { isAllowedShortFormValue } from './isAllowedShortFormValue';
+import { isAllowedStyleKey } from './isAllowedStyleKey';
 import { parseTimeValue } from './parseTimeValue';
 import { parseTransform } from './parseTransform';
 import {
@@ -32,277 +34,54 @@ type ResolveStyleOptions = $ReadOnly<{
   fontScale: number | void,
   hover?: ?boolean,
   inheritedFontSize: ?number,
-  passthroughProperties: $ReadOnlyArray<string>,
   viewportHeight: number,
   viewportWidth: number,
   writingDirection?: ?'ltr' | 'rtl'
 }>;
 
-const stylePropertyAllowlistSet = new Set<string>([
-  'alignContent',
-  'alignItems',
-  'alignSelf',
-  'animationDelay',
-  'animationDuration',
-  'aspectRatio',
-  'backfaceVisibility',
-  'backgroundColor',
-  'borderBottomColor',
-  'borderBottomLeftRadius',
-  'borderBottomRightRadius',
-  'borderBottomStyle',
-  'borderBottomWidth',
-  'borderColor',
-  'borderLeftColor',
-  'borderLeftStyle',
-  'borderLeftWidth',
-  'borderRadius',
-  'borderRightColor',
-  'borderRightStyle',
-  'borderRightWidth',
-  'borderStyle',
-  'borderTopColor',
-  'borderTopLeftRadius',
-  'borderTopRightRadius',
-  'borderTopStyle',
-  'borderTopWidth',
-  'borderWidth',
-  'bottom',
-  'boxSizing',
-  'color',
-  'columnGap',
-  'direction',
-  'display',
-  'end',
-  'flex',
-  'flexBasis',
-  'flexDirection',
-  'flexGrow',
-  'flexShrink',
-  'flexWrap',
-  'fontFamily',
-  'fontSize',
-  'fontStyle',
-  'fontWeight',
-  'fontVariant',
-  'gap',
-  'height',
-  // 'includeFontPadding', Android Only
-  'justifyContent',
-  'left',
-  'letterSpacing',
-  'lineHeight',
-  'margin',
-  'marginBottom',
-  'marginLeft',
-  'marginRight',
-  'marginTop',
-  'maxHeight',
-  'maxWidth',
-  'minHeight',
-  'minWidth',
-  'objectFit',
-  'opacity',
-  'overflow',
-  'padding',
-  'paddingBottom',
-  'paddingLeft',
-  'paddingRight',
-  'paddingTop',
-  'pointerEvents',
-  'position',
-  'resizeMode',
-  'right',
-  'rowGap',
-  'shadowColor',
-  'shadowOffset',
-  'shadowOpacity',
-  'shadowRadius',
-  'shadowWidth',
-  'start',
-  'textAlign',
-  'textDecorationLine',
-  'textDecorationColor', // iOS Only
-  'textDecorationStyle', // iOS Only
-  'textShadowColor',
-  'textShadowOffset',
-  'textShadowRadius',
-  'textTransform',
-  'tintColor',
-  'transform',
-  'transformOrigin',
-  'transitionDelay',
-  'transitionDuration',
-  'top',
-  'userSelect',
-  'verticalAlign', // Android Only
-  'width',
-  'writingDirection', // iOS Only
-  'zIndex'
-
-  // DESKTOP: no built-in support for logical properties.
-  // Comment out all the logical properties so they can be converted to fallbacks
-  // and legacy non-standard properties.
-  //'blockSize',
-  //'inlineSize',
-  //'maxBlockSize',
-  //'minBlockSize',
-  //'maxInlineSize',
-  //'minInlineSize',
-  //'borderBlockColor',
-  //'borderBlockStyle',
-  //'borderBlockWidth',
-  //'borderBlockEndColor',
-  //'borderBlockEndStyle',
-  //'borderBlockEndWidth',
-  //'borderBlockStartColor',
-  //'borderBlockStartStyle',
-  //'borderBlockStartWidth',
-  //'borderInlineColor',
-  //'borderInlineStyle',
-  //'borderInlineWidth',
-  //'borderInlineEndColor',
-  //'borderInlineEndStyle',
-  //'borderInlineEndWidth',
-  //'borderInlineStartColor',
-  //'borderInlineStartStyle',
-  //'borderInlineStartWidth',
-  //'borderEndEndRadius',
-  //'borderEndStartRadius',
-  //'borderStartEndRadius',
-  //'borderStartStartRadius',
-  //'inset',
-  //'insetBlock',
-  //'insetBlockEnd',
-  //'insetBlockStart',
-  //'insetInline',
-  //'insetInlineEnd',
-  //'insetInlineStart',
-  //'marginBlock',
-  //'marginBlockEnd',
-  //'marginBlockStart',
-  //'marginInline',
-  //'marginInlineEnd',
-  //'marginInlineStart',
-  //'paddingBlock',
-  //'paddingBlockEnd',
-  //'paddingBlockStart',
-  //'paddingInline',
-  //'paddingInlineEnd',
-  //'paddingInlineStart',
+const validPlaceContentValues = new Set<string>([
+  'center',
+  'flex-end',
+  'flex-start',
+  // distributed alignment
+  'space-around',
+  'space-between',
+  'space-evenly'
 ]);
 
-function isReactNativeStyleProp(propName: string): boolean {
-  return stylePropertyAllowlistSet.has(propName) || propName.startsWith('--');
-}
+/**
+ * Pre-process 'create'
+ */
 
-function isReactNativeStyleValue(propValue: mixed): boolean {
-  if (typeof propValue === 'string') {
-    // RN doesn't have an inherit keyword
-    if (propValue === 'inherit') {
-      return false;
-    }
-    // RN doesn't have an inherit keyword
-    if (propValue === 'initial') {
-      return false;
-    }
-    // RN doesn't support calc functions
-    if (propValue.includes('calc(')) {
-      return false;
-    }
-  }
+function processStyle<S: { +[string]: mixed }>(
+  style: S,
+  skipValidation?: boolean
+): S {
+  const result: { [string]: mixed } = {};
 
-  return true;
-}
+  for (const propName in style) {
+    const styleValue = style[propName];
 
-// regex to find spaces outside of brackets
-const spacesRegex = /\s+(?![^()]*\))/g;
-function isReactNativeShortFormValid(
-  propName: string,
-  propValue: mixed
-): boolean {
-  if (
-    propName === 'borderColor' ||
-    propName === 'borderRadius' ||
-    propName === 'borderStyle' ||
-    propName === 'borderWidth' ||
-    propName === 'margin' ||
-    propName === 'padding'
-  ) {
-    if (
-      typeof propValue === 'string' &&
-      propValue.match(spacesRegex) !== null
-    ) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function processStyle<S: { +[string]: mixed }>(style: S): S {
-  const result = { ...style };
-
-  const propNames = Object.keys(result);
-  for (let i = 0; i < propNames.length; i++) {
-    const propName = propNames[i];
-    const styleValue = result[propName];
-
-    if (
-      CSSMediaQuery.isMediaQueryString(propName) &&
-      typeof styleValue === 'object' &&
-      styleValue != null
-    ) {
-      const processedSubstyle = processStyle(styleValue);
-      result[propName] = new CSSMediaQuery(propName, processedSubstyle);
+    if (skipValidation !== true && !isAllowedStyleKey(propName)) {
+      if (__DEV__) {
+        warnMsg(`unsupported style property "${propName}"`);
+      }
       continue;
     }
 
-    if (
-      typeof styleValue === 'object' &&
-      styleValue != null &&
-      Object.hasOwn(styleValue, 'default')
-    ) {
-      // TODO: customize processStyle to be able to override the candidate "prop name"
-      result[propName] = processStyle(styleValue);
-      continue;
-    }
-
-    if (typeof styleValue === 'string') {
-      if (stringContainsVariables(styleValue)) {
-        result[propName] = CSSUnparsedValue.parse(propName, styleValue);
+    // Object values
+    else if (typeof styleValue === 'object' && styleValue != null) {
+      if (Object.hasOwn(styleValue, 'default')) {
+        // TODO: customize processStyle to be able to override the candidate "prop name"
+        result[propName] = processStyle(styleValue);
         continue;
       }
-
-      // React Native shadows on iOS cannot polyfill box-shadow
-      if (propName === 'boxShadow') {
-        if (__DEV__) {
-          warnMsg('unsupported style property "boxShadow".');
-        }
-        delete result.boxShadow;
+      if (CSSMediaQuery.isMediaQueryString(propName)) {
+        const processedSubstyle = processStyle(styleValue);
+        result[propName] = new CSSMediaQuery(propName, processedSubstyle);
         continue;
       }
-
-      // React Native only supports non-standard text-shadow styles
-      if (propName === 'textShadow') {
-        result[propName] = new CSSTextShadow(styleValue);
-        continue;
-      }
-
-      // RN on Android doesn't like the string '0'
-      if (styleValue === '0') {
-        result[propName] = 0;
-        continue;
-      }
-
-      const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
-      if (maybeLengthUnitValue != null) {
-        result[propName] = new CSSLengthUnitValue(...maybeLengthUnitValue);
-        continue;
-      }
-    }
-
-    if (propName === '::placeholder') {
-      if (typeof styleValue === 'object' && styleValue != null) {
+      if (propName === '::placeholder') {
         const placeholderStyleProps = Object.keys(styleValue);
         for (let i = 0; i < placeholderStyleProps.length; i++) {
           const propName = placeholderStyleProps[i];
@@ -316,33 +95,153 @@ function processStyle<S: { +[string]: mixed }>(style: S): S {
             }
           }
         }
-        delete result['::placeholder'];
         continue;
       }
     }
 
+    // String values
+    else if (typeof styleValue === 'string') {
+      // Polyfill support for string '0' on Android
+      if (styleValue === '0') {
+        result[propName] = 0;
+        continue;
+      }
+      // Polyfill support for custom property references (do this first)
+      else if (stringContainsVariables(styleValue)) {
+        result[propName] = CSSUnparsedValue.parse(propName, styleValue);
+        continue;
+      } else if (
+        propName === 'caretColor' &&
+        (typeof styleValue === 'undefined' || styleValue === 'auto')
+      ) {
+        if (__DEV__) {
+          warnMsg(
+            `unsupported style value in "${propName}:${String(styleValue)}"`
+          );
+        }
+        continue;
+      }
+      // Workaround unsupported objectFit values
+      else if (propName === 'objectFit' && styleValue === 'none') {
+        result[propName] = 'scale-down';
+        continue;
+      }
+      // Polyfill placeContent
+      else if (propName === 'placeContent') {
+        // None of these values are supported in RN for both properties.
+        if (!validPlaceContentValues.has(styleValue)) {
+          if (__DEV__) {
+            warnMsg(
+              `unsupported style value in "${propName}:${String(styleValue)}"`
+            );
+          }
+          continue;
+        }
+      }
+      // Workaround unsupported position values
+      else if (
+        propName === 'position' &&
+        (styleValue === 'fixed' || styleValue === 'sticky')
+      ) {
+        const fallback = styleValue === 'fixed' ? 'absolute' : 'relative';
+        if (__DEV__) {
+          warnMsg(
+            `unsupported style value in "position:${styleValue}". Falling back to "position:${fallback}".`
+          );
+        }
+        result[propName] = fallback;
+        continue;
+      }
+      // Polyfill single-value text shadows
+      else if (propName === 'textShadow') {
+        result[propName] = new CSSTextShadow(styleValue);
+        continue;
+      }
+      // Polyfill transform as string value
+      else if (propName === 'transform') {
+        result[propName] = parseTransform(styleValue);
+        continue;
+      }
+      // Polyfill time-valued string values (e.g., '1000ms' => 1000)
+      else if (
+        propName === 'animationDelay' ||
+        propName === 'animationDuration' ||
+        propName === 'transitionDelay' ||
+        propName === 'transitionDuration'
+      ) {
+        result[propName] = parseTimeValue(styleValue);
+        continue;
+      }
+
+      const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
+      if (maybeLengthUnitValue != null) {
+        result[propName] = new CSSLengthUnitValue(...maybeLengthUnitValue);
+        continue;
+        // React Native doesn't support these keywords or functions
+      } else if (
+        styleValue === 'currentcolor' ||
+        styleValue === 'inherit' ||
+        styleValue === 'initial' ||
+        styleValue === 'unset' ||
+        styleValue.includes('calc(')
+      ) {
+        if (__DEV__) {
+          warnMsg(
+            `unsupported style value in "${propName}:${String(styleValue)}"`
+          );
+        }
+        continue;
+      } else if (!isAllowedShortFormValue(propName, styleValue)) {
+        if (__DEV__) {
+          errorMsg(
+            `invalid style value in "${propName}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
+          );
+        }
+        continue;
+      }
+    }
+
+    // Number values
+    else if (typeof styleValue === 'number') {
+      // Polyfill numeric fontWeight (for desktop)
+      if (propName === 'fontWeight') {
+        result[propName] = styleValue.toString();
+        continue;
+      }
+    }
+
+    // Everything else
     result[propName] = styleValue;
   }
 
-  return result;
+  return result as $FlowFixMe;
 }
 
+/**
+ * Resolve 'props'
+ */
 const mqDark = '@media (prefers-color-scheme: dark)';
 
-function resolveStyle<S: { +[string]: mixed }>(
-  style: S,
+function resolveStyle(
+  _style: $ReadOnlyArray<?{ [key: string]: mixed }> | { [key: string]: mixed },
   options: ResolveStyleOptions
-): S {
+): { +[string]: mixed } {
+  const { viewportHeight, viewportWidth } = options;
+
+  let style = flattenStyle(_style);
+  style = CSSMediaQuery.resolveMediaQueries(style, {
+    width: viewportWidth,
+    height: viewportHeight
+  });
+
   const colorScheme = options.colorScheme || 'light';
   const customProperties = options.customProperties || __customProperties;
   const inheritedFontSize = options.inheritedFontSize;
 
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
-  const propNames = Object.keys(style);
 
-  for (let i = 0; i < propNames.length; i++) {
-    const propName = propNames[i];
+  for (const propName in style) {
     const styleValue = style[propName];
 
     // Resolve the stylex media variant value object syntax
@@ -402,11 +301,6 @@ function resolveStyle<S: { +[string]: mixed }>(
       }
     }
 
-    if (propName === 'transform' && typeof styleValue === 'string') {
-      result[propName] = parseTransform(styleValue);
-      continue;
-    }
-
     // resolve length units
     if (styleValue instanceof CSSLengthUnitValue) {
       result[propName] = styleValue.resolvePixelValue({
@@ -420,7 +314,7 @@ function resolveStyle<S: { +[string]: mixed }>(
 
     // resolve textShadow
     if (styleValue instanceof CSSTextShadow) {
-      const textShadowStyles = styleValue.resolve();
+      const textShadowStyles = styleValue.resolveStyles();
       Object.assign(result, textShadowStyles);
       stylesToReprocess.textShadowOffset = textShadowStyles.textShadowOffset;
       continue;
@@ -431,7 +325,7 @@ function resolveStyle<S: { +[string]: mixed }>(
 
   const propNamesToReprocess = Object.keys(stylesToReprocess);
   if (propNamesToReprocess.length > 0) {
-    const processedStyles = processStyle(stylesToReprocess);
+    const processedStyles = processStyle(stylesToReprocess, true);
     Object.assign(result, resolveStyle(processedStyles, options));
   }
 
@@ -481,13 +375,6 @@ function _keyframes(k: Keyframes): Keyframes {
 }
 export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
 
-const timeValuedProperties = [
-  'animationDelay',
-  'animationDuration',
-  'transitionDelay',
-  'transitionDuration'
-];
-
 /**
  * The spread method shim
  */
@@ -500,338 +387,185 @@ export function props(
   ...
 } {
   const options = this;
-  const { passthroughProperties = [], viewportHeight, viewportWidth } = options;
   const nativeProps: { [string]: $FlowFixMe } = {};
 
-  let initialFlatStyle = flattenStyle(style);
-  initialFlatStyle = CSSMediaQuery.resolveMediaQueries(initialFlatStyle, {
-    width: viewportWidth,
-    height: viewportHeight
-  });
-  initialFlatStyle = resolveStyle(initialFlatStyle, options);
+  const flatStyle = resolveStyle(style, options);
 
-  /* eslint-disable prefer-const */
-  let {
-    lineClamp,
-    placeholderTextColor,
-    ...flatStyle
-  }: { [key: string]: mixed } = initialFlatStyle;
-  /* eslint-enable prefer-const */
-  const prevStyle = { ...flatStyle };
+  let nextStyle: { [key: string]: mixed } = {};
 
   for (const styleProp in flatStyle) {
     const styleValue = flatStyle[styleProp];
 
-    // Filter out any unexpected style property names so RN doesn't crash but give
-    // the developer a warning to let them know that there's a new prop we should either
-    // explicitly ignore or process in some way.
-    // NOTE: Any kind of prop name transformations should happen before this check.
-    if (
-      !isReactNativeStyleProp(styleProp) &&
-      passthroughProperties.indexOf(styleProp) === -1
-    ) {
-      // block/inlineSize
-      if (styleProp === 'blockSize') {
-        flatStyle.height = flatStyle.height ?? styleValue;
-      } else if (styleProp === 'inlineSize') {
-        flatStyle.width = flatStyle.width ?? styleValue;
-      } else if (styleProp === 'maxBlockSize') {
-        flatStyle.maxHeight = flatStyle.maxHeight ?? styleValue;
-      } else if (styleProp === 'minBlockSize') {
-        flatStyle.minHeight = flatStyle.minHeight ?? styleValue;
-      } else if (styleProp === 'maxInlineSize') {
-        flatStyle.maxWidth = flatStyle.maxWidth ?? styleValue;
-      } else if (styleProp === 'minInlineSize') {
-        flatStyle.minWidth = flatStyle.minWidth ?? styleValue;
-      }
-      // borderBlock
-      else if (styleProp === 'borderBlockColor') {
-        flatStyle.borderTopColor = flatStyle.borderTopColor ?? styleValue;
-        flatStyle.borderBottomColor = flatStyle.borderBottomColor ?? styleValue;
-      } else if (styleProp === 'borderBlockStyle') {
-        flatStyle.borderTopStyle = flatStyle.borderTopStyle ?? styleValue;
-        flatStyle.borderBottomStyle = flatStyle.borderBottomStyle ?? styleValue;
-      } else if (styleProp === 'borderBlockWidth') {
-        flatStyle.borderTopWidth = flatStyle.borderTopWidth ?? styleValue;
-        flatStyle.borderBottomWidth = flatStyle.borderBottomWidth ?? styleValue;
-      } else if (styleProp === 'borderBlockEndColor') {
-        flatStyle.borderBottomColor = prevStyle.borderBottomColor ?? styleValue;
-      } else if (styleProp === 'borderBlockEndStyle') {
-        flatStyle.borderBottomStyle = prevStyle.borderBottomStyle ?? styleValue;
-      } else if (styleProp === 'borderBlockEndWidth') {
-        flatStyle.borderBottomWidth = prevStyle.borderBottomWidth ?? styleValue;
-      } else if (styleProp === 'borderBlockStartColor') {
-        flatStyle.borderTopColor = prevStyle.borderTopColor ?? styleValue;
-      } else if (styleProp === 'borderBlockStartStyle') {
-        flatStyle.borderTopStyle = prevStyle.borderTopStyle ?? styleValue;
-      } else if (styleProp === 'borderBlockStartWidth') {
-        flatStyle.borderTopWidth = prevStyle.borderTopWidth ?? styleValue;
-      }
-      // borderInline
-      else if (styleProp === 'borderInlineColor') {
-        flatStyle.borderStartColor = flatStyle.borderStartColor ?? styleValue;
-        flatStyle.borderEndColor = flatStyle.borderEndColor ?? styleValue;
-      } else if (styleProp === 'borderInlineStyle') {
-        flatStyle.borderStartStyle = flatStyle.borderStartStyle ?? styleValue;
-        flatStyle.borderEndStyle = flatStyle.borderEndStyle ?? styleValue;
-      } else if (styleProp === 'borderInlineWidth') {
-        flatStyle.borderStartWidth = flatStyle.borderStartWidth ?? styleValue;
-        flatStyle.borderEndWidth = flatStyle.borderEndWidth ?? styleValue;
-      } else if (styleProp === 'borderInlineEndColor') {
-        flatStyle.borderEndColor = styleValue;
-      } else if (styleProp === 'borderInlineEndStyle') {
-        flatStyle.borderEndStyle = styleValue;
-      } else if (styleProp === 'borderInlineEndWidth') {
-        flatStyle.borderEndWidth = styleValue;
-      } else if (styleProp === 'borderInlineStartColor') {
-        flatStyle.borderStartColor = styleValue;
-      } else if (styleProp === 'borderInlineStartStyle') {
-        flatStyle.borderStartStyle = styleValue;
-      } else if (styleProp === 'borderInlineStartWidth') {
-        flatStyle.borderStartWidth = styleValue;
-      }
-      // borderRadius
-      else if (styleProp === 'borderStartStartRadius') {
-        flatStyle.borderTopStartRadius = styleValue;
-      } else if (styleProp === 'borderEndStartRadius') {
-        flatStyle.borderBottomStartRadius = styleValue;
-      } else if (styleProp === 'borderStartEndRadius') {
-        flatStyle.borderTopEndRadius = styleValue;
-      } else if (styleProp === 'borderEndEndRadius') {
-        flatStyle.borderBottomEndRadius = styleValue;
-      }
-      // caretColor polyfill
-      else if (styleProp === 'caretColor') {
-        if (styleValue === 'transparent') {
-          nativeProps.caretHidden = true;
-        } else if (
-          typeof styleValue === 'undefined' ||
-          // None of these values are supported in RN
-          styleValue === 'auto' ||
-          styleValue === 'inherit' ||
-          styleValue === 'initial' ||
-          styleValue === 'currentcolor' ||
-          styleValue === 'unset'
-        ) {
-          if (__DEV__) {
-            warnMsg(
-              `unsupported style value in "${styleProp}:${String(styleValue)}"`
-            );
-          }
-        } else {
-          nativeProps.cursorColor = styleValue;
-        }
-      }
-      // inset
-      else if (styleProp === 'inset') {
-        flatStyle.top = flatStyle.top ?? styleValue;
-        flatStyle.start = flatStyle.start ?? styleValue;
-        flatStyle.end = flatStyle.end ?? styleValue;
-        flatStyle.bottom = flatStyle.bottom ?? styleValue;
-      } else if (styleProp === 'insetBlock') {
-        flatStyle.top = flatStyle.top ?? styleValue;
-        flatStyle.bottom = flatStyle.bottom ?? styleValue;
-      } else if (styleProp === 'insetBlockEnd') {
-        flatStyle.bottom = prevStyle.bottom ?? styleValue;
-      } else if (styleProp === 'insetBlockStart') {
-        flatStyle.top = prevStyle.top ?? styleValue;
-      } else if (styleProp === 'insetInline') {
-        flatStyle.end = flatStyle.end ?? styleValue;
-        flatStyle.start = flatStyle.start ?? styleValue;
-      } else if (styleProp === 'insetInlineEnd') {
-        flatStyle.end = prevStyle.end ?? styleValue;
-      } else if (styleProp === 'insetInlineStart') {
-        flatStyle.start = prevStyle.start ?? styleValue;
-      }
-      // marginBlock
-      else if (styleProp === 'marginBlock') {
-        flatStyle.marginVertical = styleValue;
-      } else if (styleProp === 'marginBlockStart') {
-        flatStyle.marginTop = flatStyle.marginTop ?? styleValue;
-      } else if (styleProp === 'marginBlockEnd') {
-        flatStyle.marginBottom = flatStyle.marginBottom ?? styleValue;
-      }
-      // marginInline
-      else if (styleProp === 'marginInline') {
-        flatStyle.marginHorizontal = styleValue;
-      } else if (styleProp === 'marginInlineStart') {
-        flatStyle.marginStart = styleValue;
-      } else if (styleProp === 'marginInlineEnd') {
-        flatStyle.marginEnd = styleValue;
-      }
-      // paddingBlock
-      else if (styleProp === 'paddingBlock') {
-        flatStyle.paddingVertical = styleValue;
-      } else if (styleProp === 'paddingBlockStart') {
-        flatStyle.paddingTop = flatStyle.paddingTop ?? styleValue;
-      } else if (styleProp === 'paddingBlockEnd') {
-        flatStyle.paddingBottom = flatStyle.paddingBottom ?? styleValue;
-      }
-      // paddingInline
-      else if (styleProp === 'paddingInline') {
-        flatStyle.paddingHorizontal = styleValue;
-      } else if (styleProp === 'paddingInlineStart') {
-        flatStyle.paddingStart = styleValue;
-      } else if (styleProp === 'paddingInlineEnd') {
-        flatStyle.paddingEnd = styleValue;
-      }
-      // visibility polyfill
-      // note: we can't polyfill nested visibility changes
-      else if (styleProp === 'visibility') {
-        if (styleValue === 'hidden' || styleValue === 'collapse') {
-          flatStyle.opacity = 0;
-          nativeProps['aria-hidden'] = true;
-          nativeProps.pointerEvents = 'none';
-          nativeProps.tabIndex = -1;
-        }
-      }
-      // placeContent polyfill
-      else if (styleProp === 'placeContent') {
-        // These values are supported in RN for both alignContent and justifyContent.
-        if (
-          // positional alignment
-          styleValue === 'center' ||
-          styleValue === 'flex-end' ||
-          styleValue === 'flex-start' ||
-          // distributed alignment
-          styleValue === 'space-around' ||
-          styleValue === 'space-between' ||
-          styleValue === 'space-evenly'
-        ) {
-          flatStyle.alignContent = styleValue;
-          flatStyle.justifyContent = styleValue;
-        }
-        // None of these values are supported in RN for both properties.
-        else if (
-          // global values
-          styleValue === 'inherit' ||
-          styleValue === 'initial' ||
-          styleValue === 'revert' ||
-          styleValue === 'revert-layer' ||
-          styleValue === 'unset' ||
-          // normal alignment
-          styleValue === 'normal' ||
-          // positional alignment
-          styleValue === 'end' ||
-          styleValue === 'start' ||
-          // distributed alignment
-          styleValue === 'stretch' ||
-          // overflow alignment
-          styleValue === 'safe center' ||
-          styleValue === 'unsafe center'
-        ) {
-          if (__DEV__) {
-            warnMsg(
-              `unsupported style value in "${styleProp}:${String(styleValue)}"`
-            );
-          }
-        }
-        // Multiple, different values are invalid.
-        else {
-          if (__DEV__) {
-            errorMsg(
-              `invalid style value in "${styleProp}:${String(styleValue)}"`
-            );
-          }
-        }
-      }
-      // everything else
-      else {
-        if (__DEV__) {
-          warnMsg(`unsupported style property "${styleProp}"`);
-        }
-      }
-
-      delete flatStyle[styleProp];
-      continue;
+    // block/inlineSize
+    if (styleProp === 'blockSize') {
+      nextStyle.height = nextStyle.height ?? styleValue;
+    } else if (styleProp === 'inlineSize') {
+      nextStyle.width = nextStyle.width ?? styleValue;
+    } else if (styleProp === 'maxBlockSize') {
+      nextStyle.maxHeight = nextStyle.maxHeight ?? styleValue;
+    } else if (styleProp === 'minBlockSize') {
+      nextStyle.minHeight = nextStyle.minHeight ?? styleValue;
+    } else if (styleProp === 'maxInlineSize') {
+      nextStyle.maxWidth = nextStyle.maxWidth ?? styleValue;
+    } else if (styleProp === 'minInlineSize') {
+      nextStyle.minWidth = nextStyle.minWidth ?? styleValue;
     }
-
-    // Similar filter to the prop name one above but instead operates on the property's
-    // value. Similarly, any sort of prop value transformations should happen before this
-    // filter.
-    // We check this at resolve time to ensure the render-time styles are safe.
-    if (!isReactNativeStyleValue(styleValue)) {
-      if (__DEV__) {
-        warnMsg(
-          `unsupported style value in "${styleProp}:${String(styleValue)}"`
-        );
-      }
-      delete flatStyle[styleProp];
-      continue;
+    // borderBlock
+    else if (styleProp === 'borderBlockColor') {
+      nextStyle.borderTopColor = nextStyle.borderTopColor ?? styleValue;
+      nextStyle.borderBottomColor = nextStyle.borderBottomColor ?? styleValue;
+    } else if (styleProp === 'borderBlockStyle') {
+      nextStyle.borderTopStyle = nextStyle.borderTopStyle ?? styleValue;
+      nextStyle.borderBottomStyle = nextStyle.borderBottomStyle ?? styleValue;
+    } else if (styleProp === 'borderBlockWidth') {
+      nextStyle.borderTopWidth = nextStyle.borderTopWidth ?? styleValue;
+      nextStyle.borderBottomWidth = nextStyle.borderBottomWidth ?? styleValue;
+    } else if (styleProp === 'borderBlockEndColor') {
+      nextStyle.borderBottomColor = flatStyle.borderBottomColor ?? styleValue;
+    } else if (styleProp === 'borderBlockEndStyle') {
+      nextStyle.borderBottomStyle = flatStyle.borderBottomStyle ?? styleValue;
+    } else if (styleProp === 'borderBlockEndWidth') {
+      nextStyle.borderBottomWidth = flatStyle.borderBottomWidth ?? styleValue;
+    } else if (styleProp === 'borderBlockStartColor') {
+      nextStyle.borderTopColor = flatStyle.borderTopColor ?? styleValue;
+    } else if (styleProp === 'borderBlockStartStyle') {
+      nextStyle.borderTopStyle = flatStyle.borderTopStyle ?? styleValue;
+    } else if (styleProp === 'borderBlockStartWidth') {
+      nextStyle.borderTopWidth = flatStyle.borderTopWidth ?? styleValue;
     }
-
-    if (!isReactNativeShortFormValid(styleProp, styleValue)) {
-      if (__DEV__) {
-        errorMsg(
-          `invalid style value in "${styleProp}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
-        );
-      }
-      delete flatStyle[styleProp];
-      continue;
+    // borderInline
+    else if (styleProp === 'borderInlineColor') {
+      nextStyle.borderStartColor = nextStyle.borderStartColor ?? styleValue;
+      nextStyle.borderEndColor = nextStyle.borderEndColor ?? styleValue;
+    } else if (styleProp === 'borderInlineStyle') {
+      nextStyle.borderStartStyle = nextStyle.borderStartStyle ?? styleValue;
+      nextStyle.borderEndStyle = nextStyle.borderEndStyle ?? styleValue;
+    } else if (styleProp === 'borderInlineWidth') {
+      nextStyle.borderStartWidth = nextStyle.borderStartWidth ?? styleValue;
+      nextStyle.borderEndWidth = nextStyle.borderEndWidth ?? styleValue;
+    } else if (styleProp === 'borderInlineEndColor') {
+      nextStyle.borderEndColor = styleValue;
+    } else if (styleProp === 'borderInlineEndStyle') {
+      nextStyle.borderEndStyle = styleValue;
+    } else if (styleProp === 'borderInlineEndWidth') {
+      nextStyle.borderEndWidth = styleValue;
+    } else if (styleProp === 'borderInlineStartColor') {
+      nextStyle.borderStartColor = styleValue;
+    } else if (styleProp === 'borderInlineStartStyle') {
+      nextStyle.borderStartStyle = styleValue;
+    } else if (styleProp === 'borderInlineStartWidth') {
+      nextStyle.borderStartWidth = styleValue;
     }
-
-    flatStyle[styleProp] = styleValue;
+    // borderRadius
+    else if (styleProp === 'borderStartStartRadius') {
+      nextStyle.borderTopStartRadius = styleValue;
+    } else if (styleProp === 'borderEndStartRadius') {
+      nextStyle.borderBottomStartRadius = styleValue;
+    } else if (styleProp === 'borderStartEndRadius') {
+      nextStyle.borderTopEndRadius = styleValue;
+    } else if (styleProp === 'borderEndEndRadius') {
+      nextStyle.borderBottomEndRadius = styleValue;
+    }
+    // borderStyle:"none" polyfill
+    else if (styleProp === 'borderStyle' && styleValue === 'none') {
+      nextStyle.borderWidth = 0;
+    } else if (styleProp === 'borderWidth') {
+      nextStyle.borderWidth = nextStyle.borderWidth ?? styleValue;
+    }
+    // caretColor polyfill
+    else if (styleProp === 'caretColor') {
+      if (styleValue === 'transparent') {
+        nativeProps.caretHidden = true;
+      } else {
+        nativeProps.cursorColor = styleValue;
+      }
+    }
+    // inset
+    else if (styleProp === 'inset') {
+      nextStyle.top = nextStyle.top ?? styleValue;
+      nextStyle.start = nextStyle.start ?? styleValue;
+      nextStyle.end = nextStyle.end ?? styleValue;
+      nextStyle.bottom = nextStyle.bottom ?? styleValue;
+    } else if (styleProp === 'insetBlock') {
+      nextStyle.top = nextStyle.top ?? styleValue;
+      nextStyle.bottom = nextStyle.bottom ?? styleValue;
+    } else if (styleProp === 'insetBlockEnd') {
+      nextStyle.bottom = flatStyle.bottom ?? styleValue;
+    } else if (styleProp === 'insetBlockStart') {
+      nextStyle.top = flatStyle.top ?? styleValue;
+    } else if (styleProp === 'insetInline') {
+      nextStyle.end = nextStyle.end ?? styleValue;
+      nextStyle.start = nextStyle.start ?? styleValue;
+    } else if (styleProp === 'insetInlineEnd') {
+      nextStyle.end = flatStyle.end ?? styleValue;
+    } else if (styleProp === 'insetInlineStart') {
+      nextStyle.start = flatStyle.start ?? styleValue;
+    }
+    // lineClamp polyfill
+    else if (styleProp === 'lineClamp') {
+      nativeProps.numberOfLines = styleValue;
+    }
+    // marginBlock
+    else if (styleProp === 'marginBlock') {
+      nextStyle.marginVertical = styleValue;
+    } else if (styleProp === 'marginBlockStart') {
+      nextStyle.marginTop = nextStyle.marginTop ?? styleValue;
+    } else if (styleProp === 'marginBlockEnd') {
+      nextStyle.marginBottom = nextStyle.marginBottom ?? styleValue;
+    }
+    // marginInline
+    else if (styleProp === 'marginInline') {
+      nextStyle.marginHorizontal = styleValue;
+    } else if (styleProp === 'marginInlineStart') {
+      nextStyle.marginStart = styleValue;
+    } else if (styleProp === 'marginInlineEnd') {
+      nextStyle.marginEnd = styleValue;
+    }
+    // paddingBlock
+    else if (styleProp === 'paddingBlock') {
+      nextStyle.paddingVertical = styleValue;
+    } else if (styleProp === 'paddingBlockStart') {
+      nextStyle.paddingTop = nextStyle.paddingTop ?? styleValue;
+    } else if (styleProp === 'paddingBlockEnd') {
+      nextStyle.paddingBottom = nextStyle.paddingBottom ?? styleValue;
+    }
+    // paddingInline
+    else if (styleProp === 'paddingInline') {
+      nextStyle.paddingHorizontal = styleValue;
+    } else if (styleProp === 'paddingInlineStart') {
+      nextStyle.paddingStart = styleValue;
+    } else if (styleProp === 'paddingInlineEnd') {
+      nextStyle.paddingEnd = styleValue;
+    } else if (styleProp === 'placeholderTextColor') {
+      nativeProps.placeholderTextColor = styleValue;
+    }
+    // visibility polyfill
+    // Note: we can't polyfill nested visibility changes
+    else if (styleProp === 'visibility') {
+      if (styleValue === 'hidden' || styleValue === 'collapse') {
+        nextStyle.opacity = 0;
+        nativeProps['aria-hidden'] = true;
+        nativeProps.pointerEvents = 'none';
+        nativeProps.tabIndex = -1;
+      }
+    }
+    // placeContent polyfill
+    else if (styleProp === 'placeContent') {
+      nextStyle.alignContent = nextStyle.alignContent ?? styleValue;
+      nextStyle.justifyContent = nextStyle.justifyContent ?? styleValue;
+    } else {
+      nextStyle[styleProp] = styleValue;
+    }
   }
 
-  if (flatStyle != null && Object.keys(flatStyle).length > 0) {
-    // polyfill boxSizing:"content-box"
-    const boxSizingValue = flatStyle.boxSizing;
+  if (nextStyle != null && Object.keys(nextStyle).length > 0) {
+    // boxSizing:"content-box" polyfill
+    const boxSizingValue = nextStyle.boxSizing;
     if (boxSizingValue === 'content-box') {
-      flatStyle = fixContentBox(flatStyle);
+      nextStyle = fixContentBox(nextStyle);
     }
-    delete flatStyle.boxSizing;
-
-    // polyfill borderStyle:"none" behavior
-    if (flatStyle.borderStyle === 'none') {
-      flatStyle.borderWidth = 0;
-      delete flatStyle.borderStyle;
-    }
-
-    // polyfill numeric fontWeight (for desktop)
-    if (typeof flatStyle.fontWeight === 'number') {
-      flatStyle.fontWeight = flatStyle.fontWeight.toString();
-    }
-
-    // workaround unsupported objectFit values
-    if (flatStyle.objectFit === 'none') {
-      flatStyle.objectFit = 'scale-down';
-    }
-
-    // workaround unsupported position values
-    const positionValue = flatStyle.position;
-    if (positionValue === 'fixed') {
-      flatStyle.position = 'absolute';
-      if (__DEV__) {
-        warnMsg(
-          'unsupported style value in "position:fixed". Falling back to "position:absolute".'
-        );
-      }
-    } else if (positionValue === 'sticky') {
-      flatStyle.position = 'relative';
-      if (__DEV__) {
-        warnMsg(
-          'unsupported style value in "position:sticky". Falling back to "position:relative".'
-        );
-      }
-    }
-
-    for (const timeValuedProperty of timeValuedProperties) {
-      if (typeof flatStyle[timeValuedProperty] === 'string') {
-        flatStyle[timeValuedProperty] = parseTimeValue(
-          flatStyle[timeValuedProperty]
-        );
-      }
-    }
-
-    nativeProps.style = flatStyle;
-  }
-
-  if (lineClamp != null) {
-    nativeProps.numberOfLines = lineClamp;
-  }
-
-  if (placeholderTextColor != null) {
-    nativeProps.placeholderTextColor = placeholderTextColor;
+    delete nextStyle.boxSizing;
+    nativeProps.style = nextStyle;
   }
 
   return nativeProps;

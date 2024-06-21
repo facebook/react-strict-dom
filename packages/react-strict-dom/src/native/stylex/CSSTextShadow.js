@@ -50,7 +50,7 @@ export class CSSTextShadow {
     }
   }
 
-  resolve(): ReactNativeTextShadowProps {
+  resolveStyles(): ReactNativeTextShadowProps {
     return this.value;
   }
 }

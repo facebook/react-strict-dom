@@ -14,10 +14,10 @@ const transformRegex1 =
 const transformRegex2 = /(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/;
 const transformRegex3 = /matrix\((.*)\)/;
 
-const cache = new Map<string, Transform[]>();
+const memoizedValues = new Map<string, Transform[]>();
 
 export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
-  const memoizedValue = cache.get(transform);
+  const memoizedValue = memoizedValues.get(transform);
   if (memoizedValue != null) {
     return memoizedValue;
   }
@@ -123,7 +123,7 @@ export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
     }
   }
 
-  cache.set(transform, parsedTransforms);
+  memoizedValues.set(transform, parsedTransforms);
 
   return parsedTransforms;
 }

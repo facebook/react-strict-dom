@@ -45,14 +45,6 @@ exports[`properties: custom property var with hover styles 1`] = `
 }
 `;
 
-exports[`properties: general "transitionProperty" passthrough 1`] = `
-{
-  "style": {
-    "transitionProperty": "opacity",
-  },
-}
-`;
-
 exports[`properties: general animationDelay 1`] = `
 {
   "style": {
@@ -371,6 +363,15 @@ exports[`properties: general placeContent: center 1`] = `
 }
 `;
 
+exports[`properties: general placeContent: does not override existing long-forms 1`] = `
+{
+  "style": {
+    "alignContent": "flex-start",
+    "justifyContent": "flex-start",
+  },
+}
+`;
+
 exports[`properties: general placeContent: flexStart 1`] = `
 {
   "style": {
@@ -644,6 +645,14 @@ exports[`properties: general transitionDuration 1`] = `
 {
   "style": {
     "transitionDuration": 500,
+  },
+}
+`;
+
+exports[`properties: general transitionProperty 1`] = `
+{
+  "style": {
+    "transitionProperty": "opacity",
   },
 }
 `;
@@ -1252,9 +1261,3 @@ exports[`units: length 10 "vw" units are resolved to pixels 1`] = `
   },
 }
 `;
-
-exports[`unsupported style values calc 1`] = `{}`;
-
-exports[`unsupported style values inherit 1`] = `{}`;
-
-exports[`unsupported style values initial 1`] = `{}`;
