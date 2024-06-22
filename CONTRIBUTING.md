@@ -85,6 +85,12 @@ In another process, start the examples app:
 npm run dev -w examples
 ```
 
+If you need to update one of the patched `node_modules`, edit the file directly in `node_modules` and then run:
+
+```
+npx patch-package <package-name>
+```
+
 ### Simulator testing
 
 Launch the iOS simulator using XCode and then follow the Expo instructions to load the app in the simulator.

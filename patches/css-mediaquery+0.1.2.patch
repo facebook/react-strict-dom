@@ -1,0 +1,41 @@
+diff --git a/node_modules/css-mediaquery/index.js b/node_modules/css-mediaquery/index.js
+index b1d9b0d..1dfc90c 100644
+--- a/node_modules/css-mediaquery/index.js
++++ b/node_modules/css-mediaquery/index.js
+@@ -37,7 +37,7 @@ function matchQuery(mediaQuery, values) {
+                 value    = values[feature];
+ 
+             // Missing or falsy values don't match.
+-            if (!value) { return false; }
++            if (!value && value !== 0) { return false; }
+ 
+             switch (feature) {
+                 case 'orientation':
+@@ -84,8 +84,15 @@ function matchQuery(mediaQuery, values) {
+     });
+ }
+ 
++var memoizedValues = new Map();
++
+ function parseQuery(mediaQuery) {
+-    return mediaQuery.split(',').map(function (query) {
++    var memoizedValue = memoizedValues.get(mediaQuery);
++    if (memoizedValue != null) {
++      return memoizedValue;
++    }
++
++    var parsedQuery = mediaQuery.split(',').map(function (query) {
+         query = query.trim();
+ 
+         var captures    = query.match(RE_MEDIA_QUERY),
+@@ -113,6 +120,10 @@ function parseQuery(mediaQuery) {
+ 
+         return parsed;
+     });
++
++    memoizedValues.set(mediaQuery, parsedQuery);
++
++    return parsedQuery;
+ }
+ 
+ // -- Utilities ----------------------------------------------------------------
