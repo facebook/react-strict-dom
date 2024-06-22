@@ -1475,8 +1475,9 @@ describe('properties: custom property', () => {
     };
     const styles = css.create({
       test: {
-        '@media (min-width: 400px)': {
-          inlineSize: 'var(--example)'
+        inlineSize: {
+          default: '30px',
+          '@media (min-width: 400px)': 'var(--example)'
         }
       }
     });
@@ -1610,9 +1611,9 @@ expect.extend({
     const EXPECTED_MATCHED_VALUE = 500;
     const { underTest } = css.create({
       underTest: {
-        width: UNEXPECTED_MATCHED_VALUE,
-        [`@media ${query}`]: {
-          width: EXPECTED_MATCHED_VALUE
+        width: {
+          default: UNEXPECTED_MATCHED_VALUE,
+          [query]: EXPECTED_MATCHED_VALUE
         }
       }
     });
@@ -1642,44 +1643,44 @@ expect.extend({
 
 describe('queries: @media', () => {
   test('matches a "min-width" query', () => {
-    expect('(min-width: 400px)').toMatchWindowDimensions({
+    expect('@media (min-width: 400px)').toMatchWindowDimensions({
       width: 450,
       height: 0
     });
-    expect('(min-width: 400px)').not.toMatchWindowDimensions({
+    expect('@media (min-width: 400px)').not.toMatchWindowDimensions({
       width: 350,
       height: 0
     });
   });
 
   test('matches a "max-width" query', () => {
-    expect('(max-width: 400px)').toMatchWindowDimensions({
+    expect('@media (max-width: 400px)').toMatchWindowDimensions({
       width: 350,
       height: 0
     });
-    expect('(max-width: 400px)').not.toMatchWindowDimensions({
+    expect('@media (max-width: 400px)').not.toMatchWindowDimensions({
       width: 450,
       height: 0
     });
   });
 
   test('matches a "min-height" query', () => {
-    expect('(min-height: 400px)').toMatchWindowDimensions({
+    expect('@media (min-height: 400px)').toMatchWindowDimensions({
       width: 0,
       height: 450
     });
-    expect('(min-height: 400px)').not.toMatchWindowDimensions({
+    expect('@media (min-height: 400px)').not.toMatchWindowDimensions({
       width: 0,
       height: 350
     });
   });
 
   test('matches a "max-height" query', () => {
-    expect('(max-height: 400px)').toMatchWindowDimensions({
+    expect('@media (max-height: 400px)').toMatchWindowDimensions({
       width: 0,
       height: 350
     });
-    expect('(max-height: 400px)').not.toMatchWindowDimensions({
+    expect('@media (max-height: 400px)').not.toMatchWindowDimensions({
       width: 0,
       height: 450
     });

@@ -12,14 +12,15 @@ import type {
   MutableCustomProperties
 } from './customProperties';
 import type { IStyleX } from '../../types/styles';
+
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
-import { CSSMediaQuery } from './CSSMediaQuery';
 import { CSSTextShadow } from './CSSTextShadow';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { isAllowedShortFormValue } from './isAllowedShortFormValue';
 import { isAllowedStyleKey } from './isAllowedStyleKey';
+import { mediaQueryMatches } from './mediaQueryMatches';
 import { parseTimeValue } from './parseTimeValue';
 import { parseTransform } from './parseTransform';
 import {
@@ -71,16 +72,6 @@ function processStyle<S: { +[string]: mixed }>(
 
     // Object values
     else if (typeof styleValue === 'object' && styleValue != null) {
-      if (Object.hasOwn(styleValue, 'default')) {
-        // TODO: customize processStyle to be able to override the candidate "prop name"
-        result[propName] = processStyle(styleValue);
-        continue;
-      }
-      if (CSSMediaQuery.isMediaQueryString(propName)) {
-        const processedSubstyle = processStyle(styleValue);
-        result[propName] = new CSSMediaQuery(propName, processedSubstyle);
-        continue;
-      }
       if (propName === '::placeholder') {
         const placeholderStyleProps = Object.keys(styleValue);
         for (let i = 0; i < placeholderStyleProps.length; i++) {
@@ -95,6 +86,9 @@ function processStyle<S: { +[string]: mixed }>(
             }
           }
         }
+        continue;
+      } else if (Object.hasOwn(styleValue, 'default')) {
+        result[propName] = processStyle(styleValue);
         continue;
       }
     }
@@ -223,46 +217,23 @@ function processStyle<S: { +[string]: mixed }>(
 const mqDark = '@media (prefers-color-scheme: dark)';
 
 function resolveStyle(
-  _style: $ReadOnlyArray<?{ [key: string]: mixed }> | { [key: string]: mixed },
+  style: $ReadOnlyArray<?{ [key: string]: mixed }> | { [key: string]: mixed },
   options: ResolveStyleOptions
 ): { +[string]: mixed } {
-  const { viewportHeight, viewportWidth } = options;
-
-  let style = flattenStyle(_style);
-  style = CSSMediaQuery.resolveMediaQueries(style, {
-    width: viewportWidth,
-    height: viewportHeight
-  });
-
+  const { fontScale, hover, inheritedFontSize, viewportHeight, viewportWidth } =
+    options;
   const colorScheme = options.colorScheme || 'light';
   const customProperties = options.customProperties || __customProperties;
-  const inheritedFontSize = options.inheritedFontSize;
 
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
 
-  for (const propName in style) {
-    const styleValue = style[propName];
+  const flatStyle = flattenStyle(style);
 
-    // Resolve the stylex media variant value object syntax
-    if (
-      typeof styleValue === 'object' &&
-      styleValue != null &&
-      Object.hasOwn(styleValue, 'default')
-    ) {
-      let variant = 'default';
-      if (options.colorScheme === 'dark' && Object.hasOwn(styleValue, mqDark)) {
-        variant = mqDark;
-      }
-      if (options.hover === true && Object.hasOwn(styleValue, ':hover')) {
-        variant = ':hover';
-      }
-      // TODO: resolve media queries
-      stylesToReprocess[propName] = styleValue[variant];
-      continue;
-    }
+  for (const propName in flatStyle) {
+    const styleValue = flatStyle[propName];
 
-    // resolve custom property references
+    // Resolve custom property references
     if (styleValue instanceof CSSUnparsedValue) {
       const resolvedValue = resolveVariableReferences(
         propName,
@@ -276,6 +247,48 @@ function resolveStyle(
       continue;
     }
 
+    // Resolve length units
+    if (styleValue instanceof CSSLengthUnitValue) {
+      result[propName] = styleValue.resolvePixelValue({
+        fontScale,
+        inheritedFontSize,
+        viewportHeight,
+        viewportWidth
+      });
+      continue;
+    }
+
+    // Resolve the stylex object-value syntax
+    if (
+      styleValue != null &&
+      typeof styleValue === 'object' &&
+      Object.hasOwn(styleValue, 'default')
+    ) {
+      let activeVariant = 'default';
+      if (Object.hasOwn(styleValue, ':hover') && hover === true) {
+        activeVariant = ':hover';
+      }
+      if (Object.hasOwn(styleValue, mqDark) && colorScheme === 'dark') {
+        activeVariant = mqDark;
+      }
+      // Just picks the last MQ in order that matches.
+      // TODO: decide how StyleX should handle multiple MQs.
+      for (const variant in styleValue) {
+        if (variant.startsWith('@media') && variant !== mqDark) {
+          const matches = mediaQueryMatches(
+            variant,
+            viewportWidth,
+            viewportHeight
+          );
+          if (matches) {
+            activeVariant = variant;
+          }
+        }
+      }
+      stylesToReprocess[propName] = styleValue[activeVariant];
+      continue;
+    }
+
     // Polyfill unitless lineHeight
     // React Native treats unitless as a 'px' value
     // Web treats unitless as fontSize multiplier
@@ -283,16 +296,17 @@ function resolveStyle(
       // Other units would already be instanceof CSSLengthUnitValue
       if (typeof styleValue === 'number' || typeof styleValue === 'string') {
         const lineHeightValue = parseFloat(styleValue);
-        if (style.fontSize instanceof CSSLengthUnitValue) {
-          const { value: fontSizeValue, unit: fontSizeUnit } = style.fontSize;
+        if (flatStyle.fontSize instanceof CSSLengthUnitValue) {
+          const { value: fontSizeValue, unit: fontSizeUnit } =
+            flatStyle.fontSize;
           const value = new CSSLengthUnitValue(
             lineHeightValue * fontSizeValue,
             fontSizeUnit
           );
           stylesToReprocess[propName] = value;
           result[propName] = value;
-        } else if (typeof style.fontSize === 'number') {
-          result[propName] = lineHeightValue * style.fontSize;
+        } else if (typeof flatStyle.fontSize === 'number') {
+          result[propName] = lineHeightValue * flatStyle.fontSize;
         } else {
           // Fallback in case no fontSize
           result[propName] = lineHeightValue * 16;
@@ -301,18 +315,7 @@ function resolveStyle(
       }
     }
 
-    // resolve length units
-    if (styleValue instanceof CSSLengthUnitValue) {
-      result[propName] = styleValue.resolvePixelValue({
-        fontScale: options.fontScale,
-        inheritedFontSize,
-        viewportHeight: options.viewportHeight,
-        viewportWidth: options.viewportWidth
-      });
-      continue;
-    }
-
-    // resolve textShadow
+    // Resolve textShadow
     if (styleValue instanceof CSSTextShadow) {
       const textShadowStyles = styleValue.resolveStyles();
       Object.assign(result, textShadowStyles);
@@ -387,11 +390,11 @@ export function props(
   ...
 } {
   const options = this;
+
   const nativeProps: { [string]: $FlowFixMe } = {};
+  let nextStyle: { [key: string]: mixed } = {};
 
   const flatStyle = resolveStyle(style, options);
-
-  let nextStyle: { [key: string]: mixed } = {};
 
   for (const styleProp in flatStyle) {
     const styleValue = flatStyle[styleProp];
