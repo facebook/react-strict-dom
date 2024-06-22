@@ -97,7 +97,7 @@ const styles = {
   },
   unsupported: {
     backgroundColor: 'var(--missingVar)',
-    boxSizing: 'border-box',
+    boxSizing: 'content-box',
     color: 'currentcolor',
     display: 'inline',
     invalid: 'foo',
