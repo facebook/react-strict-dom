@@ -86,13 +86,12 @@ const styles = {
     transform: 'rotateX(90deg) scaleY(1.2) translateX(10px)',
     transitionDuration: '1s',
     verticalAlign: 'top',
-    width: 300,
+    width: {
+      default: 300,
+      '@media (min-width: 1000px)': '90vw'
+    },
     '::placeholder': {
       color: 'gray'
-    },
-    // todo update to modern syntax
-    '@media (min-width: 1000px)': {
-      width: '90vw'
     }
   },
   unsupported: {
