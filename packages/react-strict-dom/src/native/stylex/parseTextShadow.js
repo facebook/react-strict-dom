@@ -7,6 +7,8 @@
  * @flow strict
  */
 
+import { warnMsg } from '../../shared/logUtils';
+
 const VALUES_REG = /,(?![^(]*\))/;
 const PARTS_REG = /\s(?![^(]*\))/;
 const LENGTH_REG = /^[0-9]+[a-zA-Z%]+?$/;
@@ -44,18 +46,18 @@ function parseValue(str: string) {
   };
 }
 
-export type ParsedShadow = $ReadOnly<{
-  inset: boolean,
-  offsetX: number | string,
-  offsetY: number | string,
-  blurRadius: number | string,
-  spreadRadius: number | string,
-  color: string | null
+export type TextShadowStyle = $ReadOnly<{
+  textShadowColor: string | null,
+  textShadowOffset: $ReadOnly<{
+    height: number | string,
+    width: number | string
+  }>,
+  textShadowRadius: number | string
 }>;
 
-const memoizedValues = new Map<string, $ReadOnlyArray<ParsedShadow>>();
+const memoizedValues = new Map<string, TextShadowStyle>();
 
-export function parseShadow(str: string): $ReadOnlyArray<ParsedShadow> {
+export function parseTextShadow(str: string): TextShadowStyle {
   const memoizedValue = memoizedValues.get(str);
   if (memoizedValue != null) {
     return memoizedValue;
@@ -66,7 +68,22 @@ export function parseShadow(str: string): $ReadOnlyArray<ParsedShadow> {
     .map((s) => s.trim())
     .map(parseValue);
 
-  memoizedValues.set(str, parsedValue);
+  if (__DEV__) {
+    if (parsedValue.length > 1) {
+      warnMsg('unsupported multiple values for style property "textShadow".');
+    }
+  }
+  const { offsetX, offsetY, blurRadius, color } = parsedValue[0];
+  const textShadowStyle = {
+    textShadowColor: color,
+    textShadowOffset: {
+      height: offsetY,
+      width: offsetX
+    },
+    textShadowRadius: blurRadius
+  };
 
-  return parsedValue;
+  memoizedValues.set(str, textShadowStyle);
+
+  return textShadowStyle;
 }

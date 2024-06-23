@@ -14,13 +14,13 @@ import type {
 import type { IStyleX } from '../../types/styles';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
-import { CSSTextShadow } from './CSSTextShadow';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { isAllowedShortFormValue } from './isAllowedShortFormValue';
 import { isAllowedStyleKey } from './isAllowedStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
+import { parseTextShadow } from './parseTextShadow';
 import { parseTimeValue } from './parseTimeValue';
 import { parseTransform } from './parseTransform';
 import {
@@ -146,9 +146,9 @@ function processStyle<S: { +[string]: mixed }>(
         result[propName] = fallback;
         continue;
       }
-      // Polyfill single-value text shadows
+      // Polyfill textShadow
       else if (propName === 'textShadow') {
-        result[propName] = new CSSTextShadow(styleValue);
+        result[propName] = parseTextShadow(styleValue);
         continue;
       }
       // Polyfill transform as string value
@@ -304,7 +304,6 @@ function resolveStyle(
             fontSizeUnit
           );
           stylesToReprocess[propName] = value;
-          result[propName] = value;
         } else if (typeof flatStyle.fontSize === 'number') {
           result[propName] = lineHeightValue * flatStyle.fontSize;
         } else {
@@ -316,10 +315,8 @@ function resolveStyle(
     }
 
     // Resolve textShadow
-    if (styleValue instanceof CSSTextShadow) {
-      const textShadowStyles = styleValue.resolveStyles();
-      Object.assign(result, textShadowStyles);
-      stylesToReprocess.textShadowOffset = textShadowStyles.textShadowOffset;
+    if (propName === 'textShadow') {
+      Object.assign(result, styleValue);
       continue;
     }
 
