@@ -1421,10 +1421,10 @@ describe('properties: custom property', () => {
   test('textShadow with nested/multiple vars', () => {
     const options = {
       customProperties: {
-        height: '2px',
-        width: '1px',
+        height: '20px',
+        width: '10px',
         size: 'var(--width) var(--height)',
-        radius: '3px',
+        radius: '30px',
         red: 'red'
       }
     };
@@ -1438,10 +1438,10 @@ describe('properties: custom property', () => {
     ).toStrictEqual({
       textShadowColor: 'red',
       textShadowOffset: {
-        height: 2,
-        width: 1
+        height: 20,
+        width: 10
       },
-      textShadowRadius: 3
+      textShadowRadius: 30
     });
   });
 
