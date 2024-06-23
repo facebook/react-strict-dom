@@ -7,6 +7,7 @@
  * @flow strict
  */
 
+import type { ReactStrictDOMDataProps, Stringish } from './TypeShims';
 import type { Styles } from './styles';
 
 type IDRef = string;

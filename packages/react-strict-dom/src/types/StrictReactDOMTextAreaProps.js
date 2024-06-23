@@ -8,6 +8,7 @@
  */
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
+import type { Stringish } from './TypeShims';
 
 export type StrictReactDOMTextAreaProps = $ReadOnly<{
   ...StrictReactDOMProps,
