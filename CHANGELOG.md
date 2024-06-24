@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.0.16 (Jun 24, 2024)
+
+### Optimizations
+
+* [Native] Add memoization to `css-mediaquery` parser.
+* [Native] [Improve performance](https://github.com/facebook/react-strict-dom/pull/149#issuecomment-2184250856) of `css.props` by 1.25-1.35x.
+
+### New features
+
+* [Native] Add support for dark `color-scheme` styles.
+* [Native] Add support for [Media Queries](https://stylexjs.com/docs/learn/styling-ui/defining-styles/#media-queries-and-other--rules) syntax to StyleX shim.
+
+### Fixes
+
+* [Native] Avoid setting invalid CSS `direction:'auto'` on native elements.
+* [Native] Move all dev-time style warnings to the `create` step.
+* [Native] Fix support for CSS `letterSpacing`.
+
 ## 0.0.15 (Jun 17, 2024)
 
 ### Fixes
