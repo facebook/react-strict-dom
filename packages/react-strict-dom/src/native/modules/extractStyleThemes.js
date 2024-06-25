@@ -7,9 +7,7 @@
  * @flow strict
  */
 
-import type { Style, Styles } from '../../types/styles';
-
-type CustomProperties = { [key: string]: string | number };
+import type { CustomProperties, Style, Styles } from '../../types/styles';
 
 const emptyValue = [undefined, undefined];
 
@@ -29,7 +27,7 @@ export function extractStyleThemes(
     if (item !== null && typeof item === 'object') {
       if (item.$$theme != null) {
         for (const key in item) {
-          if (typeof item[key] === 'string') {
+          if (item[key] !== undefined) {
             theme[key] = item[key];
           }
         }

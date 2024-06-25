@@ -33,6 +33,7 @@ import {
   InheritedStylesProvider,
   useInheritedStyles
 } from './ContextInheritedStyles';
+import { TextString } from './TextString';
 import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
@@ -415,6 +416,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       );
       const customProperties = useCustomProperties(customPropertiesFromThemes);
       const inheritedStyles = useInheritedStyles();
+      const inheritedFontSize =
+        typeof inheritedStyles?.fontSize === 'number'
+          ? inheritedStyles?.fontSize
+          : undefined;
 
       const {
         color,
@@ -532,8 +537,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       const _styleProps = useStyleProps(renderStyles, {
         customProperties,
         hover,
-        // $FlowFixMe
-        inheritedFontSize: inheritedStyles?.fontSize
+        inheritedFontSize
       });
 
       // Mark `styleProps` as writable so we can mutate it
@@ -562,26 +566,15 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         styleProps.style.writingDirection = dir;
       }
 
+      // Workaround: React Native doesn't support raw text children of View
+      // Sometimes we can auto-fix this
       if (
         isString(children) &&
         nativeComponent !== Text &&
         nativeComponent !== TextInput &&
         nativeComponent !== Image
       ) {
-        let s = {};
-        const p: {
-          style?: ?TextStyleProp
-        } = {};
-        if (inheritedStyles != null) {
-          s = inheritedStyles;
-        }
-        if (hasNextInheritedStyles) {
-          s = { ...s, ...nextInheritedStyles };
-        }
-        if (Object.keys(s).length > 0) {
-          p.style = s;
-        }
-        nativeProps.children = <Text {...p}>{children}</Text>;
+        nativeProps.children = <TextString children={children} hover={hover} />;
       }
 
       // polyfill for display:block-as-default

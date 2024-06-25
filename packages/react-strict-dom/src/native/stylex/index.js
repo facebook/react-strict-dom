@@ -9,9 +9,10 @@
 
 import type {
   CustomProperties,
-  MutableCustomProperties
-} from './customProperties';
-import type { IStyleX } from '../../types/styles';
+  MutableCustomProperties,
+  IStyleX,
+  ReactNativeStyle
+} from '../../types/styles';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
@@ -31,7 +32,7 @@ import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 
 type ResolveStyleOptions = $ReadOnly<{
   colorScheme: ?('light' | 'dark'),
-  customProperties: $ReadOnly<{ [string]: string | number }>,
+  customProperties: CustomProperties,
   fontScale: number | void,
   hover?: ?boolean,
   inheritedFontSize: ?number,
@@ -54,10 +55,10 @@ const validPlaceContentValues = new Set<string>([
  * Pre-process 'create'
  */
 
-function processStyle<S: { +[string]: mixed }>(
-  style: S,
+function processStyle(
+  style: { +[string]: mixed },
   skipValidation?: boolean
-): S {
+): { +[string]: mixed } {
   const result: { [string]: mixed } = {};
 
   for (const propName in style) {
@@ -208,7 +209,7 @@ function processStyle<S: { +[string]: mixed }>(
     result[propName] = styleValue;
   }
 
-  return result as $FlowFixMe;
+  return result;
 }
 
 /**
@@ -217,7 +218,7 @@ function processStyle<S: { +[string]: mixed }>(
 const mqDark = '@media (prefers-color-scheme: dark)';
 
 function resolveStyle(
-  style: $ReadOnlyArray<?{ [key: string]: mixed }> | { [key: string]: mixed },
+  style: $ReadOnlyArray<?{ +[string]: mixed }> | { +[string]: mixed },
   options: ResolveStyleOptions
 ): { +[string]: mixed } {
   const { fontScale, hover, inheritedFontSize, viewportHeight, viewportWidth } =
@@ -227,7 +228,6 @@ function resolveStyle(
 
   const result: { [string]: mixed } = {};
   const stylesToReprocess: { [string]: mixed } = {};
-
   const flatStyle = flattenStyle(style);
 
   for (const propName in flatStyle) {
@@ -296,15 +296,15 @@ function resolveStyle(
       // Other units would already be instanceof CSSLengthUnitValue
       if (typeof styleValue === 'number' || typeof styleValue === 'string') {
         const lineHeightValue = parseFloat(styleValue);
-        if (flatStyle.fontSize instanceof CSSLengthUnitValue) {
-          const { value: fontSizeValue, unit: fontSizeUnit } =
-            flatStyle.fontSize;
+        const fontSize = flatStyle.fontSize;
+        if (fontSize instanceof CSSLengthUnitValue) {
+          const { value: fontSizeValue, unit: fontSizeUnit } = fontSize;
           const value = new CSSLengthUnitValue(
             lineHeightValue * fontSizeValue,
             fontSizeUnit
           );
           stylesToReprocess[propName] = value;
-        } else if (typeof flatStyle.fontSize === 'number') {
+        } else if (typeof fontSize === 'number') {
           result[propName] = lineHeightValue * flatStyle.fontSize;
         } else {
           // Fallback in case no fontSize
@@ -326,10 +326,17 @@ function resolveStyle(
   const propNamesToReprocess = Object.keys(stylesToReprocess);
   if (propNamesToReprocess.length > 0) {
     const processedStyles = processStyle(stylesToReprocess, true);
-    Object.assign(result, resolveStyle(processedStyles, options));
+    // We can end up re-processing lineHeight without a fontSize (since it might already be resolved),
+    // which generates incorrect lineHeight values. Passing the fontSize back in avoids this.
+    const fontSizeStyle =
+      result.fontSize != null ? { fontSize: result.fontSize } : null;
+    Object.assign(
+      result,
+      resolveStyle([fontSizeStyle, processedStyles], options)
+    );
   }
 
-  return result as $FlowIssue;
+  return result;
 }
 
 /**
@@ -345,7 +352,7 @@ function _create<S: { +[string]: { +[string]: mixed } }>(styles: S): {
   for (const styleName in styles) {
     const val = styles[styleName];
     if (typeof val === 'function') {
-      result[styleName] = (...args: $FlowFixMe) => {
+      result[styleName] = (...args: ?(string | number)) => {
         const style = val(...args);
         return processStyle(style);
       };
@@ -379,19 +386,26 @@ export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
  * The spread method shim
  */
 
+type ReactNativeProps = {
+  'aria-hidden'?: boolean,
+  caretHidden?: boolean,
+  cursorColor?: string,
+  numberOfLines?: number,
+  placeholderTextColor?: string,
+  pointerEvents?: 'box-none' | 'box-only' | 'none' | 'auto',
+  style?: ?ReactNativeStyle,
+  tabIndex?: number
+};
 export function props(
   this: ResolveStyleOptions,
   ...style: $ReadOnlyArray<?{ [key: string]: mixed }>
-): {
-  style?: { [string]: string | number },
-  ...
-} {
+): ReactNativeProps {
   const options = this;
 
-  const nativeProps: { [string]: $FlowFixMe } = {};
-  let nextStyle: { [key: string]: mixed } = {};
+  const nativeProps: ReactNativeProps = {};
+  let nextStyle: ReactNativeStyle = {};
 
-  const flatStyle = resolveStyle(style, options);
+  const flatStyle = resolveStyle(style, options) as $FlowFixMe;
 
   for (const styleProp in flatStyle) {
     const styleValue = flatStyle[styleProp];
@@ -596,7 +610,7 @@ export const createTheme = (
 ): CustomProperties => {
   const result: MutableCustomProperties = { $$theme: 'theme' };
   for (const key in baseTokens) {
-    const varName: string = baseTokens[key] as $FlowFixMe;
+    const varName: string = baseTokens[key];
     const normalizedKey = varName.replace(/^var\(--(.*)\)$/, '$1');
     result[normalizedKey] = overrides[key];
   }

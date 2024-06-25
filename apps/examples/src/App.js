@@ -135,6 +135,7 @@ function Shell(): React.MixedElement {
           {/* text inheritance and text children */}
           <html.div>Text inside div (kind of) works</html.div>
           <html.div style={styles.inheritedText}>
+            <html.div>Text style inheritance works</html.div>
             <html.div>
               <html.span>Text style inheritance works</html.span>
             </html.div>
