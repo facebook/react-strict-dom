@@ -8,13 +8,13 @@
  */
 
 import { typeof Animated } from 'react-native';
-import type { Styles } from '../../types/styles';
+import type { CustomProperties, Styles } from '../../types/styles';
 
 import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
 
 type StyleOptions = {
-  customProperties: ?$ReadOnly<{ [string]: string | number }>,
+  customProperties: ?CustomProperties,
   hover: boolean,
   inheritedFontSize: ?number
 };
@@ -25,8 +25,8 @@ export function useStyleProps(
   style: Styles,
   options: StyleOptions
 ): $ReadOnly<{
-  style?: $ReadOnly<{
-    [key: string]: string | number | Animated['Value']
+  style?: ?$ReadOnly<{
+    [key: string]: ?(string | number | Animated['Value'])
   }>,
   ...
 }> {
@@ -44,7 +44,6 @@ export function useStyleProps(
       customProperties: customProperties ?? emptyObject,
       fontScale,
       hover,
-      // $FlowFixMe
       inheritedFontSize,
       viewportHeight: height,
       viewportWidth: width

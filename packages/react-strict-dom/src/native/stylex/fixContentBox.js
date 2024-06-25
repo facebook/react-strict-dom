@@ -7,9 +7,10 @@
  * @flow strict
  */
 
+import type { ReactNativeStyle } from '../../types/styles';
+
 import { warnMsg } from '../../shared/logUtils';
 
-type FlatStyle = { [key: string]: mixed };
 type Direction = 0 | 1 | 2 | 3;
 
 const TOP: Direction = 0;
@@ -43,7 +44,7 @@ const paddingMapping: [string, Direction[]][] = [
   ['paddingEnd', [END]]
 ];
 
-export function fixContentBox(flatStyle: FlatStyle): FlatStyle {
+export function fixContentBox(flatStyle: ReactNativeStyle): ReactNativeStyle {
   const border: [number, number, number, number] = [0, 0, 0, 0];
   const padding: [number, number, number, number] = [0, 0, 0, 0];
 
@@ -77,7 +78,7 @@ export function fixContentBox(flatStyle: FlatStyle): FlatStyle {
     ['maxHeight', correctionVertical]
   ]);
 
-  const nextStyle: FlatStyle = {};
+  const nextStyle: ReactNativeStyle = {};
   for (const styleProp of Object.keys(flatStyle)) {
     const correction = correctionMapping.get(styleProp);
     const styleValue = flatStyle[styleProp];

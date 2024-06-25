@@ -7,7 +7,7 @@
  * @flow strict-local
  */
 
-import type { Style } from '../../types/styles';
+import type { CustomProperties, Style } from '../../types/styles';
 
 import * as React from 'react';
 import { flattenStyle } from './flattenStyle';
@@ -17,7 +17,7 @@ type Value = Style;
 
 type ProviderProps = $ReadOnly<{
   children: React$MixedElement,
-  customProperties: ?$ReadOnly<{ [string]: string | number }>,
+  customProperties: ?CustomProperties,
   hover: boolean,
   value: Value
 }>;

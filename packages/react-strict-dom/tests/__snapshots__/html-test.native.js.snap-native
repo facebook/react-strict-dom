@@ -1554,6 +1554,38 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
 </View>
 `;
 
+exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1`] = `
+<View
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "position": "static",
+    }
+  }
+>
+  <View
+    experimental_layoutConformance="strict"
+    style={
+      {
+        "position": "static",
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "green",
+          "fontSize": 64,
+          "lineHeight": 192,
+        }
+      }
+    >
+      text
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`<html.*> style polyfills inherited themes 1`] = `
 [
   <Text

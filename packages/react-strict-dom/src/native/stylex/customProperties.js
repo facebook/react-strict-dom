@@ -7,12 +7,11 @@
  * @flow strict
  */
 
+import type { CustomProperties } from '../../types/styles';
+
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { CSSVariableReferenceValue } from './typed-om/CSSVariableReferenceValue';
 import { warnMsg } from '../../shared/logUtils';
-
-export type MutableCustomProperties = { [key: string]: string | number };
-export type CustomProperties = $ReadOnly<MutableCustomProperties>;
 
 const memoizedValues = new Map<string, string>();
 
@@ -50,7 +49,7 @@ function resolveVariableReferenceValue(
   const variableName = normalizeVariableName(variable.variable);
   const fallbackValue = variable.fallback;
 
-  let variableValue: string | number | null = propertyRegistry[variableName];
+  let variableValue: mixed = propertyRegistry[variableName];
 
   // Perform variable resolution on the variable's resolved value if it itself
   // contains variables
@@ -101,7 +100,7 @@ export function resolveVariableReferences(
   propertyRegistry: CustomProperties,
   colorScheme: 'light' | 'dark' = 'light'
 ): string | number | null {
-  const result: Array<string | number> = [];
+  const result: Array<mixed> = [];
   for (const value of propValue.values()) {
     if (value instanceof CSSVariableReferenceValue) {
       const resolvedValue = resolveVariableReferenceValue(

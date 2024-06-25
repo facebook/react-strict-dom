@@ -7,13 +7,13 @@
  * @flow strict
  */
 
+import type { CustomProperties } from '../../types/styles';
+
 import * as React from 'react';
 import { __customProperties } from '../stylex';
 
-type Value = $ReadOnly<{ [key: string]: string | number }>;
-
 const defaultContext = __customProperties;
-const ContextCustomProperties: React$Context<Value> =
+const ContextCustomProperties: React$Context<CustomProperties> =
   React.createContext(defaultContext);
 
 if (__DEV__) {
@@ -22,7 +22,9 @@ if (__DEV__) {
 
 export const CustomPropertiesProvider = ContextCustomProperties.Provider;
 
-export function useCustomProperties(customPropertiesFromThemes: ?Value): Value {
+export function useCustomProperties(
+  customPropertiesFromThemes: ?CustomProperties
+): CustomProperties {
   const inheritedCustomProperties = React.useContext(ContextCustomProperties);
   if (customPropertiesFromThemes == null) {
     return inheritedCustomProperties;

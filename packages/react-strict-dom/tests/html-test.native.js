@@ -114,7 +114,10 @@ describe('<html.*>', () => {
         rootColor: 'green'
       });
       const nestedTheme = css.createTheme(tokens, {
-        rootColor: 'blue'
+        rootColor: {
+          default: 'blue',
+          '@media (prefers-color-scheme: dark)': 'purple'
+        }
       });
 
       const styles = css.create({
@@ -254,6 +257,37 @@ describe('<html.*>', () => {
       expect(secondSpan.props.style.lineHeight).toBe(1.5 * 20);
       const secondSpanInner = secondSpan.children[0];
       expect(secondSpanInner.props.style.lineHeight).toBe(2 * 20);
+    });
+
+    test('inherited styles for auto-fix of raw strings', () => {
+      const tokens = css.defineVars({
+        color: 'red',
+        fontSize: '1em',
+        lineHeight: 1
+      });
+      const theme = css.createTheme(tokens, {
+        color: 'green',
+        fontSize: '2em',
+        lineHeight: 3
+      });
+
+      const styles = css.create({
+        root: {
+          color: tokens.color,
+          fontSize: tokens.fontSize,
+          lineHeight: tokens.lineHeight
+        },
+        text: {
+          fontSize: tokens.fontSize
+        }
+      });
+
+      const root = create(
+        <html.div style={[theme, styles.root]}>
+          <html.div style={styles.text}>text</html.div>
+        </html.div>
+      );
+      expect(root.toJSON()).toMatchSnapshot();
     });
 
     test.skip('"inherit" keyword', () => {});
