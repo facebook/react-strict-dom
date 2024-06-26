@@ -14,12 +14,16 @@ import { css } from 'react-strict-dom';
 export const tokens: VarGroup<
   $ReadOnly<{
     squareColor: string,
-    textColor: string
+    textColor: string,
+    inputColor: string,
+    inputPlaceholderColor: string
   }>
 > = css.defineVars({
   squareColor: 'red',
   textColor: {
     default: 'darkred',
     '@media (prefers-color-scheme: dark)': 'lightred'
-  }
+  },
+  inputColor: 'red',
+  inputPlaceholderColor: 'pink'
 });

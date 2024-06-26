@@ -421,6 +421,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           ? inheritedStyles?.fontSize
           : undefined;
 
+      const flatStyle = flattenStyle(extractedStyles);
+
       const {
         color,
         cursor,
@@ -435,8 +437,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         textIndent,
         textTransform,
         whiteSpace,
-        ...nonTextStyles
-      } = flattenStyle(extractedStyles);
+        ...nonTextStyle
+      } = flatStyle;
 
       const nextInheritedStyles: { ...Style } = {};
       if (color != null) {
@@ -499,18 +501,24 @@ export function createStrictDOMComponent<T, P: StrictProps>(
                 styles.aspectRatio(width, height)
             ]
           : null,
-        // Add default text styles
-        nativeComponent === Text && styles.userSelectAuto,
-        // Provided styles
-        nativeComponent === Text
-          ? [inheritedStyles, extractedStyles]
-          : [nonTextStyles]
+        // Styles for Text
+        nativeComponent === Text && [
+          styles.userSelectAuto,
+          inheritedStyles,
+          flatStyle
+        ],
+        // Styles for TextInput
+        nativeComponent === TextInput && [flatStyle],
+        // Styles for everything else
+        (nativeComponent !== Text || nativeComponent !== TextInput) && [
+          nonTextStyle
+        ]
       ];
 
       const { hover, handlers } = useHoverHandlers(
         // we include the next inherited styles for non-text
         // so that any related hover handlers get attached.
-        nativeComponent === Text
+        nativeComponent === Text || nativeComponent === TextInput
           ? renderStyles
           : [renderStyles, nextInheritedStyles as $FlowFixMe]
       );

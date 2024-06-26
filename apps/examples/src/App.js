@@ -398,21 +398,44 @@ function Shell(): React.MixedElement {
         <ExampleBlock title="CSS Variables & Theming">
           <html.p style={styles.inheritedText}>Global variables</html.p>
           <html.div style={styles.square} />
+          <html.input
+            placeholder="input type:text"
+            // $FlowFixMe
+            style={styles.input}
+            type="text"
+          />
 
           <html.p style={[themedTokens, styles.inheritedText]}>
             Direct theming
           </html.p>
           <html.div style={[themedTokens, styles.square]} />
+          <html.input
+            placeholder="input type:text"
+            style={[themedTokens, [styles.input]]}
+            type="text"
+          />
 
           <html.div style={themedTokens}>
             <html.p style={styles.inheritedText}>Inherit theming</html.p>
             <html.div style={styles.square} />
+            <html.input
+              placeholder="input type:text"
+              // $FlowFixMe
+              style={styles.input}
+              type="text"
+            />
           </html.div>
 
           <html.div style={themedTokens}>
             <html.div style={themedTokensAlt}>
               <html.p style={styles.inheritedText}>Nested theming</html.p>
               <html.div style={styles.square} />
+              <html.input
+                placeholder="input type:text"
+                // $FlowFixMe
+                style={styles.input}
+                type="text"
+              />
             </html.div>
           </html.div>
         </ExampleBlock>
@@ -550,12 +573,16 @@ const animateSequence = css.keyframes({
 
 const themedTokens = css.createTheme(tokens, {
   squareColor: 'purple',
-  textColor: 'purple'
+  textColor: 'purple',
+  inputColor: 'purple',
+  inputPlaceholderColor: 'mediumpurple'
 });
 
 const themedTokensAlt = css.createTheme(tokens, {
-  squareColor: 'orange',
-  textColor: 'darkorange'
+  squareColor: 'darkorange',
+  textColor: 'darkorange',
+  inputColor: 'orangered',
+  inputPlaceholderColor: 'orange'
 });
 
 const styles = css.create({
@@ -711,5 +738,12 @@ const styles = css.create({
   text: {
     fontSize: '2em',
     backgroundColor: 'rgba(255,0,0,0.25)'
+  },
+  input: {
+    color: tokens.inputColor,
+    fontWeight: 'bold',
+    '::placeholder': {
+      color: tokens.inputPlaceholderColor
+    }
   }
 });

@@ -76,14 +76,14 @@ function processStyle(
       if (propName === '::placeholder') {
         const placeholderStyleProps = Object.keys(styleValue);
         for (let i = 0; i < placeholderStyleProps.length; i++) {
-          const propName = placeholderStyleProps[i];
-          if (propName === 'color') {
-            result['placeholderTextColor'] = styleValue[propName];
+          const prop = placeholderStyleProps[i];
+          if (prop === 'color') {
+            result['placeholderTextColor'] = processStyle({
+              color: styleValue.color
+            }).color;
           } else {
             if (__DEV__) {
-              warnMsg(
-                `unsupported "::placeholder" style property "${propName}"`
-              );
+              warnMsg(`unsupported "::placeholder" style property "${prop}"`);
             }
           }
         }
@@ -550,7 +550,9 @@ export function props(
       nextStyle.paddingStart = styleValue;
     } else if (styleProp === 'paddingInlineEnd') {
       nextStyle.paddingEnd = styleValue;
-    } else if (styleProp === 'placeholderTextColor') {
+    }
+    // '::placeholder' polyfill
+    else if (styleProp === 'placeholderTextColor') {
       nativeProps.placeholderTextColor = styleValue;
     }
     // visibility polyfill
