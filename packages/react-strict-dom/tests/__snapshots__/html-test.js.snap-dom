@@ -2,13 +2,13 @@
 
 exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 <a
-  className="html-a x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
 exports[`html "a" supports additional anchor attributes 1`] = `
 <a
-  className="html-a x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   download="download.png"
   href="https://google.com"
   referrerPolicy="no-referrer"
@@ -68,7 +68,7 @@ exports[`html "a" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-a x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -92,7 +92,7 @@ exports[`html "a" supports global attributes 1`] = `
 
 exports[`html "a" supports inline event handlers 1`] = `
 <a
-  className="html-a x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -141,7 +141,7 @@ exports[`html "a" supports inline event handlers 1`] = `
 
 exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 <article
-  className="html-article xe8uvvx x1q9hu08 xttmgf0"
+  className="html-article xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -196,7 +196,7 @@ exports[`html "article" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-article xe8uvvx x1q9hu08 xttmgf0"
+  className="html-article xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -220,7 +220,7 @@ exports[`html "article" supports global attributes 1`] = `
 
 exports[`html "article" supports inline event handlers 1`] = `
 <article
-  className="html-article xe8uvvx x1q9hu08 xttmgf0"
+  className="html-article xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -269,7 +269,7 @@ exports[`html "article" supports inline event handlers 1`] = `
 
 exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 <aside
-  className="html-aside xe8uvvx x1q9hu08 xttmgf0"
+  className="html-aside xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -324,7 +324,7 @@ exports[`html "aside" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-aside xe8uvvx x1q9hu08 xttmgf0"
+  className="html-aside xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -348,7 +348,7 @@ exports[`html "aside" supports global attributes 1`] = `
 
 exports[`html "aside" supports inline event handlers 1`] = `
 <aside
-  className="html-aside xe8uvvx x1q9hu08 xttmgf0"
+  className="html-aside xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -397,7 +397,7 @@ exports[`html "aside" supports inline event handlers 1`] = `
 
 exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 <b
-  className="html-b x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -452,7 +452,7 @@ exports[`html "b" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-b x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -476,7 +476,7 @@ exports[`html "b" supports global attributes 1`] = `
 
 exports[`html "b" supports inline event handlers 1`] = `
 <b
-  className="html-b x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -525,7 +525,7 @@ exports[`html "b" supports inline event handlers 1`] = `
 
 exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 <bdi
-  className="html-bdi x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -580,7 +580,7 @@ exports[`html "bdi" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-bdi x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -604,7 +604,7 @@ exports[`html "bdi" supports global attributes 1`] = `
 
 exports[`html "bdi" supports inline event handlers 1`] = `
 <bdi
-  className="html-bdi x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -653,7 +653,7 @@ exports[`html "bdi" supports inline event handlers 1`] = `
 
 exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 <bdo
-  className="html-bdo x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -708,7 +708,7 @@ exports[`html "bdo" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-bdo x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -732,7 +732,7 @@ exports[`html "bdo" supports global attributes 1`] = `
 
 exports[`html "bdo" supports inline event handlers 1`] = `
 <bdo
-  className="html-bdo x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -781,7 +781,7 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 
 exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
 <blockquote
-  className="html-blockquote xe8uvvx x1q9hu08 xttmgf0"
+  className="html-blockquote xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -836,7 +836,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-blockquote xe8uvvx x1q9hu08 xttmgf0"
+  className="html-blockquote xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -860,7 +860,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
 
 exports[`html "blockquote" supports inline event handlers 1`] = `
 <blockquote
-  className="html-blockquote xe8uvvx x1q9hu08 xttmgf0"
+  className="html-blockquote xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1037,14 +1037,14 @@ exports[`html "br" supports inline event handlers 1`] = `
 
 exports[`html "button" ignores and warns about unsupported attributes 1`] = `
 <button
-  className="html-button x1y0btm7 x1q9hu08 xttmgf0 xmkeg23"
+  className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   type="button"
 />
 `;
 
 exports[`html "button" supports additional button attributes 1`] = `
 <button
-  className="html-button x1y0btm7 x1q9hu08 xttmgf0 xmkeg23"
+  className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   disabled={true}
   type="submit"
 />
@@ -1101,7 +1101,7 @@ exports[`html "button" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-button x1y0btm7 x1q9hu08 xttmgf0 xmkeg23"
+  className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1126,7 +1126,7 @@ exports[`html "button" supports global attributes 1`] = `
 
 exports[`html "button" supports inline event handlers 1`] = `
 <button
-  className="html-button x1y0btm7 x1q9hu08 xttmgf0 xmkeg23"
+  className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1176,7 +1176,7 @@ exports[`html "button" supports inline event handlers 1`] = `
 
 exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 <code
-  className="html-code x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
 />
 `;
 
@@ -1231,7 +1231,7 @@ exports[`html "code" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-code x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1255,7 +1255,7 @@ exports[`html "code" supports global attributes 1`] = `
 
 exports[`html "code" supports inline event handlers 1`] = `
 <code
-  className="html-code x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1432,7 +1432,7 @@ exports[`html "del" supports inline event handlers 1`] = `
 
 exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 <div
-  className="html-div xe8uvvx x1q9hu08 xttmgf0"
+  className="html-div xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -1487,7 +1487,7 @@ exports[`html "div" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-div xe8uvvx x1q9hu08 xttmgf0"
+  className="html-div xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1511,7 +1511,7 @@ exports[`html "div" supports global attributes 1`] = `
 
 exports[`html "div" supports inline event handlers 1`] = `
 <div
-  className="html-div xe8uvvx x1q9hu08 xttmgf0"
+  className="html-div xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1560,7 +1560,7 @@ exports[`html "div" supports inline event handlers 1`] = `
 
 exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 <em
-  className="html-em x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -1615,7 +1615,7 @@ exports[`html "em" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-em x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1639,7 +1639,7 @@ exports[`html "em" supports global attributes 1`] = `
 
 exports[`html "em" supports inline event handlers 1`] = `
 <em
-  className="html-em x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1688,7 +1688,7 @@ exports[`html "em" supports inline event handlers 1`] = `
 
 exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 <fieldset
-  className="html-fieldset xe8uvvx x1q9hu08 xttmgf0"
+  className="html-fieldset xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -1743,7 +1743,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-fieldset xe8uvvx x1q9hu08 xttmgf0"
+  className="html-fieldset xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1767,7 +1767,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
 
 exports[`html "fieldset" supports inline event handlers 1`] = `
 <fieldset
-  className="html-fieldset xe8uvvx x1q9hu08 xttmgf0"
+  className="html-fieldset xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1816,7 +1816,7 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
 
 exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 <footer
-  className="html-footer xe8uvvx x1q9hu08 xttmgf0"
+  className="html-footer xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -1871,7 +1871,7 @@ exports[`html "footer" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-footer xe8uvvx x1q9hu08 xttmgf0"
+  className="html-footer xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1895,7 +1895,7 @@ exports[`html "footer" supports global attributes 1`] = `
 
 exports[`html "footer" supports inline event handlers 1`] = `
 <footer
-  className="html-footer xe8uvvx x1q9hu08 xttmgf0"
+  className="html-footer xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -1944,7 +1944,7 @@ exports[`html "footer" supports inline event handlers 1`] = `
 
 exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 <form
-  className="html-form xe8uvvx x1q9hu08 xttmgf0"
+  className="html-form xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -1999,7 +1999,7 @@ exports[`html "form" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-form xe8uvvx x1q9hu08 xttmgf0"
+  className="html-form xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2023,7 +2023,7 @@ exports[`html "form" supports global attributes 1`] = `
 
 exports[`html "form" supports inline event handlers 1`] = `
 <form
-  className="html-form xe8uvvx x1q9hu08 xttmgf0"
+  className="html-form xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2072,7 +2072,7 @@ exports[`html "form" supports inline event handlers 1`] = `
 
 exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 <h1
-  className="html-h1 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h1 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2127,7 +2127,7 @@ exports[`html "h1" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h1 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h1 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2151,7 +2151,7 @@ exports[`html "h1" supports global attributes 1`] = `
 
 exports[`html "h1" supports inline event handlers 1`] = `
 <h1
-  className="html-h1 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h1 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2200,7 +2200,7 @@ exports[`html "h1" supports inline event handlers 1`] = `
 
 exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 <h2
-  className="html-h2 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h2 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2255,7 +2255,7 @@ exports[`html "h2" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h2 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h2 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2279,7 +2279,7 @@ exports[`html "h2" supports global attributes 1`] = `
 
 exports[`html "h2" supports inline event handlers 1`] = `
 <h2
-  className="html-h2 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h2 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2328,7 +2328,7 @@ exports[`html "h2" supports inline event handlers 1`] = `
 
 exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 <h3
-  className="html-h3 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h3 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2383,7 +2383,7 @@ exports[`html "h3" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h3 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h3 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2407,7 +2407,7 @@ exports[`html "h3" supports global attributes 1`] = `
 
 exports[`html "h3" supports inline event handlers 1`] = `
 <h3
-  className="html-h3 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h3 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2456,7 +2456,7 @@ exports[`html "h3" supports inline event handlers 1`] = `
 
 exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 <h4
-  className="html-h4 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h4 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2511,7 +2511,7 @@ exports[`html "h4" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h4 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h4 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2535,7 +2535,7 @@ exports[`html "h4" supports global attributes 1`] = `
 
 exports[`html "h4" supports inline event handlers 1`] = `
 <h4
-  className="html-h4 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h4 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2584,7 +2584,7 @@ exports[`html "h4" supports inline event handlers 1`] = `
 
 exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 <h5
-  className="html-h5 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h5 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2639,7 +2639,7 @@ exports[`html "h5" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h5 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h5 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2663,7 +2663,7 @@ exports[`html "h5" supports global attributes 1`] = `
 
 exports[`html "h5" supports inline event handlers 1`] = `
 <h5
-  className="html-h5 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h5 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2712,7 +2712,7 @@ exports[`html "h5" supports inline event handlers 1`] = `
 
 exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 <h6
-  className="html-h6 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h6 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
@@ -2767,7 +2767,7 @@ exports[`html "h6" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-h6 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h6 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2791,7 +2791,7 @@ exports[`html "h6" supports global attributes 1`] = `
 
 exports[`html "h6" supports inline event handlers 1`] = `
 <h6
-  className="html-h6 xe8uvvx x1q9hu08 xttmgf0 xngnso2 x1vvkbs"
+  className="html-h6 xe8uvvx x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2840,7 +2840,7 @@ exports[`html "h6" supports inline event handlers 1`] = `
 
 exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 <header
-  className="html-header xe8uvvx x1q9hu08 xttmgf0"
+  className="html-header xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -2895,7 +2895,7 @@ exports[`html "header" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-header xe8uvvx x1q9hu08 xttmgf0"
+  className="html-header xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -2919,7 +2919,7 @@ exports[`html "header" supports global attributes 1`] = `
 
 exports[`html "header" supports inline event handlers 1`] = `
 <header
-  className="html-header xe8uvvx x1q9hu08 xttmgf0"
+  className="html-header xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -2968,7 +2968,7 @@ exports[`html "header" supports inline event handlers 1`] = `
 
 exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 <hr
-  className="html-hr xe8uvvx x1q9hu08 xttmgf0 x42x0ya xng3xce x383j0j x9f619 xjm9jq1"
+  className="html-hr xe8uvvx x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
 />
 `;
 
@@ -3023,7 +3023,7 @@ exports[`html "hr" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-hr xe8uvvx x1q9hu08 xttmgf0 x42x0ya xng3xce x383j0j x9f619 xjm9jq1"
+  className="html-hr xe8uvvx x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -3047,7 +3047,7 @@ exports[`html "hr" supports global attributes 1`] = `
 
 exports[`html "hr" supports inline event handlers 1`] = `
 <hr
-  className="html-hr xe8uvvx x1q9hu08 xttmgf0 x42x0ya xng3xce x383j0j x9f619 xjm9jq1"
+  className="html-hr xe8uvvx x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -3096,7 +3096,7 @@ exports[`html "hr" supports inline event handlers 1`] = `
 
 exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 <i
-  className="html-i x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -3151,7 +3151,7 @@ exports[`html "i" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-i x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -3175,7 +3175,7 @@ exports[`html "i" supports global attributes 1`] = `
 
 exports[`html "i" supports inline event handlers 1`] = `
 <i
-  className="html-i x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -3370,7 +3370,7 @@ exports[`html "img" supports inline event handlers 1`] = `
 
 exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 <input
-  className="html-input x1q9hu08 xttmgf0 xmkeg23 x1y0btm7"
+  className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
 />
 `;
@@ -3378,7 +3378,7 @@ exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 exports[`html "input" supports additional input attributes 1`] = `
 <input
   checked={true}
-  className="html-input x1q9hu08 xttmgf0 xmkeg23 x1y0btm7"
+  className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   defaultChecked={true}
   defaultValue="defaultValue"
   dir="auto"
@@ -3454,7 +3454,7 @@ exports[`html "input" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-input x1q9hu08 xttmgf0 xmkeg23 x1y0btm7"
+  className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -3478,7 +3478,7 @@ exports[`html "input" supports global attributes 1`] = `
 
 exports[`html "input" supports inline event handlers 1`] = `
 <input
-  className="html-input x1q9hu08 xttmgf0 xmkeg23 x1y0btm7"
+  className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
@@ -3784,13 +3784,13 @@ exports[`html "kbd" supports inline event handlers 1`] = `
 
 exports[`html "label" ignores and warns about unsupported attributes 1`] = `
 <label
-  className="html-label x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
 exports[`html "label" supports additional label attributes 1`] = `
 <label
-  className="html-label x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   htmlFor="some-id"
 />
 `;
@@ -3846,7 +3846,7 @@ exports[`html "label" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-label x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -3870,7 +3870,7 @@ exports[`html "label" supports global attributes 1`] = `
 
 exports[`html "label" supports inline event handlers 1`] = `
 <label
-  className="html-label x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -3919,7 +3919,7 @@ exports[`html "label" supports inline event handlers 1`] = `
 
 exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 <main
-  className="html-main xe8uvvx x1q9hu08 xttmgf0"
+  className="html-main xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -3974,7 +3974,7 @@ exports[`html "main" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-main xe8uvvx x1q9hu08 xttmgf0"
+  className="html-main xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -3998,7 +3998,7 @@ exports[`html "main" supports global attributes 1`] = `
 
 exports[`html "main" supports inline event handlers 1`] = `
 <main
-  className="html-main xe8uvvx x1q9hu08 xttmgf0"
+  className="html-main xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4047,7 +4047,7 @@ exports[`html "main" supports inline event handlers 1`] = `
 
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 <nav
-  className="html-nav xe8uvvx x1q9hu08 xttmgf0"
+  className="html-nav xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -4102,7 +4102,7 @@ exports[`html "nav" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-nav xe8uvvx x1q9hu08 xttmgf0"
+  className="html-nav xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -4126,7 +4126,7 @@ exports[`html "nav" supports global attributes 1`] = `
 
 exports[`html "nav" supports inline event handlers 1`] = `
 <nav
-  className="html-nav xe8uvvx x1q9hu08 xttmgf0"
+  className="html-nav xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4175,7 +4175,7 @@ exports[`html "nav" supports inline event handlers 1`] = `
 
 exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 <ol
-  className="html-ol xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ol xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -4230,7 +4230,7 @@ exports[`html "ol" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-ol xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ol xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -4254,7 +4254,7 @@ exports[`html "ol" supports global attributes 1`] = `
 
 exports[`html "ol" supports inline event handlers 1`] = `
 <ol
-  className="html-ol xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ol xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4569,7 +4569,7 @@ exports[`html "option" supports input attributes 1`] = `
 
 exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 <p
-  className="html-p xe8uvvx x1q9hu08 xttmgf0"
+  className="html-p xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -4624,7 +4624,7 @@ exports[`html "p" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-p xe8uvvx x1q9hu08 xttmgf0"
+  className="html-p xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -4648,7 +4648,7 @@ exports[`html "p" supports global attributes 1`] = `
 
 exports[`html "p" supports inline event handlers 1`] = `
 <p
-  className="html-p xe8uvvx x1q9hu08 xttmgf0"
+  className="html-p xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4697,7 +4697,7 @@ exports[`html "p" supports inline event handlers 1`] = `
 
 exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 <pre
-  className="html-pre xe8uvvx x1q9hu08 xttmgf0 xelszwe xrv4cvt xysyzu8"
+  className="html-pre xe8uvvx x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
 />
 `;
 
@@ -4752,7 +4752,7 @@ exports[`html "pre" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-pre xe8uvvx x1q9hu08 xttmgf0 xelszwe xrv4cvt xysyzu8"
+  className="html-pre xe8uvvx x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -4776,7 +4776,7 @@ exports[`html "pre" supports global attributes 1`] = `
 
 exports[`html "pre" supports inline event handlers 1`] = `
 <pre
-  className="html-pre xe8uvvx x1q9hu08 xttmgf0 xelszwe xrv4cvt xysyzu8"
+  className="html-pre xe8uvvx x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4953,7 +4953,7 @@ exports[`html "s" supports inline event handlers 1`] = `
 
 exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 <section
-  className="html-section xe8uvvx x1q9hu08 xttmgf0"
+  className="html-section xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -5008,7 +5008,7 @@ exports[`html "section" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-section xe8uvvx x1q9hu08 xttmgf0"
+  className="html-section xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5032,7 +5032,7 @@ exports[`html "section" supports global attributes 1`] = `
 
 exports[`html "section" supports inline event handlers 1`] = `
 <section
-  className="html-section xe8uvvx x1q9hu08 xttmgf0"
+  className="html-section xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5081,13 +5081,13 @@ exports[`html "section" supports inline event handlers 1`] = `
 
 exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 <select
-  className="html-select x1y0btm7 x1q9hu08 xttmgf0"
+  className="html-select x1y0btm7 x1ghz6dp x1717udv"
 />
 `;
 
 exports[`html "select" supports additional select attributes 1`] = `
 <select
-  className="html-select x1y0btm7 x1q9hu08 xttmgf0"
+  className="html-select x1y0btm7 x1ghz6dp x1717udv"
   disabled={true}
   onBeforeInput={[Function]}
   onChange={[Function]}
@@ -5151,7 +5151,7 @@ exports[`html "select" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-select x1y0btm7 x1q9hu08 xttmgf0"
+  className="html-select x1y0btm7 x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5175,7 +5175,7 @@ exports[`html "select" supports global attributes 1`] = `
 
 exports[`html "select" supports inline event handlers 1`] = `
 <select
-  className="html-select x1y0btm7 x1q9hu08 xttmgf0"
+  className="html-select x1y0btm7 x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5224,7 +5224,7 @@ exports[`html "select" supports inline event handlers 1`] = `
 
 exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 <span
-  className="html-span x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -5279,7 +5279,7 @@ exports[`html "span" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-span x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5303,7 +5303,7 @@ exports[`html "span" supports global attributes 1`] = `
 
 exports[`html "span" supports inline event handlers 1`] = `
 <span
-  className="html-span x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5352,7 +5352,7 @@ exports[`html "span" supports inline event handlers 1`] = `
 
 exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 <strong
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
+  className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
 />
 `;
 
@@ -5407,7 +5407,7 @@ exports[`html "strong" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
+  className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5431,7 +5431,7 @@ exports[`html "strong" supports global attributes 1`] = `
 
 exports[`html "strong" supports inline event handlers 1`] = `
 <strong
-  className="html-strong x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
+  className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5480,7 +5480,7 @@ exports[`html "strong" supports inline event handlers 1`] = `
 
 exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 <sub
-  className="html-sub x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -5535,7 +5535,7 @@ exports[`html "sub" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-sub x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5559,7 +5559,7 @@ exports[`html "sub" supports global attributes 1`] = `
 
 exports[`html "sub" supports inline event handlers 1`] = `
 <sub
-  className="html-sub x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5608,7 +5608,7 @@ exports[`html "sub" supports inline event handlers 1`] = `
 
 exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
 <sup
-  className="html-sup x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
@@ -5663,7 +5663,7 @@ exports[`html "sup" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-sup x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5687,7 +5687,7 @@ exports[`html "sup" supports global attributes 1`] = `
 
 exports[`html "sup" supports inline event handlers 1`] = `
 <sup
-  className="html-sup x1q9hu08 xttmgf0 x1hl2dhg x16tdsg8 x1vvkbs"
+  className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -5736,14 +5736,14 @@ exports[`html "sup" supports inline event handlers 1`] = `
 
 exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
 <textarea
-  className="html-textarea x1q9hu08 xttmgf0 xmkeg23 x1y0btm7 x288g5"
+  className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
 />
 `;
 
 exports[`html "textarea" supports additional textarea attributes 1`] = `
 <textarea
-  className="html-textarea x1q9hu08 xttmgf0 xmkeg23 x1y0btm7 x288g5"
+  className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   defaultValue="defaultValue"
   dir="auto"
   disabled={true}
@@ -5814,7 +5814,7 @@ exports[`html "textarea" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-textarea x1q9hu08 xttmgf0 xmkeg23 x1y0btm7 x288g5"
+  className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -5838,7 +5838,7 @@ exports[`html "textarea" supports global attributes 1`] = `
 
 exports[`html "textarea" supports inline event handlers 1`] = `
 <textarea
-  className="html-textarea x1q9hu08 xttmgf0 xmkeg23 x1y0btm7 x288g5"
+  className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
@@ -6016,7 +6016,7 @@ exports[`html "u" supports inline event handlers 1`] = `
 
 exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 <ul
-  className="html-ul xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ul xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
@@ -6071,7 +6071,7 @@ exports[`html "ul" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-ul xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ul xe8uvvx x1ghz6dp x1717udv"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -6095,7 +6095,7 @@ exports[`html "ul" supports global attributes 1`] = `
 
 exports[`html "ul" supports inline event handlers 1`] = `
 <ul
-  className="html-ul xe8uvvx x1q9hu08 xttmgf0"
+  className="html-ul xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -6144,7 +6144,7 @@ exports[`html "ul" supports inline event handlers 1`] = `
 
 exports[`html temporary data-* props support 1`] = `
 <div
-  className="html-div xe8uvvx x1q9hu08 xttmgf0"
+  className="html-div xe8uvvx x1ghz6dp x1717udv"
   data-imgperflogname="imgperflogname"
   data-visualcompletion="visualcompletion"
 />
