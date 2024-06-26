@@ -86,6 +86,30 @@ exports[`properties: general borderStyle 2`] = `
 }
 `;
 
+exports[`properties: general boxShadow 1`] = `
+{
+  "style": {
+    "experimental_boxShadow": "1px 2px 3px 4px red",
+  },
+}
+`;
+
+exports[`properties: general boxShadow 2`] = `
+{
+  "style": {
+    "experimental_boxShadow": "1px 2px 3px 4px red, 2px 3px 4px 5px blue",
+  },
+}
+`;
+
+exports[`properties: general boxShadow 3`] = `
+{
+  "style": {
+    "experimental_boxShadow": "inset 1px 2px 3px 4px red",
+  },
+}
+`;
+
 exports[`properties: general boxSizing: content-box: allDifferent 1`] = `
 {
   "style": {
@@ -216,7 +240,13 @@ exports[`properties: general direction: rtl 1`] = `
 }
 `;
 
-exports[`properties: general filter 1`] = `{}`;
+exports[`properties: general filter 1`] = `
+{
+  "style": {
+    "experimental_filter": "blur(1px)",
+  },
+}
+`;
 
 exports[`properties: general fontSize: default 1`] = `
 {
@@ -307,6 +337,14 @@ exports[`properties: general marginHorizontal 1`] = `{}`;
 exports[`properties: general marginStart 1`] = `{}`;
 
 exports[`properties: general marginVertical 1`] = `{}`;
+
+exports[`properties: general mixBlendMode 1`] = `
+{
+  "style": {
+    "experimental_mixBlendMode": "multiply",
+  },
+}
+`;
 
 exports[`properties: general objectFit: contain 1`] = `
 {

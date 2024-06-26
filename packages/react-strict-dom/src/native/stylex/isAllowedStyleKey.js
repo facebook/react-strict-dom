@@ -7,6 +7,18 @@
  * @flow strict
  */
 
+// $FlowFixMe(nonstrict-import)
+import { Platform } from 'react-native';
+
+const version = Platform.constants.reactNativeVersion;
+const { major, minor, patch } = version;
+// Main branch OSS build, or internal build
+const isMain = major === 1000 && minor === 0 && patch === 0;
+// Nightly NPM package
+// $FlowFixMe (pre-release is number type)
+const isNightly = version?.prerelease?.startsWith('nightly-');
+const isExperimental = isMain || isNightly;
+
 const allowedStyleKeySet = new Set<string>([
   'alignContent',
   'alignItems',
@@ -156,6 +168,12 @@ const allowedStyleKeySet = new Set<string>([
   // Pseudo-element keys
   '::placeholder'
 ]);
+
+if (isExperimental) {
+  allowedStyleKeySet.add('boxShadow');
+  allowedStyleKeySet.add('filter');
+  allowedStyleKeySet.add('mixBlendMode');
+}
 
 export function isAllowedStyleKey(key: string): boolean {
   return (

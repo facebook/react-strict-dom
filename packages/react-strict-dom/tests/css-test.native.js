@@ -157,28 +157,21 @@ describe('properties: general', () => {
 
   test('boxShadow', () => {
     const styles = css.create({
-      root: {
+      single: {
         boxShadow: '1px 2px 3px 4px red'
-      }
-    });
-    css.props.call(mockOptions, styles.root);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-
-    const styles2 = css.create({
-      root: {
+      },
+      multi: {
         boxShadow: '1px 2px 3px 4px red, 2px 3px 4px 5px blue'
-      }
-    });
-    css.props.call(mockOptions, styles2.root);
-    expect(console.warn).toHaveBeenCalledTimes(2);
-
-    const styles3 = css.create({
-      root: {
+      },
+      inset: {
         boxShadow: 'inset 1px 2px 3px 4px red'
       }
     });
-    css.props.call(mockOptions, styles3.root);
-    expect(console.warn).toHaveBeenCalledTimes(3);
+    expect(css.props.call(mockOptions, styles.single)).toMatchSnapshot();
+
+    expect(css.props.call(mockOptions, styles.multi)).toMatchSnapshot();
+
+    expect(css.props.call(mockOptions, styles.inset)).toMatchSnapshot();
   });
 
   test('boxSizing: content-box', () => {
@@ -311,7 +304,6 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.rtl)).toMatchSnapshot('rtl');
   });
 
-  // unsupported
   test('filter', () => {
     const { underTest } = css.create({
       underTest: {
@@ -319,7 +311,6 @@ describe('properties: general', () => {
       }
     });
     expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
-    expect(console.warn).toHaveBeenCalled();
   });
 
   test('fontSize', () => {
@@ -451,6 +442,15 @@ describe('properties: general', () => {
     });
     expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
     expect(console.warn).toHaveBeenCalled();
+  });
+
+  test('mixBlendMode', () => {
+    const { underTest } = css.create({
+      underTest: {
+        mixBlendMode: 'multiply'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
   });
 
   test('objectFit', () => {

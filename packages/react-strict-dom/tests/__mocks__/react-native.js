@@ -46,6 +46,16 @@ export const Linking = {
 };
 
 export const Platform = {
+  get constants() {
+    return {
+      reactNativeVersion: {
+        major: 1000,
+        minor: 0,
+        patch: 0,
+        prerelease: undefined
+      }
+    };
+  },
   OS: 'android',
   select(obj) {
     return obj.android || obj.ios || obj.native || obj.default;

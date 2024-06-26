@@ -569,7 +569,17 @@ export function props(
     else if (styleProp === 'placeContent') {
       nextStyle.alignContent = nextStyle.alignContent ?? styleValue;
       nextStyle.justifyContent = nextStyle.justifyContent ?? styleValue;
-    } else {
+    }
+    // experimental styles
+    else if (styleProp === 'boxShadow') {
+      nextStyle.experimental_boxShadow = styleValue;
+    } else if (styleProp === 'filter') {
+      nextStyle.experimental_filter = styleValue;
+    } else if (styleProp === 'mixBlendMode') {
+      nextStyle.experimental_mixBlendMode = styleValue;
+    }
+    // Everything else
+    else {
       nextStyle[styleProp] = styleValue;
     }
   }
