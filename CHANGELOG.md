@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.17 (Jun 26, 2024)
+
+### New features
+
+* Update to StyleX 0.7.0.
+* [Native] Add support for experimental React Native style implementations of `boxShadow`, `filter`, and `mixBlendMode`.
+
+### Fixes
+
+* [Native] Fix styling of native `<TextInput>`.
+* [Native] Fix hack that auto-wraps string children of `<View>`.
+* [Native] Fix style inheritance and themes for auto-wrapped string children.
+
 ## 0.0.16 (Jun 24, 2024)
 
 ### Optimizations
