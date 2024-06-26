@@ -7,9 +7,9 @@
 
 'use strict';
 
-const { createSuite } = require('./helpers');
-const { css } = require('../build/react-strict-dom-for-benchmarks');
-const { styles } = require('./fixtures');
+const { createSuite } = require('../helpers');
+const { css } = require('../../build/react-strict-dom-for-benchmarks');
+const { styles } = require('../fixtures');
 
 const { suite, test } = createSuite('css.create');
 

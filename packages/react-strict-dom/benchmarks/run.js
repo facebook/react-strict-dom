@@ -7,7 +7,7 @@
 
 'use strict';
 
-require('./css-create-tests');
-require('./css-createTheme-tests');
-require('./css-props-tests');
-require('./internals-tests');
+require('./tests/css-create-tests');
+require('./tests/css-createTheme-tests');
+require('./tests/css-props-tests');
+require('./tests/internals-tests');

@@ -7,12 +7,12 @@
 
 'use strict';
 
-const { createSuite } = require('./helpers');
+const { createSuite } = require('../helpers');
 
-const { css } = require('../build/react-strict-dom-for-benchmarks');
-const { extractStyleThemes } = require('../build/extractStyleThemes');
-const { flattenStyle } = require('../build/flattenStyle');
-const { customProperties, styles: stylesFixture } = require('./fixtures');
+const { css } = require('../../build/react-strict-dom-for-benchmarks');
+const { extractStyleThemes } = require('../../build/extractStyleThemes');
+const { flattenStyle } = require('../../build/flattenStyle');
+const { customProperties, styles: stylesFixture } = require('../fixtures');
 
 const { suite, test } = createSuite('internals');
 

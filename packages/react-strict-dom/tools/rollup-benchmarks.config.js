@@ -42,7 +42,7 @@ const config = [
             find: 'react-native',
             replacement: path.resolve(
               __dirname,
-              './rollup/mock-react-native-for-benchmarks.js'
+              '../benchmarks/mocks/react-native.js'
             )
           }
         ]
