@@ -617,6 +617,20 @@ exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 />
 `;
 
+exports[`<html.*> prop polyfills <input> "style" prop 1`] = `
+<TextInput
+  placeholderTextColor="pink"
+  style={
+    {
+      "borderWidth": 1,
+      "color": "red",
+      "fontWeight": "bold",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 <TextInput
   inputMode="email"
@@ -1612,6 +1626,16 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
   >
     Expect color:green
   </Text>,
+  <TextInput
+    placeholder="Expect placeholderTextColor:green"
+    placeholderTextColor="green"
+    style={
+      {
+        "borderWidth": 1,
+        "position": "static",
+      }
+    }
+  />,
   <View
     experimental_layoutConformance="strict"
     style={
@@ -1632,6 +1656,16 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     >
       Expect color:green (inherited)
     </Text>
+    <TextInput
+      placeholder="Expect placeholderTextColor:green"
+      placeholderTextColor="green"
+      style={
+        {
+          "borderWidth": 1,
+          "position": "static",
+        }
+      }
+    />
     <View
       experimental_layoutConformance="strict"
       style={
@@ -1652,6 +1686,16 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       >
         Expect color:blue (nested)
       </Text>
+      <TextInput
+        placeholder="Expect placeholderTextColor:blue"
+        placeholderTextColor="blue"
+        style={
+          {
+            "borderWidth": 1,
+            "position": "static",
+          }
+        }
+      />
     </View>
   </View>,
   <Text

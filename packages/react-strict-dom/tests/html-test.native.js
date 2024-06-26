@@ -124,6 +124,11 @@ describe('<html.*>', () => {
         root: {
           backgroundColor: tokens.otherColor,
           color: tokens.rootColor
+        },
+        input: {
+          '::placeholder': {
+            color: tokens.rootColor
+          }
         }
       });
 
@@ -131,14 +136,26 @@ describe('<html.*>', () => {
         <>
           <html.span style={styles.root}>Expect color:red</html.span>
           <html.span style={[theme, styles.root]}>Expect color:green</html.span>
+          <html.input
+            placeholder="Expect placeholderTextColor:green"
+            style={[theme, styles.input]}
+          />
           <html.div style={theme}>
             <html.span style={styles.root}>
               Expect color:green (inherited)
             </html.span>
+            <html.input
+              placeholder="Expect placeholderTextColor:green"
+              style={styles.input}
+            />
             <html.div style={nestedTheme}>
               <html.span style={styles.root}>
                 Expect color:blue (nested)
               </html.span>
+              <html.input
+                placeholder="Expect placeholderTextColor:blue"
+                style={styles.input}
+              />
             </html.div>
           </html.div>
           <html.span style={styles.root}>Expect color:red</html.span>
@@ -756,6 +773,20 @@ describe('<html.*>', () => {
           create(<html.input type={type} />);
           expect(console.error).toHaveBeenCalledTimes(i + 1);
         });
+      });
+
+      test('"style" prop', () => {
+        const styles = css.create({
+          input: {
+            color: 'red',
+            fontWeight: 'bold',
+            '::placeholder': {
+              color: 'pink'
+            }
+          }
+        });
+        const root = create(<html.input style={styles.input} />);
+        expect(root.toJSON()).toMatchSnapshot();
       });
     });
 
