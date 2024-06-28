@@ -38,9 +38,8 @@ export class CSSLengthUnitValue {
       return null;
     }
     const value = match[1];
-    const unit = match[2];
-    const parsedFloat = parseFloat(value);
-    // $FlowFixMe
+    const unit: $FlowFixMe = match[2];
+    const parsedFloat: number = parseFloat(value);
     const parsedValue: ParsedValue = [parsedFloat, unit];
     memoizedValues.set(input, parsedValue);
     return parsedValue;
