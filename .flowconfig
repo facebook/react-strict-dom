@@ -8,7 +8,7 @@
 [include]
 
 [libs]
-flow-typed
+tools/flow-typed
 
 [options]
 module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict-dom/dist/native/index.js.flow'
