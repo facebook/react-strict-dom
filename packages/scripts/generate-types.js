@@ -86,12 +86,21 @@ async function generateTypes(inputDir, outputDir, rootDir) {
             continue;
           }
 
-          const outputTSContents = await translate.translateFlowDefToTSDef(
+          let outputTSContents = await translate.translateFlowDefToTSDef(
             outputFlowContents
               .replace(/\$ReadOnlyMap/g, 'ReadonlyMap')
               .replace(/\$ReadOnlySet/g, 'ReadonlySet'),
             monorepoPackage.prettier
           );
+
+          if (
+            path.dirname(outputFullPath).endsWith('react-strict-dom/dist/types')
+          ) {
+            outputTSContents = outputTSContents.replace(
+              'import ',
+              "import './TypeShims';\nimport "
+            );
+          }
 
           await fsPromises.writeFile(
             outputFullPath.replace(/\.js$/, '.d.ts'),
