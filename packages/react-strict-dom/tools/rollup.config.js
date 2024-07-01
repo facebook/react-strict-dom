@@ -35,14 +35,11 @@ function ossLicensePlugin() {
 
 const sharedPlugins = [
   babelPlugin,
+  ossLicensePlugin(),
   resolve(),
   // commonjs packages: styleq and css-mediaquery
   commonjs()
 ];
-
-const ossPlugins = [...sharedPlugins, ossLicensePlugin()];
-
-const nativePlugins = [];
 
 /**
  * Web bundles
@@ -56,7 +53,7 @@ const webConfigs = [
       file: path.join(__dirname, '../dist/dom/index.js'),
       format: 'es'
     },
-    plugins: [...ossPlugins]
+    plugins: [...sharedPlugins]
   },
   // Runtime
   {
@@ -66,7 +63,7 @@ const webConfigs = [
       file: path.join(__dirname, '../dist/dom/runtime.js'),
       format: 'es'
     },
-    plugins: [...ossPlugins]
+    plugins: [...sharedPlugins]
   }
 ];
 
@@ -82,7 +79,7 @@ const nativeConfigs = [
       file: path.join(__dirname, '../dist/native/index.js'),
       format: 'es'
     },
-    plugins: [...nativePlugins, ...ossPlugins]
+    plugins: [...sharedPlugins]
   }
 ];
 
