@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import type { ReactNativeStyle } from '../../types/styles';
+import type { Style as ReactNativeStyle } from '../../types/react-native';
 
 import { warnMsg } from '../../shared/logUtils';
 
@@ -103,7 +103,9 @@ export function fixContentBox(flatStyle: ReactNativeStyle): ReactNativeStyle {
       }
       nextStyle[styleProp] = styleValue + correction;
     } else {
-      nextStyle[styleProp] = styleValue;
+      if (styleProp !== 'boxSizing') {
+        nextStyle[styleProp] = styleValue;
+      }
     }
   }
 

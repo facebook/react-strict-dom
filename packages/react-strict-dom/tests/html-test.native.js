@@ -726,6 +726,7 @@ describe('<html.*>', () => {
           'new-password',
           'nickname',
           'off',
+          'on',
           'one-time-code',
           'organization',
           'organization-title',
@@ -814,7 +815,7 @@ describe('<html.*>', () => {
         expect(root.toJSON()).toMatchSnapshot();
       });
 
-      test.skip('"rows" prop', () => {
+      test('"rows" prop', () => {
         const root = create(<html.textarea rows={5} />);
         expect(root.toJSON()).toMatchSnapshot();
       });

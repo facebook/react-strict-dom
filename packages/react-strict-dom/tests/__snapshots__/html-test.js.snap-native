@@ -16,11 +16,7 @@ exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "a" supports additional anchor attributes 1`] = `
 <Text
-  download="download.png"
-  href="https://google.com"
   onPress={[Function]}
-  referrerPolicy="no-referrer"
-  rel="nofollow"
   role="link"
   style={
     {
@@ -30,73 +26,43 @@ exports[`html "a" supports additional anchor attributes 1`] = `
       "userSelect": "auto",
     }
   }
-  target="_blank"
 />
 `;
 
 exports[`html "a" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -109,7 +75,6 @@ exports[`html "a" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -118,31 +83,16 @@ exports[`html "a" supports global attributes 1`] = `
 
 exports[`html "a" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -157,7 +107,6 @@ exports[`html "a" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   role="link"
   style={
     {
@@ -183,68 +132,39 @@ exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "article" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -254,7 +174,6 @@ exports[`html "article" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -265,31 +184,16 @@ exports[`html "article" supports global attributes 1`] = `
 
 exports[`html "article" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -304,7 +208,6 @@ exports[`html "article" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -326,68 +229,39 @@ exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "aside" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -397,7 +271,6 @@ exports[`html "aside" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -408,31 +281,16 @@ exports[`html "aside" supports global attributes 1`] = `
 
 exports[`html "aside" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -447,7 +305,6 @@ exports[`html "aside" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -470,67 +327,38 @@ exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "b" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -542,7 +370,6 @@ exports[`html "b" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -551,31 +378,16 @@ exports[`html "b" supports global attributes 1`] = `
 
 exports[`html "b" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -590,7 +402,6 @@ exports[`html "b" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontWeight": "bold",
@@ -614,67 +425,38 @@ exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "bdi" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -685,7 +467,6 @@ exports[`html "bdi" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -694,31 +475,16 @@ exports[`html "bdi" supports global attributes 1`] = `
 
 exports[`html "bdi" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -733,7 +499,6 @@ exports[`html "bdi" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -756,67 +521,38 @@ exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "bdo" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -827,7 +563,6 @@ exports[`html "bdo" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -836,31 +571,16 @@ exports[`html "bdo" supports global attributes 1`] = `
 
 exports[`html "bdo" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -875,7 +595,6 @@ exports[`html "bdo" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -898,67 +617,38 @@ exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = 
 
 exports[`html "blockquote" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -969,7 +659,6 @@ exports[`html "blockquote" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -978,31 +667,16 @@ exports[`html "blockquote" supports global attributes 1`] = `
 
 exports[`html "blockquote" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1017,7 +691,6 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -1043,67 +716,38 @@ exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "br" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1114,7 +758,6 @@ exports[`html "br" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   
@@ -1124,31 +767,16 @@ exports[`html "br" supports global attributes 1`] = `
 
 exports[`html "br" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1163,7 +791,6 @@ exports[`html "br" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -1184,86 +811,56 @@ exports[`html "button" ignores and warns about unsupported attributes 1`] = `
       "position": "static",
     }
   }
-  type="button"
 />
 `;
 
 exports[`html "button" supports additional button attributes 1`] = `
 <Pressable
   disabled={true}
+  focusable={false}
   style={
     {
       "borderWidth": 1,
       "position": "static",
     }
   }
-  type="submit"
 />
 `;
 
 exports[`html "button" supports global attributes 1`] = `
 <Pressable
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1274,9 +871,7 @@ exports[`html "button" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
-  type="button"
 >
   <Text>
     children
@@ -1286,31 +881,16 @@ exports[`html "button" supports global attributes 1`] = `
 
 exports[`html "button" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1325,14 +905,12 @@ exports[`html "button" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "borderWidth": 1,
       "position": "static",
     }
   }
-  type="button"
 />
 `;
 
@@ -1350,67 +928,38 @@ exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "code" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1422,7 +971,6 @@ exports[`html "code" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -1431,31 +979,16 @@ exports[`html "code" supports global attributes 1`] = `
 
 exports[`html "code" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1470,7 +1003,6 @@ exports[`html "code" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontFamily": "Menlo",
@@ -1495,67 +1027,38 @@ exports[`html "del" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "del" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1567,7 +1070,6 @@ exports[`html "del" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -1576,31 +1078,16 @@ exports[`html "del" supports global attributes 1`] = `
 
 exports[`html "del" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1615,7 +1102,6 @@ exports[`html "del" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -1639,68 +1125,39 @@ exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "div" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1710,7 +1167,6 @@ exports[`html "div" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -1721,31 +1177,16 @@ exports[`html "div" supports global attributes 1`] = `
 
 exports[`html "div" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1760,7 +1201,6 @@ exports[`html "div" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -1783,67 +1223,38 @@ exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "em" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1855,7 +1266,6 @@ exports[`html "em" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -1864,31 +1274,16 @@ exports[`html "em" supports global attributes 1`] = `
 
 exports[`html "em" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -1903,7 +1298,6 @@ exports[`html "em" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontStyle": "italic",
@@ -1927,68 +1321,39 @@ exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "fieldset" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -1998,7 +1363,6 @@ exports[`html "fieldset" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -2009,31 +1373,16 @@ exports[`html "fieldset" supports global attributes 1`] = `
 
 exports[`html "fieldset" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2048,7 +1397,6 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -2070,68 +1418,39 @@ exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "footer" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2141,7 +1460,6 @@ exports[`html "footer" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -2152,31 +1470,16 @@ exports[`html "footer" supports global attributes 1`] = `
 
 exports[`html "footer" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2191,7 +1494,6 @@ exports[`html "footer" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -2213,68 +1515,39 @@ exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "form" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2284,7 +1557,6 @@ exports[`html "form" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -2295,31 +1567,16 @@ exports[`html "form" supports global attributes 1`] = `
 
 exports[`html "form" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2334,7 +1591,6 @@ exports[`html "form" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -2358,67 +1614,38 @@ exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h1" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2431,7 +1658,6 @@ exports[`html "h1" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -2440,31 +1666,16 @@ exports[`html "h1" supports global attributes 1`] = `
 
 exports[`html "h1" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2479,7 +1690,6 @@ exports[`html "h1" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -2506,67 +1716,38 @@ exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h2" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2579,7 +1760,6 @@ exports[`html "h2" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -2588,31 +1768,16 @@ exports[`html "h2" supports global attributes 1`] = `
 
 exports[`html "h2" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2627,7 +1792,6 @@ exports[`html "h2" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -2654,67 +1818,38 @@ exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h3" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2727,7 +1862,6 @@ exports[`html "h3" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -2736,31 +1870,16 @@ exports[`html "h3" supports global attributes 1`] = `
 
 exports[`html "h3" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2775,7 +1894,6 @@ exports[`html "h3" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -2802,67 +1920,38 @@ exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h4" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -2875,7 +1964,6 @@ exports[`html "h4" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -2884,31 +1972,16 @@ exports[`html "h4" supports global attributes 1`] = `
 
 exports[`html "h4" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -2923,7 +1996,6 @@ exports[`html "h4" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -2950,67 +2022,38 @@ exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h5" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3023,7 +2066,6 @@ exports[`html "h5" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3032,31 +2074,16 @@ exports[`html "h5" supports global attributes 1`] = `
 
 exports[`html "h5" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3071,7 +2098,6 @@ exports[`html "h5" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -3098,67 +2124,38 @@ exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "h6" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3171,7 +2168,6 @@ exports[`html "h6" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3180,31 +2176,16 @@ exports[`html "h6" supports global attributes 1`] = `
 
 exports[`html "h6" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3219,7 +2200,6 @@ exports[`html "h6" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontSize": 24,
@@ -3245,68 +2225,39 @@ exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "header" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3316,7 +2267,6 @@ exports[`html "header" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -3327,31 +2277,16 @@ exports[`html "header" supports global attributes 1`] = `
 
 exports[`html "header" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3366,7 +2301,6 @@ exports[`html "header" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   role="header"
   style={
     {
@@ -3391,67 +2325,38 @@ exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "hr" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3464,7 +2369,6 @@ exports[`html "hr" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3473,31 +2377,16 @@ exports[`html "hr" supports global attributes 1`] = `
 
 exports[`html "hr" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3512,7 +2401,6 @@ exports[`html "hr" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "backgroundColor": "black",
@@ -3538,67 +2426,38 @@ exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "i" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3610,7 +2469,6 @@ exports[`html "i" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3619,31 +2477,16 @@ exports[`html "i" supports global attributes 1`] = `
 
 exports[`html "i" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3658,7 +2501,6 @@ exports[`html "i" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontStyle": "italic",
@@ -3684,10 +2526,7 @@ exports[`html "img" supports additional image attributes 1`] = `
 <Image
   alt="Alt text"
   crossOrigin="anonymous"
-  decoding="async"
-  fetchPriority="auto"
   height={100}
-  loading="lazy"
   onError={[Function]}
   onLoad={[Function]}
   referrerPolicy="no-referrer"
@@ -3708,67 +2547,38 @@ exports[`html "img" supports additional image attributes 1`] = `
 
 exports[`html "img" supports global attributes 1`] = `
 <Image
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -3779,7 +2589,6 @@ exports[`html "img" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3788,31 +2597,16 @@ exports[`html "img" supports global attributes 1`] = `
 
 exports[`html "img" supports inline event handlers 1`] = `
 <Image
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -3827,7 +2621,6 @@ exports[`html "img" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "objectFit": "fill",
@@ -3850,95 +2643,58 @@ exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "input" supports additional input attributes 1`] = `
 <TextInput
-  aria-disabled={true}
-  checked={true}
-  defaultChecked={true}
   defaultValue="defaultValue"
   disabled={true}
-  max="10"
+  editable={false}
+  focusable={false}
   maxLength="10"
-  min="0"
-  minLength="0"
-  multiple={true}
   onChange={[Function]}
-  onInput={[Function]}
   placeholder="Placeholder"
-  readOnly={true}
-  required={true}
-  step={3}
   style={
     {
       "borderWidth": 1,
       "position": "static",
     }
   }
-  tabIndex={-1}
-  type="text"
   value="value"
 />
 `;
 
 exports[`html "input" supports global attributes 1`] = `
 <TextInput
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
   inputMode="numeric"
-  lang="en-US"
+  nativeID="some-id"
   role="article"
   spellCheck={true}
   style={
@@ -3951,7 +2707,6 @@ exports[`html "input" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -3960,32 +2715,18 @@ exports[`html "input" supports global attributes 1`] = `
 
 exports[`html "input" supports inline event handlers 1`] = `
 <TextInput
-  onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
   onKeyPress={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4001,7 +2742,6 @@ exports[`html "input" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "borderWidth": 1,
@@ -4025,67 +2765,38 @@ exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "ins" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4097,7 +2808,6 @@ exports[`html "ins" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -4106,31 +2816,16 @@ exports[`html "ins" supports global attributes 1`] = `
 
 exports[`html "ins" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4145,7 +2840,6 @@ exports[`html "ins" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -4170,67 +2864,38 @@ exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "kbd" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4242,7 +2907,6 @@ exports[`html "kbd" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -4251,31 +2915,16 @@ exports[`html "kbd" supports global attributes 1`] = `
 
 exports[`html "kbd" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4290,7 +2939,6 @@ exports[`html "kbd" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontFamily": "Menlo",
@@ -4314,7 +2962,6 @@ exports[`html "label" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "label" supports additional label attributes 1`] = `
 <Text
-  for="some-id"
   style={
     {
       "position": "static",
@@ -4326,67 +2973,38 @@ exports[`html "label" supports additional label attributes 1`] = `
 
 exports[`html "label" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4397,7 +3015,6 @@ exports[`html "label" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -4406,31 +3023,16 @@ exports[`html "label" supports global attributes 1`] = `
 
 exports[`html "label" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4445,7 +3047,6 @@ exports[`html "label" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -4468,68 +3069,39 @@ exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "main" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4539,7 +3111,6 @@ exports[`html "main" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -4550,31 +3121,16 @@ exports[`html "main" supports global attributes 1`] = `
 
 exports[`html "main" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4589,7 +3145,6 @@ exports[`html "main" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -4611,68 +3166,39 @@ exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "nav" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4682,7 +3208,6 @@ exports[`html "nav" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -4693,31 +3218,16 @@ exports[`html "nav" supports global attributes 1`] = `
 
 exports[`html "nav" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4732,7 +3242,6 @@ exports[`html "nav" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -4754,68 +3263,39 @@ exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "ol" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4825,7 +3305,6 @@ exports[`html "ol" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -4836,31 +3315,16 @@ exports[`html "ol" supports global attributes 1`] = `
 
 exports[`html "ol" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -4875,7 +3339,6 @@ exports[`html "ol" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -4897,67 +3360,38 @@ exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "optgroup" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -4968,7 +3402,6 @@ exports[`html "optgroup" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -4977,31 +3410,16 @@ exports[`html "optgroup" supports global attributes 1`] = `
 
 exports[`html "optgroup" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5016,7 +3434,6 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5039,67 +3456,38 @@ exports[`html "option" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "option" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5110,7 +3498,6 @@ exports[`html "option" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -5119,31 +3506,16 @@ exports[`html "option" supports global attributes 1`] = `
 
 exports[`html "option" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5158,7 +3530,6 @@ exports[`html "option" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5170,16 +3541,12 @@ exports[`html "option" supports inline event handlers 1`] = `
 
 exports[`html "option" supports input attributes 1`] = `
 <Text
-  defaultValue="defaultValue"
-  disabled={false}
-  label="label"
   style={
     {
       "position": "static",
       "userSelect": "auto",
     }
   }
-  value="value"
 />
 `;
 
@@ -5196,67 +3563,38 @@ exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "p" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5267,7 +3605,6 @@ exports[`html "p" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -5276,31 +3613,16 @@ exports[`html "p" supports global attributes 1`] = `
 
 exports[`html "p" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5315,7 +3637,6 @@ exports[`html "p" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5339,67 +3660,38 @@ exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "pre" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5411,7 +3703,6 @@ exports[`html "pre" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -5420,31 +3711,16 @@ exports[`html "pre" supports global attributes 1`] = `
 
 exports[`html "pre" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5459,7 +3735,6 @@ exports[`html "pre" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontFamily": "Menlo",
@@ -5484,67 +3759,38 @@ exports[`html "s" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "s" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5556,7 +3802,6 @@ exports[`html "s" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -5565,31 +3810,16 @@ exports[`html "s" supports global attributes 1`] = `
 
 exports[`html "s" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5604,7 +3834,6 @@ exports[`html "s" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5628,68 +3857,39 @@ exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "section" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5699,7 +3899,6 @@ exports[`html "section" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -5710,31 +3909,16 @@ exports[`html "section" supports global attributes 1`] = `
 
 exports[`html "section" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5749,7 +3933,6 @@ exports[`html "section" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5771,11 +3954,6 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "select" supports additional select attributes 1`] = `
 <Text
-  disabled={false}
-  onChange={[Function]}
-  onInput={[Function]}
-  readOnly={true}
-  required={true}
   style={
     {
       "position": "static",
@@ -5787,67 +3965,38 @@ exports[`html "select" supports additional select attributes 1`] = `
 
 exports[`html "select" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -5858,7 +4007,6 @@ exports[`html "select" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -5867,31 +4015,16 @@ exports[`html "select" supports global attributes 1`] = `
 
 exports[`html "select" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -5906,7 +4039,6 @@ exports[`html "select" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -5929,67 +4061,38 @@ exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "span" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6000,7 +4103,6 @@ exports[`html "span" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6009,31 +4111,16 @@ exports[`html "span" supports global attributes 1`] = `
 
 exports[`html "span" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6048,7 +4135,6 @@ exports[`html "span" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -6072,67 +4158,38 @@ exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "strong" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6144,7 +4201,6 @@ exports[`html "strong" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6153,31 +4209,16 @@ exports[`html "strong" supports global attributes 1`] = `
 
 exports[`html "strong" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6192,7 +4233,6 @@ exports[`html "strong" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "fontWeight": "bold",
@@ -6216,67 +4256,38 @@ exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "sub" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6287,7 +4298,6 @@ exports[`html "sub" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6296,31 +4306,16 @@ exports[`html "sub" supports global attributes 1`] = `
 
 exports[`html "sub" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6335,7 +4330,6 @@ exports[`html "sub" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -6358,67 +4352,38 @@ exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "sup" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6429,7 +4394,6 @@ exports[`html "sup" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6438,31 +4402,16 @@ exports[`html "sup" supports global attributes 1`] = `
 
 exports[`html "sup" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6477,7 +4426,6 @@ exports[`html "sup" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -6502,18 +4450,15 @@ exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "textarea" supports additional textarea attributes 1`] = `
 <TextInput
-  aria-disabled={true}
   defaultValue="defaultValue"
   disabled={true}
+  editable={false}
+  focusable={false}
   maxLength="10"
-  minLength="0"
   multiline={true}
+  numberOfLines={3}
   onChange={[Function]}
-  onInput={[Function]}
   placeholder="Placeholder"
-  readOnly={true}
-  required={true}
-  rows={3}
   style={
     {
       "borderWidth": 1,
@@ -6521,73 +4466,45 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
       "verticalAlign": "top",
     }
   }
-  tabIndex={-1}
   value="value"
 />
 `;
 
 exports[`html "textarea" supports global attributes 1`] = `
 <TextInput
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
   multiline={true}
+  nativeID="some-id"
   role="article"
   spellCheck={true}
   style={
@@ -6601,7 +4518,6 @@ exports[`html "textarea" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6611,32 +4527,18 @@ exports[`html "textarea" supports global attributes 1`] = `
 exports[`html "textarea" supports inline event handlers 1`] = `
 <TextInput
   multiline={true}
-  onAuxClick={[Function]}
   onBlur={[Function]}
   onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
   onKeyPress={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6652,7 +4554,6 @@ exports[`html "textarea" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "borderWidth": 1,
@@ -6677,67 +4578,38 @@ exports[`html "u" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "u" supports global attributes 1`] = `
 <Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6749,7 +4621,6 @@ exports[`html "u" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   children
@@ -6758,31 +4629,16 @@ exports[`html "u" supports global attributes 1`] = `
 
 exports[`html "u" supports inline event handlers 1`] = `
 <Text
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6797,7 +4653,6 @@ exports[`html "u" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -6821,68 +4676,39 @@ exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "ul" supports global attributes 1`] = `
 <View
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
   accessibilityPosInSet={1}
   accessibilitySetSize={2}
-  aria-activedescendant="activedescendant"
-  aria-atomic={true}
-  aria-autocomplete={true}
-  aria-busy={true}
-  aria-checked={true}
-  aria-colcount={1}
-  aria-colindex={1}
-  aria-colindextext="colindextext"
-  aria-colspan={1}
-  aria-controls="controls"
-  aria-current="current"
-  aria-describedby="describedby"
-  aria-details="details"
-  aria-disabled={true}
-  aria-errormessage="errormessage"
-  aria-expanded={true}
-  aria-flowto="flowto"
-  aria-haspopup="menu"
-  aria-hidden={true}
-  aria-invalid={true}
-  aria-keyshortcuts="Shift+Space"
-  aria-label="Label"
-  aria-labelledby="labelledby"
-  aria-level={2}
-  aria-live={true}
-  aria-modal={true}
-  aria-multiline={true}
-  aria-multiselectable={true}
-  aria-orientation="portrait"
-  aria-owns="owns"
-  aria-placeholder="Placeholder"
-  aria-posinset={1}
-  aria-pressed={true}
-  aria-readonly={true}
-  aria-required={true}
-  aria-roledescription="Description"
-  aria-rowcount={1}
-  aria-rowindex={1}
-  aria-rowindextext="rowindextext"
-  aria-rowspan={1}
-  aria-selected={true}
-  aria-setsize={2}
-  aria-sort="ascending"
-  aria-valuemax={10}
-  aria-valuemin={0}
-  aria-valuenow={5}
-  aria-valuetext="Five"
-  autoCapitalize={true}
-  autoFocus={true}
-  data-testid="some-test-id"
-  dir="ltr"
-  enterKeyHint="go"
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
   experimental_layoutConformance="strict"
-  hidden={true}
-  id="some-id"
-  inert={true}
-  inputMode="numeric"
-  lang="en-US"
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
   role="article"
-  spellCheck={true}
   style={
     {
       "--custom-property": "inline",
@@ -6892,7 +4718,6 @@ exports[`html "ul" supports global attributes 1`] = `
       "writingDirection": "ltr",
     }
   }
-  tabIndex={0}
   testID="some-test-id"
 >
   <Text>
@@ -6903,31 +4728,16 @@ exports[`html "ul" supports global attributes 1`] = `
 
 exports[`html "ul" supports inline event handlers 1`] = `
 <Pressable
-  onAuxClick={[Function]}
   onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onContextMenu={[Function]}
-  onCopy={[Function]}
-  onCut={[Function]}
   onFocus={[Function]}
-  onFocusIn={[Function]}
-  onFocusOut={[Function]}
-  onFullscreenChange={[Function]}
-  onFullscreenError={[Function]}
   onGotPointerCapture={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
   onLostPointerCapture={[Function]}
   onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onMouseMove={[Function]}
   onMouseOut={[Function]}
   onMouseOver={[Function]}
   onMouseUp={[Function]}
-  onPaste={[Function]}
   onPointerCancel={[Function]}
   onPointerDown={[Function]}
   onPointerEnter={[Function]}
@@ -6942,7 +4752,6 @@ exports[`html "ul" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  onWheel={[Function]}
   style={
     {
       "position": "static",
@@ -6953,8 +4762,6 @@ exports[`html "ul" supports inline event handlers 1`] = `
 
 exports[`html temporary data-* props support 1`] = `
 <View
-  data-imgperflogname="imgperflogname"
-  data-visualcompletion="visualcompletion"
   experimental_layoutConformance="strict"
   style={
     {

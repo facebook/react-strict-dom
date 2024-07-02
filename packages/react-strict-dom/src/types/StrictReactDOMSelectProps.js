@@ -7,10 +7,11 @@
  * @flow strict
  */
 
-import type { StrictReactDOMProps } from './StrictReactDOMProps';
+import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMSelectProps = $ReadOnly<{
   ...StrictReactDOMProps,
+  autoComplete?: AutoComplete,
   multiple?: ?boolean,
   required?: ?boolean,
   onBeforeInput?: $FlowFixMe,

@@ -10,9 +10,13 @@
 import type {
   CustomProperties,
   MutableCustomProperties,
-  IStyleX,
-  ReactNativeStyle
+  IStyleX
 } from '../../types/styles';
+
+import type {
+  Props as ReactNativeProps,
+  Style as ReactNativeStyle
+} from '../../types/react-native';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
@@ -406,24 +410,14 @@ export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
  * The spread method shim
  */
 
-type ReactNativeProps = {
-  'aria-hidden'?: boolean,
-  caretHidden?: boolean,
-  cursorColor?: string,
-  numberOfLines?: number,
-  placeholderTextColor?: string,
-  pointerEvents?: 'box-none' | 'box-only' | 'none' | 'auto',
-  style?: ?ReactNativeStyle,
-  tabIndex?: number
-};
 export function props(
   this: ResolveStyleOptions,
   ...style: $ReadOnlyArray<?{ [key: string]: mixed }>
 ): ReactNativeProps {
   const options = this;
 
-  const nativeProps: ReactNativeProps = {};
-  let nextStyle: ReactNativeStyle = {};
+  const nativeProps: ReactNativeProps = { style: {} };
+  let nextStyle: ReactNativeStyle = nativeProps.style;
 
   const flatStyle = resolveStyle(style, options) as $FlowFixMe;
 
@@ -580,9 +574,10 @@ export function props(
     else if (styleProp === 'visibility') {
       if (styleValue === 'hidden' || styleValue === 'collapse') {
         nextStyle.opacity = 0;
-        nativeProps['aria-hidden'] = true;
+        nativeProps.accessibilityElementsHidden = true;
+        nativeProps.importantForAccessibility = 'no-hide-descendants';
+        nativeProps.focusable = false;
         nativeProps.pointerEvents = 'none';
-        nativeProps.tabIndex = -1;
       }
     }
     // placeContent polyfill
@@ -604,15 +599,12 @@ export function props(
     }
   }
 
-  if (nextStyle != null && Object.keys(nextStyle).length > 0) {
-    // boxSizing:"content-box" polyfill
-    const boxSizingValue = nextStyle.boxSizing;
-    if (boxSizingValue === 'content-box') {
-      nextStyle = fixContentBox(nextStyle);
-    }
-    delete nextStyle.boxSizing;
-    nativeProps.style = nextStyle;
+  // boxSizing:"content-box" polyfill
+  const boxSizingValue = nextStyle.boxSizing;
+  if (boxSizingValue === 'content-box') {
+    nextStyle = fixContentBox(nextStyle);
   }
+  nativeProps.style = nextStyle;
 
   return nativeProps;
 }

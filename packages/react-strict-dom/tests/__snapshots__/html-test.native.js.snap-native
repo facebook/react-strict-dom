@@ -163,9 +163,6 @@ exports[`<html.*> hover styles onPointerLeave 1`] = `
 exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  decoding="async"
-  fetchPriority="auto"
-  loading="lazy"
   referrerPolicy="no-referrer"
   src="https://src.jpg"
   style={
@@ -180,9 +177,6 @@ exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  decoding="async"
-  fetchPriority="auto"
-  loading="lazy"
   referrerPolicy="no-referrer"
   srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
   style={
@@ -470,6 +464,18 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 />
 `;
 
+exports[`<html.*> prop polyfills <input> "autoComplete" prop: "on" 1`] = `
+<TextInput
+  autoComplete="on"
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`] = `
 <TextInput
   autoComplete="one-time-code"
@@ -604,16 +610,15 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 <TextInput
-  aria-disabled={true}
   disabled={true}
-  readOnly={true}
+  editable={false}
+  focusable={false}
   style={
     {
       "borderWidth": 1,
       "position": "static",
     }
   }
-  tabIndex={-1}
 />
 `;
 
@@ -640,7 +645,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
       "position": "static",
     }
   }
-  type="email"
 />
 `;
 
@@ -653,7 +657,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
       "position": "static",
     }
   }
-  type="number"
 />
 `;
 
@@ -666,7 +669,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
       "position": "static",
     }
   }
-  type="password"
 />
 `;
 
@@ -679,7 +681,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
       "position": "static",
     }
   }
-  type="search"
 />
 `;
 
@@ -692,7 +693,6 @@ exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
       "position": "static",
     }
   }
-  type="tel"
 />
 `;
 
@@ -705,16 +705,15 @@ exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
       "position": "static",
     }
   }
-  type="url"
 />
 `;
 
 exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
 <TextInput
-  aria-disabled={true}
   disabled={true}
+  editable={false}
+  focusable={false}
   multiline={true}
-  readOnly={true}
   style={
     {
       "borderWidth": 1,
@@ -722,13 +721,25 @@ exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
       "verticalAlign": "top",
     }
   }
-  tabIndex={-1}
+/>
+`;
+
+exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
+<TextInput
+  multiline={true}
+  numberOfLines={5}
+  style={
+    {
+      "borderWidth": 1,
+      "position": "static",
+      "verticalAlign": "top",
+    }
+  }
 />
 `;
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
 <View
-  dir="auto"
   experimental_layoutConformance="strict"
   style={
     {
@@ -741,7 +752,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 <Text
-  dir="auto"
   style={
     {
       "position": "static",
@@ -754,7 +764,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 <View
-  dir="ltr"
   experimental_layoutConformance="strict"
   style={
     {
@@ -768,7 +777,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 <Text
-  dir="ltr"
   style={
     {
       "direction": "ltr",
@@ -782,7 +790,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 <View
-  dir="rtl"
   experimental_layoutConformance="strict"
   style={
     {
@@ -796,7 +803,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 <Text
-  dir="rtl"
   style={
     {
       "direction": "rtl",
@@ -811,7 +817,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 <View
   experimental_layoutConformance="strict"
-  hidden={true}
   style={
     {
       "display": "none",
@@ -823,7 +828,6 @@ exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 <TextInput
-  hidden={false}
   style={
     {
       "borderWidth": 1,
@@ -835,7 +839,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 <TextInput
-  hidden="false"
   style={
     {
       "borderWidth": 1,
@@ -848,7 +851,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 <TextInput
-  hidden="hidden"
   style={
     {
       "borderWidth": 1,
@@ -861,7 +863,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 <TextInput
-  hidden={true}
   style={
     {
       "borderWidth": 1,
@@ -874,7 +875,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 <TextInput
-  hidden="true"
   style={
     {
       "borderWidth": 1,
@@ -887,7 +887,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 <TextInput
-  hidden="until-found"
   style={
     {
       "borderWidth": 1,
@@ -900,7 +899,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 <View
   experimental_layoutConformance="strict"
-  hidden={true}
   style={
     {
       "alignItems": "stretch",
@@ -990,13 +988,13 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 
 exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 <TextInput
+  focusable={false}
   style={
     {
       "borderWidth": 1,
       "position": "static",
     }
   }
-  tabIndex={-1}
 />
 `;
 
