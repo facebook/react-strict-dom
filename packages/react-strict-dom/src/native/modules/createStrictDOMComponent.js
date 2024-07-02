@@ -8,18 +8,19 @@
  */
 
 import type { StrictProps } from '../../types/StrictProps';
-import type {
-  ChangeEvent,
-  EditingEvent,
-  ImageLoadEvent,
-  KeyPressEvent,
-  PressEvent,
-  SyntheticEvent,
-  TextStyleProp,
-  ViewStyleProp
-} from '../../types/react-native';
+import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import * as React from 'react';
+import {
+  Animated,
+  Image,
+  TextInput,
+  Platform,
+  Pressable,
+  Text,
+  View
+} from 'react-native';
+
 import {
   CustomPropertiesProvider,
   useCustomProperties
@@ -32,6 +33,7 @@ import {
   InheritedStylesProvider,
   useInheritedStyles
 } from './ContextInheritedStyles';
+// import { Text, View } from '../react-native';
 import { TextString } from './TextString';
 import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
@@ -42,42 +44,7 @@ import { useHoverHandlers } from './useHoverHandlers';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import { useStyleProps } from './useStyleProps';
 import { useStyleTransition } from './useStyleTransition';
-import {
-  Animated,
-  Image,
-  TextInput,
-  Text,
-  View,
-  Platform,
-  Pressable
-} from 'react-native';
 import * as stylex from '../stylex';
-
-type ReactNativeProps = {
-  ...StrictProps,
-  accessibilityPosInSet?: $FlowFixMe,
-  accessibilitySetSize?: $FlowFixMe,
-  caretHidden?: ?boolean,
-  experimental_layoutConformance?: 'strict',
-  multiline?: ?boolean,
-  numberOfLines?: ?number,
-  onChange?: ?(event: ChangeEvent) => mixed,
-  onError?: ?(
-    event: SyntheticEvent<
-      $ReadOnly<{|
-        error: string
-      |}>
-    >
-  ) => void,
-  onKeyPress?: ?(event: KeyPressEvent) => mixed,
-  onLoad?: ?(event: ImageLoadEvent) => void,
-  onPress?: $FlowFixMe,
-  onSubmitEditing?: ?(event: EditingEvent) => mixed,
-  ref?: $FlowFixMe,
-  secureTextEntry?: ?boolean,
-  style?: ViewStyleProp | TextStyleProp,
-  testID?: ?string
-};
 
 const elements = {
   article: View,
@@ -131,17 +98,15 @@ function isString(str: mixed): boolean %checks {
   return typeof str === 'string';
 }
 
-function validateStrictProps(props: $FlowFixMe) {
+function validateStrictProps(props: StrictProps) {
   Object.keys(props).forEach((key) => {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
     if (!isValidProp) {
       errorMsg(`invalid prop "${key}"`);
-      delete props[key];
     }
     if (isUnsupportedProp) {
       warnMsg(`unsupported prop "${key}"`);
-      delete props[key];
     }
   });
 }
@@ -171,76 +136,304 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       const elementRef = useStrictDOMElement<T>({ tagName });
 
+      if (__DEV__) {
+        validateStrictProps(props);
+      }
+
       /**
        * Construct props
        */
       const {
+        alt,
+        'aria-busy': ariaBusy,
+        'aria-checked': ariaChecked,
+        'aria-disabled': ariaDisabled,
+        'aria-expanded': ariaExpanded,
+        'aria-hidden': ariaHidden,
+        'aria-label': ariaLabel,
+        'aria-labelledby': ariaLabelledBy,
+        'aria-live': ariaLive,
+        'aria-modal': ariaModal,
         'aria-posinset': ariaPosInSet,
+        'aria-selected': ariaSelected,
         'aria-setsize': ariaSetSize,
+        'aria-valuemax': ariaValueMax,
+        'aria-valuemin': ariaValueMin,
+        'aria-valuenow': ariaValueNow,
+        'aria-valuetext': ariaValueText,
+        autoComplete,
         children,
+        crossOrigin,
         'data-testid': dataTestID,
+        defaultValue,
         dir,
         disabled,
+        enterKeyHint,
         height,
         hidden,
         href,
+        id,
         inputMode,
+        maxLength,
+        onBlur,
         onChange,
         onClick,
         onError,
+        onFocus,
+        onGotPointerCapture,
         onInput,
         onKeyDown,
         onLoad,
+        onLostPointerCapture,
+        onMouseDown,
+        onMouseEnter,
+        onMouseLeave,
+        onMouseOut,
+        onMouseOver,
+        onMouseUp,
+        onPointerCancel,
+        onPointerDown,
+        onPointerEnter,
+        onPointerLeave,
+        onPointerMove,
+        onPointerOut,
+        onPointerOver,
+        onPointerUp,
+        onScroll,
+        onTouchCancel,
+        onTouchEnd,
+        onTouchMove,
+        onTouchStart,
+        placeholder,
+        readOnly,
+        referrerPolicy,
         role,
+        rows,
+        spellCheck,
+        src,
+        srcSet,
+        style,
+        tabIndex,
         type,
+        value,
         width
       } = props;
 
-      // $FlowFixMe[prop-missing]
-      const nativeProps: ReactNativeProps = Object.assign(
-        {},
-        defaultProps,
-        props
-      );
-      delete nativeProps.suppressHydrationWarning;
-      if (__DEV__) {
-        validateStrictProps(nativeProps);
-      }
+      // $FlowFixMe[prop-missing] style is added to nativeProps later
+      const nativeProps: ReactNativeProps = {
+        children
+      };
 
+      if (ariaHidden != null) {
+        nativeProps.accessibilityElementsHidden = ariaHidden;
+        if (ariaHidden === true) {
+          nativeProps.importantForAccessibility = 'no-hide-descendants';
+        }
+      }
+      if (ariaLabel != null) {
+        nativeProps.accessibilityLabel = ariaLabel;
+      }
+      if (ariaLabelledBy != null) {
+        nativeProps.accessibilityLabelledBy = ariaLabelledBy?.split(/\s*,\s*/g);
+      }
+      if (ariaLive != null) {
+        nativeProps.accessibilityLiveRegion =
+          ariaLive === 'off' ? 'none' : ariaLive;
+      }
+      if (ariaModal != null) {
+        nativeProps.accessibilityViewIsModal = ariaModal;
+      }
       if (ariaPosInSet != null) {
         nativeProps.accessibilityPosInSet = ariaPosInSet;
-      }
-      if (ariaSetSize != null) {
-        nativeProps.accessibilitySetSize = ariaSetSize;
       }
       const ariaRole = role || roles[tagName];
       if (ariaRole) {
         nativeProps.role = ariaRole;
       }
+      if (ariaSetSize != null) {
+        nativeProps.accessibilitySetSize = ariaSetSize;
+      }
+      if (
+        ariaBusy != null ||
+        ariaChecked != null ||
+        ariaDisabled != null ||
+        ariaExpanded != null ||
+        ariaSelected != null
+      ) {
+        nativeProps.accessibilityState = {
+          busy: ariaBusy,
+          checked: ariaChecked,
+          disabled: ariaDisabled,
+          expanded: ariaExpanded,
+          selected: ariaSelected
+        };
+      }
+      if (
+        ariaValueMax != null ||
+        ariaValueMin != null ||
+        ariaValueNow != null ||
+        ariaValueText != null
+      ) {
+        nativeProps.accessibilityValue = {
+          max: ariaValueMax,
+          min: ariaValueMin,
+          now: ariaValueNow,
+          text: ariaValueText
+        };
+      }
       if (dataTestID != null) {
         nativeProps.testID = dataTestID;
       }
-      if (disabled != null) {
-        // don't disabled Text elements
-        nativeProps.disabled = nativeComponent !== Text ? disabled : false;
-        // polyfill disabled form elements
-        if (nativeComponent === TextInput && disabled === true) {
-          nativeProps['aria-disabled'] = true;
-          nativeProps.readOnly = true;
-          nativeProps.tabIndex = -1;
-        }
+      if (id != null) {
+        nativeProps.nativeID = id;
       }
-      if (href != null && tagName === 'a') {
+      if (tabIndex != null) {
+        nativeProps.focusable = !tabIndex;
+      }
+
+      // Events
+
+      if (onBlur != null) {
+        nativeProps.onBlur = onBlur;
+      }
+      // TODO: remove once PointerEvent onClick is available
+      if (onClick != null) {
+        // Text has onPress, View doesn't
+        if (nativeComponent === View) {
+          nativeComponent = Pressable;
+        }
+        nativeProps.onPress = function ({ nativeEvent }) {
+          const event: mixed = nativeEvent;
+          let altKey = false;
+          let ctrlKey = false;
+          let metaKey = false;
+          let shiftKey = false;
+          let button = 0;
+          if (event != null) {
+            if (typeof event.altKey === 'boolean') {
+              altKey = event.altKey;
+            }
+            if (typeof event.ctrlKey === 'boolean') {
+              ctrlKey = event.ctrlKey;
+            }
+            if (typeof event.metaKey === 'boolean') {
+              metaKey = event.metaKey;
+            }
+            if (typeof event.shiftKey === 'boolean') {
+              shiftKey = event.shiftKey;
+            }
+            if (typeof event.button === 'number') {
+              button = event.button;
+            }
+          }
+          const getModifierState = (key: string): boolean => {
+            switch (key) {
+              case 'Alt':
+                return altKey;
+              case 'Control':
+                return ctrlKey;
+              case 'Meta':
+                return metaKey;
+              case 'Shift':
+                return shiftKey;
+              default:
+                return false;
+            }
+          };
+          onClick({
+            altKey,
+            button,
+            ctrlKey,
+            defaultPrevented: false,
+            getModifierState,
+            metaKey,
+            pageX: nativeEvent.pageX,
+            pageY: nativeEvent.pageY,
+            preventDefault() {},
+            shiftKey,
+            stopPropagation() {},
+            type: 'click'
+          });
+        };
+      }
+      if (onFocus != null) {
+        nativeProps.onFocus = onFocus;
+      }
+      if (onGotPointerCapture != null) {
+        nativeProps.onGotPointerCapture = onGotPointerCapture;
+      }
+      if (onLostPointerCapture != null) {
+        nativeProps.onLostPointerCapture = onLostPointerCapture;
+      }
+      if (onMouseDown != null) {
+        nativeProps.onMouseDown = onMouseDown;
+      }
+      if (onMouseEnter != null) {
+        nativeProps.onMouseEnter = onMouseEnter;
+      }
+      if (onMouseLeave != null) {
+        nativeProps.onMouseLeave = onMouseLeave;
+      }
+      if (onMouseOut != null) {
+        nativeProps.onMouseOut = onMouseOut;
+      }
+      if (onMouseOver != null) {
+        nativeProps.onMouseOver = onMouseOver;
+      }
+      if (onMouseUp != null) {
+        nativeProps.onMouseUp = onMouseUp;
+      }
+      if (onPointerCancel != null) {
+        nativeProps.onPointerCancel = onPointerCancel;
+      }
+      if (onPointerDown != null) {
+        nativeProps.onPointerDown = onPointerDown;
+      }
+      if (onPointerEnter != null) {
+        nativeProps.onPointerEnter = onPointerEnter;
+      }
+      if (onPointerLeave != null) {
+        nativeProps.onPointerLeave = onPointerLeave;
+      }
+      if (onPointerMove != null) {
+        nativeProps.onPointerMove = onPointerMove;
+      }
+      if (onPointerOut != null) {
+        nativeProps.onPointerOut = onPointerOut;
+      }
+      if (onPointerOver != null) {
+        nativeProps.onPointerOver = onPointerOver;
+      }
+      if (onPointerUp != null) {
+        nativeProps.onPointerUp = onPointerUp;
+      }
+      if (onScroll != null) {
+        nativeProps.onScroll = onScroll;
+      }
+      if (onTouchCancel != null) {
+        nativeProps.onTouchCancel = onTouchCancel;
+      }
+      if (onTouchEnd != null) {
+        nativeProps.onTouchEnd = onTouchEnd;
+      }
+      if (onTouchMove != null) {
+        nativeProps.onTouchMove = onTouchMove;
+      }
+      if (onTouchStart != null) {
+        nativeProps.onTouchStart = onTouchStart;
+      }
+
+      // Tag-specific props
+
+      if (tagName === 'a' && href != null) {
         nativeProps.onPress = function (e) {
           if (__DEV__) {
             errorMsg('<a> "href" handling is not implemented in React Native.');
           }
         };
-      }
-      if (tagName === 'br') {
+      } else if (tagName === 'br') {
         nativeProps.children = '\n';
-      }
-      if (tagName === 'input') {
+      } else if (tagName === 'input') {
         let _inputMode = inputMode;
         if (type === 'email') {
           _inputMode = 'email';
@@ -270,11 +463,80 @@ export function createStrictDOMComponent<T, P: StrictProps>(
             );
           }
         }
-      }
-      if (tagName === 'textarea') {
+      } else if (tagName === 'img') {
+        if (alt != null) {
+          nativeProps.alt = alt;
+        }
+        if (crossOrigin != null) {
+          nativeProps.crossOrigin = crossOrigin;
+        }
+        if (height != null) {
+          nativeProps.height = height;
+        }
+        if (onError != null) {
+          nativeProps.onError = function () {
+            onError({
+              type: 'error'
+            });
+          };
+        }
+        if (onLoad != null) {
+          nativeProps.onLoad = function (e) {
+            const { source } = e.nativeEvent;
+            onLoad({
+              target: {
+                naturalHeight: source?.height,
+                naturalWidth: source?.width
+              },
+              type: 'load'
+            });
+          };
+        }
+        if (referrerPolicy != null) {
+          nativeProps.referrerPolicy = referrerPolicy;
+        }
+        if (src != null) {
+          nativeProps.src = src;
+        }
+        if (srcSet != null) {
+          nativeProps.srcSet = srcSet;
+        }
+        if (width != null) {
+          nativeProps.width = width;
+        }
+      } else if (tagName === 'textarea') {
         nativeProps.multiline = true;
+        if (rows != null) {
+          nativeProps.numberOfLines = rows;
+        }
       }
-      if (tagName === 'input' || tagName === 'textarea') {
+
+      // Component-specific props
+
+      if (nativeComponent === Pressable) {
+        if (disabled === true) {
+          nativeProps.disabled = true;
+          nativeProps.focusable = false;
+        }
+      } else if (nativeComponent === TextInput) {
+        if (autoComplete != null) {
+          nativeProps.autoComplete = autoComplete;
+        }
+        if (defaultValue != null) {
+          nativeProps.defaultValue = defaultValue;
+        }
+        if (disabled === true) {
+          // polyfill disabled elements
+          nativeProps.disabled = true;
+          nativeProps.editable = false;
+          nativeProps.focusable = false;
+        }
+        if (enterKeyHint != null) {
+          nativeProps.enterKeyHint = enterKeyHint;
+        }
+        if (maxLength != null) {
+          nativeProps.maxLength = maxLength;
+        }
         if (onChange != null || onInput != null) {
           nativeProps.onChange = function (e) {
             const { text } = e.nativeEvent;
@@ -318,88 +580,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
             });
           };
         }
-      }
-
-      if (tagName === 'img') {
-        if (onError != null) {
-          nativeProps.onError = function () {
-            onError({
-              type: 'error'
-            });
-          };
+        if (placeholder != null) {
+          nativeProps.placeholder = placeholder;
         }
-        if (onLoad != null) {
-          nativeProps.onLoad = function (e) {
-            const { source } = e.nativeEvent;
-            onLoad({
-              target: {
-                naturalHeight: source?.height,
-                naturalWidth: source?.width
-              },
-              type: 'load'
-            });
-          };
+        if (readOnly != null) {
+          nativeProps.editable = !readOnly;
         }
-      }
-
-      // TODO: remove once PointerEvent onClick is available
-      if (onClick != null) {
-        // Text has onPress, View doesn't
-        if (nativeComponent === View) {
-          nativeComponent = Pressable;
+        if (spellCheck != null) {
+          nativeProps.spellCheck = spellCheck;
         }
-        nativeProps.onPress = ({ nativeEvent }: PressEvent): void => {
-          const event: mixed = nativeEvent;
-          let altKey = false;
-          let ctrlKey = false;
-          let metaKey = false;
-          let shiftKey = false;
-          let button = 0;
-          if (event != null) {
-            if (typeof event.altKey === 'boolean') {
-              altKey = event.altKey;
-            }
-            if (typeof event.ctrlKey === 'boolean') {
-              ctrlKey = event.ctrlKey;
-            }
-            if (typeof event.metaKey === 'boolean') {
-              metaKey = event.metaKey;
-            }
-            if (typeof event.shiftKey === 'boolean') {
-              shiftKey = event.shiftKey;
-            }
-            if (typeof event.button === 'number') {
-              button = event.button;
-            }
-          }
-          const getModifierState = (key: string): boolean => {
-            switch (key) {
-              case 'Alt':
-                return altKey;
-              case 'Control':
-                return ctrlKey;
-              case 'Meta':
-                return metaKey;
-              case 'Shift':
-                return shiftKey;
-              default:
-                return false;
-            }
-          };
-          onClick({
-            altKey,
-            button,
-            ctrlKey,
-            getModifierState,
-            metaKey,
-            pageX: nativeEvent.pageX,
-            pageY: nativeEvent.pageY,
-            preventDefault() {},
-            shiftKey,
-            stopPropagation() {},
-            type: 'click'
-          });
-        };
+        if (value != null) {
+          nativeProps.value = value;
+        }
       }
 
       nativeProps.ref = React.useMemo(
@@ -410,9 +602,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       /**
        * Resolve the style props
        */
-      const [extractedStyles, customPropertiesFromThemes] = extractStyleThemes(
-        props.style
-      );
+      const [extractedStyles, customPropertiesFromThemes] =
+        extractStyleThemes(style);
       const customProperties = useCustomProperties(customPropertiesFromThemes);
       const inheritedStyles = useInheritedStyles();
       const inheritedFontSize =
@@ -465,20 +656,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         }
       }
 
-      const _styleProps = useStyleProps(renderStyles, {
+      const styleProps = useStyleProps(renderStyles, {
         customProperties,
         hover,
         inheritedFontSize
       });
-
-      // Mark `styleProps` as writable so we can mutate it
-      const styleProps: {
-        style: { [string]: string | number | (typeof Animated)['Value'] },
-        [string]: mixed
-      } = {
-        ..._styleProps,
-        style: { ..._styleProps.style }
-      };
 
       // Workaround: Android doesn't support ellipsis truncation if text is selectable
       // See #136
@@ -681,10 +863,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         // enable W3C flexbox layout
         nativeProps.experimental_layoutConformance = 'strict';
       }
-      let element = React.createElement(nativeComponent, {
-        ...(nativeProps as $FlowFixMe),
-        ...(styleProps as $FlowFixMe)
-      });
+
+      Object.assign(nativeProps, styleProps);
+      // $FlowFixMe (we don't care about the internal React Native prop types)
+      let element = React.createElement(nativeComponent, nativeProps);
 
       if (hasNextInheritedStyles) {
         element = (

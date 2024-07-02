@@ -34,6 +34,15 @@ export function TextString(props: Props): React$MixedElement {
     inheritedFontSize: inheritedFontSize
   });
 
+  if (
+    styleProps.style != null &&
+    typeof styleProps.style === 'object' &&
+    Object.keys(styleProps.style).length === 0
+  ) {
+    // $FlowFixMe (safe to remove style at this point)
+    delete styleProps.style;
+  }
+
   return (
     // $FlowFixMe
     <Text {...styleProps} children={children} />

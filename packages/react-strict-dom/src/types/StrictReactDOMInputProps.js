@@ -7,10 +7,11 @@
  * @flow strict
  */
 
-import type { StrictReactDOMProps } from './StrictReactDOMProps';
+import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMInputProps = $ReadOnly<{
   ...StrictReactDOMProps,
+  autoComplete?: AutoComplete,
   checked?: ?(boolean | 'mixed'),
   defaultChecked?: ?boolean,
   defaultValue?: ?Stringish,
@@ -50,5 +51,5 @@ export type StrictReactDOMInputProps = $ReadOnly<{
     | 'time'
     | 'url'
     | 'week',
-  value?: ?(Stringish | boolean | number)
+  value?: ?Stringish
 }>;

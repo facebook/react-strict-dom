@@ -7,10 +7,11 @@
  * @flow strict
  */
 
-import type { StrictReactDOMProps } from './StrictReactDOMProps';
+import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
 
 export type StrictReactDOMTextAreaProps = $ReadOnly<{
   ...StrictReactDOMProps,
+  autoComplete?: AutoComplete,
   defaultValue?: ?Stringish,
   disabled?: ?boolean,
   maxLength?: ?number,

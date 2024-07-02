@@ -51,5 +51,3 @@ export type IStyleX = $ReadOnly<{
 
 export type MutableCustomProperties = { [string]: mixed };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
-
-export type ReactNativeStyle = { [key: string]: ?(string | number) };

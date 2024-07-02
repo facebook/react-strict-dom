@@ -35,7 +35,11 @@ exports[`properties: custom property css.defineVars: tokens 1`] = `
 }
 `;
 
-exports[`properties: custom property handles undefined variables 1`] = `{}`;
+exports[`properties: custom property handles undefined variables 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: custom property var with hover styles 1`] = `
 {
@@ -213,16 +217,22 @@ exports[`properties: general boxSizing: content-box: width 1`] = `
 exports[`properties: general caretColor: red caret color 1`] = `
 {
   "cursorColor": "red",
+  "style": {},
 }
 `;
 
 exports[`properties: general caretColor: transparent caret color 1`] = `
 {
   "caretHidden": true,
+  "style": {},
 }
 `;
 
-exports[`properties: general caretColor: unsupported caret color 1`] = `{}`;
+exports[`properties: general caretColor: unsupported caret color 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: general direction: ltr 1`] = `
 {
@@ -291,6 +301,7 @@ exports[`properties: general fontWeight 2`] = `
 exports[`properties: general lineClamp 1`] = `
 {
   "numberOfLines": 3,
+  "style": {},
 }
 `;
 
@@ -328,15 +339,35 @@ exports[`properties: general lineHeight: unitless string 1`] = `
 }
 `;
 
-exports[`properties: general margin with multiple values 1`] = `{}`;
+exports[`properties: general margin with multiple values 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general marginEnd 1`] = `{}`;
+exports[`properties: general marginEnd 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general marginHorizontal 1`] = `{}`;
+exports[`properties: general marginHorizontal 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general marginStart 1`] = `{}`;
+exports[`properties: general marginStart 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general marginVertical 1`] = `{}`;
+exports[`properties: general marginVertical 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: general mixBlendMode 1`] = `
 {
@@ -386,11 +417,23 @@ exports[`properties: general objectFit: scaleDown 1`] = `
 }
 `;
 
-exports[`properties: general padding with multiple values 1`] = `{}`;
+exports[`properties: general padding with multiple values 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general paddingHorizontal 1`] = `{}`;
+exports[`properties: general paddingHorizontal 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general paddingVertical 1`] = `{}`;
+exports[`properties: general paddingVertical 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: general placeContent: center 1`] = `
 {
@@ -419,11 +462,23 @@ exports[`properties: general placeContent: flexStart 1`] = `
 }
 `;
 
-exports[`properties: general placeContent: invalid 1`] = `{}`;
+exports[`properties: general placeContent: invalid 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general placeContent: safeCenter 1`] = `{}`;
+exports[`properties: general placeContent: safeCenter 1`] = `
+{
+  "style": {},
+}
+`;
 
-exports[`properties: general placeContent: stretch 1`] = `{}`;
+exports[`properties: general placeContent: stretch 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: general pointerEvents 1`] = `
 {
@@ -721,27 +776,33 @@ exports[`properties: general verticalAlign: top 1`] = `
 
 exports[`properties: general visibility: collapse 1`] = `
 {
-  "aria-hidden": true,
+  "accessibilityElementsHidden": true,
+  "focusable": false,
+  "importantForAccessibility": "no-hide-descendants",
   "pointerEvents": "none",
   "style": {
     "opacity": 0,
   },
-  "tabIndex": -1,
 }
 `;
 
 exports[`properties: general visibility: hidden 1`] = `
 {
-  "aria-hidden": true,
+  "accessibilityElementsHidden": true,
+  "focusable": false,
+  "importantForAccessibility": "no-hide-descendants",
   "pointerEvents": "none",
   "style": {
     "opacity": 0,
   },
-  "tabIndex": -1,
 }
 `;
 
-exports[`properties: general visibility: visible 1`] = `{}`;
+exports[`properties: general visibility: visible 1`] = `
+{
+  "style": {},
+}
+`;
 
 exports[`properties: logical direction blockSize: blockSize 1`] = `
 {
@@ -1201,6 +1262,7 @@ exports[`properties: logical direction textAlign: start 1`] = `
 exports[`styles: pseudo-element ::placeholder syntax: placeholderTextColor 1`] = `
 {
   "placeholderTextColor": "red",
+  "style": {},
 }
 `;
 

@@ -85,6 +85,8 @@ In another process, start the examples app:
 npm run dev -w examples
 ```
 
+To open the React DevTools press `shift + m` in the terminal running Expo, and select "Open React devtools".
+
 If you need to update one of the patched `node_modules`, edit the file directly in `node_modules` and then run:
 
 ```

@@ -8,6 +8,7 @@
  */
 
 import type { Styles } from './styles';
+// import type { StrictEventTarget } from './StrictEventTarget';
 
 type IDRef = string;
 
@@ -144,10 +145,90 @@ type AriaRole =
   | 'treegrid'
   | 'treeitem';
 
-type StrictClickEvent = $ReadOnly<{
+export type AutoComplete = ?(
+  | 'additional-name'
+  | 'address-line1'
+  | 'address-line2'
+  | 'birthdate-day'
+  | 'birthdate-full'
+  | 'birthdate-month'
+  | 'birthdate-year'
+  | 'cc-csc'
+  | 'cc-exp'
+  | 'cc-exp-day'
+  | 'cc-exp-month'
+  | 'cc-exp-year'
+  | 'cc-number'
+  | 'cc-name'
+  | 'cc-given-name'
+  | 'cc-middle-name'
+  | 'cc-family-name'
+  | 'cc-type'
+  | 'country'
+  | 'current-password'
+  | 'email'
+  | 'family-name'
+  | 'gender'
+  | 'given-name'
+  | 'honorific-prefix'
+  | 'honorific-suffix'
+  | 'name'
+  | 'name-family'
+  | 'name-given'
+  | 'name-middle'
+  | 'name-middle-initial'
+  | 'name-prefix'
+  | 'name-suffix'
+  | 'new-password'
+  | 'nickname'
+  | 'on'
+  | 'one-time-code'
+  | 'organization'
+  | 'organization-title'
+  | 'password'
+  | 'password-new'
+  | 'postal-address'
+  | 'postal-address-country'
+  | 'postal-address-extended'
+  | 'postal-address-extended-postal-code'
+  | 'postal-address-locality'
+  | 'postal-address-region'
+  | 'postal-code'
+  | 'street-address'
+  | 'sms-otp'
+  | 'tel'
+  | 'tel-country-code'
+  | 'tel-national'
+  | 'tel-device'
+  | 'url'
+  | 'username'
+  | 'username-new'
+  | 'off'
+);
+
+/*
+type SyntheticEvent<+T> = $ReadOnly<{|
+  ...T,
+  bubbles: ?boolean,
+  cancelable: ?boolean,
+  currentTarget: ?StrictEventTarget,
+  defaultPrevented: ?boolean,
+  eventPhase: ?number,
+  preventDefault: () => void,
+  stopPropagation: () => void,
+  isTrusted: ?boolean,
+  srcEvent: T,
+  target: ?StrictEventTarget,
+  timeStamp: number,
+  type: ?string,
+|}>;
+*/
+
+type StrictClickEvent = $ReadOnly<{|
   altKey: boolean,
   button: number,
   ctrlKey: boolean,
+  defaultPrevented: boolean,
   getModifierState: (string) => boolean,
   metaKey: boolean,
   pageX: number,
@@ -156,46 +237,46 @@ type StrictClickEvent = $ReadOnly<{
   shiftKey: boolean,
   stopPropagation: () => void,
   type: 'click'
-}>;
+|}>;
 
 type EventProps = $ReadOnly<{
-  onAuxClick?: (SyntheticEvent<>) => void,
-  onBlur?: (SyntheticEvent<>) => void,
+  onAuxClick?: $FlowFixMe,
+  onBlur?: $FlowFixMe,
   onClick?: (StrictClickEvent) => void,
-  onContextMenu?: (SyntheticEvent<>) => void,
-  onCopy?: (SyntheticEvent<>) => void,
-  onCut?: (SyntheticEvent<>) => void,
-  onFocus?: (SyntheticEvent<>) => void,
-  onFocusIn?: (SyntheticEvent<>) => void,
-  onFocusOut?: (SyntheticEvent<>) => void,
-  onFullscreenChange?: (SyntheticEvent<>) => void,
-  onFullscreenError?: (SyntheticEvent<>) => void,
-  onGotPointerCapture?: (SyntheticEvent<>) => void,
-  onKeyDown?: ($ReadOnly<{ key: string, type: 'keydown', ... }>) => void,
-  onKeyUp?: (SyntheticEvent<>) => void,
-  onLostPointerCapture?: (SyntheticEvent<>) => void,
-  onPaste?: (SyntheticEvent<>) => void,
-  onPointerCancel?: (SyntheticEvent<>) => void,
-  onPointerDown?: (SyntheticEvent<>) => void,
-  onPointerEnter?: (SyntheticEvent<>) => void,
-  onPointerLeave?: (SyntheticEvent<>) => void,
-  onPointerMove?: (SyntheticEvent<>) => void,
-  onPointerOut?: (SyntheticEvent<>) => void,
-  onPointerOver?: (SyntheticEvent<>) => void,
-  onPointerUp?: (SyntheticEvent<>) => void,
-  onScroll?: (SyntheticEvent<>) => void,
-  onWheel?: (SyntheticEvent<>) => void,
-  onMouseDown?: (SyntheticEvent<>) => void, // TEMP
-  onMouseEnter?: (SyntheticEvent<>) => void, // TEMP
-  onMouseLeave?: (SyntheticEvent<>) => void, // TEMP
-  onMouseMove?: (SyntheticEvent<>) => void, // TEMP
-  onMouseOut?: (SyntheticEvent<>) => void, // TEMP
-  onMouseOver?: (SyntheticEvent<>) => void, // TEMP
-  onMouseUp?: (SyntheticEvent<>) => void, // TEMP
-  onTouchCancel?: (SyntheticEvent<>) => void, // TEMP
-  onTouchStart?: (SyntheticEvent<>) => void, // TEMP
-  onTouchEnd?: (SyntheticEvent<>) => void, // TEMP
-  onTouchMove?: (SyntheticEvent<>) => void // TEMP
+  onContextMenu?: $FlowFixMe,
+  onCopy?: $FlowFixMe,
+  onCut?: $FlowFixMe,
+  onFocus?: $FlowFixMe,
+  onFocusIn?: $FlowFixMe,
+  onFocusOut?: $FlowFixMe,
+  onFullscreenChange?: $FlowFixMe,
+  onFullscreenError?: $FlowFixMe,
+  onGotPointerCapture?: $FlowFixMe,
+  onKeyDown?: ($ReadOnly<{ key: string, type: ?string, ... }>) => void,
+  onKeyUp?: $FlowFixMe,
+  onLostPointerCapture?: $FlowFixMe,
+  onPaste?: $FlowFixMe,
+  onPointerCancel?: $FlowFixMe,
+  onPointerDown?: $FlowFixMe,
+  onPointerEnter?: $FlowFixMe,
+  onPointerLeave?: $FlowFixMe,
+  onPointerMove?: $FlowFixMe,
+  onPointerOut?: $FlowFixMe,
+  onPointerOver?: $FlowFixMe,
+  onPointerUp?: $FlowFixMe,
+  onScroll?: $FlowFixMe,
+  onWheel?: $FlowFixMe,
+  onMouseDown?: $FlowFixMe, // TEMP
+  onMouseEnter?: $FlowFixMe, // TEMP
+  onMouseLeave?: $FlowFixMe, // TEMP
+  onMouseMove?: $FlowFixMe, // TEMP
+  onMouseOut?: $FlowFixMe, // TEMP
+  onMouseOver?: $FlowFixMe, // TEMP
+  onMouseUp?: $FlowFixMe, // TEMP
+  onTouchCancel?: $FlowFixMe, // TEMP
+  onTouchStart?: $FlowFixMe, // TEMP
+  onTouchEnd?: $FlowFixMe, // TEMP
+  onTouchMove?: $FlowFixMe // TEMP
 }>;
 
 export type StrictReactDOMProps = $ReadOnly<{

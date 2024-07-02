@@ -39,10 +39,17 @@ const config = [
       alias({
         entries: [
           {
-            find: 'react-native',
+            find: /^react-native$/,
             replacement: path.resolve(
               __dirname,
               '../benchmarks/mocks/react-native.js'
+            )
+          },
+          {
+            find: 'react-native/Libraries/Components/View/ViewNativeComponent',
+            replacement: path.resolve(
+              __dirname,
+              '../benchmarks/mocks/ViewNativeComponent.js'
             )
           }
         ]

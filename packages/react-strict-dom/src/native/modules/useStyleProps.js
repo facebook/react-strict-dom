@@ -7,8 +7,8 @@
  * @flow strict-local
  */
 
-import { typeof Animated } from 'react-native';
 import type { CustomProperties, Styles } from '../../types/styles';
+import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
@@ -24,12 +24,7 @@ const emptyObject = {};
 export function useStyleProps(
   style: Styles,
   options: StyleOptions
-): $ReadOnly<{
-  style?: ?$ReadOnly<{
-    [key: string]: ?(string | number | Animated['Value'])
-  }>,
-  ...
-}> {
+): ReactNativeProps {
   const { customProperties, hover, inheritedFontSize } = options;
 
   const { height, width } = useWindowDimensions();

@@ -73,7 +73,7 @@ const webConfigs = [
 const nativeConfigs = [
   // OSS build
   {
-    external: ['react', 'react-native', '@stylexjs/stylex'],
+    external: ['react', /^react-native.*/, '@stylexjs/stylex'],
     input: require.resolve('../src/native/index.js'),
     output: {
       file: path.join(__dirname, '../dist/native/index.js'),
