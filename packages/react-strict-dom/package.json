@@ -39,7 +39,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.73.2"
+    "react-native": ">=0.74.3"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -46,46 +46,55 @@ import { useStyleProps } from './useStyleProps';
 import { useStyleTransition } from './useStyleTransition';
 import * as stylex from '../stylex';
 
-const elements = {
-  article: View,
-  aside: View,
-  blockquote: Text,
-  br: Text,
-  button: Pressable,
-  code: Text,
-  div: View,
-  em: Text,
-  fieldset: View,
-  footer: View,
-  form: View,
-  header: View,
-  h1: Text,
-  h2: Text,
-  h3: Text,
-  h4: Text,
-  h5: Text,
-  h6: Text,
-  img: Image,
-  input: TextInput,
-  main: View,
-  nav: View,
-  ol: View,
-  p: Text,
-  pre: Text,
-  section: View,
-  strong: Text,
-  sub: Text,
-  sup: Text,
-  textarea: TextInput,
-  ul: View
-};
+function getComponentFromElement(tagName: string) {
+  switch (tagName) {
+    case 'article':
+    case 'aside':
+    case 'div':
+    case 'fieldset':
+    case 'footer':
+    case 'form':
+    case 'header':
+    case 'main':
+    case 'nav':
+    case 'ol':
+    case 'section':
+    case 'ul': {
+      return View;
+    }
+    case 'blockquote':
+    case 'br':
+    case 'code':
+    case 'em':
+    case 'h1':
+    case 'h2':
+    case 'h3':
+    case 'h4':
+    case 'h5':
+    case 'h6':
+    case 'p':
+    case 'pre':
+    case 'strong':
+    case 'sub':
+    case 'sup': {
+      return Text;
+    }
+    case 'button': {
+      return Pressable;
+    }
+    case 'img': {
+      return Image;
+    }
+    case 'input':
+    case 'textarea': {
+      return TextInput;
+    }
+    default:
+      return Text;
+  }
+}
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
-
-const roles = {
-  a: 'link',
-  header: 'header'
-};
 
 const unsupportedProps = new Set([
   'onBeforeInput',
@@ -131,9 +140,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 ): React.AbstractComponent<P, T> {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let nativeComponent =
-        elements[tagName] != null ? elements[tagName] : Text;
-
+      let nativeComponent = getComponentFromElement(tagName);
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       if (__DEV__) {
@@ -246,7 +253,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       if (ariaPosInSet != null) {
         nativeProps.accessibilityPosInSet = ariaPosInSet;
       }
-      const ariaRole = role || roles[tagName];
+      const ariaRole =
+        role ||
+        (tagName === 'a' && 'link') ||
+        (tagName === 'header' && 'header');
       if (ariaRole) {
         nativeProps.role = ariaRole;
       }

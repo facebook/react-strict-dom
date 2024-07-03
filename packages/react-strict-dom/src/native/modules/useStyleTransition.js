@@ -217,7 +217,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.rotate != null) {
+          if (
+            singleRefTransform.rotate != null &&
+            singleTransform.rotate != null
+          ) {
             animatedTransforms.push({
               rotate: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -226,7 +229,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.rotateX != null) {
+          if (
+            singleRefTransform.rotateX != null &&
+            singleTransform.rotateX != null
+          ) {
             animatedTransforms.push({
               rotateX: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -238,7 +244,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.rotateY != null) {
+          if (
+            singleRefTransform.rotateY != null &&
+            singleTransform.rotateY != null
+          ) {
             animatedTransforms.push({
               rotateY: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -250,7 +259,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.rotateZ != null) {
+          if (
+            singleRefTransform.rotateZ != null &&
+            singleTransform.rotateZ != null
+          ) {
             animatedTransforms.push({
               rotateZ: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -307,7 +319,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.skewX != null) {
+          if (
+            singleRefTransform.skewX != null &&
+            singleTransform.skewX != null
+          ) {
             animatedTransforms.push({
               skewX: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -316,7 +331,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.skewY != null) {
+          if (
+            singleRefTransform.skewY != null &&
+            singleTransform.skewY != null
+          ) {
             animatedTransforms.push({
               skewY: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -325,7 +343,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.translateX != null) {
+          if (
+            singleRefTransform.translateX != null &&
+            singleTransform.translateX != null
+          ) {
             animatedTransforms.push({
               translateX: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
@@ -337,7 +358,10 @@ export function useStyleTransition(
             });
             continue;
           }
-          if (singleTransform.translateY != null) {
+          if (
+            singleRefTransform.translateY != null &&
+            singleTransform.translateY != null
+          ) {
             animatedTransforms.push({
               translateY: animatedRef.current.interpolate({
                 inputRange: INPUT_RANGE,
