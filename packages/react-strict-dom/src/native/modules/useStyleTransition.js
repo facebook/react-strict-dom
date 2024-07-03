@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
+ * @flow strict-local
  */
 
 import type { AnimatedNode } from '../../types/react-native';
@@ -88,19 +88,20 @@ export function useStyleTransition(
   const animatedRef = useRef(new Animated.Value(0));
 
   useEffect(() => {
-    Animated.sequence([
-      Animated.delay(transitionDelay ?? 0),
-
-      Animated.timing(animatedRef.current, {
-        toValue: 1,
-        duration: transitionDuration ?? 16,
-        easing: getEasingFunction(transitionTimingFunction),
-        useNativeDriver: canUseNativeDriver(transitionProperties)
-      })
-    ]).start(() => {
-      valueRef.current = transitionProperties;
-      animatedRef.current = new Animated.Value(0);
-    });
+    if (transitionProperties != null) {
+      Animated.sequence([
+        Animated.delay(transitionDelay ?? 0),
+        Animated.timing(animatedRef.current, {
+          toValue: 1,
+          duration: transitionDuration ?? 16,
+          easing: getEasingFunction(transitionTimingFunction),
+          useNativeDriver: canUseNativeDriver(transitionProperties)
+        })
+      ]).start(() => {
+        valueRef.current = transitionProperties;
+        animatedRef.current = new Animated.Value(0);
+      });
+    }
   }, [
     transitionDelay,
     transitionDuration,
