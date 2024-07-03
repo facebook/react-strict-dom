@@ -312,9 +312,12 @@ describe('<html.*>', () => {
     test.skip('"unset" keyword', () => {});
 
     test('"transition" properties ', () => {
-      const { Easing } = require('react-native');
+      const { Animated, Easing } = require('react-native');
 
       const styles = css.create({
+        none: {
+          backgroundColor: 'red'
+        },
         backgroundColor: (backgroundColor) => ({
           backgroundColor: backgroundColor ?? 'rgba(0,0,0,0.1)',
           transitionDelay: 200,
@@ -373,10 +376,11 @@ describe('<html.*>', () => {
       // default
       act(() => {
         root = create(<html.div />);
-        root.update(<html.div style={{}} />);
+        root.update(<html.div style={styles.none} />);
       });
       // assert no warning if no transition property is specified
       expect(console.warn).not.toHaveBeenCalled();
+      expect(Animated.sequence).not.toHaveBeenCalled();
 
       // backgroundColor transition
       act(() => {

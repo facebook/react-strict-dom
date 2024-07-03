@@ -8,7 +8,7 @@
  */
 
 import type { StrictProps } from '../../types/StrictProps';
-import type { Style, Transform } from '../../types/styles';
+import type { Style } from '../../types/styles';
 import type {
   ChangeEvent,
   EditingEvent,
@@ -151,14 +151,14 @@ function isNumber(num: mixed): boolean %checks {
   return typeof num === 'number';
 }
 
-function resolveTransitionProperty(property: mixed): string[] {
+function resolveTransitionProperty(property: mixed): ?(string[]) {
   if (property === 'all') {
     return ['opacity', 'transform'];
   }
   if (typeof property === 'string') {
     return property.split(',').map((p) => p.trim());
   }
-  return [];
+  return null;
 }
 
 export function createStrictDOMComponent<T, P: StrictProps>(
@@ -643,16 +643,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       const resolvedTransitionProperty =
         resolveTransitionProperty(transitionProperty);
-      const transitionProperties = resolvedTransitionProperty.flatMap(
+      const transitionProperties = resolvedTransitionProperty?.flatMap(
         (property) => {
           const value = styleProps.style[property];
           if (isString(value) || isNumber(value) || Array.isArray(value)) {
             return [{ property, value }];
           }
-          return [] as Array<{
-            property: string,
-            value: string | number | Transform[]
-          }>;
+          return [] as [];
         }
       );
       const animatedPropertyValues = useStyleTransition({
