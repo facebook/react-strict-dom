@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.18 (Jul 4, 2024)
+
+### Fixes
+
+* [Native] Skip animation setup for elements with no style transitions.
+* [Native] Remove invalid style properties from allowed shortforms.
+
 ## 0.0.17 (Jun 26, 2024)
 
 ### New features
