@@ -249,13 +249,33 @@ function resolveStyle(
 
     // Resolve length units
     if (styleValue instanceof CSSLengthUnitValue) {
-      result[propName] = styleValue.resolvePixelValue({
-        fontScale,
-        inheritedFontSize,
-        viewportHeight,
-        viewportWidth
-      });
-      continue;
+      const fontSize = flatStyle.fontSize;
+      // If fontSize is being resolved, or there is no fontSize for this style,
+      // we use the inherited fontSize.
+      if (propName === 'fontSize' || fontSize == null) {
+        result[propName] = styleValue.resolvePixelValue({
+          fontScale,
+          inheritedFontSize: inheritedFontSize,
+          viewportHeight,
+          viewportWidth
+        });
+        continue;
+      }
+      if (fontSize != null) {
+        // If the style contains a fontSize, it must first be resolved and then
+        // used as the "inherited" value to resolve other lengths correctly.
+        if (typeof fontSize === 'number') {
+          result[propName] = styleValue.resolvePixelValue({
+            fontScale,
+            inheritedFontSize: fontSize,
+            viewportHeight,
+            viewportWidth
+          });
+        } else {
+          stylesToReprocess[propName] = styleValue;
+        }
+        continue;
+      }
     }
 
     // Resolve the stylex object-value syntax
@@ -293,21 +313,19 @@ function resolveStyle(
     // React Native treats unitless as a 'px' value
     // Web treats unitless as fontSize multiplier
     if (propName === 'lineHeight') {
-      // Other units would already be instanceof CSSLengthUnitValue
+      // Other units would already be resolve as instanceof CSSLengthUnitValue
       if (typeof styleValue === 'number' || typeof styleValue === 'string') {
         const lineHeightValue = parseFloat(styleValue);
-        const fontSize = flatStyle.fontSize;
-        if (fontSize instanceof CSSLengthUnitValue) {
-          const { value: fontSizeValue, unit: fontSizeUnit } = fontSize;
-          const value = new CSSLengthUnitValue(
-            lineHeightValue * fontSizeValue,
-            fontSizeUnit
-          );
-          stylesToReprocess[propName] = value;
-        } else if (typeof fontSize === 'number') {
-          result[propName] = lineHeightValue * flatStyle.fontSize;
+        const fontSize = flatStyle.fontSize ?? inheritedFontSize;
+        if (fontSize != null) {
+          if (typeof fontSize === 'number') {
+            result[propName] = lineHeightValue * fontSize;
+          } else {
+            // Reprocess once fontSize has been computed
+            stylesToReprocess[propName] = styleValue;
+          }
         } else {
-          // Fallback in case no fontSize
+          // Fallback in case of no fontSize
           result[propName] = lineHeightValue * 16;
         }
         continue;
@@ -328,12 +346,14 @@ function resolveStyle(
     const processedStyles = processStyle(stylesToReprocess, true);
     // We can end up re-processing lineHeight without a fontSize (since it might already be resolved),
     // which generates incorrect lineHeight values. Passing the fontSize back in avoids this.
+    const resolvedFontSize = result.fontSize;
     const fontSizeStyle =
-      result.fontSize != null ? { fontSize: result.fontSize } : null;
-    Object.assign(
-      result,
-      resolveStyle([fontSizeStyle, processedStyles], options)
+      resolvedFontSize != null ? { fontSize: resolvedFontSize } : null;
+    const resolvedStyles = resolveStyle(
+      [fontSizeStyle, processedStyles],
+      options
     );
+    Object.assign(result, resolvedStyles);
   }
 
   return result;

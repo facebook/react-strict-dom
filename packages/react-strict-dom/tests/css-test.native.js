@@ -1570,6 +1570,16 @@ describe('units: length', () => {
     });
   }
 
+  test(`${value} "em" units based on font-size`, () => {
+    const styles = css.create({
+      underTest: {
+        fontSize: 10,
+        width: `${value}em`
+      }
+    });
+    expect(css.props.call(mockOptions, styles.underTest)).toMatchSnapshot();
+  });
+
   test(`${value} "em" units based on inherited font-size`, () => {
     const styles = css.create({
       underTest: {
