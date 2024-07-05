@@ -1238,6 +1238,15 @@ exports[`units: length 10 "em" units are resolved to pixels 1`] = `
 }
 `;
 
+exports[`units: length 10 "em" units based on font-size 1`] = `
+{
+  "style": {
+    "fontSize": 10,
+    "width": 100,
+  },
+}
+`;
+
 exports[`units: length 10 "em" units based on inherited font-size 1`] = `
 {
   "style": {

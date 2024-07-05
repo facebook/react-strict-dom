@@ -171,19 +171,20 @@ describe('<html.*>', () => {
           color: 'red',
           cursor: 'pointer',
           fontFamily: 'Arial',
-          fontSize: 20,
+          fontSize: '2em',
           fontStyle: 'italic',
           fontVariant: 'variant',
           fontWeight: 'bold',
           letterSpacing: '10px',
-          lineHeight: '30px',
+          lineHeight: 2,
           textAlign: 'right',
           textIndent: '10px',
           textTransform: 'uppercase',
           whiteSpace: 'pre'
         },
         alsoInherits: {
-          fontWeight: 300
+          fontWeight: 300,
+          fontSize: '2em'
         },
         text: {
           fontSize: '1.5em'
@@ -194,7 +195,7 @@ describe('<html.*>', () => {
       const root = create(
         <html.div style={styles.inherits}>
           <html.div style={styles.alsoInherits}>
-            <html.span>Inherits text styles</html.span>
+            <html.span style={styles.text}>Inherits text styles</html.span>
             <html.input placeholder="Does not inherit text styles" />
           </html.div>
         </html.div>

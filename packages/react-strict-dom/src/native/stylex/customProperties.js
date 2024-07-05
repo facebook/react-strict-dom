@@ -110,8 +110,8 @@ export function resolveVariableReferences(
         colorScheme
       );
       if (resolvedValue == null) {
-        // Failure to resolve a css variable in a value means the entire value is unparsable so we bail out and
-        // resolve the entire value as null
+        // Failure to resolve a CSS variable in a value means the entire value
+        // is unparsable so we bail out and resolve the entire value as null
         return null;
       }
       result.push(resolvedValue);
@@ -120,7 +120,7 @@ export function resolveVariableReferences(
     }
   }
 
-  // special case for signular number value
+  // special case for singular number value
   if (result.length === 1 && typeof result[0] === 'number') {
     return result[0];
   }
