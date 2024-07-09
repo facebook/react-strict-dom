@@ -308,6 +308,19 @@ describe('<html.*>', () => {
       expect(root.toJSON()).toMatchSnapshot();
     });
 
+    test('fontSize to resolve em units', () => {
+      const styles = css.create({
+        root: {
+          fontSize: '2em',
+          maxHeight: '2em'
+        }
+      });
+      const root = create(<html.div style={styles.root} />);
+      const rootElement = root.toJSON();
+      expect(rootElement.props.style.fontSize).toBeUndefined();
+      expect(rootElement.props.style.maxHeight).toBe(2 * 2 * 16);
+    });
+
     test.skip('"inherit" keyword', () => {});
     test.skip('"initial" keyword', () => {});
     test.skip('"unset" keyword', () => {});
