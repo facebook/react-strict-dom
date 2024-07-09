@@ -188,6 +188,13 @@ export function useStyleTransition(
             (transforms[i].translateY != null &&
               refTransforms[i].translateY == null)
           ) {
+            if (__DEV__) {
+              warnMsg(
+                'The types of transforms must be the same before and after the transition. The transition will not animate.\n' +
+                  `Before: ${JSON.stringify(transforms)}\n` +
+                  `After: ${JSON.stringify(refTransforms)}`
+              );
+            }
             return transforms;
           }
         }
