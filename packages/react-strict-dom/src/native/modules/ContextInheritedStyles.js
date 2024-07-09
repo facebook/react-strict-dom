@@ -7,18 +7,15 @@
  * @flow strict-local
  */
 
-import type { CustomProperties, Style } from '../../types/styles';
+import type { Style } from '../../types/styles';
 
 import * as React from 'react';
 import { flattenStyle } from './flattenStyle';
-import { useStyleProps } from './useStyleProps';
 
 type Value = Style;
 
 type ProviderProps = $ReadOnly<{
   children: React$MixedElement,
-  customProperties: ?CustomProperties,
-  hover: boolean,
   value: Value
 }>;
 
@@ -35,29 +32,9 @@ if (__DEV__) {
 export function InheritedStylesProvider(
   props: ProviderProps
 ): React$MixedElement {
-  const { children, customProperties, hover, value } = props;
-  const valueFontSize = value?.fontSize;
-
+  const { children, value } = props;
   const inheritedStyles = useInheritedStyles();
-  const inheritedFontSize = inheritedStyles?.fontSize;
-
-  const computedFontSize = useStyleProps(
-    { fontSize: valueFontSize } as $FlowFixMe,
-    {
-      customProperties,
-      hover,
-      // $FlowFixMe
-      inheritedFontSize
-    }
-  ).style?.fontSize;
-
-  const fontStyle = computedFontSize != null && { fontSize: computedFontSize };
-
-  const flatStyle = flattenStyle([
-    inheritedStyles as ?Style,
-    value as ?Style,
-    fontStyle as $FlowFixMe
-  ]);
+  const flatStyle = flattenStyle([inheritedStyles as ?Style, value as ?Style]);
 
   return (
     <ContextInheritedStyles.Provider children={children} value={flatStyle} />

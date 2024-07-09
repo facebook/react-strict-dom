@@ -8,7 +8,6 @@
  */
 
 import type { StrictProps } from '../../types/StrictProps';
-import type { Style } from '../../types/styles';
 import type {
   ChangeEvent,
   EditingEvent,
@@ -423,69 +422,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       const flatStyle = flattenStyle(extractedStyles);
 
-      const {
-        color,
-        cursor,
-        fontFamily,
-        fontSize,
-        fontStyle,
-        fontVariant,
-        fontWeight,
-        letterSpacing,
-        lineHeight,
-        textAlign,
-        textIndent,
-        textTransform,
-        whiteSpace,
-        ...nonTextStyle
-      } = flatStyle;
-
-      const nextInheritedStyles: { ...Style } = {};
-      if (color != null) {
-        nextInheritedStyles.color = color;
-      }
-      if (cursor != null) {
-        nextInheritedStyles.cursor = cursor;
-      }
-      if (fontFamily != null) {
-        nextInheritedStyles.fontFamily = fontFamily;
-      }
-      if (fontSize != null) {
-        nextInheritedStyles.fontSize = fontSize;
-      }
-      if (fontStyle != null) {
-        nextInheritedStyles.fontStyle = fontStyle;
-      }
-      if (fontVariant != null) {
-        nextInheritedStyles.fontVariant = fontVariant;
-      }
-      if (fontWeight != null) {
-        nextInheritedStyles.fontWeight = fontWeight;
-      }
-      if (letterSpacing != null) {
-        nextInheritedStyles.letterSpacing = letterSpacing;
-      }
-      if (lineHeight != null) {
-        nextInheritedStyles.lineHeight = lineHeight;
-      }
-      if (textAlign != null) {
-        nextInheritedStyles.textAlign = textAlign;
-      }
-      if (textIndent != null) {
-        nextInheritedStyles.textIndent = textIndent;
-      }
-      if (textTransform != null) {
-        nextInheritedStyles.textTransform = textTransform;
-      }
-      if (whiteSpace != null) {
-        nextInheritedStyles.whiteSpace = whiteSpace;
-      }
-
-      const hasNextInheritedStyles =
-        nextInheritedStyles != null &&
-        typeof nextInheritedStyles === 'object' &&
-        Object.keys(nextInheritedStyles).length > 0;
-
       const renderStyles = [
         defaultProps?.style ?? null,
         // Use 'static' position by default where allowed
@@ -502,26 +438,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
             ]
           : null,
         // Styles for Text
-        nativeComponent === Text && [
-          styles.userSelectAuto,
-          inheritedStyles,
+        [
+          nativeComponent === Text && [styles.userSelectAuto, inheritedStyles],
           flatStyle
-        ],
-        // Styles for TextInput
-        nativeComponent === TextInput && [flatStyle],
-        // Styles for everything else
-        (nativeComponent !== Text || nativeComponent !== TextInput) && [
-          nonTextStyle
         ]
       ];
 
-      const { hover, handlers } = useHoverHandlers(
-        // we include the next inherited styles for non-text
-        // so that any related hover handlers get attached.
-        nativeComponent === Text || nativeComponent === TextInput
-          ? renderStyles
-          : [renderStyles, nextInheritedStyles as $FlowFixMe]
-      );
+      const { hover, handlers } = useHoverHandlers(renderStyles);
 
       if (handlers.type === 'HOVERABLE') {
         for (const handler of [
@@ -635,11 +558,77 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // This is where we hack in a shim for `transitionProperty`,
       // `transitionDuration`, `transitionDelay`, `transitionTimingFunction`.
       const {
+        color,
+        cursor,
+        fontFamily,
+        fontSize,
+        fontStyle,
+        fontVariant,
+        fontWeight,
+        letterSpacing,
+        lineHeight, // eslint-disable-line no-unused-vars
+        textAlign,
+        textIndent,
+        textTransform,
+        whiteSpace,
         transitionDelay,
         transitionDuration,
         transitionProperty,
-        transitionTimingFunction
+        transitionTimingFunction,
+        ...nonTextStyle
       } = styleProps.style;
+
+      const nextInheritedStyles = {} as $FlowFixMe;
+      if (color != null) {
+        nextInheritedStyles.color = color;
+      }
+      if (cursor != null) {
+        nextInheritedStyles.cursor = cursor;
+      }
+      if (fontFamily != null) {
+        nextInheritedStyles.fontFamily = fontFamily;
+      }
+      if (fontSize != null) {
+        nextInheritedStyles.fontSize = fontSize;
+      }
+      if (fontStyle != null) {
+        nextInheritedStyles.fontStyle = fontStyle;
+      }
+      if (fontVariant != null) {
+        nextInheritedStyles.fontVariant = fontVariant;
+      }
+      if (fontWeight != null) {
+        nextInheritedStyles.fontWeight = fontWeight;
+      }
+      if (letterSpacing != null) {
+        nextInheritedStyles.letterSpacing = letterSpacing;
+      }
+      if (flatStyle.lineHeight != null) {
+        // Intentionally use the unresolved value to account for unitless
+        // lineHeight, which needs to be preserved when inherited.
+        nextInheritedStyles.lineHeight = flatStyle.lineHeight;
+      }
+      if (textAlign != null) {
+        nextInheritedStyles.textAlign = textAlign;
+      }
+      if (textIndent != null) {
+        nextInheritedStyles.textIndent = textIndent;
+      }
+      if (textTransform != null) {
+        nextInheritedStyles.textTransform = textTransform;
+      }
+      if (whiteSpace != null) {
+        nextInheritedStyles.whiteSpace = whiteSpace;
+      }
+
+      const hasNextInheritedStyles =
+        nextInheritedStyles != null &&
+        typeof nextInheritedStyles === 'object' &&
+        Object.keys(nextInheritedStyles).length > 0;
+
+      if (nativeComponent !== Text && nativeComponent !== TextInput) {
+        styleProps.style = nonTextStyle;
+      }
 
       const resolvedTransitionProperty =
         resolveTransitionProperty(transitionProperty);
@@ -701,8 +690,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         element = (
           <InheritedStylesProvider
             children={element}
-            customProperties={customProperties}
-            hover={hover}
             value={nextInheritedStyles}
           />
         );
