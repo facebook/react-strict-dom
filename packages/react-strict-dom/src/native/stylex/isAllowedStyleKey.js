@@ -16,7 +16,7 @@ const { major, minor, patch } = version;
 const isMain = major === 1000 && minor === 0 && patch === 0;
 // Nightly NPM package
 // $FlowFixMe (pre-release is number type)
-const isNightly = version?.prerelease?.startsWith('nightly-');
+const isNightly = version?.prerelease?.toString()?.startsWith('nightly-');
 const isExperimental = isMain || isNightly;
 
 const allowedStyleKeySet = new Set<string>([
