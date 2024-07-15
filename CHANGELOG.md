@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.19 (Jul 15, 2024)
+
+### Fixes
+
+* [Native] Add missing dev warning for CSS transitions polyfill
+* [Native] Fix CSS `em` units polyfill on non-text elements.
+* [Native] Fix CSS length unit polyfill when using non-inherited `fontSize`.
+
 ## 0.0.18 (Jul 4, 2024)
 
 ### Fixes
