@@ -227,54 +227,77 @@ describe('<html.*>', () => {
           <html.span style={styles.nested}>text</html.span>
         </html.div>
       );
+      const getfontSize = (element) => element.props.style.fontSize;
       let rootElement = root.toJSON();
-      let firstSpan = rootElement.children[0];
-      let secondSpan = rootElement.children[1];
-      expect(firstSpan.props.style.fontSize).toBe(2 * 16);
+      let firstChild = rootElement.children[0];
+      let secondSecond = rootElement.children[1];
+      expect(getfontSize(firstChild)).toBe(2 * 16);
       // check that 'em' values are correctly inherited
-      expect(secondSpan.props.style.fontSize).toBe(1.5 * 2 * 16);
+      expect(getfontSize(secondSecond)).toBe(1.5 * 2 * 16);
       // check hover interaction updates inherited value
       act(() => {
         rootElement.props.onMouseEnter();
       });
       rootElement = root.toJSON();
-      firstSpan = rootElement.children[0];
-      secondSpan = rootElement.children[1];
-      expect(firstSpan.props.style.fontSize).toBe(3 * 16);
-      expect(secondSpan.props.style.fontSize).toBe(1.5 * 3 * 16);
+      firstChild = rootElement.children[0];
+      secondSecond = rootElement.children[1];
+      expect(getfontSize(firstChild)).toBe(3 * 16);
+      expect(getfontSize(secondSecond)).toBe(1.5 * 3 * 16);
     });
 
-    test('inherited lineHeight', () => {
+    test('inherited lineHeight (unitless)', () => {
       const styles = css.create({
-        unitlessLineHeight: {
-          lineHeight: 1.5
-        },
-        increaseLineHeight: {
+        root: {
           lineHeight: 2
         },
-        increaseFontSize: {
-          fontSize: 20
+        text: {
+          fontSize: '2em'
+        },
+        nestedText: {
+          lineHeight: '0.5'
         }
       });
       const root = create(
-        <html.div style={styles.unitlessLineHeight}>
-          <html.span>
-            <html.span style={styles.increaseFontSize}>text</html.span>
-          </html.span>
-          <html.span style={styles.increaseFontSize}>
-            <html.span style={styles.increaseLineHeight}>text</html.span>
+        <html.div style={styles.root}>
+          <html.span style={styles.text}>
+            <html.span style={styles.nestedText}>hello</html.span>
           </html.span>
         </html.div>
       );
+      const getLineHeight = (element) => element.props.style.lineHeight;
       const rootElement = root.toJSON();
-      const firstSpan = rootElement.children[0];
-      expect(firstSpan.props.style.lineHeight).toBe(1.5 * 16);
-      const firstSpanInner = firstSpan.children[0];
-      expect(firstSpanInner.props.style.lineHeight).toBe(1.5 * 20);
-      const secondSpan = rootElement.children[1];
-      expect(secondSpan.props.style.lineHeight).toBe(1.5 * 20);
-      const secondSpanInner = secondSpan.children[0];
-      expect(secondSpanInner.props.style.lineHeight).toBe(2 * 20);
+      const firstChild = rootElement.children[0];
+      const firstGrandChild = firstChild.children[0];
+      expect(getLineHeight(firstChild)).toBe(64);
+      expect(getLineHeight(firstGrandChild)).toBe(16);
+    });
+
+    test('inherited lineHeight (em)', () => {
+      const styles = css.create({
+        root: {
+          lineHeight: '2em'
+        },
+        text: {
+          fontSize: '2em'
+        },
+        nestedText: {
+          lineHeight: 2
+        }
+      });
+      const root = create(
+        <html.div style={styles.root}>
+          <html.span style={styles.text}>
+            <html.span style={styles.nestedText}>hello</html.span>
+          </html.span>
+        </html.div>
+      );
+      const getLineHeight = (element) => element.props.style.lineHeight;
+      const rootElement = root.toJSON();
+      const firstChild = rootElement.children[0];
+      const firstGrandChild = firstChild.children[0];
+
+      expect(getLineHeight(firstChild)).toBe(32);
+      expect(getLineHeight(firstGrandChild)).toBe(64);
     });
 
     test('inherited styles for auto-fix of raw strings', () => {

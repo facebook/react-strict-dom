@@ -40,6 +40,7 @@ import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
 import { mergeRefs } from '../../shared/mergeRefs';
+import { resolveUnitlessLineHeight } from './resolveUnitlessLineHeight';
 import { useHoverHandlers } from './useHoverHandlers';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import { useStyleProps } from './useStyleProps';
@@ -795,10 +796,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       if (letterSpacing != null) {
         nextInheritedStyles.letterSpacing = letterSpacing;
       }
-      if (flatStyle.lineHeight != null) {
-        // Intentionally use the unresolved value to account for unitless
-        // lineHeight, which needs to be preserved when inherited.
-        nextInheritedStyles.lineHeight = flatStyle.lineHeight;
+      if (lineHeight != null) {
+        nextInheritedStyles.lineHeight = lineHeight;
       }
       if (textAlign != null) {
         nextInheritedStyles.textAlign = textAlign;
@@ -812,6 +811,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       if (whiteSpace != null) {
         nextInheritedStyles.whiteSpace = whiteSpace;
       }
+
+      resolveUnitlessLineHeight(styleProps.style);
 
       const hasNextInheritedStyles =
         nextInheritedStyles != null &&

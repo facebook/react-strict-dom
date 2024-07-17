@@ -9,6 +9,7 @@
 
 import * as React from 'react';
 import { Text } from 'react-native';
+import { resolveUnitlessLineHeight } from './resolveUnitlessLineHeight';
 import { useCustomProperties } from './ContextCustomProperties';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { useStyleProps } from './useStyleProps';
@@ -42,6 +43,8 @@ export function TextString(props: Props): React$MixedElement {
     // $FlowFixMe (safe to remove style at this point)
     delete styleProps.style;
   }
+
+  resolveUnitlessLineHeight(styleProps.style);
 
   return (
     // $FlowFixMe

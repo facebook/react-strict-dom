@@ -207,6 +207,11 @@ function processStyle(
         result[propName] = styleValue.toString();
         continue;
       }
+      // Normalize unitless lineHeight to string
+      if (propName === 'lineHeight') {
+        result[propName] = styleValue.toString();
+        continue;
+      }
     }
 
     // Everything else
@@ -313,29 +318,6 @@ function resolveStyle(
       continue;
     }
 
-    // Polyfill unitless lineHeight
-    // React Native treats unitless as a 'px' value
-    // Web treats unitless as fontSize multiplier
-    if (propName === 'lineHeight') {
-      // Other units would already be resolve as instanceof CSSLengthUnitValue
-      if (typeof styleValue === 'number' || typeof styleValue === 'string') {
-        const lineHeightValue = parseFloat(styleValue);
-        const fontSize = flatStyle.fontSize ?? inheritedFontSize;
-        if (fontSize != null) {
-          if (typeof fontSize === 'number') {
-            result[propName] = lineHeightValue * fontSize;
-          } else {
-            // Reprocess once fontSize has been computed
-            stylesToReprocess[propName] = styleValue;
-          }
-        } else {
-          // Fallback in case of no fontSize
-          result[propName] = lineHeightValue * 16;
-        }
-        continue;
-      }
-    }
-
     // Resolve textShadow
     if (propName === 'textShadow') {
       Object.assign(result, styleValue);
@@ -348,8 +330,8 @@ function resolveStyle(
   const propNamesToReprocess = Object.keys(stylesToReprocess);
   if (propNamesToReprocess.length > 0) {
     const processedStyles = processStyle(stylesToReprocess, true);
-    // We can end up re-processing lineHeight without a fontSize (since it might already be resolved),
-    // which generates incorrect lineHeight values. Passing the fontSize back in avoids this.
+    // We can end up re-processing values without a fontSize (since it might already be resolved),
+    // which generates incorrect 'em'-based values. Passing the fontSize back in avoids this.
     const resolvedFontSize = result.fontSize;
     const fontSizeStyle =
       resolvedFontSize != null ? { fontSize: resolvedFontSize } : null;
