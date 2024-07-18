@@ -12,10 +12,10 @@ import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
+import { useHoverHandlers } from './useHoverHandlers';
 
 type StyleOptions = {
   customProperties: ?CustomProperties,
-  hover: boolean,
   inheritedFontSize: ?number
 };
 
@@ -25,11 +25,13 @@ export function useStyleProps(
   style: Styles,
   options: StyleOptions
 ): ReactNativeProps {
-  const { customProperties, hover, inheritedFontSize } = options;
+  const { customProperties, inheritedFontSize } = options;
 
   const { height, width } = useWindowDimensions();
   const colorScheme = useColorScheme();
   const fontScale = PixelRatio.getFontScale();
+
+  const { hover, handlers } = useHoverHandlers(style);
 
   // Marking it as `any` as Flow slows to a crawl when trying to type this.
   // But we already know that `style` is the correct type so this is still safe.
@@ -45,6 +47,17 @@ export function useStyleProps(
     },
     style as $FlowFixMe
   );
+
+  if (handlers.type === 'HOVERABLE') {
+    for (const handler of [
+      'onMouseEnter',
+      'onMouseLeave',
+      'onPointerEnter',
+      'onPointerLeave'
+    ]) {
+      styleProps[handler] = handlers[handler];
+    }
+  }
 
   return styleProps;
 }

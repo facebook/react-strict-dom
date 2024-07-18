@@ -41,7 +41,6 @@ import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
 import { mergeRefs } from '../../shared/mergeRefs';
 import { resolveUnitlessLineHeight } from './resolveUnitlessLineHeight';
-import { useHoverHandlers } from './useHoverHandlers';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import { useStyleProps } from './useStyleProps';
 import { useStyleTransition } from './useStyleTransition';
@@ -133,6 +132,24 @@ function resolveTransitionProperty(property: mixed): ?(string[]) {
     return property.split(',').map((p) => p.trim());
   }
   return null;
+}
+
+type EventHandler =
+  | ReactNativeProps['onMouseEnter']
+  | ReactNativeProps['onMouseLeave']
+  | ReactNativeProps['onPointerEnter']
+  | ReactNativeProps['onPointerLeave'];
+
+function combineEventHandlers(a: EventHandler, b: EventHandler): EventHandler {
+  if (a == null) {
+    return b;
+  } else {
+    return (e) => {
+      const returnA = typeof a === 'function' ? a(e) : null;
+      const returnB = typeof b === 'function' ? b(e) : null;
+      return returnB || returnA;
+    };
+  }
 }
 
 export function createStrictDOMComponent<T, P: StrictProps>(
@@ -227,10 +244,53 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         width
       } = props;
 
-      // $FlowExpectedError[prop-missing] style is added to nativeProps later
-      const nativeProps: ReactNativeProps = {
-        children
-      };
+      /**
+       * Resolve style props
+       */
+
+      const [extractedStyles, customPropertiesFromThemes] =
+        extractStyleThemes(style);
+      const customProperties = useCustomProperties(customPropertiesFromThemes);
+      const inheritedStyles = useInheritedStyles();
+      const inheritedFontSize =
+        typeof inheritedStyles?.fontSize === 'number'
+          ? inheritedStyles?.fontSize
+          : undefined;
+
+      const flatStyle = flattenStyle(extractedStyles);
+
+      const renderStyles = [
+        defaultProps?.style ?? null,
+        // Use 'static' position by default where allowed
+        styles.positionStatic,
+        // Use box-sizing: 'content-box' by default
+        styles.contentBox,
+        // Add default img styles
+        tagName === 'img'
+          ? [
+              styles.objectFitFill,
+              height != null &&
+                width != null &&
+                styles.aspectRatio(width, height)
+            ]
+          : null,
+        // Styles for Text
+        [
+          nativeComponent === Text && [styles.userSelectAuto, inheritedStyles],
+          flatStyle
+        ]
+      ];
+
+      const nativeProps: ReactNativeProps = useStyleProps(renderStyles, {
+        customProperties,
+        inheritedFontSize
+      });
+
+      /**
+       * Resolve other props
+       */
+
+      nativeProps.children = children;
 
       if (ariaHidden != null) {
         nativeProps.accessibilityElementsHidden = ariaHidden;
@@ -380,10 +440,16 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.onMouseDown = onMouseDown;
       }
       if (onMouseEnter != null) {
-        nativeProps.onMouseEnter = onMouseEnter;
+        nativeProps.onMouseEnter = combineEventHandlers(
+          nativeProps.onMouseEnter,
+          onMouseEnter
+        );
       }
       if (onMouseLeave != null) {
-        nativeProps.onMouseLeave = onMouseLeave;
+        nativeProps.onMouseLeave = combineEventHandlers(
+          nativeProps.onMouseLeave,
+          onMouseLeave
+        );
       }
       if (onMouseOut != null) {
         nativeProps.onMouseOut = onMouseOut;
@@ -401,10 +467,16 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.onPointerDown = onPointerDown;
       }
       if (onPointerEnter != null) {
-        nativeProps.onPointerEnter = onPointerEnter;
+        nativeProps.onPointerEnter = combineEventHandlers(
+          nativeProps.onPointerEnter,
+          onPointerEnter
+        );
       }
       if (onPointerLeave != null) {
-        nativeProps.onPointerLeave = onPointerLeave;
+        nativeProps.onPointerLeave = combineEventHandlers(
+          nativeProps.onPointerLeave,
+          onPointerLeave
+        );
       }
       if (onPointerMove != null) {
         nativeProps.onPointerMove = onPointerMove;
@@ -610,84 +682,22 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         [elementRef, forwardedRef]
       );
 
-      /**
-       * Resolve the style props
-       */
-      const [extractedStyles, customPropertiesFromThemes] =
-        extractStyleThemes(style);
-      const customProperties = useCustomProperties(customPropertiesFromThemes);
-      const inheritedStyles = useInheritedStyles();
-      const inheritedFontSize =
-        typeof inheritedStyles?.fontSize === 'number'
-          ? inheritedStyles?.fontSize
-          : undefined;
-
-      const flatStyle = flattenStyle(extractedStyles);
-
-      const renderStyles = [
-        defaultProps?.style ?? null,
-        // Use 'static' position by default where allowed
-        styles.positionStatic,
-        // Use box-sizing: 'content-box' by default
-        styles.contentBox,
-        // Add default img styles
-        tagName === 'img'
-          ? [
-              styles.objectFitFill,
-              height != null &&
-                width != null &&
-                styles.aspectRatio(width, height)
-            ]
-          : null,
-        // Styles for Text
-        [
-          nativeComponent === Text && [styles.userSelectAuto, inheritedStyles],
-          flatStyle
-        ]
-      ];
-
-      const { hover, handlers } = useHoverHandlers(renderStyles);
-
-      if (handlers.type === 'HOVERABLE') {
-        for (const handler of [
-          'onMouseEnter',
-          'onMouseLeave',
-          'onPointerEnter',
-          'onPointerLeave'
-        ]) {
-          if (nativeProps[handler] != null) {
-            const nativeHandler = nativeProps[handler];
-            nativeProps[handler] = (e) => {
-              handlers[handler]();
-              return nativeHandler(e);
-            };
-          } else {
-            nativeProps[handler] = handlers[handler];
-          }
-        }
-      }
-
-      const styleProps = useStyleProps(renderStyles, {
-        customProperties,
-        hover,
-        inheritedFontSize
-      });
-
-      // Workaround: Android doesn't support ellipsis truncation if text is selectable
+      // Workaround: Android doesn't support ellipsis truncation if Text is selectable
       // See #136
       if (
         Platform.OS === 'android' &&
-        styleProps.numberOfLines != null &&
-        styleProps.style.userSelect !== 'none'
+        nativeComponent === Text &&
+        nativeProps.numberOfLines != null &&
+        nativeProps.style.userSelect !== 'none'
       ) {
-        styleProps.style.userSelect = 'none';
+        nativeProps.style.userSelect = 'none';
       }
 
       if (dir != null) {
         if (dir !== 'auto') {
-          styleProps.style.direction = dir;
+          nativeProps.style.direction = dir;
         }
-        styleProps.style.writingDirection = dir;
+        nativeProps.style.writingDirection = dir;
       }
 
       // Workaround: React Native doesn't support raw text children of View
@@ -698,13 +708,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeComponent !== TextInput &&
         nativeComponent !== Image
       ) {
-        nativeProps.children = <TextString children={children} hover={hover} />;
+        nativeProps.children = <TextString children={children} />;
       }
 
       // polyfill for display:block-as-default
       let nextDisplayModeInside = 'flow';
       const displayModeInside = useDisplayModeInside();
-      const displayValue = styleProps.style.display;
+      const displayValue = nativeProps.style.display;
       if (
         displayValue != null &&
         displayValue !== 'flex' &&
@@ -720,32 +730,32 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       if (displayValue === 'flex') {
         nextDisplayModeInside = 'flex';
-        styleProps.style.alignItems ??= 'stretch';
-        styleProps.style.flexBasis ??= 'auto';
-        styleProps.style.flexDirection ??= 'row';
-        styleProps.style.flexShrink ??= 1;
-        styleProps.style.flexWrap ??= 'nowrap';
-        styleProps.style.justifyContent ??= 'flex-start';
+        nativeProps.style.alignItems ??= 'stretch';
+        nativeProps.style.flexBasis ??= 'auto';
+        nativeProps.style.flexDirection ??= 'row';
+        nativeProps.style.flexShrink ??= 1;
+        nativeProps.style.flexWrap ??= 'nowrap';
+        nativeProps.style.justifyContent ??= 'flex-start';
       } else if (displayValue === 'block' && displayModeInside === 'flow') {
         // Force the block emulation styles
         nextDisplayModeInside = 'flow';
-        styleProps.style.alignItems = 'stretch';
-        styleProps.style.display = 'flex';
-        styleProps.style.flexBasis = 'auto';
-        styleProps.style.flexDirection = 'column';
-        styleProps.style.flexShrink = 0;
-        styleProps.style.flexWrap = 'nowrap';
-        styleProps.style.justifyContent = 'flex-start';
+        nativeProps.style.alignItems = 'stretch';
+        nativeProps.style.display = 'flex';
+        nativeProps.style.flexBasis = 'auto';
+        nativeProps.style.flexDirection = 'column';
+        nativeProps.style.flexShrink = 0;
+        nativeProps.style.flexWrap = 'nowrap';
+        nativeProps.style.justifyContent = 'flex-start';
       } else if (displayValue == null) {
         // 'hidden' polyfill (overridden by "display" is set)
         if (hidden && hidden !== 'until-found') {
-          styleProps.style.display = 'none';
+          nativeProps.style.display = 'none';
         }
       }
 
       if (displayModeInside === 'flex') {
         // flex child should not shrink
-        styleProps.style.flexShrink ??= 1;
+        nativeProps.style.flexShrink ??= 1;
       }
 
       // This is where we hack in a shim for `transitionProperty`,
@@ -769,7 +779,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         transitionProperty,
         transitionTimingFunction,
         ...nonTextStyle
-      } = styleProps.style;
+      } = nativeProps.style;
 
       const nextInheritedStyles = {} as $FlowFixMe;
       if (color != null) {
@@ -812,22 +822,22 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nextInheritedStyles.whiteSpace = whiteSpace;
       }
 
-      resolveUnitlessLineHeight(styleProps.style);
-
       const hasNextInheritedStyles =
         nextInheritedStyles != null &&
         typeof nextInheritedStyles === 'object' &&
         Object.keys(nextInheritedStyles).length > 0;
 
       if (nativeComponent !== Text && nativeComponent !== TextInput) {
-        styleProps.style = nonTextStyle;
+        nativeProps.style = nonTextStyle;
+      } else {
+        resolveUnitlessLineHeight(nativeProps.style);
       }
 
       const resolvedTransitionProperty =
         resolveTransitionProperty(transitionProperty);
       const transitionProperties = resolvedTransitionProperty?.flatMap(
         (property) => {
-          const value = styleProps.style[property];
+          const value = nativeProps.style[property];
           if (isString(value) || isNumber(value) || Array.isArray(value)) {
             return [{ property, value }];
           }
@@ -845,15 +855,15 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           : null
       });
 
-      delete styleProps.style.transitionDelay;
-      delete styleProps.style.transitionDuration;
-      delete styleProps.style.transitionProperty;
-      delete styleProps.style.transitionTimingFunction;
+      delete nativeProps.style.transitionDelay;
+      delete nativeProps.style.transitionDuration;
+      delete nativeProps.style.transitionProperty;
+      delete nativeProps.style.transitionTimingFunction;
 
       if (animatedPropertyValues.length > 0) {
         for (const animatedProperty of animatedPropertyValues) {
           // $FlowFixMe[incompatible-type]
-          styleProps.style[animatedProperty.property] = animatedProperty.style;
+          nativeProps.style[animatedProperty.property] = animatedProperty.style;
         }
         if (nativeComponent === View) {
           nativeComponent = Animated.View;
@@ -875,7 +885,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.experimental_layoutConformance = 'strict';
       }
 
-      Object.assign(nativeProps, styleProps);
       // $FlowFixMe (we don't care about the internal React Native prop types)
       let element = React.createElement(nativeComponent, nativeProps);
 

@@ -846,39 +846,55 @@ describe('<html.*>', () => {
   });
 
   describe('hover styles', () => {
-    const hoverStyles = {
-      backgroundColor: { default: 'red', ':hover': 'blue' }
-    };
+    const styles = css.create({
+      hover: {
+        backgroundColor: {
+          default: 'red',
+          ':hover': 'blue'
+        }
+      }
+    });
 
     test('onMouseEnter', () => {
       const onMouseEnter = jest.fn();
       const root = create(
-        <html.div onMouseEnter={onMouseEnter} style={hoverStyles} />
+        <html.div onMouseEnter={onMouseEnter} style={styles.hover} />
       );
       root.root.children[0].props.onMouseEnter();
       expect(root.toJSON()).toMatchSnapshot();
-      root.root.children[0].props.onMouseEnter();
       expect(onMouseEnter).toHaveBeenCalled();
     });
 
     test('onMouseLeave', () => {
-      const root = create(<html.div style={hoverStyles} />);
+      const onMouseLeave = jest.fn();
+      const root = create(
+        <html.div onMouseLeave={onMouseLeave} style={styles.hover} />
+      );
       root.root.children[0].props.onMouseEnter();
       root.root.children[0].props.onMouseLeave();
       expect(root.toJSON()).toMatchSnapshot();
+      expect(onMouseLeave).toHaveBeenCalled();
     });
 
     test('onPointerEnter', () => {
-      const root = create(<html.div style={hoverStyles} />);
+      const onPointerEnter = jest.fn();
+      const root = create(
+        <html.div onPointerEnter={onPointerEnter} style={styles.hover} />
+      );
       root.root.children[0].props.onPointerEnter();
       expect(root.toJSON()).toMatchSnapshot();
+      expect(onPointerEnter).toHaveBeenCalled();
     });
 
     test('onPointerLeave', () => {
-      const root = create(<html.div style={hoverStyles} />);
+      const onPointerLeave = jest.fn();
+      const root = create(
+        <html.div onPointerLeave={onPointerLeave} style={styles.hover} />
+      );
       root.root.children[0].props.onPointerEnter();
       root.root.children[0].props.onPointerLeave();
       expect(root.toJSON()).toMatchSnapshot();
+      expect(onPointerLeave).toHaveBeenCalled();
     });
   });
 });
