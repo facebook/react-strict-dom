@@ -7,8 +7,7 @@
  * @flow strict-local
  */
 
-import type { AnimatedNode } from '../../types/react-native';
-import type { Transform } from '../../types/styles';
+import type { StyleValue } from '../../types/react-native';
 
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
@@ -16,7 +15,7 @@ import { errorMsg, warnMsg } from '../../shared/logUtils';
 
 type TransitionProperties = $ReadOnlyArray<{
   property: string,
-  value: string | number | Transform[]
+  value: StyleValue
 }>;
 
 type TransitionConfig = $ReadOnly<{
@@ -26,16 +25,11 @@ type TransitionConfig = $ReadOnly<{
   transitionTimingFunction?: ?string
 }>;
 
-type TransitionStyles =
-  | null
-  | number
-  | string
-  | AnimatedNode
-  | $ReadOnlyArray<mixed>;
+type TransitionStyleValue = ?StyleValue | $ReadOnlyArray<mixed>;
 
 type TransitionStylesArray = Array<{
   property: string,
-  style: TransitionStyles
+  style: TransitionStyleValue
 }>;
 
 function getEasingFunction(input: ?string) {
@@ -122,8 +116,8 @@ export function useStyleTransition(
     return [];
   }
 
-  const transitionStyles: TransitionStyles[] = transitionProperties.map(
-    ({ property, value }, i): TransitionStyles => {
+  const transitionStyles: TransitionStyleValue[] = transitionProperties.map(
+    ({ property, value }, i): TransitionStyleValue => {
       const startValue = valueRef.current?.[i].value;
 
       if (typeof value === 'number') {
