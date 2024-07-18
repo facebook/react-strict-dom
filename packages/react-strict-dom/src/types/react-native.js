@@ -115,6 +115,23 @@ type Props = {
   width?: ImageProps['width']
 };
 
-type Style = { [string]: ?(number | string) };
+type Transform =
+  | $ReadOnly<{ matrix: number[] }>
+  | $ReadOnly<{ perspective: number }>
+  | $ReadOnly<{ rotate: string }>
+  | $ReadOnly<{ rotateX: string }>
+  | $ReadOnly<{ rotateY: string }>
+  | $ReadOnly<{ rotateZ: string }>
+  | $ReadOnly<{ scale: number }>
+  | $ReadOnly<{ scaleX: number }>
+  | $ReadOnly<{ scaleY: number }>
+  | $ReadOnly<{ scaleZ: number }>
+  | $ReadOnly<{ translateX: number }>
+  | $ReadOnly<{ translateY: number }>
+  | $ReadOnly<{ skewX: string }>
+  | $ReadOnly<{ skewY: string }>;
 
-export type { AnimatedNode, PressEvent, Props, Style, SyntheticEvent };
+type StyleValue = number | string | Transform[] | AnimatedNode;
+type Style = { [string]: ?StyleValue };
+
+export type { Props, Style, StyleValue, SyntheticEvent, Transform };

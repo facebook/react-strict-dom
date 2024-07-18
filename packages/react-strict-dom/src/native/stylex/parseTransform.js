@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import type { Transform } from '../../types/styles';
+import type { Transform } from '../../types/react-native';
 
 const transformRegex1 =
   /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px)?\)/;

@@ -226,7 +226,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         width
       } = props;
 
-      // $FlowFixMe[prop-missing] style is added to nativeProps later
+      // $FlowExpectedError[prop-missing] style is added to nativeProps later
       const nativeProps: ReactNativeProps = {
         children
       };
