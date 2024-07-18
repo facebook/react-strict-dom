@@ -15,12 +15,11 @@ import { useInheritedStyles } from './ContextInheritedStyles';
 import { useStyleProps } from './useStyleProps';
 
 type Props = $ReadOnly<{|
-  children: string,
-  hover: boolean
+  children: string
 |}>;
 
 export function TextString(props: Props): React$MixedElement {
-  const { children, hover } = props;
+  const { children } = props;
 
   const customProperties = useCustomProperties();
   const inheritedStyles: $FlowFixMe = useInheritedStyles();
@@ -31,7 +30,6 @@ export function TextString(props: Props): React$MixedElement {
 
   const styleProps = useStyleProps(inheritedStyles, {
     customProperties,
-    hover,
     inheritedFontSize: inheritedFontSize
   });
 
