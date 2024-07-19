@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.20 (Jul 19, 2024)
+
+### Fixes
+
+* [Native] Refactor `createStrictDOMComponent` to forward only supported props to React Native.
+* [Native] Minor refactor of native types.
+
 ## 0.0.19 (Jul 15, 2024)
 
 ### Fixes
