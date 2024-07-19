@@ -30,7 +30,7 @@ module.exports = function (api) {
   const plugins = [];
 
   if (platform === 'web') {
-    plugins.push(rsdPlugin);
+    plugins.push([rsdPlugin, { debug: true }]);
     plugins.push([
       stylexPlugin,
       {

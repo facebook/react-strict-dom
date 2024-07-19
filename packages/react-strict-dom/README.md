@@ -71,6 +71,11 @@ module.exports = function () {
 };
 ```
 
+Options for the plugin:
+
+* `debug: boolean` (default: `false`). If set to `true` the plugin adds a `data-react-src` attribute and populates it with sourceMap information about the filename and line-number responsible for rendering the element.
+
+
 **For native**
 
 ```
