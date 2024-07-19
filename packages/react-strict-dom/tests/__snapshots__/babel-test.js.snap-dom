@@ -20,6 +20,16 @@ function App() {
 ;"
 `;
 
+exports[`react-strict-dom/babel [transform] <html.*> elements debug mode 1`] = `
+"import * as _stylex from "@stylexjs/stylex";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { html as h } from 'react-strict-dom';
+function App() {
+  return <div data-react-src="bar/baz.js:5" {..._stylex.props(_defaultStyles.div)} />;
+}
+;"
+`;
+
 exports[`react-strict-dom/babel [transform] <html.*> elements other props 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
 import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";

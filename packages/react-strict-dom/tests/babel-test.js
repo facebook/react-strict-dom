@@ -15,13 +15,13 @@ const { transformSync } = require('@babel/core');
 const rsdPlugin = require('../babel');
 const jsx = require('@babel/plugin-syntax-jsx');
 
-function transform(source, opts = {}) {
+function transform(source, pluginOptions = {}) {
   return transformSync(source, {
-    filename: opts.filename,
+    filename: 'root/foo/bar/baz.js',
     parserOpts: {
       flow: 'all'
     },
-    plugins: [jsx, [rsdPlugin]]
+    plugins: [jsx, [rsdPlugin, { debug: false, ...pluginOptions }]]
   }).code;
 }
 
@@ -138,6 +138,20 @@ describe('react-strict-dom/babel', () => {
         };
         `)
       ).toMatchSnapshot();
+    });
+
+    test('debug mode', () => {
+      const opts = { debug: true };
+      const source = `
+      import {html as h} from 'react-strict-dom'
+      function App() {
+        return (
+          <h.div />
+        );
+      };
+      `;
+      // expect line-number to be 5
+      expect(transform(source, opts)).toMatchSnapshot();
     });
   });
 });
