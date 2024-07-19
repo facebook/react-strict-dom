@@ -34,9 +34,9 @@ jobs:
     - name: 'Benchmark: baseline'
       run: |
         git checkout ${{ github.event.pull_request.base.sha }}
-        npm install
+        npm install --loglevel error
         npm run build
-        if npm run benchmarks -w react-strict-dom > ${{ env.BASELINE_JSON }}; then
+        if npm run benchmarks -w react-strict-dom -- ${{ env.BASELINE_JSON }}; then
           echo "Benchmark ran successfully on base branch"
         else
           echo "{}" > ${{ env.BASELINE_JSON }}  # Empty JSON as default
@@ -46,15 +46,15 @@ jobs:
       run: |
         git checkout ${{ github.event.pull_request.head.sha }}
         npm install
+        npm install --loglevel error
         npm run build
-        npm run benchmarks -w react-strict-dom > ${{ env.PATCH_JSON }}
+        npm run benchmarks -w react-strict-dom -- ${{ env.PATCH_JSON }}
+        echo "Benchmark ran successfully on patch branch"
     - name: 'Collect results'
       run: |
-        echo "## RSD benchmarks (for native)" >> pr_comment
-        echo "### Base ${BASE_SHA}" >> pr_comment
-        tail -n +2 ${{ env.BASELINE_JSON }} >> pr_comment
-        echo "### Patch ${PATCH_SHA}" >> pr_comment
-        tail -n +2 ${{ env.PATCH_JSON }} >> pr_comment
+        echo "### workflow: benchmarks (native)" >> pr_comment
+        echo "Comparison of benchmark test results, measured in operations per second (higher is faster.)" >> pr_comment
+        node packages/react-strict-dom/benchmarks/display.js ${{ env.BASELINE_JSON }} ${{ env.PATCH_JSON }} >> pr_comment
         cat pr_comment > ${{ env.PR_COMMENT }}
     - name: 'Post comment'
       uses: actions/github-script@v4.0.2

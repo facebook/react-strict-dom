@@ -11,97 +11,101 @@ const { createSuite } = require('../helpers');
 const { css } = require('../../build/react-strict-dom-for-benchmarks');
 const { customProperties, styles: stylesFixture } = require('../fixtures');
 
-const { suite, test } = createSuite('css.props');
+function runSuite(opts) {
+  const { suite, test } = createSuite('css.props', opts);
 
-const options = {
-  customProperties: customProperties.simple,
-  fontScale: 1,
-  hover: true,
-  inheritedFontSize: 16,
-  viewportHeight: 600,
-  viewportWidth: 1024
-};
+  const options = {
+    customProperties: customProperties.simple,
+    fontScale: 1,
+    hover: true,
+    inheritedFontSize: 16,
+    viewportHeight: 600,
+    viewportWidth: 1024
+  };
 
-const optionsVarUnits = {
-  customProperties: customProperties.polyfills,
-  fontScale: 1,
-  hover: true,
-  inheritedFontSize: 16,
-  viewportHeight: 600,
-  viewportWidth: 1024
-};
+  const optionsVarUnits = {
+    customProperties: customProperties.polyfills,
+    fontScale: 1,
+    hover: true,
+    inheritedFontSize: 16,
+    viewportHeight: 600,
+    viewportWidth: 1024
+  };
 
-const styles = css.create(stylesFixture);
+  const styles = css.create(stylesFixture);
 
-test('small', () => {
-  css.props.call(options, styles.small);
-});
+  test('small', () => {
+    css.props.call(options, styles.small);
+  });
 
-test('small with units', () => {
-  css.props.call(options, styles.smallWithUnits);
-});
+  test('small with units', () => {
+    css.props.call(options, styles.smallWithUnits);
+  });
 
-test('small with variables', () => {
-  css.props.call(options, styles.smallWithVariables);
-});
+  test('small with variables', () => {
+    css.props.call(options, styles.smallWithVariables);
+  });
 
-test('small with variables of units', () => {
-  css.props.call(optionsVarUnits, styles.smallWithVariables);
-});
+  test('small with variables of units', () => {
+    css.props.call(optionsVarUnits, styles.smallWithVariables);
+  });
 
-test('large', () => {
-  css.props.call(options, styles.large);
-});
+  test('large', () => {
+    css.props.call(options, styles.large);
+  });
 
-test('large with polyfills', () => {
-  css.props.call(optionsVarUnits, styles.largeWithPolyfills);
-});
+  test('large with polyfills', () => {
+    css.props.call(optionsVarUnits, styles.largeWithPolyfills);
+  });
 
-test('complex', () => {
-  css.props.call(optionsVarUnits, styles.complex);
-});
+  test('complex', () => {
+    css.props.call(optionsVarUnits, styles.complex);
+  });
 
-test('unsupported', () => {
-  css.props.call(options, styles.unsupported);
-});
+  test('unsupported', () => {
+    css.props.call(options, styles.unsupported);
+  });
 
-// SIMPLE MERGE
+  // SIMPLE MERGE
 
-test('simple merge', () => {
-  css.props.call(options, [styles.small, styles.smallWithUnits]);
-});
+  test('simple merge', () => {
+    css.props.call(options, [styles.small, styles.smallWithUnits]);
+  });
 
-// WIDE MERGE
+  // WIDE MERGE
 
-test('wide merge', () => {
-  css.props.call(optionsVarUnits, [
-    styles.small,
-    false,
-    styles.smallWithUnits,
-    false,
-    styles.large,
-    null,
-    styles.largeWithPolyfills,
-    null,
-    styles.complex
-  ]);
-});
-
-// DEEP MERGE
-
-test('deep merge', () => {
-  css.props.call(optionsVarUnits, [
-    styles.small,
-    [
+  test('wide merge', () => {
+    css.props.call(optionsVarUnits, [
+      styles.small,
       false,
       styles.smallWithUnits,
+      false,
+      styles.large,
+      null,
+      styles.largeWithPolyfills,
+      null,
+      styles.complex
+    ]);
+  });
+
+  // DEEP MERGE
+
+  test('deep merge', () => {
+    css.props.call(optionsVarUnits, [
+      styles.small,
       [
         false,
-        styles.large,
-        [null, styles.largeWithPolyfills, [null, [styles.complex]]]
+        styles.smallWithUnits,
+        [
+          false,
+          styles.large,
+          [null, styles.largeWithPolyfills, [null, [styles.complex]]]
+        ]
       ]
-    ]
-  ]);
-});
+    ]);
+  });
 
-suite.run();
+  suite.run();
+}
+
+module.exports = runSuite;

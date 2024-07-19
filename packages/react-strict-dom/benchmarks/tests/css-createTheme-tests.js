@@ -11,36 +11,40 @@ const { createSuite } = require('../helpers');
 const { css } = require('../../build/react-strict-dom-for-benchmarks');
 const { customProperties } = require('../fixtures');
 
-const { suite, test } = createSuite('css.createTheme');
+function runSuite(options) {
+  const { suite, test } = createSuite('css.createTheme', options);
 
-const simpleTokens = css.defineVars(customProperties.simple);
-const polyfillTokens = css.defineVars(customProperties.polyfills);
+  const simpleTokens = css.defineVars(customProperties.simple);
+  const polyfillTokens = css.defineVars(customProperties.polyfills);
 
-test('simple theme', () => {
-  css.createTheme(simpleTokens, {
-    backgroundColor: 'darkred',
-    borderWidth: 11,
-    color: 'darkgreen',
-    height: 1001,
-    margin: 17,
-    padding: 33,
-    width: 1001
+  test('simple theme', () => {
+    css.createTheme(simpleTokens, {
+      backgroundColor: 'darkred',
+      borderWidth: 11,
+      color: 'darkgreen',
+      height: 1001,
+      margin: 17,
+      padding: 33,
+      width: 1001
+    });
   });
-});
 
-test('polyfill theme', () => {
-  css.createTheme(polyfillTokens, {
-    backgroundColor: {
-      default: 'blue',
-      '@media (prefers-color-scheme:dark)': 'darkblue'
-    },
-    borderWidth: '1rem',
-    color: 'lightblue',
-    height: '91vh',
-    margin: '2rem',
-    padding: '3em',
-    width: '91vw'
+  test('polyfill theme', () => {
+    css.createTheme(polyfillTokens, {
+      backgroundColor: {
+        default: 'blue',
+        '@media (prefers-color-scheme:dark)': 'darkblue'
+      },
+      borderWidth: '1rem',
+      color: 'lightblue',
+      height: '91vh',
+      margin: '2rem',
+      padding: '3em',
+      width: '91vw'
+    });
   });
-});
 
-suite.run();
+  suite.run();
+}
+
+module.exports = runSuite;
