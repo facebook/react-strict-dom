@@ -7,7 +7,6 @@
 
 'use strict';
 
-const fs = require('fs');
 const Benchmark = require('benchmark');
 
 /**
@@ -20,40 +19,6 @@ function createSuite(name, options) {
 
   function jsonReporter(suite) {
     const benchmarks = [];
-    const config = {
-      folder: 'logs',
-      callback(results, name, folder) {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
-        const day = String(now.getDate() + 8).padStart(2, '0'); // Add 8 days
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const timestamp = `${year}${month}${day}-${hours}${minutes}`;
-
-        // Write the results log
-        const dirpath = `${process.cwd()}/${folder}`;
-        const filepath = `${dirpath}/react-strict-dom-bench-${name}-${timestamp}.log`;
-        if (!fs.existsSync(dirpath)) {
-          fs.mkdirSync(dirpath);
-        }
-        fs.writeFileSync(filepath, `${JSON.stringify(results, null, 2)}\n`);
-
-        // Print the markdown table
-        let markdown = '';
-        markdown += `| ${name} | ops/sec | deviation (%) | samples |\n`;
-        markdown += '| :--- | ---: | ---: | ---: |\n';
-        markdown += results
-          .map((data) => {
-            const { name, deviation, ops, samples } = data;
-            const prettyOps = parseInt(ops, 10).toLocaleString();
-            return `| ${name} | ${prettyOps} | ${deviation} | ${samples} |`;
-          })
-          .join('\n');
-        markdown += '\n';
-        console.log(markdown);
-      }
-    };
 
     suite.on('cycle', (event) => {
       benchmarks.push(event.target);
@@ -83,7 +48,7 @@ function createSuite(name, options) {
           timestamp
         };
       });
-      config.callback(result, suite.name, config.folder);
+      options.callback(result, suite.name);
     });
   }
 

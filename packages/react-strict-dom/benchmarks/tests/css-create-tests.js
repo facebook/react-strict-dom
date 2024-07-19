@@ -11,55 +11,59 @@ const { createSuite } = require('../helpers');
 const { css } = require('../../build/react-strict-dom-for-benchmarks');
 const { styles } = require('../fixtures');
 
-const { suite, test } = createSuite('css.create');
+function runSuite(options) {
+  const { suite, test } = createSuite('css.create', options);
 
-test('small', () => {
-  css.create({
-    small: styles.small
+  test('small', () => {
+    css.create({
+      small: styles.small
+    });
   });
-});
 
-test('small with units', () => {
-  css.create({
-    smallWithUnits: styles.smallWithUnits
+  test('small with units', () => {
+    css.create({
+      smallWithUnits: styles.smallWithUnits
+    });
   });
-});
 
-test('small with variables', () => {
-  css.create({
-    smallWithVariables: styles.smallWithVariables
+  test('small with variables', () => {
+    css.create({
+      smallWithVariables: styles.smallWithVariables
+    });
   });
-});
 
-test('several small', () => {
-  css.create({
-    small: styles.small,
-    smallWithUnits: styles.smallWithUnits
+  test('several small', () => {
+    css.create({
+      small: styles.small,
+      smallWithUnits: styles.smallWithUnits
+    });
   });
-});
 
-test('large', () => {
-  css.create({
-    large: styles.large
+  test('large', () => {
+    css.create({
+      large: styles.large
+    });
   });
-});
 
-test('large with polyfills', () => {
-  css.create({
-    largeWithPolyfills: styles.largeWithPolyfills
+  test('large with polyfills', () => {
+    css.create({
+      largeWithPolyfills: styles.largeWithPolyfills
+    });
   });
-});
 
-test('complex', () => {
-  css.create({
-    complex: styles.complex
+  test('complex', () => {
+    css.create({
+      complex: styles.complex
+    });
   });
-});
 
-test('unsupported', () => {
-  css.create({
-    unsupported: styles.unsupported
+  test('unsupported', () => {
+    css.create({
+      unsupported: styles.unsupported
+    });
   });
-});
 
-suite.run();
+  suite.run();
+}
+
+module.exports = runSuite;
