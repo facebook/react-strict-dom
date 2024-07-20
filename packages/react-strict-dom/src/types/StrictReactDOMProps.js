@@ -280,9 +280,9 @@ type EventProps = $ReadOnly<{
 }>;
 
 export type StrictReactDOMProps = $ReadOnly<{
+  [StringPrefix<'data-'>]: ?string,
   ...AriaProps,
   ...EventProps,
-  ...ReactStrictDOMDataProps,
   autoCapitalize?: ?(
     | 'off'
     | 'none'
@@ -293,7 +293,6 @@ export type StrictReactDOMProps = $ReadOnly<{
   ),
   autoFocus?: ?boolean,
   children?: React$Node,
-  'data-testid'?: ?string,
   dir?: ?('auto' | 'ltr' | 'rtl'),
   elementTiming?: ?string,
   enterKeyHint?: ?(
