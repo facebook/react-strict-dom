@@ -14,7 +14,7 @@ const createThemeTests = require('./tests/css-createTheme-tests');
 const propsTests = require('./tests/css-props-tests');
 const internalsTests = require('./tests/internals-tests');
 
-const aggregatedResults = [];
+const aggregatedResults = {};
 const options = {
   callback(data, suiteName) {
     const testResults = data.reduce((acc, test) => {
@@ -23,8 +23,7 @@ const options = {
       return acc;
     }, {});
 
-    const results = { [suiteName]: testResults };
-    aggregatedResults.push(results);
+    aggregatedResults[suiteName] = testResults;
   }
 };
 

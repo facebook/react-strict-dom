@@ -23,17 +23,15 @@ function readJsonFile(filePath) {
 function mergeData(base, patch) {
   const merged = {};
   function addToMerged(data, fileIndex) {
-    data.forEach((entry) => {
-      Object.keys(entry).forEach((key) => {
-        if (merged[key] == null) {
-          merged[key] = {};
+    Object.keys(data).forEach((key) => {
+      if (merged[key] == null) {
+        merged[key] = {};
+      }
+      Object.keys(data[key]).forEach((subKey) => {
+        if (merged[key][subKey] == null) {
+          merged[key][subKey] = {};
         }
-        Object.keys(entry[key]).forEach((subKey) => {
-          if (merged[key][subKey] == null) {
-            merged[key][subKey] = {};
-          }
-          merged[key][subKey][fileIndex] = entry[key][subKey];
-        });
+        merged[key][subKey][fileIndex] = data[key][subKey];
       });
     });
   }
