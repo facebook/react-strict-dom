@@ -348,7 +348,7 @@ describe('<html.*>', () => {
     test.skip('"initial" keyword', () => {});
     test.skip('"unset" keyword', () => {});
 
-    test('"transition" properties ', () => {
+    describe('"transition" properties ', () => {
       const { Animated, Easing } = require('react-native');
 
       const styles = css.create({
@@ -408,158 +408,209 @@ describe('<html.*>', () => {
         })
       });
 
-      let root;
+      test('default', () => {
+        let root;
+        // default
+        act(() => {
+          root = create(<html.div />);
+        });
+        act(() => {
+          root.update(<html.div style={styles.none} />);
+        });
+        // assert no warning if no transition property is specified
+        expect(console.error).not.toHaveBeenCalled();
+        expect(console.warn).not.toHaveBeenCalled();
+        expect(Animated.sequence).not.toHaveBeenCalled();
+      });
 
-      // default
-      act(() => {
-        root = create(<html.div />);
-        root.update(<html.div style={styles.none} />);
+      test('update triggers transition', () => {
+        let root;
+        // update triggers transition
+        act(() => {
+          root = create(<html.div style={styles.none} />);
+        });
+        act(() => {
+          root.update(<html.div style={styles.backgroundColor('green')} />);
+        });
+        expect(console.error).not.toHaveBeenCalled();
+        expect(Animated.sequence).toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot('red to green');
+        act(() => {
+          root.update(<html.div style={styles.backgroundColor('blue')} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('green to blue');
       });
-      // assert no warning if no transition property is specified
-      expect(console.warn).not.toHaveBeenCalled();
-      expect(Animated.sequence).not.toHaveBeenCalled();
 
-      // backgroundColor transition
-      act(() => {
-        root = create(<html.div style={styles.backgroundColor()} />);
+      test('backgroundColor transition', () => {
+        let root;
+        // backgroundColor transition
+        act(() => {
+          root = create(<html.div style={styles.backgroundColor()} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.inOut).toHaveBeenCalled();
+        act(() => {
+          root.update(
+            <html.div style={styles.backgroundColor('rgba(255,255,255,0.9)')} />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
       });
-      expect(root.toJSON()).toMatchSnapshot('backgroundColor transition start');
-      expect(Easing.inOut).toHaveBeenCalled();
-      act(() => {
-        root.update(
-          <html.div style={styles.backgroundColor('rgba(255,255,255,0.9)')} />
-        );
-      });
-      expect(root.toJSON()).toMatchSnapshot('backgroundColor transition end');
 
-      // opacity transition
-      act(() => {
-        root = create(<html.div style={styles.opacity()} />);
+      test('opacity transition', () => {
+        let root;
+        // opacity transition
+        act(() => {
+          root = create(<html.div style={styles.opacity()} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.in).toHaveBeenCalled();
+        act(() => {
+          root.update(<html.div style={styles.opacity(0)} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
       });
-      expect(root.toJSON()).toMatchSnapshot('opacity transition start');
-      expect(Easing.in).toHaveBeenCalled();
-      act(() => {
-        root.update(<html.div style={styles.opacity(0)} />);
-      });
-      expect(root.toJSON()).toMatchSnapshot('opacity transition end');
 
-      // transform transition
-      act(() => {
-        root = create(<html.div style={styles.transform()} />);
+      test('transform transition', () => {
+        let root;
+        // transform transition
+        act(() => {
+          root = create(<html.div style={styles.transform()} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.out).toHaveBeenCalled();
+        act(() => {
+          root.update(
+            <html.div
+              style={styles.transform('translateY(50px) rotateX(90deg)')}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
       });
-      expect(root.toJSON()).toMatchSnapshot('transform transition start');
-      expect(Easing.out).toHaveBeenCalled();
-      act(() => {
-        root.update(
-          <html.div
-            style={styles.transform('translateY(50px) rotateX(90deg)')}
-          />
-        );
-      });
-      expect(root.toJSON()).toMatchSnapshot('transform transition end');
 
-      // width transition
-      act(() => {
-        root = create(<html.div style={styles.width()} />);
+      test('width transition', () => {
+        let root;
+        // width transition
+        act(() => {
+          root = create(<html.div style={styles.width()} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.out).toHaveBeenCalled();
+        act(() => {
+          root.update(<html.div style={[styles.width(200)]} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
       });
-      expect(root.toJSON()).toMatchSnapshot('width transition start');
-      expect(Easing.out).toHaveBeenCalled();
-      act(() => {
-        root.update(<html.div style={[styles.width(200)]} />);
-      });
-      expect(root.toJSON()).toMatchSnapshot('width transition end');
 
-      // cubic-bezier easing
-      act(() => {
-        root = create(
-          <html.div
-            style={styles.opacity(1, 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)')}
-          />
-        );
+      test('cubic-bezier easing', () => {
+        let root;
+        // cubic-bezier easing
+        act(() => {
+          root = create(
+            <html.div
+              style={styles.opacity(1, 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)')}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot();
+        expect(Easing.bezier).toHaveBeenCalledWith(0.1, 0.2, 0.3, 0.4);
       });
-      expect(root.toJSON()).toMatchSnapshot('cubic-bezier timing function');
-      expect(Easing.bezier).toHaveBeenCalledWith(0.1, 0.2, 0.3, 0.4);
 
-      // transition all properties (opacity and transform)
-      act(() => {
-        root = create(<html.div style={styles.transitionAll} />);
+      test('transition all properties (opacity and transform)', () => {
+        let root;
+        // transition all properties (opacity and transform)
+        act(() => {
+          root = create(<html.div style={styles.transitionAll} />);
+        });
+        expect(Easing.in).toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot();
       });
-      expect(Easing.in).toHaveBeenCalled();
-      expect(root.toJSON()).toMatchSnapshot('transition all properties');
 
-      // transition multiple properties
-      act(() => {
-        root = create(<html.div style={styles.transitionMultiple} />);
+      test('transition multiple properties', () => {
+        let root;
+        // transition multiple properties
+        act(() => {
+          root = create(<html.div style={styles.transitionMultiple} />);
+        });
+        expect(Easing.in).toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot();
       });
-      expect(Easing.in).toHaveBeenCalled();
-      expect(root.toJSON()).toMatchSnapshot('transition multiple properties');
 
-      // transition with missing properties
-      act(() => {
-        root = create(<html.div style={styles.transitionWithoutProperty} />);
+      test('transition with missing properties', () => {
+        let root;
+        // transition with missing properties
+        act(() => {
+          root = create(<html.div style={styles.transitionWithoutProperty} />);
+        });
+        act(() => {
+          root.update(<html.div style={[styles.transitionWithoutProperty]} />);
+        });
+        expect(console.error).not.toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot();
+        act(() => {
+          root.update(
+            <html.div
+              style={
+                // attempt to transition to an end value without a start value
+                styles.transform('translateY(50px) rotateX(90deg)')
+              }
+            />
+          );
+        });
+        expect(console.error).not.toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot();
       });
-      act(() => {
-        root.update(<html.div style={[styles.transitionWithoutProperty]} />);
-      });
-      // no error as transform start and end value are both missing
-      expect(console.error).not.toHaveBeenCalled();
-      act(() => {
-        root.update(
-          <html.div
-            style={
-              // attempt to transition to an end value without a start value
-              styles.transform('translateY(50px) rotateX(90deg)')
-            }
-          />
-        );
-      });
-      // error as transform start value is missing
-      expect(console.error).toHaveBeenCalled();
-      expect(root.toJSON()).toMatchSnapshot('transition property end');
 
-      // other transforms
-      act(() => {
-        root = create(
-          <html.div
-            style={styles.transform(
-              'rotate(1deg) rotateX(2deg) rotateY(3deg) rotateZ(4deg)'
-            )}
-          />
-        );
+      test('other transforms', () => {
+        let root;
+        // other transforms
+        act(() => {
+          root = create(
+            <html.div
+              style={styles.transform(
+                'rotate(1deg) rotateX(2deg) rotateY(3deg) rotateZ(4deg)'
+              )}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('rotate');
+        act(() => {
+          root = create(
+            <html.div
+              style={styles.transform('scale(1) scaleX(2) scaleY(4) scaleZ(6)')}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('scale');
+        act(() => {
+          root = create(
+            <html.div style={styles.transform('skewX(20px) skewY(21px)')} />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('skew');
+        act(() => {
+          root = create(
+            <html.div
+              style={styles.transform('translateX(11px) translateY(21px)')}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('translate');
       });
-      expect(root.toJSON()).toMatchSnapshot('rotate');
-      act(() => {
-        root = create(
-          <html.div
-            style={styles.transform('scale(1) scaleX(2) scaleY(4) scaleZ(6)')}
-          />
-        );
-      });
-      expect(root.toJSON()).toMatchSnapshot('scale');
-      act(() => {
-        root = create(
-          <html.div style={styles.transform('skewX(20px) skewY(21px)')} />
-        );
-      });
-      expect(root.toJSON()).toMatchSnapshot('skew');
-      act(() => {
-        root = create(
-          <html.div
-            style={styles.transform('translateX(11px) translateY(21px)')}
-          />
-        );
-      });
-      expect(root.toJSON()).toMatchSnapshot('translate');
 
-      // other element types
-      act(() => {
-        root = create(<html.span style={styles.backgroundColor()} />);
+      test('other element types', () => {
+        let root;
+        // other element types
+        act(() => {
+          root = create(<html.span style={styles.backgroundColor()} />);
+        });
+        expect(root.toJSON().type).toBe('Animated.Text');
+        act(() => {
+          root.update(<html.button style={styles.backgroundColor()} />);
+        });
+        expect(root.toJSON().type).toMatchSnapshot();
       });
-      expect(root.toJSON().type).toBe('Animated.Text');
-      act(() => {
-        root.update(<html.button style={styles.backgroundColor()} />);
-      });
-      expect(root.toJSON().type).toMatchSnapshot('Animated.Pressable');
     });
   });
 

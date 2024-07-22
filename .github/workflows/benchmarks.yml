@@ -97,6 +97,6 @@ jobs:
         body: |
           <!-- workflow-benchmarks-perf-data -->
           ### workflow: benchmarks/perf (native)
-          Comparison of performance test results, measured in operations per second. Higher is faster.
+          Comparison of performance test results, measured in operations per second. Larger is better.
           ${{ steps.collect.outputs.table }}
         edit-mode: replace

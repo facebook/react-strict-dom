@@ -13,6 +13,7 @@ import type { Props as ReactNativeProps } from '../../types/react-native';
 import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import * as stylex from '../stylex';
 import { useHoverHandlers } from './useHoverHandlers';
+import { useStyleTransition } from './useStyleTransition';
 
 type StyleOptions = {
   customProperties: ?CustomProperties,
@@ -57,6 +58,13 @@ export function useStyleProps(
     ]) {
       styleProps[handler] = handlers[handler];
     }
+  }
+
+  const styleWithAnimations = useStyleTransition(styleProps.style);
+  if (styleProps.style !== styleWithAnimations) {
+    // This is an internal prop used to track components that need Animated renderers
+    styleProps.animated = true;
+    styleProps.style = styleWithAnimations;
   }
 
   return styleProps;

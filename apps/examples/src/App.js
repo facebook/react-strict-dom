@@ -86,6 +86,7 @@ function Shell(): React.MixedElement {
   const [skew, setSkew] = React.useState(SKEW_INACTIVE);
   const [fadeUpActive, setFadeUpActive] = React.useState(true);
   const [animate, setAnimate] = React.useState(false);
+  const [shouldAnimate, setShouldAnimate] = React.useState(false);
 
   return (
     <ScrollView>
@@ -274,18 +275,19 @@ function Shell(): React.MixedElement {
           <html.div
             style={[
               styles.square,
-              styles.transitionBackgroundColor,
+              shouldAnimate && styles.transitionBackgroundColor,
               styles.dynamicBg(backgroundColor)
             ]}
           />
           <html.button
-            onClick={() =>
-              setBackgroundColor(
-                backgroundColor === BGCOLOR_INACTIVE
+            onClick={() => {
+              setShouldAnimate(true);
+              setBackgroundColor((bg) => {
+                return bg === BGCOLOR_INACTIVE
                   ? BGCOLOR_ACTIVE
-                  : BGCOLOR_INACTIVE
-              )
-            }
+                  : BGCOLOR_INACTIVE;
+              });
+            }}
           >
             Toggle
           </html.button>

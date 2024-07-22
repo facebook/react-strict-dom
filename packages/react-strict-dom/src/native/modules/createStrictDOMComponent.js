@@ -40,7 +40,6 @@ import { mergeRefs } from '../../shared/mergeRefs';
 import { resolveUnitlessLineHeight } from './resolveUnitlessLineHeight';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import { useStyleProps } from './useStyleProps';
-import { useStyleTransition } from './useStyleTransition';
 import * as stylex from '../stylex';
 
 function getComponentFromElement(tagName: string) {
@@ -100,10 +99,6 @@ const unsupportedProps = new Set([
   'onSelectionChange'
 ]);
 
-function isString(str: mixed): boolean %checks {
-  return typeof str === 'string';
-}
-
 function validateStrictProps(props: StrictProps) {
   Object.keys(props).forEach((key) => {
     const isValidProp = isPropAllowed(key);
@@ -115,20 +110,6 @@ function validateStrictProps(props: StrictProps) {
       warnMsg(`unsupported prop "${key}"`);
     }
   });
-}
-
-function isNumber(num: mixed): boolean %checks {
-  return typeof num === 'number';
-}
-
-function resolveTransitionProperty(property: mixed): ?(string[]) {
-  if (property === 'all') {
-    return ['opacity', 'transform'];
-  }
-  if (typeof property === 'string') {
-    return property.split(',').map((p) => p.trim());
-  }
-  return null;
 }
 
 type EventHandler =
@@ -700,7 +681,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // Workaround: React Native doesn't support raw text children of View
       // Sometimes we can auto-fix this
       if (
-        isString(children) &&
+        typeof children === 'string' &&
         nativeComponent !== Text &&
         nativeComponent !== TextInput &&
         nativeComponent !== Image
@@ -772,10 +753,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         textIndent,
         textTransform,
         whiteSpace,
-        transitionDelay,
-        transitionDuration,
-        transitionProperty,
-        transitionTimingFunction,
         ...nonTextStyle
       } = nativeProps.style;
 
@@ -831,38 +808,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         resolveUnitlessLineHeight(nativeProps.style);
       }
 
-      const resolvedTransitionProperty =
-        resolveTransitionProperty(transitionProperty);
-      const transitionProperties = resolvedTransitionProperty?.flatMap(
-        (property) => {
-          const value = nativeProps.style[property];
-          if (isString(value) || isNumber(value) || Array.isArray(value)) {
-            return [{ property, value }];
-          }
-          return [] as [];
-        }
-      );
-      const animatedPropertyValues = useStyleTransition({
-        transitionDelay: isNumber(transitionDelay) ? transitionDelay : 0,
-        transitionDuration: isNumber(transitionDuration)
-          ? transitionDuration
-          : 16,
-        transitionProperties,
-        transitionTimingFunction: isString(transitionTimingFunction)
-          ? transitionTimingFunction
-          : null
-      });
-
-      delete nativeProps.style.transitionDelay;
-      delete nativeProps.style.transitionDuration;
-      delete nativeProps.style.transitionProperty;
-      delete nativeProps.style.transitionTimingFunction;
-
-      if (animatedPropertyValues.length > 0) {
-        for (const animatedProperty of animatedPropertyValues) {
-          // $FlowFixMe[incompatible-type]
-          nativeProps.style[animatedProperty.property] = animatedProperty.style;
-        }
+      // Use Animated components if necessary
+      if (nativeProps.animated === true) {
         if (nativeComponent === View) {
           nativeComponent = Animated.View;
         }

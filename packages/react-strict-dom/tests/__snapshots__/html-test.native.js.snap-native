@@ -998,10 +998,9 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : Animated.Pressable 1`] = `"Animated.Pressable"`;
-
-exports[`<html.*> style polyfills "transition" properties : backgroundColor transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties  backgroundColor transition: end 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "backgroundColor": {
@@ -1020,8 +1019,9 @@ exports[`<html.*> style polyfills "transition" properties : backgroundColor tran
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : backgroundColor transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties  backgroundColor transition: start 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "backgroundColor": {
@@ -1040,8 +1040,9 @@ exports[`<html.*> style polyfills "transition" properties : backgroundColor tran
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : cubic-bezier timing function 1`] = `
+exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "opacity": {
@@ -1060,8 +1061,9 @@ exports[`<html.*> style polyfills "transition" properties : cubic-bezier timing 
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : opacity transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties  opacity transition: end 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "opacity": {
@@ -1080,8 +1082,9 @@ exports[`<html.*> style polyfills "transition" properties : opacity transition e
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : opacity transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties  opacity transition: start 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "opacity": {
@@ -1100,8 +1103,11 @@ exports[`<html.*> style polyfills "transition" properties : opacity transition s
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : rotate 1`] = `
+exports[`<html.*> style polyfills "transition" properties  other element types 1`] = `"Animated.Pressable"`;
+
+exports[`<html.*> style polyfills "transition" properties  other transforms: rotate 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "position": "static",
@@ -1160,8 +1166,9 @@ exports[`<html.*> style polyfills "transition" properties : rotate 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : scale 1`] = `
+exports[`<html.*> style polyfills "transition" properties  other transforms: scale 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "position": "static",
@@ -1220,8 +1227,9 @@ exports[`<html.*> style polyfills "transition" properties : scale 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : skew 1`] = `
+exports[`<html.*> style polyfills "transition" properties  other transforms: skew 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "position": "static",
@@ -1256,191 +1264,9 @@ exports[`<html.*> style polyfills "transition" properties : skew 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : transform transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties  other transforms: translate 1`] = `
 <Animated.View
-  style={
-    {
-      "position": "static",
-      "transform": [
-        {
-          "translateY": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              0,
-              50,
-            ],
-          },
-        },
-        {
-          "rotateX": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              "0deg",
-              "90deg",
-            ],
-          },
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`<html.*> style polyfills "transition" properties : transform transition start 1`] = `
-<Animated.View
-  style={
-    {
-      "position": "static",
-      "transform": [
-        {
-          "translateY": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              0,
-              0,
-            ],
-          },
-        },
-        {
-          "rotateX": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              "0deg",
-              "0deg",
-            ],
-          },
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`<html.*> style polyfills "transition" properties : transition all properties 1`] = `
-<Animated.View
-  style={
-    {
-      "opacity": {
-        "inputRange": [
-          0,
-          1,
-        ],
-        "outputRange": [
-          1,
-          1,
-        ],
-      },
-      "position": "static",
-      "transform": [
-        {
-          "translateY": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              0,
-              0,
-            ],
-          },
-        },
-        {
-          "rotateX": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              "0deg",
-              "0deg",
-            ],
-          },
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`<html.*> style polyfills "transition" properties : transition multiple properties 1`] = `
-<Animated.View
-  style={
-    {
-      "opacity": {
-        "inputRange": [
-          0,
-          1,
-        ],
-        "outputRange": [
-          1,
-          1,
-        ],
-      },
-      "position": "static",
-      "transform": [
-        {
-          "translateY": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              0,
-              0,
-            ],
-          },
-        },
-        {
-          "rotateX": {
-            "inputRange": [
-              0,
-              1,
-            ],
-            "outputRange": [
-              "0deg",
-              "0deg",
-            ],
-          },
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`<html.*> style polyfills "transition" properties : transition property end 1`] = `
-<View
-  experimental_layoutConformance="strict"
-  style={
-    {
-      "position": "static",
-      "transform": [
-        {
-          "translateY": 50,
-        },
-        {
-          "rotateX": "90deg",
-        },
-      ],
-    }
-  }
-/>
-`;
-
-exports[`<html.*> style polyfills "transition" properties : translate 1`] = `
-<Animated.View
+  animated={true}
   style={
     {
       "position": "static",
@@ -1475,8 +1301,249 @@ exports[`<html.*> style polyfills "transition" properties : translate 1`] = `
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : width transition end 1`] = `
+exports[`<html.*> style polyfills "transition" properties  transform transition: end 1`] = `
 <Animated.View
+  animated={true}
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              50,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "90deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  transform transition: start 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              0,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "0deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  transition all properties (opacity and transform) 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          1,
+        ],
+      },
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              0,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "0deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  transition multiple properties 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          1,
+        ],
+      },
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              0,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "0deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  transition with missing properties 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  transition with missing properties 2`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "position": "static",
+      "transform": [
+        {
+          "translateY": 50,
+        },
+        {
+          "rotateX": "90deg",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  update triggers transition: green to blue 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "green",
+          "blue",
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  update triggers transition: red to green 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "red",
+          "green",
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  width transition: end 1`] = `
+<Animated.View
+  animated={true}
   style={
     {
       "position": "static",
@@ -1495,8 +1562,9 @@ exports[`<html.*> style polyfills "transition" properties : width transition end
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties : width transition start 1`] = `
+exports[`<html.*> style polyfills "transition" properties  width transition: start 1`] = `
 <Animated.View
+  animated={true}
   style={
     {
       "position": "static",

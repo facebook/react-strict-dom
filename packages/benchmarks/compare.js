@@ -55,12 +55,10 @@ function generateComparisonData(results) {
   if (isValidBase && isValidPatch) {
     const ratio = patchResult / baseResult;
     ratioFixed = ratio.toFixed(2);
-    if (ratio < 0.95) {
-      icon = '🔴';
+    if (ratio < 0.95 || ratio > 1.05) {
+      icon = '**!!**';
     } else if (ratio < 1) {
       icon = '-';
-    } else if (ratio > 1.05) {
-      icon = '🟢';
     } else if (ratio > 1) {
       icon = '+';
     }
