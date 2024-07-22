@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.21 (Jul 22, 2024)
+
+### New features
+
+* [Web] Add babel plugin `debug` flag to add sourceMap info to rendered elements.
+
+### Fixes
+
+* [Native] Fix inheritance of em-based lineHeight.
+
 ## 0.0.20 (Jul 19, 2024)
 
 ### Fixes
