@@ -7,47 +7,28 @@
  * @flow strict-local
  */
 
-import type { StyleValue } from '../../types/react-native';
+import type {
+  Style as ReactNativeStyle,
+  StyleValue
+} from '../../types/react-native';
 
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
-import { errorMsg, warnMsg } from '../../shared/logUtils';
+import { warnMsg } from '../../shared/logUtils';
 
 type TransitionProperties = $ReadOnlyArray<{
   property: string,
   value: StyleValue
 }>;
 
-type TransitionConfig = $ReadOnly<{
-  transitionDelay?: number,
-  transitionDuration?: number,
-  transitionProperties?: ?TransitionProperties,
-  transitionTimingFunction?: ?string
-}>;
+type AnimatedStyle = { [string]: ?StyleValue | $ReadOnlyArray<mixed> };
 
-type TransitionStyleValue = ?StyleValue | $ReadOnlyArray<mixed>;
+function isNumber(num: mixed): boolean %checks {
+  return typeof num === 'number';
+}
 
-type TransitionStylesArray = Array<{
-  property: string,
-  style: TransitionStyleValue
-}>;
-
-function getEasingFunction(input: ?string) {
-  if (input === 'ease') {
-    return Easing.ease;
-  } else if (input === 'ease-in') {
-    return Easing.in(Easing.ease);
-  } else if (input === 'ease-out') {
-    return Easing.out(Easing.ease);
-  } else if (input === 'ease-in-out') {
-    return Easing.inOut(Easing.ease);
-  } else if (input != null && input.includes('cubic-bezier')) {
-    const chunk = input.split('cubic-bezier(')[1];
-    const str = chunk.split(')')[0];
-    const curve = str.split(',').map((point) => parseFloat(point.trim()));
-    return Easing.bezier(...curve);
-  }
-  return Easing.linear;
+function isString(str: mixed): boolean %checks {
+  return typeof str === 'string';
 }
 
 function canUseNativeDriver(
@@ -67,23 +48,66 @@ function canUseNativeDriver(
   });
 }
 
+function getEasingFunction(input: ?string) {
+  if (input === 'ease') {
+    return Easing.ease;
+  } else if (input === 'ease-in') {
+    return Easing.in(Easing.ease);
+  } else if (input === 'ease-out') {
+    return Easing.out(Easing.ease);
+  } else if (input === 'ease-in-out') {
+    return Easing.inOut(Easing.ease);
+  } else if (input != null && input.includes('cubic-bezier')) {
+    const chunk = input.split('cubic-bezier(')[1];
+    const str = chunk.split(')')[0];
+    const curve = str.split(',').map((point) => parseFloat(point.trim()));
+    return Easing.bezier(...curve);
+  }
+  return Easing.linear;
+}
+
+function getTransitionProperties(property: mixed): ?(string[]) {
+  if (property === 'all') {
+    return ['opacity', 'transform'];
+  }
+  if (typeof property === 'string') {
+    return property.split(',').map((p) => p.trim());
+  }
+  return null;
+}
+
 const INPUT_RANGE = [0, 1];
 
-export function useStyleTransition(
-  config: TransitionConfig
-): TransitionStylesArray {
+export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
   const {
-    transitionDelay,
-    transitionDuration,
-    transitionProperties,
-    transitionTimingFunction
-  } = config;
-  const valueRef = useRef(transitionProperties);
+    transitionDelay: _delay,
+    transitionDuration: _duration,
+    transitionProperty: _transitionProperty,
+    transitionTimingFunction: _timingFunction,
+    ...styleWithAnimations
+  } = style;
+
+  const transitionDelay = isNumber(_delay) ? _delay : 0;
+  const transitionDuration = isNumber(_duration) ? _duration : 16;
+  const transitionTimingFunction = isString(_timingFunction)
+    ? _timingFunction
+    : null;
+  const transitionProperties = getTransitionProperties(
+    _transitionProperty
+  )?.flatMap((property) => {
+    const value = style[property];
+    if (isString(value) || isNumber(value) || Array.isArray(value)) {
+      return [{ property, value }];
+    }
+    return [] as [];
+  });
+
+  const previousStyleRef = useRef(style);
   const animatedRef = useRef(new Animated.Value(0));
 
   useEffect(() => {
     if (transitionProperties != null) {
-      Animated.sequence([
+      const animation = Animated.sequence([
         Animated.delay(transitionDelay ?? 0),
         Animated.timing(animatedRef.current, {
           toValue: 1,
@@ -91,12 +115,17 @@ export function useStyleTransition(
           easing: getEasingFunction(transitionTimingFunction),
           useNativeDriver: canUseNativeDriver(transitionProperties)
         })
-      ]).start(() => {
-        valueRef.current = transitionProperties;
+      ]);
+      animation.start(() => {
+        previousStyleRef.current = style;
         animatedRef.current = new Animated.Value(0);
       });
+      return () => {
+        animation.stop();
+      };
     }
   }, [
+    style,
     transitionDelay,
     transitionDuration,
     transitionProperties,
@@ -104,32 +133,27 @@ export function useStyleTransition(
   ]);
 
   if (transitionProperties == null) {
-    return [];
+    return style;
   }
 
-  if (valueRef.current?.length !== transitionProperties.length) {
-    if (__DEV__) {
-      errorMsg(
-        'invalid style transition. The number of transition properties must be the same before and after the transition.'
-      );
-    }
-    return [];
-  }
+  const transitionStyle: AnimatedStyle = transitionProperties.reduce(
+    (animatedStyle, entry) => {
+      const { property, value } = entry;
 
-  const transitionStyles: TransitionStyleValue[] = transitionProperties.map(
-    ({ property, value }, i): TransitionStyleValue => {
-      const startValue = valueRef.current?.[i].value;
+      const startValue = previousStyleRef.current?.[property];
 
       if (typeof value === 'number') {
-        return animatedRef.current.interpolate({
+        animatedStyle[property] = animatedRef.current.interpolate({
           inputRange: INPUT_RANGE,
           outputRange: [+startValue, value]
         });
+        return animatedStyle;
       } else if (typeof value === 'string') {
-        return animatedRef.current.interpolate({
+        animatedStyle[property] = animatedRef.current.interpolate({
           inputRange: INPUT_RANGE,
           outputRange: [String(startValue), value]
         });
+        return animatedStyle;
       } else if (property === 'transform' && Array.isArray(value)) {
         const transforms = value;
         const refTransforms = startValue;
@@ -144,7 +168,8 @@ export function useStyleTransition(
               'The number or types of transforms must be the same before and after the transition. The transition will not animate.'
             );
           }
-          return transforms;
+          animatedStyle[property] = transforms;
+          return animatedStyle;
         }
 
         // TODO: Figure out how to animate matrix transforms
@@ -155,7 +180,8 @@ export function useStyleTransition(
                 'Matrix transforms cannot be animated. The transition will not animate.'
               );
             }
-            return transforms;
+            animatedStyle[property] = transforms;
+            return animatedStyle;
           }
         }
 
@@ -189,7 +215,8 @@ export function useStyleTransition(
                   `After: ${JSON.stringify(refTransforms)}`
               );
             }
-            return transforms;
+            animatedStyle[property] = transforms;
+            return animatedStyle;
           }
         }
 
@@ -368,19 +395,16 @@ export function useStyleTransition(
             continue;
           }
         }
-        return animatedTransforms;
+        animatedStyle[property] = animatedTransforms;
+        return animatedStyle;
       }
-      return null;
-    }
+
+      return animatedStyle;
+    },
+    {} as AnimatedStyle
   );
 
-  const animatedTransitionProperties = transitionProperties.map(
-    ({ property }, i) => {
-      return {
-        property,
-        style: transitionStyles[i]
-      };
-    }
-  );
-  return animatedTransitionProperties;
+  Object.assign(styleWithAnimations, transitionStyle);
+
+  return styleWithAnimations;
 }

@@ -52,6 +52,7 @@ type Props = {
   accessibilityViewIsModal?: ?boolean,
   autoComplete?: ?string,
   alt?: ?Stringish,
+  animated?: ?boolean, // non-standard
   caretHidden?: TextInputProps['caretHidden'],
   cursorColor?: TextInputProps['cursorColor'],
   children?: ?React$Node,

@@ -29,7 +29,10 @@ export const Animated = {
   delay: () => {},
   sequence: () => {
     return {
-      start: () => {}
+      start: (callback) => {
+        callback();
+      },
+      stop: () => {}
     };
   }
 };
