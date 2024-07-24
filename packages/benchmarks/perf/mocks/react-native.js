@@ -9,7 +9,7 @@
  * React Native mock for Node.js benchmarks
  */
 
-const Animated = {
+export const Animated = {
   createAnimatedComponent(c) {
     return c;
   },
@@ -34,7 +34,7 @@ const Animated = {
   }
 };
 
-const Easing = {
+export const Easing = {
   linear: () => {},
   ease: () => {},
   bezier: () => {},
@@ -43,13 +43,13 @@ const Easing = {
   inOut: () => {}
 };
 
-const Image = 'Image';
+export const Image = 'Image';
 
-const Linking = {
+export const Linking = {
   openURL: () => {}
 };
 
-const Platform = {
+export const Platform = {
   get constants() {
     return {
       reactNativeVersion: {
@@ -66,13 +66,13 @@ const Platform = {
   }
 };
 
-const PixelRatio = {
+export const PixelRatio = {
   getFontScale: () => 1
 };
 
-const Pressable = 'Pressable';
+export const Pressable = 'Pressable';
 
-const StyleSheet = {
+export const StyleSheet = {
   create(styles) {
     return styles;
   },
@@ -97,28 +97,12 @@ const StyleSheet = {
   }
 };
 
-const TextInput = 'TextInput';
+export const TextInput = 'TextInput';
 
-const Text = 'Text';
+export const Text = 'Text';
 
-const View = 'View';
+export const View = 'View';
 
-const useColorScheme = () => 'light';
+export const useColorScheme = () => 'light';
 
-const useWindowDimensions = () => ({ width: 2000, height: 1000 });
-
-module.exports = {
-  Animated,
-  Easing,
-  Image,
-  Linking,
-  Platform,
-  PixelRatio,
-  Pressable,
-  StyleSheet,
-  TextInput,
-  Text,
-  View,
-  useColorScheme,
-  useWindowDimensions
-};
+export const useWindowDimensions = () => ({ width: 2000, height: 1000 });

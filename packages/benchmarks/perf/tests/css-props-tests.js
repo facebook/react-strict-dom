@@ -8,7 +8,7 @@
 'use strict';
 
 const { createSuite } = require('../helpers');
-const { css } = require('../../build/react-strict-dom-for-benchmarks');
+const { css } = require('../react-strict-dom');
 const { customProperties, styles: stylesFixture } = require('../fixtures');
 
 function runSuite(opts) {
@@ -33,6 +33,30 @@ function runSuite(opts) {
   };
 
   const styles = css.create(stylesFixture);
+
+  const simpleTokens = css.defineVars(customProperties.simple);
+  const polyfillTokens = css.defineVars(customProperties.polyfills);
+  const simpleTheme = css.createTheme(simpleTokens, {
+    backgroundColor: 'darkred',
+    borderWidth: 11,
+    color: 'darkgreen',
+    height: 1001,
+    margin: 17,
+    padding: 33,
+    width: 1001
+  });
+  const polyfillTheme = css.createTheme(polyfillTokens, {
+    backgroundColor: {
+      default: 'blue',
+      '@media (prefers-color-scheme:dark)': 'darkblue'
+    },
+    borderWidth: '1rem',
+    color: 'lightblue',
+    height: '91vh',
+    margin: '2rem',
+    padding: '3em',
+    width: '91vw'
+  });
 
   test('small', () => {
     css.props.call(options, styles.small);
@@ -102,6 +126,18 @@ function runSuite(opts) {
           [null, styles.largeWithPolyfills, [null, [styles.complex]]]
         ]
       ]
+    ]);
+  });
+
+  // THEMED MERGE
+
+  test('themed merge', () => {
+    css.props.call(optionsVarUnits, [
+      styles.simple,
+      styles.simpleWithUnits,
+      simpleTheme,
+      styles.large,
+      polyfillTheme
     ]);
   });
 
