@@ -76,7 +76,7 @@ function generateComparisonData(results) {
 
 function generateMarkdownTable(mergedData) {
   const rows = [];
-  rows.push('| **Suite** | **Base** | **Patch** | **Ratio** |  |');
+  rows.push('| **Results** | **Base** | **Patch** | **Ratio** |  |');
   rows.push('| :--- | ---: | ---: | ---: | ---: |');
   Object.keys(mergedData).forEach((suiteName) => {
     rows.push('|  |  |  |  |');

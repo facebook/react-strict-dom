@@ -64,10 +64,11 @@ To run all these automated tests:
 npm test
 ```
 
-To run the benchmarks for React Native:
+To run the benchmarks ((use `npm run build` first if running locally):
 
 ```
-npm run benchmarks -w react-strict-dom
+npm run perf -w benchmarks
+npm run size -w benchmarks
 ```
 
 

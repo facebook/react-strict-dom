@@ -8,11 +8,21 @@
 'use strict';
 
 const fs = require('fs');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
 
 const createTests = require('./tests/css-create-tests');
 const createThemeTests = require('./tests/css-createTheme-tests');
 const propsTests = require('./tests/css-props-tests');
-const internalsTests = require('./tests/internals-tests');
+
+// run.js --outfile filename.js
+const argv = yargs(hideBin(process.argv)).option('outfile', {
+  alias: 'o',
+  type: 'string',
+  description: 'Output file',
+  demandOption: false
+}).argv;
+const outfile = argv.outfile;
 
 const aggregatedResults = {};
 const options = {
@@ -27,19 +37,16 @@ const options = {
   }
 };
 
-console.log('Running benchmarks, please wait...');
+console.log('Running performance benchmark, please wait...');
 
 // Run tests
 createTests(options);
 createThemeTests(options);
 propsTests(options);
-internalsTests(options);
 
 const aggregatedResultsString = JSON.stringify(aggregatedResults, null, 2);
 
 // Print / Write results
-const args = process.argv.slice(2);
-const filename = args[0];
 const now = new Date();
 const year = now.getFullYear();
 const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
@@ -49,12 +56,12 @@ const minutes = String(now.getMinutes()).padStart(2, '0');
 const timestamp = `${year}${month}${day}-${hours}${minutes}`;
 
 const dirpath = `${process.cwd()}/logs`;
-const filepath = `${dirpath}/react-strict-dom-bench-${timestamp}.json`;
+const filepath = `${dirpath}/perf-${timestamp}.json`;
 if (!fs.existsSync(dirpath)) {
   fs.mkdirSync(dirpath);
 }
-const finalpath = filename || filepath;
-fs.writeFileSync(finalpath, `${aggregatedResultsString}\n`);
+const outpath = outfile || filepath;
+fs.writeFileSync(outpath, `${aggregatedResultsString}\n`);
 
 console.log(aggregatedResultsString);
-console.log('Results written to', finalpath);
+console.log('Results written to', outpath);

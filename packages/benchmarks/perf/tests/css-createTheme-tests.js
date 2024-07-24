@@ -8,7 +8,7 @@
 'use strict';
 
 const { createSuite } = require('../helpers');
-const { css } = require('../../build/react-strict-dom-for-benchmarks');
+const { css } = require('../react-strict-dom');
 const { customProperties } = require('../fixtures');
 
 function runSuite(options) {
