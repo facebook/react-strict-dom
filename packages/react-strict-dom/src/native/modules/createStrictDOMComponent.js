@@ -672,7 +672,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         if (spellCheck != null) {
           nativeProps.spellCheck = spellCheck;
         }
-        if (value != null) {
+        if (value != null && typeof value === 'string') {
           nativeProps.value = value;
         }
       }

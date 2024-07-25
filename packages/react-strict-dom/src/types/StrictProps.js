@@ -14,6 +14,7 @@ import type { StrictReactDOMButtonProps } from './StrictReactDOMButtonProps';
 import type { StrictReactDOMImageProps } from './StrictReactDOMImageProps';
 import type { StrictReactDOMInputProps } from './StrictReactDOMInputProps';
 import type { StrictReactDOMLabelProps } from './StrictReactDOMLabelProps';
+import type { StrictReactDOMListItemProps } from './StrictReactDOMListItemProps';
 import type { StrictReactDOMOptionProps } from './StrictReactDOMOptionProps';
 import type { StrictReactDOMSelectProps } from './StrictReactDOMSelectProps';
 import type { StrictReactDOMTextAreaProps } from './StrictReactDOMTextAreaProps';
@@ -25,6 +26,7 @@ export type StrictProps = $ReadOnly<{
   ...StrictReactDOMImageProps,
   ...StrictReactDOMInputProps,
   ...StrictReactDOMLabelProps,
+  ...StrictReactDOMListItemProps,
   ...StrictReactDOMOptionProps,
   ...StrictReactDOMSelectProps,
   ...StrictReactDOMTextAreaProps
