@@ -20,6 +20,7 @@ import type { StrictReactDOMButtonProps } from '../types/StrictReactDOMButtonPro
 import type { StrictReactDOMImageProps } from '../types/StrictReactDOMImageProps';
 import type { StrictReactDOMInputProps } from '../types/StrictReactDOMInputProps';
 import type { StrictReactDOMLabelProps } from '../types/StrictReactDOMLabelProps';
+import type { StrictReactDOMListItemProps } from '../types/StrictReactDOMListItemProps';
 import type { StrictReactDOMOptionProps } from '../types/StrictReactDOMOptionProps';
 import type { StrictReactDOMOptionGroupProps } from '../types/StrictReactDOMOptionGroupProps';
 import type { StrictReactDOMSelectProps } from '../types/StrictReactDOMSelectProps';
@@ -252,7 +253,7 @@ export const label: React$AbstractComponent<
  * "li" (block)
  */
 export const li: React$AbstractComponent<
-  StrictReactDOMProps,
+  StrictReactDOMListItemProps,
   StrictHTMLElement
 > = createStrict('li', defaultStyles.li);
 
