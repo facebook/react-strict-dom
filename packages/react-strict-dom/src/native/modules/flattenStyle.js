@@ -11,9 +11,9 @@ import type { Style, Styles } from '../../types/styles';
 
 const emptyObject = {};
 
-export function flattenStyle(style: ?Styles | Style | Array<Styles | Style>): {
-  ...Style
-} {
+export function flattenStyle(
+  style: ?Styles | Style | Array<Styles | Style>
+): Style {
   if (style === null || typeof style !== 'object') {
     return emptyObject;
   }
@@ -23,7 +23,7 @@ export function flattenStyle(style: ?Styles | Style | Array<Styles | Style>): {
       // This will never actually happen, but it fixes the types
       return emptyObject;
     }
-    return { ...style };
+    return style;
   }
 
   const flatArray = style.flat(Infinity);

@@ -171,12 +171,17 @@ exports[`html "article" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -268,12 +273,17 @@ exports[`html "aside" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -656,12 +666,17 @@ exports[`html "blockquote" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -869,12 +884,17 @@ exports[`html "button" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </Pressable>
@@ -1165,12 +1185,17 @@ exports[`html "div" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -1361,12 +1386,17 @@ exports[`html "fieldset" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -1458,12 +1488,17 @@ exports[`html "footer" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -1555,12 +1590,17 @@ exports[`html "form" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -2265,12 +2305,17 @@ exports[`html "header" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -2317,6 +2362,7 @@ exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "backgroundColor": "black",
+      "boxSizing": "border-box",
       "height": 1,
       "position": "static",
     }
@@ -2363,16 +2409,22 @@ exports[`html "hr" supports global attributes 1`] = `
     {
       "--custom-property": "inline",
       "backgroundColor": "black",
+      "boxSizing": "border-box",
       "direction": "ltr",
       "display": "none",
       "height": 1,
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -2407,6 +2459,7 @@ exports[`html "hr" supports inline event handlers 1`] = `
   style={
     {
       "backgroundColor": "black",
+      "boxSizing": "border-box",
       "height": 1,
       "position": "static",
     }
@@ -2588,7 +2641,6 @@ exports[`html "img" supports global attributes 1`] = `
       "display": "none",
       "objectFit": "fill",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
@@ -3110,12 +3162,17 @@ exports[`html "main" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -3207,12 +3264,17 @@ exports[`html "nav" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -3304,12 +3366,17 @@ exports[`html "ol" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -3401,12 +3468,17 @@ exports[`html "optgroup" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -3899,12 +3971,17 @@ exports[`html "section" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -4007,12 +4084,17 @@ exports[`html "select" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>
@@ -4719,12 +4801,17 @@ exports[`html "ul" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  <Text>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
     children
   </Text>
 </View>

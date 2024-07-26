@@ -58,6 +58,9 @@ const styles = stylex.create({
     boxSizing: 'border-box',
     height: 1
   },
+  img: {
+    objectFit: 'fill'
+  },
   input: {
     borderWidth: 1
   },
@@ -183,7 +186,7 @@ export const i: React$AbstractComponent<
 export const img: React$AbstractComponent<
   StrictReactDOMImageProps,
   StrictHTMLImageElement
-> = createStrict('img');
+> = createStrict('img', { style: styles.img });
 export const input: React$AbstractComponent<
   StrictReactDOMInputProps,
   StrictHTMLInputElement

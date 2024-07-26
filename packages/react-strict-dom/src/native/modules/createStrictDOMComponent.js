@@ -8,7 +8,6 @@
  */
 
 import type { StrictProps } from '../../types/StrictProps';
-import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import * as React from 'react';
 import {
@@ -21,25 +20,14 @@ import {
   View
 } from 'react-native';
 
-import {
-  ProvideCustomProperties,
-  useCustomProperties
-} from './ContextCustomProperties';
+import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
-import {
-  ProvideInheritedStyles,
-  useInheritedStyles
-} from './ContextInheritedStyles';
-// import { Text, View } from '../react-native';
+import { ProvideInheritedStyles } from './ContextInheritedStyles';
 import { TextString } from './TextString';
-import { flattenStyle } from './flattenStyle';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
-import { extractStyleThemes } from './extractStyleThemes';
-import { isPropAllowed } from '../../shared/isPropAllowed';
 import { mergeRefs } from '../../shared/mergeRefs';
-import { resolveUnitlessLineHeight } from './resolveUnitlessLineHeight';
+import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
-import { useStyleProps } from './useStyleProps';
 import * as stylex from '../stylex';
 
 function getComponentFromElement(tagName: string) {
@@ -109,409 +97,97 @@ function getComponentFromElement(tagName: string) {
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-const unsupportedProps = new Set([
-  'onBeforeInput',
-  'onInvalid',
-  'onSelect',
-  'onSelectionChange'
-]);
-
-function validateStrictProps(props: StrictProps) {
-  Object.keys(props).forEach((key) => {
-    const isValidProp = isPropAllowed(key);
-    const isUnsupportedProp = unsupportedProps.has(key);
-    if (!isValidProp) {
-      errorMsg(`invalid prop "${key}"`);
-    }
-    if (isUnsupportedProp) {
-      warnMsg(`unsupported prop "${key}"`);
-    }
-  });
-}
-
-type EventHandler =
-  | ReactNativeProps['onMouseEnter']
-  | ReactNativeProps['onMouseLeave']
-  | ReactNativeProps['onPointerEnter']
-  | ReactNativeProps['onPointerLeave'];
-
-function combineEventHandlers(a: EventHandler, b: EventHandler): EventHandler {
-  if (a == null) {
-    return b;
-  } else {
-    return (e) => {
-      const returnA = typeof a === 'function' ? a(e) : null;
-      const returnB = typeof b === 'function' ? b(e) : null;
-      return returnB || returnA;
-    };
-  }
-}
-
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
-  defaultProps?: P
+  _defaultProps?: P
 ): React.AbstractComponent<P, T> {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let nativeComponent = getComponentFromElement(tagName);
       const elementRef = useStrictDOMElement<T>({ tagName });
 
-      if (__DEV__) {
-        validateStrictProps(props);
-      }
-
       /**
        * Construct props
        */
       const {
         alt,
-        'aria-busy': ariaBusy,
-        'aria-checked': ariaChecked,
-        'aria-disabled': ariaDisabled,
-        'aria-expanded': ariaExpanded,
-        'aria-hidden': ariaHidden,
-        'aria-label': ariaLabel,
-        'aria-labelledby': ariaLabelledBy,
-        'aria-live': ariaLive,
-        'aria-modal': ariaModal,
-        'aria-posinset': ariaPosInSet,
-        'aria-selected': ariaSelected,
-        'aria-setsize': ariaSetSize,
-        'aria-valuemax': ariaValueMax,
-        'aria-valuemin': ariaValueMin,
-        'aria-valuenow': ariaValueNow,
-        'aria-valuetext': ariaValueText,
         autoComplete,
-        children,
         crossOrigin,
-        'data-testid': dataTestID,
         defaultValue,
-        dir,
         disabled,
         enterKeyHint,
         height,
         hidden,
         href,
-        id,
         inputMode,
         label,
         maxLength,
-        onBlur,
         onChange,
-        onClick,
         onError,
-        onFocus,
-        onGotPointerCapture,
         onInput,
         onKeyDown,
         onLoad,
-        onLostPointerCapture,
-        onMouseDown,
-        onMouseEnter,
-        onMouseLeave,
-        onMouseOut,
-        onMouseOver,
-        onMouseUp,
-        onPointerCancel,
-        onPointerDown,
-        onPointerEnter,
-        onPointerLeave,
-        onPointerMove,
-        onPointerOut,
-        onPointerOver,
-        onPointerUp,
-        onScroll,
-        onTouchCancel,
-        onTouchEnd,
-        onTouchMove,
-        onTouchStart,
         placeholder,
         readOnly,
         referrerPolicy,
-        role,
         rows,
         spellCheck,
         src,
         srcSet,
-        style,
-        tabIndex,
         type,
         value,
         width
       } = props;
 
       /**
-       * Resolve style props
+       * Resolve global HTML and style props
        */
 
-      const [extractedStyles, customPropertiesFromThemes] =
-        extractStyleThemes(style);
-      const customProperties = useCustomProperties(customPropertiesFromThemes);
-      const inheritedStyles = useInheritedStyles();
-      const inheritedFontSize =
-        typeof inheritedStyles?.fontSize === 'number'
-          ? inheritedStyles?.fontSize
-          : undefined;
+      const defaultProps = { style: _defaultProps?.style };
 
-      const flatStyle = flattenStyle(extractedStyles);
-
-      const renderStyles = [
-        defaultProps?.style ?? null,
-        // Use 'static' position by default where allowed
-        styles.positionStatic,
-        // Use box-sizing: 'content-box' by default
-        styles.contentBox,
-        // Add default img styles
-        tagName === 'img'
-          ? [
-              styles.objectFitFill,
-              height != null &&
-                width != null &&
-                styles.aspectRatio(width, height)
-            ]
-          : null,
-        // Styles for Text
-        [
-          nativeComponent === Text && [styles.userSelectAuto, inheritedStyles],
-          flatStyle
-        ]
-      ];
-
-      const nativeProps: ReactNativeProps = useStyleProps(renderStyles, {
-        customProperties,
-        inheritedFontSize
-      });
-
-      /**
-       * Resolve other props
-       */
-
-      nativeProps.children = children;
-
-      if (ariaHidden != null) {
-        nativeProps.accessibilityElementsHidden = ariaHidden;
-        if (ariaHidden === true) {
-          nativeProps.importantForAccessibility = 'no-hide-descendants';
-        }
-      }
-      if (ariaLabel != null) {
-        nativeProps.accessibilityLabel = ariaLabel;
-      }
-      if (ariaLabelledBy != null) {
-        nativeProps.accessibilityLabelledBy = ariaLabelledBy?.split(/\s*,\s*/g);
-      }
-      if (ariaLive != null) {
-        nativeProps.accessibilityLiveRegion =
-          ariaLive === 'off' ? 'none' : ariaLive;
-      }
-      if (ariaModal != null) {
-        nativeProps.accessibilityViewIsModal = ariaModal;
-      }
-      if (ariaPosInSet != null) {
-        nativeProps.accessibilityPosInSet = ariaPosInSet;
-      }
-      const ariaRole =
-        role ||
-        (tagName === 'a' && 'link') ||
-        (tagName === 'header' && 'header');
-      if (ariaRole) {
-        nativeProps.role = ariaRole;
-      }
-      if (ariaSetSize != null) {
-        nativeProps.accessibilitySetSize = ariaSetSize;
-      }
-      if (
-        ariaBusy != null ||
-        ariaChecked != null ||
-        ariaDisabled != null ||
-        ariaExpanded != null ||
-        ariaSelected != null
-      ) {
-        nativeProps.accessibilityState = {
-          busy: ariaBusy,
-          checked: ariaChecked,
-          disabled: ariaDisabled,
-          expanded: ariaExpanded,
-          selected: ariaSelected
-        };
-      }
-      if (
-        ariaValueMax != null ||
-        ariaValueMin != null ||
-        ariaValueNow != null ||
-        ariaValueText != null
-      ) {
-        nativeProps.accessibilityValue = {
-          max: ariaValueMax,
-          min: ariaValueMin,
-          now: ariaValueNow,
-          text: ariaValueText
-        };
-      }
-      if (dataTestID != null) {
-        nativeProps.testID = dataTestID;
-      }
-      if (id != null) {
-        nativeProps.nativeID = id;
-      }
-      if (tabIndex != null) {
-        nativeProps.focusable = !tabIndex;
+      if (tagName === 'img') {
+        defaultProps.style = [
+          defaultProps?.style,
+          height != null && width != null && styles.aspectRatio(width, height)
+        ];
+      } else if (nativeComponent === Text) {
+        defaultProps.style = [defaultProps?.style, styles.userSelectAuto];
       }
 
-      // Events
+      const { customProperties, nativeProps, inheritableStyle } =
+        useNativeProps(defaultProps, props, {
+          provideInheritableStyle:
+            tagName !== 'br' ||
+            tagName !== 'hr' ||
+            tagName !== 'img' ||
+            tagName !== 'option' ||
+            nativeComponent !== TextInput,
+          withInheritedStyle: nativeComponent === Text,
+          withTextStyle:
+            nativeComponent === Text || nativeComponent === TextInput
+        });
 
-      if (onBlur != null) {
-        nativeProps.onBlur = onBlur;
-      }
-      // TODO: remove once PointerEvent onClick is available
-      if (onClick != null) {
-        // Text has onPress, View doesn't
-        if (nativeComponent === View) {
-          nativeComponent = Pressable;
-        }
-        nativeProps.onPress = function ({ nativeEvent }) {
-          const event: mixed = nativeEvent;
-          let altKey = false;
-          let ctrlKey = false;
-          let metaKey = false;
-          let shiftKey = false;
-          let button = 0;
-          if (event != null) {
-            if (typeof event.altKey === 'boolean') {
-              altKey = event.altKey;
-            }
-            if (typeof event.ctrlKey === 'boolean') {
-              ctrlKey = event.ctrlKey;
-            }
-            if (typeof event.metaKey === 'boolean') {
-              metaKey = event.metaKey;
-            }
-            if (typeof event.shiftKey === 'boolean') {
-              shiftKey = event.shiftKey;
-            }
-            if (typeof event.button === 'number') {
-              button = event.button;
-            }
-          }
-          const getModifierState = (key: string): boolean => {
-            switch (key) {
-              case 'Alt':
-                return altKey;
-              case 'Control':
-                return ctrlKey;
-              case 'Meta':
-                return metaKey;
-              case 'Shift':
-                return shiftKey;
-              default:
-                return false;
-            }
-          };
-          onClick({
-            altKey,
-            button,
-            ctrlKey,
-            defaultPrevented: false,
-            getModifierState,
-            metaKey,
-            pageX: nativeEvent.pageX,
-            pageY: nativeEvent.pageY,
-            preventDefault() {},
-            shiftKey,
-            stopPropagation() {},
-            type: 'click'
-          });
-        };
-      }
-      if (onFocus != null) {
-        nativeProps.onFocus = onFocus;
-      }
-      if (onGotPointerCapture != null) {
-        nativeProps.onGotPointerCapture = onGotPointerCapture;
-      }
-      if (onLostPointerCapture != null) {
-        nativeProps.onLostPointerCapture = onLostPointerCapture;
-      }
-      if (onMouseDown != null) {
-        nativeProps.onMouseDown = onMouseDown;
-      }
-      if (onMouseEnter != null) {
-        nativeProps.onMouseEnter = combineEventHandlers(
-          nativeProps.onMouseEnter,
-          onMouseEnter
-        );
-      }
-      if (onMouseLeave != null) {
-        nativeProps.onMouseLeave = combineEventHandlers(
-          nativeProps.onMouseLeave,
-          onMouseLeave
-        );
-      }
-      if (onMouseOut != null) {
-        nativeProps.onMouseOut = onMouseOut;
-      }
-      if (onMouseOver != null) {
-        nativeProps.onMouseOver = onMouseOver;
-      }
-      if (onMouseUp != null) {
-        nativeProps.onMouseUp = onMouseUp;
-      }
-      if (onPointerCancel != null) {
-        nativeProps.onPointerCancel = onPointerCancel;
-      }
-      if (onPointerDown != null) {
-        nativeProps.onPointerDown = onPointerDown;
-      }
-      if (onPointerEnter != null) {
-        nativeProps.onPointerEnter = combineEventHandlers(
-          nativeProps.onPointerEnter,
-          onPointerEnter
-        );
-      }
-      if (onPointerLeave != null) {
-        nativeProps.onPointerLeave = combineEventHandlers(
-          nativeProps.onPointerLeave,
-          onPointerLeave
-        );
-      }
-      if (onPointerMove != null) {
-        nativeProps.onPointerMove = onPointerMove;
-      }
-      if (onPointerOut != null) {
-        nativeProps.onPointerOut = onPointerOut;
-      }
-      if (onPointerOver != null) {
-        nativeProps.onPointerOver = onPointerOver;
-      }
-      if (onPointerUp != null) {
-        nativeProps.onPointerUp = onPointerUp;
-      }
-      if (onScroll != null) {
-        nativeProps.onScroll = onScroll;
-      }
-      if (onTouchCancel != null) {
-        nativeProps.onTouchCancel = onTouchCancel;
-      }
-      if (onTouchEnd != null) {
-        nativeProps.onTouchEnd = onTouchEnd;
-      }
-      if (onTouchMove != null) {
-        nativeProps.onTouchMove = onTouchMove;
-      }
-      if (onTouchStart != null) {
-        nativeProps.onTouchStart = onTouchStart;
+      if (nativeProps.onPress != null && nativeComponent === View) {
+        nativeComponent = Pressable;
       }
 
       // Tag-specific props
 
-      if (tagName === 'a' && href != null) {
-        nativeProps.onPress = function (e) {
-          if (__DEV__) {
-            errorMsg('<a> "href" handling is not implemented in React Native.');
-          }
-        };
+      if (tagName === 'a') {
+        nativeProps.role = nativeProps.role ?? 'link';
+        if (href != null) {
+          nativeProps.onPress = function (e) {
+            if (__DEV__) {
+              errorMsg(
+                '<a> "href" handling is not implemented in React Native.'
+              );
+            }
+          };
+        }
       } else if (tagName === 'br') {
         nativeProps.children = '\n';
+      } else if (tagName === 'header') {
+        nativeProps.role = nativeProps.role ?? 'header';
       } else if (tagName === 'input') {
         let _inputMode = inputMode;
         if (type === 'email') {
@@ -680,36 +356,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         [elementRef, forwardedRef]
       );
 
-      // Workaround: Android doesn't support ellipsis truncation if Text is selectable
-      // See #136
-      if (
-        Platform.OS === 'android' &&
-        nativeComponent === Text &&
-        nativeProps.numberOfLines != null &&
-        nativeProps.style.userSelect !== 'none'
-      ) {
-        nativeProps.style.userSelect = 'none';
-      }
-
-      if (dir != null) {
-        if (dir !== 'auto') {
-          nativeProps.style.direction = dir;
-        }
-        nativeProps.style.writingDirection = dir;
-      }
-
       // Workaround: React Native doesn't support raw text children of View
       // Sometimes we can auto-fix this
       if (
-        typeof children === 'string' &&
+        typeof nativeProps.children === 'string' &&
         nativeComponent !== Text &&
         nativeComponent !== TextInput &&
         nativeComponent !== Image
       ) {
-        nativeProps.children = <TextString children={children} />;
+        nativeProps.children = <TextString children={nativeProps.children} />;
       }
 
-      // polyfill for default of "display:block"
+      // Polyfill for default of "display:block"
       // which implies "displayInside:flow"
       let nextDisplayInsideValue = 'flow';
       const displayInsideValue = useDisplayInside();
@@ -757,75 +415,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.style.flexShrink ??= 1;
       }
 
-      // This is where we hack in a shim for `transitionProperty`,
-      // `transitionDuration`, `transitionDelay`, `transitionTimingFunction`.
-      const {
-        color,
-        cursor,
-        fontFamily,
-        fontSize,
-        fontStyle,
-        fontVariant,
-        fontWeight,
-        letterSpacing,
-        lineHeight, // eslint-disable-line no-unused-vars
-        textAlign,
-        textIndent,
-        textTransform,
-        whiteSpace,
-        ...nonTextStyle
-      } = nativeProps.style;
+      if (nativeComponent === Text) {
+        // Workaround: Android doesn't support ellipsis truncation if Text is selectable
+        // See #136
+        const disableUserSelect =
+          Platform.OS === 'android' &&
+          nativeProps.numberOfLines != null &&
+          nativeProps.style.userSelect !== 'none';
 
-      const nextInheritedStyles = {} as $FlowFixMe;
-      if (color != null) {
-        nextInheritedStyles.color = color;
-      }
-      if (cursor != null) {
-        nextInheritedStyles.cursor = cursor;
-      }
-      if (fontFamily != null) {
-        nextInheritedStyles.fontFamily = fontFamily;
-      }
-      if (fontSize != null) {
-        nextInheritedStyles.fontSize = fontSize;
-      }
-      if (fontStyle != null) {
-        nextInheritedStyles.fontStyle = fontStyle;
-      }
-      if (fontVariant != null) {
-        nextInheritedStyles.fontVariant = fontVariant;
-      }
-      if (fontWeight != null) {
-        nextInheritedStyles.fontWeight = fontWeight;
-      }
-      if (letterSpacing != null) {
-        nextInheritedStyles.letterSpacing = letterSpacing;
-      }
-      if (lineHeight != null) {
-        nextInheritedStyles.lineHeight = lineHeight;
-      }
-      if (textAlign != null) {
-        nextInheritedStyles.textAlign = textAlign;
-      }
-      if (textIndent != null) {
-        nextInheritedStyles.textIndent = textIndent;
-      }
-      if (textTransform != null) {
-        nextInheritedStyles.textTransform = textTransform;
-      }
-      if (whiteSpace != null) {
-        nextInheritedStyles.whiteSpace = whiteSpace;
-      }
-
-      const hasNextInheritedStyles =
-        nextInheritedStyles != null &&
-        typeof nextInheritedStyles === 'object' &&
-        Object.keys(nextInheritedStyles).length > 0;
-
-      if (nativeComponent !== Text && nativeComponent !== TextInput) {
-        nativeProps.style = nonTextStyle;
-      } else {
-        resolveUnitlessLineHeight(nativeProps.style);
+        nativeProps.style = Object.assign(
+          nativeProps.style,
+          disableUserSelect ? { userSelect: 'none' } : null
+        );
       }
 
       // Use Animated components if necessary
@@ -853,29 +454,34 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // $FlowFixMe (we don't care about the internal React Native prop types)
       let element = React.createElement(nativeComponent, nativeProps);
 
-      if (hasNextInheritedStyles) {
-        element = (
-          <ProvideInheritedStyles
-            children={element}
-            value={nextInheritedStyles}
-          />
-        );
-      }
-      if (nextDisplayInsideValue !== displayInsideValue) {
-        element = (
-          <ProvideDisplayInside
-            children={element}
-            value={nextDisplayInsideValue}
-          />
-        );
-      }
-      if (customPropertiesFromThemes != null) {
-        element = (
-          <ProvideCustomProperties
-            children={element}
-            value={customProperties}
-          />
-        );
+      if (
+        nativeProps.children != null &&
+        typeof nativeProps.children !== 'string'
+      ) {
+        if (inheritableStyle != null) {
+          element = (
+            <ProvideInheritedStyles
+              children={element}
+              value={inheritableStyle}
+            />
+          );
+        }
+        if (nextDisplayInsideValue !== displayInsideValue) {
+          element = (
+            <ProvideDisplayInside
+              children={element}
+              value={nextDisplayInsideValue}
+            />
+          );
+        }
+        if (customProperties != null) {
+          element = (
+            <ProvideCustomProperties
+              children={element}
+              value={customProperties}
+            />
+          );
+        }
       }
 
       return element;
@@ -892,15 +498,6 @@ const styles = stylex.create({
     width,
     height
   }),
-  contentBox: {
-    boxSizing: 'content-box'
-  },
-  objectFitFill: {
-    objectFit: 'fill'
-  },
-  positionStatic: {
-    position: 'static'
-  },
   userSelectAuto: {
     userSelect: 'auto'
   }
