@@ -20,7 +20,7 @@ if (__DEV__) {
   ContextCustomProperties.displayName = 'ContextCustomProperties';
 }
 
-export const CustomPropertiesProvider = ContextCustomProperties.Provider;
+export const ProvideCustomProperties = ContextCustomProperties.Provider;
 
 export function useCustomProperties(
   customPropertiesFromThemes: ?CustomProperties

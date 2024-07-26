@@ -12,16 +12,16 @@ import * as React from 'react';
 type Value = 'flow' | 'flex';
 
 const defaultContext = 'flow';
-const ContextDisplayModeInside: React$Context<Value> =
+const ContextDisplayInside: React$Context<Value> =
   React.createContext(defaultContext);
 
 if (__DEV__) {
-  ContextDisplayModeInside.displayName = 'ContextDisplayModeInside';
+  ContextDisplayInside.displayName = 'ContextDisplayInside';
 }
 
-export const DisplayModeInsideProvider = ContextDisplayModeInside.Provider;
+export const ProvideDisplayInside = ContextDisplayInside.Provider;
 
-export function useDisplayModeInside(): Value {
-  const context = React.useContext(ContextDisplayModeInside);
+export function useDisplayInside(): Value {
+  const context = React.useContext(ContextDisplayInside);
   return context;
 }
