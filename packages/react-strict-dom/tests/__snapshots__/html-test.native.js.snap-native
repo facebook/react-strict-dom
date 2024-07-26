@@ -744,7 +744,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
   style={
     {
       "position": "static",
-      "writingDirection": "auto",
     }
   }
 />
@@ -769,7 +768,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
     {
       "direction": "ltr",
       "position": "static",
-      "writingDirection": "ltr",
     }
   }
 />
@@ -795,7 +793,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
     {
       "direction": "rtl",
       "position": "static",
-      "writingDirection": "rtl",
     }
   }
 />

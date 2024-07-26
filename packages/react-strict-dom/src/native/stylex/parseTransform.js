@@ -30,62 +30,45 @@ export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
   for (const txf of transforms) {
     let match = txf.match(transformRegex1);
     if (match != null) {
+      const t = match[1];
       const value = parseFloat(match[2]);
       if (isNaN(value)) {
         continue;
       }
-      switch (match[1]) {
-        case 'perspective':
-          parsedTransforms.push({ perspective: value });
-          break;
-        case 'scale':
-          parsedTransforms.push({ scale: value });
-          break;
-        case 'scaleX':
-          parsedTransforms.push({ scaleX: value });
-          break;
-        case 'scaleY':
-          parsedTransforms.push({ scaleY: value });
-          break;
-        case 'scaleZ':
-          parsedTransforms.push({ scaleZ: value });
-          break;
-        case 'translateX':
-          parsedTransforms.push({ translateX: value });
-          break;
-        case 'translateY':
-          parsedTransforms.push({ translateY: value });
-          break;
-        default:
-          break;
+      if (t === 'perspective') {
+        parsedTransforms.push({ perspective: value });
+      } else if (t === 'scale') {
+        parsedTransforms.push({ scale: value });
+      } else if (t === 'scaleX') {
+        parsedTransforms.push({ scaleX: value });
+      } else if (t === 'scaleY') {
+        parsedTransforms.push({ scaleY: value });
+      } else if (t === 'scaleZ') {
+        parsedTransforms.push({ scaleZ: value });
+      } else if (t === 'translateX') {
+        parsedTransforms.push({ translateX: value });
+      } else if (t === 'translateY') {
+        parsedTransforms.push({ translateY: value });
       }
       continue;
     }
 
     match = txf.match(transformRegex2);
     if (match != null) {
+      const t = match[1];
       const value = match[2];
-      switch (match[1]) {
-        case 'rotate':
-          parsedTransforms.push({ rotate: value });
-          break;
-        case 'rotateX':
-          parsedTransforms.push({ rotateX: value });
-          break;
-        case 'rotateY':
-          parsedTransforms.push({ rotateY: value });
-          break;
-        case 'rotateZ':
-          parsedTransforms.push({ rotateZ: value });
-          break;
-        case 'skewX':
-          parsedTransforms.push({ skewX: value });
-          break;
-        case 'skewY':
-          parsedTransforms.push({ skewY: value });
-          break;
-        default:
-          break;
+      if (t === 'rotate') {
+        parsedTransforms.push({ rotate: value });
+      } else if (t === 'rotateX') {
+        parsedTransforms.push({ rotateX: value });
+      } else if (t === 'rotateY') {
+        parsedTransforms.push({ rotateY: value });
+      } else if (t === 'rotateZ') {
+        parsedTransforms.push({ rotateZ: value });
+      } else if (t === 'skewX') {
+        parsedTransforms.push({ skewX: value });
+      } else if (t === 'skewY') {
+        parsedTransforms.push({ skewY: value });
       }
       continue;
     }

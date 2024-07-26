@@ -55,7 +55,9 @@ const WPT_TRANSITION_DELAY_TEST_CASES = [
   ['1ms', 1],
   ['0ms', 0],
   ['-500ms', -500],
-  ['foobar', 0]
+  ['foobar', 0],
+  ['fooms', 0],
+  ['foos', 0]
 ];
 
 describe('parseTimeValue', () => {

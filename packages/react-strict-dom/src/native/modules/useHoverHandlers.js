@@ -7,9 +7,8 @@
  * @flow strict
  */
 
-import type { Styles } from '../../types/styles';
+import type { Style } from '../../types/styles';
 
-import { flattenStyle } from './flattenStyle';
 import { useMemo, useState } from 'react';
 
 type HoverHandlers = {
@@ -25,11 +24,10 @@ type HoverHandlers = {
     | { type: 'NON_HOVERABLE' }
 };
 
-export function useHoverHandlers(style: Styles): HoverHandlers {
+export function useHoverHandlers(flatStyle: Style): HoverHandlers {
   const [mouseHover, setMouseHover] = useState(false);
   const [pointerHover, setPointerHover] = useState(false);
 
-  const flatStyle = flattenStyle(style);
   let isHoverStyledElement = false;
   for (const styleValue of Object.values(flatStyle)) {
     if (

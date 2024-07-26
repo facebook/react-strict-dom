@@ -15,9 +15,12 @@ type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
 
 type Styles = StylesArray<InlineStyle | false | void | null>;
 
-export function flattenStyle(...styles: $ReadOnlyArray<Styles>): {
-  [key: string]: $FlowFixMe
+export function flattenStyle(styles: InlineStyle | $ReadOnlyArray<Styles>): {
+  +[key: string]: mixed
 } {
+  if (!Array.isArray(styles)) {
+    return styles;
+  }
   const flatArray = styles.flat(Infinity);
   const result = {};
   for (let i = 0; i < flatArray.length; i++) {
