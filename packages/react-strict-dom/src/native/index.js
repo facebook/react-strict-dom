@@ -13,7 +13,7 @@ export * from '../types/StrictTypes';
 import * as React from 'react';
 import * as html from './html';
 import * as cssRaw from './stylex';
-import { CustomPropertiesProvider } from './modules/ContextCustomProperties';
+import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 
 type ProviderValue = $ReadOnly<{ [string]: string | number }>;
 
@@ -26,7 +26,7 @@ function ThemeProvider(props: ProviderProps): React$MixedElement {
   const { children, customProperties } = props;
 
   return customProperties ? (
-    <CustomPropertiesProvider children={children} value={customProperties} />
+    <ProvideCustomProperties children={children} value={customProperties} />
   ) : (
     children
   );

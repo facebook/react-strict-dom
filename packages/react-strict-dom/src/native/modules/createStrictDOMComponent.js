@@ -22,15 +22,12 @@ import {
 } from 'react-native';
 
 import {
-  CustomPropertiesProvider,
+  ProvideCustomProperties,
   useCustomProperties
 } from './ContextCustomProperties';
+import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
 import {
-  DisplayModeInsideProvider,
-  useDisplayModeInside
-} from './ContextDisplayModeInside';
-import {
-  InheritedStylesProvider,
+  ProvideInheritedStyles,
   useInheritedStyles
 } from './ContextInheritedStyles';
 // import { Text, View } from '../react-native';
@@ -711,9 +708,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.children = <TextString children={children} />;
       }
 
-      // polyfill for display:block-as-default
-      let nextDisplayModeInside = 'flow';
-      const displayModeInside = useDisplayModeInside();
+      // polyfill for default of "display:block"
+      // which implies "displayInside:flow"
+      let nextDisplayInsideValue = 'flow';
+      const displayInsideValue = useDisplayInside();
       const displayValue = nativeProps.style.display;
       if (
         displayValue != null &&
@@ -729,16 +727,16 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
 
       if (displayValue === 'flex') {
-        nextDisplayModeInside = 'flex';
+        nextDisplayInsideValue = 'flex';
         nativeProps.style.alignItems ??= 'stretch';
         nativeProps.style.flexBasis ??= 'auto';
         nativeProps.style.flexDirection ??= 'row';
         nativeProps.style.flexShrink ??= 1;
         nativeProps.style.flexWrap ??= 'nowrap';
         nativeProps.style.justifyContent ??= 'flex-start';
-      } else if (displayValue === 'block' && displayModeInside === 'flow') {
+      } else if (displayValue === 'block' && displayInsideValue === 'flow') {
         // Force the block emulation styles
-        nextDisplayModeInside = 'flow';
+        nextDisplayInsideValue = 'flow';
         nativeProps.style.alignItems = 'stretch';
         nativeProps.style.display = 'flex';
         nativeProps.style.flexBasis = 'auto';
@@ -753,7 +751,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         }
       }
 
-      if (displayModeInside === 'flex') {
+      if (displayInsideValue === 'flex') {
         // flex child should not shrink
         nativeProps.style.flexShrink ??= 1;
       }
@@ -890,25 +888,23 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       if (hasNextInheritedStyles) {
         element = (
-          <InheritedStylesProvider
+          <ProvideInheritedStyles
             children={element}
             value={nextInheritedStyles}
           />
         );
       }
-
-      if (nextDisplayModeInside !== displayModeInside) {
+      if (nextDisplayInsideValue !== displayInsideValue) {
         element = (
-          <DisplayModeInsideProvider
+          <ProvideDisplayInside
             children={element}
-            value={nextDisplayModeInside}
+            value={nextDisplayInsideValue}
           />
         );
       }
-
       if (customPropertiesFromThemes != null) {
         element = (
-          <CustomPropertiesProvider
+          <ProvideCustomProperties
             children={element}
             value={customProperties}
           />
