@@ -13,7 +13,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '20.x'
-    - run: npm install
     - run: npm install --force --include-workspace-root --workspaces react@next react-dom@next react-native@nightly react-test-renderer@next
     # Run the unit tests
     - run: npm run jest

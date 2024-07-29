@@ -18,7 +18,7 @@ jobs:
         echo "PATCH_JSON=$(mktemp)" >> $GITHUB_ENV
     - name: 'Benchmark base'
       run: |
-        git checkout ${{ github.event.pull_request.base.sha }}
+        git checkout -f ${{ github.event.pull_request.base.sha }}
         npm install --loglevel error
         if npm run size -w benchmarks -- -o ${{ env.BASE_JSON }}; then
           echo "Ran successfully on base branch"
@@ -28,7 +28,7 @@ jobs:
         fi
     - name: 'Benchmark patch'
       run: |
-        git checkout ${{ github.event.pull_request.head.sha }}
+        git checkout -f ${{ github.event.pull_request.head.sha }}
         npm install --loglevel error
         npm run size -w benchmarks -- -o ${{ env.PATCH_JSON }}
         echo "Ran successfully on patch branch"
@@ -67,7 +67,7 @@ jobs:
         echo "PATCH_JSON=$(mktemp)" >> $GITHUB_ENV
     - name: 'Benchmark base'
       run: |
-        git checkout ${{ github.event.pull_request.base.sha }}
+        git checkout -f ${{ github.event.pull_request.base.sha }}
         npm install --loglevel error
         if npm run perf -w benchmarks -- -o ${{ env.BASE_JSON }}; then
           echo "Ran successfully on base branch"
@@ -77,7 +77,7 @@ jobs:
         fi
     - name: 'Benchmark patch'
       run: |
-        git checkout ${{ github.event.pull_request.head.sha }}
+        git checkout -f ${{ github.event.pull_request.head.sha }}
         npm install --loglevel error
         npm run perf -w benchmarks -- -o ${{ env.PATCH_JSON }}
         echo "Ran successfully on patch branch"

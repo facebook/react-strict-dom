@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { html } from 'react-strict-dom';
-import { create } from 'react-test-renderer';
+import { act, create } from 'react-test-renderer';
 
 const emptyFunction = () => {};
 
@@ -194,161 +194,199 @@ describe('html', () => {
     });
 
     test(`"${tagName}" supports global attributes`, () => {
-      const root = create(<Component {...globalAttributes} />);
+      let root;
+      act(() => {
+        root = create(<Component {...globalAttributes} />);
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
     test(`"${tagName}" supports inline event handlers`, () => {
-      const root = create(<Component {...eventHandlers} />);
+      let root;
+      act(() => {
+        root = create(<Component {...eventHandlers} />);
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
     test(`"${tagName}" ignores and warns about unsupported attributes`, () => {
-      const root = create(
-        <Component notSupported={true} onNotSupported={() => {}} />
-      );
+      let root;
+      act(() => {
+        root = create(
+          <Component notSupported={true} onNotSupported={() => {}} />
+        );
+      });
       expect(root.toJSON()).toMatchSnapshot();
       expect(console.error).toHaveBeenCalled();
     });
 
     test(`"${tagName}" supports suppressHydrationWarning attribute`, () => {
-      create(<Component suppressHydrationWarning={true} />);
+      act(() => {
+        create(<Component suppressHydrationWarning={true} />);
+      });
       expect(console.error).not.toHaveBeenCalled();
     });
   });
 
   test('"a" supports additional anchor attributes', () => {
-    const root = create(
-      <html.a
-        download="download.png"
-        href="https://google.com"
-        referrerPolicy="no-referrer"
-        rel="nofollow"
-        target="_blank"
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.a
+          download="download.png"
+          href="https://google.com"
+          referrerPolicy="no-referrer"
+          rel="nofollow"
+          target="_blank"
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"button" supports additional button attributes', () => {
-    const root = create(<html.button disabled={true} type="submit" />);
+    let root;
+    act(() => {
+      root = create(<html.button disabled={true} type="submit" />);
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"img" supports additional image attributes', () => {
-    const root = create(
-      <html.img
-        alt="Alt text"
-        crossOrigin="anonymous"
-        decoding="async"
-        fetchPriority="auto"
-        height={100}
-        loading="lazy"
-        onError={function onError() {}}
-        onLoad={function onLoad() {}}
-        referrerPolicy="no-referrer"
-        src="https://src.jpg"
-        srcSet="https://srcSet-1x.jpg 1x, https://srcSet-2x.jpg 2x"
-        width={100}
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.img
+          alt="Alt text"
+          crossOrigin="anonymous"
+          decoding="async"
+          fetchPriority="auto"
+          height={100}
+          loading="lazy"
+          onError={function onError() {}}
+          onLoad={function onLoad() {}}
+          referrerPolicy="no-referrer"
+          src="https://src.jpg"
+          srcSet="https://srcSet-1x.jpg 1x, https://srcSet-2x.jpg 2x"
+          width={100}
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"input" supports additional input attributes', () => {
-    const root = create(
-      <html.input
-        checked={true}
-        defaultChecked={true}
-        defaultValue="defaultValue"
-        disabled={true}
-        max="10"
-        maxLength="10"
-        min="0"
-        minLength="0"
-        multiple={true}
-        onBeforeInput={function onBeforeInput() {}}
-        onChange={function onChange() {}}
-        onInput={function onInput() {}}
-        onInvalid={function onInvalid() {}}
-        onSelect={function onSelect() {}}
-        onSelectionChange={function onSelectionChange() {}}
-        placeholder="Placeholder"
-        readOnly={true}
-        required={true}
-        step={3}
-        type="text"
-        value="value"
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.input
+          checked={true}
+          defaultChecked={true}
+          defaultValue="defaultValue"
+          disabled={true}
+          max="10"
+          maxLength="10"
+          min="0"
+          minLength="0"
+          multiple={true}
+          onBeforeInput={function onBeforeInput() {}}
+          onChange={function onChange() {}}
+          onInput={function onInput() {}}
+          onInvalid={function onInvalid() {}}
+          onSelect={function onSelect() {}}
+          onSelectionChange={function onSelectionChange() {}}
+          placeholder="Placeholder"
+          readOnly={true}
+          required={true}
+          step={3}
+          type="text"
+          value="value"
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"label" supports additional label attributes', () => {
-    const root = create(<html.label for="some-id" />);
+    let root;
+    act(() => {
+      root = create(<html.label for="some-id" />);
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"option" supports input attributes', () => {
-    const root = create(
-      <html.option
-        defaultValue="defaultValue"
-        disabled={true}
-        label="label"
-        value="value"
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.option
+          defaultValue="defaultValue"
+          disabled={true}
+          label="label"
+          value="value"
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"select" supports additional select attributes', () => {
-    const root = create(
-      <html.select
-        disabled={true}
-        onBeforeInput={function onBeforeInput() {}}
-        onChange={function onChange() {}}
-        onInput={function onInput() {}}
-        onInvalid={function onInvalid() {}}
-        onSelect={function onSelect() {}}
-        onSelectionChange={function onSelectionChange() {}}
-        readOnly={true}
-        required={true}
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.select
+          disabled={true}
+          onBeforeInput={function onBeforeInput() {}}
+          onChange={function onChange() {}}
+          onInput={function onInput() {}}
+          onInvalid={function onInvalid() {}}
+          onSelect={function onSelect() {}}
+          onSelectionChange={function onSelectionChange() {}}
+          readOnly={true}
+          required={true}
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   test('"textarea" supports additional textarea attributes', () => {
-    const root = create(
-      <html.textarea
-        defaultValue="defaultValue"
-        disabled={true}
-        maxLength="10"
-        minLength="0"
-        onBeforeInput={function onBeforeInput() {}}
-        onChange={function onChange() {}}
-        onInput={function onInput() {}}
-        onInvalid={function onInvalid() {}}
-        onSelect={function onSelect() {}}
-        onSelectionChange={function onSelectionChange() {}}
-        placeholder="Placeholder"
-        readOnly={true}
-        required={true}
-        rows={3}
-        value="value"
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.textarea
+          defaultValue="defaultValue"
+          disabled={true}
+          maxLength="10"
+          minLength="0"
+          onBeforeInput={function onBeforeInput() {}}
+          onChange={function onChange() {}}
+          onInput={function onInput() {}}
+          onInvalid={function onInvalid() {}}
+          onSelect={function onSelect() {}}
+          onSelectionChange={function onSelectionChange() {}}
+          placeholder="Placeholder"
+          readOnly={true}
+          required={true}
+          rows={3}
+          value="value"
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 
   // Temporary while Flow adds support for typing data-* props
   test('temporary data-* props support', () => {
-    const root = create(
-      <html.div
-        data-imgperflogname="imgperflogname"
-        data-visualcompletion="visualcompletion"
-      />
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.div
+          data-imgperflogname="imgperflogname"
+          data-visualcompletion="visualcompletion"
+        />
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot();
   });
 });
