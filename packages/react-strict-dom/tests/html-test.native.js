@@ -24,7 +24,10 @@ describe('<html.*>', () => {
   });
 
   test('default block layout', () => {
-    const root = create(<html.div />);
+    let root;
+    act(() => {
+      root = create(<html.div />);
+    });
     expect(root.toJSON()).toMatchSnapshot('block layout');
   });
 
@@ -35,12 +38,15 @@ describe('<html.*>', () => {
       }
     });
 
-    const root = create(
-      <html.div style={styles.root}>
-        <html.div />
-        <html.div />
-      </html.div>
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.div style={styles.root}>
+          <html.div />
+          <html.div />
+        </html.div>
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot('flex layout');
   });
 
@@ -54,11 +60,14 @@ describe('<html.*>', () => {
       }
     });
 
-    const root = create(
-      <html.div style={styles.root}>
-        <html.div />
-      </html.div>
-    );
+    let root;
+    act(() => {
+      root = create(
+        <html.div style={styles.root}>
+          <html.div />
+        </html.div>
+      );
+    });
     expect(root.toJSON()).toMatchSnapshot('block layout override of flex');
   });
 
@@ -69,7 +78,10 @@ describe('<html.*>', () => {
       }
     });
 
-    const root = create(<html.div style={styles.root}>text</html.div>);
+    let root;
+    act(() => {
+      root = create(<html.div style={styles.root}>text</html.div>);
+    });
     expect(root.toJSON()).toMatchSnapshot('auto-wrap raw strings');
   });
 
@@ -85,11 +97,14 @@ describe('<html.*>', () => {
         }
       });
 
-      const root = create(
-        <ThemeProvider customProperties={customProperties}>
-          <html.span style={styles.root}>Expect color:red</html.span>
-        </ThemeProvider>
-      );
+      let root;
+      act(() => {
+        root = create(
+          <ThemeProvider customProperties={customProperties}>
+            <html.span style={styles.root}>Expect color:red</html.span>
+          </ThemeProvider>
+        );
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
@@ -100,7 +115,10 @@ describe('<html.*>', () => {
           lineClamp: 3
         }
       });
-      const root = create(<html.span style={styles.root}>text</html.span>);
+      let root;
+      act(() => {
+        root = create(<html.span style={styles.root}>text</html.span>);
+      });
       // expect userSelect:none
       expect(root.toJSON()).toMatchSnapshot();
     });
@@ -132,35 +150,40 @@ describe('<html.*>', () => {
         }
       });
 
-      const root = create(
-        <>
-          <html.span style={styles.root}>Expect color:red</html.span>
-          <html.span style={[theme, styles.root]}>Expect color:green</html.span>
-          <html.input
-            placeholder="Expect placeholderTextColor:green"
-            style={[theme, styles.input]}
-          />
-          <html.div style={theme}>
-            <html.span style={styles.root}>
-              Expect color:green (inherited)
+      let root;
+      act(() => {
+        root = create(
+          <>
+            <html.span style={styles.root}>Expect color:red</html.span>
+            <html.span style={[theme, styles.root]}>
+              Expect color:green
             </html.span>
             <html.input
               placeholder="Expect placeholderTextColor:green"
-              style={styles.input}
+              style={[theme, styles.input]}
             />
-            <html.div style={nestedTheme}>
+            <html.div style={theme}>
               <html.span style={styles.root}>
-                Expect color:blue (nested)
+                Expect color:green (inherited)
               </html.span>
               <html.input
-                placeholder="Expect placeholderTextColor:blue"
+                placeholder="Expect placeholderTextColor:green"
                 style={styles.input}
               />
+              <html.div style={nestedTheme}>
+                <html.span style={styles.root}>
+                  Expect color:blue (nested)
+                </html.span>
+                <html.input
+                  placeholder="Expect placeholderTextColor:blue"
+                  style={styles.input}
+                />
+              </html.div>
             </html.div>
-          </html.div>
-          <html.span style={styles.root}>Expect color:red</html.span>
-        </>
-      );
+            <html.span style={styles.root}>Expect color:red</html.span>
+          </>
+        );
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
@@ -192,14 +215,17 @@ describe('<html.*>', () => {
       });
       // This also tests that unitless line-height is correctly inherited, including
       // through nested text elements.
-      const root = create(
-        <html.div style={styles.inherits}>
-          <html.div style={styles.alsoInherits}>
-            <html.span style={styles.text}>Inherits text styles</html.span>
-            <html.input placeholder="Does not inherit text styles" />
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={styles.inherits}>
+            <html.div style={styles.alsoInherits}>
+              <html.span style={styles.text}>Inherits text styles</html.span>
+              <html.input placeholder="Does not inherit text styles" />
+            </html.div>
           </html.div>
-        </html.div>
-      );
+        );
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
@@ -221,12 +247,15 @@ describe('<html.*>', () => {
           fontSize: tokens.nestedFontSize
         }
       });
-      const root = create(
-        <html.div style={styles.root}>
-          <html.span>text</html.span>
-          <html.span style={styles.nested}>text</html.span>
-        </html.div>
-      );
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={styles.root}>
+            <html.span>text</html.span>
+            <html.span style={styles.nested}>text</html.span>
+          </html.div>
+        );
+      });
       const getfontSize = (element) => element.props.style.fontSize;
       let rootElement = root.toJSON();
       let firstChild = rootElement.children[0];
@@ -257,13 +286,16 @@ describe('<html.*>', () => {
           lineHeight: '0.5'
         }
       });
-      const root = create(
-        <html.div style={styles.root}>
-          <html.span style={styles.text}>
-            <html.span style={styles.nestedText}>hello</html.span>
-          </html.span>
-        </html.div>
-      );
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={styles.root}>
+            <html.span style={styles.text}>
+              <html.span style={styles.nestedText}>hello</html.span>
+            </html.span>
+          </html.div>
+        );
+      });
       const getLineHeight = (element) => element.props.style.lineHeight;
       const rootElement = root.toJSON();
       const firstChild = rootElement.children[0];
@@ -284,13 +316,16 @@ describe('<html.*>', () => {
           lineHeight: 2
         }
       });
-      const root = create(
-        <html.div style={styles.root}>
-          <html.span style={styles.text}>
-            <html.span style={styles.nestedText}>hello</html.span>
-          </html.span>
-        </html.div>
-      );
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={styles.root}>
+            <html.span style={styles.text}>
+              <html.span style={styles.nestedText}>hello</html.span>
+            </html.span>
+          </html.div>
+        );
+      });
       const getLineHeight = (element) => element.props.style.lineHeight;
       const rootElement = root.toJSON();
       const firstChild = rootElement.children[0];
@@ -323,11 +358,14 @@ describe('<html.*>', () => {
         }
       });
 
-      const root = create(
-        <html.div style={[theme, styles.root]}>
-          <html.div style={styles.text}>text</html.div>
-        </html.div>
-      );
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={[theme, styles.root]}>
+            <html.div style={styles.text}>text</html.div>
+          </html.div>
+        );
+      });
       expect(root.toJSON()).toMatchSnapshot();
     });
 
@@ -338,7 +376,10 @@ describe('<html.*>', () => {
           maxHeight: '2em'
         }
       });
-      const root = create(<html.div style={styles.root} />);
+      let root;
+      act(() => {
+        root = create(<html.div style={styles.root} />);
+      });
       const rootElement = root.toJSON();
       expect(rootElement.props.style.fontSize).toBeUndefined();
       expect(rootElement.props.style.maxHeight).toBe(2 * 2 * 16);
@@ -618,25 +659,38 @@ describe('<html.*>', () => {
     describe('global', () => {
       test('"dir" prop', () => {
         ['auto', 'ltr', 'rtl'].forEach((dir) => {
-          const block = create(<html.div dir={dir} />);
-          const text = create(<html.p dir={dir} />);
+          let block, text;
+          act(() => {
+            block = create(<html.div dir={dir} />);
+          });
+          act(() => {
+            text = create(<html.p dir={dir} />);
+          });
           expect(block.toJSON()).toMatchSnapshot(`"${dir}" block`);
           expect(text.toJSON()).toMatchSnapshot(`"${dir}" text`);
         });
       });
 
       test('"hidden" prop', () => {
-        const root = create(<html.div hidden />);
+        let root;
+        act(() => {
+          root = create(<html.div hidden />);
+        });
+
         expect(root.toJSON()).toMatchSnapshot();
 
-        const rootOther = create(
-          <html.div hidden style={{ display: 'flex' }} />
-        );
+        let rootOther;
+        act(() => {
+          rootOther = create(<html.div hidden style={{ display: 'flex' }} />);
+        });
         expect(rootOther.toJSON()).toMatchSnapshot('display set');
 
         [true, false, 'true', 'false', 'hidden', 'until-found'].forEach(
           (hidden) => {
-            const root = create(<html.input hidden={hidden} />);
+            let root;
+            act(() => {
+              root = create(<html.input hidden={hidden} />);
+            });
             expect(root.toJSON()).toMatchSnapshot(`"${hidden}"`);
           }
         );
@@ -645,7 +699,10 @@ describe('<html.*>', () => {
       test('"inputMode" prop', () => {
         ['decimal', 'email', 'numeric', 'search', 'tel', 'url'].forEach(
           (inputMode) => {
-            const root = create(<html.input inputMode={inputMode} />);
+            let root;
+            act(() => {
+              root = create(<html.input inputMode={inputMode} />);
+            });
             expect(root.toJSON()).toMatchSnapshot(`"${inputMode}"`);
           }
         );
@@ -653,15 +710,20 @@ describe('<html.*>', () => {
 
       test('"onClick" prop', () => {
         const onClick = jest.fn();
-        const root = create(<html.div onClick={onClick} />);
-        root.root.children[0].props.onPress({
-          nativeEvent: {
-            altKey: true,
-            button: 0,
-            ctrlKey: true,
-            metaKey: true,
-            shiftKey: true
-          }
+        let root;
+        act(() => {
+          root = create(<html.div onClick={onClick} />);
+        });
+        act(() => {
+          root.root.children[0].props.onPress({
+            nativeEvent: {
+              altKey: true,
+              button: 0,
+              ctrlKey: true,
+              metaKey: true,
+              shiftKey: true
+            }
+          });
         });
         expect(onClick).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -677,15 +739,22 @@ describe('<html.*>', () => {
 
       test('"onKeyDown" prop', () => {
         const onKeyDown = jest.fn();
-        const root = create(<html.input onKeyDown={onKeyDown} />);
-        root.root.children[0].props.onKeyPress({ nativeEvent: { key: 'a' } });
+        let root;
+        act(() => {
+          root = create(<html.input onKeyDown={onKeyDown} />);
+        });
+        act(() => {
+          root.root.children[0].props.onKeyPress({ nativeEvent: { key: 'a' } });
+        });
         expect(onKeyDown).toHaveBeenCalledWith(
           expect.objectContaining({
             key: 'a',
             type: 'keydown'
           })
         );
-        root.root.children[0].props.onSubmitEditing();
+        act(() => {
+          root.root.children[0].props.onSubmitEditing();
+        });
         expect(onKeyDown).toHaveBeenCalledWith(
           expect.objectContaining({
             key: 'Enter',
@@ -695,37 +764,46 @@ describe('<html.*>', () => {
       });
 
       test('"tabIndex" prop', () => {
-        const root = create(<html.input tabIndex={-1} />);
+        let root;
+        act(() => {
+          root = create(<html.input tabIndex={-1} />);
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
     });
 
     describe('<img>', () => {
       test('"src" prop with loading props', () => {
-        const root = create(
-          <html.img
-            crossOrigin="use-credentials"
-            decoding="async"
-            fetchPriority="auto"
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            src="https://src.jpg"
-          />
-        );
+        let root;
+        act(() => {
+          root = create(
+            <html.img
+              crossOrigin="use-credentials"
+              decoding="async"
+              fetchPriority="auto"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              src="https://src.jpg"
+            />
+          );
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
 
       test('"srcSet" prop with loading props', () => {
-        const root = create(
-          <html.img
-            crossOrigin="use-credentials"
-            decoding="async"
-            fetchPriority="auto"
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
-          />
-        );
+        let root;
+        act(() => {
+          root = create(
+            <html.img
+              crossOrigin="use-credentials"
+              decoding="async"
+              fetchPriority="auto"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
+            />
+          );
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
 
@@ -733,9 +811,12 @@ describe('<html.*>', () => {
         const onError = jest.fn();
         const onLoad = jest.fn();
 
-        const root = create(
-          <html.img onError={onError} onLoad={onLoad} src="https://src.jpg" />
-        );
+        let root;
+        act(() => {
+          root = create(
+            <html.img onError={onError} onLoad={onLoad} src="https://src.jpg" />
+          );
+        });
         const element = root.toJSON();
 
         element.props.onError();
@@ -813,22 +894,29 @@ describe('<html.*>', () => {
           'url',
           'username'
         ].forEach((autoComplete) => {
-          const root = create(<html.input autoComplete={autoComplete} />);
+          let root;
+          act(() => {
+            root = create(<html.input autoComplete={autoComplete} />);
+          });
           expect(root.toJSON()).toMatchSnapshot(`"${autoComplete}"`);
         });
       });
 
       test('"disabled" prop', () => {
-        const root = create(<html.input disabled={true} />);
+        let root;
+        act(() => {
+          root = create(<html.input disabled={true} />);
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
 
       test('"onChange" and "onInput" prop', () => {
         const onChange = jest.fn();
         const onInput = jest.fn();
-        const root = create(
-          <html.input onChange={onChange} onInput={onInput} />
-        );
+        let root;
+        act(() => {
+          root = create(<html.input onChange={onChange} onInput={onInput} />);
+        });
         const element = root.toJSON();
         element.props.onChange({
           nativeEvent: {
@@ -857,13 +945,18 @@ describe('<html.*>', () => {
       test('"type" prop', () => {
         ['email', 'number', 'password', 'search', 'tel', 'url'].forEach(
           (type) => {
-            const root = create(<html.input type={type} />);
+            let root;
+            act(() => {
+              root = create(<html.input type={type} />);
+            });
             expect(root.toJSON()).toMatchSnapshot(`"${type}"`);
           }
         );
 
         ['checkbox', 'date', 'radio'].forEach((type, i) => {
-          create(<html.input type={type} />);
+          act(() => {
+            create(<html.input type={type} />);
+          });
           expect(console.error).toHaveBeenCalledTimes(i + 1);
         });
       });
@@ -878,19 +971,28 @@ describe('<html.*>', () => {
             }
           }
         });
-        const root = create(<html.input style={styles.input} />);
+        let root;
+        act(() => {
+          root = create(<html.input style={styles.input} />);
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
     });
 
     describe('<textarea>', () => {
       test('"disabled" prop', () => {
-        const root = create(<html.textarea disabled={true} />);
+        let root;
+        act(() => {
+          root = create(<html.textarea disabled={true} />);
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
 
       test('"rows" prop', () => {
-        const root = create(<html.textarea rows={5} />);
+        let root;
+        act(() => {
+          root = create(<html.textarea rows={5} />);
+        });
         expect(root.toJSON()).toMatchSnapshot();
       });
     });
@@ -908,42 +1010,62 @@ describe('<html.*>', () => {
 
     test('onMouseEnter', () => {
       const onMouseEnter = jest.fn();
-      const root = create(
-        <html.div onMouseEnter={onMouseEnter} style={styles.hover} />
-      );
-      root.root.children[0].props.onMouseEnter();
+      let root;
+      act(() => {
+        root = create(
+          <html.div onMouseEnter={onMouseEnter} style={styles.hover} />
+        );
+      });
+      act(() => {
+        root.root.children[0].props.onMouseEnter();
+      });
       expect(root.toJSON()).toMatchSnapshot();
       expect(onMouseEnter).toHaveBeenCalled();
     });
 
     test('onMouseLeave', () => {
       const onMouseLeave = jest.fn();
-      const root = create(
-        <html.div onMouseLeave={onMouseLeave} style={styles.hover} />
-      );
-      root.root.children[0].props.onMouseEnter();
-      root.root.children[0].props.onMouseLeave();
+      let root;
+      act(() => {
+        root = create(
+          <html.div onMouseLeave={onMouseLeave} style={styles.hover} />
+        );
+      });
+      act(() => {
+        root.root.children[0].props.onMouseEnter();
+        root.root.children[0].props.onMouseLeave();
+      });
       expect(root.toJSON()).toMatchSnapshot();
       expect(onMouseLeave).toHaveBeenCalled();
     });
 
     test('onPointerEnter', () => {
       const onPointerEnter = jest.fn();
-      const root = create(
-        <html.div onPointerEnter={onPointerEnter} style={styles.hover} />
-      );
-      root.root.children[0].props.onPointerEnter();
+      let root;
+      act(() => {
+        root = create(
+          <html.div onPointerEnter={onPointerEnter} style={styles.hover} />
+        );
+      });
+      act(() => {
+        root.root.children[0].props.onPointerEnter();
+      });
       expect(root.toJSON()).toMatchSnapshot();
       expect(onPointerEnter).toHaveBeenCalled();
     });
 
     test('onPointerLeave', () => {
       const onPointerLeave = jest.fn();
-      const root = create(
-        <html.div onPointerLeave={onPointerLeave} style={styles.hover} />
-      );
-      root.root.children[0].props.onPointerEnter();
-      root.root.children[0].props.onPointerLeave();
+      let root;
+      act(() => {
+        root = create(
+          <html.div onPointerLeave={onPointerLeave} style={styles.hover} />
+        );
+      });
+      act(() => {
+        root.root.children[0].props.onPointerEnter();
+        root.root.children[0].props.onPointerLeave();
+      });
       expect(root.toJSON()).toMatchSnapshot();
       expect(onPointerLeave).toHaveBeenCalled();
     });
