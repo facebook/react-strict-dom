@@ -1266,22 +1266,6 @@ exports[`styles: pseudo-element ::placeholder syntax: placeholderTextColor 1`] =
 }
 `;
 
-exports[`styles: pseudo-state :hover syntax: hovered 1`] = `
-{
-  "style": {
-    "backgroundColor": "blue",
-  },
-}
-`;
-
-exports[`styles: pseudo-state :hover syntax: not hovered 1`] = `
-{
-  "style": {
-    "backgroundColor": "red",
-  },
-}
-`;
-
 exports[`units: length '0' is resolved to the number 0 1`] = `
 {
   "style": {

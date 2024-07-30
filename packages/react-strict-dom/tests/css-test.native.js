@@ -1494,24 +1494,80 @@ describe('properties: custom property', () => {
  */
 
 describe('styles: pseudo-state', () => {
+  const getBackgroundColor = (style, state) => {
+    return css.props.call({ ...mockOptions, ...state }, style).style
+      .backgroundColor;
+  };
+
+  test(':focus syntax', () => {
+    const styles = css.create({
+      root: {
+        backgroundColor: {
+          default: 'white',
+          ':focus': 'red'
+        }
+      }
+    });
+    expect(getBackgroundColor(styles.root)).toBe('white');
+    expect(getBackgroundColor(styles.root, { focus: true })).toBe('red');
+  });
+
   test(':hover syntax', () => {
     const styles = css.create({
       root: {
         backgroundColor: {
-          default: 'red',
+          default: 'white',
+          ':hover': 'red'
+        }
+      }
+    });
+
+    expect(getBackgroundColor(styles.root)).toBe('white');
+    expect(getBackgroundColor(styles.root, { hover: true })).toBe('red');
+  });
+
+  test(':active syntax', () => {
+    const styles = css.create({
+      root: {
+        backgroundColor: {
+          default: 'white',
+          ':active': 'red'
+        }
+      }
+    });
+
+    expect(getBackgroundColor(styles.root)).toBe('white');
+    expect(getBackgroundColor(styles.root, { active: true })).toBe('red');
+  });
+
+  test('order of states', () => {
+    const styles = css.create({
+      root: {
+        backgroundColor: {
+          default: 'white',
+          ':active': 'red',
+          ':focus': 'green',
           ':hover': 'blue'
         }
       }
     });
 
-    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot(
-      'not hovered'
+    expect(getBackgroundColor(styles.root, { hover: true, focus: true })).toBe(
+      'green'
     );
-
-    const hoverOptions = { ...mockOptions, hover: true };
-    expect(css.props.call(hoverOptions, styles.root)).toMatchSnapshot(
-      'hovered'
+    expect(getBackgroundColor(styles.root, { hover: true, active: true })).toBe(
+      'red'
     );
+    expect(getBackgroundColor(styles.root, { focus: true, active: true })).toBe(
+      'red'
+    );
+    expect(
+      getBackgroundColor(styles.root, {
+        hover: true,
+        focus: true,
+        active: true
+      })
+    ).toBe('red');
   });
 });
 
