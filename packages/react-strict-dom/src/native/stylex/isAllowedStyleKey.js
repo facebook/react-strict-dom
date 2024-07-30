@@ -163,8 +163,9 @@ const allowedStyleKeySet = new Set<string>([
   'zIndex',
   // Object-value keys
   'default',
-  ':hover',
+  ':active',
   ':focus',
+  ':hover',
   // Pseudo-element keys
   '::placeholder'
 ]);

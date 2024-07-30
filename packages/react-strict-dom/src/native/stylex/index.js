@@ -35,8 +35,10 @@ import {
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 
 type ResolveStyleOptions = $ReadOnly<{
+  active?: ?boolean,
   colorScheme: ?('light' | 'dark'),
   customProperties: CustomProperties,
+  focus?: ?boolean,
   fontScale: number | void,
   hover?: ?boolean,
   inheritedFontSize: ?number,
@@ -230,8 +232,15 @@ function resolveStyle(
   style: $ReadOnlyArray<?{ +[string]: mixed }> | { +[string]: mixed },
   options: ResolveStyleOptions
 ): { +[string]: mixed } {
-  const { fontScale, hover, inheritedFontSize, viewportHeight, viewportWidth } =
-    options;
+  const {
+    active,
+    focus,
+    fontScale,
+    hover,
+    inheritedFontSize,
+    viewportHeight,
+    viewportWidth
+  } = options;
   const colorScheme = options.colorScheme || 'light';
   const customProperties = options.customProperties || __customProperties;
 
@@ -296,6 +305,12 @@ function resolveStyle(
       let activeVariant = 'default';
       if (Object.hasOwn(styleValue, ':hover') && hover === true) {
         activeVariant = ':hover';
+      }
+      if (Object.hasOwn(styleValue, ':focus') && focus === true) {
+        activeVariant = ':focus';
+      }
+      if (Object.hasOwn(styleValue, ':active') && active === true) {
+        activeVariant = ':active';
       }
       if (Object.hasOwn(styleValue, mqDark) && colorScheme === 'dark') {
         activeVariant = mqDark;

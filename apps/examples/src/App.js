@@ -450,8 +450,8 @@ function Shell(): React.MixedElement {
         </ExampleBlock>
 
         {/* hover */}
-        <ExampleBlock title="CSS :hover">
-          <html.div style={styles.squareHover} />
+        <ExampleBlock title="CSS :hover, :focus, :active">
+          <html.textarea style={styles.pseudoStates} />
         </ExampleBlock>
 
         {/* event emulation */}
@@ -613,12 +613,22 @@ const styles = css.create({
     width: 100,
     backgroundColor: tokens.squareColor
   },
-  squareHover: {
-    height: 100,
+  pseudoStates: {
+    height: 50,
     width: 100,
+    borderStyle: 'solid',
+    borderWidth: 5,
     backgroundColor: {
-      default: 'red',
-      ':hover': 'blue'
+      default: '#eee',
+      ':hover': 'lightblue',
+      ':focus': 'mediumpurple',
+      ':active': 'pink'
+    },
+    borderColor: {
+      default: '#888',
+      ':hover': 'blue',
+      ':focus': 'purple',
+      ':active': 'red'
     }
   },
   inheritedText: {

@@ -46,12 +46,17 @@ function validateStrictProps(props: StrictProps) {
  * Utility to merge event handlers
  */
 type EventHandler =
+  | ReactNativeProps['onBlur']
+  | ReactNativeProps['onFocus']
   | ReactNativeProps['onMouseEnter']
   | ReactNativeProps['onMouseLeave']
+  | ReactNativeProps['onPointerCancel']
+  | ReactNativeProps['onPointerDown']
   | ReactNativeProps['onPointerEnter']
+  | ReactNativeProps['onPointerUp']
   | ReactNativeProps['onPointerLeave'];
 
-function combineEventHandlers(a: EventHandler, b: EventHandler): EventHandler {
+function combineEventHandlers(a: EventHandler, b: EventHandler): $FlowFixMe {
   if (a == null) {
     return b;
   } else {
@@ -238,7 +243,7 @@ export function useNativeProps(
   // Events
 
   if (onBlur != null) {
-    nativeProps.onBlur = onBlur;
+    nativeProps.onBlur = combineEventHandlers(nativeProps.onBlur, onBlur);
   }
   // TODO: remove once PointerEvent onClick is available
   if (onClick != null) {
@@ -297,7 +302,7 @@ export function useNativeProps(
     };
   }
   if (onFocus != null) {
-    nativeProps.onFocus = onFocus;
+    nativeProps.onFocus = combineEventHandlers(nativeProps.onFocus, onFocus);
   }
   if (onGotPointerCapture != null) {
     nativeProps.onGotPointerCapture = onGotPointerCapture;
@@ -330,10 +335,16 @@ export function useNativeProps(
     nativeProps.onMouseUp = onMouseUp;
   }
   if (onPointerCancel != null) {
-    nativeProps.onPointerCancel = onPointerCancel;
+    nativeProps.onPointerCancel = combineEventHandlers(
+      nativeProps.onPointerCancel,
+      onPointerCancel
+    );
   }
   if (onPointerDown != null) {
-    nativeProps.onPointerDown = onPointerDown;
+    nativeProps.onPointerDown = combineEventHandlers(
+      nativeProps.onPointerDown,
+      onPointerDown
+    );
   }
   if (onPointerEnter != null) {
     nativeProps.onPointerEnter = combineEventHandlers(
@@ -357,7 +368,10 @@ export function useNativeProps(
     nativeProps.onPointerOver = onPointerOver;
   }
   if (onPointerUp != null) {
-    nativeProps.onPointerUp = onPointerUp;
+    nativeProps.onPointerUp = combineEventHandlers(
+      nativeProps.onPointerUp,
+      onPointerUp
+    );
   }
   if (onScroll != null) {
     nativeProps.onScroll = onScroll;

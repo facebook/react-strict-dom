@@ -125,7 +125,7 @@ NOTE: React Native support assumes use of React Native's "Fabric" architecture, 
 | decoding (img) | ❌ | ❌ | |
 | defaultChecked (input) | ❌ | ❌ | |
 | defaultValue (input) | ❌ | ❌ | |
-| dir | ❌ | ❌ | |
+| dir | 🟡 | 🟡 | |
 | disabled (button) | 🟡 | 🟡 | |
 | disabled (input) | 🟡 | 🟡 | |
 | disabled (textarea) | 🟡 | 🟡 | |
@@ -427,8 +427,8 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 
 | Name | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
-| :active | ❌ | ❌ | |
-| :focus | ❌ | ❌ | |
+| :active | 🟡 | 🟡 | |
+| :focus | 🟡 | 🟡 | |
 | :hover | 🟡 | 🟡 | |
 | ::placeholder | 🟡 | 🟡 | |
 | % units | ❌ | ❌ | |
@@ -453,7 +453,6 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | backgroundRepeat | ❌ | ❌ | |
 | backgroundSize | ❌ | ❌ | |
 | blockSize | 🟡 | 🟡 | |
-| blur() | ❌ | ❌ | |
 | borderBlockColor | 🟡 | 🟡 | |
 | borderBlockEndColor | 🟡 | 🟡 | |
 | borderBlockEndStyle | 🟡 | 🟡 | |
@@ -499,16 +498,14 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | borderWidth | ✅ | ✅ | |
 | bottom | ✅ | ✅ | |
 | boxDecorationBreak | ❌ | ❌ | |
-| boxShadow | ❌ | ❌ | |
+| boxShadow | ✅ | ✅ | |
 | boxSizing | 🟡 Partial | 🟡 Partial | |
-| brightness() | ❌ | ❌ | |
 | calc() | ❌ | ❌ | |
 | caretColor | 🟡 | ❌ | |
 | clamp() | ❌ | ❌ | |
 | clipPath | ❌ | ❌ | |
 | color | ✅ | ✅ | |
 | columnGap | ✅ | ✅ | |
-| contrast() | ❌ | ❌ | |
 | cursor | ❌ | ❌ | |
 | Custom Properties | 🟡 | 🟡 | |
 | direction | ❌ | ❌ | |
@@ -520,10 +517,10 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | display: inline-block | ❌ | ❌ | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
 | display: inline-flex | ❌ | ❌ | |
 | display: inline-grid | ❌ | ❌ | [#1](https://github.com/facebook/react-strict-dom/issues/1) |
+| display: list-item | ❌ | ❌ | |
 | display: none | ✅ | ✅ | |
-| drop-shadow() | ❌ | ❌ | |
 | em units | 🟡 | 🟡 | |
-| filter | ❌ | ❌ | |
+| filter | ✅ | ✅ | |
 | flex | ✅ | ✅ | |
 | flexBasis | ✅ | ✅ | |
 | flexDirection | ✅ | ✅ | |
@@ -536,9 +533,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | fontVariant | ✅ | ✅ | |
 | fontWeight | 🟡 | 🟡 | |
 | gap | ✅ | ✅ | |
-| grayscale() | ❌ | ❌ | |
 | height | ✅ | ✅ | |
-| hue-rotate() | ❌ | ❌ | |
 | inlineSize | 🟡 | 🟡 | |
 | inset | 🟡 | 🟡 | |
 | insetBlock | 🟡 | 🟡 | |
@@ -547,7 +542,6 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | insetInline | 🟡 | 🟡 | |
 | insetInlineEnd | 🟡 | 🟡 | |
 | insetInlineStart | 🟡 | 🟡 | |
-| invert() | ❌ | ❌ | |
 | justifyContent | ✅ | ✅ | |
 | justifyItems | ❌ | ❌ | |
 | justifySelf | ❌ | ❌ | |
@@ -555,6 +549,9 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | letterSpacing | ✅ | ✅ | |
 | lineClamp | 🟡 | 🟡 | Disables text-selection on Android ([#136](https://github.com/facebook/react-strict-dom/issues/136)) |
 | lineHeight (unitless) | 🟡 | 🟡 | |
+| listStyle | ❌ | ❌ | |
+| listStylePosition | ❌ | ❌ | |
+| listStyleType | ❌ | ❌ | |
 | margin | ✅ | ✅ | |
 | marginBlock | 🟡 | 🟡 | |
 | marginBlockEnd | 🟡 | 🟡 | |
@@ -577,10 +574,10 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | minInlineSize | 🟡 | 🟡 | |
 | minmax() | ❌ | ❌ | |
 | minWidth | ✅ | ✅ | |
+| mixBlendMode | ✅ | ✅ | |
 | objectFit | 🟡 | 🟡 | |
 | objectPosition | ❌ | ❌ | |
 | opacity | ✅ | ✅ | |
-| opacity() | ❌ | ❌ | |
 | outlineColor | ❌ | ❌ | |
 | outlineOffset | ❌ | ❌ | |
 | outlineStyle | ❌ | ❌ | |
@@ -616,10 +613,8 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | right | ✅ | ✅ | |
 | rotate | ❌ | ❌ | |
 | rowGap | ✅ | ✅ | |
-| saturate() | ❌ | ❌ | |
 | scale | ❌ | ❌ | |
 | scrollSnap* | ❌ | ❌ | |
-| sepia() | ❌ | ❌ | |
 | textAlign | ✅ | ✅ | |
 | textDecorationColor | ❌ | ✅ | |
 | textDecorationLine | ✅ | ✅ | |

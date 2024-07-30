@@ -14,8 +14,8 @@ import type { Style as ReactNativeStyle } from '../../types/react-native';
 import * as stylex from '../stylex';
 import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
 import { flattenStyle } from './flattenStyle';
-import { useHoverHandlers } from './useHoverHandlers';
 import { useInheritedStyles } from './ContextInheritedStyles';
+import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
 
 type StyleOptions = {
@@ -78,12 +78,14 @@ export function useStyleProps(
     style
   ]);
 
-  const { hover, handlers } = useHoverHandlers(renderStyle);
+  const { active, focus, hover, handlers } = usePseudoStates(renderStyle);
 
   const styleProps = stylex.props.call(
     {
+      active,
       colorScheme,
       customProperties: customProperties ?? emptyObject,
+      focus,
       fontScale,
       hover,
       inheritedFontSize,
@@ -93,14 +95,21 @@ export function useStyleProps(
     renderStyle as $FlowFixMe
   );
 
-  if (handlers.type === 'HOVERABLE') {
+  if (handlers != null) {
     for (const handler of [
+      'onBlur',
+      'onFocus',
       'onMouseEnter',
       'onMouseLeave',
+      'onPointerCancel',
+      'onPointerDown',
       'onPointerEnter',
-      'onPointerLeave'
+      'onPointerLeave',
+      'onPointerUp'
     ]) {
-      styleProps[handler] = handlers[handler];
+      if (handler != null) {
+        styleProps[handler] = handlers[handler];
+      }
     }
   }
 

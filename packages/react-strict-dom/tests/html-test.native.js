@@ -256,13 +256,13 @@ describe('<html.*>', () => {
           </html.div>
         );
       });
-      const getfontSize = (element) => element.props.style.fontSize;
+      const getFontSize = (element) => element.props.style.fontSize;
       let rootElement = root.toJSON();
       let firstChild = rootElement.children[0];
       let secondSecond = rootElement.children[1];
-      expect(getfontSize(firstChild)).toBe(2 * 16);
+      expect(getFontSize(firstChild)).toBe(2 * 16);
       // check that 'em' values are correctly inherited
-      expect(getfontSize(secondSecond)).toBe(1.5 * 2 * 16);
+      expect(getFontSize(secondSecond)).toBe(1.5 * 2 * 16);
       // check hover interaction updates inherited value
       act(() => {
         rootElement.props.onMouseEnter();
@@ -270,8 +270,8 @@ describe('<html.*>', () => {
       rootElement = root.toJSON();
       firstChild = rootElement.children[0];
       secondSecond = rootElement.children[1];
-      expect(getfontSize(firstChild)).toBe(3 * 16);
-      expect(getfontSize(secondSecond)).toBe(1.5 * 3 * 16);
+      expect(getFontSize(firstChild)).toBe(3 * 16);
+      expect(getFontSize(secondSecond)).toBe(1.5 * 3 * 16);
     });
 
     test('inherited lineHeight (unitless)', () => {
@@ -998,76 +998,192 @@ describe('<html.*>', () => {
     });
   });
 
-  describe('hover styles', () => {
+  describe('interaction styles', () => {
     const styles = css.create({
       hover: {
         backgroundColor: {
-          default: 'red',
-          ':hover': 'blue'
+          default: 'white',
+          ':hover': 'red'
+        }
+      },
+      focus: {
+        backgroundColor: {
+          default: 'white',
+          ':focus': 'green'
+        }
+      },
+      active: {
+        backgroundColor: {
+          default: 'white',
+          ':active': 'blue'
+        }
+      },
+      all: {
+        backgroundColor: {
+          default: 'white',
+          ':hover': 'red',
+          ':focus': 'green',
+          ':active': 'blue'
         }
       }
     });
 
-    test('onMouseEnter', () => {
-      const onMouseEnter = jest.fn();
-      let root;
-      act(() => {
-        root = create(
-          <html.div onMouseEnter={onMouseEnter} style={styles.hover} />
-        );
-      });
-      act(() => {
-        root.root.children[0].props.onMouseEnter();
-      });
-      expect(root.toJSON()).toMatchSnapshot();
-      expect(onMouseEnter).toHaveBeenCalled();
-    });
+    const getElement = (root) => root.root.children[0];
+    const getBackgroundColor = (element) => element.props.style.backgroundColor;
 
-    test('onMouseLeave', () => {
+    test('hover (mouse)', () => {
+      const onMouseEnter = jest.fn();
       const onMouseLeave = jest.fn();
       let root;
       act(() => {
         root = create(
-          <html.div onMouseLeave={onMouseLeave} style={styles.hover} />
+          <html.div
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            style={styles.hover}
+          />
         );
       });
       act(() => {
-        root.root.children[0].props.onMouseEnter();
-        root.root.children[0].props.onMouseLeave();
+        getElement(root).props.onMouseEnter();
       });
-      expect(root.toJSON()).toMatchSnapshot();
+      expect(getBackgroundColor(getElement(root))).toBe('red');
+      expect(onMouseEnter).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onMouseLeave();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('white');
       expect(onMouseLeave).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onMouseEnter();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('red');
     });
 
-    test('onPointerEnter', () => {
+    test('hover (pointer)', () => {
       const onPointerEnter = jest.fn();
-      let root;
-      act(() => {
-        root = create(
-          <html.div onPointerEnter={onPointerEnter} style={styles.hover} />
-        );
-      });
-      act(() => {
-        root.root.children[0].props.onPointerEnter();
-      });
-      expect(root.toJSON()).toMatchSnapshot();
-      expect(onPointerEnter).toHaveBeenCalled();
-    });
-
-    test('onPointerLeave', () => {
       const onPointerLeave = jest.fn();
       let root;
       act(() => {
         root = create(
-          <html.div onPointerLeave={onPointerLeave} style={styles.hover} />
+          <html.div
+            onPointerEnter={onPointerEnter}
+            onPointerLeave={onPointerLeave}
+            style={styles.hover}
+          />
         );
       });
       act(() => {
-        root.root.children[0].props.onPointerEnter();
-        root.root.children[0].props.onPointerLeave();
+        getElement(root).props.onPointerEnter();
       });
-      expect(root.toJSON()).toMatchSnapshot();
+      expect(getBackgroundColor(getElement(root))).toBe('red');
+      expect(onPointerEnter).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onPointerLeave();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('white');
       expect(onPointerLeave).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onPointerEnter();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('red');
+    });
+
+    test('focus', () => {
+      const onBlur = jest.fn();
+      const onFocus = jest.fn();
+      let root;
+      act(() => {
+        root = create(
+          <html.input onBlur={onBlur} onFocus={onFocus} style={styles.focus} />
+        );
+      });
+      act(() => {
+        getElement(root).props.onFocus();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('green');
+      expect(onFocus).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onBlur();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('white');
+      expect(onBlur).toHaveBeenCalled();
+    });
+
+    test('active', () => {
+      const onPointerCancel = jest.fn();
+      const onPointerDown = jest.fn();
+      const onPointerUp = jest.fn();
+      let root;
+      act(() => {
+        root = create(
+          <html.input
+            onPointerCancel={onPointerCancel}
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            style={styles.active}
+          />
+        );
+      });
+      act(() => {
+        getElement(root).props.onPointerDown();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('blue');
+      expect(onPointerDown).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onPointerUp();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('white');
+      expect(onPointerUp).toHaveBeenCalled();
+      act(() => {
+        getElement(root).props.onPointerDown();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('blue');
+      act(() => {
+        getElement(root).props.onPointerCancel();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('white');
+      expect(onPointerCancel).toHaveBeenCalled();
+    });
+
+    test('all', () => {
+      const onBlur = jest.fn();
+      const onFocus = jest.fn();
+      const onPointerDown = jest.fn();
+      const onPointerEnter = jest.fn();
+      const onPointerLeave = jest.fn();
+      const onPointerUp = jest.fn();
+      let root;
+      act(() => {
+        root = create(
+          <html.input
+            onBlur={onBlur}
+            onFocus={onFocus}
+            onPointerDown={onPointerDown}
+            onPointerEnter={onPointerEnter}
+            onPointerLeave={onPointerLeave}
+            onPointerUp={onPointerUp}
+            style={styles.all}
+          />
+        );
+      });
+      act(() => {
+        getElement(root).props.onPointerEnter();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('red');
+      act(() => {
+        getElement(root).props.onPointerDown();
+        getElement(root).props.onFocus();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('blue');
+      act(() => {
+        getElement(root).props.onPointerUp();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('green');
+      act(() => {
+        getElement(root).props.onPointerLeave();
+      });
+      expect(getBackgroundColor(getElement(root))).toBe('green');
     });
   });
 });
