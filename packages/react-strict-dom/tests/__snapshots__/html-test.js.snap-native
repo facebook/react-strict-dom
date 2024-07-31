@@ -605,18 +605,18 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 `;
 
 exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
-<Text
+<View
+  experimental_layoutConformance="strict"
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
 `;
 
 exports[`html "blockquote" supports global attributes 1`] = `
-<Text
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -645,6 +645,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
+  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -655,18 +656,19 @@ exports[`html "blockquote" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  children
-</Text>
+  <Text>
+    children
+  </Text>
+</View>
 `;
 
 exports[`html "blockquote" supports inline event handlers 1`] = `
-<Text
+<Pressable
   onBlur={[Function]}
   onFocus={[Function]}
   onGotPointerCapture={[Function]}
@@ -694,7 +696,6 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />

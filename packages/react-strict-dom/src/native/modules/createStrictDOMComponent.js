@@ -46,6 +46,7 @@ function getComponentFromElement(tagName: string) {
   switch (tagName) {
     case 'article':
     case 'aside':
+    case 'blockquote':
     case 'div':
     case 'fieldset':
     case 'footer':
@@ -58,7 +59,6 @@ function getComponentFromElement(tagName: string) {
     case 'ul': {
       return View;
     }
-    case 'blockquote':
     case 'br':
     case 'code':
     case 'em':

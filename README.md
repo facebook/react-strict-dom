@@ -20,7 +20,9 @@ React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](
   * [examples](https://github.com/facebook/react-strict-dom/blob/main/apps/examples)
 * `packages`
   * Contains the individual packages managed in the monorepo.
+  * [benchmarks](https://github.com/facebook/react-strict-dom/blob/main/packages/benchmarks)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom) ([docs](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/README.md))
+  * [scripts](https://github.com/facebook/react-strict-dom/blob/main/packages/scripts)
 * `tools`
   * Tools used by the monorepo (pre-commit tasks, etc.)
 

@@ -97,6 +97,7 @@ function Shell(): React.MixedElement {
           </html.div>
           <html.span suppressHydrationWarning={true}>span</html.span>
           <html.p>paragraph</html.p>
+          <html.blockquote>blockquote</html.blockquote>
 
           <html.div />
 
