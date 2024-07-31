@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.22 (Jul 31, 2024)
+
+### Fixes
+
+* Add `value` to prop types for `li` element.
+* [Native] Improve scope of CSS transitions support to include adding transitions to mounted elements during React updates.
+
 ## 0.0.21 (Jul 22, 2024)
 
 ### New features
