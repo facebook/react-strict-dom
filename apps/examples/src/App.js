@@ -92,15 +92,15 @@ function Shell(): React.MixedElement {
     <ScrollView>
       <html.div style={egStyles.div}>
         <ExampleBlock title="HTML elements">
+          <html.div>Text inside div (kind of) works</html.div>
+          <html.hr />
           <html.div data-testid="testid" role="none">
             div
           </html.div>
           <html.span suppressHydrationWarning={true}>span</html.span>
           <html.p>paragraph</html.p>
           <html.blockquote>blockquote</html.blockquote>
-
           <html.div />
-
           <html.span>
             <html.a href="https://google.com">anchor</html.a>,<html.b>b</html.b>
             ,<html.code>code</html.code>,<html.del>del</html.del>,
@@ -115,34 +115,31 @@ function Shell(): React.MixedElement {
             </html.span>
             ,<html.u>u</html.u>
           </html.span>
-
           <html.div />
-
+          <html.div />
           <html.pre>pre</html.pre>
-
           <html.div />
-
           <html.h1>h1</html.h1>
           <html.h2>h2</html.h2>
           <html.h3>h3</html.h3>
           <html.h4>h4</html.h4>
           <html.h5>h5</html.h5>
           <html.h6>h6</html.h6>
-
           <html.span>
             line <html.br /> break
           </html.span>
-          <html.hr />
-
-          {/* text inheritance and text children */}
-          <html.div>Text inside div (kind of) works</html.div>
-          <html.div style={styles.inheritedText}>
-            <html.div>Text style inheritance works</html.div>
-            <html.div>
-              <html.span>Text style inheritance works</html.span>
-            </html.div>
-          </html.div>
-
+          <html.ol>
+            <html.li>ordered list item: one</html.li>
+            <html.li>ordered list item: two</html.li>
+            <html.li>ordered list item: three</html.li>
+          </html.ol>
+          <html.ul>
+            <html.li>
+              <html.div>unordered list item: one</html.div>
+            </html.li>
+            <html.li>unordered list item: one</html.li>
+            <html.li>unordered list item: one</html.li>
+          </html.ul>
           <html.img
             onLoad={(e) => {
               console.log(e.type, e);
@@ -152,7 +149,6 @@ function Shell(): React.MixedElement {
             src="http://placehold.jp/150x150.png"
             style={styles.objContain}
           />
-
           <html.div />
           <html.label for="id">label</html.label>
           <html.div />
@@ -199,6 +195,16 @@ function Shell(): React.MixedElement {
           <html.button onClick={() => setAnimate(!animate)}>
             {animate ? 'Reset' : 'Start'}
           </html.button>
+        </ExampleBlock>
+
+        <ExampleBlock title="CSS Inheritance">
+          {/* text inheritance and text children */}
+          <html.div style={styles.inheritedText}>
+            <html.div>Text style inheritance works</html.div>
+            <html.div>
+              <html.span>Text style inheritance works</html.span>
+            </html.div>
+          </html.div>
         </ExampleBlock>
 
         {/* block layout emulation */}
