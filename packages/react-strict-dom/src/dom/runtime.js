@@ -19,9 +19,6 @@ import * as stylex from '@stylexjs/stylex';
 const styles = stylex.create({
   // reset all 'block' elements
   block: {
-    // boxSizing: 'border-box',
-    // borderStyle: 'solid',
-    listStyle: 'none',
     margin: 0,
     padding: 0
   },
@@ -70,6 +67,9 @@ const styles = stylex.create({
     borderWidth: 1,
     borderStyle: 'solid'
   },
+  list: {
+    listStyle: 'none'
+  },
   strong: {
     fontWeight: 'bold'
   },
@@ -108,7 +108,7 @@ const label: StrictReactDOMPropsStyle = styles.inline;
 const li: StrictReactDOMPropsStyle = styles.block;
 const main: StrictReactDOMPropsStyle = styles.block;
 const nav: StrictReactDOMPropsStyle = styles.block;
-const ol: StrictReactDOMPropsStyle = styles.block;
+const ol: StrictReactDOMPropsStyle = [styles.list, styles.block];
 const optgroup: StrictReactDOMPropsStyle = null;
 const option: StrictReactDOMPropsStyle = null;
 const p: StrictReactDOMPropsStyle = styles.block;
@@ -125,7 +125,7 @@ const textarea: StrictReactDOMPropsStyle = [
   styles.textarea
 ];
 const u: StrictReactDOMPropsStyle = null;
-const ul: StrictReactDOMPropsStyle = styles.block;
+const ul: StrictReactDOMPropsStyle = [styles.list, styles.block];
 
 export const defaultStyles = {
   a: a as typeof a,

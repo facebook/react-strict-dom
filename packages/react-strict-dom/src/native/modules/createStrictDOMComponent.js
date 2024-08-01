@@ -52,15 +52,24 @@ function getComponentFromElement(tagName: string) {
     case 'footer':
     case 'form':
     case 'header':
+    case 'hr':
+    case 'li':
     case 'main':
     case 'nav':
     case 'ol':
+    case 'optgroup':
     case 'section':
+    case 'select':
     case 'ul': {
       return View;
     }
+    case 'a':
+    case 'b':
+    case 'bdi':
+    case 'bdo':
     case 'br':
     case 'code':
+    case 'del':
     case 'em':
     case 'h1':
     case 'h2':
@@ -68,11 +77,19 @@ function getComponentFromElement(tagName: string) {
     case 'h4':
     case 'h5':
     case 'h6':
+    case 'i':
+    case 'ins':
+    case 'kbd':
+    case 'label':
+    case 'option':
     case 'p':
     case 'pre':
+    case 's':
+    case 'span':
     case 'strong':
     case 'sub':
-    case 'sup': {
+    case 'sup':
+    case 'u': {
       return Text;
     }
     case 'button': {
@@ -177,6 +194,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         href,
         id,
         inputMode,
+        label,
         maxLength,
         onBlur,
         onChange,
@@ -565,6 +583,8 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         if (width != null) {
           nativeProps.width = width;
         }
+      } else if (tagName === 'option') {
+        nativeProps.children = label;
       } else if (tagName === 'textarea') {
         nativeProps.multiline = true;
         if (rows != null) {

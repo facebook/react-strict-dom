@@ -2312,20 +2312,20 @@ exports[`html "header" supports inline event handlers 1`] = `
 `;
 
 exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
-<Text
+<View
+  experimental_layoutConformance="strict"
   style={
     {
       "backgroundColor": "black",
       "height": 1,
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
 `;
 
 exports[`html "hr" supports global attributes 1`] = `
-<Text
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -2354,6 +2354,7 @@ exports[`html "hr" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
+  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -2366,18 +2367,19 @@ exports[`html "hr" supports global attributes 1`] = `
       "display": "none",
       "height": 1,
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  children
-</Text>
+  <Text>
+    children
+  </Text>
+</View>
 `;
 
 exports[`html "hr" supports inline event handlers 1`] = `
-<Text
+<Pressable
   onBlur={[Function]}
   onFocus={[Function]}
   onGotPointerCapture={[Function]}
@@ -2407,7 +2409,6 @@ exports[`html "hr" supports inline event handlers 1`] = `
       "backgroundColor": "black",
       "height": 1,
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3349,18 +3350,18 @@ exports[`html "ol" supports inline event handlers 1`] = `
 `;
 
 exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
-<Text
+<View
+  experimental_layoutConformance="strict"
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
 `;
 
 exports[`html "optgroup" supports global attributes 1`] = `
-<Text
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3389,6 +3390,7 @@ exports[`html "optgroup" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
+  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -3399,18 +3401,19 @@ exports[`html "optgroup" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  children
-</Text>
+  <Text>
+    children
+  </Text>
+</View>
 `;
 
 exports[`html "optgroup" supports inline event handlers 1`] = `
-<Text
+<Pressable
   onBlur={[Function]}
   onFocus={[Function]}
   onGotPointerCapture={[Function]}
@@ -3438,7 +3441,6 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3500,9 +3502,7 @@ exports[`html "option" supports global attributes 1`] = `
     }
   }
   testID="some-test-id"
->
-  children
-</Text>
+/>
 `;
 
 exports[`html "option" supports inline event handlers 1`] = `
@@ -3548,7 +3548,9 @@ exports[`html "option" supports input attributes 1`] = `
       "userSelect": "auto",
     }
   }
-/>
+>
+  label
+</Text>
 `;
 
 exports[`html "p" ignores and warns about unsupported attributes 1`] = `
@@ -3943,29 +3945,29 @@ exports[`html "section" supports inline event handlers 1`] = `
 `;
 
 exports[`html "select" ignores and warns about unsupported attributes 1`] = `
-<Text
+<View
+  experimental_layoutConformance="strict"
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
 `;
 
 exports[`html "select" supports additional select attributes 1`] = `
-<Text
+<View
+  experimental_layoutConformance="strict"
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
 `;
 
 exports[`html "select" supports global attributes 1`] = `
-<Text
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3994,6 +3996,7 @@ exports[`html "select" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
+  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -4004,18 +4007,19 @@ exports[`html "select" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
   testID="some-test-id"
 >
-  children
-</Text>
+  <Text>
+    children
+  </Text>
+</View>
 `;
 
 exports[`html "select" supports inline event handlers 1`] = `
-<Text
+<Pressable
   onBlur={[Function]}
   onFocus={[Function]}
   onGotPointerCapture={[Function]}
@@ -4043,7 +4047,6 @@ exports[`html "select" supports inline event handlers 1`] = `
   style={
     {
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
