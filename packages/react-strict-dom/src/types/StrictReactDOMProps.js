@@ -8,7 +8,6 @@
  */
 
 import type { Styles } from './styles';
-// import type { StrictEventTarget } from './StrictEventTarget';
 
 type IDRef = string;
 

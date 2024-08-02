@@ -136,20 +136,6 @@ function App() {
 }
 ```
 
-### Types
-
-Strict versions of most React DOM types are exported from the package.
-
-```jsx
-import type { StrictHTMLElement } from 'react-strict-dom';
-
-function App() {
-  return (
-    <html.div ref={(node: StrictHTMLElement) => {}} />
-  )
-}
-```
-
 ## Other tips
 
 ### Suppressing logs on React Native
@@ -195,7 +181,7 @@ This is a temporary solution until Flow provides a built-in approach to handling
 Certain prop values are typically user-facing strings, and these are defined within RSD as being of type `Stringish` - just a `string`. But when Flow doesn't know that a translation function produces strings at runtime, you can override the type of `Stringish` to account for this. For example, if using Meta's internationalization framework [Fbt](https://github.com/facebook/fbt):
 
 ```js
-// flow-typed/react-strict-dom.js
+// flow-typed/stringish.js
 declare type Stringish = string | Fbt;
 ```
 

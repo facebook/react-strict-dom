@@ -8,7 +8,6 @@
  */
 
 import typeof * as TStyleX from '@stylexjs/stylex';
-export * from '../types/StrictTypes';
 
 import * as React from 'react';
 import * as html from './html';

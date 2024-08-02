@@ -7,8 +7,6 @@
  * @flow strict
  */
 
-export * from '../types/StrictTypes';
-
 import * as html from './html';
 import * as css from '@stylexjs/stylex';
 
