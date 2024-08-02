@@ -7,13 +7,6 @@
  * @flow strict
  */
 
-import type { StrictHTMLElement } from '../types/StrictHTMLElement';
-import type { StrictHTMLImageElement } from '../types/StrictHTMLImageElement';
-import type { StrictHTMLInputElement } from '../types/StrictHTMLFormElements';
-import type { StrictHTMLOptionElement } from '../types/StrictHTMLFormElements';
-import type { StrictHTMLSelectElement } from '../types/StrictHTMLFormElements';
-import type { StrictHTMLTextAreaElement } from '../types/StrictHTMLFormElements';
-
 import type { StrictReactDOMProps } from '../types/StrictReactDOMProps';
 import type { StrictReactDOMAnchorProps } from '../types/StrictReactDOMAnchorProps';
 import type { StrictReactDOMButtonProps } from '../types/StrictReactDOMButtonProps';
@@ -34,7 +27,7 @@ import { defaultStyles } from './runtime';
  */
 export const a: React$AbstractComponent<
   StrictReactDOMAnchorProps,
-  StrictHTMLElement
+  HTMLAnchorElement
 > = createStrict('a', defaultStyles.a);
 
 /**
@@ -42,119 +35,99 @@ export const a: React$AbstractComponent<
  */
 export const article: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLElement
 > = createStrict('article', defaultStyles.article);
 
 /**
  * "aside" (block)
  */
-export const aside: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('aside', defaultStyles.aside);
+export const aside: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('aside', defaultStyles.aside);
 
 /**
  * "b" (inline)
  */
-export const b: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('b', defaultStyles.b);
+export const b: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('b', defaultStyles.b);
 
 /**
  * "bdi" (inline)
  */
-export const bdi: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('bdi', defaultStyles.bdi);
+export const bdi: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('bdi', defaultStyles.bdi);
 
 /**
  * "bdo" (inline)
  */
-export const bdo: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('bdo', defaultStyles.bdo);
+export const bdo: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('bdo', defaultStyles.bdo);
 
 /**
  * "blockquote" (block)
  */
 export const blockquote: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLQuoteElement
 > = createStrict('blockquote', defaultStyles.blockquote);
 
 /**
  * "br"
  */
-export const br: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('br', defaultStyles.br);
+export const br: React$AbstractComponent<StrictReactDOMProps, HTMLBRElement> =
+  createStrict('br', defaultStyles.br);
 
 /**
  * "button" (inline-block)
  */
 export const button: React$AbstractComponent<
   StrictReactDOMButtonProps,
-  StrictHTMLElement
+  HTMLButtonElement
 > = createStrict('button', defaultStyles.button);
 
 /**
  * "code" (inline)
  */
-export const code: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('code', defaultStyles.code);
+export const code: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('code', defaultStyles.code);
 
 /**
  * "del" (inline)
  */
-export const del: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('del', defaultStyles.del);
+export const del: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
+  createStrict('del', defaultStyles.del);
 
 /**
  * "div" (block)
  */
-export const div: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('div', defaultStyles.div);
+export const div: React$AbstractComponent<StrictReactDOMProps, HTMLDivElement> =
+  createStrict('div', defaultStyles.div);
 
 /**
  * "em" (inline)
  */
-export const em: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('em', defaultStyles.em);
+export const em: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('em', defaultStyles.em);
 
 /**
  * "fieldset" (block)
  */
 export const fieldset: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLFieldSetElement
 > = createStrict('fieldset', defaultStyles.fieldset);
 
 /**
  * "footer" (block)
  */
-export const footer: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('footer', defaultStyles.footer);
+export const footer: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('footer', defaultStyles.footer);
 
 /**
  * "form" (block)
  */
 export const form: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLFormElement
 > = createStrict('form', defaultStyles.form);
 
 /**
@@ -162,59 +135,53 @@ export const form: React$AbstractComponent<
  */
 export const h1: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h1', defaultStyles.h1);
 export const h2: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h2', defaultStyles.h2);
 export const h3: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h3', defaultStyles.h3);
 export const h4: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h4', defaultStyles.h4);
 export const h5: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h5', defaultStyles.h5);
 export const h6: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLHeadingElement
 > = createStrict('h6', defaultStyles.h6);
 
 /**
  * "header" (block)
  */
-export const header: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('header', defaultStyles.header);
+export const header: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('header', defaultStyles.header);
 
 /**
  * "hr" (block)
  */
-export const hr: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('hr', defaultStyles.hr);
+export const hr: React$AbstractComponent<StrictReactDOMProps, HTMLHRElement> =
+  createStrict('hr', defaultStyles.hr);
 
 /**
  * "i" (inline)
  */
-export const i: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('i', defaultStyles.i);
+export const i: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('i', defaultStyles.i);
 
 /**
  * "img" (inline)
  */
 export const img: React$AbstractComponent<
   StrictReactDOMImageProps,
-  StrictHTMLImageElement
+  HTMLImageElement
 > = createStrict('img', defaultStyles.img);
 
 /**
@@ -222,31 +189,27 @@ export const img: React$AbstractComponent<
  */
 export const input: React$AbstractComponent<
   StrictReactDOMInputProps,
-  StrictHTMLInputElement
+  HTMLInputElement
 > = createStrict('input', defaultStyles.input);
 
 /**
  * "ins" (inline)
  */
-export const ins: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('ins', defaultStyles.ins);
+export const ins: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
+  createStrict('ins', defaultStyles.ins);
 
 /**
  * "kbd" (inline)
  */
-export const kbd: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('kbd', defaultStyles.kbd);
+export const kbd: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('kbd', defaultStyles.kbd);
 
 /**
  * "label" (inline)
  */
 export const label: React$AbstractComponent<
   StrictReactDOMLabelProps,
-  StrictHTMLElement
+  HTMLLabelElement
 > = createStrict('label', defaultStyles.label);
 
 /**
@@ -254,31 +217,27 @@ export const label: React$AbstractComponent<
  */
 export const li: React$AbstractComponent<
   StrictReactDOMListItemProps,
-  StrictHTMLElement
+  HTMLLIElement
 > = createStrict('li', defaultStyles.li);
 
 /**
  * "main" (block)
  */
-export const main: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('main', defaultStyles.main);
+export const main: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('main', defaultStyles.main);
 
 /**
  * "nav" (block)
  */
-export const nav: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('nav', defaultStyles.nav);
+export const nav: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('nav', defaultStyles.nav);
 
 /**
  * "ol" (block)
  */
 export const ol: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLOListElement
 > = createStrict('ol', defaultStyles.ol);
 
 /**
@@ -286,7 +245,7 @@ export const ol: React$AbstractComponent<
  */
 export const optgroup: React$AbstractComponent<
   StrictReactDOMOptionGroupProps,
-  StrictHTMLElement
+  HTMLOptGroupElement
 > = createStrict('optgroup', defaultStyles.optgroup);
 
 /**
@@ -294,8 +253,8 @@ export const optgroup: React$AbstractComponent<
  */
 export const option: React$AbstractComponent<
   StrictReactDOMOptionProps,
-  StrictHTMLOptionElement
-> = createStrict<StrictHTMLOptionElement, StrictReactDOMOptionProps>(
+  HTMLOptionElement
+> = createStrict<HTMLOptionElement, StrictReactDOMOptionProps>(
   'option',
   defaultStyles.option
 );
@@ -305,31 +264,27 @@ export const option: React$AbstractComponent<
  */
 export const p: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLParagraphElement
 > = createStrict('p', defaultStyles.p);
 
 /**
  * "pre" (block)
  */
-export const pre: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('pre', defaultStyles.pre);
+export const pre: React$AbstractComponent<StrictReactDOMProps, HTMLPreElement> =
+  createStrict('pre', defaultStyles.pre);
 
 /**
  * "s" (inline)
  */
-export const s: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('s', defaultStyles.s);
+export const s: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('s', defaultStyles.s);
 
 /**
  * "section" (block)
  */
 export const section: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLElement
 > = createStrict('section', defaultStyles.section);
 
 /**
@@ -337,7 +292,7 @@ export const section: React$AbstractComponent<
  */
 export const select: React$AbstractComponent<
   StrictReactDOMSelectProps,
-  StrictHTMLSelectElement
+  HTMLSelectElement
 > = createStrict('select', defaultStyles.select);
 
 /**
@@ -345,53 +300,45 @@ export const select: React$AbstractComponent<
  */
 export const span: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLSpanElement
 > = createStrict('span', defaultStyles.span);
 
 /**
  * "strong" (inline)
  */
-export const strong: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('strong', defaultStyles.strong);
+export const strong: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('strong', defaultStyles.strong);
 
 /**
  * "sub" (inline)
  */
-export const sub: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('sub', defaultStyles.sub);
+export const sub: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('sub', defaultStyles.sub);
 
 /**
  * "sup" (inline)
  */
-export const sup: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('sup', defaultStyles.sup);
+export const sup: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('sup', defaultStyles.sup);
 
 /**
  * "textarea" (inline-block)
  */
 export const textarea: React$AbstractComponent<
   StrictReactDOMTextAreaProps,
-  StrictHTMLTextAreaElement
+  HTMLTextAreaElement
 > = createStrict('textarea', defaultStyles.textarea);
 
 /**
  * "u" (inline)
  */
-export const u: React$AbstractComponent<
-  StrictReactDOMProps,
-  StrictHTMLElement
-> = createStrict('u', defaultStyles.u);
+export const u: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
+  createStrict('u', defaultStyles.u);
 
 /**
  * "ul" (block)
  */
 export const ul: React$AbstractComponent<
   StrictReactDOMProps,
-  StrictHTMLElement
+  HTMLUListElement
 > = createStrict('ul', defaultStyles.ul);
