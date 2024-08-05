@@ -9,7 +9,6 @@
 
 import type { CompiledStyles } from '@stylexjs/stylex/lib/StyleXTypes';
 import type { StrictProps, ReactDOMStyleProps } from '../../types/StrictProps';
-import type { StrictHTMLElement } from '../../types/StrictHTMLElement';
 
 import * as React from 'react';
 import * as stylex from '@stylexjs/stylex';
@@ -27,7 +26,7 @@ function validateStrictProps(props: any) {
   });
 }
 
-export function createStrictDOMComponent<T: StrictHTMLElement, P: StrictProps>(
+export function createStrictDOMComponent<T, P: StrictProps>(
   TagName: string,
   defaultStyle: StrictProps['style']
 ): React.AbstractComponent<P, T> {
