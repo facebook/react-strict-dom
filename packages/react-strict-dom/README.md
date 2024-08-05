@@ -6,7 +6,8 @@
 ![web (dev)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom/index.js?label=web%20(dev)&compression=brotli)
 ![native](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/native/index.js?label=native&compression=brotli)
 
-**React Strict DOM** (RSD) is an experimental integration of [React DOM](https://react.dev/) and [StyleX](https://stylexjs.com/) that aims to improve and standardize the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
+
+**React Strict DOM** (RSD) standardizes the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
 
 ## Use
 
@@ -24,6 +25,8 @@ import { css, html } from 'react-strict-dom';
 
 **For web**
 
+In additional to installing `react-strict-dom`, please install the following packages:
+
 ```
 npm install react react-dom
 npm install --dev @stylexjs/babel-plugin
@@ -31,25 +34,7 @@ npm install --dev @stylexjs/babel-plugin
 
 Configure the `importSources` option for the StyleX Babel plugin or equivalent bundler integration.
 
-```js
-// babel.config.dom.js
-
-import styleXBabelPlugin from '@stylexjs/babel-plugin';
-
-module.exports = function () {
-  return {
-    plugins: [
-      styleXBabelPlugin({
-        importSources: [
-          { from: 'react-strict-dom', as: 'css '}
-        ]
-      })
-    ]
-  }
-};
-```
-
-Optionally use the RSD optimizing Babel plugin for improved runtime performance.
+Include the RSD optimizing Babel plugin to ensure there is **no runtime performance overhead** relative to Meta's baseline of using [React DOM](https://react.dev/) with [StyleX](https://stylexjs.com/).
 
 ```js
 // babel.config.dom.js
@@ -78,13 +63,17 @@ Options for the plugin:
 
 **For native**
 
+In additional to installing `react-strict-dom`, please install the following packages:
+
 ```
 npm install react react-native
 ```
 
+On native platforms, RSD builds on the design goals of the ["React DOM for Native proposal"](https://github.com/react-native-community/discussions-and-proposals/pull/496) by polyfilling a large number of standard APIs, and by leveraging new web capabilities coming to React Native.
+
 ## Examples
 
-Styles are compiled by [StyleX](https://github.com/facebook/stylex) and passed to elements using the `style` prop. The `style` prop accepts an array of static and dynamic styles.
+Styles are passed to elements using the `style` prop. The `style` prop accepts an array of static and dynamic styles.
 
 ```jsx
 import { css, html } from 'react-strict-dom';
@@ -120,7 +109,7 @@ export default function App(props) {
 
 ### `css`
 
-Cross-platform CSS styling via [StyleX](https://stylexjs.com).
+Cross-platform CSS styling that conforms to the [StyleX](https://stylexjs.com) API.
 
 ```js
 import { css } from 'react-strict-dom'

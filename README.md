@@ -4,11 +4,9 @@
 
 Development monorepo for "React Strict DOM".
 
-**React Strict DOM** (RSD) is an experimental integration of [React DOM](https://react.dev/) and [StyleX](https://stylexjs.com/) that aims to improve and standardize the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
+**React Strict DOM** (RSD) standardizes the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
 
-To support native platforms, RSD builds on the design goals of the ["React DOM for Native proposal"](https://github.com/react-native-community/discussions-and-proposals/pull/496) by polyfilling a large number of standard APIs, and by leveraging new web capabilities coming to React Native such as [DOM traversal and layout APIs](https://github.com/react-native-community/discussions-and-proposals/pull/607) and a well-defined [event loop processing model](https://github.com/react-native-community/discussions-and-proposals/pull/744).
-
-React Native compatibility is a work in progress. Please see [COMPATIBILITY.md](./packages/react-strict-dom/COMPATIBILITY.md) for a detailed breakdown and links to specific issues; register your interest (e.g., thumbsup reaction) in supporting missing features on native platforms.
+On web, RSD has no performance overhead relative to Meta's baseline use of [React DOM](https://react.dev/) with [StyleX](https://stylexjs.com/). On native platforms, RSD builds on the design goals of the ["React DOM for Native proposal"](https://github.com/react-native-community/discussions-and-proposals/pull/496) by polyfilling a large number of standard APIs, and by leveraging new web capabilities coming to React Native. Please see [COMPATIBILITY.md](./packages/react-strict-dom/COMPATIBILITY.md) for a detailed breakdown of the API compatibility for native, and links to specific issues. Register your interest (e.g., thumbsup reaction) in supporting missing features on native platforms.
 
 ## Structure
 
