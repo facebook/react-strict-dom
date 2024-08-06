@@ -6,10 +6,10 @@ jobs:
   size:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 50
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
     - name: 'Setup temporary files'
@@ -40,7 +40,7 @@ jobs:
         cat markdown >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
     - name: 'Post comment'
-      uses: edumserrano/find-create-or-update-comment@v2
+      uses: edumserrano/find-create-or-update-comment@v3
       with:
         issue-number: ${{ github.event.pull_request.number }}
         body-includes: '<!-- workflow-benchmarks-size-data -->'
@@ -55,10 +55,10 @@ jobs:
   perf:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 50
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
     - name: 'Setup temporary files'
@@ -89,7 +89,7 @@ jobs:
         cat markdown >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
     - name: 'Post comment'
-      uses: edumserrano/find-create-or-update-comment@v2
+      uses: edumserrano/find-create-or-update-comment@v3
       with:
         issue-number: ${{ github.event.pull_request.number }}
         body-includes: '<!-- workflow-benchmarks-perf-data -->'
