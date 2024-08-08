@@ -1538,6 +1538,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
       style={
         {
           "color": "red",
+          "cursor": "pointer",
           "fontFamily": "Arial",
           "fontSize": 96,
           "fontStyle": "italic",

@@ -385,7 +385,135 @@ describe('<html.*>', () => {
       expect(rootElement.props.style.maxHeight).toBe(2 * 2 * 16);
     });
 
-    test.skip('"inherit" keyword', () => {});
+    test('"inherit" keyword', () => {
+      const styles = css.create({
+        root: {
+          backgroundColor: 'red',
+          color: 'green',
+          cursor: 'crosshair',
+          direction: 'rtl',
+          fontFamily: 'Foo',
+          fontSize: '2em',
+          fontStyle: 'oblique',
+          fontVariant: 'small-caps',
+          fontWeight: '300',
+          letterSpacing: '2px',
+          lineHeight: '30px',
+          textAlign: 'center',
+          textIndent: '10px',
+          textTransform: 'uppercase',
+          whiteSpace: 'pre'
+        },
+        inherit: {
+          backgroundColor: 'inherit',
+          color: {
+            default: 'inherit',
+            ':hover': 'red'
+          },
+          cursor: 'inherit',
+          direction: 'inherit',
+          fontFamily: 'inherit',
+          fontSize: 'inherit',
+          fontStyle: 'inherit',
+          fontVariant: 'inherit',
+          fontWeight: 'inherit',
+          letterSpacing: 'inherit',
+          lineHeight: 'inherit',
+          textAlign: 'inherit',
+          textIndent: 'inherit',
+          textTransform: 'inherit',
+          whiteSpace: 'inherit'
+        },
+        unset: {
+          backgroundColor: 'unset',
+          color: 'unset',
+          cursor: 'unset',
+          direction: 'unset',
+          fontFamily: 'unset',
+          fontSize: 'unset',
+          fontStyle: 'unset',
+          fontVariant: 'unset',
+          fontWeight: 'unset',
+          letterSpacing: 'unset',
+          lineHeight: 'unset',
+          textAlign: 'unset',
+          textIndent: 'unset',
+          textTransform: 'unset',
+          whiteSpace: 'unset'
+        }
+      });
+      let root;
+      act(() => {
+        root = create(
+          <html.div style={styles.root}>
+            <html.span style={styles.inherit}>text</html.span>
+            <html.h1 style={styles.inherit}>text</html.h1>
+            <html.a style={styles.inherit}>text</html.a>
+            <html.span style={styles.unset}>text</html.span>
+            <html.h1 style={styles.unset}>text</html.h1>
+            <html.a style={styles.unset}>text</html.a>
+          </html.div>
+        );
+      });
+      const getStyle = (element) => element.props.style;
+      const rootElement = root.toJSON();
+
+      // "inherit"
+      let span = rootElement.children[0];
+      let h1 = rootElement.children[1];
+      let a = rootElement.children[2];
+      expect(getStyle(span).backgroundColor).toBeUndefined();
+      expect(getStyle(span).color).toBe('green');
+      expect(getStyle(span).cursor).toBe('crosshair');
+      expect(getStyle(span).direction).toBe('inherit');
+      expect(getStyle(span).fontFamily).toBe('Foo');
+      expect(getStyle(span).fontSize).toBe(32);
+      expect(getStyle(span).fontStyle).toBe('oblique');
+      expect(getStyle(span).fontVariant).toBe('small-caps');
+      expect(getStyle(span).fontWeight).toBe('300');
+      expect(getStyle(span).letterSpacing).toBe(2);
+      expect(getStyle(span).lineHeight).toBe(30);
+      expect(getStyle(span).textAlign).toBe('center');
+      //expect(getStyle(span).textIndent).toBe('10px');
+      expect(getStyle(span).textTransform).toBe('uppercase');
+      //expect(getStyle(span).whiteSpace).toBe('pre');
+      // h1 has default fontSize and fontWeight
+      expect(getStyle(h1).fontSize).toBe(32);
+      expect(getStyle(h1).fontWeight).toBe('300');
+      // a has default color
+      expect(getStyle(a).color).toBe('green');
+      // check that pseudo-states still work
+      act(() => {
+        span.props.onPointerEnter();
+      });
+      expect(getStyle(root.toJSON().children[0]).color).toBe('red');
+
+      // "unset" (behaves like "inherit" for inherited properties)
+      span = rootElement.children[3];
+      h1 = rootElement.children[4];
+      a = rootElement.children[5];
+      expect(getStyle(span).backgroundColor).toBeUndefined();
+      expect(getStyle(span).color).toBe('green');
+      expect(getStyle(span).cursor).toBe('crosshair');
+      expect(getStyle(span).direction).toBe('inherit');
+      expect(getStyle(span).fontFamily).toBe('Foo');
+      expect(getStyle(span).fontSize).toBe(32);
+      expect(getStyle(span).fontStyle).toBe('oblique');
+      expect(getStyle(span).fontVariant).toBe('small-caps');
+      expect(getStyle(span).fontWeight).toBe('300');
+      expect(getStyle(span).letterSpacing).toBe(2);
+      expect(getStyle(span).lineHeight).toBe(30);
+      expect(getStyle(span).textAlign).toBe('center');
+      //expect(getStyle(span).textIndent).toBe('10px');
+      expect(getStyle(span).textTransform).toBe('uppercase');
+      //expect(getStyle(span).whiteSpace).toBe('pre');
+      // h1 has default fontSize and fontWeight
+      expect(getStyle(h1).fontSize).toBe(32);
+      expect(getStyle(h1).fontWeight).toBe('300');
+      // a has default color
+      expect(getStyle(a).color).toBe('green');
+    });
+
     test.skip('"initial" keyword', () => {});
     test.skip('"unset" keyword', () => {});
 
@@ -998,7 +1126,7 @@ describe('<html.*>', () => {
     });
   });
 
-  describe('interaction styles', () => {
+  describe('pseudo-state styles', () => {
     const styles = css.create({
       hover: {
         backgroundColor: {

@@ -48,15 +48,24 @@ describe('values', () => {
   });
 
   test('inherit', () => {
-    const { underTest } = css.create({
-      underTest: {
+    const { fontSize } = css.create({
+      fontSize: {
         fontSize: 'inherit'
       }
     });
+
+    expect(css.props.call(mockOptions, fontSize).style?.fontSize).toBe(
+      'inherit'
+    );
+    expect(console.warn).not.toHaveBeenCalled();
+
+    const { padding } = css.create({
+      padding: {
+        padding: 'inherit'
+      }
+    });
+    expect(css.props.call(mockOptions, padding).style?.padding).toBeUndefined();
     expect(console.warn).toHaveBeenCalled();
-    expect(
-      css.props.call(mockOptions, underTest).style?.fontSize
-    ).toBeUndefined();
   });
 
   test('initial', () => {

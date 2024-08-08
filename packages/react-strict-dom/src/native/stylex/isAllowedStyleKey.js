@@ -76,6 +76,7 @@ const allowedStyleKeySet = new Set<string>([
   'caretColor',
   'color',
   'columnGap',
+  'cursor',
   'cursorColor',
   'direction',
   'display',
