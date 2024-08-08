@@ -298,6 +298,14 @@ exports[`properties: general fontWeight 2`] = `
 }
 `;
 
+exports[`properties: general isolation 1`] = `
+{
+  "style": {
+    "isolation": "isolate",
+  },
+}
+`;
+
 exports[`properties: general lineClamp 1`] = `
 {
   "numberOfLines": 3,

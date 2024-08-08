@@ -543,6 +543,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | insetInline | 🟡 | 🟡 | |
 | insetInlineEnd | 🟡 | 🟡 | |
 | insetInlineStart | 🟡 | 🟡 | |
+| isolation | ✅ | ✅ | |
 | justifyContent | ✅ | ✅ | |
 | justifyItems | ❌ | ❌ | |
 | justifySelf | ❌ | ❌ | |
