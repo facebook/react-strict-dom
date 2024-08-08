@@ -201,9 +201,12 @@ function Shell(): React.MixedElement {
           {/* text inheritance and text children */}
           <html.div style={styles.inheritedText}>
             <html.div>Text style inheritance works</html.div>
-            <html.div>
-              <html.span>Text style inheritance works</html.span>
-            </html.div>
+            <html.div />
+            <html.h1 style={styles.inherit}>
+              Text style inheritance works
+            </html.h1>
+            <html.div />
+            <html.span>Text style inheritance works</html.span>
           </html.div>
         </ExampleBlock>
 
@@ -635,6 +638,9 @@ const styles = css.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: tokens.textColor
+  },
+  inherit: {
+    fontSize: 'inherit'
   },
   paragraph: {
     marginBlock: 24,

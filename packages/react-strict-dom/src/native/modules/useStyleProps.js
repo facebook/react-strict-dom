@@ -65,21 +65,29 @@ export function useStyleProps(
   const colorScheme = useColorScheme();
   const fontScale = PixelRatio.getFontScale();
 
-  const inheritedStyles = useInheritedStyles();
-  const inheritedFontSize =
-    typeof inheritedStyles?.fontSize === 'number'
-      ? inheritedStyles?.fontSize
-      : undefined;
+  // These values are already computed
+  const {
+    color: inheritedColor,
+    cursor: inheritedCursor,
+    fontFamily: inheritedFontFamily,
+    fontSize: inheritedFontSize,
+    fontStyle: inheritedFontStyle,
+    fontVariant: inheritedFontVariant,
+    fontWeight: inheritedFontWeight,
+    letterSpacing: inheritedLetterSpacing,
+    lineHeight: inheritedLineHeight,
+    textAlign: inheritedTextAlign,
+    textIndent: inheritedTextIndent,
+    textTransform: inheritedTextTransform,
+    whiteSpace: inheritedWhiteSpace,
+    writingDirection: inheritedWritingDirection
+  } = useInheritedStyles();
 
-  const renderStyle = flattenStyle([
-    withInheritedStyle === true && inheritedStyles,
-    dir != null && dir !== 'auto' && { direction: dir },
-    dir != null && { writingDirection: dir },
-    style
-  ]);
+  const flatStyle = flattenStyle(style);
 
-  const { active, focus, hover, handlers } = usePseudoStates(renderStyle);
+  const { active, focus, hover, handlers } = usePseudoStates(flatStyle);
 
+  // Get the computed style props
   const styleProps = stylex.props.call(
     {
       active,
@@ -88,11 +96,12 @@ export function useStyleProps(
       focus,
       fontScale,
       hover,
-      inheritedFontSize,
+      inheritedFontSize:
+        typeof inheritedFontSize === 'number' ? inheritedFontSize : undefined,
       viewportHeight: height,
       viewportWidth: width
     },
-    renderStyle as $FlowFixMe
+    flatStyle as $FlowFixMe
   );
 
   if (handlers != null) {
@@ -113,6 +122,14 @@ export function useStyleProps(
     }
   }
 
+  // Polyfill 'dir'
+  if (dir != null) {
+    if (dir !== 'auto' && styleProps.style.direction == null) {
+      styleProps.style.direction = dir;
+    }
+    styleProps.style.writingDirection = dir;
+  }
+
   // Polyfill CSS transitions
   const styleWithAnimations = useStyleTransition(styleProps.style);
   if (styleProps.style !== styleWithAnimations) {
@@ -121,7 +138,6 @@ export function useStyleProps(
     styleProps.style = styleWithAnimations;
   }
 
-  // Extract text properties for CSS inheritance polyfill
   const {
     color,
     cursor,
@@ -131,7 +147,7 @@ export function useStyleProps(
     fontVariant,
     fontWeight,
     letterSpacing,
-    lineHeight, // eslint-disable-line no-unused-vars
+    lineHeight,
     textAlign,
     textIndent,
     textTransform,
@@ -141,57 +157,46 @@ export function useStyleProps(
   } = styleProps.style;
 
   const inheritableStyle = {} as $FlowFixMe;
-  if (color != null) {
-    inheritableStyle.color = color;
-  }
-  if (cursor != null) {
-    inheritableStyle.cursor = cursor;
-  }
-  if (fontFamily != null) {
-    inheritableStyle.fontFamily = fontFamily;
-  }
-  if (fontSize != null) {
-    inheritableStyle.fontSize = fontSize;
-  }
-  if (fontStyle != null) {
-    inheritableStyle.fontStyle = fontStyle;
-  }
-  if (fontVariant != null) {
-    inheritableStyle.fontVariant = fontVariant;
-  }
-  if (fontWeight != null) {
-    inheritableStyle.fontWeight = fontWeight;
-  }
-  if (letterSpacing != null) {
-    inheritableStyle.letterSpacing = letterSpacing;
-  }
-  if (lineHeight != null) {
-    inheritableStyle.lineHeight = lineHeight;
-  }
-  if (textAlign != null) {
-    inheritableStyle.textAlign = textAlign;
-  }
-  if (textIndent != null) {
-    inheritableStyle.textIndent = textIndent;
-  }
-  if (textTransform != null) {
-    inheritableStyle.textTransform = textTransform;
-  }
-  if (whiteSpace != null) {
-    inheritableStyle.whiteSpace = whiteSpace;
-  }
-  if (writingDirection != null) {
-    inheritableStyle.writingDirection = writingDirection;
-  }
+
+  [
+    ['color', color, inheritedColor],
+    ['cursor', cursor, inheritedCursor],
+    ['fontFamily', fontFamily, inheritedFontFamily],
+    ['fontSize', fontSize, inheritedFontSize],
+    ['fontStyle', fontStyle, inheritedFontStyle],
+    ['fontVariant', fontVariant, inheritedFontVariant],
+    ['fontWeight', fontWeight, inheritedFontWeight],
+    ['letterSpacing', letterSpacing, inheritedLetterSpacing],
+    ['lineHeight', lineHeight, inheritedLineHeight],
+    ['textAlign', textAlign, inheritedTextAlign],
+    ['textIndent', textIndent, inheritedTextIndent],
+    ['textTransform', textTransform, inheritedTextTransform],
+    ['whiteSpace', whiteSpace, inheritedWhiteSpace],
+    ['writingDirection', writingDirection, inheritedWritingDirection]
+  ].forEach(([key, value, inheritedValue]) => {
+    let val = value;
+    if (
+      (withInheritedStyle && value == null) ||
+      value === 'inherit' ||
+      value === 'unset'
+    ) {
+      val = inheritedValue;
+    }
+    if (val != null) {
+      inheritableStyle[key] = val;
+      styleProps.style[key] = val;
+    }
+  });
 
   if (withTextStyle === true) {
+    const textStyle =
+      provideInheritableStyle === true
+        ? { ...inheritableStyle }
+        : inheritableStyle;
+
     styleProps.style = Object.assign(
       viewStyle,
-      resolveUnitlessLineHeight(
-        provideInheritableStyle === true
-          ? { ...inheritableStyle }
-          : inheritableStyle
-      )
+      resolveUnitlessLineHeight(textStyle)
     );
   } else {
     styleProps.style = viewStyle;

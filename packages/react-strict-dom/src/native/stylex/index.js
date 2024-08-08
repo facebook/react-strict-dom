@@ -179,11 +179,42 @@ function processStyle(
         result[propName] = new CSSLengthUnitValue(...maybeLengthUnitValue);
         continue;
         // React Native doesn't support these keywords or functions
+      } else if (styleValue === 'inherit' || styleValue === 'unset') {
+        // direction has native support for 'inherit'
+        if (propName === 'direction') {
+          result[propName] = 'inherit';
+          continue;
+        }
+        // inherited properties polyfill 'inherit' in useStyleProps
+        else if (
+          propName !== ':active' &&
+          propName !== ':focus' &&
+          propName !== ':hover' &&
+          propName !== 'default' &&
+          propName !== 'color' &&
+          propName !== 'cursor' &&
+          propName !== 'fontFamily' &&
+          propName !== 'fontSize' &&
+          propName !== 'fontStyle' &&
+          propName !== 'fontVariant' &&
+          propName !== 'fontWeight' &&
+          propName !== 'letterSpacing' &&
+          propName !== 'lineHeight' &&
+          propName !== 'textAlign' &&
+          propName !== 'textIndent' &&
+          propName !== 'textTransform' &&
+          propName !== 'whiteSpace'
+        ) {
+          if (__DEV__) {
+            warnMsg(
+              `unsupported style value in "${propName}:${String(styleValue)}"`
+            );
+          }
+          continue;
+        }
       } else if (
         styleValue === 'currentcolor' ||
-        styleValue === 'inherit' ||
         styleValue === 'initial' ||
-        styleValue === 'unset' ||
         styleValue.includes('calc(')
       ) {
         if (__DEV__) {

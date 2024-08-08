@@ -506,7 +506,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | clipPath | ❌ | ❌ | |
 | color | ✅ | ✅ | |
 | columnGap | ✅ | ✅ | |
-| cursor | ❌ | ❌ | |
+| cursor | ❌ | ✅ (`auto` or `pointer`) | |
 | Custom Properties | 🟡 | 🟡 | |
 | direction | ❌ | ❌ | |
 | display: block | 🟡 Partial | 🟡 Partial | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
@@ -534,6 +534,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | fontWeight | 🟡 | 🟡 | |
 | gap | ✅ | ✅ | |
 | height | ✅ | ✅ | |
+| "inherit" keyword | 🟡 Partial | 🟡 Partial | |
 | inlineSize | 🟡 | 🟡 | |
 | inset | 🟡 | 🟡 | |
 | insetBlock | 🟡 | 🟡 | |
@@ -624,7 +625,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | top | ✅ | ✅ | |
 | touchAction | ❌ | ❌ | |
 | transform | ✅ | ✅ | |
-| transform: translate % | ❌ | ❌ | |
+| transform: translate % | ✅ | ✅ | |
 | transformOrigin | ✅ | ✅ | |
 | transformStyle | ❌ | ❌ | |
 | transitionDelay | 🟡 | 🟡 | |
@@ -632,6 +633,7 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | transitionProperty | 🟡 | 🟡 | |
 | transitionTimingFunction | 🟡 | 🟡 | |
 | translate | ❌ | ❌ | |
+| "unset" keyword | 🟡 Partial | 🟡 Partial | |
 | url() | ❌ | ❌ | |
 | userSelect | 🟡 | 🟡 | |
 | v* units | 🟡 | 🟡 | |
