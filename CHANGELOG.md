@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.23 (Aug 8, 2024)
+
+### New features
+
+* [Native] Allow CSS `isolation` property.
+* [Native] Polyfill the `inherit` and `unset` CSS keywords for inherited properties.
+* [Native] Polyfill CSS `:focus` and `:active` pseudo-state.
+
+### Fixes
+
+* [Native] Add missing elements to DOM -> Native mapping
+* [Native] Fix `<blockquote>` polyfill
+
 ## 0.0.22 (Jul 31, 2024)
 
 ### Fixes
