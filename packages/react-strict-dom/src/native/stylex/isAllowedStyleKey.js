@@ -101,6 +101,7 @@ const allowedStyleKeySet = new Set<string>([
   'insetInline',
   'insetInlineEnd',
   'insetInlineStart',
+  'isolation',
   'justifyContent',
   'left',
   'letterSpacing',

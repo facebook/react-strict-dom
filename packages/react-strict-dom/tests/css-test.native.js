@@ -358,6 +358,15 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot();
   });
 
+  test('isolation', () => {
+    const { underTest } = css.create({
+      underTest: {
+        isolation: 'isolate'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+  });
+
   test('lineClamp', () => {
     const styles = css.create({
       root: {
