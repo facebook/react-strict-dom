@@ -16,9 +16,9 @@ import {
   TextInput,
   Platform,
   Pressable,
-  Text,
-  View
+  Text
 } from 'react-native';
+import { View } from '../react-native';
 
 import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
@@ -103,7 +103,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 ): React.AbstractComponent<P, T> {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let nativeComponent = getComponentFromElement(tagName);
+      let NativeComponent = getComponentFromElement(tagName);
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       /**
@@ -150,7 +150,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           defaultProps?.style,
           height != null && width != null && styles.aspectRatio(width, height)
         ];
-      } else if (nativeComponent === Text) {
+      } else if (NativeComponent === Text) {
         defaultProps.style = [defaultProps?.style, styles.userSelectAuto];
       }
 
@@ -161,14 +161,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
             tagName !== 'hr' ||
             tagName !== 'img' ||
             tagName !== 'option' ||
-            nativeComponent !== TextInput,
-          withInheritedStyle: nativeComponent === Text,
+            NativeComponent !== TextInput,
+          withInheritedStyle: NativeComponent === Text,
           withTextStyle:
-            nativeComponent === Text || nativeComponent === TextInput
+            NativeComponent === Text || NativeComponent === TextInput
         });
 
-      if (nativeProps.onPress != null && nativeComponent === View) {
-        nativeComponent = Pressable;
+      if (nativeProps.onPress != null && NativeComponent === View) {
+        NativeComponent = Pressable;
       }
 
       // Tag-specific props
@@ -270,12 +270,12 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Component-specific props
 
-      if (nativeComponent === Pressable) {
+      if (NativeComponent === Pressable) {
         if (disabled === true) {
           nativeProps.disabled = true;
           nativeProps.focusable = false;
         }
-      } else if (nativeComponent === TextInput) {
+      } else if (NativeComponent === TextInput) {
         if (autoComplete != null) {
           nativeProps.autoComplete = autoComplete;
         }
@@ -360,9 +360,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // Sometimes we can auto-fix this
       if (
         typeof nativeProps.children === 'string' &&
-        nativeComponent !== Text &&
-        nativeComponent !== TextInput &&
-        nativeComponent !== Image
+        NativeComponent !== Text &&
+        NativeComponent !== TextInput &&
+        NativeComponent !== Image
       ) {
         nativeProps.children = <TextString children={nativeProps.children} />;
       }
@@ -415,7 +415,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.style.flexShrink ??= 1;
       }
 
-      if (nativeComponent === Text) {
+      if (NativeComponent === Text) {
         // Workaround: Android doesn't support ellipsis truncation if Text is selectable
         // See #136
         const disableUserSelect =
@@ -431,14 +431,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
-        if (nativeComponent === View) {
-          nativeComponent = Animated.View;
+        if (NativeComponent === View) {
+          NativeComponent = Animated.View;
         }
-        if (nativeComponent === Text) {
-          nativeComponent = Animated.Text;
+        if (NativeComponent === Text) {
+          NativeComponent = Animated.Text;
         }
-        if (nativeComponent === Pressable) {
-          nativeComponent = AnimatedPressable;
+        if (NativeComponent === Pressable) {
+          NativeComponent = AnimatedPressable;
         }
       }
 
@@ -446,13 +446,13 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        * Construct tree
        */
 
-      if (nativeComponent === View) {
+      if (NativeComponent === View) {
         // enable W3C flexbox layout
         nativeProps.experimental_layoutConformance = 'strict';
       }
 
-      // $FlowFixMe (we don't care about the internal React Native prop types)
-      let element = React.createElement(nativeComponent, nativeProps);
+      // $FlowFixMe
+      let element = <NativeComponent {...nativeProps} />;
 
       if (
         nativeProps.children != null &&
