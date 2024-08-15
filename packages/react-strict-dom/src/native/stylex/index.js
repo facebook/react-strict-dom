@@ -153,6 +153,18 @@ function processStyle(
         result[propName] = fallback;
         continue;
       }
+      // Workaround unsupported textAlign values
+      // https://github.com/facebook/react-native/issues/45255
+      else if (propName === 'textAlign') {
+        if (styleValue === 'start') {
+          result[propName] = 'left';
+        } else if (styleValue === 'end') {
+          result[propName] = 'right';
+        } else {
+          result[propName] = styleValue;
+        }
+        continue;
+      }
       // Polyfill textShadow
       else if (propName === 'textShadow') {
         result[propName] = parseTextShadow(styleValue);
