@@ -1113,15 +1113,29 @@ describe('properties: logical direction', () => {
 
   test('textAlign', () => {
     const styles = css.create({
-      start: {
-        textAlign: 'start'
+      center: {
+        textAlign: 'center'
       },
       end: {
         textAlign: 'end'
+      },
+      left: {
+        textAlign: 'left'
+      },
+      right: {
+        textAlign: 'right'
+      },
+      start: {
+        textAlign: 'start'
       }
     });
-    expect(css.props.call(mockOptions, styles.start)).toMatchSnapshot('start');
+    expect(css.props.call(mockOptions, styles.center)).toMatchSnapshot(
+      'center'
+    );
     expect(css.props.call(mockOptions, styles.end)).toMatchSnapshot('end');
+    expect(css.props.call(mockOptions, styles.left)).toMatchSnapshot('left');
+    expect(css.props.call(mockOptions, styles.right)).toMatchSnapshot('right');
+    expect(css.props.call(mockOptions, styles.start)).toMatchSnapshot('start');
   });
 });
 

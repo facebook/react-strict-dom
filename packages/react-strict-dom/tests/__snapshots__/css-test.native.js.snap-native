@@ -1251,10 +1251,34 @@ exports[`properties: logical direction padding: paddingInlineStart 1`] = `
 }
 `;
 
+exports[`properties: logical direction textAlign: center 1`] = `
+{
+  "style": {
+    "textAlign": "center",
+  },
+}
+`;
+
 exports[`properties: logical direction textAlign: end 1`] = `
 {
   "style": {
-    "textAlign": "end",
+    "textAlign": "right",
+  },
+}
+`;
+
+exports[`properties: logical direction textAlign: left 1`] = `
+{
+  "style": {
+    "textAlign": "left",
+  },
+}
+`;
+
+exports[`properties: logical direction textAlign: right 1`] = `
+{
+  "style": {
+    "textAlign": "right",
   },
 }
 `;
@@ -1262,7 +1286,7 @@ exports[`properties: logical direction textAlign: end 1`] = `
 exports[`properties: logical direction textAlign: start 1`] = `
 {
   "style": {
-    "textAlign": "start",
+    "textAlign": "left",
   },
 }
 `;
