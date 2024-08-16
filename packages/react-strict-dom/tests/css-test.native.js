@@ -127,6 +127,17 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
+  test('animationName', () => {
+    css.keyframes({
+      '100%': {
+        width: 1000
+      }
+    });
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('css.keyframes() is not supported')
+    );
+  });
+
   test('backgroundImage', () => {
     const styles = css.create({
       root: {
@@ -249,6 +260,20 @@ describe('properties: general', () => {
         padding: 10,
         height: 50,
         width: 'auto'
+      },
+      null: {
+        boxSizing: 'content-box',
+        borderWidth: 2,
+        padding: 10,
+        height: 50,
+        width: null
+      },
+      string: {
+        boxSizing: 'content-box',
+        borderWidth: 2,
+        padding: 10,
+        height: 50,
+        width: '50%'
       }
     });
     expect(css.props.call(mockOptions, styles.width)).toMatchSnapshot('width');
@@ -272,6 +297,10 @@ describe('properties: general', () => {
       'allDifferent'
     );
     expect(css.props.call(mockOptions, styles.auto)).toMatchSnapshot('auto');
+    expect(css.props.call(mockOptions, styles.null)).toMatchSnapshot('null');
+
+    css.props.call(mockOptions, styles.string);
+    expect(console.warn).toHaveBeenCalledTimes(1);
   });
 
   test('caretColor', () => {
@@ -282,12 +311,18 @@ describe('properties: general', () => {
       redCaret: {
         caretColor: 'red'
       },
-      unsupportedCaret: {
+      inheritCaret: {
         caretColor: 'inherit'
+      },
+      autoCaret: {
+        caretColor: 'auto'
       }
     });
     expect(console.warn).toHaveBeenCalledWith(
       expect.stringContaining('unsupported style value in "caretColor:inherit"')
+    );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining('unsupported style value in "caretColor:auto"')
     );
     expect(
       css.props.call(mockOptions, styles.transparentCaret)
