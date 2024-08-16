@@ -195,6 +195,17 @@ exports[`properties: general boxSizing: content-box: minWidth 1`] = `
 }
 `;
 
+exports[`properties: general boxSizing: content-box: null 1`] = `
+{
+  "style": {
+    "borderWidth": 2,
+    "height": 74,
+    "padding": 10,
+    "width": null,
+  },
+}
+`;
+
 exports[`properties: general boxSizing: content-box: units 1`] = `
 {
   "style": {

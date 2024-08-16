@@ -83,7 +83,7 @@ type ReturnType = {|
 |};
 
 export function useNativeProps(
-  defaultProps: StrictProps,
+  defaultProps: ?StrictProps,
   props: StrictProps,
   options: OptionsType
 ): ReturnType {
@@ -112,6 +112,7 @@ export function useNativeProps(
     'data-testid': dataTestID,
     dir,
     //disabled,
+    hidden,
     id,
     onBlur,
     onClick,
@@ -166,6 +167,22 @@ export function useNativeProps(
     withInheritedStyle: options.withInheritedStyle,
     writingDirection: dir
   });
+
+  const displayValue = nativeProps.style.display;
+  if (
+    displayValue != null &&
+    displayValue !== 'flex' &&
+    displayValue !== 'none' &&
+    displayValue !== 'block'
+  ) {
+    if (__DEV__) {
+      warnMsg(`unsupported style value in "display:${String(displayValue)}"`);
+    }
+  }
+  // 'hidden' polyfill (only if "display" is not set)
+  if (displayValue == null && hidden && hidden !== 'until-found') {
+    nativeProps.style.display = 'none';
+  }
 
   /**
    * Resolve common props
