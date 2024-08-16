@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.24 (Aug 16, 2024)
+
+### Fixes
+
+* Fix TypeScript types generation.
+* [Native] Polyfill logical `textAlign`.
+* Removes `StrictHTMLElement` and other strict instance types. Use `HTMLElement` and other DOM types.
+
 ## 0.0.23 (Aug 8, 2024)
 
 ### New features
