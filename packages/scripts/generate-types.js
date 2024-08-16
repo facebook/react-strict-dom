@@ -89,7 +89,10 @@ async function generateTypes(inputDir, outputDir, rootDir) {
           const outputTSContents = await translate.translateFlowDefToTSDef(
             outputFlowContents
               .replace(/\$ReadOnlyMap/g, 'ReadonlyMap')
-              .replace(/\$ReadOnlySet/g, 'ReadonlySet'),
+              .replace(/\$ReadOnlySet/g, 'ReadonlySet')
+              .replace(/Stringish/g, 'string')
+              .replace(/...ReactStrictDOMDataProps,/g, ''),
+
             monorepoPackage.prettier
           );
 

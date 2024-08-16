@@ -10,7 +10,9 @@
 // This type allows Meta (and other users) to define data-*
 // props used by their components to work around Flow's current
 // lack of support for typing arbitrary data-* props.
-declare type ReactStrictDOMDataProps = {};
+declare type ReactStrictDOMDataProps = {
+  'data-testid'?: ?string
+};
 
 // This type allows Meta to internally override it with an
 // internationalization type which is a string at runtime…

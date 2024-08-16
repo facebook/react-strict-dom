@@ -9,8 +9,8 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMButtonProps = $ReadOnly<{
+export type StrictReactDOMButtonProps = {
   ...StrictReactDOMProps,
   disabled?: ?boolean,
   type?: ?('button' | 'submit')
-}>;
+};

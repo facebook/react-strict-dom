@@ -9,58 +9,6 @@
 
 import type { Styles } from './styles';
 
-type IDRef = string;
-
-type AriaProps = $ReadOnly<{
-  'aria-activedescendant'?: ?IDRef,
-  'aria-atomic'?: ?boolean,
-  'aria-autocomplete'?: ?('none' | 'inline' | 'list' | 'both'),
-  'aria-busy'?: ?boolean,
-  'aria-checked'?: ?(boolean | 'mixed'),
-  'aria-colcount'?: ?number,
-  'aria-colindex'?: ?number,
-  'aria-colindextext'?: ?Stringish,
-  'aria-colspan'?: ?number,
-  'aria-controls'?: ?IDRef,
-  'aria-current'?: ?(boolean | 'page' | 'step' | 'location' | 'date' | 'time'),
-  'aria-describedby'?: ?IDRef,
-  'aria-details'?: ?IDRef,
-  'aria-disabled'?: ?boolean,
-  'aria-errormessage'?: ?IDRef,
-  'aria-expanded'?: ?boolean,
-  'aria-flowto'?: ?IDRef,
-  'aria-haspopup'?: ?('menu' | 'listbox' | 'tree' | 'grid' | 'dialog'),
-  'aria-hidden'?: ?boolean,
-  'aria-invalid'?: ?(boolean | 'grammar' | 'spelling'),
-  'aria-keyshortcuts'?: ?string,
-  'aria-label'?: ?Stringish,
-  'aria-labelledby'?: ?IDRef,
-  'aria-level'?: ?number,
-  'aria-live'?: ?('off' | 'assertive' | 'polite'),
-  'aria-modal'?: ?boolean,
-  'aria-multiline'?: ?boolean,
-  'aria-multiselectable'?: ?boolean,
-  'aria-orientation'?: ?('horizontal' | 'vertical'),
-  'aria-owns'?: ?IDRef,
-  'aria-placeholder'?: ?Stringish,
-  'aria-posinset'?: ?number,
-  'aria-readonly'?: ?boolean,
-  'aria-pressed'?: ?(boolean | 'mixed'),
-  'aria-required'?: ?boolean,
-  'aria-roledescription'?: ?Stringish,
-  'aria-rowcount'?: ?number,
-  'aria-rowindex'?: ?number,
-  'aria-rowindextext'?: ?Stringish,
-  'aria-rowspan'?: ?number,
-  'aria-selected'?: ?boolean,
-  'aria-setsize'?: ?number,
-  'aria-sort'?: ?('none' | 'ascending' | 'descending' | 'other'),
-  'aria-valuemax'?: ?number,
-  'aria-valuemin'?: ?number,
-  'aria-valuenow'?: ?number,
-  'aria-valuetext'?: ?Stringish
-}>;
-
 // Excludes all abstract roles that should not be used by authors.
 type AriaRole =
   | 'alert'
@@ -205,6 +153,8 @@ export type AutoComplete = ?(
   | 'off'
 );
 
+type IDRef = string;
+
 /*
 type SyntheticEvent<+T> = $ReadOnly<{|
   ...T,
@@ -228,7 +178,7 @@ type StrictClickEvent = $ReadOnly<{|
   button: number,
   ctrlKey: boolean,
   defaultPrevented: boolean,
-  getModifierState: (string) => boolean,
+  getModifierState: (key: string) => boolean,
   metaKey: boolean,
   pageX: number,
   pageY: number,
@@ -238,10 +188,62 @@ type StrictClickEvent = $ReadOnly<{|
   type: 'click'
 |}>;
 
-type EventProps = $ReadOnly<{
+export type StrictReactDOMProps = $ReadOnly<{
+  ...ReactStrictDOMDataProps,
+
+  // ARIA props
+  'aria-activedescendant'?: ?IDRef,
+  'aria-atomic'?: ?boolean,
+  'aria-autocomplete'?: ?('none' | 'inline' | 'list' | 'both'),
+  'aria-busy'?: ?boolean,
+  'aria-checked'?: ?(boolean | 'mixed'),
+  'aria-colcount'?: ?number,
+  'aria-colindex'?: ?number,
+  'aria-colindextext'?: ?Stringish,
+  'aria-colspan'?: ?number,
+  'aria-controls'?: ?IDRef,
+  'aria-current'?: ?(boolean | 'page' | 'step' | 'location' | 'date' | 'time'),
+  'aria-describedby'?: ?IDRef,
+  'aria-details'?: ?IDRef,
+  'aria-disabled'?: ?boolean,
+  'aria-errormessage'?: ?IDRef,
+  'aria-expanded'?: ?boolean,
+  'aria-flowto'?: ?IDRef,
+  'aria-haspopup'?: ?('menu' | 'listbox' | 'tree' | 'grid' | 'dialog'),
+  'aria-hidden'?: ?boolean,
+  'aria-invalid'?: ?(boolean | 'grammar' | 'spelling'),
+  'aria-keyshortcuts'?: ?string,
+  'aria-label'?: ?Stringish,
+  'aria-labelledby'?: ?IDRef,
+  'aria-level'?: ?number,
+  'aria-live'?: ?('off' | 'assertive' | 'polite'),
+  'aria-modal'?: ?boolean,
+  'aria-multiline'?: ?boolean,
+  'aria-multiselectable'?: ?boolean,
+  'aria-orientation'?: ?('horizontal' | 'vertical'),
+  'aria-owns'?: ?IDRef,
+  'aria-placeholder'?: ?Stringish,
+  'aria-posinset'?: ?number,
+  'aria-readonly'?: ?boolean,
+  'aria-pressed'?: ?(boolean | 'mixed'),
+  'aria-required'?: ?boolean,
+  'aria-roledescription'?: ?Stringish,
+  'aria-rowcount'?: ?number,
+  'aria-rowindex'?: ?number,
+  'aria-rowindextext'?: ?Stringish,
+  'aria-rowspan'?: ?number,
+  'aria-selected'?: ?boolean,
+  'aria-setsize'?: ?number,
+  'aria-sort'?: ?('none' | 'ascending' | 'descending' | 'other'),
+  'aria-valuemax'?: ?number,
+  'aria-valuemin'?: ?number,
+  'aria-valuenow'?: ?number,
+  'aria-valuetext'?: ?Stringish,
+
+  // Event props
   onAuxClick?: $FlowFixMe,
   onBlur?: $FlowFixMe,
-  onClick?: (StrictClickEvent) => void,
+  onClick?: (event: StrictClickEvent) => void,
   onContextMenu?: $FlowFixMe,
   onCopy?: $FlowFixMe,
   onCut?: $FlowFixMe,
@@ -251,7 +253,7 @@ type EventProps = $ReadOnly<{
   onFullscreenChange?: $FlowFixMe,
   onFullscreenError?: $FlowFixMe,
   onGotPointerCapture?: $FlowFixMe,
-  onKeyDown?: ($ReadOnly<{ key: string, type: ?string, ... }>) => void,
+  onKeyDown?: (event: $ReadOnly<{ key: string, type: ?string, ... }>) => void,
   onKeyUp?: $FlowFixMe,
   onLostPointerCapture?: $FlowFixMe,
   onPaste?: $FlowFixMe,
@@ -275,13 +277,9 @@ type EventProps = $ReadOnly<{
   onTouchCancel?: $FlowFixMe, // TEMP
   onTouchStart?: $FlowFixMe, // TEMP
   onTouchEnd?: $FlowFixMe, // TEMP
-  onTouchMove?: $FlowFixMe // TEMP
-}>;
+  onTouchMove?: $FlowFixMe, // TEMP
 
-export type StrictReactDOMProps = $ReadOnly<{
-  ...AriaProps,
-  ...EventProps,
-  ...ReactStrictDOMDataProps,
+  // Other
   autoCapitalize?: ?(
     | 'off'
     | 'none'

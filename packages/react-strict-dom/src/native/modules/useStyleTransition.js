@@ -23,11 +23,11 @@ type TransitionProperties = $ReadOnlyArray<{
 
 type AnimatedStyle = { [string]: ?StyleValue | $ReadOnlyArray<mixed> };
 
-function isNumber(num: mixed): boolean %checks {
+function isNumber(num: mixed): num is number {
   return typeof num === 'number';
 }
 
-function isString(str: mixed): boolean %checks {
+function isString(str: mixed): str is string {
   return typeof str === 'string';
 }
 
