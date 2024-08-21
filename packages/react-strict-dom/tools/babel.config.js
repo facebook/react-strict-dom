@@ -7,7 +7,15 @@
 
 const createConfig = ({ modules, target }) => {
   const plugins = ['babel-plugin-syntax-hermes-parser'];
-  const presets = ['@babel/preset-react', '@babel/preset-flow'];
+  const presets = [
+    [
+      '@babel/preset-react',
+      {
+        runtime: 'automatic'
+      }
+    ],
+    '@babel/preset-flow'
+  ];
 
   if (process.env.NODE_ENV === 'test') {
     if (target === 'dom') {

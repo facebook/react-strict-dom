@@ -182,7 +182,7 @@ export function createStrictDOMTextInputComponent<
       }
 
       // $FlowFixMe
-      const element = React.createElement(NativeComponent, nativeProps);
+      const element = <NativeComponent {...nativeProps} />;
 
       return element;
     }

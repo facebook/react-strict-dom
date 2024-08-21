@@ -15,7 +15,7 @@ import path from 'path';
  */
 const config = [
   {
-    external: ['react'],
+    external: ['react', 'react/jsx-runtime'],
     input: require.resolve('../../react-strict-dom/dist/native/index.js'),
     output: {
       file: path.join(__dirname, './build/react-strict-dom.js'),

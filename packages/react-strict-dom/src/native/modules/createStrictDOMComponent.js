@@ -138,7 +138,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
 
       // $FlowFixMe
-      let element = React.createElement(NativeComponent, nativeProps);
+      let element = <NativeComponent {...nativeProps} />;
 
       if (
         nativeProps.children != null &&
