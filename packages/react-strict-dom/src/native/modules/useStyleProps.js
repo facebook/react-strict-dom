@@ -12,7 +12,7 @@ import type { Props as ReactNativeProps } from '../../types/react-native';
 import type { Style as ReactNativeStyle } from '../../types/react-native';
 
 import * as stylex from '../stylex';
-import { PixelRatio, useColorScheme, useWindowDimensions } from 'react-native';
+import { useColorScheme, useWindowDimensions } from 'react-native';
 import { flattenStyle } from './flattenStyle';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePseudoStates } from './usePseudoStates';
@@ -61,9 +61,8 @@ export function useStyleProps(
     writingDirection: dir
   } = options;
 
-  const { height, width } = useWindowDimensions();
+  const { fontScale, height, width } = useWindowDimensions();
   const colorScheme = useColorScheme();
-  const fontScale = PixelRatio.getFontScale();
 
   // These values are already computed
   const {

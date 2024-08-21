@@ -108,4 +108,9 @@ export const View = 'View';
 
 export const useColorScheme = () => 'light';
 
-export const useWindowDimensions = () => ({ width: 2000, height: 1000 });
+export const useWindowDimensions = () => ({
+  fontScale: 1,
+  height: 1000,
+  scale: 1,
+  width: 2000
+});
