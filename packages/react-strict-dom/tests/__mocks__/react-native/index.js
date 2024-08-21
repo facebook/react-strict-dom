@@ -106,4 +106,4 @@ export const useColorScheme = jest.fn().mockReturnValue('light');
 
 export const useWindowDimensions = jest
   .fn()
-  .mockReturnValue({ width: 2000, height: 1000 });
+  .mockReturnValue({ fontScale: 1, height: 1000, scale: 1, width: 2000 });
