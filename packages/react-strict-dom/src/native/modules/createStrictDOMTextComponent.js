@@ -100,7 +100,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
        */
 
       // $FlowFixMe
-      let element = React.createElement(NativeComponent, nativeProps);
+      let element: $FlowFixMe = <NativeComponent {...nativeProps} />;
 
       if (hasElementChildren(nativeProps.children)) {
         if (inheritableStyle != null) {

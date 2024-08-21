@@ -47,7 +47,7 @@ const sharedPlugins = [
 const webConfigs = [
   // OSS build
   {
-    external: ['react', 'react-dom', '@stylexjs/stylex'],
+    external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
     input: require.resolve('../src/dom/index.js'),
     output: {
       file: path.join(__dirname, '../dist/dom/index.js'),
@@ -57,7 +57,7 @@ const webConfigs = [
   },
   // Runtime
   {
-    external: ['react', 'react-dom', '@stylexjs/stylex'],
+    external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
     input: require.resolve('../src/dom/runtime.js'),
     output: {
       file: path.join(__dirname, '../dist/dom/runtime.js'),
@@ -73,7 +73,12 @@ const webConfigs = [
 const nativeConfigs = [
   // OSS build
   {
-    external: ['react', /^react-native.*/, '@stylexjs/stylex'],
+    external: [
+      'react',
+      'react/jsx-runtime',
+      /^react-native.*/,
+      '@stylexjs/stylex'
+    ],
     input: require.resolve('../src/native/index.js'),
     output: {
       file: path.join(__dirname, '../dist/native/index.js'),

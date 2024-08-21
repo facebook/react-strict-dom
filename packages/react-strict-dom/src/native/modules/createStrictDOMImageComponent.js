@@ -110,7 +110,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
       }
 
       // $FlowFixMe
-      const element = React.createElement(NativeComponent, nativeProps);
+      const element = <NativeComponent {...nativeProps} />;
 
       return element;
     }
