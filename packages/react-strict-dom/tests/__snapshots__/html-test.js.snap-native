@@ -120,7 +120,7 @@ exports[`html "a" supports inline event handlers 1`] = `
 `;
 
 exports[`html "article" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -131,7 +131,7 @@ exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "article" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -184,7 +184,7 @@ exports[`html "article" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "article" supports inline event handlers 1`] = `
@@ -222,7 +222,7 @@ exports[`html "article" supports inline event handlers 1`] = `
 `;
 
 exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -233,7 +233,7 @@ exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "aside" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -286,7 +286,7 @@ exports[`html "aside" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "aside" supports inline event handlers 1`] = `
@@ -615,7 +615,7 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 `;
 
 exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -626,7 +626,7 @@ exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = 
 `;
 
 exports[`html "blockquote" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -679,7 +679,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "blockquote" supports inline event handlers 1`] = `
@@ -1134,7 +1134,7 @@ exports[`html "del" supports inline event handlers 1`] = `
 `;
 
 exports[`html "div" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -1145,7 +1145,7 @@ exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "div" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -1198,7 +1198,7 @@ exports[`html "div" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "div" supports inline event handlers 1`] = `
@@ -1335,7 +1335,7 @@ exports[`html "em" supports inline event handlers 1`] = `
 `;
 
 exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -1346,7 +1346,7 @@ exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "fieldset" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -1399,7 +1399,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "fieldset" supports inline event handlers 1`] = `
@@ -1437,7 +1437,7 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
 `;
 
 exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -1448,7 +1448,7 @@ exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "footer" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -1501,7 +1501,7 @@ exports[`html "footer" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "footer" supports inline event handlers 1`] = `
@@ -1539,7 +1539,7 @@ exports[`html "footer" supports inline event handlers 1`] = `
 `;
 
 exports[`html "form" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -1550,7 +1550,7 @@ exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "form" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -1603,7 +1603,7 @@ exports[`html "form" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "form" supports inline event handlers 1`] = `
@@ -2253,7 +2253,7 @@ exports[`html "h6" supports inline event handlers 1`] = `
 `;
 
 exports[`html "header" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   role="header"
   style={
@@ -2265,7 +2265,7 @@ exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "header" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -2318,7 +2318,7 @@ exports[`html "header" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "header" supports inline event handlers 1`] = `
@@ -2357,7 +2357,7 @@ exports[`html "header" supports inline event handlers 1`] = `
 `;
 
 exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -2371,7 +2371,7 @@ exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "hr" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -2427,7 +2427,7 @@ exports[`html "hr" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "hr" supports inline event handlers 1`] = `
@@ -3111,7 +3111,7 @@ exports[`html "label" supports inline event handlers 1`] = `
 `;
 
 exports[`html "main" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -3122,7 +3122,7 @@ exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "main" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3175,7 +3175,7 @@ exports[`html "main" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "main" supports inline event handlers 1`] = `
@@ -3213,7 +3213,7 @@ exports[`html "main" supports inline event handlers 1`] = `
 `;
 
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -3224,7 +3224,7 @@ exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "nav" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3277,7 +3277,7 @@ exports[`html "nav" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "nav" supports inline event handlers 1`] = `
@@ -3315,7 +3315,7 @@ exports[`html "nav" supports inline event handlers 1`] = `
 `;
 
 exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -3326,7 +3326,7 @@ exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "ol" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3379,7 +3379,7 @@ exports[`html "ol" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "ol" supports inline event handlers 1`] = `
@@ -3417,7 +3417,7 @@ exports[`html "ol" supports inline event handlers 1`] = `
 `;
 
 exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -3428,7 +3428,7 @@ exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "optgroup" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3481,7 +3481,7 @@ exports[`html "optgroup" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "optgroup" supports inline event handlers 1`] = `
@@ -3920,7 +3920,7 @@ exports[`html "s" supports inline event handlers 1`] = `
 `;
 
 exports[`html "section" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -3931,7 +3931,7 @@ exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "section" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -3984,7 +3984,7 @@ exports[`html "section" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "section" supports inline event handlers 1`] = `
@@ -4022,7 +4022,7 @@ exports[`html "section" supports inline event handlers 1`] = `
 `;
 
 exports[`html "select" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -4033,7 +4033,7 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "select" supports additional select attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -4044,7 +4044,7 @@ exports[`html "select" supports additional select attributes 1`] = `
 `;
 
 exports[`html "select" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -4097,7 +4097,7 @@ exports[`html "select" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "select" supports inline event handlers 1`] = `
@@ -4750,7 +4750,7 @@ exports[`html "u" supports inline event handlers 1`] = `
 `;
 
 exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {
@@ -4761,7 +4761,7 @@ exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 `;
 
 exports[`html "ul" supports global attributes 1`] = `
-<ViewNativeComponent
+<View
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
   accessibilityLabelledBy={
@@ -4814,7 +4814,7 @@ exports[`html "ul" supports global attributes 1`] = `
   >
     children
   </Text>
-</ViewNativeComponent>
+</View>
 `;
 
 exports[`html "ul" supports inline event handlers 1`] = `
@@ -4852,7 +4852,7 @@ exports[`html "ul" supports inline event handlers 1`] = `
 `;
 
 exports[`html temporary data-* props support 1`] = `
-<ViewNativeComponent
+<View
   experimental_layoutConformance="strict"
   style={
     {

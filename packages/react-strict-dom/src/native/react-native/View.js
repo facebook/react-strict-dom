@@ -7,5 +7,6 @@
  * @flow strict-local
  */
 
-import ViewNativeComponent from 'react-native/Libraries/Components/View/ViewNativeComponent';
-export { ViewNativeComponent as View };
+//import ViewNativeComponent from 'react-native/Libraries/Components/View/ViewNativeComponent';
+//export { ViewNativeComponent as View };
+export { View } from 'react-native';
