@@ -625,12 +625,18 @@ export function props(
       nextStyle.alignContent = nextStyle.alignContent ?? styleValue;
       nextStyle.justifyContent = nextStyle.justifyContent ?? styleValue;
     }
-    // experimental styles
+    // boxShadow
     else if (styleProp === 'boxShadow') {
+      nextStyle.boxShadow = styleValue;
       nextStyle.experimental_boxShadow = styleValue;
-    } else if (styleProp === 'filter') {
+    }
+    // filter
+    else if (styleProp === 'filter') {
+      nextStyle.filter = styleValue;
       nextStyle.experimental_filter = styleValue;
-    } else if (styleProp === 'mixBlendMode') {
+    }
+    // experimental styles
+    else if (styleProp === 'mixBlendMode') {
       nextStyle.experimental_mixBlendMode = styleValue;
     }
     // Everything else
