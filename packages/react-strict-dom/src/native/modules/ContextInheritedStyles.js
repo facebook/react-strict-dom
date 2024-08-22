@@ -34,7 +34,17 @@ export function ProvideInheritedStyles(
 ): React$MixedElement {
   const { children, value } = props;
   const inheritedStyles = useInheritedStyles();
-  const flatStyle = flattenStyle([inheritedStyles as ?Style, value as ?Style]);
+  let flatStyle;
+  if (
+    value == null ||
+    (typeof value === 'object' && Object.keys(value).length === 0)
+  ) {
+    flatStyle = inheritedStyles;
+  } else if (inheritedStyles === defaultContext) {
+    flatStyle = value;
+  } else {
+    flatStyle = flattenStyle([inheritedStyles as ?Style, value as ?Style]);
+  }
 
   return (
     <ContextInheritedStyles.Provider children={children} value={flatStyle} />
