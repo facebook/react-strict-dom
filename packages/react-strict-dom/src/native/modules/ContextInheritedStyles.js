@@ -10,7 +10,9 @@
 import type { Style } from '../../types/styles';
 
 import * as React from 'react';
+import { useMemo, useState } from 'react';
 import { flattenStyle } from './flattenStyle';
+import { shallowEqual } from './shallowEqual';
 
 type Value = Style;
 
@@ -34,10 +36,35 @@ export function ProvideInheritedStyles(
 ): React$MixedElement {
   const { children, value } = props;
   const inheritedStyles = useInheritedStyles();
-  const flatStyle = flattenStyle([inheritedStyles as ?Style, value as ?Style]);
+  const flatStyle = useMemo(() => {
+    if (
+      value == null ||
+      (typeof value === 'object' && Object.keys(value).length === 0)
+    ) {
+      return inheritedStyles;
+    } else if (inheritedStyles === defaultContext) {
+      return value;
+    } else {
+      return flattenStyle([inheritedStyles as ?Style, value as ?Style]);
+    }
+  }, [inheritedStyles, value]);
+
+  const [cachedFlatStyle, setCachedFlatStyle] = useState(flatStyle);
+
+  if (
+    flatStyle !== cachedFlatStyle &&
+    !shallowEqual(flatStyle, cachedFlatStyle)
+  ) {
+    // this functions as a local useMemo here, so that we only re-render children
+    // if the actual *values* of the styles have changed
+    setCachedFlatStyle(flatStyle);
+  }
 
   return (
-    <ContextInheritedStyles.Provider children={children} value={flatStyle} />
+    <ContextInheritedStyles.Provider
+      children={children}
+      value={cachedFlatStyle}
+    />
   );
 }
 
