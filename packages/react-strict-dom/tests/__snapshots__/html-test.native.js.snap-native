@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -18,11 +18,11 @@ exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
   >
     text
   </Text>
-</View>
+</ViewNativeComponent>
 `;
 
 exports[`<html.*> block layout override of flex layout: block layout override of flex 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -37,7 +37,7 @@ exports[`<html.*> block layout override of flex layout: block layout override of
     }
   }
 >
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -45,11 +45,11 @@ exports[`<html.*> block layout override of flex layout: block layout override of
       }
     }
   />
-</View>
+</ViewNativeComponent>
 `;
 
 exports[`<html.*> default block layout: block layout 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -60,7 +60,7 @@ exports[`<html.*> default block layout: block layout 1`] = `
 `;
 
 exports[`<html.*> default flex layout: flex layout 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -75,7 +75,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     }
   }
 >
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -84,7 +84,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
       }
     }
   />
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -93,7 +93,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
       }
     }
   />
-</View>
+</ViewNativeComponent>
 `;
 
 exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
@@ -675,7 +675,7 @@ exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
 `;
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -698,7 +698,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 `;
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -723,7 +723,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 `;
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -748,7 +748,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 `;
 
 exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -830,7 +830,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 `;
 
 exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -1517,7 +1517,7 @@ exports[`<html.*> style polyfills "transition" properties  width transition: sta
 `;
 
 exports[`<html.*> style polyfills inherited styles 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -1526,7 +1526,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     }
   }
 >
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -1564,12 +1564,12 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
         }
       }
     />
-  </View>
-</View>
+  </ViewNativeComponent>
+</ViewNativeComponent>
 `;
 
 exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1`] = `
-<View
+<ViewNativeComponent
   experimental_layoutConformance="strict"
   style={
     {
@@ -1577,7 +1577,7 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
     }
   }
 >
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -1596,8 +1596,8 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
     >
       text
     </Text>
-  </View>
-</View>
+  </ViewNativeComponent>
+</ViewNativeComponent>
 `;
 
 exports[`<html.*> style polyfills inherited themes 1`] = `
@@ -1636,7 +1636,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       }
     }
   />,
-  <View
+  <ViewNativeComponent
     experimental_layoutConformance="strict"
     style={
       {
@@ -1666,7 +1666,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         }
       }
     />
-    <View
+    <ViewNativeComponent
       experimental_layoutConformance="strict"
       style={
         {
@@ -1696,8 +1696,8 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
           }
         }
       />
-    </View>
-  </View>,
+    </ViewNativeComponent>
+  </ViewNativeComponent>,
   <Text
     style={
       {

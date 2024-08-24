@@ -7,7 +7,5 @@
  * @flow strict-local
  */
 
-export { Text } from './Text';
-export { TextAncestorContext } from './TextAncestorContext';
-export { TextInput } from './TextInput';
-export { ViewNativeComponent } from './ViewNativeComponent';
+import ViewNativeComponent from 'react-native/Libraries/Components/View/ViewNativeComponent';
+export { ViewNativeComponent };

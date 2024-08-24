@@ -11,7 +11,7 @@ import type { StrictProps } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Pressable } from 'react-native';
-import { View } from '../react-native';
+import { ViewNativeComponent, TextAncestorContext } from '../react-native';
 
 import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
@@ -30,8 +30,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 ): React.AbstractComponent<P, T> {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent = tagName === 'button' ? Pressable : View;
+      let NativeComponent =
+        tagName === 'button' ? Pressable : ViewNativeComponent;
       const elementRef = useStrictDOMElement<T>({ tagName });
+      const hasTextAncestor = React.useContext(TextAncestorContext);
 
       /**
        * Resolve global HTML and style props
@@ -45,7 +47,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           withTextStyle: false
         });
 
-      if (nativeProps.onPress != null && NativeComponent === View) {
+      if (
+        nativeProps.onPress != null &&
+        NativeComponent === ViewNativeComponent
+      ) {
         NativeComponent = Pressable;
       }
 
@@ -120,7 +125,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
-        if (NativeComponent === View) {
+        if (NativeComponent === ViewNativeComponent) {
           NativeComponent = Animated.View;
         }
         if (NativeComponent === Pressable) {
@@ -132,7 +137,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        * Construct tree
        */
 
-      if (NativeComponent === View) {
+      if (NativeComponent === ViewNativeComponent) {
         // enable W3C flexbox layout
         nativeProps.experimental_layoutConformance = 'strict';
       }
@@ -168,6 +173,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
             />
           );
         }
+      }
+
+      if (hasTextAncestor) {
+        return (
+          <TextAncestorContext.Provider value={false}>
+            {element}
+          </TextAncestorContext.Provider>
+        );
       }
 
       return element;

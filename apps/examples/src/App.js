@@ -93,7 +93,15 @@ function Shell(): React.MixedElement {
       <html.div style={egStyles.div}>
         <ExampleBlock title="HTML elements">
           <html.div>Text inside div (kind of) works</html.div>
+          <html.span>
+            span inside div inside span...
+            <html.div style={styles.textAncestorTest}>
+              <html.span>works</html.span>
+            </html.div>
+          </html.span>
+
           <html.hr />
+
           <html.div data-testid="testid" role="none">
             div
           </html.div>
@@ -770,5 +778,10 @@ const styles = css.create({
     '::placeholder': {
       color: tokens.inputPlaceholderColor
     }
+  },
+  textAncestorTest: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'black'
   }
 });
