@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.25 (Aug 27, 2024)
+
+### Fixes
+
+* Build RSD using jsx automatic runtime.
+* [Native] ~2% reduction in render time by replacing `View` with `ViewNativeComponent`.
+* [Native] ~5% reduction in render time by separating polyfill logic required by specific native components.
+* [Native] Big improvement to update performance by prevent avoidable re-renders of `html.div`.
+
 ## 0.0.24 (Aug 16, 2024)
 
 ### Fixes
