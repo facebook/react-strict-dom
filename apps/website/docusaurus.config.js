@@ -72,6 +72,12 @@ const config = {
           content:
             'Create cross-platform, platform-native interfaces using web APIs.'
         }
+        /*
+        {
+          name: 'og:image',
+          content: '',
+        },
+        */
       ],
       navbar: {
         title: 'React Strict DOM',
@@ -80,6 +86,12 @@ const config = {
           src: './img/logo.svg'
         },
         items: [
+          {
+            label: 'API',
+            position: 'left',
+            sidebarId: 'apiSidebar',
+            type: 'docSidebar'
+          },
           {
             label: 'Contribute',
             position: 'left',

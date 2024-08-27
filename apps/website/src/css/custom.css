@@ -17,6 +17,7 @@
   --ifm-h3-font-size: 1.25rem;  --ifm-heading-font-family: "Optimistic Display", -apple-system, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --ifm-hero-text-color: unset;
   --ifm-leading-desktop: 1.25;
+  --ifm-table-cell-padding: 0.5rem 0.75rem;
   --ifm-toc-border-color: transparent;
 }
 
@@ -25,6 +26,24 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-color-primary: #58C4DC;
   --ifm-toc-border-color: transparent;
+}
+
+table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table th {
+  text-align: start;
+}
+
+table th:first-child {
+  width: 50%;
+}
+
+table tr:nth-child(2n) {
+  background-color: transparent;
 }
 
 .button--outline {
