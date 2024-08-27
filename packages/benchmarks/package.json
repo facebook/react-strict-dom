@@ -5,6 +5,7 @@
   "description": "Benchmarks for React Strict DOM.",
   "license": "MIT",
   "scripts": {
+    "compare": "node compare.js",
     "perf": "NODE_ENV=production rollup --config ./perf/rollup.config.mjs && node --jitless perf/run.js",
     "size": "node size/run.js"
   },
