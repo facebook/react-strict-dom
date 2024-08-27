@@ -28,10 +28,26 @@ export function flattenStyle(
 
   const flatArray = style.flat(Infinity);
   const result: { ...Style } = {};
-  for (let i = 0; i < flatArray.length; i++) {
-    const style = flatArray[i];
+  for (const style of flatArray) {
     if (style != null && typeof style === 'object') {
-      Object.assign(result, style);
+      for (const [key, val] of Object.entries(style)) {
+        if (
+          (key.startsWith('@') || key.startsWith(':')) &&
+          val != null &&
+          typeof val === 'object'
+        ) {
+          result[key] = Object.assign(
+            {},
+            result[key] != null && typeof result[key] === 'object'
+              ? result[key]
+              : null,
+            val
+          );
+        } else {
+          // $FlowFixMe
+          result[key] = val;
+        }
+      }
     }
   }
   return result;

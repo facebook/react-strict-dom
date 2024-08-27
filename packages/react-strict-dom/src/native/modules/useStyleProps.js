@@ -79,7 +79,10 @@ export function useStyleProps(
     textIndent: inheritedTextIndent,
     textTransform: inheritedTextTransform,
     whiteSpace: inheritedWhiteSpace,
-    writingDirection: inheritedWritingDirection
+    writingDirection: inheritedWritingDirection,
+    textDecorationLine: inheritedTextDecorationLine,
+    textDecorationStyle: inheritedTextDecorationStyle,
+    textDecorationColor: inheritedTextDecorationColor
   } = useInheritedStyles();
 
   const flatStyle = flattenStyle(style);
@@ -152,6 +155,9 @@ export function useStyleProps(
     textTransform,
     whiteSpace,
     writingDirection,
+    textDecorationLine,
+    textDecorationStyle,
+    textDecorationColor,
     ...viewStyle
   } = styleProps.style;
 
@@ -171,7 +177,10 @@ export function useStyleProps(
     ['textIndent', textIndent, inheritedTextIndent],
     ['textTransform', textTransform, inheritedTextTransform],
     ['whiteSpace', whiteSpace, inheritedWhiteSpace],
-    ['writingDirection', writingDirection, inheritedWritingDirection]
+    ['writingDirection', writingDirection, inheritedWritingDirection],
+    ['textDecorationLine', textDecorationLine, inheritedTextDecorationLine],
+    ['textDecorationStyle', textDecorationStyle, inheritedTextDecorationStyle],
+    ['textDecorationColor', textDecorationColor, inheritedTextDecorationColor]
   ].forEach(([key, value, inheritedValue]) => {
     let val = value;
     if (
