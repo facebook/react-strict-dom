@@ -35,7 +35,7 @@
     "node": true
   },
   "ignorePatterns": [
-    "apps",
+    ".docusaurus",
     "build",
     "coverage",
     "dist",

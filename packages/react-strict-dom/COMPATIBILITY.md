@@ -626,7 +626,30 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | top | ✅ | ✅ | |
 | touchAction | ❌ | ❌ | |
 | transform | ✅ | ✅ | |
-| transform: translate % | ✅ | ✅ | |
+| transform: matrix | ✅ | ✅ | |
+| transform: matrix3d | ❌ | ❌ | |
+| transform: perspective | ✅ | ✅ | |
+| transform: rotate | ✅ | ✅ | |
+| transform: rotate3d | ❌ | ❌ | |
+| transform: rotateX | ✅ | ✅ | |
+| transform: rotateY | ✅ | ✅ | |
+| transform: rotateZ | ✅ | ✅ | |
+| transform: scale | ✅ | ✅ | |
+| transform: scale3d | ❌ | ❌ | |
+| transform: scaleX | ✅ | ✅ | |
+| transform: scaleY | ✅ | ✅ | |
+| transform: scaleZ | ❌ | ❌ | |
+| transform: skew | ✅ | ✅ | |
+| transform: skewX | ✅ | ✅ | |
+| transform: skewY | ✅ | ✅ | |
+| transform: translate | ❌ | ❌ | |
+| transform: translate3d | ❌ | ❌ | |
+| transform: translateX | ✅ | ✅ | |
+| transform: translateY | ✅ | ✅ | |
+| transform: translateZ | ❌ | ❌ | |
+| transform: skew | ❌ | ❌ | |
+| transform: skewX | ✅ | ✅ | |
+| transform: skewY | ✅ | ✅ | |
 | transformOrigin | ✅ | ✅ | |
 | transformStyle | ❌ | ❌ | |
 | transitionDelay | 🟡 | 🟡 | |
