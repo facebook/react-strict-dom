@@ -56,4 +56,4 @@ Aiming for native compatibility with the web shifts the burden of developing new
 
 ## Results
 
-Meta has been able to automatically codemod large amounts of existing React DOM + StyleX web code onto React Strict DOM, without major modifications or loss of functionality on web. By using React Strict DOM the web component library now forms the basis for a consistent, high-quality Facebook and Instagram experience on VR.
+Meta has been able to automatically codemod large amounts of existing React DOM + StyleX web code onto React Strict DOM, without major modifications or loss of functionality on web. By using React Strict DOM the web component library now forms the basis for a consistent, high-quality [Facebook and Instagram experience on VR](https://engineering.fb.com/2024/10/02/android/react-at-meta-connect-2024/).

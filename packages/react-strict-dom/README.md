@@ -9,69 +9,31 @@
 
 **React Strict DOM** (RSD) standardizes the development of styled React components for web and native. The goal of RSD is to improve the speed and efficiency of React development without compromising on performance, reliability, or quality. Building with RSD is helping teams at Meta ship features faster, to more platforms, with fewer engineers.
 
-## Use
+## Documentation
+
+Please refer to the [React Strict DOM website](https://facebook.github.io/react-strict-dom/) for detailed documentation. The API section includes detailed compatibility tables for native. Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
+
+## Quick start
 
 **Install**
 
 ```
-npm install react-strict-dom
+npm install react react-strict-dom
 ```
 
-**Import**
-
-```js
-import { css, html } from 'react-strict-dom';
-```
-
-**For web**
-
-In additional to installing `react-strict-dom`, please install the following packages:
+For web:
 
 ```
-npm install react react-dom
-npm install --dev @stylexjs/babel-plugin
+npm install react-dom
 ```
 
-Configure the `importSources` option for the StyleX Babel plugin or equivalent bundler integration.
-
-Include the RSD optimizing Babel plugin to ensure there is **no runtime performance overhead** relative to Meta's baseline of using [React DOM](https://react.dev/) with [StyleX](https://stylexjs.com/).
-
-```js
-// babel.config.dom.js
-
-import rsdPlugin from 'react-strict-dom/babel';
-import styleXBabelPlugin from '@stylexjs/babel-plugin';
-
-module.exports = function () {
-  return {
-    plugins: [
-      rsdPlugin,
-      styleXBabelPlugin({
-        importSources: [
-          { from: 'react-strict-dom', as: 'css '}
-        ]
-      })
-    ]
-  }
-};
-```
-
-Options for the plugin:
-
-* `debug: boolean` (default: `false`). If set to `true` the plugin adds a `data-react-src` attribute and populates it with sourceMap information about the filename and line-number responsible for rendering the element.
-
-
-**For native**
-
-In additional to installing `react-strict-dom`, please install the following packages:
+For native:
 
 ```
-npm install react react-native
+npm install react-native
 ```
 
-On native platforms, RSD builds on the design goals of the ["React DOM for Native proposal"](https://github.com/react-native-community/discussions-and-proposals/pull/496) by polyfilling a large number of standard APIs, and by leveraging new web capabilities coming to React Native.
-
-## Examples
+## Example
 
 Styles are passed to elements using the `style` prop. The `style` prop accepts an array of static and dynamic styles.
 
@@ -102,37 +64,6 @@ export default function App(props) {
       ]}
     />
   );
-}
-```
-
-## API
-
-### `css`
-
-Cross-platform CSS styling that conforms to the [StyleX](https://stylexjs.com) API.
-
-```js
-import { css } from 'react-strict-dom'
-
-const styles = css.create({
-  root: { ... }
-})
-```
-
-### `html`
-
-Cross-platform HTML components. All elements include a minimal style reset to render with no default padding or margin. Text elements inherit font styles and headings are all the same size.
-
-```jsx
-import { html } from 'react-strict-dom'
-
-function App() {
-  return (
-    <html.main>
-      <html.h1>h1</html.h1>
-      <html.div />
-    </html.main>
-  )
 }
 ```
 
@@ -186,10 +117,6 @@ declare type Stringish = string | Fbt;
 ```
 
 This is the same approach used by React Native, so if you are already re-declaring `Stringish` it will work out-of-the-box with RSD.
-
-## Compatibility
-
-Please see [COMPATIBILITY.md](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md) for a detailed look at API compatibility for native.  Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
 
 ## License
 
