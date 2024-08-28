@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
-    "@stylexjs/babel-plugin": "^0.7.0",
+    "@stylexjs/babel-plugin": "^0.7.5",
     "expo": "^51.0.18",
     "expo-build-properties": "~0.12.3",
     "expo-status-bar": "~1.12.1",
