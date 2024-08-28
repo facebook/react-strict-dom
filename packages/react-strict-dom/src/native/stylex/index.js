@@ -213,6 +213,10 @@ function processStyle(
           propName !== 'letterSpacing' &&
           propName !== 'lineHeight' &&
           propName !== 'textAlign' &&
+          propName !== 'textDecorationColor' &&
+          propName !== 'textDecorationLine' &&
+          propName !== 'textDecorationStyle' &&
+          propName !== 'textAlign' &&
           propName !== 'textIndent' &&
           propName !== 'textTransform' &&
           propName !== 'whiteSpace'
