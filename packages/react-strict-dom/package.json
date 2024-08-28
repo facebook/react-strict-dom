@@ -19,7 +19,7 @@
     "prebuild": "npm run clean && generate-types -i src/ -o dist"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.7.0",
+    "@stylexjs/stylex": "^0.7.5",
     "css-mediaquery": "0.1.2",
     "postcss-value-parser": "^4.1.0"
   },
@@ -29,7 +29,7 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
-    "@stylexjs/babel-plugin": "^0.7.0",
+    "@stylexjs/babel-plugin": "^0.7.5",
     "rollup": "^4.21.1",
     "react-test-renderer": "^18.2.0"
   },
