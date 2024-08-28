@@ -48,8 +48,8 @@
     "prettier-plugin-hermes-parser": "^0.20.1"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
+    "node": ">=20.11.0",
+    "npm": ">=10.0.0"
   },
   "workspaces": [
     "apps/*",

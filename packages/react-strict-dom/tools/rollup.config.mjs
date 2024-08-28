@@ -10,9 +10,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import path from 'path';
 
+const __dirname = import.meta.dirname;
+
 const babelPlugin = babel({
   babelHelpers: 'bundled',
-  configFile: require.resolve('./babel.config.js')
+  configFile: path.resolve(__dirname, 'rollup.babel.mjs')
 });
 
 function ossLicensePlugin() {
@@ -37,8 +39,7 @@ const sharedPlugins = [
   babelPlugin,
   ossLicensePlugin(),
   resolve(),
-  // commonjs packages: styleq and css-mediaquery
-  commonjs()
+  commonjs(), // commonjs packages: styleq and css-mediaquery
 ];
 
 /**
@@ -48,7 +49,7 @@ const webConfigs = [
   // OSS build
   {
     external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
-    input: require.resolve('../src/dom/index.js'),
+    input: path.join(__dirname, '../src/dom/index.js'),
     output: {
       file: path.join(__dirname, '../dist/dom/index.js'),
       format: 'es'
@@ -58,7 +59,7 @@ const webConfigs = [
   // Runtime
   {
     external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
-    input: require.resolve('../src/dom/runtime.js'),
+    input: path.join(__dirname, '../src/dom/runtime.js'),
     output: {
       file: path.join(__dirname, '../dist/dom/runtime.js'),
       format: 'es'
@@ -79,7 +80,7 @@ const nativeConfigs = [
       /^react-native.*/,
       '@stylexjs/stylex'
     ],
-    input: require.resolve('../src/native/index.js'),
+    input: path.join(__dirname, '../src/native/index.js'),
     output: {
       file: path.join(__dirname, '../dist/native/index.js'),
       format: 'es'

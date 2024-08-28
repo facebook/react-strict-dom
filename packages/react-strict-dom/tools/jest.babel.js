@@ -62,7 +62,7 @@ function createPreset(opts) {
     : createConfig({ ...opts, modules: false });
 }
 
-module.exports = function (api, opts) {
+module.exports = function babelConfig(api, opts) {
   if (api) {
     api.cache(true);
   }
