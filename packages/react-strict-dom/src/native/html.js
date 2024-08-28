@@ -39,8 +39,7 @@ const styles = stylex.create({
     fontStyle: 'italic'
   },
   a: {
-    color: 'blue',
-    textDecorationLine: 'underline'
+    color: 'blue'
   },
   button: {
     borderWidth: 1
@@ -85,7 +84,7 @@ const headingProps = {
 export const a: React$AbstractComponent<
   StrictReactDOMAnchorProps,
   HTMLAnchorElement
-> = createStrictText('a', { style: styles.a });
+> = createStrictText('a', { style: [styles.a, styles.underline] });
 
 /**
  * "article" (block)

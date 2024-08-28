@@ -201,6 +201,9 @@ describe('<html.*>', () => {
           letterSpacing: '10px',
           lineHeight: 2,
           textAlign: 'right',
+          textDecorationColor: 'red',
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
           textIndent: '10px',
           textTransform: 'uppercase',
           whiteSpace: 'pre'
@@ -385,7 +388,7 @@ describe('<html.*>', () => {
       expect(rootElement.props.style.maxHeight).toBe(2 * 2 * 16);
     });
 
-    test('"inherit" keyword', () => {
+    test('"inherit" and "unset" keyword', () => {
       const styles = css.create({
         root: {
           backgroundColor: 'red',
@@ -400,6 +403,9 @@ describe('<html.*>', () => {
           letterSpacing: '2px',
           lineHeight: '30px',
           textAlign: 'center',
+          textDecorationColor: 'red',
+          textDecorationLine: 'dashed',
+          textDecorationStyle: 'solid',
           textIndent: '10px',
           textTransform: 'uppercase',
           whiteSpace: 'pre'
@@ -420,6 +426,9 @@ describe('<html.*>', () => {
           letterSpacing: 'inherit',
           lineHeight: 'inherit',
           textAlign: 'inherit',
+          textDecorationColor: 'inherit',
+          textDecorationLine: 'inherit',
+          textDecorationStyle: 'inherit',
           textIndent: 'inherit',
           textTransform: 'inherit',
           whiteSpace: 'inherit'
@@ -437,6 +446,9 @@ describe('<html.*>', () => {
           letterSpacing: 'unset',
           lineHeight: 'unset',
           textAlign: 'unset',
+          textDecorationColor: 'unset',
+          textDecorationLine: 'unset',
+          textDecorationStyle: 'unset',
           textIndent: 'unset',
           textTransform: 'unset',
           whiteSpace: 'unset'
@@ -474,14 +486,18 @@ describe('<html.*>', () => {
       expect(getStyle(span).letterSpacing).toBe(2);
       expect(getStyle(span).lineHeight).toBe(30);
       expect(getStyle(span).textAlign).toBe('center');
+      expect(getStyle(span).textDecorationColor).toBe('red');
+      expect(getStyle(span).textDecorationLine).toBe('dashed');
+      expect(getStyle(span).textDecorationStyle).toBe('solid');
       //expect(getStyle(span).textIndent).toBe('10px');
       expect(getStyle(span).textTransform).toBe('uppercase');
       //expect(getStyle(span).whiteSpace).toBe('pre');
       // h1 has default fontSize and fontWeight
       expect(getStyle(h1).fontSize).toBe(32);
       expect(getStyle(h1).fontWeight).toBe('300');
-      // a has default color
+      // a has default color and textDecorationLine
       expect(getStyle(a).color).toBe('green');
+      expect(getStyle(a).textDecorationLine).toBe('dashed');
       // check that pseudo-states still work
       act(() => {
         span.props.onPointerEnter();
@@ -504,18 +520,21 @@ describe('<html.*>', () => {
       expect(getStyle(span).letterSpacing).toBe(2);
       expect(getStyle(span).lineHeight).toBe(30);
       expect(getStyle(span).textAlign).toBe('center');
+      expect(getStyle(span).textDecorationColor).toBe('red');
+      expect(getStyle(span).textDecorationLine).toBe('dashed');
+      expect(getStyle(span).textDecorationStyle).toBe('solid');
       //expect(getStyle(span).textIndent).toBe('10px');
       expect(getStyle(span).textTransform).toBe('uppercase');
       //expect(getStyle(span).whiteSpace).toBe('pre');
       // h1 has default fontSize and fontWeight
       expect(getStyle(h1).fontSize).toBe(32);
       expect(getStyle(h1).fontWeight).toBe('300');
-      // a has default color
+      // a has default color and textDecorationLine
       expect(getStyle(a).color).toBe('green');
+      expect(getStyle(a).textDecorationLine).toBe('dashed');
     });
 
     test.skip('"initial" keyword', () => {});
-    test.skip('"unset" keyword', () => {});
 
     describe('"transition" properties ', () => {
       const { Animated, Easing } = require('react-native');

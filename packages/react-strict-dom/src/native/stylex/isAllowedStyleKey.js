@@ -146,8 +146,8 @@ const allowedStyleKeySet = new Set<string>([
   'right',
   'rowGap',
   'textAlign',
-  'textDecorationLine',
   'textDecorationColor', // iOS Only
+  'textDecorationLine',
   'textDecorationStyle', // iOS Only
   'textShadow',
   'textTransform',
