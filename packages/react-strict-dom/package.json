@@ -11,7 +11,7 @@
     "!**/__tests__"
   ],
   "scripts": {
-    "build": "rollup --config ./tools/rollup.config.js",
+    "build": "rollup --config ./tools/rollup.config.mjs",
     "clean": "del-cli \"./build/*\" \"./dist/*\"",
     "dev": "npm run build -- --watch",
     "jest": "jest --config ./tools/jest.config.js",
@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
     "@stylexjs/babel-plugin": "^0.7.0",
-    "rollup": "^2.75.4",
+    "rollup": "^4.21.1",
     "react-test-renderer": "^18.2.0"
   },
   "peerDependencies": {
@@ -39,7 +39,7 @@
     "react-native": ">=0.75.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.11.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/facebook/react-strict-dom/tree/main/packages/react-strict-dom",

@@ -8,9 +8,9 @@ Meta has a [bounty program](https://www.facebook.com/whitehat/) for the safe dis
 
 ## Getting started
 
-Visit the issue tracker to find a list of open issues that need attention.
+**Make sure you have node@>=20.11 and npm@>=10 installed.**
 
-**Make sure you have npm@>=9 and node@>=18 installed.**
+Visit the issue tracker to find a list of open issues that need attention.
 
 First, clone your fork of the `react-strict-dom` repo:
 

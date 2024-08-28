@@ -10,13 +10,15 @@ import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import path from 'path';
 
+const __dirname = import.meta.dirname;
+
 /**
  * Build for Node.js benchmarks
  */
 const config = [
   {
     external: ['react', 'react/jsx-runtime'],
-    input: require.resolve('../../react-strict-dom/dist/native/index.js'),
+    input: path.join(__dirname, '../../react-strict-dom/dist/native/index.js'),
     output: {
       file: path.join(__dirname, './build/react-strict-dom.js'),
       format: 'commonjs'

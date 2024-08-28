@@ -172,7 +172,7 @@ const allowedStyleKeySet = new Set<string>([
   '::placeholder'
 ]);
 
-if (isExperimental) {
+if (isExperimental === true) {
   allowedStyleKeySet.add('boxShadow');
   allowedStyleKeySet.add('filter');
   allowedStyleKeySet.add('mixBlendMode');

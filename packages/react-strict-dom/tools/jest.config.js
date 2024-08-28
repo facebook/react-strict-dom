@@ -7,7 +7,7 @@
 
 'use strict';
 
-const babelConfig = require('./babel.config.js');
+const babelConfig = require('./jest.babel.js');
 
 module.exports = {
   collectCoverageFrom: [
