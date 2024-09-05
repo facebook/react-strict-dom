@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.26 (Sep 05, 2024)
+
+### Fixes
+
+* Bump `react-native@>=0.75.2` and `stylex@0.7.5`.
+* [Native] Allow text-decoration-* styles to be inherited.
+
 ## 0.0.25 (Aug 27, 2024)
 
 ### Fixes
