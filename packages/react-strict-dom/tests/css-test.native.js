@@ -719,6 +719,9 @@ describe('properties: general', () => {
         transform:
           'translate(10px, 20px) translateX(11px) translateY(12px) translateZ(13px) translate3d(20px, 30px, 40px)'
       },
+      translatePercentage: {
+        transform: 'translateX(10%) translateY(20%)'
+      },
       mixed: {
         transform: `
           rotateX(1deg) rotateY(2deg) rotateZ(3deg) rotate3d(1deg, 2deg, 3deg)
@@ -742,6 +745,9 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.translate)).toMatchSnapshot(
       'translate'
     );
+    expect(
+      css.props.call(mockOptions, styles.translatePercentage)
+    ).toMatchSnapshot('translate (percentages)');
     expect(css.props.call(mockOptions, styles.rotate)).toMatchSnapshot(
       'rotate'
     );

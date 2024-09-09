@@ -734,6 +734,21 @@ exports[`properties: general transform: skew 1`] = `
 }
 `;
 
+exports[`properties: general transform: translate (percentages) 1`] = `
+{
+  "style": {
+    "transform": [
+      {
+        "translateX": "10%",
+      },
+      {
+        "translateY": "20%",
+      },
+    ],
+  },
+}
+`;
+
 exports[`properties: general transform: translate 1`] = `
 {
   "style": {

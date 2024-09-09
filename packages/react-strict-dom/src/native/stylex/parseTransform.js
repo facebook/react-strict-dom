@@ -10,7 +10,7 @@
 import type { Transform } from '../../types/react-native';
 
 const transformRegex1 =
-  /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px)?\)/;
+  /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px|%)?\)/;
 const transformRegex2 = /(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/;
 const transformRegex3 = /matrix\((.*)\)/;
 
@@ -32,6 +32,8 @@ export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
     if (match != null) {
       const t = match[1];
       const value = parseFloat(match[2]);
+      const unit = match[3];
+
       if (isNaN(value)) {
         continue;
       }
@@ -46,9 +48,13 @@ export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
       } else if (t === 'scaleZ') {
         parsedTransforms.push({ scaleZ: value });
       } else if (t === 'translateX') {
-        parsedTransforms.push({ translateX: value });
+        parsedTransforms.push({
+          translateX: unit === '%' ? value + unit : value
+        });
       } else if (t === 'translateY') {
-        parsedTransforms.push({ translateY: value });
+        parsedTransforms.push({
+          translateY: unit === '%' ? value + unit : value
+        });
       }
       continue;
     }
