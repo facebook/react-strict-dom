@@ -127,8 +127,8 @@ type Transform =
   | $ReadOnly<{ scaleX: number }>
   | $ReadOnly<{ scaleY: number }>
   | $ReadOnly<{ scaleZ: number }>
-  | $ReadOnly<{ translateX: number }>
-  | $ReadOnly<{ translateY: number }>
+  | $ReadOnly<{ translateX: number | string }>
+  | $ReadOnly<{ translateY: number | string }>
   | $ReadOnly<{ skewX: string }>
   | $ReadOnly<{ skewY: string }>;
 
