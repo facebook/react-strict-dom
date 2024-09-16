@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.27 (Sep 16, 2024)
+
+### New features
+
+* [Native] Allow use of `outline-*` styles on native (new React Native support).
+
+### Fixes
+
+* [Native] Fix support for `%` translate transforms.
+
 ## 0.0.26 (Sep 05, 2024)
 
 ### Fixes
