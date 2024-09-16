@@ -176,6 +176,10 @@ if (isExperimental === true) {
   allowedStyleKeySet.add('boxShadow');
   allowedStyleKeySet.add('filter');
   allowedStyleKeySet.add('mixBlendMode');
+  allowedStyleKeySet.add('outlineColor');
+  allowedStyleKeySet.add('outlineOffset');
+  allowedStyleKeySet.add('outlineStyle');
+  allowedStyleKeySet.add('outlineWidth');
 }
 
 export function isAllowedStyleKey(key: string): boolean {

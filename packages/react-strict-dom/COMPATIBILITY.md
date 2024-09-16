@@ -580,10 +580,10 @@ Note these APIs can only be accessed using `Node.getRootNode().defaultView`, in 
 | objectFit | 🟡 | 🟡 | |
 | objectPosition | ❌ | ❌ | |
 | opacity | ✅ | ✅ | |
-| outlineColor | ❌ | ❌ | |
-| outlineOffset | ❌ | ❌ | |
-| outlineStyle | ❌ | ❌ | |
-| outlineWidth | ❌ | ❌ | |
+| outlineColor | ✅ | ✅ | |
+| outlineOffset | ✅ | ✅ | |
+| outlineStyle | ✅ | ✅ | |
+| outlineWidth | ✅ | ✅ | |
 | overflow | ✅ | ✅ | |
 | overflowBlock | ❌ | ❌ | |
 | overflowInline | ❌ | ❌ | |

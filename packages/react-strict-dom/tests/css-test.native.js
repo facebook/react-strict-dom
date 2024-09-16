@@ -537,6 +537,18 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.none)).toMatchSnapshot('none');
   });
 
+  test('outlineColor,Offset,Style,Width', () => {
+    const { underTest } = css.create({
+      underTest: {
+        outlineColor: 'red',
+        outlineOffset: '2px',
+        outlineStyle: 'solid',
+        outlineWidth: '3px'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+  });
+
   // multiple values are unsupported
   test('padding with multiple values', () => {
     const { underTest } = css.create({
