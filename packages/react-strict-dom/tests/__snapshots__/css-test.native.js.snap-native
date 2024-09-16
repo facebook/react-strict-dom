@@ -440,6 +440,17 @@ exports[`properties: general objectFit: scaleDown 1`] = `
 }
 `;
 
+exports[`properties: general outlineColor,Offset,Style,Width 1`] = `
+{
+  "style": {
+    "outlineColor": "red",
+    "outlineOffset": 2,
+    "outlineStyle": "solid",
+    "outlineWidth": 3,
+  },
+}
+`;
+
 exports[`properties: general padding with multiple values 1`] = `
 {
   "style": {},
