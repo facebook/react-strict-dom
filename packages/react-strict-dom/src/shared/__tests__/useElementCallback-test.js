@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { act } from 'react-dom/test-utils';
 import { createRoot } from 'react-dom/client';
-import { useElementCallback as useConnectedCallback } from '../src/shared/useElementCallback';
+import { useElementCallback as useConnectedCallback } from '../useElementCallback';
 
 describe('useConnectedCallback', () => {
   let root;
