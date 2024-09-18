@@ -2,9 +2,15 @@
   "name": "react-strict-dom",
   "version": "0.0.27",
   "description": "React Strict DOM",
-  "main": "./dist/dom/index.js",
-  "module": "./dist/dom/index.js",
-  "react-native": "./dist/native/index.js",
+  "exports": {
+    ".": {
+      "react-native": "./dist/native/index.js",
+      "default": "./dist/dom/index.js"
+    },
+    "./babel": "./babel/index.js",
+    "./runtime": "./dist/dom/runtime.js",
+    "./package.json": "./package.json"
+  },
   "sideEffects": false,
   "files": [
     "*",

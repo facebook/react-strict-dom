@@ -20,7 +20,7 @@ function createShortFilename(absolutePath, baseDir = process.cwd()) {
 
 module.exports = function ({ types: t }, options = {}) {
   const packageName = 'react-strict-dom';
-  const packageRuntime = 'react-strict-dom/dist/dom/runtime';
+  const packageRuntime = 'react-strict-dom/runtime';
   const findImportDeclaration = (body, sourceValue) =>
     body.filter(
       (node) =>

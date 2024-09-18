@@ -6,7 +6,7 @@
  */
 
 const stylexPlugin = require('@stylexjs/babel-plugin');
-const rsdPlugin = require('react-strict-dom/babel');
+const reactStrictPlugin = require('react-strict-dom/babel');
 
 function getPlatform(caller) {
   return caller && caller.platform;
@@ -30,7 +30,7 @@ module.exports = function (api) {
   const plugins = [];
 
   if (platform === 'web') {
-    plugins.push([rsdPlugin, { debug: true }]);
+    plugins.push([reactStrictPlugin, { debug: true }]);
     plugins.push([
       stylexPlugin,
       {

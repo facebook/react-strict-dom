@@ -2,7 +2,7 @@
 
 exports[`react-strict-dom/babel [transform] <html.*> elements aliased imports 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
   return <div {..._stylex.props(_defaultStyles.div, styles.root)} />;
@@ -12,7 +12,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements basic element 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
   return <div {..._stylex.props(_defaultStyles.div)} />;
@@ -22,7 +22,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements debug mode 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
   return <div data-react-src="bar/baz.js:5" {..._stylex.props(_defaultStyles.div)} />;
@@ -32,7 +32,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements other props 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
   return <div role="presentation" {..._stylex.props(_defaultStyles.div)}>
@@ -50,7 +50,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements repeated imports 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 import { html as h } from 'react-strict-dom';
 function App() {
@@ -63,7 +63,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: array 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
   return <div {..._stylex.props(_defaultStyles.div, styles.one, styles.two)} />;
@@ -73,7 +73,7 @@ function App() {
 
 exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: simple 1`] = `
 "import * as _stylex from "@stylexjs/stylex";
-import { defaultStyles as _defaultStyles } from "react-strict-dom/dist/dom/runtime";
+import { defaultStyles as _defaultStyles } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
   return <div {..._stylex.props(_defaultStyles.div, styles.one)} />;
