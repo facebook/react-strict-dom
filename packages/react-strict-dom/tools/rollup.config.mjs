@@ -14,7 +14,7 @@ const __dirname = import.meta.dirname;
 
 const babelPlugin = babel({
   babelHelpers: 'bundled',
-  configFile: path.resolve(__dirname, 'rollup.babel.mjs')
+  configFile: path.resolve(__dirname, 'rollup/babelConfig.mjs')
 });
 
 function ossLicensePlugin() {

@@ -7,7 +7,7 @@
 
 'use strict';
 
-const babelConfig = require('./jest.babel.js');
+const babelConfig = require('./jest/babelConfig.js');
 
 module.exports = {
   collectCoverageFrom: [
@@ -49,7 +49,7 @@ module.exports = {
         enableGlobally: true
       },
       moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/src/dom'
+        '^react-strict-dom$': '<rootDir>/src/dom/index.js'
       },
       rootDir: process.cwd(),
       setupFiles: ['<rootDir>/tools/jest/setup.js'],
@@ -69,7 +69,7 @@ module.exports = {
         enableGlobally: true
       },
       moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/src/native'
+        '^react-strict-dom$': '<rootDir>/src/native/index.js'
       },
       rootDir: process.cwd(),
       setupFiles: ['<rootDir>/tools/jest/setup.js'],
@@ -82,7 +82,26 @@ module.exports = {
         '<rootDir>/tests/*-test.js',
         '<rootDir>/tests/*-test.native.js'
       ],
-      testPathIgnorePatterns: ['<rootDir>/tests/babel-test.js'],
+      transform: {
+        '\\.[jt]sx?$': ['babel-jest', babelConfig()]
+      }
+    },
+    {
+      displayName: 'react-strict-dom (Node)',
+      fakeTimers: {
+        enableGlobally: true
+      },
+      moduleNameMapper: {
+        '^react-strict-dom/babel$': '<rootDir>/babel/index.js'
+      },
+      rootDir: process.cwd(),
+      setupFiles: ['<rootDir>/tools/jest/setup.js'],
+      snapshotFormat: {
+        printBasicPrototype: false
+      },
+      snapshotResolver: '<rootDir>/tools/jest/node-snapshot-resolver.js',
+      testEnvironment: 'node',
+      testMatch: ['<rootDir>/tests/*-test.node.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }
