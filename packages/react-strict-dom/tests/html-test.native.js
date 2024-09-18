@@ -1145,7 +1145,7 @@ describe('<html.*>', () => {
     });
   });
 
-  describe('pseudo-state styles', () => {
+  describe('style polyfills: pseudo-state', () => {
     const styles = css.create({
       hover: {
         backgroundColor: {
@@ -1332,5 +1332,93 @@ describe('<html.*>', () => {
       });
       expect(getBackgroundColor(getElement(root))).toBe('green');
     });
+  });
+
+  describe('node imperative methods', () => {
+    function createNodeMock(element) {
+      const obj = {};
+      obj.addEventListener_unstable = () => {};
+      obj.blur = () => {};
+      obj.focus = () => {};
+      obj.removeEventListener_unstable = () => {};
+      return obj;
+    }
+
+    /*
+    ['addEventListener', 'removeEventListener'].forEach((method) => {
+      test(`"${method}" is supported`, () => {
+        const ref = React.createRef();
+        create(<html.input ref={ref} />, { createNodeMock });
+        ref.current[method]('click', () => {});
+        expect(console.error).not.toBeCalled();
+      });
+    });
+    */
+
+    [
+      'animate',
+      'click',
+      'contains',
+      'dispatchEvent',
+      'getAttribute',
+      'getBoundingClientRect',
+      'getRootNode',
+      'hasPointerCapture',
+      'releasePointerCapture',
+      'scroll',
+      'scrollBy',
+      'scrollIntoView',
+      'scrollTo',
+      'setPointerCapture',
+      'select',
+      'setSelectionRange',
+      'showPicker'
+    ].forEach((method) => {
+      test(`"${method}" is unsupported`, () => {
+        const ref = React.createRef();
+        create(<html.input ref={ref} />, { createNodeMock });
+        ref.current[method]();
+        expect(console.error).toBeCalled();
+      });
+    });
+
+    /*
+    [
+      'blur',
+      'click',
+      'focus',
+      'error',
+      'input',
+      'keydown',
+      'keyup',
+      'load',
+      'pointerdown',
+      'pointerenter',
+      'pointerleave',
+      'pointermove',
+      'pointerout',
+      'pointerover',
+      'pointerup',
+      'scroll'
+    ].forEach((eventType) => {
+      test(`"${eventType}" is supported`, () => {
+        const ref = React.createRef();
+        create(<html.input ref={ref} />, { createNodeMock });
+        ref.current.addEventListener(eventType, () => {});
+        ref.current.removeEventListener(eventType, () => {});
+        expect(console.error).not.toBeCalled();
+      });
+    });
+
+    ['change', 'focusin', 'focusout'].forEach((eventType) => {
+      test(`"${eventType}" is unsupported`, () => {
+        const ref = React.createRef();
+        create(<html.input ref={ref} />, { createNodeMock });
+        ref.current.addEventListener(eventType, () => {});
+        ref.current.removeEventListener(eventType, () => {});
+        expect(console.error).toBeCalled();
+      });
+    });
+    */
   });
 });
