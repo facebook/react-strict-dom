@@ -629,20 +629,6 @@ export function props(
       nextStyle.alignContent = nextStyle.alignContent ?? styleValue;
       nextStyle.justifyContent = nextStyle.justifyContent ?? styleValue;
     }
-    // boxShadow
-    else if (styleProp === 'boxShadow') {
-      nextStyle.boxShadow = styleValue;
-      nextStyle.experimental_boxShadow = styleValue;
-    }
-    // filter
-    else if (styleProp === 'filter') {
-      nextStyle.filter = styleValue;
-      nextStyle.experimental_filter = styleValue;
-    }
-    // experimental styles
-    else if (styleProp === 'mixBlendMode') {
-      nextStyle.experimental_mixBlendMode = styleValue;
-    }
     // Everything else
     else {
       nextStyle[styleProp] = styleValue;

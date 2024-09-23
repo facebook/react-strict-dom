@@ -94,7 +94,6 @@ exports[`properties: general boxShadow 1`] = `
 {
   "style": {
     "boxShadow": "1px 2px 3px 4px red",
-    "experimental_boxShadow": "1px 2px 3px 4px red",
   },
 }
 `;
@@ -103,7 +102,6 @@ exports[`properties: general boxShadow 2`] = `
 {
   "style": {
     "boxShadow": "1px 2px 3px 4px red, 2px 3px 4px 5px blue",
-    "experimental_boxShadow": "1px 2px 3px 4px red, 2px 3px 4px 5px blue",
   },
 }
 `;
@@ -112,7 +110,6 @@ exports[`properties: general boxShadow 3`] = `
 {
   "style": {
     "boxShadow": "inset 1px 2px 3px 4px red",
-    "experimental_boxShadow": "inset 1px 2px 3px 4px red",
   },
 }
 `;
@@ -267,7 +264,6 @@ exports[`properties: general direction: rtl 1`] = `
 exports[`properties: general filter 1`] = `
 {
   "style": {
-    "experimental_filter": "blur(1px)",
     "filter": "blur(1px)",
   },
 }
@@ -395,7 +391,7 @@ exports[`properties: general marginVertical 1`] = `
 exports[`properties: general mixBlendMode 1`] = `
 {
   "style": {
-    "experimental_mixBlendMode": "multiply",
+    "mixBlendMode": "multiply",
   },
 }
 `;

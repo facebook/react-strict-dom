@@ -72,6 +72,7 @@ const allowedStyleKeySet = new Set<string>([
   'borderTopWidth',
   'borderWidth',
   'bottom',
+  'boxShadow',
   'boxSizing',
   'caretColor',
   'color',
@@ -80,6 +81,7 @@ const allowedStyleKeySet = new Set<string>([
   'cursorColor',
   'direction',
   'display',
+  'filter',
   'flex',
   'flexBasis',
   'flexDirection',
@@ -126,6 +128,7 @@ const allowedStyleKeySet = new Set<string>([
   'minHeight',
   'minInlineSize',
   'minWidth',
+  'mixBlendMode',
   'objectFit',
   'opacity',
   'overflow',
@@ -173,9 +176,6 @@ const allowedStyleKeySet = new Set<string>([
 ]);
 
 if (isExperimental === true) {
-  allowedStyleKeySet.add('boxShadow');
-  allowedStyleKeySet.add('filter');
-  allowedStyleKeySet.add('mixBlendMode');
   allowedStyleKeySet.add('outlineColor');
   allowedStyleKeySet.add('outlineOffset');
   allowedStyleKeySet.add('outlineStyle');
