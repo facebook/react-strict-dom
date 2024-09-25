@@ -396,6 +396,7 @@ exports[`properties: general mixBlendMode 1`] = `
 {
   "style": {
     "experimental_mixBlendMode": "multiply",
+    "mixBlendMode": "multiply",
   },
 }
 `;

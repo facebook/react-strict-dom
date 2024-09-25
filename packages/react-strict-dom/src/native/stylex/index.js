@@ -641,6 +641,7 @@ export function props(
     }
     // experimental styles
     else if (styleProp === 'mixBlendMode') {
+      nextStyle.mixBlendMode = styleValue;
       nextStyle.experimental_mixBlendMode = styleValue;
     }
     // Everything else
