@@ -10,7 +10,7 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
 import { css, html } from 'react-strict-dom';
-import { tokens } from './tokens.stylex';
+import { tokens, themeColors, systemColors } from './tokens.stylex';
 
 type ExampleBlockProps = $ReadOnly<{
   title: string,
@@ -34,6 +34,63 @@ function ExampleBlock(props: ExampleBlockProps) {
     <html.div style={egStyles.container}>
       <html.h1 style={egStyles.h1}>{title}</html.h1>
       <html.div style={egStyles.content}>{children}</html.div>
+    </html.div>
+  );
+}
+
+const redBlueTheme = css.createTheme(themeColors, {
+  primary100: 'red',
+  primary200: 'blue'
+});
+const purpleYellowTheme = css.createTheme(themeColors, {
+  primary100: 'purple',
+  primary200: 'yellow'
+});
+const greenPinkTheme = css.createTheme(themeColors, {
+  primary100: 'green',
+  primary200: 'pink'
+});
+
+const themedStyles = css.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#bbb',
+    padding: 8
+  },
+  square: {
+    width: 100,
+    height: 100,
+    backgroundColor: systemColors.squareColor,
+    borderColor: systemColors.outlineColor,
+    borderStyle: 'solid',
+    borderWidth: 5
+  }
+});
+
+function ThemeExample() {
+  return (
+    <html.div style={themedStyles.container}>
+      {/* default theme */}
+      <html.div style={themedStyles.square} />
+      {/* redblue theme */}
+      <html.div style={redBlueTheme}>
+        <html.div style={themedStyles.square} />
+      </html.div>
+      {/* purpleyellow theme */}
+      <html.div style={purpleYellowTheme}>
+        <html.div style={themedStyles.square} />
+      </html.div>
+      {/* greenpink theme */}
+      <html.div style={greenPinkTheme}>
+        <html.div style={themedStyles.square} />
+      </html.div>
+      {/* nested theme */}
+      <html.div style={redBlueTheme}>
+        <html.div style={greenPinkTheme}>
+          <html.div style={themedStyles.square} />
+        </html.div>
+      </html.div>
     </html.div>
   );
 }
@@ -457,6 +514,8 @@ function Shell(): React.MixedElement {
               />
             </html.div>
           </html.div>
+
+          <ThemeExample />
         </ExampleBlock>
 
         {/* hover */}

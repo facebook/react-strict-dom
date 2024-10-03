@@ -6,7 +6,8 @@
  */
 
 const path = require('path');
-const { addNamed, addNamespace } = require('@babel/helper-module-imports');
+const { addNamed } = require('@babel/helper-module-imports');
+const styleXPlugin = require('@stylexjs/babel-plugin');
 
 function createShortFilename(absolutePath, baseDir = process.cwd()) {
   if (!path.isAbsolute(baseDir)) {
@@ -18,7 +19,7 @@ function createShortFilename(absolutePath, baseDir = process.cwd()) {
   return shortPath;
 }
 
-module.exports = function ({ types: t }, options = {}) {
+function reactStrictPlugin({ types: t }, options = {}) {
   const packageName = 'react-strict-dom';
   const packageRuntime = 'react-strict-dom/runtime';
   const findImportDeclaration = (body, sourceValue) =>
@@ -31,12 +32,13 @@ module.exports = function ({ types: t }, options = {}) {
       ? specifiers.filter((specifier) => specifier.imported.name === 'html')
       : [];
   let defaultStylesImportIdentifier;
-  let stylexImportIdentifier;
+  let styleResolverImportIdentifier;
 
   return {
     visitor: {
       Program: {
         enter(path) {
+          // Add runtime imports
           const importDeclarations = findImportDeclaration(
             path.node.body,
             packageName
@@ -47,18 +49,24 @@ module.exports = function ({ types: t }, options = {}) {
               'defaultStyles',
               packageRuntime
             );
-            stylexImportIdentifier = addNamespace(path, '@stylexjs/stylex', {
-              nameHint: 'stylex'
-            });
+            styleResolverImportIdentifier = addNamed(
+              path,
+              'resolveStyle',
+              packageRuntime
+            );
             path.scope.rename(
               'defaultStyles',
               defaultStylesImportIdentifier.name
             );
-            path.scope.rename('stylex', stylexImportIdentifier.name);
+            path.scope.rename(
+              'resolveStyle',
+              styleResolverImportIdentifier.name
+            );
           }
         }
       },
       JSXMemberExpression(path, state) {
+        //
         const importDeclarations = findImportDeclaration(
           state.file.ast.program.body,
           packageName
@@ -96,9 +104,11 @@ module.exports = function ({ types: t }, options = {}) {
           let dirAttributeExists = false;
 
           path.node.attributes.forEach((attribute, index) => {
+            // React DOM compat: 'for' replaced by 'htmlFor'
             if (t.isJSXAttribute(attribute) && attribute.name.name === 'for') {
               attribute.name.name = 'htmlFor';
             }
+            // Browser compat: 'role=none' replaced by 'role=presentation'
             if (
               t.isJSXAttribute(attribute) &&
               attribute.name.name === 'role' &&
@@ -106,6 +116,7 @@ module.exports = function ({ types: t }, options = {}) {
             ) {
               attribute.value.value = 'presentation';
             }
+            // React DOM compat: 'style' replaced by resolver that produces React DOM props
             if (
               t.isJSXAttribute(attribute) &&
               attribute.name.name === 'style'
@@ -119,10 +130,7 @@ module.exports = function ({ types: t }, options = {}) {
               );
               path.node.attributes[index] = t.jsxSpreadAttribute(
                 t.callExpression(
-                  t.memberExpression(
-                    t.identifier(stylexImportIdentifier.name),
-                    t.identifier('props')
-                  ),
+                  t.identifier(styleResolverImportIdentifier.name),
                   [defaultStyles].concat(
                     Array.isArray(styleValue.elements)
                       ? styleValue.elements
@@ -139,6 +147,7 @@ module.exports = function ({ types: t }, options = {}) {
             }
           });
 
+          // Set type=button on <button> by default
           const elementName = path.node.name.property.name;
           if (elementName === 'button' && !typeAttributeExists) {
             path.node.attributes.push(
@@ -146,6 +155,7 @@ module.exports = function ({ types: t }, options = {}) {
             );
           }
 
+          // Set dir=auto by default on text inputs
           if (
             (elementName === 'input' || elementName === 'textarea') &&
             !dirAttributeExists
@@ -155,6 +165,7 @@ module.exports = function ({ types: t }, options = {}) {
             );
           }
 
+          // Inline the style resolving logic
           if (!styleAttributeExists) {
             const elementName = path.node.name.property.name;
             const defaultStyles = t.memberExpression(
@@ -164,10 +175,7 @@ module.exports = function ({ types: t }, options = {}) {
             path.node.attributes.push(
               t.jsxSpreadAttribute(
                 t.callExpression(
-                  t.memberExpression(
-                    t.identifier(stylexImportIdentifier.name),
-                    t.identifier('props')
-                  ),
+                  t.identifier(styleResolverImportIdentifier.name),
                   [defaultStyles]
                 )
               )
@@ -195,7 +203,7 @@ module.exports = function ({ types: t }, options = {}) {
             // displays filename and line number of the source element
             path.node.attributes.unshift(
               t.jsxAttribute(
-                t.jsxIdentifier('data-react-src'),
+                t.jsxIdentifier('data-element-src'),
                 t.stringLiteral(`${shortFilename}:${originalLineNumber}`)
               )
             );
@@ -204,4 +212,44 @@ module.exports = function ({ types: t }, options = {}) {
       }
     }
   };
+}
+
+const defaultOptions = {
+  dev: true,
+  debug: true,
+  rootDir: process.cwd()
 };
+
+function reactStrictPreset(_, options = {}) {
+  const opts = { ...defaultOptions, ...options };
+
+  return {
+    plugins: [
+      [
+        reactStrictPlugin,
+        {
+          debug: opts.debug
+        }
+      ],
+      [
+        styleXPlugin,
+        {
+          dev: opts.dev,
+          importSources: [{ from: 'react-strict-dom', as: 'css' }],
+          runtimeInjection: opts.dev, // temporary until Expo/Metro can support built-time
+          styleResolution: 'property-specificity',
+          unstable_moduleResolution: {
+            type: 'commonJS',
+            rootDir: opts.rootDir
+            //themeFileExtension: '.cssvars.js',
+          },
+          useRemForFontSize: false
+        }
+      ]
+    ]
+  };
+}
+
+reactStrictPreset.generateStyles = styleXPlugin.processStylexRules;
+
+module.exports = reactStrictPreset;

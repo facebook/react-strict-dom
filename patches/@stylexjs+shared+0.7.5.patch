@@ -1,0 +1,48 @@
+diff --git a/node_modules/@stylexjs/shared/.DS_Store b/node_modules/@stylexjs/shared/.DS_Store
+new file mode 100644
+index 0000000..97cc27b
+Binary files /dev/null and b/node_modules/@stylexjs/shared/.DS_Store differ
+diff --git a/node_modules/@stylexjs/shared/lib/stylex-create-theme.js b/node_modules/@stylexjs/shared/lib/stylex-create-theme.js
+index 656d271..69be46c 100644
+--- a/node_modules/@stylexjs/shared/lib/stylex-create-theme.js
++++ b/node_modules/@stylexjs/shared/lib/stylex-create-theme.js
+@@ -52,6 +52,7 @@ function styleXCreateTheme(themeVars, variables, options) {
+   }
+   return [{
+     $$css: true,
+-    [themeVars.__themeName__]: overrideClassName
++    [themeVars.__themeName__]: overrideClassName,
++    __overrideRootVars__: `${classNamePrefix}vars`
+   }, stylesToInject];
+ }
+diff --git a/node_modules/@stylexjs/shared/lib/stylex-define-vars.js b/node_modules/@stylexjs/shared/lib/stylex-define-vars.js
+index bb4283e..3f59010 100644
+--- a/node_modules/@stylexjs/shared/lib/stylex-define-vars.js
++++ b/node_modules/@stylexjs/shared/lib/stylex-define-vars.js
+@@ -44,7 +44,7 @@ function styleXDefineVars(variables, options) {
+     } = _ref;
+     return `var(--${nameHash})`;
+   });
+-  const injectableStyles = constructCssVariablesString(variablesMap, themeNameHash);
++  const injectableStyles = constructCssVariablesString(variablesMap, themeNameHash, classNamePrefix);
+   const injectableTypes = (0, _objectUtils.objMap)(typedVariables, (_ref2, nameHash) => {
+     let {
+       initialValue: iv,
+@@ -64,7 +64,7 @@ function styleXDefineVars(variables, options) {
+     ...injectableStyles
+   }];
+ }
+-function constructCssVariablesString(variables, themeNameHash) {
++function constructCssVariablesString(variables, themeNameHash, classNamePrefix) {
+   const rulesByAtRule = {};
+   for (const [key, {
+     nameHash,
+@@ -78,7 +78,7 @@ function constructCssVariablesString(variables, themeNameHash) {
+   const result = {};
+   for (const [atRule, value] of Object.entries(rulesByAtRule)) {
+     const suffix = atRule === 'default' ? '' : `-${(0, _hash.default)(atRule)}`;
+-    let ltr = `:root{${value.join('')}}`;
++    let ltr = `:root,.${classNamePrefix}vars{${value.join('')}}`;
+     if (atRule !== 'default') {
+       ltr = (0, _stylexVarsUtils.wrapWithAtRules)(ltr, atRule);
+     }

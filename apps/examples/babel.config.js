@@ -5,8 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const stylexPlugin = require('@stylexjs/babel-plugin');
-const reactStrictPlugin = require('react-strict-dom/babel');
+const reactStrictPreset = require('react-strict-dom/babel-preset');
 
 function getPlatform(caller) {
   return caller && caller.platform;
@@ -27,30 +26,18 @@ module.exports = function (api) {
   const platform = api.caller(getPlatform);
   const isDev = api.caller(getIsDev);
 
+  const presets = ['babel-preset-expo'];
   const plugins = [];
 
   if (platform === 'web') {
-    plugins.push([reactStrictPlugin, { debug: true }]);
-    plugins.push([
-      stylexPlugin,
-      {
-        dev: isDev,
-        importSources: [
-          '@stylexjs/stylex',
-          { from: 'react-strict-dom', as: 'css' }
-        ],
-        runtimeInjection: isDev,
-        styleResolution: 'property-specificity',
-        unstable_moduleResolution: {
-          rootDir: __dirname,
-          type: 'commonJS'
-        }
-      }
+    presets.push([
+      reactStrictPreset,
+      { debug: true, dev: isDev, rootDir: __dirname }
     ]);
   }
 
   return {
     plugins,
-    presets: ['babel-preset-expo']
+    presets
   };
 };
