@@ -1,0 +1,128 @@
+diff --git a/node_modules/@stylexjs/babel-plugin/lib/index.js b/node_modules/@stylexjs/babel-plugin/lib/index.js
+index 2e13acd..268d254 100644
+--- a/node_modules/@stylexjs/babel-plugin/lib/index.js
++++ b/node_modules/@stylexjs/babel-plugin/lib/index.js
+@@ -661,15 +661,9 @@ function readImportDeclarations(path, state) {
+             if (importedName === 'props') {
+               state.stylexPropsImport.add(localName);
+             }
+-            if (importedName === 'attrs') {
+-              state.stylexAttrsImport.add(localName);
+-            }
+             if (importedName === 'keyframes') {
+               state.stylexKeyframesImport.add(localName);
+             }
+-            if (importedName === 'include') {
+-              state.stylexIncludeImport.add(localName);
+-            }
+             if (importedName === 'firstThatWorks') {
+               state.stylexFirstThatWorksImport.add(localName);
+             }
+@@ -712,15 +706,9 @@ function readRequires(path, state) {
+           if (prop.key.name === 'props') {
+             state.stylexPropsImport.add(value.name);
+           }
+-          if (prop.key.name === 'attrs') {
+-            state.stylexAttrsImport.add(value.name);
+-          }
+           if (prop.key.name === 'keyframes') {
+             state.stylexKeyframesImport.add(value.name);
+           }
+-          if (prop.key.name === 'include') {
+-            state.stylexIncludeImport.add(value.name);
+-          }
+           if (prop.key.name === 'firstThatWorks') {
+             state.stylexFirstThatWorksImport.add(value.name);
+           }
+@@ -2681,7 +2669,8 @@ function _interopRequireDefault$5(obj) { return obj && obj.__esModule ? obj : {
+ function convertStyleToClassName(objEntry, pseudos, atRules) {
+   let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _defaultOptions$4.defaultOptions;
+   const {
+-    classNamePrefix = 'x'
++    classNamePrefix = 'x',
++    dev
+   } = options;
+   const [key, rawValue] = objEntry;
+   const dashedKey = (0, _dashify$1.default)(key);
+@@ -2695,7 +2684,7 @@ function convertStyleToClassName(objEntry, pseudos, atRules) {
+   const pseudoHashString = sortedAtRules.join('');
+   const modifierHashString = atRuleHashString + pseudoHashString || 'null';
+   const stringToHash = Array.isArray(value) ? dashedKey + value.join(', ') + modifierHashString : dashedKey + value + modifierHashString;
+-  const className = classNamePrefix + (0, _hash$4.default)('<>' + stringToHash);
++  const className = (dev ? key + '-' : '') + classNamePrefix + (0, _hash$4.default)('<>' + stringToHash);
+   const cssRules = (0, _generateCssRule.generateRule)(className, dashedKey, value, pseudos, atRules);
+   return [key, className, cssRules];
+ }
+@@ -3327,7 +3316,7 @@ function styleXDefineVars(variables, options) {
+     } = _ref;
+     return `var(--${nameHash})`;
+   });
+-  const injectableStyles = constructCssVariablesString(variablesMap, themeNameHash);
++  const injectableStyles = constructCssVariablesString(variablesMap, themeNameHash, classNamePrefix);
+   const injectableTypes = (0, _objectUtils$1.objMap)(typedVariables, (_ref2, nameHash) => {
+     let {
+       initialValue: iv,
+@@ -3347,7 +3336,7 @@ function styleXDefineVars(variables, options) {
+     ...injectableStyles
+   }];
+ }
+-function constructCssVariablesString(variables, themeNameHash) {
++function constructCssVariablesString(variables, themeNameHash, classNamePrefix) {
+   const rulesByAtRule = {};
+   for (const [key, {
+     nameHash,
+@@ -3361,7 +3350,7 @@ function constructCssVariablesString(variables, themeNameHash) {
+   const result = {};
+   for (const [atRule, value] of Object.entries(rulesByAtRule)) {
+     const suffix = atRule === 'default' ? '' : `-${(0, _hash$3.default)(atRule)}`;
+-    let ltr = `:root{${value.join('')}}`;
++    let ltr = `:root,.${classNamePrefix}vars{${value.join('')}}`;
+     if (atRule !== 'default') {
+       ltr = (0, _stylexVarsUtils$1.wrapWithAtRules)(ltr, atRule);
+     }
+@@ -3428,7 +3417,8 @@ function styleXCreateTheme(themeVars, variables, options) {
+   }
+   return [{
+     $$css: true,
+-    [themeVars.__themeName__]: overrideClassName
++    [themeVars.__themeName__]: overrideClassName,
++    __overrideRootVars__: `${classNamePrefix}vars`
+   }, stylesToInject];
+ }
+ 
+@@ -3584,7 +3574,7 @@ function injectDevClassNames(obj, varName, state) {
+   for (const [key, value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //['dev_' + devClassName]: devClassName,
+       ...value
+     };
+   }
+@@ -3595,7 +3585,7 @@ function convertToTestStyles(obj, varName, state) {
+   for (const [key, _value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //['dev_' + devClassName]: devClassName,
+       $$css: true
+     };
+   }
+@@ -4641,7 +4631,7 @@ function transformStyleXCreateTheme(callExpressionPath, state) {
+       const basename = path.basename(fileName).split('.')[0];
+       const devClassName = `${basename}__${variableName}`;
+       overridesObj = {
+-        [devClassName]: devClassName,
++        ['dev_' + devClassName]: devClassName,
+         $$css: true
+       };
+     } else if (state.isDev) {
+@@ -4649,7 +4639,7 @@ function transformStyleXCreateTheme(callExpressionPath, state) {
+       const basename = path.basename(fileName).split('.')[0];
+       const devClassName = `${basename}__${variableName}`;
+       overridesObj = {
+-        [devClassName]: devClassName,
++        ['dev_' + devClassName]: devClassName,
+         ...overridesObj
+       };
+     }

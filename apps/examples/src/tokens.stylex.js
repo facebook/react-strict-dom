@@ -7,11 +7,11 @@
  * @flow strict-local
  */
 
-import type { VarGroup } from '@stylexjs/stylex';
+import type { StyleVars } from 'react-strict-dom';
 
 import { css } from 'react-strict-dom';
 
-export const tokens: VarGroup<
+export const tokens: StyleVars<
   $ReadOnly<{
     squareColor: string,
     textColor: string,
@@ -26,4 +26,24 @@ export const tokens: VarGroup<
   },
   inputColor: 'red',
   inputPlaceholderColor: 'pink'
+});
+
+export const themeColors: StyleVars<
+  $ReadOnly<{
+    primary100: string,
+    primary200: string
+  }>
+> = css.defineVars({
+  primary100: 'black',
+  primary200: 'white'
+});
+
+export const systemColors: StyleVars<
+  $ReadOnly<{
+    squareColor: string,
+    outlineColor: string
+  }>
+> = css.defineVars({
+  squareColor: themeColors.primary100,
+  outlineColor: themeColors.primary200
 });

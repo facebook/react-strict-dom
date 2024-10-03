@@ -12,7 +12,7 @@
 jest.autoMockOff();
 
 const { transformSync } = require('@babel/core');
-const babelReactStrictPlugin = require('react-strict-dom/babel');
+const reactStrictPreset = require('../babel');
 const jsx = require('@babel/plugin-syntax-jsx');
 
 function transform(source, pluginOptions = {}) {
@@ -21,7 +21,8 @@ function transform(source, pluginOptions = {}) {
     parserOpts: {
       flow: 'all'
     },
-    plugins: [jsx, [babelReactStrictPlugin, { debug: false, ...pluginOptions }]]
+    presets: [[reactStrictPreset, { debug: false, ...pluginOptions }]],
+    plugins: [jsx]
   }).code;
 }
 

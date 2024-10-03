@@ -176,3 +176,5 @@ export const defaultStyles = {
   u: u as typeof u,
   ul: ul as typeof ul
 };
+
+export const resolveStyle = stylex.props;
