@@ -39,7 +39,6 @@
     "build",
     "coverage",
     "dist",
-    "docs",
     "flow-typed",
     "logs",
     "node_modules"

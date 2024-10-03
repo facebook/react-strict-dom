@@ -10,7 +10,7 @@
     "jest": "npm run jest --workspaces --if-present --",
     "jest:report": "npm run jest:report --workspaces --if-present --",
     "lint": "npm run lint:report -- --fix",
-    "lint:report": "eslint packages",
+    "lint:report": "eslint \"**/*.js\"",
     "test": "npm run flow && npm run lint:report && npm run jest:report",
     "postinstall": "patch-package && npm run jest -- --clearCache && npm run build",
     "prepare": "husky install tools/husky"
@@ -59,7 +59,7 @@
     "**/*.js": [
       "prettier --write",
       "git update-index --again",
-      "eslint --config .eslintrc"
+      "eslint"
     ]
   },
   "prettier": {

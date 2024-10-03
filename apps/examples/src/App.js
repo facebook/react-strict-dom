@@ -81,7 +81,6 @@ function Shell(): React.MixedElement {
   const [opacity, setOpacity] = React.useState(1);
   const [transform, setTransform] = React.useState(TRANSLATE_NONE);
   const [scale, setScale] = React.useState(SCALE_INACTIVE);
-  const [toggleTransform, setToggleTransform] = React.useState(false);
   const [rotate, setRotate] = React.useState(ROTATE_INACTIVE);
   const [skew, setSkew] = React.useState(SKEW_INACTIVE);
   const [fadeUpActive, setFadeUpActive] = React.useState(true);
@@ -149,13 +148,13 @@ function Shell(): React.MixedElement {
             <html.li>unordered list item: one</html.li>
           </html.ul>
           <html.img
+            height={150}
             onLoad={(e) => {
               console.log(e.type, e);
             }}
-            width={150}
-            height={150}
             src="http://placehold.jp/150x150.png"
             style={styles.objContain}
+            width={150}
           />
           <html.div />
           <html.label for="id">label</html.label>
@@ -175,11 +174,11 @@ function Shell(): React.MixedElement {
           <html.input placeholder="input type:text" type="text" />
           <html.div />
           <html.input
-            placeholder="input inputMode:numeric"
             inputMode="numeric"
+            placeholder="input inputMode:numeric"
           />
           <html.div />
-          <html.input placeholder="input enterKeyHint:go" enterKeyHint="go" />
+          <html.input enterKeyHint="go" placeholder="input enterKeyHint:go" />
           <html.div />
           <html.select>
             <html.optgroup label="optgroup">
@@ -471,22 +470,22 @@ function Shell(): React.MixedElement {
             onChange={(e) => {
               console.log(e.type, e.target.value);
             }}
-            onKeyDown={(e) => {
-              console.log(e.type, e.key);
-            }}
             onInput={(e) => {
               console.log(e.type, e.target.value);
+            }}
+            onKeyDown={(e) => {
+              console.log(e.type, e.key);
             }}
           />
           <html.textarea
             onChange={(e) => {
               console.log(e.type, e.target.value);
             }}
-            onKeyDown={(e) => {
-              console.log(e.type, e.key);
-            }}
             onInput={(e) => {
               console.log(e.type, e.target.value);
+            }}
+            onKeyDown={(e) => {
+              console.log(e.type, e.key);
             }}
           />
           <html.div
@@ -546,23 +545,23 @@ function Shell(): React.MixedElement {
           </html.div>
 
           <html.img
+            height={150}
             onLoad={(e) => {
               setImageLoadText(`${e.type}: loaded`);
             }}
-            width={150}
-            height={150}
             src="http://placehold.jp/150x150.png"
             style={styles.objContain}
+            width={150}
           />
           <html.span>{imageLoadText}</html.span>
           <html.img
+            height={150}
             onError={(e) => {
               setImageErrorText(`${e.type}: errored`);
             }}
-            width={150}
-            height={150}
             src="http://error"
             style={styles.objContain}
+            width={150}
           />
           <html.span>{imageErrorText}</html.span>
         </ExampleBlock>
