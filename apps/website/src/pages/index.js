@@ -10,7 +10,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img src="./img/logo.svg" height="100" />
+        <img height="100" src="./img/logo.svg" />
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -32,8 +32,8 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
+      title={`Hello from ${siteConfig.title}`}
     >
       <HomepageHeader />
     </Layout>
