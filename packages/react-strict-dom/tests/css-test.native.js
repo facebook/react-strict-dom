@@ -196,79 +196,7 @@ describe('properties: general', () => {
 
   test('boxSizing: content-box', () => {
     const styles = css.create({
-      width: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        width: 100,
-        // test that unrelated properties are unmodified
-        overflow: 'hidden'
-      },
-      height: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        height: 50
-      },
-      maxWidth: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        maxWidth: 100
-      },
-      minWidth: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        minWidth: 100
-      },
-      maxHeight: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        maxHeight: 50
-      },
-      minHeight: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        minHeight: 50
-      },
-      units: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: '1rem',
-        width: '100px',
-        height: 50
-      },
-      allDifferent: {
-        boxSizing: 'content-box',
-        borderTopWidth: 1,
-        borderRightWidth: 2,
-        borderBottomWidth: 3,
-        borderLeftWidth: 4,
-        paddingTop: 10,
-        paddingRight: 20,
-        paddingBottom: 30,
-        paddingLeft: 40,
-        width: 100,
-        height: 100
-      },
-      auto: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        height: 50,
-        width: 'auto'
-      },
-      null: {
-        boxSizing: 'content-box',
-        borderWidth: 2,
-        padding: 10,
-        height: 50,
-        width: null
-      },
-      string: {
+      test: {
         boxSizing: 'content-box',
         borderWidth: 2,
         padding: 10,
@@ -276,31 +204,8 @@ describe('properties: general', () => {
         width: '50%'
       }
     });
-    expect(css.props.call(mockOptions, styles.width)).toMatchSnapshot('width');
-    expect(css.props.call(mockOptions, styles.height)).toMatchSnapshot(
-      'height'
-    );
-    expect(css.props.call(mockOptions, styles.maxWidth)).toMatchSnapshot(
-      'maxWidth'
-    );
-    expect(css.props.call(mockOptions, styles.maxHeight)).toMatchSnapshot(
-      'maxHeight'
-    );
-    expect(css.props.call(mockOptions, styles.minWidth)).toMatchSnapshot(
-      'minWidth'
-    );
-    expect(css.props.call(mockOptions, styles.minHeight)).toMatchSnapshot(
-      'minHeight'
-    );
-    expect(css.props.call(mockOptions, styles.units)).toMatchSnapshot('units');
-    expect(css.props.call(mockOptions, styles.allDifferent)).toMatchSnapshot(
-      'allDifferent'
-    );
-    expect(css.props.call(mockOptions, styles.auto)).toMatchSnapshot('auto');
-    expect(css.props.call(mockOptions, styles.null)).toMatchSnapshot('null');
-
-    css.props.call(mockOptions, styles.string);
-    expect(console.warn).toHaveBeenCalledTimes(1);
+    expect(css.props.call(mockOptions, styles.test)).toMatchSnapshot();
+    expect(console.warn).not.toHaveBeenCalled();
   });
 
   test('caretColor', () => {

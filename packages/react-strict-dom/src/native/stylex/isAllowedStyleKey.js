@@ -7,17 +7,7 @@
  * @flow strict
  */
 
-// $FlowFixMe(nonstrict-import)
-import { Platform } from 'react-native';
-
-const version = Platform.constants.reactNativeVersion;
-const { major, minor, patch } = version;
-// Main branch OSS build, or internal build
-const isMain = major === 1000 && minor === 0 && patch === 0;
-// Nightly NPM package
-// $FlowFixMe (pre-release is number type)
-const isNightly = version?.prerelease?.startsWith('nightly-');
-const isExperimental = isMain || isNightly;
+import { version } from '../modules/version';
 
 const allowedStyleKeySet = new Set<string>([
   'alignContent',
@@ -175,7 +165,7 @@ const allowedStyleKeySet = new Set<string>([
   '::placeholder'
 ]);
 
-if (isExperimental === true) {
+if (version.experimental) {
   allowedStyleKeySet.add('outlineColor');
   allowedStyleKeySet.add('outlineOffset');
   allowedStyleKeySet.add('outlineStyle');

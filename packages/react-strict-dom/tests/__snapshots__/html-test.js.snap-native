@@ -5,6 +5,7 @@ exports[`html "a" ignores and warns about unsupported attributes 1`] = `
   role="link"
   style={
     {
+      "boxSizing": "content-box",
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
@@ -20,6 +21,7 @@ exports[`html "a" supports additional anchor attributes 1`] = `
   role="link"
   style={
     {
+      "boxSizing": "content-box",
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
@@ -66,6 +68,7 @@ exports[`html "a" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "color": "blue",
       "direction": "ltr",
       "display": "none",
@@ -110,6 +113,7 @@ exports[`html "a" supports inline event handlers 1`] = `
   role="link"
   style={
     {
+      "boxSizing": "content-box",
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
@@ -124,6 +128,7 @@ exports[`html "article" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -168,6 +173,7 @@ exports[`html "article" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -215,6 +221,7 @@ exports[`html "article" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -226,6 +233,7 @@ exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -270,6 +278,7 @@ exports[`html "aside" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -317,6 +326,7 @@ exports[`html "aside" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -327,6 +337,7 @@ exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
@@ -372,6 +383,7 @@ exports[`html "b" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontWeight": "bold",
@@ -414,6 +426,7 @@ exports[`html "b" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
@@ -426,6 +439,7 @@ exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -470,6 +484,7 @@ exports[`html "bdi" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -511,6 +526,7 @@ exports[`html "bdi" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -522,6 +538,7 @@ exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -566,6 +583,7 @@ exports[`html "bdo" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -607,6 +625,7 @@ exports[`html "bdo" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -619,6 +638,7 @@ exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = 
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -663,6 +683,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -710,6 +731,7 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -720,6 +742,7 @@ exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -767,6 +790,7 @@ exports[`html "br" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -809,6 +833,7 @@ exports[`html "br" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -824,6 +849,7 @@ exports[`html "button" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -837,6 +863,7 @@ exports[`html "button" supports additional button attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -881,6 +908,7 @@ exports[`html "button" supports global attributes 1`] = `
     {
       "--custom-property": "inline",
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -929,6 +957,7 @@ exports[`html "button" supports inline event handlers 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -939,6 +968,7 @@ exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -984,6 +1014,7 @@ exports[`html "code" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
@@ -1026,6 +1057,7 @@ exports[`html "code" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -1038,6 +1070,7 @@ exports[`html "del" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
       "userSelect": "auto",
@@ -1083,6 +1116,7 @@ exports[`html "del" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -1125,6 +1159,7 @@ exports[`html "del" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
       "userSelect": "auto",
@@ -1138,6 +1173,7 @@ exports[`html "div" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1182,6 +1218,7 @@ exports[`html "div" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -1229,6 +1266,7 @@ exports[`html "div" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1239,6 +1277,7 @@ exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
       "userSelect": "auto",
@@ -1284,6 +1323,7 @@ exports[`html "em" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontStyle": "italic",
@@ -1326,6 +1366,7 @@ exports[`html "em" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
       "userSelect": "auto",
@@ -1339,6 +1380,7 @@ exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1383,6 +1425,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -1430,6 +1473,7 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1441,6 +1485,7 @@ exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1485,6 +1530,7 @@ exports[`html "footer" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -1532,6 +1578,7 @@ exports[`html "footer" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1543,6 +1590,7 @@ exports[`html "form" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1587,6 +1635,7 @@ exports[`html "form" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -1634,6 +1683,7 @@ exports[`html "form" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1644,6 +1694,7 @@ exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1690,6 +1741,7 @@ exports[`html "h1" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -1733,6 +1785,7 @@ exports[`html "h1" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1746,6 +1799,7 @@ exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1792,6 +1846,7 @@ exports[`html "h2" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -1835,6 +1890,7 @@ exports[`html "h2" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1848,6 +1904,7 @@ exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1894,6 +1951,7 @@ exports[`html "h3" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -1937,6 +1995,7 @@ exports[`html "h3" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1950,6 +2009,7 @@ exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -1996,6 +2056,7 @@ exports[`html "h4" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -2039,6 +2100,7 @@ exports[`html "h4" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -2052,6 +2114,7 @@ exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -2098,6 +2161,7 @@ exports[`html "h5" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -2141,6 +2205,7 @@ exports[`html "h5" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -2154,6 +2219,7 @@ exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -2200,6 +2266,7 @@ exports[`html "h6" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontSize": 24,
@@ -2243,6 +2310,7 @@ exports[`html "h6" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
@@ -2258,6 +2326,7 @@ exports[`html "header" ignores and warns about unsupported attributes 1`] = `
   role="header"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2302,6 +2371,7 @@ exports[`html "header" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -2350,6 +2420,7 @@ exports[`html "header" supports inline event handlers 1`] = `
   role="header"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2471,6 +2542,7 @@ exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
       "userSelect": "auto",
@@ -2516,6 +2588,7 @@ exports[`html "i" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontStyle": "italic",
@@ -2558,6 +2631,7 @@ exports[`html "i" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
       "userSelect": "auto",
@@ -2570,6 +2644,7 @@ exports[`html "img" ignores and warns about unsupported attributes 1`] = `
 <Image
   style={
     {
+      "boxSizing": "content-box",
       "objectFit": "fill",
       "position": "static",
     }
@@ -2590,6 +2665,7 @@ exports[`html "img" supports additional image attributes 1`] = `
   style={
     {
       "aspectRatio": 1,
+      "boxSizing": "content-box",
       "height": 100,
       "objectFit": "fill",
       "position": "static",
@@ -2637,6 +2713,7 @@ exports[`html "img" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "objectFit": "fill",
@@ -2677,6 +2754,7 @@ exports[`html "img" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "objectFit": "fill",
       "position": "static",
     }
@@ -2689,6 +2767,7 @@ exports[`html "input" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2707,6 +2786,7 @@ exports[`html "input" supports additional input attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2755,6 +2835,7 @@ exports[`html "input" supports global attributes 1`] = `
     {
       "--custom-property": "inline",
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -2799,6 +2880,7 @@ exports[`html "input" supports inline event handlers 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2809,6 +2891,7 @@ exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
       "userSelect": "auto",
@@ -2854,6 +2937,7 @@ exports[`html "ins" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -2896,6 +2980,7 @@ exports[`html "ins" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
       "userSelect": "auto",
@@ -2908,6 +2993,7 @@ exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -2953,6 +3039,7 @@ exports[`html "kbd" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
@@ -2995,6 +3082,7 @@ exports[`html "kbd" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -3007,6 +3095,7 @@ exports[`html "label" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3018,6 +3107,7 @@ exports[`html "label" supports additional label attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3062,6 +3152,7 @@ exports[`html "label" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3103,6 +3194,7 @@ exports[`html "label" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3115,6 +3207,7 @@ exports[`html "main" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3159,6 +3252,7 @@ exports[`html "main" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3206,6 +3300,7 @@ exports[`html "main" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3217,6 +3312,7 @@ exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3261,6 +3357,7 @@ exports[`html "nav" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3308,6 +3405,7 @@ exports[`html "nav" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3319,6 +3417,7 @@ exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3363,6 +3462,7 @@ exports[`html "ol" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3410,6 +3510,7 @@ exports[`html "ol" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3421,6 +3522,7 @@ exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3465,6 +3567,7 @@ exports[`html "optgroup" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3512,6 +3615,7 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3522,6 +3626,7 @@ exports[`html "option" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3566,6 +3671,7 @@ exports[`html "option" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3605,6 +3711,7 @@ exports[`html "option" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3616,6 +3723,7 @@ exports[`html "option" supports input attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3629,6 +3737,7 @@ exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3673,6 +3782,7 @@ exports[`html "p" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3714,6 +3824,7 @@ exports[`html "p" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3725,6 +3836,7 @@ exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -3770,6 +3882,7 @@ exports[`html "pre" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
@@ -3812,6 +3925,7 @@ exports[`html "pre" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
@@ -3824,6 +3938,7 @@ exports[`html "s" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
       "userSelect": "auto",
@@ -3869,6 +3984,7 @@ exports[`html "s" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -3911,6 +4027,7 @@ exports[`html "s" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
       "userSelect": "auto",
@@ -3924,6 +4041,7 @@ exports[`html "section" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -3968,6 +4086,7 @@ exports[`html "section" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4015,6 +4134,7 @@ exports[`html "section" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4026,6 +4146,7 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4037,6 +4158,7 @@ exports[`html "select" supports additional select attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4081,6 +4203,7 @@ exports[`html "select" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4128,6 +4251,7 @@ exports[`html "select" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4138,6 +4262,7 @@ exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4182,6 +4307,7 @@ exports[`html "span" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4223,6 +4349,7 @@ exports[`html "span" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4234,6 +4361,7 @@ exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
@@ -4279,6 +4407,7 @@ exports[`html "strong" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "fontWeight": "bold",
@@ -4321,6 +4450,7 @@ exports[`html "strong" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
@@ -4333,6 +4463,7 @@ exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4377,6 +4508,7 @@ exports[`html "sub" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4418,6 +4550,7 @@ exports[`html "sub" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4429,6 +4562,7 @@ exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4473,6 +4607,7 @@ exports[`html "sup" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4514,6 +4649,7 @@ exports[`html "sup" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4527,6 +4663,7 @@ exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
       "verticalAlign": "top",
     }
@@ -4548,6 +4685,7 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
       "verticalAlign": "top",
     }
@@ -4597,6 +4735,7 @@ exports[`html "textarea" supports global attributes 1`] = `
     {
       "--custom-property": "inline",
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4643,6 +4782,7 @@ exports[`html "textarea" supports inline event handlers 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
       "verticalAlign": "top",
     }
@@ -4654,6 +4794,7 @@ exports[`html "u" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
       "userSelect": "auto",
@@ -4699,6 +4840,7 @@ exports[`html "u" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4741,6 +4883,7 @@ exports[`html "u" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
       "userSelect": "auto",
@@ -4754,6 +4897,7 @@ exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4798,6 +4942,7 @@ exports[`html "ul" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
+      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
       "position": "static",
@@ -4845,6 +4990,7 @@ exports[`html "ul" supports inline event handlers 1`] = `
   onTouchStart={[Function]}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -4856,6 +5002,7 @@ exports[`html temporary data-* props support 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
