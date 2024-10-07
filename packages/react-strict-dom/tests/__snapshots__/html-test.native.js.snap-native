@@ -5,6 +5,7 @@ exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -27,6 +28,7 @@ exports[`<html.*> block layout override of flex layout: block layout override of
   style={
     {
       "alignItems": "stretch",
+      "boxSizing": "content-box",
       "display": "flex",
       "flexBasis": "auto",
       "flexDirection": "column",
@@ -41,6 +43,7 @@ exports[`<html.*> block layout override of flex layout: block layout override of
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "position": "static",
       }
     }
@@ -53,6 +56,7 @@ exports[`<html.*> default block layout: block layout 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -65,6 +69,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
   style={
     {
       "alignItems": "stretch",
+      "boxSizing": "content-box",
       "display": "flex",
       "flexBasis": "auto",
       "flexDirection": "row",
@@ -79,6 +84,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "flexShrink": 1,
         "position": "static",
       }
@@ -88,6 +94,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "flexShrink": 1,
         "position": "static",
       }
@@ -103,6 +110,7 @@ exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
   src="https://src.jpg"
   style={
     {
+      "boxSizing": "content-box",
       "objectFit": "fill",
       "position": "static",
     }
@@ -117,6 +125,7 @@ exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
   srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
   style={
     {
+      "boxSizing": "content-box",
       "objectFit": "fill",
       "position": "static",
     }
@@ -130,6 +139,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -142,6 +152,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -154,6 +165,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -166,6 +178,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -178,6 +191,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -190,6 +204,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] =
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -202,6 +217,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -214,6 +230,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -226,6 +243,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -238,6 +256,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`]
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -250,6 +269,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -262,6 +282,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -274,6 +295,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -286,6 +308,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password"
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -298,6 +321,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -310,6 +334,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -322,6 +347,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] =
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -334,6 +360,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix"
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -346,6 +373,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix"
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -358,6 +386,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -370,6 +399,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`]
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -382,6 +412,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -394,6 +425,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -406,6 +438,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "on" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -418,6 +451,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -430,6 +464,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`]
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -442,6 +477,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-titl
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -454,6 +490,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] 
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -466,6 +503,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -478,6 +516,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -490,6 +529,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -502,6 +542,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code"
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -514,6 +555,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`]
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -526,6 +568,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -538,6 +581,7 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -552,6 +596,7 @@ exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -564,6 +609,7 @@ exports[`<html.*> prop polyfills <input> "style" prop 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "color": "red",
       "fontWeight": "bold",
       "position": "static",
@@ -578,6 +624,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -590,6 +637,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -602,6 +650,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -614,6 +663,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -626,6 +676,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -638,6 +689,7 @@ exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -653,6 +705,7 @@ exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
       "verticalAlign": "top",
     }
@@ -667,6 +720,7 @@ exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
       "verticalAlign": "top",
     }
@@ -679,6 +733,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -689,6 +744,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
       "writingDirection": "auto",
@@ -702,6 +758,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "direction": "ltr",
       "position": "static",
     }
@@ -713,6 +770,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "direction": "ltr",
       "position": "static",
       "userSelect": "auto",
@@ -727,6 +785,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "direction": "rtl",
       "position": "static",
     }
@@ -738,6 +797,7 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "direction": "rtl",
       "position": "static",
       "userSelect": "auto",
@@ -752,6 +812,7 @@ exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "display": "none",
       "position": "static",
     }
@@ -764,6 +825,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -775,6 +837,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "display": "none",
       "position": "static",
     }
@@ -787,6 +850,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "display": "none",
       "position": "static",
     }
@@ -799,6 +863,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "display": "none",
       "position": "static",
     }
@@ -811,6 +876,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "display": "none",
       "position": "static",
     }
@@ -823,6 +889,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -835,6 +902,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
   style={
     {
       "alignItems": "stretch",
+      "boxSizing": "content-box",
       "display": "flex",
       "flexBasis": "auto",
       "flexDirection": "row",
@@ -853,6 +921,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -865,6 +934,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -877,6 +947,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -889,6 +960,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -901,6 +973,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -913,6 +986,7 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -925,6 +999,7 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
   style={
     {
       "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -946,6 +1021,7 @@ exports[`<html.*> style polyfills "transition" properties  backgroundColor trans
           "rgba(255,255,255,0.9)",
         ],
       },
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -967,6 +1043,7 @@ exports[`<html.*> style polyfills "transition" properties  backgroundColor trans
           "rgba(0,0,0,0.1)",
         ],
       },
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -978,6 +1055,7 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing 1
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "opacity": {
         "inputRange": [
           0,
@@ -999,6 +1077,7 @@ exports[`<html.*> style polyfills "transition" properties  opacity transition: e
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "opacity": {
         "inputRange": [
           0,
@@ -1020,6 +1099,7 @@ exports[`<html.*> style polyfills "transition" properties  opacity transition: s
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "opacity": {
         "inputRange": [
           0,
@@ -1043,6 +1123,7 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: rot
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1104,6 +1185,7 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: sca
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1165,6 +1247,7 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: ske
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1202,6 +1285,7 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: tra
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1239,6 +1323,7 @@ exports[`<html.*> style polyfills "transition" properties  transform transition:
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1276,6 +1361,7 @@ exports[`<html.*> style polyfills "transition" properties  transform transition:
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1313,6 +1399,7 @@ exports[`<html.*> style polyfills "transition" properties  transition all proper
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "opacity": {
         "inputRange": [
           0,
@@ -1360,6 +1447,7 @@ exports[`<html.*> style polyfills "transition" properties  transition multiple p
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "opacity": {
         "inputRange": [
           0,
@@ -1407,6 +1495,7 @@ exports[`<html.*> style polyfills "transition" properties  transition with missi
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1418,6 +1507,7 @@ exports[`<html.*> style polyfills "transition" properties  transition with missi
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "transform": [
         {
@@ -1447,6 +1537,7 @@ exports[`<html.*> style polyfills "transition" properties  update triggers trans
           "blue",
         ],
       },
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1468,6 +1559,7 @@ exports[`<html.*> style polyfills "transition" properties  update triggers trans
           "green",
         ],
       },
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1479,6 +1571,7 @@ exports[`<html.*> style polyfills "transition" properties  width transition: end
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "width": {
         "inputRange": [
@@ -1500,6 +1593,7 @@ exports[`<html.*> style polyfills "transition" properties  width transition: sta
   animated={true}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "width": {
         "inputRange": [
@@ -1522,6 +1616,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
   style={
     {
       "borderColor": "red",
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1530,6 +1625,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "position": "static",
       }
     }
@@ -1537,6 +1633,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     <Text
       style={
         {
+          "boxSizing": "content-box",
           "color": "red",
           "cursor": "pointer",
           "fontFamily": "Arial",
@@ -1563,6 +1660,7 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
       style={
         {
           "borderWidth": 1,
+          "boxSizing": "content-box",
           "position": "static",
         }
       }
@@ -1576,6 +1674,7 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
   experimental_layoutConformance="strict"
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -1584,6 +1683,7 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "position": "static",
       }
     }
@@ -1609,6 +1709,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     style={
       {
         "backgroundColor": "pink",
+        "boxSizing": "content-box",
         "color": "red",
         "position": "static",
         "userSelect": "auto",
@@ -1621,6 +1722,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     style={
       {
         "backgroundColor": "pink",
+        "boxSizing": "content-box",
         "color": "green",
         "position": "static",
         "userSelect": "auto",
@@ -1635,6 +1737,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     style={
       {
         "borderWidth": 1,
+        "boxSizing": "content-box",
         "position": "static",
       }
     }
@@ -1643,6 +1746,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     experimental_layoutConformance="strict"
     style={
       {
+        "boxSizing": "content-box",
         "position": "static",
       }
     }
@@ -1651,6 +1755,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       style={
         {
           "backgroundColor": "pink",
+          "boxSizing": "content-box",
           "color": "green",
           "position": "static",
           "userSelect": "auto",
@@ -1665,6 +1770,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       style={
         {
           "borderWidth": 1,
+          "boxSizing": "content-box",
           "position": "static",
         }
       }
@@ -1673,6 +1779,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       experimental_layoutConformance="strict"
       style={
         {
+          "boxSizing": "content-box",
           "position": "static",
         }
       }
@@ -1681,6 +1788,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         style={
           {
             "backgroundColor": "pink",
+            "boxSizing": "content-box",
             "color": "blue",
             "position": "static",
             "userSelect": "auto",
@@ -1695,6 +1803,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         style={
           {
             "borderWidth": 1,
+            "boxSizing": "content-box",
             "position": "static",
           }
         }
@@ -1705,6 +1814,7 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     style={
       {
         "backgroundColor": "pink",
+        "boxSizing": "content-box",
         "color": "red",
         "position": "static",
         "userSelect": "auto",
@@ -1720,6 +1830,7 @@ exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 <Text
   style={
     {
+      "boxSizing": "content-box",
       "color": "red",
       "position": "static",
       "userSelect": "auto",
@@ -1735,6 +1846,7 @@ exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
   numberOfLines={3}
   style={
     {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "none",
     }

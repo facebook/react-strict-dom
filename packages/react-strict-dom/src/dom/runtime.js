@@ -24,7 +24,6 @@ const styles = stylex.create({
   },
   // reset all 'inline' text elements
   inline: {
-    // boxSizing: 'border-box',
     margin: 0,
     padding: 0,
     textDecoration: 'none',

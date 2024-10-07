@@ -19,6 +19,7 @@ import type {
 } from '../../types/react-native';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
+import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
@@ -32,7 +33,7 @@ import {
   resolveVariableReferences,
   stringContainsVariables
 } from './customProperties';
-import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
+import { version } from '../modules/version';
 
 type ResolveStyleOptions = $ReadOnly<{
   active?: ?boolean,
@@ -637,7 +638,7 @@ export function props(
 
   // boxSizing:"content-box" polyfill
   const boxSizingValue = nextStyle.boxSizing;
-  if (boxSizingValue === 'content-box') {
+  if (boxSizingValue === 'content-box' && !version.experimental) {
     nextStyle = fixContentBox(nextStyle);
   }
   nativeProps.style = nextStyle;

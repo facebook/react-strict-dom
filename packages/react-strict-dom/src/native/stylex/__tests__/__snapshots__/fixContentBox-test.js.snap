@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fixContentBox boxSizing: content-box: allDifferent 1`] = `
+{
+  "borderBottomWidth": 3,
+  "borderLeftWidth": 4,
+  "borderRightWidth": 2,
+  "borderTopWidth": 1,
+  "height": 144,
+  "paddingBottom": 30,
+  "paddingLeft": 40,
+  "paddingRight": 20,
+  "paddingTop": 10,
+  "width": 166,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: auto 1`] = `
+{
+  "borderWidth": 2,
+  "height": 74,
+  "padding": 10,
+  "width": "auto",
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: height 1`] = `
+{
+  "borderWidth": 2,
+  "height": 74,
+  "padding": 10,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: maxHeight 1`] = `
+{
+  "borderWidth": 2,
+  "maxHeight": 74,
+  "padding": 10,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: maxWidth 1`] = `
+{
+  "borderWidth": 2,
+  "maxWidth": 124,
+  "padding": 10,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: minHeight 1`] = `
+{
+  "borderWidth": 2,
+  "minHeight": 74,
+  "padding": 10,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: minWidth 1`] = `
+{
+  "borderWidth": 2,
+  "minWidth": 124,
+  "padding": 10,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: null 1`] = `
+{
+  "borderWidth": 2,
+  "height": 74,
+  "padding": 10,
+  "width": null,
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: string 1`] = `
+{
+  "borderWidth": 2,
+  "boxSizing": "content-box",
+  "height": 50,
+  "padding": 10,
+  "width": "50%",
+}
+`;
+
+exports[`fixContentBox boxSizing: content-box: width 1`] = `
+{
+  "borderWidth": 2,
+  "overflow": "hidden",
+  "padding": 10,
+  "width": 124,
+}
+`;
