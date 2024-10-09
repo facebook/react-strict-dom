@@ -21,6 +21,7 @@ describe('<html.*>', () => {
   afterEach(() => {
     console.error.mockRestore();
     console.warn.mockRestore();
+    jest.clearAllMocks();
   });
 
   test('default block layout', () => {
@@ -564,22 +565,23 @@ describe('<html.*>', () => {
           transitionProperty: 'transform',
           transitionTimingFunction: 'ease-out'
         }),
-        transitionAll: {
-          opacity: 1.0,
-          transform: 'translateY(0px) rotateX(0deg)',
+        transitionAll: (transform, opacity) => ({
+          opacity: opacity ?? 1.0,
+          transform: transform ?? 'translateY(0px) rotateX(0deg)',
           transitionDelay: 0,
           transitionDuration: 1000,
           transitionProperty: 'all',
           transitionTimingFunction: 'ease-in'
-        },
-        transitionMultiple: {
-          opacity: 1.0,
-          transform: 'translateY(0px) rotateX(0deg)',
+        }),
+        transitionMultiple: (opacity, backgroundColor, transform) => ({
+          backgroundColor,
+          opacity,
+          transform,
           transitionDelay: 0,
           transitionDuration: 1000,
-          transitionProperty: 'opacity, transform',
+          transitionProperty: 'opacity, backgroundColor',
           transitionTimingFunction: 'ease-in'
-        },
+        }),
         transitionWithoutProperty: {
           // no transform value is set
           transitionDelay: 0,
@@ -592,7 +594,7 @@ describe('<html.*>', () => {
           transitionDelay: 0,
           transitionDuration: 500,
           transitionProperty: 'width',
-          transitionTimingFunction: 'ease'
+          transitionTimingFunction: 'ease-out'
         })
       });
 
@@ -623,9 +625,12 @@ describe('<html.*>', () => {
         expect(console.error).not.toHaveBeenCalled();
         expect(Animated.sequence).toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('red to green');
+        Animated.sequence.mockClear();
+
         act(() => {
           root.update(<html.div style={styles.backgroundColor('blue')} />);
         });
+        expect(Animated.sequence).toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('green to blue');
       });
 
@@ -636,13 +641,14 @@ describe('<html.*>', () => {
           root = create(<html.div style={styles.backgroundColor()} />);
         });
         expect(root.toJSON()).toMatchSnapshot('start');
-        expect(Easing.inOut).toHaveBeenCalled();
+        expect(Easing.inOut).not.toHaveBeenCalled();
         act(() => {
           root.update(
             <html.div style={styles.backgroundColor('rgba(255,255,255,0.9)')} />
           );
         });
         expect(root.toJSON()).toMatchSnapshot('end');
+        expect(Easing.inOut).toHaveBeenCalled();
       });
 
       test('opacity transition', () => {
@@ -652,11 +658,12 @@ describe('<html.*>', () => {
           root = create(<html.div style={styles.opacity()} />);
         });
         expect(root.toJSON()).toMatchSnapshot('start');
-        expect(Easing.in).toHaveBeenCalled();
+        expect(Easing.in).not.toHaveBeenCalled();
         act(() => {
           root.update(<html.div style={styles.opacity(0)} />);
         });
         expect(root.toJSON()).toMatchSnapshot('end');
+        expect(Easing.in).toHaveBeenCalled();
       });
 
       test('transform transition', () => {
@@ -666,7 +673,7 @@ describe('<html.*>', () => {
           root = create(<html.div style={styles.transform()} />);
         });
         expect(root.toJSON()).toMatchSnapshot('start');
-        expect(Easing.out).toHaveBeenCalled();
+        expect(Easing.out).not.toHaveBeenCalled();
         act(() => {
           root.update(
             <html.div
@@ -675,6 +682,7 @@ describe('<html.*>', () => {
           );
         });
         expect(root.toJSON()).toMatchSnapshot('end');
+        expect(Easing.out).toHaveBeenCalled();
       });
 
       test('width transition', () => {
@@ -684,24 +692,27 @@ describe('<html.*>', () => {
           root = create(<html.div style={styles.width()} />);
         });
         expect(root.toJSON()).toMatchSnapshot('start');
-        expect(Easing.out).toHaveBeenCalled();
+        expect(Easing.out).not.toHaveBeenCalled();
         act(() => {
           root.update(<html.div style={[styles.width(200)]} />);
         });
         expect(root.toJSON()).toMatchSnapshot('end');
+        expect(Easing.out).toHaveBeenCalled();
       });
 
       test('cubic-bezier easing', () => {
+        const BEZIER_STR = 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)';
         let root;
         // cubic-bezier easing
         act(() => {
-          root = create(
-            <html.div
-              style={styles.opacity(1, 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)')}
-            />
-          );
+          root = create(<html.div style={styles.opacity(1, BEZIER_STR)} />);
         });
-        expect(root.toJSON()).toMatchSnapshot();
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.bezier).not.toHaveBeenCalled();
+        act(() => {
+          root.update(<html.div style={styles.opacity(0, BEZIER_STR)} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.bezier).toHaveBeenCalledWith(0.1, 0.2, 0.3, 0.4);
       });
 
@@ -709,20 +720,53 @@ describe('<html.*>', () => {
         let root;
         // transition all properties (opacity and transform)
         act(() => {
-          root = create(<html.div style={styles.transitionAll} />);
+          root = create(
+            <html.div
+              style={styles.transitionAll('translateY(0px) rotateX(0deg)', 0.0)}
+            />
+          );
         });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.in).not.toHaveBeenCalled();
+        act(() => {
+          root.update(
+            <html.div
+              style={styles.transitionAll(
+                'translateY(100px) rotateX(90deg)',
+                1.0
+              )}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.in).toHaveBeenCalled();
-        expect(root.toJSON()).toMatchSnapshot();
       });
 
       test('transition multiple properties', () => {
         let root;
-        // transition multiple properties
+        // transition multiple properties (opacity & backgroundColor — ignoring the changed transform)
         act(() => {
-          root = create(<html.div style={styles.transitionMultiple} />);
+          root = create(
+            <html.div
+              style={styles.transitionMultiple(0.0, 'red', 'translateX(0px)')}
+            />
+          );
         });
-        expect(Easing.in).toHaveBeenCalled();
-        expect(root.toJSON()).toMatchSnapshot();
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Easing.in).not.toBeCalled();
+        act(() => {
+          root.update(
+            <html.div
+              style={styles.transitionMultiple(
+                1.0,
+                'green',
+                'translateX(50px)'
+              )}
+            />
+          );
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
+        expect(Easing.in).toBeCalled();
       });
 
       test('transition with missing properties', () => {
@@ -752,9 +796,19 @@ describe('<html.*>', () => {
 
       test('other transforms', () => {
         let root;
-        // other transforms
+
+        // rotation
         act(() => {
           root = create(
+            <html.div
+              style={styles.transform(
+                'rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'
+              )}
+            />
+          );
+        });
+        act(() => {
+          root.update(
             <html.div
               style={styles.transform(
                 'rotate(1deg) rotateX(2deg) rotateY(3deg) rotateZ(4deg)'
@@ -763,22 +817,47 @@ describe('<html.*>', () => {
           );
         });
         expect(root.toJSON()).toMatchSnapshot('rotate');
+
+        // scaling
         act(() => {
           root = create(
+            <html.div
+              style={styles.transform('scale(0) scaleX(0) scaleY(0) scaleZ(0)')}
+            />
+          );
+        });
+        act(() => {
+          root.update(
             <html.div
               style={styles.transform('scale(1) scaleX(2) scaleY(4) scaleZ(6)')}
             />
           );
         });
         expect(root.toJSON()).toMatchSnapshot('scale');
+
+        // skewing
         act(() => {
           root = create(
+            <html.div style={styles.transform('skewX(0px) skewY(0px)')} />
+          );
+        });
+        act(() => {
+          root.update(
             <html.div style={styles.transform('skewX(20px) skewY(21px)')} />
           );
         });
         expect(root.toJSON()).toMatchSnapshot('skew');
+
+        // translating
         act(() => {
           root = create(
+            <html.div
+              style={styles.transform('translateX(0px) translateY(0px)')}
+            />
+          );
+        });
+        act(() => {
+          root.update(
             <html.div
               style={styles.transform('translateX(11px) translateY(21px)')}
             />
