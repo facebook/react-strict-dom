@@ -51,6 +51,6 @@ Web APIs can also be implemented on native via [Turbo Modules](https://github.co
 | globalThis.performance.measure() | ✅ | ✅ | |
 | globalThis.performance.now() | ✅ | ✅ | |
 | globalThis.performance.timeOrigin | ❌ | ❌ | |
-| globalThis.queueMicrotask() | ❌ | ❌ | |
+| globalThis.queueMicrotask() | ✅ | ✅ | |
 | globalThis.setInterval() | ✅ | ✅ | |
 | globalThis.setTimeout() | ✅ | ✅ | |

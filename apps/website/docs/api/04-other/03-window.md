@@ -19,6 +19,7 @@ In the context of React Strict DOM the functions, namespaces, objects, and const
 | window | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |
 | window.cancelAnimationFrame() | ✅ | ✅ | |
+| window.cancelIdleCallback() | ✅ | ✅ | |
 | window.devicePixelRatio | ❌ | ❌ | |
 | window.getSelection() | ❌ | ❌ | |
 | window.matchMedia() | ❌ | ❌ | |
@@ -27,3 +28,4 @@ In the context of React Strict DOM the functions, namespaces, objects, and const
 | window.navigator.permissions | ❌ | ❌ | |
 | window.navigator.vibrate() | ❌ | ❌ | |
 | window.requestAnimationFrame() | ✅ | ✅ | |
+| window.requestIdleCallback() | ✅ | ✅ | |
