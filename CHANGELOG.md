@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.28 (Oct 9, 2024)
+
+### Breaking changes
+
+* React Strict DOM now uses Node.js package exports.
+* [Web] The babel plugin has been replaced with a babel preset. Installing StyleX is no longer required.
+
+### New features
+
+* [Native] Use native `boxSizing` implementation if available. This improve style merging performance by 30-40%.
+* [Web] Style themes and merging now works the same as native. Style extraction is better optimized.
+* [Web] Style extraction is better optimized.
+
 ## 0.0.27 (Sep 16, 2024)
 
 ### New features
