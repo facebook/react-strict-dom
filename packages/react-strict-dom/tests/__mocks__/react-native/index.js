@@ -26,7 +26,7 @@ export const Animated = {
   sequence: jest.fn(() => {
     return {
       start: jest.fn((callback) => {
-        callback();
+        callback && callback();
       }),
       stop: jest.fn()
     };
