@@ -999,10 +999,7 @@ exports[`properties: logical direction inlineSize: minInlineSize after minWidth 
 exports[`properties: logical direction inset: inset 1`] = `
 {
   "style": {
-    "bottom": 1,
-    "end": 1,
-    "start": 1,
-    "top": 1,
+    "inset": 1,
   },
 }
 `;
@@ -1011,6 +1008,7 @@ exports[`properties: logical direction inset: inset vs top 1`] = `
 {
   "style": {
     "bottom": 100,
+    "insetBlockStart": 3,
     "left": 10,
     "right": 10,
     "top": 100,
@@ -1021,8 +1019,7 @@ exports[`properties: logical direction inset: inset vs top 1`] = `
 exports[`properties: logical direction inset: insetBlock 1`] = `
 {
   "style": {
-    "bottom": 2,
-    "top": 2,
+    "insetBlock": 2,
   },
 }
 `;
@@ -1031,6 +1028,7 @@ exports[`properties: logical direction inset: insetBlock vs top 1`] = `
 {
   "style": {
     "bottom": 100,
+    "insetBlockStart": 3,
     "top": 100,
   },
 }
@@ -1039,7 +1037,7 @@ exports[`properties: logical direction inset: insetBlock vs top 1`] = `
 exports[`properties: logical direction inset: insetBlockEnd 1`] = `
 {
   "style": {
-    "bottom": 4,
+    "insetBlockEnd": 4,
   },
 }
 `;
@@ -1048,6 +1046,7 @@ exports[`properties: logical direction inset: insetBlockEnd vs bottom 1`] = `
 {
   "style": {
     "bottom": 100,
+    "insetBlockEnd": 4,
   },
 }
 `;
@@ -1055,7 +1054,7 @@ exports[`properties: logical direction inset: insetBlockEnd vs bottom 1`] = `
 exports[`properties: logical direction inset: insetBlockStart 1`] = `
 {
   "style": {
-    "top": 3,
+    "insetBlockStart": 3,
   },
 }
 `;
@@ -1063,6 +1062,7 @@ exports[`properties: logical direction inset: insetBlockStart 1`] = `
 exports[`properties: logical direction inset: insetBlockStart vs top 1`] = `
 {
   "style": {
+    "insetBlockStart": 3,
     "top": 100,
   },
 }
@@ -1071,8 +1071,7 @@ exports[`properties: logical direction inset: insetBlockStart vs top 1`] = `
 exports[`properties: logical direction inset: insetInline 1`] = `
 {
   "style": {
-    "end": 5,
-    "start": 5,
+    "insetInline": 5,
   },
 }
 `;
@@ -1080,7 +1079,7 @@ exports[`properties: logical direction inset: insetInline 1`] = `
 exports[`properties: logical direction inset: insetInlineEnd 1`] = `
 {
   "style": {
-    "end": 7,
+    "insetInlineEnd": 7,
   },
 }
 `;
@@ -1088,7 +1087,7 @@ exports[`properties: logical direction inset: insetInlineEnd 1`] = `
 exports[`properties: logical direction inset: insetInlineStart 1`] = `
 {
   "style": {
-    "start": 6,
+    "insetInlineStart": 6,
   },
 }
 `;
@@ -1096,7 +1095,7 @@ exports[`properties: logical direction inset: insetInlineStart 1`] = `
 exports[`properties: logical direction margin: marginBlock 1`] = `
 {
   "style": {
-    "marginVertical": 1,
+    "marginBlock": 1,
   },
 }
 `;
@@ -1104,7 +1103,7 @@ exports[`properties: logical direction margin: marginBlock 1`] = `
 exports[`properties: logical direction margin: marginBlockEnd 1`] = `
 {
   "style": {
-    "marginBottom": 3,
+    "marginBlockEnd": 3,
   },
 }
 `;
@@ -1112,7 +1111,7 @@ exports[`properties: logical direction margin: marginBlockEnd 1`] = `
 exports[`properties: logical direction margin: marginBlockStart 1`] = `
 {
   "style": {
-    "marginTop": 2,
+    "marginBlockStart": 2,
   },
 }
 `;
@@ -1120,7 +1119,7 @@ exports[`properties: logical direction margin: marginBlockStart 1`] = `
 exports[`properties: logical direction margin: marginInline 1`] = `
 {
   "style": {
-    "marginHorizontal": 1,
+    "marginInline": 1,
   },
 }
 `;
@@ -1128,7 +1127,7 @@ exports[`properties: logical direction margin: marginInline 1`] = `
 exports[`properties: logical direction margin: marginInlineEnd 1`] = `
 {
   "style": {
-    "marginEnd": 3,
+    "marginInlineEnd": 3,
   },
 }
 `;
@@ -1136,7 +1135,7 @@ exports[`properties: logical direction margin: marginInlineEnd 1`] = `
 exports[`properties: logical direction margin: marginInlineStart 1`] = `
 {
   "style": {
-    "marginStart": 2,
+    "marginInlineStart": 2,
   },
 }
 `;
@@ -1144,7 +1143,7 @@ exports[`properties: logical direction margin: marginInlineStart 1`] = `
 exports[`properties: logical direction padding: paddingBlock 1`] = `
 {
   "style": {
-    "paddingVertical": 1,
+    "paddingBlock": 1,
   },
 }
 `;
@@ -1152,7 +1151,7 @@ exports[`properties: logical direction padding: paddingBlock 1`] = `
 exports[`properties: logical direction padding: paddingBlockEnd 1`] = `
 {
   "style": {
-    "paddingBottom": 3,
+    "paddingBlockEnd": 3,
   },
 }
 `;
@@ -1160,7 +1159,7 @@ exports[`properties: logical direction padding: paddingBlockEnd 1`] = `
 exports[`properties: logical direction padding: paddingBlockStart 1`] = `
 {
   "style": {
-    "paddingTop": 2,
+    "paddingBlockStart": 2,
   },
 }
 `;
@@ -1168,7 +1167,7 @@ exports[`properties: logical direction padding: paddingBlockStart 1`] = `
 exports[`properties: logical direction padding: paddingInline 1`] = `
 {
   "style": {
-    "paddingHorizontal": 1,
+    "paddingInline": 1,
   },
 }
 `;
@@ -1176,7 +1175,7 @@ exports[`properties: logical direction padding: paddingInline 1`] = `
 exports[`properties: logical direction padding: paddingInlineEnd 1`] = `
 {
   "style": {
-    "paddingEnd": 3,
+    "paddingInlineEnd": 3,
   },
 }
 `;
@@ -1184,7 +1183,7 @@ exports[`properties: logical direction padding: paddingInlineEnd 1`] = `
 exports[`properties: logical direction padding: paddingInlineStart 1`] = `
 {
   "style": {
-    "paddingStart": 2,
+    "paddingInlineStart": 2,
   },
 }
 `;

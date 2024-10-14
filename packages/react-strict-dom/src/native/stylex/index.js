@@ -553,62 +553,9 @@ export function props(
         nativeProps.cursorColor = styleValue;
       }
     }
-    // inset
-    else if (styleProp === 'inset') {
-      nextStyle.top = nextStyle.top ?? styleValue;
-      nextStyle.start = nextStyle.start ?? styleValue;
-      nextStyle.end = nextStyle.end ?? styleValue;
-      nextStyle.bottom = nextStyle.bottom ?? styleValue;
-    } else if (styleProp === 'insetBlock') {
-      nextStyle.top = nextStyle.top ?? styleValue;
-      nextStyle.bottom = nextStyle.bottom ?? styleValue;
-    } else if (styleProp === 'insetBlockEnd') {
-      nextStyle.bottom = flatStyle.bottom ?? styleValue;
-    } else if (styleProp === 'insetBlockStart') {
-      nextStyle.top = flatStyle.top ?? styleValue;
-    } else if (styleProp === 'insetInline') {
-      nextStyle.end = nextStyle.end ?? styleValue;
-      nextStyle.start = nextStyle.start ?? styleValue;
-    } else if (styleProp === 'insetInlineEnd') {
-      nextStyle.end = flatStyle.end ?? styleValue;
-    } else if (styleProp === 'insetInlineStart') {
-      nextStyle.start = flatStyle.start ?? styleValue;
-    }
     // lineClamp polyfill
     else if (styleProp === 'lineClamp') {
       nativeProps.numberOfLines = styleValue;
-    }
-    // marginBlock
-    else if (styleProp === 'marginBlock') {
-      nextStyle.marginVertical = styleValue;
-    } else if (styleProp === 'marginBlockStart') {
-      nextStyle.marginTop = nextStyle.marginTop ?? styleValue;
-    } else if (styleProp === 'marginBlockEnd') {
-      nextStyle.marginBottom = nextStyle.marginBottom ?? styleValue;
-    }
-    // marginInline
-    else if (styleProp === 'marginInline') {
-      nextStyle.marginHorizontal = styleValue;
-    } else if (styleProp === 'marginInlineStart') {
-      nextStyle.marginStart = styleValue;
-    } else if (styleProp === 'marginInlineEnd') {
-      nextStyle.marginEnd = styleValue;
-    }
-    // paddingBlock
-    else if (styleProp === 'paddingBlock') {
-      nextStyle.paddingVertical = styleValue;
-    } else if (styleProp === 'paddingBlockStart') {
-      nextStyle.paddingTop = nextStyle.paddingTop ?? styleValue;
-    } else if (styleProp === 'paddingBlockEnd') {
-      nextStyle.paddingBottom = nextStyle.paddingBottom ?? styleValue;
-    }
-    // paddingInline
-    else if (styleProp === 'paddingInline') {
-      nextStyle.paddingHorizontal = styleValue;
-    } else if (styleProp === 'paddingInlineStart') {
-      nextStyle.paddingStart = styleValue;
-    } else if (styleProp === 'paddingInlineEnd') {
-      nextStyle.paddingEnd = styleValue;
     }
     // '::placeholder' polyfill
     else if (styleProp === 'placeholderTextColor') {
