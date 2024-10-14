@@ -25,236 +25,270 @@ import { defaultStyles } from './runtime';
 /**
  * "a" (inline)
  */
-export const a: React$AbstractComponent<
-  StrictReactDOMAnchorProps,
-  HTMLAnchorElement
-> = createStrict('a', defaultStyles.a);
+export const a: component(
+  ref?: React.RefSetter<HTMLAnchorElement>,
+  ...StrictReactDOMAnchorProps
+) = createStrict('a', defaultStyles.a);
 
 /**
  * "article" (block)
  */
-export const article: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLElement
-> = createStrict('article', defaultStyles.article);
+export const article: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('article', defaultStyles.article);
 
 /**
  * "aside" (block)
  */
-export const aside: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('aside', defaultStyles.aside);
+export const aside: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('aside', defaultStyles.aside);
 
 /**
  * "b" (inline)
  */
-export const b: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('b', defaultStyles.b);
+export const b: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('b', defaultStyles.b);
 
 /**
  * "bdi" (inline)
  */
-export const bdi: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('bdi', defaultStyles.bdi);
+export const bdi: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('bdi', defaultStyles.bdi);
 
 /**
  * "bdo" (inline)
  */
-export const bdo: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('bdo', defaultStyles.bdo);
+export const bdo: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('bdo', defaultStyles.bdo);
 
 /**
  * "blockquote" (block)
  */
-export const blockquote: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLQuoteElement
-> = createStrict('blockquote', defaultStyles.blockquote);
+export const blockquote: component(
+  ref?: React.RefSetter<HTMLQuoteElement>,
+  ...StrictReactDOMProps
+) = createStrict('blockquote', defaultStyles.blockquote);
 
 /**
  * "br"
  */
-export const br: React$AbstractComponent<StrictReactDOMProps, HTMLBRElement> =
-  createStrict('br', defaultStyles.br);
+export const br: component(
+  ref?: React.RefSetter<HTMLBRElement>,
+  ...StrictReactDOMProps
+) = createStrict('br', defaultStyles.br);
 
 /**
  * "button" (inline-block)
  */
-export const button: React$AbstractComponent<
-  StrictReactDOMButtonProps,
-  HTMLButtonElement
-> = createStrict('button', defaultStyles.button);
+export const button: component(
+  ref?: React.RefSetter<HTMLButtonElement>,
+  ...StrictReactDOMButtonProps
+) = createStrict('button', defaultStyles.button);
 
 /**
  * "code" (inline)
  */
-export const code: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('code', defaultStyles.code);
+export const code: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('code', defaultStyles.code);
 
 /**
  * "del" (inline)
  */
-export const del: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
-  createStrict('del', defaultStyles.del);
+export const del: component(
+  ref?: React.RefSetter<HTMLModElement>,
+  ...StrictReactDOMProps
+) = createStrict('del', defaultStyles.del);
 
 /**
  * "div" (block)
  */
-export const div: React$AbstractComponent<StrictReactDOMProps, HTMLDivElement> =
-  createStrict('div', defaultStyles.div);
+export const div: component(
+  ref?: React.RefSetter<HTMLDivElement>,
+  ...StrictReactDOMProps
+) = createStrict('div', defaultStyles.div);
 
 /**
  * "em" (inline)
  */
-export const em: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('em', defaultStyles.em);
+export const em: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('em', defaultStyles.em);
 
 /**
  * "fieldset" (block)
  */
-export const fieldset: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLFieldSetElement
-> = createStrict('fieldset', defaultStyles.fieldset);
+export const fieldset: component(
+  ref?: React.RefSetter<HTMLFieldSetElement>,
+  ...StrictReactDOMProps
+) = createStrict('fieldset', defaultStyles.fieldset);
 
 /**
  * "footer" (block)
  */
-export const footer: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('footer', defaultStyles.footer);
+export const footer: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('footer', defaultStyles.footer);
 
 /**
  * "form" (block)
  */
-export const form: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLFormElement
-> = createStrict('form', defaultStyles.form);
+export const form: component(
+  ref?: React.RefSetter<HTMLFormElement>,
+  ...StrictReactDOMProps
+) = createStrict('form', defaultStyles.form);
 
 /**
  * "h1-h6" (block)
  */
-export const h1: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h1', defaultStyles.h1);
-export const h2: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h2', defaultStyles.h2);
-export const h3: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h3', defaultStyles.h3);
-export const h4: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h4', defaultStyles.h4);
-export const h5: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h5', defaultStyles.h5);
-export const h6: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrict('h6', defaultStyles.h6);
+export const h1: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h1', defaultStyles.h1);
+export const h2: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h2', defaultStyles.h2);
+export const h3: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h3', defaultStyles.h3);
+export const h4: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h4', defaultStyles.h4);
+export const h5: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h5', defaultStyles.h5);
+export const h6: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrict('h6', defaultStyles.h6);
 
 /**
  * "header" (block)
  */
-export const header: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('header', defaultStyles.header);
+export const header: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('header', defaultStyles.header);
 
 /**
  * "hr" (block)
  */
-export const hr: React$AbstractComponent<StrictReactDOMProps, HTMLHRElement> =
-  createStrict('hr', defaultStyles.hr);
+export const hr: component(
+  ref?: React.RefSetter<HTMLHRElement>,
+  ...StrictReactDOMProps
+) = createStrict('hr', defaultStyles.hr);
 
 /**
  * "i" (inline)
  */
-export const i: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('i', defaultStyles.i);
+export const i: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('i', defaultStyles.i);
 
 /**
  * "img" (inline)
  */
-export const img: React$AbstractComponent<
-  StrictReactDOMImageProps,
-  HTMLImageElement
-> = createStrict('img', defaultStyles.img);
+export const img: component(
+  ref?: React.RefSetter<HTMLImageElement>,
+  ...StrictReactDOMImageProps
+) = createStrict('img', defaultStyles.img);
 
 /**
  * "input" (inline-block)
  */
-export const input: React$AbstractComponent<
-  StrictReactDOMInputProps,
-  HTMLInputElement
-> = createStrict('input', defaultStyles.input);
+export const input: component(
+  ref?: React.RefSetter<HTMLInputElement>,
+  ...StrictReactDOMInputProps
+) = createStrict('input', defaultStyles.input);
 
 /**
  * "ins" (inline)
  */
-export const ins: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
-  createStrict('ins', defaultStyles.ins);
+export const ins: component(
+  ref?: React.RefSetter<HTMLModElement>,
+  ...StrictReactDOMProps
+) = createStrict('ins', defaultStyles.ins);
 
 /**
  * "kbd" (inline)
  */
-export const kbd: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('kbd', defaultStyles.kbd);
+export const kbd: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('kbd', defaultStyles.kbd);
 
 /**
  * "label" (inline)
  */
-export const label: React$AbstractComponent<
-  StrictReactDOMLabelProps,
-  HTMLLabelElement
-> = createStrict('label', defaultStyles.label);
+export const label: component(
+  ref?: React.RefSetter<HTMLLabelElement>,
+  ...StrictReactDOMLabelProps
+) = createStrict('label', defaultStyles.label);
 
 /**
  * "li" (block)
  */
-export const li: React$AbstractComponent<
-  StrictReactDOMListItemProps,
-  HTMLLIElement
-> = createStrict('li', defaultStyles.li);
+export const li: component(
+  ref?: React.RefSetter<HTMLLIElement>,
+  ...StrictReactDOMListItemProps
+) = createStrict('li', defaultStyles.li);
 
 /**
  * "main" (block)
  */
-export const main: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('main', defaultStyles.main);
+export const main: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('main', defaultStyles.main);
 
 /**
  * "nav" (block)
  */
-export const nav: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('nav', defaultStyles.nav);
+export const nav: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('nav', defaultStyles.nav);
 
 /**
  * "ol" (block)
  */
-export const ol: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLOListElement
-> = createStrict('ol', defaultStyles.ol);
+export const ol: component(
+  ref?: React.RefSetter<HTMLOListElement>,
+  ...StrictReactDOMProps
+) = createStrict('ol', defaultStyles.ol);
 
 /**
  * "optgroup"
  */
-export const optgroup: React$AbstractComponent<
-  StrictReactDOMOptionGroupProps,
-  HTMLOptGroupElement
-> = createStrict('optgroup', defaultStyles.optgroup);
+export const optgroup: component(
+  ref?: React.RefSetter<HTMLOptGroupElement>,
+  ...StrictReactDOMOptionGroupProps
+) = createStrict('optgroup', defaultStyles.optgroup);
 
 /**
  * "option"
  */
-export const option: React$AbstractComponent<
-  StrictReactDOMOptionProps,
-  HTMLOptionElement
-> = createStrict<HTMLOptionElement, StrictReactDOMOptionProps>(
+export const option: component(
+  ref?: React.RefSetter<HTMLOptionElement>,
+  ...StrictReactDOMOptionProps
+) = createStrict<HTMLOptionElement, StrictReactDOMOptionProps>(
   'option',
   defaultStyles.option
 );
@@ -262,83 +296,95 @@ export const option: React$AbstractComponent<
 /**
  * "p" (block)
  */
-export const p: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLParagraphElement
-> = createStrict('p', defaultStyles.p);
+export const p: component(
+  ref?: React.RefSetter<HTMLParagraphElement>,
+  ...StrictReactDOMProps
+) = createStrict('p', defaultStyles.p);
 
 /**
  * "pre" (block)
  */
-export const pre: React$AbstractComponent<StrictReactDOMProps, HTMLPreElement> =
-  createStrict('pre', defaultStyles.pre);
+export const pre: component(
+  ref?: React.RefSetter<HTMLPreElement>,
+  ...StrictReactDOMProps
+) = createStrict('pre', defaultStyles.pre);
 
 /**
  * "s" (inline)
  */
-export const s: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('s', defaultStyles.s);
+export const s: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('s', defaultStyles.s);
 
 /**
  * "section" (block)
  */
-export const section: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLElement
-> = createStrict('section', defaultStyles.section);
+export const section: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('section', defaultStyles.section);
 
 /**
  * "select" (inline-block)
  */
-export const select: React$AbstractComponent<
-  StrictReactDOMSelectProps,
-  HTMLSelectElement
-> = createStrict('select', defaultStyles.select);
+export const select: component(
+  ref?: React.RefSetter<HTMLSelectElement>,
+  ...StrictReactDOMSelectProps
+) = createStrict('select', defaultStyles.select);
 
 /**
  * "span" (inline)
  */
-export const span: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLSpanElement
-> = createStrict('span', defaultStyles.span);
+export const span: component(
+  ref?: React.RefSetter<HTMLSpanElement>,
+  ...StrictReactDOMProps
+) = createStrict('span', defaultStyles.span);
 
 /**
  * "strong" (inline)
  */
-export const strong: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('strong', defaultStyles.strong);
+export const strong: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('strong', defaultStyles.strong);
 
 /**
  * "sub" (inline)
  */
-export const sub: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('sub', defaultStyles.sub);
+export const sub: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('sub', defaultStyles.sub);
 
 /**
  * "sup" (inline)
  */
-export const sup: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('sup', defaultStyles.sup);
+export const sup: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('sup', defaultStyles.sup);
 
 /**
  * "textarea" (inline-block)
  */
-export const textarea: React$AbstractComponent<
-  StrictReactDOMTextAreaProps,
-  HTMLTextAreaElement
-> = createStrict('textarea', defaultStyles.textarea);
+export const textarea: component(
+  ref?: React.RefSetter<HTMLTextAreaElement>,
+  ...StrictReactDOMTextAreaProps
+) = createStrict('textarea', defaultStyles.textarea);
 
 /**
  * "u" (inline)
  */
-export const u: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('u', defaultStyles.u);
+export const u: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('u', defaultStyles.u);
 
 /**
  * "ul" (block)
  */
-export const ul: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLUListElement
-> = createStrict('ul', defaultStyles.ul);
+export const ul: component(
+  ref?: React.RefSetter<HTMLUListElement>,
+  ...StrictReactDOMProps
+) = createStrict('ul', defaultStyles.ul);
