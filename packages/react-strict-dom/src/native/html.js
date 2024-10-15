@@ -81,64 +81,74 @@ const headingProps = {
 /**
  * "a" (inline)
  */
-export const a: React$AbstractComponent<
-  StrictReactDOMAnchorProps,
-  HTMLAnchorElement
-> = createStrictText('a', { style: [styles.a, styles.underline] });
+export const a: component(
+  ref?: React.RefSetter<HTMLAnchorElement>,
+  ...StrictReactDOMAnchorProps
+) = createStrictText('a', { style: [styles.a, styles.underline] });
 
 /**
  * "article" (block)
  */
-export const article: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLElement
-> = createStrict('article');
+export const article: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('article');
 
 /**
  * "aside" (block)
  */
-export const aside: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('aside');
+export const aside: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('aside');
 
 /**
  * "b" (inline)
  */
-export const b: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('b', { style: styles.bold });
+export const b: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('b', { style: styles.bold });
 
 /**
  * "bdi" (inline)
  */
-export const bdi: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('bdi');
+export const bdi: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('bdi');
 
 /**
  * "bdo" (inline)
  */
-export const bdo: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('bdo');
+export const bdo: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('bdo');
 
 /**
  * "blockquote" (block)
  */
-export const blockquote: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLQuoteElement
-> = createStrict('blockquote');
+export const blockquote: component(
+  ref?: React.RefSetter<HTMLQuoteElement>,
+  ...StrictReactDOMProps
+) = createStrict('blockquote');
 
 /**
  * "br"
  */
-export const br: React$AbstractComponent<StrictReactDOMProps, HTMLBRElement> =
-  createStrictText('br');
+export const br: component(
+  ref?: React.RefSetter<HTMLBRElement>,
+  ...StrictReactDOMProps
+) = createStrictText('br');
 
 /**
  * "button" (inline-block)
  */
-export const button: React$AbstractComponent<
-  StrictReactDOMButtonProps,
-  HTMLButtonElement
-> = createStrict('button', {
+export const button: component(
+  ref?: React.RefSetter<HTMLButtonElement>,
+  ...StrictReactDOMButtonProps
+) = createStrict('button', {
   style: styles.button,
   type: 'button'
 });
@@ -146,259 +156,295 @@ export const button: React$AbstractComponent<
 /**
  * "code" (inline)
  */
-export const code: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('code', { style: styles.code });
+export const code: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('code', { style: styles.code });
 
 /**
  * "del" (inline)
  */
-export const del: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
-  createStrictText('del', { style: styles.lineThrough });
+export const del: component(
+  ref?: React.RefSetter<HTMLModElement>,
+  ...StrictReactDOMProps
+) = createStrictText('del', { style: styles.lineThrough });
 
 /**
  * "div" (block)
  */
-export const div: React$AbstractComponent<StrictReactDOMProps, HTMLDivElement> =
-  createStrict('div');
+export const div: component(
+  ref?: React.RefSetter<HTMLDivElement>,
+  ...StrictReactDOMProps
+) = createStrict('div');
 
 /**
  * "em" (inline)
  */
-export const em: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('em', { style: styles.italic });
+export const em: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('em', { style: styles.italic });
 
 /**
  * "fieldset" (block)
  */
-export const fieldset: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLFieldSetElement
-> = createStrict('fieldset');
+export const fieldset: component(
+  ref?: React.RefSetter<HTMLFieldSetElement>,
+  ...StrictReactDOMProps
+) = createStrict('fieldset');
 
 /**
  * "footer" (block)
  */
-export const footer: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('footer');
+export const footer: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('footer');
 
 /**
  * "form" (block)
  */
-export const form: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLFormElement
-> = createStrict('form');
+export const form: component(
+  ref?: React.RefSetter<HTMLFormElement>,
+  ...StrictReactDOMProps
+) = createStrict('form');
 
 /**
  * "h1-h6" (block)
  */
-export const h1: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h1', headingProps);
-export const h2: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h2', headingProps);
-export const h3: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h3', headingProps);
-export const h4: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h4', headingProps);
-export const h5: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h5', headingProps);
-export const h6: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLHeadingElement
-> = createStrictText('h6', headingProps);
+export const h1: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h1', headingProps);
+export const h2: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h2', headingProps);
+export const h3: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h3', headingProps);
+export const h4: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h4', headingProps);
+export const h5: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h5', headingProps);
+export const h6: component(
+  ref?: React.RefSetter<HTMLHeadingElement>,
+  ...StrictReactDOMProps
+) = createStrictText('h6', headingProps);
 
 /**
  * "header" (block)
  */
-export const header: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('header');
+export const header: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('header');
 
 /**
  * "hr" (block)
  */
-export const hr: React$AbstractComponent<StrictReactDOMProps, HTMLHRElement> =
-  createStrict('hr', { style: styles.hr });
+export const hr: component(
+  ref?: React.RefSetter<HTMLHRElement>,
+  ...StrictReactDOMProps
+) = createStrict('hr', { style: styles.hr });
 
 /**
  * "i" (inline)
  */
-export const i: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('i', { style: styles.italic });
+export const i: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('i', { style: styles.italic });
 
 /**
  * "img" (inline)
  */
-export const img: React$AbstractComponent<
-  StrictReactDOMImageProps,
-  HTMLImageElement
-> = createStrictImage('img', { style: styles.img });
+export const img: component(
+  ref?: React.RefSetter<HTMLImageElement>,
+  ...StrictReactDOMImageProps
+) = createStrictImage('img', { style: styles.img });
 
 /**
  * "input" (inline-block)
  */
-export const input: React$AbstractComponent<
-  StrictReactDOMInputProps,
-  HTMLInputElement
-> = createStrictTextInput('input', {
+export const input: component(
+  ref?: React.RefSetter<HTMLInputElement>,
+  ...StrictReactDOMInputProps
+) = createStrictTextInput('input', {
   style: styles.input
 });
 
 /**
  * "ins" (inline)
  */
-export const ins: React$AbstractComponent<StrictReactDOMProps, HTMLModElement> =
-  createStrictText('ins', { style: styles.underline });
+export const ins: component(
+  ref?: React.RefSetter<HTMLModElement>,
+  ...StrictReactDOMProps
+) = createStrictText('ins', { style: styles.underline });
 
 /**
  * "kbd" (inline)
  */
-export const kbd: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('kbd', { style: styles.code });
+export const kbd: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('kbd', { style: styles.code });
 
 /**
  * "label" (inline)
  */
-export const label: React$AbstractComponent<
-  StrictReactDOMLabelProps,
-  HTMLLabelElement
-> = createStrictText('label');
+export const label: component(
+  ref?: React.RefSetter<HTMLLabelElement>,
+  ...StrictReactDOMLabelProps
+) = createStrictText('label');
 
 /**
  * "li" (block)
  */
-export const li: React$AbstractComponent<
-  StrictReactDOMListItemProps,
-  HTMLLIElement
-> = createStrict('li');
+export const li: component(
+  ref?: React.RefSetter<HTMLLIElement>,
+  ...StrictReactDOMListItemProps
+) = createStrict('li');
 
 /**
  * "main" (block)
  */
-export const main: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('main');
+export const main: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('main');
 
 /**
  * "nav" (block)
  */
-export const nav: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrict('nav');
+export const nav: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('nav');
 
 /**
  * "ol" (block)
  */
-export const ol: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLOListElement
-> = createStrict('ol');
+export const ol: component(
+  ref?: React.RefSetter<HTMLOListElement>,
+  ...StrictReactDOMProps
+) = createStrict('ol');
 
 /**
  * "optgroup"
  */
-export const optgroup: React$AbstractComponent<
-  StrictReactDOMOptionGroupProps,
-  HTMLOptGroupElement
-> = createStrict('optgroup');
+export const optgroup: component(
+  ref?: React.RefSetter<HTMLOptGroupElement>,
+  ...StrictReactDOMOptionGroupProps
+) = createStrict('optgroup');
 
 /**
  * "option"
  */
-export const option: React$AbstractComponent<
-  StrictReactDOMOptionProps,
-  HTMLOptionElement
-> = createStrictText('option');
+export const option: component(
+  ref?: React.RefSetter<HTMLOptionElement>,
+  ...StrictReactDOMOptionProps
+) = createStrictText('option');
 
 /**
  * "p" (block)
  */
-export const p: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLParagraphElement
-> = createStrictText('p');
+export const p: component(
+  ref?: React.RefSetter<HTMLParagraphElement>,
+  ...StrictReactDOMProps
+) = createStrictText('p');
 
 /**
  * "pre" (block)
  */
-export const pre: React$AbstractComponent<StrictReactDOMProps, HTMLPreElement> =
-  createStrictText('pre', { style: styles.code });
+export const pre: component(
+  ref?: React.RefSetter<HTMLPreElement>,
+  ...StrictReactDOMProps
+) = createStrictText('pre', { style: styles.code });
 
 /**
  * "s" (inline)
  */
-export const s: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('s', { style: styles.lineThrough });
+export const s: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('s', { style: styles.lineThrough });
 
 /**
  * "section" (block)
  */
-export const section: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLElement
-> = createStrict('section');
+export const section: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('section');
 
 /**
  * "select" (inline-block)
  */
-export const select: React$AbstractComponent<
-  StrictReactDOMSelectProps,
-  HTMLSelectElement
-> = createStrict('select');
+export const select: component(
+  ref?: React.RefSetter<HTMLSelectElement>,
+  ...StrictReactDOMSelectProps
+) = createStrict('select');
 
 /**
  * "span" (inline)
  */
-export const span: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLSpanElement
-> = createStrictText('span');
+export const span: component(
+  ref?: React.RefSetter<HTMLSpanElement>,
+  ...StrictReactDOMProps
+) = createStrictText('span');
 
 /**
  * "strong" (inline)
  */
-export const strong: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('strong', { style: styles.bold });
+export const strong: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('strong', { style: styles.bold });
 
 /**
  * "sub" (inline)
  */
-export const sub: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('sub');
+export const sub: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('sub');
 
 /**
  * "sup" (inline)
  */
-export const sup: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('sup');
+export const sup: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('sup');
 
 /**
  * "textarea" (inline-block)
  */
-export const textarea: React$AbstractComponent<
-  StrictReactDOMTextAreaProps,
-  HTMLTextAreaElement
-> = createStrictTextInput('textarea', {
+export const textarea: component(
+  ref?: React.RefSetter<HTMLTextAreaElement>,
+  ...StrictReactDOMTextAreaProps
+) = createStrictTextInput('textarea', {
   style: styles.textarea
 });
 
 /**
  * "u" (inline)
  */
-export const u: React$AbstractComponent<StrictReactDOMProps, HTMLElement> =
-  createStrictText('u', { style: styles.underline });
+export const u: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('u', { style: styles.underline });
 
 /**
  * "ul" (block)
  */
-export const ul: React$AbstractComponent<
-  StrictReactDOMProps,
-  HTMLUListElement
-> = createStrict('ul');
+export const ul: component(
+  ref?: React.RefSetter<HTMLUListElement>,
+  ...StrictReactDOMProps
+) = createStrict('ul');
