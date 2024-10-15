@@ -1,8 +1,9 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
@@ -58,7 +59,7 @@ const config = {
       },
       footer: {
         // Please do not remove the privacy and terms, it's a legal requirement.
-        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms Inc. <a target="_blank" href="https://opensource.fb.com/">Meta Open Source</a>. <a target="_blank" href="https://opensource.fb.com/legal/privacy/">Privacy</a> & <a target="_blank" href="https://opensource.fb.com/legal/terms/">Terms</a>.`
+        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. <a target="_blank" href="https://opensource.fb.com/">Meta Open Source</a>. <a target="_blank" href="https://opensource.fb.com/legal/privacy/">Privacy</a> & <a target="_blank" href="https://opensource.fb.com/legal/terms/">Terms</a>.`
       },
       // Replace with your project's social card
       image: './img/logo.svg',
