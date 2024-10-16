@@ -26,7 +26,7 @@ function hasElementChildren(children: mixed): boolean {
 export function createStrictDOMTextComponent<T, P: StrictProps>(
   tagName: string,
   _defaultProps?: P
-): React.AbstractComponent<P, T> {
+): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent = Text;
