@@ -12,7 +12,7 @@ import * as React from 'react';
 type Value = 'flow' | 'flex';
 
 const defaultContext = 'flow';
-const ContextDisplayInside: React$Context<Value> =
+const ContextDisplayInside: React.Context<Value> =
   React.createContext(defaultContext);
 
 if (__DEV__) {

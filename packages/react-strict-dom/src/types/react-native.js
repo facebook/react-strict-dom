@@ -55,7 +55,7 @@ type Props = {
   animated?: ?boolean, // non-standard
   caretHidden?: TextInputProps['caretHidden'],
   cursorColor?: TextInputProps['cursorColor'],
-  children?: ?React$Node,
+  children?: ?React.Node,
   crossOrigin?: ImageProps['crossOrigin'],
   defaultValue?: TextInputProps['defaultValue'],
   disabled?: ?boolean,

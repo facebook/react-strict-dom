@@ -30,11 +30,11 @@ type StylesWithout<T> = StyleXStylesWithout<T>;
 type ProviderValue = $ReadOnly<{ [string]: string | number }>;
 
 type ProviderProps = $ReadOnly<{
-  children: React$MixedElement,
+  children: React.MixedElement,
   customProperties: ProviderValue
 }>;
 
-function ThemeProvider(props: ProviderProps): React$MixedElement {
+function ThemeProvider(props: ProviderProps): React.MixedElement {
   const { children, customProperties } = props;
 
   return customProperties ? (
