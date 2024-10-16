@@ -27,7 +27,7 @@ const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
   defaultProps?: P
-): React.AbstractComponent<P, T> {
+): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent =

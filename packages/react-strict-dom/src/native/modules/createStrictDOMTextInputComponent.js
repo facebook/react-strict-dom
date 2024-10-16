@@ -22,7 +22,10 @@ const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 export function createStrictDOMTextInputComponent<
   P: StrictReactDOMInputProps | StrictReactDOMTextAreaProps,
   T
->(tagName: string, defaultProps?: P): React.AbstractComponent<P, T> {
+>(
+  tagName: string,
+  defaultProps?: P
+): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent = TextInput;
