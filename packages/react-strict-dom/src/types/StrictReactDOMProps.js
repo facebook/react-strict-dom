@@ -289,7 +289,7 @@ export type StrictReactDOMProps = $ReadOnly<{
     | 'characters'
   ),
   autoFocus?: ?boolean,
-  children?: React$Node,
+  children?: React.Node,
   'data-testid'?: ?string,
   dir?: ?('auto' | 'ltr' | 'rtl'),
   elementTiming?: ?string,
