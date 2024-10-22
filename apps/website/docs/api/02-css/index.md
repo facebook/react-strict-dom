@@ -108,7 +108,7 @@ The following tables represent the compatibility status of the strict CSS API fo
 | borderLeftStyle | ✅ | ✅ | |
 | borderLeftWidth | ✅ | ✅ | |
 | borderRadius | ✅ | ✅ | |
-| borderRadius % values | ❌ | ❌ | |
+| borderRadius % values | ✅ | ✅ | |
 | borderRightColor | ✅ | ✅ | |
 | borderRightStyle | ✅ | ✅ | |
 | borderRightWidth | ✅ | ✅ | |
