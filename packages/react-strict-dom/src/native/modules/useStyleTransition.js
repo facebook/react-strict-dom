@@ -275,6 +275,16 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     }
   }, [animatedValue]);
 
+  if (
+    _delay == null &&
+    _duration == null &&
+    _transitionProperty == null &&
+    _timingFunction == null
+  ) {
+    // Avoid further calculations if we don't have anything to animate
+    return style;
+  }
+
   if (transitionStyleHasChanged(transitionStyle, currentStyle)) {
     setCurrentStyle(style);
     setPreviousStyle(currentStyle);
