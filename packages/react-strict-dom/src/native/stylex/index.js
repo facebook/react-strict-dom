@@ -471,28 +471,28 @@ export function props(
 
     // block/inlineSize
     if (styleProp === 'blockSize') {
-      nextStyle.height = nextStyle.height ?? styleValue;
+      nextStyle.height ??= styleValue;
     } else if (styleProp === 'inlineSize') {
-      nextStyle.width = nextStyle.width ?? styleValue;
+      nextStyle.width ??= styleValue;
     } else if (styleProp === 'maxBlockSize') {
-      nextStyle.maxHeight = nextStyle.maxHeight ?? styleValue;
+      nextStyle.maxHeight ??= styleValue;
     } else if (styleProp === 'minBlockSize') {
-      nextStyle.minHeight = nextStyle.minHeight ?? styleValue;
+      nextStyle.minHeight ??= styleValue;
     } else if (styleProp === 'maxInlineSize') {
-      nextStyle.maxWidth = nextStyle.maxWidth ?? styleValue;
+      nextStyle.maxWidth ??= styleValue;
     } else if (styleProp === 'minInlineSize') {
-      nextStyle.minWidth = nextStyle.minWidth ?? styleValue;
+      nextStyle.minWidth ??= styleValue;
     }
     // borderBlock
     else if (styleProp === 'borderBlockColor') {
-      nextStyle.borderTopColor = nextStyle.borderTopColor ?? styleValue;
-      nextStyle.borderBottomColor = nextStyle.borderBottomColor ?? styleValue;
+      nextStyle.borderTopColor ??= styleValue;
+      nextStyle.borderBottomColor ??= styleValue;
     } else if (styleProp === 'borderBlockStyle') {
-      nextStyle.borderTopStyle = nextStyle.borderTopStyle ?? styleValue;
-      nextStyle.borderBottomStyle = nextStyle.borderBottomStyle ?? styleValue;
+      nextStyle.borderTopStyle ??= styleValue;
+      nextStyle.borderBottomStyle ??= styleValue;
     } else if (styleProp === 'borderBlockWidth') {
-      nextStyle.borderTopWidth = nextStyle.borderTopWidth ?? styleValue;
-      nextStyle.borderBottomWidth = nextStyle.borderBottomWidth ?? styleValue;
+      nextStyle.borderTopWidth ??= styleValue;
+      nextStyle.borderBottomWidth ??= styleValue;
     } else if (styleProp === 'borderBlockEndColor') {
       nextStyle.borderBottomColor = flatStyle.borderBottomColor ?? styleValue;
     } else if (styleProp === 'borderBlockEndStyle') {
@@ -508,14 +508,14 @@ export function props(
     }
     // borderInline
     else if (styleProp === 'borderInlineColor') {
-      nextStyle.borderStartColor = nextStyle.borderStartColor ?? styleValue;
-      nextStyle.borderEndColor = nextStyle.borderEndColor ?? styleValue;
+      nextStyle.borderStartColor ??= styleValue;
+      nextStyle.borderEndColor ??= styleValue;
     } else if (styleProp === 'borderInlineStyle') {
-      nextStyle.borderStartStyle = nextStyle.borderStartStyle ?? styleValue;
-      nextStyle.borderEndStyle = nextStyle.borderEndStyle ?? styleValue;
+      nextStyle.borderStartStyle ??= styleValue;
+      nextStyle.borderEndStyle ??= styleValue;
     } else if (styleProp === 'borderInlineWidth') {
-      nextStyle.borderStartWidth = nextStyle.borderStartWidth ?? styleValue;
-      nextStyle.borderEndWidth = nextStyle.borderEndWidth ?? styleValue;
+      nextStyle.borderStartWidth ??= styleValue;
+      nextStyle.borderEndWidth ??= styleValue;
     } else if (styleProp === 'borderInlineEndColor') {
       nextStyle.borderEndColor = styleValue;
     } else if (styleProp === 'borderInlineEndStyle') {
@@ -543,7 +543,7 @@ export function props(
     else if (styleProp === 'borderStyle' && styleValue === 'none') {
       nextStyle.borderWidth = 0;
     } else if (styleProp === 'borderWidth') {
-      nextStyle.borderWidth = nextStyle.borderWidth ?? styleValue;
+      nextStyle.borderWidth ??= styleValue;
     }
     // caretColor polyfill
     else if (styleProp === 'caretColor') {
@@ -555,20 +555,20 @@ export function props(
     }
     // inset
     else if (styleProp === 'inset') {
-      nextStyle.top = nextStyle.top ?? styleValue;
-      nextStyle.start = nextStyle.start ?? styleValue;
-      nextStyle.end = nextStyle.end ?? styleValue;
-      nextStyle.bottom = nextStyle.bottom ?? styleValue;
+      nextStyle.top ??= styleValue;
+      nextStyle.start ??= styleValue;
+      nextStyle.end ??= styleValue;
+      nextStyle.bottom ??= styleValue;
     } else if (styleProp === 'insetBlock') {
-      nextStyle.top = nextStyle.top ?? styleValue;
-      nextStyle.bottom = nextStyle.bottom ?? styleValue;
+      nextStyle.top ??= styleValue;
+      nextStyle.bottom ??= styleValue;
     } else if (styleProp === 'insetBlockEnd') {
       nextStyle.bottom = flatStyle.bottom ?? styleValue;
     } else if (styleProp === 'insetBlockStart') {
       nextStyle.top = flatStyle.top ?? styleValue;
     } else if (styleProp === 'insetInline') {
-      nextStyle.end = nextStyle.end ?? styleValue;
-      nextStyle.start = nextStyle.start ?? styleValue;
+      nextStyle.end ??= styleValue;
+      nextStyle.start ??= styleValue;
     } else if (styleProp === 'insetInlineEnd') {
       nextStyle.end = flatStyle.end ?? styleValue;
     } else if (styleProp === 'insetInlineStart') {
@@ -582,9 +582,9 @@ export function props(
     else if (styleProp === 'marginBlock') {
       nextStyle.marginVertical = styleValue;
     } else if (styleProp === 'marginBlockStart') {
-      nextStyle.marginTop = nextStyle.marginTop ?? styleValue;
+      nextStyle.marginTop ??= styleValue;
     } else if (styleProp === 'marginBlockEnd') {
-      nextStyle.marginBottom = nextStyle.marginBottom ?? styleValue;
+      nextStyle.marginBottom ??= styleValue;
     }
     // marginInline
     else if (styleProp === 'marginInline') {
@@ -598,9 +598,9 @@ export function props(
     else if (styleProp === 'paddingBlock') {
       nextStyle.paddingVertical = styleValue;
     } else if (styleProp === 'paddingBlockStart') {
-      nextStyle.paddingTop = nextStyle.paddingTop ?? styleValue;
+      nextStyle.paddingTop ??= styleValue;
     } else if (styleProp === 'paddingBlockEnd') {
-      nextStyle.paddingBottom = nextStyle.paddingBottom ?? styleValue;
+      nextStyle.paddingBottom ??= styleValue;
     }
     // paddingInline
     else if (styleProp === 'paddingInline') {
@@ -627,8 +627,8 @@ export function props(
     }
     // placeContent polyfill
     else if (styleProp === 'placeContent') {
-      nextStyle.alignContent = nextStyle.alignContent ?? styleValue;
-      nextStyle.justifyContent = nextStyle.justifyContent ?? styleValue;
+      nextStyle.alignContent ??= styleValue;
+      nextStyle.justifyContent ??= styleValue;
     }
     // Everything else
     else {

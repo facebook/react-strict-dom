@@ -57,7 +57,7 @@ export function createStrictDOMComponent<T, P: StrictPropsWithCompat>(
       // Tag-specific props
 
       if (tagName === 'header') {
-        nativeProps.role = nativeProps.role ?? 'header';
+        nativeProps.role ??= 'header';
       }
 
       // Component-specific props

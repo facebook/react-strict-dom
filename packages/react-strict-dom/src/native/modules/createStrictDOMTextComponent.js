@@ -55,7 +55,7 @@ export function createStrictDOMTextComponent<T, P: StrictPropsWithCompat>(
       // Tag-specific props
 
       if (tagName === 'a') {
-        nativeProps.role = nativeProps.role ?? 'link';
+        nativeProps.role ??= 'link';
         if (href != null) {
           nativeProps.onPress = function (e) {
             if (__DEV__) {
