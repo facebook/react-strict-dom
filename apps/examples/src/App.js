@@ -164,6 +164,7 @@ function Shell(): React.MixedElement {
           <html.span suppressHydrationWarning={true}>span</html.span>
           <html.p>paragraph</html.p>
           <html.blockquote>blockquote</html.blockquote>
+          <html.mark>mark</html.mark>
           <html.div />
           <html.span>
             <html.a href="https://google.com">anchor</html.a>,<html.b>b</html.b>

@@ -3307,6 +3307,111 @@ exports[`html "main" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
+<Text
+  style={
+    {
+      "backgroundColor": "yellow",
+      "boxSizing": "content-box",
+      "color": "black",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "mark" supports global attributes 1`] = `
+<Text
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
+  role="article"
+  style={
+    {
+      "--custom-property": "inline",
+      "backgroundColor": "yellow",
+      "boxSizing": "content-box",
+      "color": "black",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+      "userSelect": "auto",
+      "writingDirection": "ltr",
+    }
+  }
+  testID="some-test-id"
+>
+  children
+</Text>
+`;
+
+exports[`html "mark" supports inline event handlers 1`] = `
+<Text
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onGotPointerCapture={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    {
+      "backgroundColor": "yellow",
+      "boxSizing": "content-box",
+      "color": "black",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
