@@ -259,6 +259,14 @@ export const main: component(
 ) = createStrict('main', defaultStyles.main);
 
 /**
+ * "mark" (inline)
+ */
+export const mark: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrict('mark', defaultStyles.mark);
+
+/**
  * "nav" (block)
  */
 export const nav: component(

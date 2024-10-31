@@ -43,6 +43,7 @@ const tagNames = [
   'kbd',
   'label',
   'main',
+  'mark',
   'nav',
   'ol',
   'optgroup',

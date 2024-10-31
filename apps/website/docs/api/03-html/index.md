@@ -68,6 +68,7 @@ The following tables represent the compatibility status of the strict HTML API s
 | label | 🟡 | 🟡 | |
 | li | 🟡 | 🟡 | |
 | main | 🟡 | 🟡 | |
+| mark | 🟡 | 🟡 | |
 | nav | 🟡 | 🟡 | |
 | ol | 🟡 | 🟡 | |
 | optgroup | ❌ | ❌ | [#7](https://github.com/facebook/react-strict-dom/issues/7) |

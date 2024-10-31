@@ -71,6 +71,10 @@ const styles = stylex.create({
   },
   underline: {
     textDecorationLine: 'underline'
+  },
+  mark: {
+    backgroundColor: 'yellow',
+    color: 'black'
   }
 });
 
@@ -318,6 +322,14 @@ export const main: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
 ) = createStrict('main');
+
+/**
+ * "mark" (inline)
+ */
+export const mark: component(
+  ref?: React.RefSetter<HTMLElement>,
+  ...StrictReactDOMProps
+) = createStrictText('mark', { style: styles.mark });
 
 /**
  * "nav" (block)
