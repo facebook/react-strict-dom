@@ -20,7 +20,10 @@ import typeof * as TStyleX from '@stylexjs/stylex';
 import * as React from 'react';
 import * as html from './html';
 import * as cssRaw from './stylex';
-import { ProvideCustomProperties } from './modules/ContextCustomProperties';
+import {
+  ProvideCustomProperties,
+  useCustomProperties
+} from './modules/ContextCustomProperties';
 
 type StyleTheme<V, T> = Theme<V, T>;
 type StyleVars<T> = VarGroup<T>;
@@ -53,4 +56,4 @@ const css: TStyleX = cssRaw as $FlowFixMe;
 
 export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
 
-export { contexts, css, html };
+export { contexts, css, html, useCustomProperties };
