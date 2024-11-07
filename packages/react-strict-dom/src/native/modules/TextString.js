@@ -16,7 +16,7 @@ type Props = $ReadOnly<{|
   children: string
 |}>;
 
-export function TextString(props: Props): React.MixedElement {
+export function TextString(props: Props): React.Node {
   const { children } = props;
 
   const customProperties = useCustomProperties();

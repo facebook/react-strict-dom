@@ -18,8 +18,9 @@ import type {
 import typeof * as TStyleX from '@stylexjs/stylex';
 
 import * as React from 'react';
+import * as compat from './compat';
 import * as html from './html';
-import * as cssRaw from './stylex';
+import * as stylex from './stylex';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 
 type StyleTheme<V, T> = Theme<V, T>;
@@ -30,11 +31,13 @@ type StylesWithout<T> = StyleXStylesWithout<T>;
 type ProviderValue = $ReadOnly<{ [string]: string | number }>;
 
 type ProviderProps = $ReadOnly<{
-  children: React.MixedElement,
+  children: React.Node,
   customProperties: ProviderValue
 }>;
 
-function ThemeProvider(props: ProviderProps): React.MixedElement {
+export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
+
+function ThemeProvider(props: ProviderProps): React.Node {
   const { children, customProperties } = props;
 
   return customProperties ? (
@@ -49,8 +52,6 @@ const contexts = {
 };
 
 // Export using StyleX types as the shim has divergent types internally.
-const css: TStyleX = cssRaw as $FlowFixMe;
+const css: TStyleX = stylex as $FlowFixMe;
 
-export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
-
-export { contexts, css, html };
+export { contexts, compat, css, html };

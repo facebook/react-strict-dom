@@ -7,7 +7,7 @@
  * @flow strict-local
  */
 
-import type { StrictProps } from '../../types/StrictProps';
+import type { StrictPropsWithCompat } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Pressable } from 'react-native';
@@ -24,7 +24,7 @@ import { useStrictDOMElement } from './useStrictDOMElement';
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-export function createStrictDOMComponent<T, P: StrictProps>(
+export function createStrictDOMComponent<T, P: StrictPropsWithCompat>(
   tagName: string,
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
@@ -142,12 +142,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.experimental_layoutConformance = 'strict';
       }
 
-      // $FlowFixMe
-      let element = <NativeComponent {...nativeProps} />;
+      let element: React.Node =
+        typeof props.children === 'function' ? (
+          props.children(nativeProps)
+        ) : (
+          // $FlowFixMe
+          <NativeComponent {...nativeProps} />
+        );
 
       if (
-        nativeProps.children != null &&
-        typeof nativeProps.children !== 'string'
+        (nativeProps.children != null &&
+          typeof nativeProps.children !== 'string') ||
+        typeof props.children === 'function'
       ) {
         if (inheritableStyle != null) {
           element = (
