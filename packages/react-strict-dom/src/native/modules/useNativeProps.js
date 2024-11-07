@@ -8,7 +8,7 @@
  */
 
 import type { CustomProperties } from '../../types/styles';
-import type { StrictProps } from '../../types/StrictProps';
+import type { StrictPropsWithCompat } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
 import type { Props as ReactNativeProps } from '../../types/react-native';
 
@@ -29,7 +29,7 @@ const unsupportedProps = new Set([
   'onSelectionChange'
 ]);
 
-function validateStrictProps(props: StrictProps) {
+function validateStrictProps(props: StrictPropsWithCompat) {
   Object.keys(props).forEach((key) => {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
@@ -83,8 +83,8 @@ type ReturnType = {|
 |};
 
 export function useNativeProps(
-  defaultProps: ?StrictProps,
-  props: StrictProps,
+  defaultProps: ?StrictPropsWithCompat,
+  props: StrictPropsWithCompat,
   options: OptionsType
 ): ReturnType {
   if (__DEV__) {
@@ -188,7 +188,9 @@ export function useNativeProps(
    * Resolve common props
    */
 
-  nativeProps.children = children;
+  if (typeof children !== 'function') {
+    nativeProps.children = children;
+  }
 
   if (ariaHidden != null) {
     nativeProps.accessibilityElementsHidden = ariaHidden;

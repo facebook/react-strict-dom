@@ -7,7 +7,7 @@
  * @flow strict-local
  */
 
-import type { StrictProps } from '../../types/StrictProps';
+import type { StrictPropsWithCompat } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Platform, Text } from 'react-native';
@@ -23,7 +23,7 @@ function hasElementChildren(children: mixed): boolean {
   return children != null && typeof children !== 'string';
 }
 
-export function createStrictDOMTextComponent<T, P: StrictProps>(
+export function createStrictDOMTextComponent<T, P: StrictPropsWithCompat>(
   tagName: string,
   _defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
@@ -99,10 +99,18 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
        * Construct tree
        */
 
-      // $FlowFixMe
-      let element: $FlowFixMe = <NativeComponent {...nativeProps} />;
+      let element: React.Node =
+        typeof props.children === 'function' ? (
+          props.children(nativeProps)
+        ) : (
+          // $FlowFixMe
+          <NativeComponent {...nativeProps} />
+        );
 
-      if (hasElementChildren(nativeProps.children)) {
+      if (
+        hasElementChildren(nativeProps.children) ||
+        typeof props.children === 'function'
+      ) {
         if (inheritableStyle != null) {
           element = (
             <ProvideInheritedStyles

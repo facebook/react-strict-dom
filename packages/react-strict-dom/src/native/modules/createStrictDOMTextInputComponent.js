@@ -184,8 +184,13 @@ export function createStrictDOMTextInputComponent<
         NativeComponent = AnimatedTextInput;
       }
 
-      // $FlowFixMe
-      const element = <NativeComponent {...nativeProps} />;
+      const element =
+        typeof props.children === 'function' ? (
+          props.children(nativeProps)
+        ) : (
+          // $FlowFixMe
+          <NativeComponent {...nativeProps} />
+        );
 
       return element;
     }

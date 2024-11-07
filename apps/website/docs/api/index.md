@@ -37,5 +37,6 @@ sidebar_position: -1
 ## other
 
 * [Common Web API](/api/other/common-min-api)
+* [compat](/api/other/compat)
 * [document](/api/other/document)
 * [window](/api/other/window)
