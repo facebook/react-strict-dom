@@ -25,6 +25,16 @@ describe('<compat.native>', () => {
     jest.clearAllMocks();
   });
 
+  test('errors if no function child', () => {
+    expect(() =>
+      create(
+        <compat.native>
+          <View />;
+        </compat.native>
+      )
+    ).toThrow(Error);
+  });
+
   test('default', () => {
     const styles = css.create({
       block: {
@@ -43,27 +53,6 @@ describe('<compat.native>', () => {
       );
     });
     expect(root.toJSON()).toMatchSnapshot('default');
-  });
-
-  test('"as" equals "text"', () => {
-    const styles = css.create({
-      text: {
-        color: 'blue',
-        lineClamp: 3
-      }
-    });
-
-    let root;
-    act(() => {
-      root = create(
-        <compat.native as="text" style={styles.text}>
-          {(nativeProps) => (
-            <Text {...nativeProps} accessibilityLabel="label" />
-          )}
-        </compat.native>
-      );
-    });
-    expect(root.toJSON()).toMatchSnapshot('as=text');
   });
 
   test('"as" equals "image"', () => {
@@ -112,6 +101,27 @@ describe('<compat.native>', () => {
     expect(root.toJSON()).toMatchSnapshot('as=input');
   });
 
+  test('"as" equals "text"', () => {
+    const styles = css.create({
+      text: {
+        color: 'blue',
+        lineClamp: 3
+      }
+    });
+
+    let root;
+    act(() => {
+      root = create(
+        <compat.native as="text" style={styles.text}>
+          {(nativeProps) => (
+            <Text {...nativeProps} accessibilityLabel="label" />
+          )}
+        </compat.native>
+      );
+    });
+    expect(root.toJSON()).toMatchSnapshot('as=text');
+  });
+
   test('"as" equals "textarea"', () => {
     const styles = css.create({
       textarea: {}
@@ -128,6 +138,26 @@ describe('<compat.native>', () => {
       );
     });
     expect(root.toJSON()).toMatchSnapshot('as=textarea');
+  });
+
+  test('"as" equals "view"', () => {
+    const styles = css.create({
+      view: {
+        paddingInline: '2rem'
+      }
+    });
+
+    let root;
+    act(() => {
+      root = create(
+        <compat.native as="view" style={styles.view}>
+          {(nativeProps) => (
+            <View {...nativeProps} accessibilityLabel="label" />
+          )}
+        </compat.native>
+      );
+    });
+    expect(root.toJSON()).toMatchSnapshot('as=view');
   });
 
   test('nested', () => {

@@ -57,6 +57,20 @@ exports[`<compat.native> "as" equals "textarea": as=textarea 1`] = `
 />
 `;
 
+exports[`<compat.native> "as" equals "view": as=view 1`] = `
+<View
+  accessibilityLabel="label"
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "paddingHorizontal": 32,
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`<compat.native> default: default 1`] = `
 <Pressable
   accessibilityLabel="label"
