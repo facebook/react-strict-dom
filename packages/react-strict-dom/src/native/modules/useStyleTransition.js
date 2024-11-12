@@ -8,16 +8,18 @@
  */
 
 import type {
-  Style as ReactNativeStyle,
-  StyleValue,
-  Transform
-} from '../../types/react-native';
+  ReactNativeStyle,
+  ReactNativeStyleValue,
+  ReactNativeTransform
+} from '../../types/renderer.native';
 
 import { useEffect, useRef, useState } from 'react';
 import { warnMsg } from '../../shared/logUtils';
 import { Animated, Easing } from 'react-native';
 
-type AnimatedStyle = { [string]: ?StyleValue | $ReadOnlyArray<mixed> };
+type AnimatedStyle = {
+  [string]: ?ReactNativeStyleValue | $ReadOnlyArray<mixed>
+};
 
 type TransitionMetadata = $ReadOnly<{
   delay: number,
@@ -88,8 +90,8 @@ function getTransitionProperties(property: mixed): ?(string[]) {
 }
 
 function transformsHaveSameLengthTypesAndOrder(
-  transformsA: $ReadOnlyArray<Transform>,
-  transformsB: $ReadOnlyArray<Transform>
+  transformsA: $ReadOnlyArray<ReactNativeTransform>,
+  transformsB: $ReadOnlyArray<ReactNativeTransform>
 ): boolean {
   if (transformsA.length !== transformsB.length) {
     return false;
@@ -119,8 +121,8 @@ function transformsHaveSameLengthTypesAndOrder(
 }
 
 function transformListsAreEqual(
-  transformsA: $ReadOnlyArray<Transform>,
-  transformsB: $ReadOnlyArray<Transform>
+  transformsA: $ReadOnlyArray<ReactNativeTransform>,
+  transformsB: $ReadOnlyArray<ReactNativeTransform>
 ): boolean {
   if (!transformsHaveSameLengthTypesAndOrder(transformsA, transformsB)) {
     return false;

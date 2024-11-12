@@ -7,16 +7,18 @@
  * @flow strict
  */
 
-import type { Transform } from '../../types/react-native';
+import type { ReactNativeTransform } from '../../types/renderer.native';
 
 const transformRegex1 =
   /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px|%)?\)/;
 const transformRegex2 = /(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/;
 const transformRegex3 = /matrix\((.*)\)/;
 
-const memoizedValues = new Map<string, Transform[]>();
+const memoizedValues = new Map<string, ReactNativeTransform[]>();
 
-export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
+export function parseTransform(
+  transform: string
+): $ReadOnlyArray<ReactNativeTransform> {
   const memoizedValue = memoizedValues.get(transform);
   if (memoizedValue != null) {
     return memoizedValue;
@@ -25,7 +27,7 @@ export function parseTransform(transform: string): $ReadOnlyArray<Transform> {
   const transforms = transform
     .split(')')
     .flatMap((s) => (s === '' ? ([] as string[]) : [s + ')']));
-  const parsedTransforms: Transform[] = [];
+  const parsedTransforms: ReactNativeTransform[] = [];
 
   for (const txf of transforms) {
     let match = txf.match(transformRegex1);

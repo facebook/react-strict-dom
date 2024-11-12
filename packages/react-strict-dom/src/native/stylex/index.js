@@ -8,15 +8,15 @@
  */
 
 import type {
+  ReactNativeProps,
+  ReactNativeStyle
+} from '../../types/renderer.native';
+
+import type {
   CustomProperties,
   MutableCustomProperties,
   IStyleX
 } from '../../types/styles';
-
-import type {
-  Props as ReactNativeProps,
-  Style as ReactNativeStyle
-} from '../../types/react-native';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';

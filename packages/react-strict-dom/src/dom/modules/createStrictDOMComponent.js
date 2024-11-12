@@ -8,7 +8,8 @@
  */
 
 import type { CompiledStyles } from '@stylexjs/stylex/lib/StyleXTypes';
-import type { StrictProps, ReactDOMStyleProps } from '../../types/StrictProps';
+import type { ReactDOMStyleProps } from '../../types/renderer.web';
+import type { StrictProps } from '../../types/StrictProps';
 
 import * as React from 'react';
 import * as stylex from '@stylexjs/stylex';
