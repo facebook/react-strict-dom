@@ -7,8 +7,6 @@
  * @flow strict
  */
 
-import type { Props as ReactNativeProps } from './react-native';
-
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
 import type { StrictReactDOMAnchorProps } from './StrictReactDOMAnchorProps';
@@ -32,14 +30,4 @@ export type StrictProps = $ReadOnly<{
   ...StrictReactDOMOptionProps,
   ...StrictReactDOMSelectProps,
   ...StrictReactDOMTextAreaProps
-}>;
-
-export type StrictPropsWithCompat = $ReadOnly<{
-  ...StrictProps,
-  children?: React.Node | ((ReactNativeProps) => React.Node)
-}>;
-
-export type ReactDOMStyleProps = $ReadOnly<{
-  className?: string,
-  style?: $ReadOnly<{ [string]: string | number }>
 }>;

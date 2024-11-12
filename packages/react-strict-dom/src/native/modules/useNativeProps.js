@@ -8,9 +8,9 @@
  */
 
 import type { CustomProperties } from '../../types/styles';
-import type { StrictPropsWithCompat } from '../../types/StrictProps';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
-import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import * as stylex from '../stylex';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
@@ -18,6 +18,11 @@ import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
 import { useCustomProperties } from './ContextCustomProperties';
 import { useStyleProps } from './useStyleProps';
+
+type StrictProps = $ReadOnly<{
+  ...StrictPropsOriginal,
+  children?: React.Node | ((ReactNativeProps) => React.Node)
+}>;
 
 /**
  * Props validation
@@ -29,7 +34,7 @@ const unsupportedProps = new Set([
   'onSelectionChange'
 ]);
 
-function validateStrictProps(props: StrictPropsWithCompat) {
+function validateStrictProps(props: StrictProps) {
   Object.keys(props).forEach((key) => {
     const isValidProp = isPropAllowed(key);
     const isUnsupportedProp = unsupportedProps.has(key);
@@ -83,8 +88,8 @@ type ReturnType = {|
 |};
 
 export function useNativeProps(
-  defaultProps: ?StrictPropsWithCompat,
-  props: StrictPropsWithCompat,
+  defaultProps: ?StrictProps,
+  props: StrictProps,
   options: OptionsType
 ): ReturnType {
   if (__DEV__) {

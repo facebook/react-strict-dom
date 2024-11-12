@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import type { Style as ReactNativeStyle } from '../../types/react-native';
+import type { ReactNativeStyle } from '../../types/renderer.native';
 
 import { warnMsg } from '../../shared/logUtils';
 

@@ -7,7 +7,8 @@
  * @flow strict-local
  */
 
-import type { StrictPropsWithCompat } from '../../types/StrictProps';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Platform, Text } from 'react-native';
@@ -19,11 +20,16 @@ import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import * as stylex from '../stylex';
 
+type StrictProps = $ReadOnly<{
+  ...StrictPropsOriginal,
+  children?: React.Node | ((ReactNativeProps) => React.Node)
+}>;
+
 function hasElementChildren(children: mixed): boolean {
   return children != null && typeof children !== 'string';
 }
 
-export function createStrictDOMTextComponent<T, P: StrictPropsWithCompat>(
+export function createStrictDOMTextComponent<T, P: StrictProps>(
   tagName: string,
   _defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {

@@ -7,7 +7,8 @@
  * @flow strict-local
  */
 
-import type { StrictPropsWithCompat } from '../../types/StrictProps';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Pressable } from 'react-native';
@@ -22,9 +23,14 @@ import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
+type StrictProps = $ReadOnly<{
+  ...StrictPropsOriginal,
+  children?: React.Node | ((ReactNativeProps) => React.Node)
+}>;
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-export function createStrictDOMComponent<T, P: StrictPropsWithCompat>(
+export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
