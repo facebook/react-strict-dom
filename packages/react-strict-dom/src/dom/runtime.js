@@ -106,6 +106,7 @@ const kbd: StrictReactDOMPropsStyle = null;
 const label: StrictReactDOMPropsStyle = styles.inline;
 const li: StrictReactDOMPropsStyle = styles.block;
 const main: StrictReactDOMPropsStyle = styles.block;
+const mark: StrictReactDOMPropsStyle = styles.inline;
 const nav: StrictReactDOMPropsStyle = styles.block;
 const ol: StrictReactDOMPropsStyle = [styles.list, styles.block];
 const optgroup: StrictReactDOMPropsStyle = null;
@@ -159,6 +160,7 @@ export const defaultStyles = {
   label: label as typeof label,
   li: li as typeof li,
   main: main as typeof main,
+  mark: mark as typeof mark,
   nav: nav as typeof nav,
   ol: ol as typeof ol,
   optgroup: optgroup as typeof optgroup,

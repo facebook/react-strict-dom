@@ -28,7 +28,7 @@ import type {
   ViewProps
 } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
-type Props = {
+type ReactNativeProps = {
   accessible?: ViewProps['accessible'],
   accessibilityLabel?: ViewProps['accessibilityLabel'],
   accessibilityLabelledBy?: ViewProps['accessibilityLabelledBy'],
@@ -55,7 +55,7 @@ type Props = {
   animated?: ?boolean, // non-standard
   caretHidden?: TextInputProps['caretHidden'],
   cursorColor?: TextInputProps['cursorColor'],
-  children?: ?React$Node,
+  children?: ?React.Node,
   crossOrigin?: ImageProps['crossOrigin'],
   defaultValue?: TextInputProps['defaultValue'],
   disabled?: ?boolean,
@@ -110,13 +110,13 @@ type Props = {
   spellCheck?: TextInputProps['spellCheck'],
   src?: ImageProps['src'],
   srcSet?: ImageProps['srcSet'],
-  style: Style,
+  style: ReactNativeStyle,
   testID?: ViewProps['testID'],
   value?: TextInputProps['value'],
   width?: ImageProps['width']
 };
 
-type Transform =
+type ReactNativeTransform =
   | $ReadOnly<{ matrix: number[] }>
   | $ReadOnly<{ perspective: number }>
   | $ReadOnly<{ rotate: string }>
@@ -132,7 +132,18 @@ type Transform =
   | $ReadOnly<{ skewX: string }>
   | $ReadOnly<{ skewY: string }>;
 
-type StyleValue = number | string | Transform[] | AnimatedNode;
-type Style = { [string]: ?StyleValue };
+type ReactNativeStyleValue =
+  | number
+  | string
+  | ReactNativeTransform[]
+  | AnimatedNode;
 
-export type { Props, Style, StyleValue, SyntheticEvent, Transform };
+type ReactNativeStyle = { [string]: ?ReactNativeStyleValue };
+
+export type {
+  ReactNativeProps,
+  ReactNativeStyle,
+  ReactNativeStyleValue,
+  ReactNativeTransform,
+  SyntheticEvent
+};

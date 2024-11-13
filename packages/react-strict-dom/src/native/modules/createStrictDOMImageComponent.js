@@ -19,7 +19,7 @@ import * as stylex from '../stylex';
 export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
   tagName: string,
   _defaultProps?: P
-): React.AbstractComponent<P, T> {
+): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent = Image;
@@ -109,8 +109,13 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
         NativeComponent = Animated.Image;
       }
 
-      // $FlowFixMe
-      const element = <NativeComponent {...nativeProps} />;
+      const element: React.Node =
+        typeof props.children === 'function' ? (
+          props.children(nativeProps)
+        ) : (
+          // $FlowFixMe
+          <NativeComponent {...nativeProps} />
+        );
 
       return element;
     }

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.29 (Nov 11, 2024)
+
+### New features
+
+* Add support for `mark` element.
+* [Native] Add `compat` API to wrap React Native elements.
+
+### Fixes
+
+* Remove `ref` reads during render in CSS transition polyfill.
+
 ## 0.0.28 (Oct 9, 2024)
 
 ### Breaking changes

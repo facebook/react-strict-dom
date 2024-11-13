@@ -8,8 +8,10 @@
  */
 
 import type { CustomProperties, Styles, Style } from '../../types/styles';
-import type { Props as ReactNativeProps } from '../../types/react-native';
-import type { Style as ReactNativeStyle } from '../../types/react-native';
+import type {
+  ReactNativeProps,
+  ReactNativeStyle
+} from '../../types/renderer.native';
 
 import * as stylex from '../stylex';
 import { useColorScheme, useWindowDimensions } from 'react-native';

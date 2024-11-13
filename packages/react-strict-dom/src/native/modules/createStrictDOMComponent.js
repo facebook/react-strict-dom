@@ -7,7 +7,8 @@
  * @flow strict-local
  */
 
-import type { StrictProps } from '../../types/StrictProps';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
 import { Animated, Pressable } from 'react-native';
@@ -22,12 +23,17 @@ import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
+type StrictProps = $ReadOnly<{
+  ...StrictPropsOriginal,
+  children?: React.Node | ((ReactNativeProps) => React.Node)
+}>;
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
   defaultProps?: P
-): React.AbstractComponent<P, T> {
+): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent =
@@ -57,7 +63,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       // Tag-specific props
 
       if (tagName === 'header') {
-        nativeProps.role = nativeProps.role ?? 'header';
+        nativeProps.role ??= 'header';
       }
 
       // Component-specific props
@@ -142,12 +148,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         nativeProps.experimental_layoutConformance = 'strict';
       }
 
-      // $FlowFixMe
-      let element = <NativeComponent {...nativeProps} />;
+      let element: React.Node =
+        typeof props.children === 'function' ? (
+          props.children(nativeProps)
+        ) : (
+          // $FlowFixMe
+          <NativeComponent {...nativeProps} />
+        );
 
       if (
-        nativeProps.children != null &&
-        typeof nativeProps.children !== 'string'
+        (nativeProps.children != null &&
+          typeof nativeProps.children !== 'string') ||
+        typeof props.children === 'function'
       ) {
         if (inheritableStyle != null) {
           element = (

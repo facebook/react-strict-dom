@@ -8,9 +8,9 @@
  */
 
 import type { CustomProperties } from '../../types/styles';
-import type { StrictProps } from '../../types/StrictProps';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
-import type { Props as ReactNativeProps } from '../../types/react-native';
 
 import * as stylex from '../stylex';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
@@ -18,6 +18,11 @@ import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
 import { useCustomProperties } from './ContextCustomProperties';
 import { useStyleProps } from './useStyleProps';
+
+type StrictProps = $ReadOnly<{
+  ...StrictPropsOriginal,
+  children?: React.Node | ((ReactNativeProps) => React.Node)
+}>;
 
 /**
  * Props validation
@@ -188,7 +193,9 @@ export function useNativeProps(
    * Resolve common props
    */
 
-  nativeProps.children = children;
+  if (typeof children !== 'function') {
+    nativeProps.children = children;
+  }
 
   if (ariaHidden != null) {
     nativeProps.accessibilityElementsHidden = ariaHidden;

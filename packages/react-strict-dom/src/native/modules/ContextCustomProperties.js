@@ -13,7 +13,7 @@ import * as React from 'react';
 import { __customProperties } from '../stylex';
 
 const defaultContext = __customProperties;
-const ContextCustomProperties: React$Context<CustomProperties> =
+const ContextCustomProperties: React.Context<CustomProperties> =
   React.createContext(defaultContext);
 
 if (__DEV__) {

@@ -31,8 +31,3 @@ export type StrictProps = $ReadOnly<{
   ...StrictReactDOMSelectProps,
   ...StrictReactDOMTextAreaProps
 }>;
-
-export type ReactDOMStyleProps = $ReadOnly<{
-  className?: string,
-  style?: $ReadOnly<{ [string]: string | number }>
-}>;

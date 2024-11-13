@@ -17,12 +17,12 @@ import { shallowEqual } from './shallowEqual';
 type Value = Style;
 
 type ProviderProps = $ReadOnly<{
-  children: React$MixedElement,
+  children: React.Node,
   value: Value
 }>;
 
 const defaultContext = {};
-const ContextInheritedStyles: React$Context<Value> =
+const ContextInheritedStyles: React.Context<Value> =
   React.createContext(defaultContext);
 
 if (__DEV__) {
@@ -31,9 +31,7 @@ if (__DEV__) {
 
 // We do some special-casing to compute inherited fontSize.
 // The 'em' unit polyfill in stylex assumes the inherited fontSize is always a computed number.
-export function ProvideInheritedStyles(
-  props: ProviderProps
-): React$MixedElement {
+export function ProvideInheritedStyles(props: ProviderProps): React.Node {
   const { children, value } = props;
   const inheritedStyles = useInheritedStyles();
   const flatStyle = useMemo(() => {

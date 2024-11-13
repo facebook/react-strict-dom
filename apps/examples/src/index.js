@@ -7,9 +7,7 @@
 
 import { LogBox } from 'react-native';
 
-// Taken from "npm:expo/AppEntry.js" to fix broken "package.main"
-// in Expo template when used in npm workspaces
-import registerRootComponent from 'expo/build/launch/registerRootComponent';
+import { registerRootComponent } from 'expo';
 
 import App from './App';
 
