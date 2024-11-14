@@ -24,16 +24,13 @@ module.exports = function (api) {
   //api.cache(true);
 
   const platform = api.caller(getPlatform);
-  const isDev = api.caller(getIsDev);
+  const dev = api.caller(getIsDev);
 
   const presets = ['babel-preset-expo'];
   const plugins = [];
 
   if (platform === 'web') {
-    presets.push([
-      reactStrictPreset,
-      { debug: true, dev: isDev, rootDir: __dirname }
-    ]);
+    presets.push([reactStrictPreset, { debug: true, dev, rootDir: __dirname }]);
   }
 
   return {

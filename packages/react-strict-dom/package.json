@@ -12,10 +12,6 @@
     "./package.json": "./package.json"
   },
   "sideEffects": false,
-  "files": [
-    "*",
-    "!**/__tests__"
-  ],
   "scripts": {
     "build": "rollup --config ./tools/rollup.config.mjs",
     "clean": "del-cli \"./build/*\" \"./dist/*\"",

@@ -42,7 +42,7 @@ const styles = stylex.create({
     borderWidth: 1
   },
   codePre: {
-    fontFamily: 'monospace, monospace',
+    fontFamily: 'monospace, "monospace"',
     fontSize: '1em',
     overflow: 'auto'
   },
