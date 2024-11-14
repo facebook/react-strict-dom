@@ -236,7 +236,7 @@ function reactStrictPreset(_, options = {}) {
         {
           dev: opts.dev,
           importSources: [{ from: 'react-strict-dom', as: 'css' }],
-          runtimeInjection: opts.dev, // temporary until Expo/Metro can support built-time
+          runtimeInjection: false,
           styleResolution: 'property-specificity',
           unstable_moduleResolution: {
             type: 'commonJS',

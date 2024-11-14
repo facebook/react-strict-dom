@@ -5,11 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// Required to apply extracted on Expo Web
+import './stylex.css';
+// Required for Fast Refresh to work on Expo Web
+import '@expo/metro-runtime';
+
 import { LogBox } from 'react-native';
-
 import { registerRootComponent } from 'expo';
-
-import App from './App';
+import App from '../components/App';
 
 if (LogBox != null) {
   LogBox.ignoreLogs([

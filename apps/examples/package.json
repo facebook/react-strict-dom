@@ -2,7 +2,7 @@
   "private": true,
   "name": "examples",
   "version": "0.0.0",
-  "main": "./src/index.js",
+  "main": "./src/app/index.js",
   "scripts": {
     "dev": "expo start --clear",
     "dev:android": "expo start --android --clear",
@@ -11,13 +11,15 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.0",
-    "expo": "^52.0.3",
+    "expo": "^52.0.6",
     "expo-build-properties": "~0.13.1",
     "expo-status-bar": "~2.0.0",
+    "postcss-react-strict-dom": "^0.0.5",
     "react": "~18.3.1",
     "react-dom": "~18.3.1",
     "react-native": "~0.76.1",
-    "react-native-web": "~0.19.13"
+    "react-native-web": "~0.19.13",
+    "react-strict-dom": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2"

@@ -1176,7 +1176,7 @@ exports[`html "button" supports inline event handlers 1`] = `
 
 exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 <code
-  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
@@ -1231,7 +1231,7 @@ exports[`html "code" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -1255,7 +1255,7 @@ exports[`html "code" supports global attributes 1`] = `
 
 exports[`html "code" supports inline event handlers 1`] = `
 <code
-  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs xelszwe xrv4cvt xysyzu8"
+  className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
@@ -4825,7 +4825,7 @@ exports[`html "p" supports inline event handlers 1`] = `
 
 exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 <pre
-  className="html-pre x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
+  className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
@@ -4880,7 +4880,7 @@ exports[`html "pre" supports global attributes 1`] = `
   aria-valuetext="Five"
   autoCapitalize={true}
   autoFocus={true}
-  className="html-pre x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
+  className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
   data-testid="some-test-id"
   dir="ltr"
   enterKeyHint="go"
@@ -4904,7 +4904,7 @@ exports[`html "pre" supports global attributes 1`] = `
 
 exports[`html "pre" supports inline event handlers 1`] = `
 <pre
-  className="html-pre x1ghz6dp x1717udv xelszwe xrv4cvt xysyzu8"
+  className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
   onAuxClick={[Function]}
   onBeforeInput={[Function]}
   onBlur={[Function]}
