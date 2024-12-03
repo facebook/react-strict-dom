@@ -217,7 +217,8 @@ function reactStrictPlugin({ types: t }, options = {}) {
 const defaultOptions = {
   dev: true,
   debug: true,
-  rootDir: process.cwd()
+  rootDir: process.cwd(),
+  aliases: null
 };
 
 function reactStrictPreset(_, options = {}) {
@@ -243,7 +244,8 @@ function reactStrictPreset(_, options = {}) {
             rootDir: opts.rootDir
             //themeFileExtension: '.cssvars.js',
           },
-          useRemForFontSize: false
+          useRemForFontSize: false,
+          aliases: opts.aliases
         }
       ]
     ]
