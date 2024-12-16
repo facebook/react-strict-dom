@@ -1076,6 +1076,19 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing: 
 />
 `;
 
+exports[`<html.*> style polyfills "transition" properties  default: default 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "backgroundColor": "red",
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`<html.*> style polyfills "transition" properties  opacity transition: end 1`] = `
 <Animated.View
   animated={true}
@@ -1390,6 +1403,18 @@ exports[`<html.*> style polyfills "transition" properties  transition all proper
       "position": "static",
       "transform": [
         {
+          "perspective": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              10,
+            ],
+          },
+        },
+        {
           "translateY": {
             "inputRange": [
               0,
@@ -1428,6 +1453,9 @@ exports[`<html.*> style polyfills "transition" properties  transition all proper
       "opacity": 0,
       "position": "static",
       "transform": [
+        {
+          "perspective": 0,
+        },
         {
           "translateY": 0,
         },

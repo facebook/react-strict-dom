@@ -611,6 +611,7 @@ describe('<html.*>', () => {
         expect(console.error).not.toHaveBeenCalled();
         expect(console.warn).not.toHaveBeenCalled();
         expect(Animated.sequence).not.toHaveBeenCalled();
+        expect(root.toJSON()).toMatchSnapshot('default');
       });
 
       test('update triggers transition', () => {
@@ -722,7 +723,10 @@ describe('<html.*>', () => {
         act(() => {
           root = create(
             <html.div
-              style={styles.transitionAll('translateY(0px) rotateX(0deg)', 0.0)}
+              style={styles.transitionAll(
+                'perspective(0px) translateY(0px) rotateX(0deg)',
+                0.0
+              )}
             />
           );
         });
@@ -732,7 +736,7 @@ describe('<html.*>', () => {
           root.update(
             <html.div
               style={styles.transitionAll(
-                'translateY(100px) rotateX(90deg)',
+                'perspective(10px) translateY(100px) rotateX(90deg)',
                 1.0
               )}
             />
