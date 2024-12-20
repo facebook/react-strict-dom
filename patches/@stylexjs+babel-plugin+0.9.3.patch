@@ -1,0 +1,54 @@
+diff --git a/node_modules/@stylexjs/babel-plugin/lib/index.js b/node_modules/@stylexjs/babel-plugin/lib/index.js
+index 0a7919f..d7ce000 100644
+--- a/node_modules/@stylexjs/babel-plugin/lib/index.js
++++ b/node_modules/@stylexjs/babel-plugin/lib/index.js
+@@ -1233,15 +1233,9 @@ function readImportDeclarations(path, state) {
+             if (importedName === 'props') {
+               state.stylexPropsImport.add(localName);
+             }
+-            if (importedName === 'attrs') {
+-              state.stylexAttrsImport.add(localName);
+-            }
+             if (importedName === 'keyframes') {
+               state.stylexKeyframesImport.add(localName);
+             }
+-            if (importedName === 'include') {
+-              state.stylexIncludeImport.add(localName);
+-            }
+             if (importedName === 'firstThatWorks') {
+               state.stylexFirstThatWorksImport.add(localName);
+             }
+@@ -1284,15 +1278,9 @@ function readRequires(path, state) {
+           if (prop.key.name === 'props') {
+             state.stylexPropsImport.add(value.name);
+           }
+-          if (prop.key.name === 'attrs') {
+-            state.stylexAttrsImport.add(value.name);
+-          }
+           if (prop.key.name === 'keyframes') {
+             state.stylexKeyframesImport.add(value.name);
+           }
+-          if (prop.key.name === 'include') {
+-            state.stylexIncludeImport.add(value.name);
+-          }
+           if (prop.key.name === 'firstThatWorks') {
+             state.stylexFirstThatWorksImport.add(value.name);
+           }
+@@ -1321,7 +1309,7 @@ function injectDevClassNames(obj, varName, state) {
+   for (const [key, value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //[devClassName]: devClassName,
+       ...value
+     };
+   }
+@@ -1332,7 +1320,7 @@ function convertToTestStyles(obj, varName, state) {
+   for (const [key, _value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //[devClassName]: devClassName,
+       $$css: true
+     };
+   }

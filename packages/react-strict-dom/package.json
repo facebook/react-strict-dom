@@ -7,7 +7,7 @@
       "react-native": "./dist/native/index.js",
       "default": "./dist/dom/index.js"
     },
-    "./babel-preset": "./babel/index.js",
+    "./babel-preset": "./babel/preset.js",
     "./runtime": "./dist/dom/runtime.js",
     "./package.json": "./package.json"
   },
@@ -21,7 +21,7 @@
     "prebuild": "npm run clean && generate-types -i src/ -o dist"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.7.5",
+    "@stylexjs/stylex": "^0.9.3",
     "css-mediaquery": "0.1.2",
     "postcss-value-parser": "^4.1.0"
   },
@@ -31,7 +31,7 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
-    "@stylexjs/babel-plugin": "^0.7.5",
+    "@stylexjs/babel-plugin": "^0.9.3",
     "rollup": "^4.22.4",
     "react-test-renderer": "^18.2.0"
   },
