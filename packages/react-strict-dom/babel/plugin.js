@@ -7,7 +7,6 @@
 
 const path = require('path');
 const { addNamed } = require('@babel/helper-module-imports');
-const styleXPlugin = require('@stylexjs/babel-plugin');
 
 function createShortFilename(absolutePath, baseDir = process.cwd()) {
   if (!path.isAbsolute(baseDir)) {
@@ -214,42 +213,4 @@ function reactStrictPlugin({ types: t }, options = {}) {
   };
 }
 
-const defaultOptions = {
-  dev: true,
-  debug: true,
-  rootDir: process.cwd()
-};
-
-function reactStrictPreset(_, options = {}) {
-  const opts = { ...defaultOptions, ...options };
-
-  return {
-    plugins: [
-      [
-        reactStrictPlugin,
-        {
-          debug: opts.debug
-        }
-      ],
-      [
-        styleXPlugin,
-        {
-          dev: opts.dev,
-          importSources: [{ from: 'react-strict-dom', as: 'css' }],
-          runtimeInjection: false,
-          styleResolution: 'property-specificity',
-          unstable_moduleResolution: {
-            type: 'commonJS',
-            rootDir: opts.rootDir
-            //themeFileExtension: '.cssvars.js',
-          },
-          useRemForFontSize: false
-        }
-      ]
-    ]
-  };
-}
-
-reactStrictPreset.generateStyles = styleXPlugin.processStylexRules;
-
-module.exports = reactStrictPreset;
+module.exports = reactStrictPlugin;

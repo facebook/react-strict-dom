@@ -12,7 +12,7 @@
 jest.autoMockOff();
 
 const { transformSync } = require('@babel/core');
-const reactStrictPreset = require('../babel');
+const reactStrictPreset = require('../babel/preset');
 const jsx = require('@babel/plugin-syntax-jsx');
 
 function transform(source, pluginOptions = {}) {
@@ -26,7 +26,7 @@ function transform(source, pluginOptions = {}) {
   }).code;
 }
 
-describe('react-strict-dom/babel', () => {
+describe('react-strict-dom/babel-preset', () => {
   describe('[transform] ignore unrelated elements', () => {
     test('noop <div>', () => {
       expect(

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`react-strict-dom/babel [transform] <html.*> elements aliased imports 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements aliased imports 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
@@ -9,7 +9,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements basic element 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements basic element 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
@@ -18,7 +18,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements debug mode 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements debug mode 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
@@ -27,7 +27,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements other props 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements other props 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
@@ -44,7 +44,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements repeated imports 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements repeated imports 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 import { html as h } from 'react-strict-dom';
@@ -56,7 +56,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: array 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements styled elements: array 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
@@ -65,7 +65,7 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] <html.*> elements styled elements: simple 1`] = `
+exports[`react-strict-dom/babel-preset [transform] <html.*> elements styled elements: simple 1`] = `
 "import { defaultStyles as _defaultStyles, resolveStyle as _resolveStyle } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
@@ -74,21 +74,21 @@ function App() {
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <View style={{}}> 1`] = `
+exports[`react-strict-dom/babel-preset [transform] ignore unrelated elements noop <View style={{}}> 1`] = `
 "function App() {
   return <View style={{}} />;
 }
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <div style={{}}> 1`] = `
+exports[`react-strict-dom/babel-preset [transform] ignore unrelated elements noop <div style={{}}> 1`] = `
 "function App() {
   return <div style={{}} />;
 }
 ;"
 `;
 
-exports[`react-strict-dom/babel [transform] ignore unrelated elements noop <div> 1`] = `
+exports[`react-strict-dom/babel-preset [transform] ignore unrelated elements noop <div> 1`] = `
 "function App() {
   return <div />;
 }
