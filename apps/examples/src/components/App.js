@@ -22,8 +22,7 @@ const egStyles = css.create({
   h1: { padding: 10, backgroundColor: '#eee' },
   content: { padding: 10 },
   div: {
-    paddingBottom: 50,
-    paddingTop: 50,
+    paddingBlock: 50,
     backgroundColor: 'white'
   }
 });

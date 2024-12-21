@@ -4,7 +4,7 @@
 
 :::warning
 
-Variables must be defined as named exports in a `.stylex.js` (or `.stylex.ts`) file. This limitation is currently imposed due to constraints on how styles are compiled on web.
+Variables must be defined as named exports in files with a `*.stylex.js` (or `*.stylex.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
 
 :::
 

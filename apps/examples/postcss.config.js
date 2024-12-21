@@ -8,10 +8,7 @@
 module.exports = {
   plugins: {
     'postcss-react-strict-dom': {
-      include: [
-        require.resolve('react-strict-dom'),
-        'src/**/*.{js,jsx,mjs,ts,tsx}'
-      ]
+      include: ['src/**/*.{js,jsx,mjs,ts,tsx}']
     },
     autoprefixer: {}
   }

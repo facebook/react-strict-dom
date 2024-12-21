@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// Required to apply extracted on Expo Web
+// Required for CSS to work on Expo Web.
 import './stylex.css';
 // Required for Fast Refresh to work on Expo Web
 import '@expo/metro-runtime';

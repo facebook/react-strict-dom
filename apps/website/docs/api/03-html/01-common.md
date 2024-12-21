@@ -4,11 +4,15 @@ title: Common (e.g. <html.div>)
 
 # Common components (e.g., \<html.div>)
 
-<p className="text-xl">The majority of HTML components support the following common props and events.</p>
+<p className="text-xl">HTML components support the following common props and events.</p>
 
 ## Overview
 
-All supported HTML components are available on the `html` export (which can be aliased). For the full list of supported HTML components, please refer to the [HTML compatibility table](/api/html/#compatibility). Component props are strictly typed and will provide errors if invalid values are used.
+HTML components are available on the `html` export (which can be aliased). Component props are strictly typed and will provide errors if invalid values are used.
+
+For the full list of supported HTML components, please refer to the [HTML compatibility table](/api/html/#compatibility).
+
+Example:
 
 ```jsx
 import { html } from 'react-strict-dom';
@@ -16,16 +20,12 @@ import { html } from 'react-strict-dom';
 const Foo = () => {
   return (
     <html.main>
-      <html.section>
-        <html.article>
-          <html.h1>Title</html.h1>
-          <html.div>
-            <html.p>
-              Paragraph of <html.span>text</html.span> element
-            </html.p>
-          </html.div>
-        </html.article>
-      </html.section>
+      <html.h1>Title</html.h1>
+      <html.div>
+        <html.p>
+          Paragraph of <html.span>text</html.span> element
+        </html.p>
+      </html.div>
     </html.main>
   )
 }
@@ -55,7 +55,7 @@ Please refer to the [related React DOM docs](https://react.dev/reference/react-d
 
 ### Common
 
-* `aria-*` - Excludes all abstract roles that should not be used by authors.
+* `aria-*` - WAI-ARIA 1.2 non-deprecated properties.
 * `autoCapitalize`
 * `autoFocus`
 * `children`
@@ -69,7 +69,7 @@ Please refer to the [related React DOM docs](https://react.dev/reference/react-d
 * `inert`
 * `inputMode`
 * `lang`
-* `role` - The synonym `presentation` is not supported, use `none`.
+* `role` - The synonym `presentation` is not supported, use `none`. Excludes all abstract roles that should not be used by authors.
 * `ref`
 * `spellCheck`
 * `style` - Accepts a style or array of styles created using `css.create()` and `css.createTheme()`. Falsey values are ignored. Order matters, with later declarations overriding earlier ones.

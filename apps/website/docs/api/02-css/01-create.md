@@ -1,10 +1,10 @@
 # css.create
 
-<p className="text-xl">How to create static and dynamic styles in React.</p>
+<p className="text-xl">How to create static and dynamic styles in React Strict DOM.</p>
 
 :::warning
 
-The constraints on which properties and values are supported (e.g., various short-form properties are disallowed) are not yet enforced by the style compiler or static types on web. This is a work in progress.
+On web the style compiler and static types do not yet enforce constraints on the properties and values that can be used (e.g., various short-form properties are disallowed). This is a work in progress that depends on improvements to StyleX.
 
 :::
 

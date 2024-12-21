@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export function IconDocs() {
+export function IconArrow() {
   return (
     <svg
       aria-hidden="true"

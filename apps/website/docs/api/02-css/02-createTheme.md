@@ -1,10 +1,12 @@
 # css.createTheme
 
-<p className="text-xl">How to create style themes from variables in React.</p>
+<p className="text-xl">How to create style themes from variables in React Strict DOM.</p>
 
 ## Overview
 
-This API creates themes that override the default values of style variables created with `defineVars()`. These themes can then be applied to specific element sub-trees. It returns an opaque style object that can be passed to the `style` prop of `html.*` elements. These theme objects can also be combined into an array style.
+This API creates themes that override the default values of style variables created with `defineVars()`. It returns an opaque style object that can be passed to the `style` prop of any `html.*` element. The theme will then apply to the entire sub-tree. Theme objects can be combined using an array style.
+
+Example:
 
 ```jsx
 import { css } from 'react-strict-dom';
