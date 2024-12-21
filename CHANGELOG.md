@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.30 (Dec 21, 2024)
+
+### Breaking changes
+
+* The babel preset options now include `platform`, allowing the preset to be used safely on non-web builds.
+
 ## 0.0.29 (Nov 11, 2024)
 
 ### New features
