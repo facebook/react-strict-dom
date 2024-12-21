@@ -14,6 +14,8 @@ This is an experimental and unstable API intended to aid with incremental adopti
 
 A component that translates React Strict DOM props into React Native props, which can then be passed to a custom React Native element. A type annotation must be provided for `nativeProps`, which should match the props type of the React Native component being rendered.
 
+Example:
+
 ```jsx
 import { compat } from 'react-strict-dom';
 import { Text } from 'react-native';
@@ -33,6 +35,11 @@ export component Foo(...props: FooProps) {
 }
 ```
 
-The `children` prop must be a function, which receives `nativeProps` as the only argument.
+#### Props
 
-The `as` prop accepts values of `image`, `input`, `text`, `textarea`, and `view`.
+* `...reactStrictDOMProps`
+  * Any props accepted by `html.*` elements.
+* `children: (nativeProps) => React.Node`
+  * Must be a function, which receives the computed `nativeProps` as the only argument and returns a React Native element.
+* `as: 'image' | 'input' | 'text' | 'textarea' | 'view'`
+  * Tells the component how to translate the props for native. For example, if rendering to a multiline `TextInput`, use `textarea`. Defaults to `view`.

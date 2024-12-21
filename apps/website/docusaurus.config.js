@@ -88,6 +88,12 @@ const config = {
         },
         items: [
           {
+            label: 'Learn',
+            position: 'left',
+            sidebarId: 'learnSidebar',
+            type: 'docSidebar'
+          },
+          {
             label: 'API',
             position: 'left',
             sidebarId: 'apiSidebar',
