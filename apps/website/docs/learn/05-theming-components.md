@@ -138,7 +138,7 @@ const styles = css.create({
 });
 
 const Theme = (props) => {
-  const theme = props.name === 'venus' ? venusTheme : marseTheme;
+  const theme = props.name === 'venus' ? venusTheme : marsTheme;
   return (
     <html.div
       children={props.children}
