@@ -1,6 +1,6 @@
 {
   "name": "react-strict-dom",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "React Strict DOM",
   "exports": {
     ".": {
@@ -11,6 +11,12 @@
     "./runtime": "./dist/dom/runtime.js",
     "./package.json": "./package.json"
   },
+  "files": [
+    "README.md",
+    "package.json",
+    "babel/*",
+    "dist/*"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "rollup --config ./tools/rollup.config.mjs",
@@ -47,6 +53,6 @@
   "homepage": "https://github.com/facebook/react-strict-dom/tree/main/packages/react-strict-dom",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/react-strict-dom.git"
+    "url": "git+https://github.com/facebook/react-strict-dom.git"
   }
 }

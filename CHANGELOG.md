@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.31 (Dec 23, 2024)
+## 0.0.32 (Dec 23, 2024)
 
 ### Breaking changes
 
