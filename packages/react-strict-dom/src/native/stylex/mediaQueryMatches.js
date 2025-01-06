@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import mediaQuery from 'css-mediaquery';
+import { mediaQuery } from '../modules/mediaQuery';
 
 const MEDIA = '@media';
 
@@ -18,8 +18,8 @@ export function mediaQueryMatches(
 ): boolean {
   const q = query.split(MEDIA)[1];
   return mediaQuery.match(q, {
-    width,
-    height,
+    width: width,
+    height: height,
     orientation: width > height ? 'landscape' : 'portrait',
     'aspect-ratio': width / height
   });
