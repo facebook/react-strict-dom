@@ -39,7 +39,7 @@ const sharedPlugins = [
   babelPlugin,
   ossLicensePlugin(),
   resolve(),
-  commonjs(), // commonjs packages: styleq and css-mediaquery
+  commonjs(), // commonjs packages: postcss-value-parser, styleq
 ];
 
 /**
