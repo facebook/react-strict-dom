@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.33 (Jan 7, 2025)
+
+### Fixes
+
+* Add missing babel dependencies to react-strict-dom `package.json`.
+
 ## 0.0.32 (Dec 23, 2024)
 
 ### Breaking changes
