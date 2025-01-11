@@ -132,7 +132,7 @@ The following tables represent the compatibility status of the strict CSS API fo
 | cursor | ❌ | ✅ Partial | |
 | direction | ❌ | ❌ | |
 | display: block | 🟡 Partial | 🟡 Partial | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
-| display: contents | ❌ | ❌ | |
+| display: contents | ✅ | ✅ | |
 | display: flex | ✅ | ✅ | |
 | display: grid | ❌ | ❌ | [#1](https://github.com/facebook/react-strict-dom/issues/1) |
 | display: inline | ❌ | ❌ | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
