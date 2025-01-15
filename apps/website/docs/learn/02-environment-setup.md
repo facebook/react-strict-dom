@@ -37,6 +37,7 @@ function getIsDev(caller) {
 }
 
 module.exports = function (api) {
+  // If not using Expo, set these values manually or by other means
   const platform = api.caller(getPlatform);
   const dev = api.caller(getIsDev);
 
@@ -90,10 +91,23 @@ const projectRoot = __dirname;
 const config = getDefaultConfig(projectRoot);
 // 1. Enable Metro support for symlinks and package exports
 config.resolver.unstable_enablePackageExports = true;
-// 2. Force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
-config.resolver.disableHierarchicalLookup = true;
+// 2. Only for npm monorepos: force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
+// config.resolver.disableHierarchicalLookup = true;
 
 module.exports = config;
+```
+
+TypeScript-based Expo projects should also set `moduleResolution` to `"bundler"`.
+
+```js title="tsconfig.json"
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "bundler",
+  },
+  ...
+}
 ```
 
 ## App files
