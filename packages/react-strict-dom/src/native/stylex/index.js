@@ -648,6 +648,7 @@ export function props(
 
 type Tokens = { [string]: string };
 let count = 1;
+const RE_CAPTURE_VAR_NAME = /^var\(--(.*)\)$/;
 
 export const __customProperties: MutableCustomProperties = {};
 
@@ -672,7 +673,7 @@ export const createTheme = (
   const result: MutableCustomProperties = { $$theme: 'theme' };
   for (const key in baseTokens) {
     const varName: string = baseTokens[key];
-    const normalizedKey = varName.replace(/^var\(--(.*)\)$/, '$1');
+    const normalizedKey = varName.replace(RE_CAPTURE_VAR_NAME, '$1');
     result[normalizedKey] = overrides[key];
   }
   return result;
