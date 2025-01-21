@@ -106,6 +106,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       if (displayValue === 'flex') {
         nextDisplayInsideValue = 'flex';
+        nativeProps.style.alignContent ??= 'stretch';
         nativeProps.style.alignItems ??= 'stretch';
         nativeProps.style.flexBasis ??= 'auto';
         nativeProps.style.flexDirection ??= 'row';
