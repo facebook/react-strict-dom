@@ -68,6 +68,7 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "alignContent": "stretch",
       "alignItems": "stretch",
       "boxSizing": "content-box",
       "display": "flex",
@@ -901,6 +902,7 @@ exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
   experimental_layoutConformance="strict"
   style={
     {
+      "alignContent": "stretch",
       "alignItems": "stretch",
       "boxSizing": "content-box",
       "display": "flex",
