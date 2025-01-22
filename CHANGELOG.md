@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.34 (Jan 21, 2025)
+
+### Fixes
+
+* [Native] Fix default value of `alignContent` on native.
+
 ## 0.0.33 (Jan 7, 2025)
 
 ### Fixes
