@@ -2,6 +2,7 @@
   "name": "react-strict-dom",
   "version": "0.0.34",
   "description": "React Strict DOM",
+  "types": "./dist/dom/index.d.ts",
   "exports": {
     ".": {
       "react-native": "./dist/native/index.js",
