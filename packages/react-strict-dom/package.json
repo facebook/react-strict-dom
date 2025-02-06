@@ -4,8 +4,14 @@
   "description": "React Strict DOM",
   "exports": {
     ".": {
-      "react-native": "./dist/native/index.js",
-      "default": "./dist/dom/index.js"
+      "react-native": {
+        "types": "./dist/native/index.d.ts",
+        "default": "./dist/native/index.js"
+      },
+      "default": {
+        "types": "./dist/dom/index.d.ts",
+        "default": "./dist/dom/index.js"
+      }
     },
     "./babel-preset": "./babel/preset.js",
     "./runtime": "./dist/dom/runtime.js",

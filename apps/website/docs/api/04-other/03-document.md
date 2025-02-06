@@ -20,7 +20,7 @@ Only the read-only APIs should be used in the context of React Strict DOM, as Re
 | ---- | ---- | ---- | ---- |
 | document.activeElement | ❌ | ❌ | |
 | document.defaultView | ❌ | ❌ | |
-| document.getElementFromPoint(x,y) | ❌ | ❌ | |
+| [document.elementFromPoint(x,y)](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint) | ❌ | ❌ | |
 | document.hidden | ❌ | ❌ | |
 | document.visibilityState | ❌ | ❌ | |
 | "scroll" event | ❌ | ❌ | |
