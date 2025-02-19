@@ -44,7 +44,8 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": ">=0.75.2"
+    "react-native": ">=0.75.2",
+    "react-native-svg": "^15.8.0"
   },
   "engines": {
     "node": ">=20.11.0"

@@ -120,6 +120,7 @@ const span: StrictReactDOMPropsStyle = styles.inline;
 const strong: StrictReactDOMPropsStyle = [styles.inline, styles.strong];
 const sub: StrictReactDOMPropsStyle = styles.inline;
 const sup: StrictReactDOMPropsStyle = styles.inline;
+const svg: StrictReactDOMPropsStyle = styles.img;
 const textarea: StrictReactDOMPropsStyle = [
   styles.inlineblock,
   styles.textarea
@@ -174,6 +175,7 @@ export const defaultStyles = {
   strong: strong as typeof strong,
   sub: sub as typeof sub,
   sup: sup as typeof sup,
+  svg: svg as typeof svg,
   textarea: textarea as typeof textarea,
   u: u as typeof u,
   ul: ul as typeof ul
