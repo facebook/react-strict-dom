@@ -6,10 +6,10 @@
  */
 
 module.exports = {
-  plugins: {
-    'postcss-react-strict-dom': {
+  plugins: [
+    require('react-strict-dom/postcss-plugin')({
       include: ['src/**/*.{js,jsx,mjs,ts,tsx}']
-    },
-    autoprefixer: {}
-  }
+    }),
+    require('autoprefixer')
+  ]
 };
