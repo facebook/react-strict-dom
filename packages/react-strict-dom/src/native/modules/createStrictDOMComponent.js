@@ -62,8 +62,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Tag-specific props
 
-      if (tagName === 'header') {
+      if (tagName === 'button') {
+        nativeProps.role ??= 'button';
+      } else if (tagName === 'header') {
         nativeProps.role ??= 'header';
+      } else if (tagName === 'li') {
+        nativeProps.role ??= 'listitem';
+      } else if (tagName === 'ol' || tagName === 'ul') {
+        nativeProps.role ??= 'list';
       }
 
       // Component-specific props
