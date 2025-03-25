@@ -194,6 +194,14 @@ describe('html', () => {
       expect(Component).toBeDefined();
     });
 
+    test(`"${tagName}" default rendering`, () => {
+      let root;
+      act(() => {
+        root = create(<Component />);
+      });
+      expect(root.toJSON()).toMatchSnapshot();
+    });
+
     test(`"${tagName}" supports global attributes`, () => {
       let root;
       act(() => {
@@ -316,6 +324,24 @@ describe('html', () => {
     expect(root.toJSON()).toMatchSnapshot();
   });
 
+  // TODO
+  test('"li" supports list item attributes', () => {
+    let root;
+    act(() => {
+      root = create(<html.li />);
+    });
+    expect(root.toJSON()).toMatchSnapshot();
+  });
+
+  // TODO
+  test('"ol" supports list attributes', () => {
+    let root;
+    act(() => {
+      root = create(<html.ol />);
+    });
+    expect(root.toJSON()).toMatchSnapshot();
+  });
+
   test('"option" supports input attributes', () => {
     let root;
     act(() => {
@@ -373,6 +399,15 @@ describe('html', () => {
           value="value"
         />
       );
+    });
+    expect(root.toJSON()).toMatchSnapshot();
+  });
+
+  // TODO
+  test('"ul" supports list attributes', () => {
+    let root;
+    act(() => {
+      root = create(<html.ul />);
     });
     expect(root.toJSON()).toMatchSnapshot();
   });

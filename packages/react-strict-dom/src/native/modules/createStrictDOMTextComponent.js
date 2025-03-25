@@ -73,6 +73,15 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
         }
       } else if (tagName === 'br') {
         nativeProps.children = '\n';
+      } else if (
+        tagName === 'h1' ||
+        tagName === 'h2' ||
+        tagName === 'h3' ||
+        tagName === 'h4' ||
+        tagName === 'h5' ||
+        tagName === 'h6'
+      ) {
+        nativeProps.role ??= 'heading';
       } else if (tagName === 'option') {
         nativeProps.children = label;
       }

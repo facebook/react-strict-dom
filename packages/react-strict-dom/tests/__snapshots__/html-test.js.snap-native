@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`html "a" default rendering 1`] = `
+<Text
+  role="link"
+  style={
+    {
+      "boxSizing": "content-box",
+      "color": "blue",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 <Text
   role="link"
@@ -123,6 +138,18 @@ exports[`html "a" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "article" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -219,6 +246,18 @@ exports[`html "article" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "aside" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
   style={
     {
       "boxSizing": "content-box",
@@ -333,6 +372,19 @@ exports[`html "aside" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "b" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -428,6 +480,18 @@ exports[`html "b" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "bdi" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -534,6 +598,18 @@ exports[`html "bdi" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "bdo" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -628,6 +704,18 @@ exports[`html "bdo" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "blockquote" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
     }
   }
 />
@@ -738,6 +826,21 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "br" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+>
+  
+
+</Text>
+`;
+
 exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -844,8 +947,22 @@ exports[`html "br" supports inline event handlers 1`] = `
 </Text>
 `;
 
+exports[`html "button" default rendering 1`] = `
+<Pressable
+  role="button"
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "button" ignores and warns about unsupported attributes 1`] = `
 <Pressable
+  role="button"
   style={
     {
       "borderWidth": 1,
@@ -860,6 +977,7 @@ exports[`html "button" supports additional button attributes 1`] = `
 <Pressable
   disabled={true}
   focusable={false}
+  role="button"
   style={
     {
       "borderWidth": 1,
@@ -954,11 +1072,25 @@ exports[`html "button" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="button"
   style={
     {
       "borderWidth": 1,
       "boxSizing": "content-box",
       "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "code" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
     }
   }
 />
@@ -1066,6 +1198,19 @@ exports[`html "code" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "del" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "textDecorationLine": "line-through",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "del" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -1163,6 +1308,18 @@ exports[`html "del" supports inline event handlers 1`] = `
       "position": "static",
       "textDecorationLine": "line-through",
       "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "div" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
     }
   }
 />
@@ -1273,6 +1430,19 @@ exports[`html "div" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "em" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -1375,6 +1545,18 @@ exports[`html "em" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "fieldset" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -1471,6 +1653,18 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "footer" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
   style={
     {
       "boxSizing": "content-box",
@@ -1585,6 +1779,18 @@ exports[`html "footer" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "form" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -1690,8 +1896,24 @@ exports[`html "form" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "h1" default rendering 1`] = `
+<Text
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -1783,6 +2005,22 @@ exports[`html "h1" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h2" default rendering 1`] = `
+<Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -1797,6 +2035,7 @@ exports[`html "h1" supports inline event handlers 1`] = `
 
 exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -1888,6 +2127,22 @@ exports[`html "h2" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h3" default rendering 1`] = `
+<Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -1902,6 +2157,7 @@ exports[`html "h2" supports inline event handlers 1`] = `
 
 exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -1993,6 +2249,22 @@ exports[`html "h3" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h4" default rendering 1`] = `
+<Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2007,6 +2279,7 @@ exports[`html "h3" supports inline event handlers 1`] = `
 
 exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2098,6 +2371,22 @@ exports[`html "h4" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h5" default rendering 1`] = `
+<Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2112,6 +2401,7 @@ exports[`html "h4" supports inline event handlers 1`] = `
 
 exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2203,6 +2493,22 @@ exports[`html "h5" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontSize": 24,
+      "fontWeight": "bold",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "h6" default rendering 1`] = `
+<Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2217,6 +2523,7 @@ exports[`html "h5" supports inline event handlers 1`] = `
 
 exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 <Text
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2308,6 +2615,7 @@ exports[`html "h6" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="heading"
   style={
     {
       "boxSizing": "content-box",
@@ -2315,6 +2623,19 @@ exports[`html "h6" supports inline event handlers 1`] = `
       "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "header" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="header"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
     }
   }
 />
@@ -2421,6 +2742,20 @@ exports[`html "header" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "hr" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "backgroundColor": "black",
+      "boxSizing": "border-box",
+      "height": 1,
       "position": "static",
     }
   }
@@ -2538,6 +2873,19 @@ exports[`html "hr" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "i" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontStyle": "italic",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -2635,6 +2983,18 @@ exports[`html "i" supports inline event handlers 1`] = `
       "fontStyle": "italic",
       "position": "static",
       "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "img" default rendering 1`] = `
+<Image
+  style={
+    {
+      "boxSizing": "content-box",
+      "objectFit": "fill",
+      "position": "static",
     }
   }
 />
@@ -2756,6 +3116,18 @@ exports[`html "img" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "objectFit": "fill",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "input" default rendering 1`] = `
+<TextInput
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
       "position": "static",
     }
   }
@@ -2887,6 +3259,19 @@ exports[`html "input" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "ins" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -2989,6 +3374,19 @@ exports[`html "ins" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "kbd" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -3084,6 +3482,18 @@ exports[`html "kbd" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "label" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
     }
@@ -3202,6 +3612,31 @@ exports[`html "label" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "li" supports list item attributes 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="listitem"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "main" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -3302,6 +3737,20 @@ exports[`html "main" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "mark" default rendering 1`] = `
+<Text
+  style={
+    {
+      "backgroundColor": "yellow",
+      "boxSizing": "content-box",
+      "color": "black",
+      "position": "static",
+      "userSelect": "auto",
     }
   }
 />
@@ -3412,6 +3861,18 @@ exports[`html "mark" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "nav" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -3517,9 +3978,23 @@ exports[`html "nav" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "ol" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
+  role="list"
   style={
     {
       "boxSizing": "content-box",
@@ -3613,6 +4088,32 @@ exports[`html "ol" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ol" supports list attributes 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "optgroup" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
   style={
     {
       "boxSizing": "content-box",
@@ -3722,6 +4223,18 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "option" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
     }
   }
 />
@@ -3838,6 +4351,18 @@ exports[`html "option" supports input attributes 1`] = `
 </Text>
 `;
 
+exports[`html "p" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -3930,6 +4455,19 @@ exports[`html "p" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "pre" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontFamily": "Menlo",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4039,6 +4577,19 @@ exports[`html "pre" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "s" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "textDecorationLine": "line-through",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "s" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -4141,6 +4692,18 @@ exports[`html "s" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "section" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
@@ -4237,6 +4800,18 @@ exports[`html "section" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "select" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
   style={
     {
       "boxSizing": "content-box",
@@ -4363,6 +4938,18 @@ exports[`html "select" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "span" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -4455,6 +5042,19 @@ exports[`html "span" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "strong" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "fontWeight": "bold",
       "position": "static",
       "userSelect": "auto",
     }
@@ -4564,6 +5164,18 @@ exports[`html "strong" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "sub" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -4653,6 +5265,18 @@ exports[`html "sub" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "sup" default rendering 1`] = `
+<Text
   style={
     {
       "boxSizing": "content-box",
@@ -4757,6 +5381,20 @@ exports[`html "sup" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "userSelect": "auto",
+    }
+  }
+/>
+`;
+
+exports[`html "textarea" default rendering 1`] = `
+<TextInput
+  multiline={true}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+      "verticalAlign": "top",
     }
   }
 />
@@ -4895,6 +5533,19 @@ exports[`html "textarea" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "u" default rendering 1`] = `
+<Text
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "textDecorationLine": "underline",
+      "userSelect": "auto",
+    }
+  }
+/>
+`;
+
 exports[`html "u" ignores and warns about unsupported attributes 1`] = `
 <Text
   style={
@@ -4997,9 +5648,23 @@ exports[`html "u" supports inline event handlers 1`] = `
 />
 `;
 
+exports[`html "ul" default rendering 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
 exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   experimental_layoutConformance="strict"
+  role="list"
   style={
     {
       "boxSizing": "content-box",
@@ -5093,6 +5758,20 @@ exports[`html "ul" supports inline event handlers 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`html "ul" supports list attributes 1`] = `
+<ViewNativeComponent
+  experimental_layoutConformance="strict"
+  role="list"
   style={
     {
       "boxSizing": "content-box",
