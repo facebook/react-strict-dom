@@ -118,7 +118,9 @@ export function useStyleProps(
       'onPointerDown',
       'onPointerEnter',
       'onPointerLeave',
-      'onPointerUp'
+      'onPointerUp',
+      'onPressIn',
+      'onPressOut'
     ]) {
       if (handler != null) {
         styleProps[handler] = handlers[handler];

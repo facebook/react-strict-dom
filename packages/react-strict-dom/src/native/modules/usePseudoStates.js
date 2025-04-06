@@ -20,7 +20,9 @@ type InteractionHandlers = {
   onPointerDown?: () => void,
   onPointerEnter?: () => void,
   onPointerLeave?: () => void,
-  onPointerUp?: () => void
+  onPointerUp?: () => void,
+  onPressIn?: () => void,
+  onPressOut?: () => void
 };
 
 type Interaction = {
@@ -79,6 +81,8 @@ export function usePseudoStates(style: Style): Interaction {
         value.onPointerCancel = () => setActive(false);
         value.onPointerDown = () => setActive(true);
         value.onPointerUp = () => setActive(false);
+        value.onPressIn = () => setActive(true);
+        value.onPressOut = () => setActive(false);
       }
     }
     return value;
