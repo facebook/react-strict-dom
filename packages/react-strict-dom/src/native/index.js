@@ -21,6 +21,7 @@ import * as React from 'react';
 import * as compat from './compat';
 import * as html from './html';
 import * as stylex from './stylex';
+import * as svg from './svg';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 
 type StyleTheme<V, T> = Theme<V, T>;
@@ -54,4 +55,4 @@ const contexts = {
 // Export using StyleX types as the shim has divergent types internally.
 const css: TStyleX = stylex as $FlowFixMe;
 
-export { contexts, compat, css, html };
+export { contexts, compat, css, html, svg };
