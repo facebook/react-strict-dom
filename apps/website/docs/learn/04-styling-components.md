@@ -108,7 +108,7 @@ import { css, html } from 'react-strict-dom';
 
 const styles = css.create({
   size: (height: number, width: number) => ({
-    height * 0.9,
+    height: height * 0.9,
     width
   })
 });
