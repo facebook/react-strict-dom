@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.35 (May 9, 2025)
+
+### Fixes
+
+* Add support for TypeScript integrations by defining types exports.
+* [Native] Add default accessibility roles to native elements.
+
 ## 0.0.34 (Jan 21, 2025)
 
 ### Fixes
