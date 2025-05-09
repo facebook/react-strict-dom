@@ -36,7 +36,7 @@ export default function babelConfig() {
 
 ### Preset methods
 
-* `generateStyles(rules)`: **Web only**. Accetps an array of collected style rules. To generate a static CSS file, the styles must first be collected before being turned into a CSS string by this function. Next, the result should be written to a file by the build system. An illustrative example follows:
+* `generateStyles(rules)`: **Web only**. Accepts an array of collected style rules. To generate a static CSS file, the styles must first be collected before being turned into a CSS string by this function. Next, the result should be written to a file by the build system. An illustrative example follows:
 
 ```js
 import reactStrictBabelPreset from 'react-strict-dom/babel-preset';
