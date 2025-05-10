@@ -47,11 +47,14 @@ module.exports = function (api) {
       // Expo's babel preset
       'babel-preset-expo',
       // React Strict DOM's babel preset
-      [reactStrictPreset, {
-        debug: dev,
-        dev,
-        platform
-      }]
+      [
+        reactStrictPreset,
+        {
+          debug: dev,
+          dev,
+          platform
+        }
+      ]
     ]
   };
 };
@@ -59,21 +62,21 @@ module.exports = function (api) {
 
 ## PostCSS configuration
 
-[PostCSS](https://postcss.org/) is a tool for generating CSS. It's enabled by default in Expo and it's the recommended way to extract React Strict DOM styles to static CSS for web builds. Once the [postcss-react-strict-dom](https://github.com/javascripter/postcss-react-strict-dom) plugin is installed, it can be used to extract styles. Create a `postcss.config.js` file as follows.
+[PostCSS](https://postcss.org/) is a tool for generating CSS. It's enabled by default in Expo and it's the recommended way to extract React Strict DOM styles to static CSS for web builds. `react-strict-dom/postcss-plugin` can be used to extract styles. Create a `postcss.config.js` file as follows.
 
 ```js title="postcss.config.js"
 module.exports = {
-  plugins: {
-    'postcss-react-strict-dom': {
+  plugins: [
+    require('react-strict-dom/postcss-plugin')({
       include: [
         // Include source files to watch for style changes
         'src/**/*.{js,jsx,mjs,ts,tsx}',
         // List any installed node_modules that include UI built with React Strict DOM
         'node_modules/<package-name>/*.js'
       ]
-    },
-    autoprefixer: {}
-  }
+    }),
+    require('autoprefixer')
+  ]
 };
 ```
 
@@ -121,7 +124,6 @@ Your app needs to include a CSS file that contains a `@stylex` directive. This a
 ```
 
 Next, import the CSS file in the entry file of your app.
-
 
 ```js title="index.js"
 // Required for CSS to work on Expo Web.

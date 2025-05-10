@@ -14,6 +14,7 @@
       }
     },
     "./babel-preset": "./babel/preset.js",
+    "./postcss-plugin": "./postcss/plugin.js",
     "./runtime": "./dist/dom/runtime.js",
     "./package.json": "./package.json"
   },
