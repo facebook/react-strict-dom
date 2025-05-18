@@ -20,6 +20,7 @@ const plugin = ({
   include = [
     // Include the React Strict DOM package's source files by default
     require.resolve('react-strict-dom'),
+    require.resolve('react-strict-dom/runtime'),
     ...(include ?? [])
   ];
 
