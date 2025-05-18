@@ -28,7 +28,7 @@ const plugin = ({
     babelConfig,
     include,
     exclude,
-    useCSSLayers: false,
+    useCSSLayers: true,
     importSources: [
       '@stylexjs/stylex',
       [{ from: 'react-strict-dom', as: 'css' }]
