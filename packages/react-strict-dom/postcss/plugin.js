@@ -32,7 +32,8 @@ const plugin = ({
     useCSSLayers: true,
     importSources: [
       '@stylexjs/stylex',
-      [{ from: 'react-strict-dom', as: 'css' }]
+      'stylex',
+      { from: 'react-strict-dom', as: 'css' }
     ]
   });
 };
