@@ -1,0 +1,32 @@
+diff --git a/node_modules/@stylexjs/babel-plugin/lib/index.js b/node_modules/@stylexjs/babel-plugin/lib/index.js
+index 2ec3451..207813d 100644
+--- a/node_modules/@stylexjs/babel-plugin/lib/index.js
++++ b/node_modules/@stylexjs/babel-plugin/lib/index.js
+@@ -1140,9 +1140,6 @@ function readImportDeclarations(path, state) {
+             if (importedName === 'positionTry') {
+               state.stylexPositionTryImport.add(localName);
+             }
+-            if (importedName === 'include') {
+-              state.stylexIncludeImport.add(localName);
+-            }
+             if (importedName === 'firstThatWorks') {
+               state.stylexFirstThatWorksImport.add(localName);
+             }
+@@ -4428,7 +4425,7 @@ function injectDevClassNames(obj, varName, state) {
+   for (const [key, value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //[devClassName]: devClassName,
+       ...value
+     };
+   }
+@@ -4439,7 +4436,7 @@ function convertToTestStyles(obj, varName, state) {
+   for (const [key, _value] of Object.entries(obj)) {
+     const devClassName = namespaceToDevClassName(key, varName, state.filename ?? 'UnknownFile');
+     result[key] = {
+-      [devClassName]: devClassName,
++      //[devClassName]: devClassName,
+       $$css: true
+     };
+   }
