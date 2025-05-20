@@ -29,7 +29,7 @@ const plugin = ({
     babelConfig,
     include,
     exclude,
-    useCSSLayers: true,
+    useCSSLayers: false,
     importSources: [
       '@stylexjs/stylex',
       'stylex',
