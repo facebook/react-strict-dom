@@ -13,7 +13,7 @@ import type {
   StyleXStyles,
   Theme,
   VarGroup
-} from '@stylexjs/stylex/lib/StyleXTypes';
+} from '@stylexjs/stylex/lib/cjs/types/StyleXTypes';
 
 import typeof TStyleX from '@stylexjs/stylex';
 
