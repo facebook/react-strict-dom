@@ -584,6 +584,16 @@ describe('properties: general', () => {
     );
   });
 
+  test('positionTryFallbacks', () => {
+    css.positionTry({
+      left: 0,
+      width: 1000
+    });
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('css.positionTry() is not supported')
+    );
+  });
+
   test('transitionProperty', () => {
     const { underTest } = css.create({
       underTest: {

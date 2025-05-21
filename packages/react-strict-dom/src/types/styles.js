@@ -25,11 +25,13 @@ export type Styles = StyleXArray<
 
 export type IStyleX = $ReadOnly<{
   create: TStyleX['create'],
+  createTheme: TStyleX['createTheme'],
+  defineConsts: TStyleX['defineConsts'],
+  defineVars: TStyleX['defineVars'],
   firstThatWorks: TStyleX['firstThatWorks'],
   keyframes: TStyleX['keyframes'],
+  positionTry: TStyleX['positionTry'],
   props: TStyleX['props'],
-  defineVars: TStyleX['defineVars'],
-  createTheme: TStyleX['createTheme'],
   ...
 }>;
 
