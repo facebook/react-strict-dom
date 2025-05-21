@@ -15,9 +15,11 @@ sidebar_position: -1
 * [**css**](/api/css/) - An overview of working with styles.
 * [css.create](/api/css/create) - How to create styles.
 * [css.createTheme](/api/css/createTheme) - How to create themes.
+<!-- * [css.defineConsts](/api/css/defineConsts) - How to define constants. -->
 * [css.defineVars](/api/css/defineVars) - How to define variables.
 * [css.firstThatWorks](/api/css/firstThatWorks) - How to declare fallback values.
 <!-- * [css.keyframes](/api/css/keyframes) - How to declare animation keyframes. -->
+<!-- * [css.positionTry](/api/css/positionTry) - How to declare position-try styles. -->
 
 ## html
 

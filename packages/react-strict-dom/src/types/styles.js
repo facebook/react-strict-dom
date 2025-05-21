@@ -13,9 +13,9 @@ import type {
   StyleXStyles,
   Theme,
   VarGroup
-} from '@stylexjs/stylex/lib/StyleXTypes';
+} from '@stylexjs/stylex';
 
-import typeof TStyleX from '@stylexjs/stylex';
+import typeof * as TStyleX from '@stylexjs/stylex';
 
 export type Style = InlineStyles;
 
@@ -25,11 +25,13 @@ export type Styles = StyleXArray<
 
 export type IStyleX = $ReadOnly<{
   create: TStyleX['create'],
+  createTheme: TStyleX['createTheme'],
+  defineConsts: TStyleX['defineConsts'],
+  defineVars: TStyleX['defineVars'],
   firstThatWorks: TStyleX['firstThatWorks'],
   keyframes: TStyleX['keyframes'],
+  positionTry: TStyleX['positionTry'],
   props: TStyleX['props'],
-  defineVars: TStyleX['defineVars'],
-  createTheme: TStyleX['createTheme'],
   ...
 }>;
 
