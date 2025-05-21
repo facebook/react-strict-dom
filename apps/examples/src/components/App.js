@@ -220,7 +220,11 @@ function Shell(): React.MixedElement {
           <html.div />
           {/*<html.input placeholder="input type:date" type="date" />*/}
           <html.div />
-          <html.input placeholder="input type:email" type="email" />
+          <html.input
+            name="email"
+            placeholder="input type:email"
+            type="email"
+          />
           <html.div />
           <html.input placeholder="input type:number" type="number" />
           <html.div />
