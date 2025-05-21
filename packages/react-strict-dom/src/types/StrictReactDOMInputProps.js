@@ -21,6 +21,7 @@ export type StrictReactDOMInputProps = $ReadOnly<{
   min?: ?(string | number),
   minLength?: ?number,
   multiple?: ?boolean,
+  name?: ?string,
   onBeforeInput?: $FlowFixMe,
   onChange?: $FlowFixMe,
   onInput?: $FlowFixMe,

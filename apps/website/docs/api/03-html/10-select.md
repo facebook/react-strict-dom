@@ -25,6 +25,7 @@ const Foo = () => (
 * [...Common props](/api/html/common/)
 * `autoComplete`
 * `multiple`
+* `name`
 * `required`
 * `onBeforeInput`
 * `onChange`

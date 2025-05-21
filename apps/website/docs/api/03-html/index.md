@@ -179,6 +179,9 @@ The following tables represent the compatibility status of the strict HTML API s
 | minLength (input) | ❌ | ❌ | |
 | minLength (textarea) | ❌ | ❌ | |
 | multiple (select) | ❌ | ❌ | |
+| name (input) | ❌ | ❌ | |
+| name (select) | ❌ | ❌ | |
+| name (textarea) | ❌ | ❌ | |
 | onAuxClick | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onBeforeInput (input) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |
 | onBeforeInput (select) | ❌ | ❌ | [#38](https://github.com/facebook/react-strict-dom/issues/38) |

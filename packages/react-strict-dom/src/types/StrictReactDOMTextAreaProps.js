@@ -16,6 +16,7 @@ export type StrictReactDOMTextAreaProps = $ReadOnly<{
   disabled?: ?boolean,
   maxLength?: ?number,
   minLength?: ?number,
+  name?: ?string,
   onBeforeInput?: $FlowFixMe,
   onChange?: $FlowFixMe,
   onInput?: $FlowFixMe,

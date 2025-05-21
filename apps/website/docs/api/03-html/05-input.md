@@ -34,6 +34,7 @@ const Foo = () => (
 * `min`
 * `minLength`
 * `multiple`
+* `name`
 * `onBeforeInput`
 * `onChange`
 * `onInput`

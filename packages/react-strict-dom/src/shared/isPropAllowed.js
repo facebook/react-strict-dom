@@ -87,6 +87,7 @@ const strictAttributeSet: Set<string> = new Set([
   'min', // input
   'minLength', // input, textarea
   'multiple', // input, select
+  'name', // input, select, textarea
   'onAuxClick',
   'onBeforeInput', // input, select, textarea
   'onBlur',
