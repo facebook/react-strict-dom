@@ -9,5 +9,6 @@
 
 export type ReactDOMStyleProps = $ReadOnly<{
   className?: string,
+  'data-style-src'?: string,
   style?: $ReadOnly<{ [string]: string | number }>
 }>;

@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-import type { CompiledStyles } from '@stylexjs/stylex/lib/StyleXTypes';
+import type { CompiledStyles } from '@stylexjs/stylex';
 import type { ReactDOMStyleProps } from '../../types/renderer.web';
 import type { StrictProps } from '../../types/StrictProps';
 

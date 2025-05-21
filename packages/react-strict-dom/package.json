@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "@babel/helper-module-imports": "^7.24.7",
-    "@stylexjs/babel-plugin": "^0.9.3",
-    "@stylexjs/stylex": "^0.9.3",
+    "@stylexjs/babel-plugin": "^0.13.1",
+    "@stylexjs/stylex": "^0.13.1",
     "postcss-value-parser": "^4.1.0"
   },
   "devDependencies": {
