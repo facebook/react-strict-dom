@@ -408,6 +408,8 @@ function resolveStyle(
   return result;
 }
 
+export const __customProperties: MutableCustomProperties = {};
+
 /**
  * The create method shim should do initial transforms like
  * renaming/expanding/validating properties, essentially all the steps
@@ -433,6 +435,45 @@ function _create<S: { +[string]: { +[string]: mixed } }>(styles: S): {
 }
 export const create: IStyleX['create'] = _create as $FlowFixMe;
 
+const RE_CAPTURE_VAR_NAME = /^var\(--(.*)\)$/;
+export const createTheme = (
+  baseTokens: Tokens,
+  overrides: CustomProperties
+): CustomProperties => {
+  const result: MutableCustomProperties = { $$theme: 'theme' };
+  for (const key in baseTokens) {
+    const varName: string = baseTokens[key];
+    const normalizedKey = varName.replace(RE_CAPTURE_VAR_NAME, '$1');
+    result[normalizedKey] = overrides[key];
+  }
+  return result;
+};
+
+export const defineConsts = (tokens: {
+  [string]: string
+}): { [string]: string } => {
+  if (__DEV__) {
+    errorMsg('css.defineConsts() is not supported.');
+  }
+  return tokens;
+};
+
+type Tokens = { [string]: string };
+let defineVarsCount = 1;
+export const defineVars = (tokens: CustomProperties): Tokens => {
+  const result: Tokens = {};
+  for (const key in tokens) {
+    const value = tokens[key];
+    const customPropName = `${key}__id__${defineVarsCount++}`;
+    result[key] = `var(--${customPropName})`;
+    // NOTE: it's generally not a good idea to mutate the default context,
+    // but defineVars is always called before any component body is evaluated,
+    // and so it's safe to do so here.
+    __customProperties[customPropName] = value;
+  }
+  return result;
+};
+
 export const firstThatWorks = <T: string | number>(
   ...values: $ReadOnlyArray<T>
 ): T => {
@@ -442,7 +483,6 @@ export const firstThatWorks = <T: string | number>(
 type Keyframes = {
   +[key: string]: { +[k: string]: string | number }
 };
-
 function _keyframes(k: Keyframes): Keyframes {
   if (__DEV__) {
     errorMsg('css.keyframes() is not supported.');
@@ -451,9 +491,16 @@ function _keyframes(k: Keyframes): Keyframes {
 }
 export const keyframes: (Keyframes) => string = _keyframes as $FlowFixMe;
 
-/**
- * The spread method shim
- */
+type PositionTry = {
+  +[k: string]: string | number
+};
+function _positionTry(p: PositionTry): PositionTry {
+  if (__DEV__) {
+    errorMsg('css.positionTry() is not supported.');
+  }
+  return p;
+}
+export const positionTry: (PositionTry) => string = _positionTry as $FlowFixMe;
 
 export function props(
   this: ResolveStyleOptions,
@@ -645,36 +692,3 @@ export function props(
 
   return nativeProps;
 }
-
-type Tokens = { [string]: string };
-let count = 1;
-const RE_CAPTURE_VAR_NAME = /^var\(--(.*)\)$/;
-
-export const __customProperties: MutableCustomProperties = {};
-
-export const defineVars = (tokens: CustomProperties): Tokens => {
-  const result: Tokens = {};
-  for (const key in tokens) {
-    const value = tokens[key];
-    const customPropName = `${key}__id__${count++}`;
-    result[key] = `var(--${customPropName})`;
-    // NOTE: it's generally not a good idea to mutate the default context,
-    // but defineVars is always called before any component body is evaluated,
-    // and so it's safe to do so here.
-    __customProperties[customPropName] = value;
-  }
-  return result;
-};
-
-export const createTheme = (
-  baseTokens: Tokens,
-  overrides: CustomProperties
-): CustomProperties => {
-  const result: MutableCustomProperties = { $$theme: 'theme' };
-  for (const key in baseTokens) {
-    const varName: string = baseTokens[key];
-    const normalizedKey = varName.replace(RE_CAPTURE_VAR_NAME, '$1');
-    result[normalizedKey] = overrides[key];
-  }
-  return result;
-};

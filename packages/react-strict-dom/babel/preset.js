@@ -27,6 +27,7 @@ function reactStrictPreset(_, options = {}) {
     [
       styleXPlugin,
       {
+        debug: opts.debug,
         dev: opts.dev,
         importSources: [{ from: 'react-strict-dom', as: 'css' }],
         runtimeInjection: false,
@@ -35,8 +36,7 @@ function reactStrictPreset(_, options = {}) {
           rootDir: process.cwd(),
           type: 'commonJS'
           //themeFileExtension: '.cssvars.js',
-        },
-        useRemForFontSize: false
+        }
       }
     ]
   ];
