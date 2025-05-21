@@ -30,6 +30,7 @@ const Foo = () => (
 * `disabled`
 * `maxLength`
 * `minLength`
+* `name`
 * `onBeforeInput`
 * `onChange`
 * `onInput`

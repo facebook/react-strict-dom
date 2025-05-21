@@ -220,7 +220,11 @@ function Shell(): React.MixedElement {
           <html.div />
           {/*<html.input placeholder="input type:date" type="date" />*/}
           <html.div />
-          <html.input placeholder="input type:email" type="email" />
+          <html.input
+            name="name-input"
+            placeholder="input type:email"
+            type="email"
+          />
           <html.div />
           <html.input placeholder="input type:number" type="number" />
           <html.div />
@@ -237,7 +241,7 @@ function Shell(): React.MixedElement {
           <html.div />
           <html.input enterKeyHint="go" placeholder="input enterKeyHint:go" />
           <html.div />
-          <html.select>
+          <html.select name="name-select">
             <html.optgroup label="optgroup">
               <html.option label="option 1" />
               <html.option label="option 2" />
@@ -245,7 +249,7 @@ function Shell(): React.MixedElement {
             </html.optgroup>
           </html.select>
           <html.div />
-          <html.textarea placeholder="textarea" />
+          <html.textarea name="name-textarea" placeholder="textarea" />
         </ExampleBlock>
 
         <ExampleBlock title="CSS Animations">

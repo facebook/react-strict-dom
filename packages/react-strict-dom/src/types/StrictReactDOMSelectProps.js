@@ -13,6 +13,7 @@ export type StrictReactDOMSelectProps = $ReadOnly<{
   ...StrictReactDOMProps,
   autoComplete?: AutoComplete,
   multiple?: ?boolean,
+  name?: ?string,
   required?: ?boolean,
   onBeforeInput?: $FlowFixMe,
   onChange?: $FlowFixMe,
