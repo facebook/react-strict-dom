@@ -1,5 +1,10 @@
 # Changelog
 
+### Fixes
+
+* Allow `name` attribute for `input`, `select`, `textarea` elements.
+* Update StyleX to 0.13.1.
+
 ## 0.0.35 (May 9, 2025)
 
 ### Fixes
