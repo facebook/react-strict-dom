@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.0.36 (Jun 10, 2025)
+
 ### Fixes
 
 * Allow `name` attribute for `input`, `select`, `textarea` elements.
