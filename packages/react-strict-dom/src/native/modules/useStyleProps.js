@@ -95,7 +95,7 @@ export function useStyleProps(
   const styleProps = stylex.props.call(
     {
       active,
-      colorScheme,
+      colorScheme: colorScheme === 'unspecified' ? 'light' : colorScheme,
       customProperties: customProperties ?? emptyObject,
       focus,
       fontScale,

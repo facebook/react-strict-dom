@@ -28,7 +28,10 @@ type StrictProps = $ReadOnly<{
   children?: React.Node | ((ReactNativeProps) => React.Node)
 }>;
 
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+const AnimatedPressable = Animated.createAnimatedComponent<
+  React.ElementConfig<typeof Pressable>,
+  typeof Pressable
+>(Pressable);
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
