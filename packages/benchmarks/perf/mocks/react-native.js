@@ -106,6 +106,8 @@ export const Text = 'Text';
 
 export const View = 'View';
 
+export const experimental_LayoutConformance = 'LayoutConformance';
+
 export const useColorScheme = () => 'light';
 
 export const useWindowDimensions = () => ({
