@@ -145,7 +145,6 @@ exports[`html "a" supports inline event handlers 1`] = `
 
 exports[`html "article" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -158,7 +157,6 @@ exports[`html "article" default rendering 1`] = `
 
 exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -199,7 +197,6 @@ exports[`html "article" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -266,7 +263,6 @@ exports[`html "article" supports inline event handlers 1`] = `
 
 exports[`html "aside" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -279,7 +275,6 @@ exports[`html "aside" default rendering 1`] = `
 
 exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -320,7 +315,6 @@ exports[`html "aside" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -736,7 +730,6 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 
 exports[`html "blockquote" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -749,7 +742,6 @@ exports[`html "blockquote" default rendering 1`] = `
 
 exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -790,7 +782,6 @@ exports[`html "blockquote" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -1361,7 +1352,6 @@ exports[`html "del" supports inline event handlers 1`] = `
 
 exports[`html "div" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1374,7 +1364,6 @@ exports[`html "div" default rendering 1`] = `
 
 exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1415,7 +1404,6 @@ exports[`html "div" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -1601,7 +1589,6 @@ exports[`html "em" supports inline event handlers 1`] = `
 
 exports[`html "fieldset" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1614,7 +1601,6 @@ exports[`html "fieldset" default rendering 1`] = `
 
 exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1655,7 +1641,6 @@ exports[`html "fieldset" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -1722,7 +1707,6 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
 
 exports[`html "footer" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1735,7 +1719,6 @@ exports[`html "footer" default rendering 1`] = `
 
 exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1776,7 +1759,6 @@ exports[`html "footer" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -1843,7 +1825,6 @@ exports[`html "footer" supports inline event handlers 1`] = `
 
 exports[`html "form" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1856,7 +1837,6 @@ exports[`html "form" default rendering 1`] = `
 
 exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1897,7 +1877,6 @@ exports[`html "form" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -2720,7 +2699,6 @@ exports[`html "h6" supports inline event handlers 1`] = `
 
 exports[`html "header" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="header"
   style={
@@ -2734,7 +2712,6 @@ exports[`html "header" default rendering 1`] = `
 
 exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="header"
   style={
@@ -2776,7 +2753,6 @@ exports[`html "header" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -2844,7 +2820,6 @@ exports[`html "header" supports inline event handlers 1`] = `
 
 exports[`html "hr" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -2859,7 +2834,6 @@ exports[`html "hr" default rendering 1`] = `
 
 exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -2902,7 +2876,6 @@ exports[`html "hr" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -3739,7 +3712,6 @@ exports[`html "label" supports inline event handlers 1`] = `
 
 exports[`html "li" supports list item attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="listitem"
   style={
@@ -3753,7 +3725,6 @@ exports[`html "li" supports list item attributes 1`] = `
 
 exports[`html "main" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -3766,7 +3737,6 @@ exports[`html "main" default rendering 1`] = `
 
 exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -3807,7 +3777,6 @@ exports[`html "main" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -3997,7 +3966,6 @@ exports[`html "mark" supports inline event handlers 1`] = `
 
 exports[`html "nav" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4010,7 +3978,6 @@ exports[`html "nav" default rendering 1`] = `
 
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4051,7 +4018,6 @@ exports[`html "nav" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -4118,7 +4084,6 @@ exports[`html "nav" supports inline event handlers 1`] = `
 
 exports[`html "ol" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -4132,7 +4097,6 @@ exports[`html "ol" default rendering 1`] = `
 
 exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -4174,7 +4138,6 @@ exports[`html "ol" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -4242,7 +4205,6 @@ exports[`html "ol" supports inline event handlers 1`] = `
 
 exports[`html "ol" supports list attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -4256,7 +4218,6 @@ exports[`html "ol" supports list attributes 1`] = `
 
 exports[`html "optgroup" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4269,7 +4230,6 @@ exports[`html "optgroup" default rendering 1`] = `
 
 exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4310,7 +4270,6 @@ exports[`html "optgroup" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -4858,7 +4817,6 @@ exports[`html "s" supports inline event handlers 1`] = `
 
 exports[`html "section" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4871,7 +4829,6 @@ exports[`html "section" default rendering 1`] = `
 
 exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4912,7 +4869,6 @@ exports[`html "section" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -4979,7 +4935,6 @@ exports[`html "section" supports inline event handlers 1`] = `
 
 exports[`html "select" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -4992,7 +4947,6 @@ exports[`html "select" default rendering 1`] = `
 
 exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -5005,7 +4959,6 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 
 exports[`html "select" supports additional select attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -5046,7 +4999,6 @@ exports[`html "select" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -5848,7 +5800,6 @@ exports[`html "u" supports inline event handlers 1`] = `
 
 exports[`html "ul" default rendering 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -5862,7 +5813,6 @@ exports[`html "ul" default rendering 1`] = `
 
 exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -5904,7 +5854,6 @@ exports[`html "ul" supports global attributes 1`] = `
     }
   }
   accessibilityViewIsModal={true}
-  experimental_layoutConformance="strict"
   focusable={true}
   importantForAccessibility="no-hide-descendants"
   nativeID="some-id"
@@ -5972,7 +5921,6 @@ exports[`html "ul" supports inline event handlers 1`] = `
 
 exports[`html "ul" supports list attributes 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   role="list"
   style={
@@ -5986,7 +5934,6 @@ exports[`html "ul" supports list attributes 1`] = `
 
 exports[`html temporary data-* props support 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {

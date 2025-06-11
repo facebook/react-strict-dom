@@ -2,7 +2,6 @@
 
 exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -25,7 +24,6 @@ exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
 
 exports[`<html.*> block layout override of flex layout: block layout override of flex 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -42,7 +40,6 @@ exports[`<html.*> block layout override of flex layout: block layout override of
   }
 >
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -56,7 +53,6 @@ exports[`<html.*> block layout override of flex layout: block layout override of
 
 exports[`<html.*> default block layout: block layout 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -69,7 +65,6 @@ exports[`<html.*> default block layout: block layout 1`] = `
 
 exports[`<html.*> default flex layout: flex layout 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -87,7 +82,6 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
   }
 >
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -98,7 +92,6 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     }
   />
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -109,6 +102,22 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     }
   />
 </ViewNativeComponent>
+`;
+
+exports[`<html.*> opt in to strict layout conformance: strict layout 1`] = `
+<LayoutConformance
+  mode="strict"
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />
+</LayoutConformance>
 `;
 
 exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
@@ -785,7 +794,6 @@ exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -812,7 +820,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -841,7 +848,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -870,7 +876,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -966,7 +971,6 @@ exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1159,7 +1163,6 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing: 
 
 exports[`<html.*> style polyfills "transition" properties  default: default 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1737,7 +1740,6 @@ exports[`<html.*> style polyfills "transition" properties  width transition: sta
 
 exports[`<html.*> style polyfills inherited styles 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1748,7 +1750,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
   }
 >
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -1800,7 +1801,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
 
 exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1`] = `
 <ViewNativeComponent
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -1810,7 +1810,6 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
   }
 >
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -1877,7 +1876,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     }
   />,
   <ViewNativeComponent
-    experimental_layoutConformance="strict"
     ref={[Function]}
     style={
       {
@@ -1913,7 +1911,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       }
     />
     <ViewNativeComponent
-      experimental_layoutConformance="strict"
       ref={[Function]}
       style={
         {

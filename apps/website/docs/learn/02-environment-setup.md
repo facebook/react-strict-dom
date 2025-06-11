@@ -128,9 +128,21 @@ import './stylex.css';
 import '@expo/metro-runtime';
 
 import { registerRootComponent } from 'expo';
-import App from './App';
+import { App } from './App';
 
 registerRootComponent(App);
+```
+
+To enable React Native support for layout that better conforms to W3C standards, you must set `data-layoutconformance="strict"` on the root `html.*` element of your app.
+
+```js title="App.js"
+export function App() {
+  return (
+    <html.div data-layoutconformance="strict">
+      {/* The rest of your app component */}
+    </html.div>
+  );
+}
 ```
 
 ## Platform-specific files

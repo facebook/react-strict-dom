@@ -64,7 +64,6 @@ exports[`<compat.native> "as" equals "textarea": as=textarea 1`] = `
 exports[`<compat.native> "as" equals "view": as=view 1`] = `
 <View
   accessibilityLabel="label"
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -79,7 +78,6 @@ exports[`<compat.native> "as" equals "view": as=view 1`] = `
 exports[`<compat.native> default: default 1`] = `
 <Pressable
   accessibilityLabel="label"
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {
@@ -94,7 +92,6 @@ exports[`<compat.native> default: default 1`] = `
 exports[`<compat.native> nested: nested 1`] = `
 <View
   accessibilityLabel="label"
-  experimental_layoutConformance="strict"
   ref={[Function]}
   style={
     {

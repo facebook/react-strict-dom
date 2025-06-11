@@ -24,6 +24,14 @@ describe('<html.*>', () => {
     jest.clearAllMocks();
   });
 
+  test('opt in to strict layout conformance', () => {
+    let root;
+    act(() => {
+      root = create(<html.div data-layoutconformance="strict" />);
+    });
+    expect(root.toJSON()).toMatchSnapshot('strict layout');
+  });
+
   test('default block layout', () => {
     let root;
     act(() => {
