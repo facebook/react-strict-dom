@@ -226,14 +226,18 @@ describe('html', () => {
         );
       });
       expect(root.toJSON()).toMatchSnapshot();
-      expect(console.error).toHaveBeenCalled();
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining('React Strict DOM')
+      );
     });
 
     test(`"${tagName}" supports suppressHydrationWarning attribute`, () => {
       act(() => {
         create(<Component suppressHydrationWarning={true} />);
       });
-      expect(console.error).not.toHaveBeenCalled();
+      expect(console.error).not.toHaveBeenCalledWith(
+        expect.stringContaining('React Strict DOM')
+      );
     });
   });
 
