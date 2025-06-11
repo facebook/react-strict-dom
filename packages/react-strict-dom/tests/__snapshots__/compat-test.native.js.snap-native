@@ -3,6 +3,7 @@
 exports[`<compat.native> "as" equals "image": as=image 1`] = `
 <Image
   accessibilityLabel="label"
+  ref={[Function]}
   srcSet="1x.img, 2x.img 2x"
   style={
     {
@@ -18,6 +19,7 @@ exports[`<compat.native> "as" equals "input": as=input 1`] = `
 <TextInput
   accessibilityLabel="label"
   placeholderTextColor="green"
+  ref={[Function]}
   secureTextEntry={true}
   style={
     {
@@ -32,6 +34,7 @@ exports[`<compat.native> "as" equals "text": as=text 1`] = `
 <Text
   accessibilityLabel="label"
   numberOfLines={3}
+  ref={[Function]}
   style={
     {
       "boxSizing": "content-box",
@@ -48,6 +51,7 @@ exports[`<compat.native> "as" equals "textarea": as=textarea 1`] = `
   accessibilityLabel="label"
   multiline={true}
   numberOfLines={3}
+  ref={[Function]}
   style={
     {
       "boxSizing": "content-box",
@@ -61,6 +65,7 @@ exports[`<compat.native> "as" equals "view": as=view 1`] = `
 <View
   accessibilityLabel="label"
   experimental_layoutConformance="strict"
+  ref={[Function]}
   style={
     {
       "boxSizing": "content-box",
@@ -75,6 +80,7 @@ exports[`<compat.native> default: default 1`] = `
 <Pressable
   accessibilityLabel="label"
   experimental_layoutConformance="strict"
+  ref={[Function]}
   style={
     {
       "boxSizing": "content-box",
@@ -89,6 +95,7 @@ exports[`<compat.native> nested: nested 1`] = `
 <View
   accessibilityLabel="label"
   experimental_layoutConformance="strict"
+  ref={[Function]}
   style={
     {
       "boxSizing": "content-box",
@@ -97,6 +104,7 @@ exports[`<compat.native> nested: nested 1`] = `
   }
 >
   <Text
+    ref={[Function]}
     style={
       {
         "boxSizing": "content-box",

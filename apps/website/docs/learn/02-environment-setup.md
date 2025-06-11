@@ -10,7 +10,7 @@ slug: /learn/setup
 
 [Expo](https://expo.dev/) is a production-grade, cross-platform React framework that is the recommended solution for creating apps with React Strict DOM. The instructions in the rest of this guide are tailored to Expo, but can be adapted by readers to work with other frameworks.
 
-Follow the Expo instructions on how to [create a new project](https://docs.expo.dev/get-started/create-a-project/). React Strict DOM requires use of the New React Native Architecture. Then follow the steps in the [Installation](/learn/installation) guide to install React Strict DOM.
+Follow the Expo instructions on how to [create a new project](https://docs.expo.dev/get-started/create-a-project/). React Strict DOM requires use of the latest Expo SDK with the New React Native Architecture enabled. Then follow the steps in the [Installation](/learn/installation) guide to install React Strict DOM.
 
 A working example of an Expo setup with React Strict DOM can be found in this [examples app](https://github.com/facebook/react-strict-dom/tree/main/apps/examples).
 
@@ -77,9 +77,9 @@ module.exports = {
 };
 ```
 
-## Metro configuration
+## Bundler configuration
 
-[Metro](https://reactnative.dev/docs/metro) is the bundler used by Expo and React Native. It can bundle apps for native and web targets. Create or modify the `metro.config.js` file as follows to enable support for [package exports in React Native](https://reactnative.dev/blog/2023/06/21/package-exports-support). This step is not necessary for other packagers.
+[Metro](https://reactnative.dev/docs/metro) is the bundler used by Expo and React Native. It can bundle apps for native and web targets. Create the `metro.config.js` file as follows. Support for [package exports in React Native](https://reactnative.dev/blog/2023/06/21/package-exports-support) is now enabled by default. This step is not necessary for other packagers.
 
 ```js title="metro.config.js"
 // Learn more https://docs.expo.dev/guides/monorepos
@@ -89,22 +89,20 @@ const { getDefaultConfig } = require('expo/metro-config');
 const projectRoot = __dirname;
 
 const config = getDefaultConfig(projectRoot);
-// 1. Enable Metro support for symlinks and package exports
-config.resolver.unstable_enablePackageExports = true;
-// 2. Only for npm monorepos: force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
-// config.resolver.disableHierarchicalLookup = true;
 
 module.exports = config;
 ```
 
-TypeScript-based Expo projects should also set `moduleResolution` to `"bundler"`.
+TypeScript-based projects should set the following TypeScript compiler options:
 
 ```js title="tsconfig.json"
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    "customConditions": ["react-native"],
     "moduleResolution": "bundler",
+    "moduleSuffixes": [".ios", ".android", ".native", ""]
+    "strict": true,
   },
   ...
 }

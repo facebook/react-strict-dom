@@ -27,12 +27,14 @@ describe('<compat.native>', () => {
 
   test('errors if no function child', () => {
     expect(() =>
-      create(
-        <compat.native>
-          <View />;
-        </compat.native>
-      )
-    ).toThrow(Error);
+      act(() => {
+        create(
+          <compat.native>
+            <View />
+          </compat.native>
+        );
+      })
+    ).toThrow();
   });
 
   test('default', () => {
@@ -46,9 +48,9 @@ describe('<compat.native>', () => {
     act(() => {
       root = create(
         <compat.native style={styles.block}>
-          {(nativeProps) => {
-            return <Pressable {...nativeProps} accessibilityLabel="label" />;
-          }}
+          {(nativeProps) => (
+            <Pressable {...nativeProps} accessibilityLabel="label" />
+          )}
         </compat.native>
       );
     });

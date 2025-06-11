@@ -17,7 +17,10 @@ import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
-const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+const AnimatedTextInput = Animated.createAnimatedComponent<
+  React.ElementConfig<typeof TextInput>,
+  typeof TextInput
+>(TextInput);
 
 export function createStrictDOMTextInputComponent<
   P: StrictReactDOMInputProps | StrictReactDOMTextAreaProps,
@@ -28,7 +31,8 @@ export function createStrictDOMTextInputComponent<
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent = TextInput;
+      let NativeComponent: typeof TextInput | typeof AnimatedTextInput =
+        TextInput;
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       const {

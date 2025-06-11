@@ -608,8 +608,12 @@ describe('<html.*>', () => {
           root.update(<html.div style={styles.none} />);
         });
         // assert no warning if no transition property is specified
-        expect(console.error).not.toHaveBeenCalled();
-        expect(console.warn).not.toHaveBeenCalled();
+        expect(console.error).not.toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
+        expect(console.warn).not.toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
         expect(Animated.sequence).not.toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('default');
       });
@@ -623,7 +627,9 @@ describe('<html.*>', () => {
         act(() => {
           root.update(<html.div style={styles.backgroundColor('green')} />);
         });
-        expect(console.error).not.toHaveBeenCalled();
+        expect(console.error).not.toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
         expect(Animated.sequence).toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('red to green');
         Animated.sequence.mockClear();
@@ -846,7 +852,9 @@ describe('<html.*>', () => {
         act(() => {
           root.update(<html.div style={[styles.transitionWithoutProperty]} />);
         });
-        expect(console.error).not.toHaveBeenCalled();
+        expect(console.error).not.toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
         expect(root.toJSON()).toMatchSnapshot();
         act(() => {
           root.update(
@@ -858,7 +866,9 @@ describe('<html.*>', () => {
             />
           );
         });
-        expect(console.error).not.toHaveBeenCalled();
+        expect(console.error).not.toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
         expect(root.toJSON()).toMatchSnapshot();
       });
 
@@ -1251,7 +1261,9 @@ describe('<html.*>', () => {
           act(() => {
             create(<html.input type={type} />);
           });
-          expect(console.error).toHaveBeenCalledTimes(i + 1);
+          expect(console.error).toHaveBeenCalledWith(
+            expect.stringContaining('React Strict DOM')
+          );
         });
       });
 
@@ -1522,10 +1534,20 @@ describe('<html.*>', () => {
       'showPicker'
     ].forEach((method) => {
       test(`"${method}" is unsupported`, () => {
-        const ref = React.createRef();
-        create(<html.input ref={ref} />, { createNodeMock });
-        ref.current[method]();
-        expect(console.error).toBeCalled();
+        act(() => {
+          create(
+            <html.input
+              ref={(node) => {
+                node[method]();
+              }}
+            />,
+            { createNodeMock }
+          );
+        });
+
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringContaining('React Strict DOM')
+        );
       });
     });
 

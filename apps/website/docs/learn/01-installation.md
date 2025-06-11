@@ -30,7 +30,7 @@ npm install --save-dev postcss-react-strict-dom
 
 ### Native
 
-For native support, please make sure the following peer dependencies are installed (note that using the new React Native architecture is required):
+For native support, please make sure the following peer dependencies are installed.
 
 ```
 npm install react react-native

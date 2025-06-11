@@ -44,13 +44,16 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
-    "rollup": "^4.22.4",
-    "react-test-renderer": "^18.2.0"
+    "@testing-library/react": "^16.3.0",
+    "react": "~19.0.0",
+    "react-dom": "~19.0.0",
+    "react-test-renderer": "~19.0.0",
+    "rollup": "^4.22.4"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-native": ">=0.75.2"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": ">=0.79.5"
   },
   "engines": {
     "node": ">=20.11.0"
