@@ -12,6 +12,7 @@ import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps
 
 import * as React from 'react';
 import { Animated, Pressable } from 'react-native';
+import { experimental_LayoutConformance as LayoutConformance } from 'react-native';
 import { ViewNativeComponent, TextAncestorContext } from '../react-native';
 
 import { ProvideCustomProperties } from './ContextCustomProperties';
@@ -150,11 +151,6 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        * Construct tree
        */
 
-      if (NativeComponent === ViewNativeComponent) {
-        // enable W3C flexbox layout
-        nativeProps.experimental_layoutConformance = 'strict';
-      }
-
       let element: React.Node =
         typeof props.children === 'function' ? (
           props.children(nativeProps)
@@ -162,6 +158,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           // $FlowFixMe
           <NativeComponent {...nativeProps} />
         );
+
+      // Enable W3C layout support
+      if (props['data-layoutconformance'] === 'strict') {
+        element = <LayoutConformance children={element} mode="strict" />;
+      }
 
       if (
         (nativeProps.children != null &&

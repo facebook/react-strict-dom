@@ -135,12 +135,13 @@ const strictAttributeSet: Set<string> = new Set([
   'srcSet', // img
   'step', // input
   'style',
-  'suppressHydrationWarning',
   'tabIndex',
   'target', // a
   'type', // button, input
   'value', // input
   'width', // img
+
+  'suppressHydrationWarning', // React
 
   'onMouseDown', // TEMPORARY
   'onMouseEnter', // TEMPORARY

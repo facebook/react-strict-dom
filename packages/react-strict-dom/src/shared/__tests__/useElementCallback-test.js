@@ -6,7 +6,6 @@
  */
 
 import * as React from 'react';
-import { act } from 'react-dom/test-utils';
 import { createRoot } from 'react-dom/client';
 import { useElementCallback as useConnectedCallback } from '../useElementCallback';
 
@@ -33,11 +32,11 @@ describe('useConnectedCallback', () => {
 
   test('callback without cleanup', () => {
     const callback = jest.fn();
-    act(() => {
+    React.act(() => {
       root.render(<TestComponent callback={callback} />);
     });
     expect(callback).toBeCalledTimes(1);
-    act(() => {
+    React.act(() => {
       root.render(null);
     });
     expect(callback).toBeCalledTimes(1);
@@ -48,12 +47,12 @@ describe('useConnectedCallback', () => {
     const callback = jest.fn(() => {
       return cleanup;
     });
-    act(() => {
+    React.act(() => {
       root.render(<TestComponent callback={callback} />);
     });
     expect(callback).toBeCalledTimes(1);
     expect(cleanup).toBeCalledTimes(0);
-    act(() => {
+    React.act(() => {
       root.render(null);
     });
     expect(callback).toBeCalledTimes(1);
@@ -62,7 +61,7 @@ describe('useConnectedCallback', () => {
 
   test('change of callback', () => {
     const log = [];
-    act(() => {
+    React.act(() => {
       const callback = () => {
         log.push('callback 1');
         return () => {
@@ -72,7 +71,7 @@ describe('useConnectedCallback', () => {
       root.render(<TestComponent callback={callback} testKey="foo" />);
     });
 
-    act(() => {
+    React.act(() => {
       const callback = () => {
         log.push('callback 2');
         return () => {
@@ -82,7 +81,7 @@ describe('useConnectedCallback', () => {
       root.render(<TestComponent callback={callback} testKey="foo" />);
     });
 
-    act(() => {
+    React.act(() => {
       root.render(null);
     });
 
@@ -105,15 +104,15 @@ describe('useConnectedCallback', () => {
       };
     };
 
-    act(() => {
+    React.act(() => {
       root.render(<TestComponent callback={callback} testKey="foo" />);
     });
 
-    act(() => {
+    React.act(() => {
       root.render(<TestComponent callback={callback} testKey="bar" />);
     });
 
-    act(() => {
+    React.act(() => {
       root.render(null);
     });
 
