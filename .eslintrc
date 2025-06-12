@@ -18,15 +18,13 @@
     "requireConfigFile": false,
     "sourceType": "module"
   },
-  "extends": [
-    "plugin:ft-flow/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:ft-flow/recommended", "prettier"],
   "plugins": [
     "ft-flow",
     "promise",
     "react",
-    "react-hooks"
+    "react-hooks",
+    "eslint-plugin-react-compiler"
   ],
   "env": {
     "browser": true,
@@ -51,7 +49,7 @@
     "constructor-super": 2,
     "default-case": [2, { "commentPattern": "^no default$" }],
     "eqeqeq": [2, "allow-null"],
-    "handle-callback-err": [2, "^(err|error)$" ],
+    "handle-callback-err": [2, "^(err|error)$"],
     "new-cap": [2, { "newIsCap": true, "capIsNew": false }],
     "no-alert": 1,
     "no-array-constructor": 2,
@@ -166,6 +164,9 @@
 
     // react-hooks
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error"
+    "react-hooks/exhaustive-deps": "error",
+
+    // react-compiler
+    "react-compiler/react-compiler": "warn"
   }
 }
