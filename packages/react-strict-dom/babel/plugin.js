@@ -30,6 +30,7 @@ function reactStrictPlugin({ types: t }, options = {}) {
     specifiers
       ? specifiers.filter((specifier) => specifier.imported.name === 'html')
       : [];
+  // Generate unique identifiers for imports to avoid collisions with user code
   let defaultStylesImportIdentifier;
   let styleResolverImportIdentifier;
 
@@ -43,24 +44,20 @@ function reactStrictPlugin({ types: t }, options = {}) {
             packageName
           );
           if (importDeclarations.length > 0) {
+            // Use addNamed with a unique prefix to avoid collisions with user variables
             defaultStylesImportIdentifier = addNamed(
               path,
               'defaultStyles',
-              packageRuntime
+              packageRuntime,
+              { nameHint: '_rsdDefaultStyles' }
             );
             styleResolverImportIdentifier = addNamed(
               path,
               'resolveStyle',
-              packageRuntime
+              packageRuntime,
+              { nameHint: '_rsdResolveStyle' }
             );
-            path.scope.rename(
-              'defaultStyles',
-              defaultStylesImportIdentifier.name
-            );
-            path.scope.rename(
-              'resolveStyle',
-              styleResolverImportIdentifier.name
-            );
+            // No need to rename as addNamed already creates unique identifiers
           }
         }
       },
