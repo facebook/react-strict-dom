@@ -30,4 +30,4 @@ Expo currently lacks built-in integrations for React Strict DOM, but the goal of
 
 ## Performance benchmarks
 
-Bundle sizes on web and native are also monitored for regressions. The polyfills for native platforms are also subject to performance monitoring. Currently only the style polyfills are benchmarked for regressions in Node.js, running it jitless mode to better emulate the Hermes runtime used by React Native. These benchmarks are automatically run and reported for each Pull Request submitted on GitHub.
+Bundle sizes on web and native are also monitored for regressions. The polyfills for native platforms are also subject to performance monitoring. Currently only the style polyfills are benchmarked for regressions in Node.js, running in jitless mode to better emulate the Hermes runtime used by React Native. These benchmarks are automatically run and reported for each Pull Request submitted on GitHub.
