@@ -8,7 +8,7 @@ slug: /contribute/design-goals
 
 ## Motivation
 
-React Strict DOM (RSD) began as a way to prototype and drive the development of "[React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496)". It enables engineers to quickly and easily reuse existing React web code and knowledge on native platforms. Our goal is to quickily and easily reuse React web code to also produce high-quality native interfaces, to reduce product time-to-market, and to improve engineering efficiency and product quality.
+React Strict DOM (RSD) began as a way to prototype and drive the development of "[React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496)". It enables engineers to quickly and easily reuse existing React web code and knowledge on native platforms. Our goal is to quickly and easily reuse React web code to also produce high-quality native interfaces, to reduce product time-to-market, and to improve engineering efficiency and product quality.
 
 React Strict DOM aims to leverage the many framework investments we've made to React over the years (e.g., [React Native Fabric](https://reactnative.dev/architecture/fabric-renderer), [React Compiler](https://react.dev/learn/react-compiler), [React Developer Tools](https://react.dev/learn/react-developer-tools), [Yoga](https://www.yogalayout.dev/), etc.) that now make it possible to dramatically improve cross-platform product development.
 
@@ -38,7 +38,7 @@ React Strict DOM provides a well-defined target API for implementations. By alig
 
 ### Unified elements and styles
 
-Standardizing on HTML element and CSS styles makes it possible for web engineers to re-use their existing knowledge of React DOM and StyleX to target platforms beyond web. React Strict DOM solves problems with some React Native APIs being based on W3C APIs but not conforming to the standards, and others (which are declarative on web) have inherit performance drawbacks on web.
+Standardizing on HTML element and CSS styles makes it possible for web engineers to re-use their existing knowledge of React DOM and StyleX to target platforms beyond web. React Strict DOM solves problems with some React Native APIs being based on W3C APIs but not conforming to the standards, and others (which are declarative on web) have inherent performance drawbacks on web.
 
 ### Unified types
 
@@ -48,7 +48,7 @@ React Strict DOM allows developers to use existing DOM types (e.g., `HTMLElement
 
 React Strict DOM is able to provide a unified, cross-platform API for React developers by 1) polyfilling a large number of standard APIs, 2) leveraging new capabilities coming to React Native such as DOM traversal APIs and a well-defined Event Loop processing model. Where possible, capabilities are built in native code. React Strict DOM encapsulates a large number of polyfills and shims that convert React DOM APIs to React Native equivalents. We prioritize user-space shims in JavaScript where they are faster to ship and allow us to gather feedback and drive adoption.
 
-Other approaches that we expored were either based on React Native's API (e.g., [React Native for Web](https://necolas.github.io/react-native-web/)) or a another custom API. But they introduced performance regressions on web, implementation and migration complexity for all platforms, and ongoing design costs associated with developing non-standard APIs.
+Other approaches that we explored were either based on React Native's API (e.g., [React Native for Web](https://necolas.github.io/react-native-web/)) or a another custom API. But they introduced performance regressions on web, implementation and migration complexity for all platforms, and ongoing design costs associated with developing non-standard APIs.
 
 ## Tradeoffs
 

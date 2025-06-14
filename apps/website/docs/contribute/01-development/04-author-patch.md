@@ -117,7 +117,7 @@ npm run compare -w benchmarks -- <path-to-base.json> <path-to-patch.json>
 Branches should be cleaned up before review. An interactive rebase can be used to squash commits, reorder commits, and reword commits. For example, this will run an interactive rebase for the last 5 commits from `HEAD` on a branch.
 
 ```
-git rebase -i HEAD^5
+git rebase -i HEAD~5
 ```
 
 Once the branch has been prepared for review, it should be pushed to GitHub:

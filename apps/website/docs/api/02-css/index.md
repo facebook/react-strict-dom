@@ -216,8 +216,8 @@ The following tables represent the compatibility status of the strict CSS API fo
 | paddingInlineEnd | 🟡 | 🟡 | |
 | paddingInlineStart | 🟡 | 🟡 | |
 | paddingLeft | ✅ | ✅ | |
-| pointerRight | ✅ | ✅ | |
-| pointerTop | ✅ | ✅ | |
+| paddingRight | ✅ | ✅ | |
+| paddingTop | ✅ | ✅ | |
 | placeContent | 🟡 | 🟡 | |
 | placeItems | ❌ | ❌ | |
 | placeSelf | ❌ | ❌ | |
