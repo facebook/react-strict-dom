@@ -8,13 +8,13 @@ slug: /learn/themes
 
 :::info[Requirements]
 
-Variables must be defined in a file that matches the following file extension pattern: `.stylex.{js,jsx,mjs,ts,tsx}`. Only CSS variables can be defined in these files. And every `css.defineVars` call must be a named export.
+Variables and constants must be defined in a file that matches the following file extension pattern: `.stylex.{js,jsx,mjs,ts,tsx}`. Only CSS variables can be defined in these files. Every `css.defineConsts` and `css.defineVars` call must be a named export.
 
 :::
 
 ## Defining variables
 
-CSS variables are defined with a call to `css.defineVars`. This defines global variables which can then be imported as constants for use in any style rules. These variables and their values are essentially a "default theme".
+CSS variables are defined with a call to `css.defineVars`. This defines global variables which can then be imported for use in any style rules. These variables and their values are essentially a "default theme". If you don't need to override these values in themes, use `css.defineConsts` instead.
 
 ```js title="tokens.stylex.js"
 import { css } from 'react-strict-dom';
@@ -59,9 +59,9 @@ export const colors = css.defineVars({
 });
 ```
 
-## Using variables in styles
+## Using variables or constants in styles
 
-Once variables have been defined, they can be imported and used directly in style rules created with `css.create`.
+Once variables or constants have been defined, they can be imported and used directly in style rules created with `css.create`.
 
 ```js title="Component.js"
 import { css } from 'react-strict-dom';

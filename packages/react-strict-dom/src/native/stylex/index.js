@@ -454,13 +454,10 @@ export const createTheme = (
   return result;
 };
 
-export const defineConsts = (tokens: {
+export const defineConsts = (constants: {
   [string]: string
 }): { [string]: string } => {
-  if (__DEV__) {
-    errorMsg('css.defineConsts() is not supported.');
-  }
-  return tokens;
+  return Object.freeze(constants);
 };
 
 type Tokens = { [string]: string };

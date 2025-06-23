@@ -18,6 +18,13 @@ exports[`properties: custom property css.createTheme: theme 1`] = `
 }
 `;
 
+exports[`properties: custom property css.defineConsts: constants 1`] = `
+{
+  "blueColor": "blue",
+  "redColor": "red",
+}
+`;
+
 exports[`properties: custom property css.defineVars: css.__customProperties 1`] = `
 {
   "rootColor__id__1": "red",
