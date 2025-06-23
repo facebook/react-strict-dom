@@ -1165,6 +1165,17 @@ describe('properties: custom property', () => {
     ).toEqual('red');
   });
 
+  test('css.defineConsts', () => {
+    const constants = css.defineConsts({
+      redColor: 'red',
+      blueColor: 'blue'
+    });
+    expect(constants).toMatchSnapshot('constants');
+    expect(() => {
+      constants.redColor = 'black';
+    }).toThrow();
+  });
+
   test('css.defineVars', () => {
     const options = {};
     const tokens = css.defineVars({
