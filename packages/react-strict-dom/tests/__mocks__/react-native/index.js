@@ -30,6 +30,11 @@ export const Animated = {
       }),
       stop: jest.fn()
     };
+  }),
+  spring: jest.fn(() => {
+    return {
+      start: jest.fn()
+    };
   })
 };
 

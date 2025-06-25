@@ -701,10 +701,9 @@ describe('<html.*>', () => {
         expect(Easing.out).toHaveBeenCalled();
       });
 
-      test('cubic-bezier easing', () => {
+      test('cubic-bezier() timing function', () => {
         const BEZIER_STR = 'cubic-bezier( 0.1,  0.2,0.3  ,0.4)';
         let root;
-        // cubic-bezier easing
         act(() => {
           root = create(<html.div style={styles.opacity(1, BEZIER_STR)} />);
         });
@@ -715,6 +714,71 @@ describe('<html.*>', () => {
         });
         expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.bezier).toHaveBeenCalledWith(0.1, 0.2, 0.3, 0.4);
+      });
+
+      test('spring() timing function', () => {
+        // spring(mass, stiffness, damping, initialVelocity)
+        const SPRING_STR = 'spring( 1,  2,3  , 4 )';
+        let root;
+        act(() => {
+          root = create(<html.div style={styles.opacity(1, SPRING_STR)} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('start');
+        expect(Animated.spring).not.toHaveBeenCalled();
+        expect(Animated.timing).not.toHaveBeenCalled();
+        act(() => {
+          root.update(<html.div style={styles.opacity(0, SPRING_STR)} />);
+        });
+        expect(root.toJSON()).toMatchSnapshot('end');
+        // Animated.spring(damping, mass, stiffness, toValue, useNativeDriver, velocity)
+        expect(Animated.spring).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            damping: 3,
+            mass: 1,
+            stiffness: 2,
+            toValue: 1,
+            useNativeDriver: true,
+            velocity: 4
+          })
+        );
+        expect(Animated.timing).not.toHaveBeenCalled();
+
+        // Test that we replace invalid spring params and print error msg
+        const SPRING_BAD_STR = 'spring(0,0,-1,0)';
+        let badRoot;
+        act(() => {
+          badRoot = create(
+            <html.div style={styles.opacity(1, SPRING_BAD_STR)} />
+          );
+        });
+        act(() => {
+          badRoot.update(
+            <html.div style={styles.opacity(0, SPRING_BAD_STR)} />
+          );
+        });
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringContaining('"mass" must be greater than 0')
+        );
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringContaining('"stiffness" must be greater than 0')
+        );
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringContaining(
+            '"damping" must be greater than or equal to 0'
+          )
+        );
+        expect(Animated.spring).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            damping: 10,
+            mass: 1,
+            stiffness: 100,
+            toValue: 1,
+            useNativeDriver: true,
+            velocity: 0
+          })
+        );
       });
 
       test('transition all properties (opacity and transform)', () => {

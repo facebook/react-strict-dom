@@ -739,7 +739,7 @@ const styles = css.create({
     backgroundColor: 'red',
     transitionDuration: '500ms',
     transitionProperty: 'transform',
-    transitionTimingFunction: 'ease'
+    transitionTimingFunction: 'spring(1,100,10,0)'
   },
   objContain: {
     objectFit: 'contain'
