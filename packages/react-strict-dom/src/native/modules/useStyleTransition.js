@@ -8,13 +8,14 @@
  */
 
 import type {
+  CompositeAnimation,
   ReactNativeStyle,
   ReactNativeStyleValue,
   ReactNativeTransform
 } from '../../types/renderer.native';
 
 import { useEffect, useRef, useState } from 'react';
-import { warnMsg } from '../../shared/logUtils';
+import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { Animated, Easing } from 'react-native';
 
 type AnimatedStyle = {
@@ -191,6 +192,74 @@ function transitionStyleHasChanged(
   return false;
 }
 
+function getAnimation(
+  animatedValue: Animated.Value,
+  duration: number,
+  timingFunction: string | null,
+  shouldUseNativeDriver: boolean
+): CompositeAnimation {
+  // Based on https://lists.w3.org/Archives/Public/www-style/2016Jun/0181.html
+  // spring(mass, stiffness, damping, initialVelocity)
+  if (timingFunction != null && timingFunction.trim().startsWith('spring(')) {
+    const chunk = timingFunction.split('spring(')[1];
+
+    const closingParenIndex = chunk.indexOf(')');
+    if (closingParenIndex === -1) {
+      errorMsg(
+        `spring() timing function of "${timingFunction}" is missing closing parenthesis.`
+      );
+      return Animated.timing(animatedValue, {
+        duration,
+        easing: getEasingFunction(null),
+        toValue: 1,
+        useNativeDriver: shouldUseNativeDriver
+      });
+    }
+
+    const str = chunk.split(')')[0];
+    let [mass = 1, stiffness = 100, damping = 10, initialVelocity = 0] =
+      str === '' ? [] : str.split(',').map((point) => parseFloat(point.trim()));
+
+    if (mass <= 0) {
+      errorMsg(
+        `spring() timing function "mass" must be greater than 0. Received ${mass}. Defaulting to 1.`
+      );
+      mass = 1;
+    }
+    if (stiffness <= 0) {
+      errorMsg(
+        `spring() timing function "stiffness" must be greater than 0. Received ${stiffness}. Defaulting to 100.`
+      );
+      stiffness = 100;
+    }
+    if (damping < 0) {
+      errorMsg(
+        `spring() timing function "damping" must be greater than or equal to 0. Received ${damping}. Defaulting to 10.`
+      );
+      damping = 10;
+    }
+    if (initialVelocity == null) {
+      initialVelocity = 0;
+    }
+
+    return Animated.spring(animatedValue, {
+      damping,
+      mass,
+      stiffness,
+      toValue: 1,
+      useNativeDriver: shouldUseNativeDriver,
+      velocity: initialVelocity
+    });
+  }
+
+  return Animated.timing(animatedValue, {
+    duration,
+    easing: getEasingFunction(timingFunction),
+    toValue: 1,
+    useNativeDriver: shouldUseNativeDriver
+  });
+}
+
 export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
   const {
     transitionDelay: _delay,
@@ -260,12 +329,12 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
 
       const animation = Animated.sequence([
         Animated.delay(delay),
-        Animated.timing(animatedValue, {
-          toValue: 1,
+        getAnimation(
+          animatedValue,
           duration,
-          easing: getEasingFunction(timingFunction),
-          useNativeDriver: shouldUseNativeDriver
-        })
+          timingFunction,
+          shouldUseNativeDriver
+        )
       ]);
       animation.start();
 

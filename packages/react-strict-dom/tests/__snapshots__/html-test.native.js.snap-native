@@ -1043,7 +1043,7 @@ exports[`<html.*> style polyfills "transition" properties  backgroundColor trans
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing: end 1`] = `
+exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing function: end 1`] = `
 <Animated.View
   animated={true}
   style={
@@ -1065,7 +1065,7 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing: 
 />
 `;
 
-exports[`<html.*> style polyfills "transition" properties  cubic-bezier easing: start 1`] = `
+exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing function: start 1`] = `
 <Animated.View
   animated={true}
   style={
@@ -1323,6 +1323,41 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: tra
           },
         },
       ],
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  spring() timing function: end 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          0,
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> style polyfills "transition" properties  spring() timing function: start 1`] = `
+<Animated.View
+  animated={true}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": 1,
+      "position": "static",
     }
   }
 />

@@ -11,6 +11,10 @@
 import type AnimatedNode from 'react-native/Libraries/Animated/nodes/AnimatedNode';
 import type {
   // $FlowFixMe(nonstrict-import)
+  CompositeAnimation
+} from 'react-native/Libraries/Animated/Animated';
+import type {
+  // $FlowFixMe(nonstrict-import)
   Props as TextInputProps
 } from 'react-native/Libraries/Components/TextInput/TextInput';
 import type {
@@ -141,6 +145,7 @@ type ReactNativeStyleValue =
 type ReactNativeStyle = { [string]: ?ReactNativeStyleValue };
 
 export type {
+  CompositeAnimation,
   ReactNativeProps,
   ReactNativeStyle,
   ReactNativeStyleValue,
