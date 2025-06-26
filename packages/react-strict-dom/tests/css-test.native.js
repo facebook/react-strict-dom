@@ -442,6 +442,15 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.none)).toMatchSnapshot('none');
   });
 
+  test('opacity string value', () => {
+    const { underTest } = css.create({
+      underTest: {
+        opacity: '0.25'
+      }
+    });
+    expect(css.props.call(mockOptions, underTest)).toMatchSnapshot();
+  });
+
   test('outlineColor,Offset,Style,Width', () => {
     const { underTest } = css.create({
       underTest: {

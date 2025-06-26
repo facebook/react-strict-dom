@@ -337,6 +337,14 @@ exports[`properties: general objectFit: scaleDown 1`] = `
 }
 `;
 
+exports[`properties: general opacity string value 1`] = `
+{
+  "style": {
+    "opacity": 0.25,
+  },
+}
+`;
+
 exports[`properties: general outlineColor,Offset,Style,Width 1`] = `
 {
   "style": {
