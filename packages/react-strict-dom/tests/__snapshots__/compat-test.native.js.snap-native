@@ -102,7 +102,6 @@ exports[`<compat.native> nested: nested 1`] = `
         "boxSizing": "content-box",
         "color": "red",
         "position": "static",
-        "userSelect": "auto",
       }
     }
   >

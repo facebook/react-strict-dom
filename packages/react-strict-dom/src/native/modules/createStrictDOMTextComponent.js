@@ -18,7 +18,6 @@ import { errorMsg } from '../../shared/logUtils';
 import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
-import * as stylex from '../stylex';
 
 type StrictProps = $ReadOnly<{
   ...StrictPropsOriginal,
@@ -31,7 +30,7 @@ function hasElementChildren(children: mixed): boolean {
 
 export function createStrictDOMTextComponent<T, P: StrictProps>(
   tagName: string,
-  _defaultProps?: P
+  defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
@@ -43,10 +42,6 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       /**
        * Resolve global HTML and style props
        */
-
-      const defaultProps = {
-        style: [_defaultProps?.style, styles.userSelectAuto]
-      };
 
       const { customProperties, nativeProps, inheritableStyle } =
         useNativeProps(defaultProps, props, {
@@ -151,9 +146,3 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
   component.displayName = `html.${tagName}`;
   return component;
 }
-
-const styles = stylex.create({
-  userSelectAuto: {
-    userSelect: 'auto'
-  }
-});
