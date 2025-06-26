@@ -747,7 +747,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "auto",
     }
   }
@@ -774,7 +773,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -801,7 +799,6 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
       "boxSizing": "content-box",
       "direction": "rtl",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "rtl",
     }
   }
@@ -1711,7 +1708,6 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
           "textDecorationLine": "underline",
           "textDecorationStyle": "solid",
           "textTransform": "uppercase",
-          "userSelect": "auto",
         }
       }
     >
@@ -1774,7 +1770,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         "boxSizing": "content-box",
         "color": "red",
         "position": "static",
-        "userSelect": "auto",
       }
     }
   >
@@ -1787,7 +1782,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         "boxSizing": "content-box",
         "color": "green",
         "position": "static",
-        "userSelect": "auto",
       }
     }
   >
@@ -1820,7 +1814,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
           "boxSizing": "content-box",
           "color": "green",
           "position": "static",
-          "userSelect": "auto",
         }
       }
     >
@@ -1853,7 +1846,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
             "boxSizing": "content-box",
             "color": "blue",
             "position": "static",
-            "userSelect": "auto",
           }
         }
       >
@@ -1879,7 +1871,6 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
         "boxSizing": "content-box",
         "color": "red",
         "position": "static",
-        "userSelect": "auto",
       }
     }
   >
@@ -1895,7 +1886,6 @@ exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
       "boxSizing": "content-box",
       "color": "red",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 >

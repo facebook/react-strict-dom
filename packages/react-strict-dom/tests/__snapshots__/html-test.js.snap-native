@@ -9,7 +9,6 @@ exports[`html "a" default rendering 1`] = `
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -24,7 +23,6 @@ exports[`html "a" ignores and warns about unsupported attributes 1`] = `
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -40,7 +38,6 @@ exports[`html "a" supports additional anchor attributes 1`] = `
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -89,7 +86,6 @@ exports[`html "a" supports global attributes 1`] = `
       "display": "none",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -132,7 +128,6 @@ exports[`html "a" supports inline event handlers 1`] = `
       "color": "blue",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -379,7 +374,6 @@ exports[`html "b" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -392,7 +386,6 @@ exports[`html "b" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -440,7 +433,6 @@ exports[`html "b" supports global attributes 1`] = `
       "display": "none",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -481,7 +473,6 @@ exports[`html "b" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -493,7 +484,6 @@ exports[`html "bdi" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -505,7 +495,6 @@ exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -552,7 +541,6 @@ exports[`html "bdi" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -592,7 +580,6 @@ exports[`html "bdi" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -604,7 +591,6 @@ exports[`html "bdo" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -616,7 +602,6 @@ exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -663,7 +648,6 @@ exports[`html "bdo" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -703,7 +687,6 @@ exports[`html "bdo" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -832,7 +815,6 @@ exports[`html "br" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 >
@@ -847,7 +829,6 @@ exports[`html "br" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 >
@@ -897,7 +878,6 @@ exports[`html "br" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -938,7 +918,6 @@ exports[`html "br" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 >
@@ -1090,7 +1069,6 @@ exports[`html "code" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1103,7 +1081,6 @@ exports[`html "code" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1151,7 +1128,6 @@ exports[`html "code" supports global attributes 1`] = `
       "display": "none",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -1192,7 +1168,6 @@ exports[`html "code" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1205,7 +1180,6 @@ exports[`html "del" default rendering 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -1218,7 +1192,6 @@ exports[`html "del" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -1266,7 +1239,6 @@ exports[`html "del" supports global attributes 1`] = `
       "display": "none",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -1307,7 +1279,6 @@ exports[`html "del" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -1437,7 +1408,6 @@ exports[`html "em" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1450,7 +1420,6 @@ exports[`html "em" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1498,7 +1467,6 @@ exports[`html "em" supports global attributes 1`] = `
       "display": "none",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -1539,7 +1507,6 @@ exports[`html "em" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1905,7 +1872,6 @@ exports[`html "h1" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1920,7 +1886,6 @@ exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -1969,7 +1934,6 @@ exports[`html "h1" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2012,7 +1976,6 @@ exports[`html "h1" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2027,7 +1990,6 @@ exports[`html "h2" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2042,7 +2004,6 @@ exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2091,7 +2052,6 @@ exports[`html "h2" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2134,7 +2094,6 @@ exports[`html "h2" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2149,7 +2108,6 @@ exports[`html "h3" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2164,7 +2122,6 @@ exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2213,7 +2170,6 @@ exports[`html "h3" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2256,7 +2212,6 @@ exports[`html "h3" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2271,7 +2226,6 @@ exports[`html "h4" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2286,7 +2240,6 @@ exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2335,7 +2288,6 @@ exports[`html "h4" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2378,7 +2330,6 @@ exports[`html "h4" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2393,7 +2344,6 @@ exports[`html "h5" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2408,7 +2358,6 @@ exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2457,7 +2406,6 @@ exports[`html "h5" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2500,7 +2448,6 @@ exports[`html "h5" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2515,7 +2462,6 @@ exports[`html "h6" default rendering 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2530,7 +2476,6 @@ exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2579,7 +2524,6 @@ exports[`html "h6" supports global attributes 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2622,7 +2566,6 @@ exports[`html "h6" supports inline event handlers 1`] = `
       "fontSize": 24,
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2880,7 +2823,6 @@ exports[`html "i" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2893,7 +2835,6 @@ exports[`html "i" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -2941,7 +2882,6 @@ exports[`html "i" supports global attributes 1`] = `
       "display": "none",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -2982,7 +2922,6 @@ exports[`html "i" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontStyle": "italic",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3266,7 +3205,6 @@ exports[`html "ins" default rendering 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -3279,7 +3217,6 @@ exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -3327,7 +3264,6 @@ exports[`html "ins" supports global attributes 1`] = `
       "display": "none",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -3368,7 +3304,6 @@ exports[`html "ins" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -3381,7 +3316,6 @@ exports[`html "kbd" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3394,7 +3328,6 @@ exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3442,7 +3375,6 @@ exports[`html "kbd" supports global attributes 1`] = `
       "display": "none",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -3483,7 +3415,6 @@ exports[`html "kbd" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3495,7 +3426,6 @@ exports[`html "label" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3507,7 +3437,6 @@ exports[`html "label" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3519,7 +3448,6 @@ exports[`html "label" supports additional label attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3566,7 +3494,6 @@ exports[`html "label" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -3606,7 +3533,6 @@ exports[`html "label" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3750,7 +3676,6 @@ exports[`html "mark" default rendering 1`] = `
       "boxSizing": "content-box",
       "color": "black",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3764,7 +3689,6 @@ exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "color": "black",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -3813,7 +3737,6 @@ exports[`html "mark" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -3855,7 +3778,6 @@ exports[`html "mark" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "color": "black",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4234,7 +4156,6 @@ exports[`html "option" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4246,7 +4167,6 @@ exports[`html "option" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4293,7 +4213,6 @@ exports[`html "option" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -4331,7 +4250,6 @@ exports[`html "option" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4343,7 +4261,6 @@ exports[`html "option" supports input attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 >
@@ -4357,7 +4274,6 @@ exports[`html "p" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4369,7 +4285,6 @@ exports[`html "p" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4416,7 +4331,6 @@ exports[`html "p" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -4456,7 +4370,6 @@ exports[`html "p" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4469,7 +4382,6 @@ exports[`html "pre" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4482,7 +4394,6 @@ exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4530,7 +4441,6 @@ exports[`html "pre" supports global attributes 1`] = `
       "display": "none",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -4571,7 +4481,6 @@ exports[`html "pre" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4584,7 +4493,6 @@ exports[`html "s" default rendering 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -4597,7 +4505,6 @@ exports[`html "s" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -4645,7 +4552,6 @@ exports[`html "s" supports global attributes 1`] = `
       "display": "none",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -4686,7 +4592,6 @@ exports[`html "s" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "line-through",
-      "userSelect": "auto",
     }
   }
 />
@@ -4944,7 +4849,6 @@ exports[`html "span" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -4956,7 +4860,6 @@ exports[`html "span" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5003,7 +4906,6 @@ exports[`html "span" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -5043,7 +4945,6 @@ exports[`html "span" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5056,7 +4957,6 @@ exports[`html "strong" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5069,7 +4969,6 @@ exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5117,7 +5016,6 @@ exports[`html "strong" supports global attributes 1`] = `
       "display": "none",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -5158,7 +5056,6 @@ exports[`html "strong" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontWeight": "bold",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5170,7 +5067,6 @@ exports[`html "sub" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5182,7 +5078,6 @@ exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5229,7 +5124,6 @@ exports[`html "sub" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -5269,7 +5163,6 @@ exports[`html "sub" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5281,7 +5174,6 @@ exports[`html "sup" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5293,7 +5185,6 @@ exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5340,7 +5231,6 @@ exports[`html "sup" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "position": "static",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -5380,7 +5270,6 @@ exports[`html "sup" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "position": "static",
-      "userSelect": "auto",
     }
   }
 />
@@ -5540,7 +5429,6 @@ exports[`html "u" default rendering 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -5553,7 +5441,6 @@ exports[`html "u" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
@@ -5601,7 +5488,6 @@ exports[`html "u" supports global attributes 1`] = `
       "display": "none",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
       "writingDirection": "ltr",
     }
   }
@@ -5642,7 +5528,6 @@ exports[`html "u" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "position": "static",
       "textDecorationLine": "underline",
-      "userSelect": "auto",
     }
   }
 />
