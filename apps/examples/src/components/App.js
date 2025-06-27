@@ -145,7 +145,7 @@ function Shell(): React.MixedElement {
 
   return (
     <ScrollView>
-      <html.div style={egStyles.div}>
+      <html.div data-layoutconformance="strict" style={egStyles.div}>
         <ExampleBlock title="HTML elements">
           <html.div>Text inside div (kind of) works</html.div>
           <html.span>
