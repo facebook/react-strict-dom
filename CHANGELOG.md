@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.37 (Jun 27, 2025)
+
+### New features
+
+* [Native] Polyfill experimental `spring()` CSS transition timing function.
+
+### Fixes
+
+* [Native] Do not set `userSelect:auto` on text elements by default (fix for Android).
+* [Native] Fix opacity on Android when value is string
+
 ## 0.0.36 (Jun 10, 2025)
 
 ### Fixes
