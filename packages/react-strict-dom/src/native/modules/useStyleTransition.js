@@ -14,7 +14,7 @@ import type {
   ReactNativeTransform
 } from '../../types/renderer.native';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { Animated, Easing } from 'react-native';
 
@@ -28,6 +28,13 @@ type TransitionMetadata = $ReadOnly<{
   timingFunction: string | null,
   shouldUseNativeDriver: boolean
 }>;
+
+type AnimatedConfig = {
+  start: () => void,
+  dispose: () => void,
+  value: Animated.Value,
+  referenceCount: number
+};
 
 const INPUT_RANGE: $ReadOnlyArray<number> = [0, 1];
 
@@ -260,6 +267,53 @@ function getAnimation(
   });
 }
 
+const animatedConfigs = new Map<string, AnimatedConfig>();
+
+function getOrCreateAnimatedConfig(transitionMetadata: TransitionMetadata) {
+  const key = JSON.stringify(transitionMetadata);
+
+  const animatedConfig = animatedConfigs.get(key);
+  if (animatedConfig != null) {
+    animatedConfig.referenceCount++;
+
+    return animatedConfig;
+  }
+
+  const animatedValue = new Animated.Value(0);
+  let hasStarted = false;
+  let animation;
+  const newAnimatedConfig = {
+    referenceCount: 1,
+    value: animatedValue,
+    start: () => {
+      if (hasStarted) {
+        return;
+      }
+      hasStarted = true;
+      const { delay, duration, timingFunction, shouldUseNativeDriver } =
+        transitionMetadata;
+      animation = Animated.sequence([
+        Animated.delay(delay),
+        getAnimation(
+          animatedValue,
+          duration,
+          timingFunction,
+          shouldUseNativeDriver
+        )
+      ]);
+      animation.start();
+    },
+    dispose: () => {
+      if (--newAnimatedConfig.referenceCount === 0) {
+        animation?.stop();
+      }
+    }
+  };
+  animatedConfigs.set(key, newAnimatedConfig);
+
+  return newAnimatedConfig;
+}
+
 export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
   const {
     transitionDelay: _delay,
@@ -292,7 +346,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     undefined
   );
 
-  const [animatedValue, setAnimatedValue] = useState<Animated.Value | void>(
+  const [animatedConfig, setAnimatedConfig] = useState<AnimatedConfig | void>(
     undefined
   );
 
@@ -321,28 +375,32 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
   ]);
 
   // effect to trigger a transition
-  // REMEMBER: it is super important that this effect's dependency array **only** contains the animated value
+  // REMEMBER: it is super important that this effect's dependency array **only** contains the animated config
   useEffect(() => {
-    if (animatedValue !== undefined) {
-      const { delay, duration, timingFunction, shouldUseNativeDriver } =
-        transitionMetadataRef.current;
-
-      const animation = Animated.sequence([
-        Animated.delay(delay),
-        getAnimation(
-          animatedValue,
-          duration,
-          timingFunction,
-          shouldUseNativeDriver
-        )
-      ]);
-      animation.start();
-
-      return () => {
-        animation.stop();
-      };
+    if (animatedConfig == null) {
+      return;
     }
-  }, [animatedValue]);
+    animatedConfig.start();
+    animatedConfigs.clear();
+    return () => {
+      animatedConfig.dispose();
+    };
+  }, [animatedConfig]);
+
+  const transitionStyleHasChangedResult = transitionStyleHasChanged(
+    transitionStyle,
+    currentStyle
+  );
+
+  useLayoutEffect(() => {
+    if (transitionStyleHasChangedResult) {
+      setCurrentStyle(style);
+      setPreviousStyle(currentStyle);
+      setAnimatedConfig(
+        getOrCreateAnimatedConfig(transitionMetadataRef.current)
+      );
+    }
+  }, [currentStyle, style, transitionStyleHasChangedResult]);
 
   if (
     _delay == null &&
@@ -354,17 +412,11 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     return style;
   }
 
-  if (transitionStyleHasChanged(transitionStyle, currentStyle)) {
-    setCurrentStyle(style);
-    setPreviousStyle(currentStyle);
-    setAnimatedValue(new Animated.Value(0));
-    // This commit will be thrown away due to the above state setters so we can bail out early
-    return style;
-  }
-
   if (transitionStyle === undefined) {
     return style;
   }
+
+  const animatedValue = animatedConfig?.value;
 
   const outputAnimatedStyle: AnimatedStyle = Object.entries(
     transitionStyle
