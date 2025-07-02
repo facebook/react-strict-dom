@@ -14,7 +14,8 @@ import type {
 } from '../../types/renderer.native';
 
 import * as stylex from '../stylex';
-import { useColorScheme, useWindowDimensions } from 'react-native';
+import * as ReactNative from '../react-native';
+
 import { flattenStyle } from './flattenStyle';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePseudoStates } from './usePseudoStates';
@@ -63,8 +64,8 @@ export function useStyleProps(
     writingDirection: dir
   } = options;
 
-  const { fontScale, height, width } = useWindowDimensions();
-  const colorScheme = useColorScheme();
+  const { fontScale, height, width } = ReactNative.useWindowDimensions();
+  const colorScheme = ReactNative.useColorScheme();
 
   // These values are already computed
   const {

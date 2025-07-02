@@ -28,7 +28,7 @@ import { createStrictDOMTextComponent as createStrictText } from './modules/crea
 // $FlowFixMe[nonstrict-import]
 import { createStrictDOMTextInputComponent as createStrictTextInput } from './modules/createStrictDOMTextInputComponent';
 // $FlowFixMe[nonstrict-import]
-import { Platform } from 'react-native';
+import * as ReactNative from './react-native';
 import * as stylex from './stylex';
 
 const styles = stylex.create({
@@ -45,7 +45,10 @@ const styles = stylex.create({
     borderWidth: 1
   },
   code: {
-    fontFamily: Platform.select({ ios: 'Menlo', default: 'monospace' })
+    fontFamily: ReactNative.Platform.select({
+      ios: 'Menlo',
+      default: 'monospace'
+    })
   },
   heading: {
     fontSize: '1.5rem',

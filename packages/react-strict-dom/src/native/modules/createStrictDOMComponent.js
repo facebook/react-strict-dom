@@ -11,9 +11,7 @@ import type { ReactNativeProps } from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
-import { Animated, Pressable } from 'react-native';
-import { experimental_LayoutConformance as LayoutConformance } from 'react-native';
-import { ViewNativeComponent, TextAncestorContext } from '../react-native';
+import * as ReactNative from '../react-native';
 
 import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
@@ -29,10 +27,10 @@ type StrictProps = $ReadOnly<{
   children?: React.Node | ((ReactNativeProps) => React.Node)
 }>;
 
-const AnimatedPressable = Animated.createAnimatedComponent<
-  React.ElementConfig<typeof Pressable>,
-  typeof Pressable
->(Pressable);
+const AnimatedPressable = ReactNative.Animated.createAnimatedComponent<
+  React.ElementConfig<typeof ReactNative.Pressable>,
+  typeof ReactNative.Pressable
+>(ReactNative.Pressable);
 
 export function createStrictDOMComponent<T, P: StrictProps>(
   tagName: string,
@@ -41,9 +39,11 @@ export function createStrictDOMComponent<T, P: StrictProps>(
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent =
-        tagName === 'button' ? Pressable : ViewNativeComponent;
+        tagName === 'button'
+          ? ReactNative.Pressable
+          : ReactNative.ViewNativeComponent;
       const elementRef = useStrictDOMElement<T>({ tagName });
-      const hasTextAncestor = React.useContext(TextAncestorContext);
+      const hasTextAncestor = React.useContext(ReactNative.TextAncestorContext);
 
       /**
        * Resolve global HTML and style props
@@ -59,9 +59,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       if (
         nativeProps.onPress != null &&
-        NativeComponent === ViewNativeComponent
+        NativeComponent === ReactNative.ViewNativeComponent
       ) {
-        NativeComponent = Pressable;
+        NativeComponent = ReactNative.Pressable;
       }
 
       // Tag-specific props
@@ -78,7 +78,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Component-specific props
 
-      if (NativeComponent === Pressable) {
+      if (NativeComponent === ReactNative.Pressable) {
         if (props.disabled === true) {
           nativeProps.disabled = true;
           nativeProps.focusable = false;
@@ -142,10 +142,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
-        if (NativeComponent === ViewNativeComponent) {
-          NativeComponent = Animated.View;
+        if (NativeComponent === ReactNative.ViewNativeComponent) {
+          NativeComponent = ReactNative.Animated.View;
         }
-        if (NativeComponent === Pressable) {
+        if (NativeComponent === ReactNative.Pressable) {
           NativeComponent = AnimatedPressable;
         }
       }
@@ -164,7 +164,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       // Enable W3C layout support
       if (props['data-layoutconformance'] === 'strict') {
-        element = <LayoutConformance children={element} mode="strict" />;
+        element = (
+          <ReactNative.LayoutConformance children={element} mode="strict" />
+        );
       }
 
       if (
@@ -200,9 +202,9 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
       if (hasTextAncestor) {
         return (
-          <TextAncestorContext.Provider value={false}>
+          <ReactNative.TextAncestorContext.Provider value={false}>
             {element}
-          </TextAncestorContext.Provider>
+          </ReactNative.TextAncestorContext.Provider>
         );
       }
 

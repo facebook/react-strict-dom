@@ -8,9 +8,9 @@
  */
 
 // $FlowFixMe(nonstrict-import)
-import { Platform } from 'react-native';
+import * as ReactNative from '../react-native';
 
-const reactNativeVersion = Platform.constants.reactNativeVersion;
+const reactNativeVersion = ReactNative.Platform.constants.reactNativeVersion;
 const { major, minor, patch, prerelease } = reactNativeVersion;
 // Main branch OSS build, or internal build
 const isHead = major === 1000 && minor === 0 && patch === 0;

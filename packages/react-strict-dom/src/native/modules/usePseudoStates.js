@@ -9,7 +9,7 @@
 
 import type { Style } from '../../types/styles';
 
-import { useMemo, useState } from 'react';
+import * as React from 'react';
 
 type InteractionHandlers = {
   onBlur?: () => void,
@@ -31,10 +31,10 @@ type Interaction = {
 };
 
 export function usePseudoStates(style: Style): Interaction {
-  const [focus, setFocus] = useState(false);
-  const [mouseHover, setMouseHover] = useState(false);
-  const [pointerHover, setPointerHover] = useState(false);
-  const [active, setActive] = useState(false);
+  const [focus, setFocus] = React.useState(false);
+  const [mouseHover, setMouseHover] = React.useState(false);
+  const [pointerHover, setPointerHover] = React.useState(false);
+  const [active, setActive] = React.useState(false);
 
   let isHoverStyledElement = false;
   let isFocusStyledElement = false;
@@ -61,7 +61,7 @@ export function usePseudoStates(style: Style): Interaction {
     }
   }
 
-  const handlers = useMemo(() => {
+  const handlers = React.useMemo(() => {
     let value = null;
     if (isHoverStyledElement || isFocusStyledElement || isActiveStyledElement) {
       value = {} as InteractionHandlers;

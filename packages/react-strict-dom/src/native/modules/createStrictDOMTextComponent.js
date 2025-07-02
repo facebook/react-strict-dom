@@ -11,7 +11,8 @@ import type { ReactNativeProps } from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
-import { Animated, Platform, Text } from 'react-native';
+import * as ReactNative from '../react-native';
+
 import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideInheritedStyles } from './ContextInheritedStyles';
 import { errorMsg } from '../../shared/logUtils';
@@ -34,7 +35,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent = Text;
+      let NativeComponent = ReactNative.Text;
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       const { href, label } = props;
@@ -91,7 +92,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       // Workaround: Android doesn't support ellipsis truncation if Text is selectable
       // See #136
       const disableUserSelect =
-        Platform.OS === 'android' &&
+        ReactNative.Platform.OS === 'android' &&
         nativeProps.numberOfLines != null &&
         nativeProps.style.userSelect !== 'none';
 
@@ -102,7 +103,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
-        NativeComponent = Animated.Text;
+        NativeComponent = ReactNative.Animated.Text;
       }
 
       /**
