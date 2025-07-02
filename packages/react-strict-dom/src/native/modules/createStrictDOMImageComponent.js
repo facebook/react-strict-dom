@@ -10,7 +10,8 @@
 import type { StrictReactDOMImageProps } from '../../types/StrictReactDOMImageProps';
 
 import * as React from 'react';
-import { Animated, Image } from 'react-native';
+import * as ReactNative from '../react-native';
+
 import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
@@ -22,7 +23,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent = Image;
+      let NativeComponent = ReactNative.Image;
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       const {
@@ -106,7 +107,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
-        NativeComponent = Animated.Image;
+        NativeComponent = ReactNative.Animated.Image;
       }
 
       const element: React.Node =

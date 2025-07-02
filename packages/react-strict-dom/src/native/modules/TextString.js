@@ -8,7 +8,8 @@
  */
 
 import * as React from 'react';
-import { Text } from 'react-native';
+import * as ReactNative from '../react-native';
+
 import { useCustomProperties } from './ContextCustomProperties';
 import { useStyleProps } from './useStyleProps';
 
@@ -30,6 +31,6 @@ export function TextString(props: Props): React.Node {
 
   return (
     // $FlowFixMe
-    <Text {...nativeProps} children={children} />
+    <ReactNative.Text {...nativeProps} children={children} />
   );
 }

@@ -7,7 +7,16 @@
  * @flow strict-local
  */
 
-export { Text } from './Text';
+export {
+  Animated,
+  Easing,
+  Image,
+  Platform,
+  Pressable,
+  Text,
+  TextInput
+} from 'react-native';
+export { LayoutConformance } from './LayoutConformance';
 export { TextAncestorContext } from './TextAncestorContext';
-export { TextInput } from './TextInput';
 export { ViewNativeComponent } from './ViewNativeComponent';
+export { useColorScheme, useWindowDimensions } from 'react-native';

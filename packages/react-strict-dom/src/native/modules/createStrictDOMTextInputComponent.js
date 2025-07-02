@@ -11,16 +11,17 @@ import type { StrictReactDOMInputProps } from '../../types/StrictReactDOMInputPr
 import type { StrictReactDOMTextAreaProps } from '../../types/StrictReactDOMTextAreaProps';
 
 import * as React from 'react';
-import { Animated, TextInput } from 'react-native';
+import * as ReactNative from '../react-native';
+
 import { errorMsg } from '../../shared/logUtils';
 import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
-const AnimatedTextInput = Animated.createAnimatedComponent<
-  React.ElementConfig<typeof TextInput>,
-  typeof TextInput
->(TextInput);
+const AnimatedTextInput = ReactNative.Animated.createAnimatedComponent<
+  React.ElementConfig<typeof ReactNative.TextInput>,
+  typeof ReactNative.TextInput
+>(ReactNative.TextInput);
 
 export function createStrictDOMTextInputComponent<
   P: StrictReactDOMInputProps | StrictReactDOMTextAreaProps,
@@ -31,8 +32,9 @@ export function createStrictDOMTextInputComponent<
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent: typeof TextInput | typeof AnimatedTextInput =
-        TextInput;
+      let NativeComponent:
+        | typeof ReactNative.TextInput
+        | typeof AnimatedTextInput = ReactNative.TextInput;
       const elementRef = useStrictDOMElement<T>({ tagName });
 
       const {

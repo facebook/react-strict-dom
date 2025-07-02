@@ -9,7 +9,8 @@
 
 import type { CallbackRef } from '../../types/react';
 
-import { useCallback } from 'react';
+import * as React from 'react';
+
 import { useElementCallback } from '../../shared/useElementCallback';
 import { errorMsg } from '../../shared/logUtils';
 
@@ -33,7 +34,7 @@ type Options = {
 
 export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
   const elementCallback = useElementCallback(
-    useCallback(
+    React.useCallback(
       // $FlowFixMe[unclear-type]
       (node: any) => {
         Object.defineProperty(node, 'nodeName', {

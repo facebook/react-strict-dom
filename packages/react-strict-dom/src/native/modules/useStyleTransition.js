@@ -14,9 +14,10 @@ import type {
   ReactNativeTransform
 } from '../../types/renderer.native';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import * as React from 'react';
+import * as ReactNative from '../react-native';
+
 import { errorMsg, warnMsg } from '../../shared/logUtils';
-import { Animated, Easing } from 'react-native';
 
 type AnimatedStyle = {
   [string]: ?ReactNativeStyleValue | $ReadOnlyArray<mixed>
@@ -32,7 +33,7 @@ type TransitionMetadata = $ReadOnly<{
 type AnimatedConfig = {
   start: () => void,
   dispose: () => void,
-  value: Animated.Value,
+  value: ReactNative.Animated.Value,
   referenceCount: number
 };
 
@@ -71,20 +72,20 @@ function canUseNativeDriver(
 
 function getEasingFunction(input: ?string) {
   if (input === 'ease') {
-    return Easing.ease;
+    return ReactNative.Easing.ease;
   } else if (input === 'ease-in') {
-    return Easing.in(Easing.ease);
+    return ReactNative.Easing.in(ReactNative.Easing.ease);
   } else if (input === 'ease-out') {
-    return Easing.out(Easing.ease);
+    return ReactNative.Easing.out(ReactNative.Easing.ease);
   } else if (input === 'ease-in-out') {
-    return Easing.inOut(Easing.ease);
+    return ReactNative.Easing.inOut(ReactNative.Easing.ease);
   } else if (input != null && input.includes('cubic-bezier')) {
     const chunk = input.split('cubic-bezier(')[1];
     const str = chunk.split(')')[0];
     const curve = str.split(',').map((point) => parseFloat(point.trim()));
-    return Easing.bezier(...curve);
+    return ReactNative.Easing.bezier(...curve);
   }
-  return Easing.linear;
+  return ReactNative.Easing.linear;
 }
 
 function getTransitionProperties(property: mixed): ?(string[]) {
@@ -200,7 +201,7 @@ function transitionStyleHasChanged(
 }
 
 function getAnimation(
-  animatedValue: Animated.Value,
+  animatedValue: ReactNative.Animated.Value,
   duration: number,
   timingFunction: string | null,
   shouldUseNativeDriver: boolean
@@ -215,7 +216,7 @@ function getAnimation(
       errorMsg(
         `spring() timing function of "${timingFunction}" is missing closing parenthesis.`
       );
-      return Animated.timing(animatedValue, {
+      return ReactNative.Animated.timing(animatedValue, {
         duration,
         easing: getEasingFunction(null),
         toValue: 1,
@@ -249,7 +250,7 @@ function getAnimation(
       initialVelocity = 0;
     }
 
-    return Animated.spring(animatedValue, {
+    return ReactNative.Animated.spring(animatedValue, {
       damping,
       mass,
       stiffness,
@@ -259,7 +260,7 @@ function getAnimation(
     });
   }
 
-  return Animated.timing(animatedValue, {
+  return ReactNative.Animated.timing(animatedValue, {
     duration,
     easing: getEasingFunction(timingFunction),
     toValue: 1,
@@ -279,7 +280,7 @@ function getOrCreateAnimatedConfig(transitionMetadata: TransitionMetadata) {
     return animatedConfig;
   }
 
-  const animatedValue = new Animated.Value(0);
+  const animatedValue = new ReactNative.Animated.Value(0);
   let hasStarted = false;
   let animation;
   const newAnimatedConfig = {
@@ -292,8 +293,8 @@ function getOrCreateAnimatedConfig(transitionMetadata: TransitionMetadata) {
       hasStarted = true;
       const { delay, duration, timingFunction, shouldUseNativeDriver } =
         transitionMetadata;
-      animation = Animated.sequence([
-        Animated.delay(delay),
+      animation = ReactNative.Animated.sequence([
+        ReactNative.Animated.delay(delay),
         getAnimation(
           animatedValue,
           duration,
@@ -339,28 +340,25 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     return output;
   }, {});
 
-  const [currentStyle, setCurrentStyle] = useState<ReactNativeStyle | void>(
-    style
-  );
-  const [previousStyle, setPreviousStyle] = useState<ReactNativeStyle | void>(
-    undefined
-  );
+  const [currentStyle, setCurrentStyle] =
+    React.useState<ReactNativeStyle | void>(style);
+  const [previousStyle, setPreviousStyle] =
+    React.useState<ReactNativeStyle | void>(undefined);
 
-  const [animatedConfig, setAnimatedConfig] = useState<AnimatedConfig | void>(
-    undefined
-  );
+  const [animatedConfig, setAnimatedConfig] =
+    React.useState<AnimatedConfig | void>(undefined);
 
   // This ref is utilized as a performance optimization so that the effect that contains the
   // animation trigger only is called when the animated value's identity changes. As far as the effect
   // is concerned it just needs the most up to date version of these transition properties;
-  const transitionMetadataRef = useRef<TransitionMetadata>({
+  const transitionMetadataRef = React.useRef<TransitionMetadata>({
     delay: transitionDelay,
     duration: transitionDuration,
     timingFunction: transitionTimingFunction,
     shouldUseNativeDriver: canUseNativeDriver(transitionStyle)
   });
   // effect to sync the transition metadata
-  useEffect(() => {
+  React.useEffect(() => {
     transitionMetadataRef.current = {
       delay: transitionDelay,
       duration: transitionDuration,
@@ -376,7 +374,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
 
   // effect to trigger a transition
   // REMEMBER: it is super important that this effect's dependency array **only** contains the animated config
-  useEffect(() => {
+  React.useEffect(() => {
     if (animatedConfig == null) {
       return;
     }
@@ -392,7 +390,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     currentStyle
   );
 
-  useLayoutEffect(() => {
+  React.useLayoutEffect(() => {
     if (transitionStyleHasChangedResult) {
       setCurrentStyle(style);
       setPreviousStyle(currentStyle);

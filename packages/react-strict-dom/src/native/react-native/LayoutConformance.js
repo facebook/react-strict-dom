@@ -7,4 +7,4 @@
  * @flow strict-local
  */
 
-export { Text } from 'react-native';
+export { experimental_LayoutConformance as LayoutConformance } from 'react-native';

@@ -10,7 +10,6 @@
 import type { Style } from '../../types/styles';
 
 import * as React from 'react';
-import { useMemo, useState } from 'react';
 import { flattenStyle } from './flattenStyle';
 import { shallowEqual } from './shallowEqual';
 
@@ -34,7 +33,7 @@ if (__DEV__) {
 export function ProvideInheritedStyles(props: ProviderProps): React.Node {
   const { children, value } = props;
   const inheritedStyles = useInheritedStyles();
-  const flatStyle = useMemo(() => {
+  const flatStyle = React.useMemo(() => {
     if (
       value == null ||
       (typeof value === 'object' && Object.keys(value).length === 0)
@@ -47,7 +46,7 @@ export function ProvideInheritedStyles(props: ProviderProps): React.Node {
     }
   }, [inheritedStyles, value]);
 
-  const [cachedFlatStyle, setCachedFlatStyle] = useState(flatStyle);
+  const [cachedFlatStyle, setCachedFlatStyle] = React.useState(flatStyle);
 
   if (
     flatStyle !== cachedFlatStyle &&
