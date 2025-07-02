@@ -13,27 +13,16 @@ import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { CSSVariableReferenceValue } from './typed-om/CSSVariableReferenceValue';
 import { warnMsg } from '../../shared/logUtils';
 
-const memoizedValues = new Map<string, string>();
-
-function camelize(s: string): string {
-  const memoizedValue = memoizedValues.get(s);
-  if (memoizedValue != null) {
-    return memoizedValue;
-  }
-  const result = s.replace(/-./g, (x) => x.toUpperCase()[1]);
-  memoizedValues.set(s, result);
-  return result;
-}
-
 function normalizeVariableName(name: string): string {
   if (__DEV__) {
     if (!name.startsWith('--')) {
       throw new Error("Invalid variable name, must begin with '--'");
     }
   }
-  // TODO: remove camelize
-  // https://github.com/facebook/react-strict-dom/pull/73
-  return camelize(name.substring(2));
+  // Scoped vars created by defineVars all start with __var__.
+  // But global vars manually created with '--' prefixed keys don't.
+  const varName = name.startsWith('--__var__') ? name.substring(2) : name;
+  return varName;
 }
 
 export function stringContainsVariables(input: string): boolean {

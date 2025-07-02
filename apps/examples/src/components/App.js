@@ -654,14 +654,14 @@ const animateSequence = css.keyframes({
 });
 
 const themedTokens = css.createTheme(tokens, {
-  squareColor: 'purple',
+  '--square-color': 'purple',
   textColor: 'purple',
   inputColor: 'purple',
   inputPlaceholderColor: 'mediumpurple'
 });
 
 const themedTokensAlt = css.createTheme(tokens, {
-  squareColor: 'darkorange',
+  '--square-color': 'darkorange',
   textColor: 'darkorange',
   inputColor: 'orangered',
   inputPlaceholderColor: 'orange'
@@ -684,7 +684,7 @@ const styles = css.create({
   square: {
     height: 100,
     width: 100,
-    backgroundColor: tokens.squareColor
+    backgroundColor: 'var(--square-color)' // check global vars work too
   },
   pseudoStates: {
     height: 50,
