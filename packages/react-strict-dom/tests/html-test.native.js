@@ -98,7 +98,7 @@ describe('<html.*>', () => {
     test('legacy: ThemeProvider', () => {
       const { ThemeProvider } = contexts;
       const customProperties = {
-        rootColor: 'red'
+        '--rootColor': 'red'
       };
       const styles = css.create({
         root: {

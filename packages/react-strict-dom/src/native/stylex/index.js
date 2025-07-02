@@ -448,8 +448,12 @@ export const createTheme = (
   const result: MutableCustomProperties = { $$theme: 'theme' };
   for (const key in baseTokens) {
     const varName: string = baseTokens[key];
-    const normalizedKey = varName.replace(RE_CAPTURE_VAR_NAME, '$1');
-    result[normalizedKey] = overrides[key];
+    const match = varName.match(RE_CAPTURE_VAR_NAME);
+    if (match) {
+      const x = match[1];
+      const normalizedKey = x.startsWith('__var__') ? x : `--${x}`;
+      result[normalizedKey] = overrides[key];
+    }
   }
   return result;
 };
@@ -466,8 +470,11 @@ export const defineVars = (tokens: CustomProperties): Tokens => {
   const result: Tokens = {};
   for (const key in tokens) {
     const value = tokens[key];
-    const customPropName = `${key}__id__${defineVarsCount++}`;
-    result[key] = `var(--${customPropName})`;
+    const isGlobalVar = key.startsWith('--');
+    const customPropName = isGlobalVar
+      ? key
+      : `__var__${defineVarsCount++}_${key}`;
+    result[key] = isGlobalVar ? `var(${key})` : `var(--${customPropName})`;
     // NOTE: it's generally not a good idea to mutate the default context,
     // but defineVars is always called before any component body is evaluated,
     // and so it's safe to do so here.
