@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.0.38 (Jul 3, 2025)
+
+### Breaking changes
+
+* Requires React 19 and React Native 0.79.5.
+* [Native] Requires [manually adding `data-layoutconformance="strict"` wrapper](https://facebook.github.io/react-strict-dom/learn/setup/#app-files) to opt-in to W3C layout on native.
+* [Web] Requires use of `react-strict-dom/postcss-plugin` instead of separate `postcss-react-strict-dom` package for CSS extraction.
+
+### New features
+
+* Add support for `css.defineConsts`.
+* [Web] Uses `@stylexjs/stylex` to 0.14.
+* [Native] Uses built-in React Native support for logical CSS; improves performance.
+
+### Fixes
+
+* [Native] Share the same Animated.Value amongst transitions that happen in the same commit
+* [Web] Fix `babel-plugin` variable renaming edge case.
+
 ## 0.0.37 (Jun 27, 2025)
 
 ### New features
