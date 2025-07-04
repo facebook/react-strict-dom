@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.39 (Jul 4, 2025)
+
+### Fixes
+
+* Include `postcss-plugin` files in published package.
+
 ## 0.0.38 (Jul 3, 2025)
 
 ### Breaking changes
@@ -16,7 +22,7 @@
 
 ### Fixes
 
-* [Native] Share the same Animated.Value amongst transitions that happen in the same commit
+* [Native] Share the same `Animated.Value` amongst transitions that happen in the same commit.
 * [Web] Fix `babel-plugin` variable renaming edge case.
 
 ## 0.0.37 (Jun 27, 2025)
