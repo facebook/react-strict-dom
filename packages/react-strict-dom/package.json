@@ -22,6 +22,7 @@
     "README.md",
     "package.json",
     "babel/*",
+    "postcss/*",
     "dist/*"
   ],
   "sideEffects": false,
