@@ -400,6 +400,10 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     }
   }, [currentStyle, style, transitionStyleHasChangedResult]);
 
+  if (transitionStyleHasChangedResult) {
+    return currentStyle ?? style;
+  }
+
   if (
     _delay == null &&
     _duration == null &&
