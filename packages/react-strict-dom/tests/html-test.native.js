@@ -622,7 +622,7 @@ describe('<html.*>', () => {
         expect(console.warn).not.toHaveBeenCalledWith(
           expect.stringContaining('React Strict DOM')
         );
-        expect(Animated.sequence).not.toHaveBeenCalled();
+        expect(Animated.timing).not.toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('default');
       });
 
@@ -638,14 +638,14 @@ describe('<html.*>', () => {
         expect(console.error).not.toHaveBeenCalledWith(
           expect.stringContaining('React Strict DOM')
         );
-        expect(Animated.sequence).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('red to green');
-        Animated.sequence.mockClear();
+        Animated.timing.mockClear();
 
         act(() => {
           root.update(<html.div style={styles.backgroundColor('blue')} />);
         });
-        expect(Animated.sequence).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalled();
         expect(root.toJSON()).toMatchSnapshot('green to blue');
       });
 
@@ -664,6 +664,14 @@ describe('<html.*>', () => {
         });
         expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.inOut).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            delay: 200,
+            duration: 2000,
+            useNativeDriver: false
+          })
+        );
       });
 
       test('opacity transition', () => {
@@ -679,6 +687,14 @@ describe('<html.*>', () => {
         });
         expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.in).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            delay: 50,
+            duration: 1000,
+            useNativeDriver: true
+          })
+        );
       });
 
       test('transform transition', () => {
@@ -698,6 +714,14 @@ describe('<html.*>', () => {
         });
         expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.out).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            delay: 0,
+            duration: 1000,
+            useNativeDriver: true
+          })
+        );
       });
 
       test('width transition', () => {
@@ -713,6 +737,14 @@ describe('<html.*>', () => {
         });
         expect(root.toJSON()).toMatchSnapshot('end');
         expect(Easing.out).toHaveBeenCalled();
+        expect(Animated.timing).toHaveBeenCalledWith(
+          expect.anything(),
+          expect.objectContaining({
+            delay: 0,
+            duration: 500,
+            useNativeDriver: false
+          })
+        );
       });
 
       test('cubic-bezier() timing function', () => {

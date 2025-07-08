@@ -19,7 +19,10 @@ export const Animated = {
   }),
   timing: jest.fn(() => {
     return {
-      start: jest.fn()
+      start: jest.fn((callback) => {
+        callback && callback();
+      }),
+      stop: jest.fn()
     };
   }),
   delay: jest.fn(),
@@ -33,7 +36,10 @@ export const Animated = {
   }),
   spring: jest.fn(() => {
     return {
-      start: jest.fn()
+      start: jest.fn((callback) => {
+        callback && callback();
+      }),
+      stop: jest.fn()
     };
   })
 };

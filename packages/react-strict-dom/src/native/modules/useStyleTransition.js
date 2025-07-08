@@ -195,6 +195,7 @@ function transitionStyleHasChanged(
 
 function getAnimation(
   animatedValue: ReactNative.Animated.Value,
+  delay: number,
   duration: number,
   timingFunction: string | null,
   shouldUseNativeDriver: boolean
@@ -210,6 +211,7 @@ function getAnimation(
         `spring() timing function of "${timingFunction}" is missing closing parenthesis.`
       );
       return ReactNative.Animated.timing(animatedValue, {
+        delay,
         duration,
         easing: getEasingFunction(null),
         toValue: 1,
@@ -244,6 +246,7 @@ function getAnimation(
     }
 
     return ReactNative.Animated.spring(animatedValue, {
+      delay,
       damping,
       mass,
       stiffness,
@@ -254,6 +257,7 @@ function getAnimation(
   }
 
   return ReactNative.Animated.timing(animatedValue, {
+    delay,
     duration,
     easing: getEasingFunction(timingFunction),
     toValue: 1,
@@ -324,15 +328,13 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
       const { delay, duration, timingFunction, shouldUseNativeDriver } =
         transitionMetadataRef.current;
 
-      const animation = ReactNative.Animated.sequence([
-        ReactNative.Animated.delay(delay),
-        getAnimation(
-          animatedValue,
-          duration,
-          timingFunction,
-          shouldUseNativeDriver
-        )
-      ]);
+      const animation = getAnimation(
+        animatedValue,
+        delay,
+        duration,
+        timingFunction,
+        shouldUseNativeDriver
+      );
       animation.start();
 
       return () => {

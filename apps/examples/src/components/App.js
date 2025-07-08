@@ -731,6 +731,7 @@ const styles = css.create({
   },
   transitionOpacity: {
     backgroundColor: 'red',
+    transitionDelay: '250ms',
     transitionDuration: '0.5s',
     transitionProperty: 'opacity',
     transitionTimingFunction: 'ease'
