@@ -12,7 +12,8 @@ import type {
   StyleXArray,
   StyleXStyles,
   Theme,
-  VarGroup
+  VarGroup,
+  Types
 } from '@stylexjs/stylex';
 
 import typeof * as TStyleX from '@stylexjs/stylex';
@@ -37,3 +38,4 @@ export type IStyleX = $ReadOnly<{
 
 export type MutableCustomProperties = { [string]: mixed };
 export type CustomProperties = $ReadOnly<MutableCustomProperties>;
+export type { Types };
