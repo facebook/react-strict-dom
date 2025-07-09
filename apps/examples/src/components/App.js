@@ -665,14 +665,14 @@ const animateSequence = css.keyframes({
 });
 
 const themedTokens = css.createTheme(tokens, {
-  squareColor: 'purple',
+  squareColor: css.types.color<string>('purple'),
   textColor: 'purple',
   inputColor: 'purple',
   inputPlaceholderColor: 'mediumpurple'
 });
 
 const themedTokensAlt = css.createTheme(tokens, {
-  squareColor: 'darkorange',
+  squareColor: css.types.color<string>('darkorange'),
   textColor: 'darkorange',
   inputColor: 'orangered',
   inputPlaceholderColor: 'orange'

@@ -512,3 +512,78 @@ export function props(
 
   return nativeProps;
 }
+
+type ValueWithDefault<+T> =
+  | T
+  | $ReadOnly<{
+      default: ValueWithDefault<T>,
+      [string]: ValueWithDefault<T>
+    }>;
+
+export const types = {
+  angle: <T: string | 0 = string | 0>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  color: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  image: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  integer: <T: number | string = number | string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  length: <T: number | string = number | string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  lengthPercentage: <T: number | string = number | string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  number: <T: number | string = number | string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  percentage: <T: number | string = number | string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  resolution: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  time: <T: string | 0 = string | 0>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  transformFunction: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  transformList: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  },
+  url: <T: string = string>(
+    value: ValueWithDefault<T>
+  ): ValueWithDefault<T> => {
+    return value;
+  }
+};
