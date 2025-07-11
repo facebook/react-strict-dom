@@ -12,6 +12,7 @@ import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
 export type StrictReactDOMSelectProps = $ReadOnly<{
   ...StrictReactDOMProps,
   autoComplete?: AutoComplete,
+  defaultValue?: ?(Stringish | Array<Stringish>),
   multiple?: ?boolean,
   name?: ?string,
   required?: ?boolean,
@@ -19,5 +20,6 @@ export type StrictReactDOMSelectProps = $ReadOnly<{
   onChange?: $FlowFixMe,
   onInput?: $FlowFixMe,
   onInvalid?: $FlowFixMe,
-  onSelect?: $FlowFixMe
+  onSelect?: $FlowFixMe,
+  value?: ?(Stringish | Array<Stringish>)
 }>;

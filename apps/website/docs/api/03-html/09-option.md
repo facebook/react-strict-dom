@@ -14,8 +14,8 @@ To display an item within `<html.select>`, render the `<html.option>` component.
 import { html } from 'react-strict-dom';
 
 const Foo = () => (
-  <html.select>
-    <html.option>Red</html.option>
+  <html.select value="red">
+    <html.option value="red">Red</html.option>
   </html.select>
 );
 ```
@@ -25,5 +25,4 @@ const Foo = () => (
 * [...Common props](/api/html/common/)
 * `disabled`
 * `label`
-* `selected`
 * `value`

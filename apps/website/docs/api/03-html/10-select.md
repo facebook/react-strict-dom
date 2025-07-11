@@ -8,14 +8,14 @@ title: <html.select>
 
 ## Overview
 
-To display a select box, render the `<html.select` component.
+To display a select box, render the `<html.select>` component.
 
 ```jsx
 import { html } from 'react-strict-dom';
 
 const Foo = () => (
-  <html.select>
-    <html.option>Red</html.option>
+  <html.select value="red">
+    <html.option value="red">Red</html.option>
   </html.select>
 );
 ```
@@ -24,6 +24,7 @@ const Foo = () => (
 
 * [...Common props](/api/html/common/)
 * `autoComplete`
+* `defaultValue`
 * `multiple`
 * `name`
 * `required`
@@ -32,3 +33,4 @@ const Foo = () => (
 * `onInput`
 * `onInvalid`
 * `onSelect`
+* `value`

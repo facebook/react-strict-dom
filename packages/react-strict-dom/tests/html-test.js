@@ -351,12 +351,7 @@ describe('html', () => {
     let root;
     act(() => {
       root = create(
-        <html.option
-          defaultValue="defaultValue"
-          disabled={true}
-          label="label"
-          value="value"
-        />
+        <html.option disabled={true} label="label" value="value" />
       );
     });
     expect(root.toJSON()).toMatchSnapshot();
@@ -367,6 +362,7 @@ describe('html', () => {
     act(() => {
       root = create(
         <html.select
+          defaultValue="defaultValue"
           disabled={true}
           name="user-language"
           onBeforeInput={function onBeforeInput() {}}
@@ -377,6 +373,7 @@ describe('html', () => {
           onSelectionChange={function onSelectionChange() {}}
           readOnly={true}
           required={true}
+          value="value"
         />
       );
     });
