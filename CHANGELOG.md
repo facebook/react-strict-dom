@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.40 (Jul 11, 2025)
+
+### Fixes
+
+* Fix props for `<select>` and `<option>` elements.
+* [Native] Remove use of `Animated.delay` and `sequence` for CSS transition polyfill.
+* [Native] Revert shared `Animated.Value` amongst transitions
+
 ## 0.0.39 (Jul 4, 2025)
 
 ### Fixes
