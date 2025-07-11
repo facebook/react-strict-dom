@@ -5070,7 +5070,6 @@ exports[`html "option" supports inline event handlers 1`] = `
 exports[`html "option" supports input attributes 1`] = `
 <option
   className="html-option"
-  defaultValue="defaultValue"
   disabled={true}
   label="label"
   ref={null}
@@ -5647,6 +5646,7 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 exports[`html "select" supports additional select attributes 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
+  defaultValue="defaultValue"
   disabled={true}
   name="user-language"
   onBeforeInput={[Function]}
@@ -5658,6 +5658,7 @@ exports[`html "select" supports additional select attributes 1`] = `
   readOnly={true}
   ref={null}
   required={true}
+  value="value"
 />
 `;
 
