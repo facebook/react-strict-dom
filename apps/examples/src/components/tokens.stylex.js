@@ -19,7 +19,7 @@ export const tokens: StyleVars<
     inputPlaceholderColor: string
   }>
 > = css.defineVars({
-  squareColor: 'red',
+  squareColor: css.types.color('red'),
   textColor: {
     default: 'darkred',
     '@media (prefers-color-scheme: dark)': 'lightred'
