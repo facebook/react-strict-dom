@@ -13,13 +13,13 @@ import { css } from 'react-strict-dom';
 
 export const tokens: StyleVars<
   $ReadOnly<{
-    squareColor: string,
+    '--square-color': string,
     textColor: string,
     inputColor: string,
     inputPlaceholderColor: string
   }>
 > = css.defineVars({
-  squareColor: 'red',
+  '--square-color': 'red', // '--' prefix makes this is a global var
   textColor: {
     default: 'darkred',
     '@media (prefers-color-scheme: dark)': 'lightred'
