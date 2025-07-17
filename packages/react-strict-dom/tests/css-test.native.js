@@ -259,6 +259,32 @@ describe('properties: general', () => {
     expect(css.props.call(mockOptions, styles.rtl)).toMatchSnapshot('rtl');
   });
 
+  test('display', () => {
+    const styles = css.create({
+      flex: {
+        display: 'flex'
+      },
+      align: {
+        alignItems: 'center'
+      },
+      row: {
+        flexDirection: 'row'
+      }
+    });
+    css.props.call(mockOptions, [styles.flex, styles.align]);
+    expect(console.error).not.toHaveBeenCalledWith(
+      expect.stringContaining(
+        '"display:flex" is required to use flexbox properties'
+      )
+    );
+    css.props.call(mockOptions, [styles.align, styles.row]);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        '"display:flex" is required to use flexbox properties'
+      )
+    );
+  });
+
   test('filter', () => {
     const { underTest } = css.create({
       underTest: {
