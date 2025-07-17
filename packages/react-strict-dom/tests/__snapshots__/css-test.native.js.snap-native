@@ -72,6 +72,14 @@ exports[`properties: general animationDuration 1`] = `
 }
 `;
 
+exports[`properties: general backgroundImage 1`] = `
+{
+  "style": {
+    "experimental_backgroundImage": "linear-gradient(to bottom right, yellow, green)",
+  },
+}
+`;
+
 exports[`properties: general borderColor 1`] = `
 {
   "style": {

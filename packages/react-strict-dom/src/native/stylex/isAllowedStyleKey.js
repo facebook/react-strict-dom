@@ -18,6 +18,7 @@ const allowedStyleKeySet = new Set<string>([
   'aspectRatio',
   'backfaceVisibility',
   'backgroundColor',
+  'backgroundImage',
   'blockSize',
   'borderBottomColor',
   'borderBottomLeftRadius',
