@@ -72,7 +72,7 @@ The following tables represent the compatibility status of the strict CSS API fo
 | backdropFilter | ❌ | ❌ | |
 | backfaceVisibility | ✅ | ✅ | |
 | backgroundColor | ✅ | ✅ | |
-| backgroundImage | ❌ | ❌ | |
+| backgroundImage | 🟡 Partial | 🟡 Partial | Support for linear and radial gradients in React Native |
 | backgroundOrigin | ❌ | ❌ | |
 | backgroundPosition | ❌ | ❌ | |
 | backgroundRepeat | ❌ | ❌ | |

@@ -141,11 +141,10 @@ describe('properties: general', () => {
   test('backgroundImage', () => {
     const styles = css.create({
       root: {
-        backgroundImage: 'url(https://placehold.it/300/300)'
+        backgroundImage: 'linear-gradient(to bottom right, yellow, green)'
       }
     });
-    css.props.call(mockOptions, styles.root);
-    expect(console.warn).toHaveBeenCalled();
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
   });
 
   test('borderColor', () => {

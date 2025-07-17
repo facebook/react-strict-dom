@@ -127,6 +127,9 @@ function processStyle(
           );
         }
         continue;
+      } else if (propName === 'backgroundImage') {
+        result.experimental_backgroundImage = styleValue;
+        continue;
       }
       // Workaround unsupported objectFit values
       else if (propName === 'objectFit' && styleValue === 'none') {
