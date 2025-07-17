@@ -640,6 +640,37 @@ export function props(
   if (boxSizingValue === 'content-box' && !version.experimental) {
     nextStyle = fixContentBox(nextStyle);
   }
+
+  // Print an error message if flex properties are used without
+  // "display:flex" being set. React Native is always using "flex"
+  // layout but web uses "flow" layout by default, which can lead
+  // to layout divergence if building for native first.
+  if (__DEV__) {
+    if (
+      nextStyle.display == null ||
+      (nextStyle.display !== 'flex' && nextStyle.display !== 'none')
+    ) {
+      if (
+        nextStyle.alignContent != null ||
+        nextStyle.alignItems != null ||
+        nextStyle.alignSelf != null ||
+        nextStyle.columnGap != null ||
+        nextStyle.flex != null ||
+        nextStyle.flexBasis != null ||
+        nextStyle.flexDirection != null ||
+        nextStyle.flexGrow != null ||
+        nextStyle.flexShrink != null ||
+        nextStyle.flexWrap != null ||
+        nextStyle.gap != null ||
+        nextStyle.justifyContent != null ||
+        nextStyle.placeContent != null ||
+        nextStyle.rowGap != null
+      ) {
+        errorMsg('"display:flex" is required to use flexbox properties');
+      }
+    }
+  }
+
   nativeProps.style = nextStyle;
 
   return nativeProps;
