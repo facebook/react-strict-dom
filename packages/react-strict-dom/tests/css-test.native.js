@@ -1182,7 +1182,7 @@ describe('properties: custom property', () => {
   test('legacy strings', () => {
     const options = {
       customProperties: {
-        rootColor: 'red'
+        '--rootColor': 'red'
       }
     };
     expect(
@@ -1208,7 +1208,8 @@ describe('properties: custom property', () => {
       themeAwareColor: {
         default: 'blue',
         '@media (prefers-color-scheme: dark)': 'green'
-      }
+      },
+      '--pass-through': 'purple'
     });
     expect(tokens).toMatchSnapshot('tokens');
     expect(css.__customProperties).toMatchSnapshot('css.__customProperties');
@@ -1218,6 +1219,9 @@ describe('properties: custom property', () => {
     expect(
       resolveCustomPropertyValue(options, ['color', tokens.themeAwareColor])
     ).toEqual('blue');
+    expect(
+      resolveCustomPropertyValue(options, ['color', 'var(--pass-through)'])
+    ).toEqual('purple');
     // dark theme
     expect(
       resolveCustomPropertyValue({ colorScheme: 'dark' }, [
@@ -1280,7 +1284,9 @@ describe('properties: custom property', () => {
 
   test('parses a basic var correctly', () => {
     const options = {
-      customProperties: { test: 'red' }
+      customProperties: {
+        '--test': 'red'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['color', 'var(--test)'])
@@ -1289,7 +1295,9 @@ describe('properties: custom property', () => {
 
   test('parses a var with a default value', () => {
     const options = {
-      customProperties: { test: 'red' }
+      customProperties: {
+        '--test': 'red'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['color', 'var(--test, blue)'])
@@ -1299,32 +1307,11 @@ describe('properties: custom property', () => {
     ).toEqual('blue');
   });
 
-  // TODO: this transform should not be supported. Custom properties are case sensitive.
-  test('parses kebab case var to camel case', () => {
-    const options = {
-      customProperties: { testVar: 'red' }
-    };
-    expect(
-      resolveCustomPropertyValue(options, ['color', 'var(--test-var)'])
-    ).toEqual('red');
-  });
-
-  // TODO: this transform should not be supported. Custom properties are case sensitive.
-  test('parses kebab case var with a default value', () => {
-    const options = {
-      customProperties: { testVar: 'red' }
-    };
-    expect(
-      resolveCustomPropertyValue(options, ['color', 'var(--test-var, blue)'])
-    ).toEqual('red');
-    expect(
-      resolveCustomPropertyValue(options, ['color', 'var(--not-found, blue)'])
-    ).toEqual('blue');
-  });
-
   test('parses a var with a default value containing spaces', () => {
     const options = {
-      customProperties: { color: 'rgb(0,0,0)' }
+      customProperties: {
+        '--color': 'rgb(0,0,0)'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, [
@@ -1342,7 +1329,9 @@ describe('properties: custom property', () => {
 
   test('parses a var and falls back to default value containing a var', () => {
     const options = {
-      customProperties: { color: 'red' }
+      customProperties: {
+        '--color': 'red'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, [
@@ -1355,7 +1344,7 @@ describe('properties: custom property', () => {
   test('parses a var and falls back to a default value containing spaces and embedded var', () => {
     const options = {
       customProperties: {
-        test: '255'
+        '--test': '255'
       }
     };
     expect(
@@ -1368,7 +1357,9 @@ describe('properties: custom property', () => {
 
   test('basic var value lookup works', () => {
     const options = {
-      customProperties: { number: 10 }
+      customProperties: {
+        '--number': 10
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['borderWidth', 'var(--number)'])
@@ -1377,7 +1368,9 @@ describe('properties: custom property', () => {
 
   test('var value lookup with pixel prop conversion', () => {
     const options = {
-      customProperties: { pxNumber: '10px' }
+      customProperties: {
+        '--pxNumber': '10px'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['borderWidth', 'var(--pxNumber)'])
@@ -1386,7 +1379,9 @@ describe('properties: custom property', () => {
 
   test('var value lookup with em prop conversion', () => {
     const options = {
-      customProperties: { emNumber: '10em' }
+      customProperties: {
+        '--emNumber': '10em'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['borderWidth', 'var(--emNumber)'])
@@ -1396,9 +1391,9 @@ describe('properties: custom property', () => {
   test('var value lookup with reference to another var', () => {
     const options = {
       customProperties: {
-        number: 10,
-        refToNumber: 'var(--number)',
-        refToRefToNumber: 'var(--refToNumber)'
+        '--number': 10,
+        '--refToNumber': 'var(--number)',
+        '--refToRefToNumber': 'var(--refToNumber)'
       }
     };
     expect(
@@ -1414,7 +1409,9 @@ describe('properties: custom property', () => {
 
   test('var with hover styles', () => {
     const options = {
-      customProperties: { test: '#333' },
+      customProperties: {
+        '--test': '#333'
+      },
       hover: true
     };
     const { underTest } = css.create({
@@ -1438,7 +1435,9 @@ describe('properties: custom property', () => {
 
   test('rgb(a) function with args applied through a single var', () => {
     const options = {
-      customProperties: { example: '24, 48, 96' }
+      customProperties: {
+        '--example': '24, 48, 96'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['color', 'rgb(var(--example))'])
@@ -1454,11 +1453,11 @@ describe('properties: custom property', () => {
   test('rgba function with args applied through multiple (& nested) vars', () => {
     const options = {
       customProperties: {
-        red: 255,
-        green: 96,
-        blue: 16,
-        rgb: 'var(--red), var(--green), var(--blue)',
-        alpha: 0.42
+        '--red': 255,
+        '--green': 96,
+        '--blue': 16,
+        '--rgb': 'var(--red), var(--green), var(--blue)',
+        '--alpha': 0.42
       }
     };
     expect(
@@ -1472,11 +1471,11 @@ describe('properties: custom property', () => {
   test('textShadow with nested/multiple vars', () => {
     const options = {
       customProperties: {
-        height: '20px',
-        width: '10px',
-        size: 'var(--width) var(--height)',
-        radius: '30px',
-        red: 'red'
+        '--height': '20px',
+        '--width': '10px',
+        '--size': 'var(--width) var(--height)',
+        '--radius': '30px',
+        '--red': 'red'
       }
     };
     const styles = css.create({
@@ -1499,10 +1498,10 @@ describe('properties: custom property', () => {
   test('transform with nested/multiple vars', () => {
     const options = {
       customProperties: {
-        distance: 20,
-        angle: '45deg',
-        translateX: 'translateX(var(--distance))',
-        rotateX: 'rotateX(var(--angle))'
+        '--distance': 20,
+        '--angle': '45deg',
+        '--translateX': 'translateX(var(--distance))',
+        '--rotateX': 'rotateX(var(--angle))'
       }
     };
     const styles = css.create({
@@ -1520,7 +1519,7 @@ describe('properties: custom property', () => {
   test('css variable declaration inside a media query', () => {
     const options = {
       customProperties: {
-        example: '42px'
+        '--example': '42px'
       },
       viewportWidth: 450
     };
