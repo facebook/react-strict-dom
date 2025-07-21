@@ -52,6 +52,7 @@ const greenPinkTheme = css.createTheme(themeColors, {
 
 const themedStyles = css.create({
   container: {
+    display: 'flex',
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#bbb',
@@ -323,6 +324,15 @@ function Shell(): React.MixedElement {
           </html.div>
         </ExampleBlock>
 
+        {/* logical styles emulation */}
+        <ExampleBlock title="CSS Logical">
+          <html.div>
+            <html.div style={styles.logicalPadding} />
+            <html.div style={styles.logicalMargin} />
+            <html.div style={styles.logicalBorder} />
+          </html.div>
+        </ExampleBlock>
+
         {/* CSS positioning (static by default) */}
         <ExampleBlock title="CSS Position">
           <html.div style={[styles.p50, styles.relative]}>
@@ -571,7 +581,7 @@ function Shell(): React.MixedElement {
           >
             <html.span style={styles.bgWhite}>{clickData.text}</html.span>
             <html.div style={styles.flex}>
-              <html.div style={styles.flexGrow}>
+              <html.div style={[styles.flex, styles.flexGrow]}>
                 <html.div>
                   <html.span>
                     {clickEventData.altKey ? '✅' : '🚫'} altKey
@@ -593,7 +603,7 @@ function Shell(): React.MixedElement {
                   </html.span>
                 </html.div>
               </html.div>
-              <html.div style={styles.flexGrow}>
+              <html.div style={[styles.flex, styles.flexGrow]}>
                 <html.div>
                   <html.span>button: {clickEventData.button}</html.span>
                 </html.div>
@@ -846,5 +856,34 @@ const styles = css.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: 'black'
+  },
+  logicalMargin: {
+    backgroundColor: 'pink',
+    width: 50,
+    height: 50,
+    marginBlock: 20,
+    marginInline: 20,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderStyle: 'solid'
+  },
+  logicalPadding: {
+    backgroundColor: 'pink',
+    width: 50,
+    height: 50,
+    paddingBlock: 20,
+    paddingInline: 20,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderStyle: 'solid'
+  },
+  logicalBorder: {
+    backgroundColor: 'pink',
+    width: 50,
+    height: 50,
+    borderColor: 'red',
+    borderBlockWidth: 20,
+    borderInlineWidth: 20,
+    borderStyle: 'solid'
   }
 });
