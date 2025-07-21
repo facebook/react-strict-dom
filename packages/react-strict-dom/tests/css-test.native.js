@@ -241,9 +241,6 @@ describe('properties: general', () => {
 
   test('direction', () => {
     const styles = css.create({
-      inherit: {
-        direction: 'inherit'
-      },
       ltr: {
         direction: 'ltr'
       },
@@ -251,9 +248,6 @@ describe('properties: general', () => {
         direction: 'rtl'
       }
     });
-    expect(css.props.call(mockOptions, styles.inherit)).toMatchSnapshot(
-      'inherit'
-    );
     expect(css.props.call(mockOptions, styles.ltr)).toMatchSnapshot('ltr');
     expect(css.props.call(mockOptions, styles.rtl)).toMatchSnapshot('rtl');
   });

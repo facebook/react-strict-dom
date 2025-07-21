@@ -130,7 +130,7 @@ The following tables represent the compatibility status of the strict CSS API fo
 | color | ✅ | ✅ | |
 | columnGap | ✅ | ✅ | |
 | cursor | ❌ | ✅ Partial | |
-| direction | ✅ | ✅ | |
+| direction | ❌ | ❌ | |
 | display: block | 🟡 Partial | 🟡 Partial | [#2](https://github.com/facebook/react-strict-dom/issues/2) |
 | display: contents | ✅ | ✅ | |
 | display: flex | ✅ | ✅ | |
@@ -156,13 +156,13 @@ The following tables represent the compatibility status of the strict CSS API fo
 | gap | ✅ | ✅ | |
 | height | ✅ | ✅ | |
 | inlineSize | 🟡 | 🟡 | |
-| inset | ✅ | ✅ | |
-| insetBlock | ✅ | ✅ | |
-| insetBlockEnd | ✅ | ✅ | |
-| insetBlockStart | ✅ | ✅ | |
-| insetInline | ✅ | ✅ | |
-| insetInlineEnd | ✅ | ✅ | |
-| insetInlineStart | ✅ | ✅ | |
+| inset | 🟡 | 🟡 | |
+| insetBlock | 🟡 | 🟡 | |
+| insetBlockEnd | 🟡 | 🟡 | |
+| insetBlockStart | 🟡 | 🟡 | |
+| insetInline | 🟡 | 🟡 | |
+| insetInlineEnd | 🟡 | 🟡 | |
+| insetInlineStart | 🟡 | 🟡 | |
 | isolation | ✅ | ✅ | |
 | justifyContent | ✅ | ✅ | |
 | justifyItems | ❌ | ❌ | |
@@ -175,13 +175,13 @@ The following tables represent the compatibility status of the strict CSS API fo
 | listStylePosition | ❌ | ❌ | |
 | listStyleType | ❌ | ❌ | |
 | margin | ✅ | ✅ | |
-| marginBlock | ✅ | ✅ | |
-| marginBlockEnd | ✅ | ✅ | |
-| marginBlockStart | ✅ | ✅ | |
+| marginBlock | 🟡 | 🟡 | |
+| marginBlockEnd | 🟡 | 🟡 | |
+| marginBlockStart | 🟡 | 🟡 | |
 | marginBottom | ✅ | ✅ | |
-| marginInline | ✅ | ✅ | |
-| marginInlineEnd | ✅ | ✅ | |
-| marginInlineStart | ✅ | ✅ | |
+| marginInline | 🟡 | 🟡 | |
+| marginInlineEnd | 🟡 | 🟡 | |
+| marginInlineStart | 🟡 | 🟡 | |
 | marginLeft | ✅ | ✅ | |
 | marginRight | ✅ | ✅ | |
 | marginTop | ✅ | ✅ | |
@@ -208,13 +208,13 @@ The following tables represent the compatibility status of the strict CSS API fo
 | overflowX | ❌ | ❌ | |
 | overflowY | ❌ | ❌ | |
 | padding | ✅ | ✅ | |
-| paddingBlock | ✅ | ✅ | |
-| paddingBlockEnd | ✅ | ✅ | |
-| paddingBlockStart | ✅ | ✅ | |
+| paddingBlock | 🟡 | 🟡 | |
+| paddingBlockEnd | 🟡 | 🟡 | |
+| paddingBlockStart | 🟡 | 🟡 | |
 | paddingBottom | ✅ | ✅ | |
-| paddingInline | ✅ | ✅ | |
-| paddingInlineEnd | ✅ | ✅ | |
-| paddingInlineStart | ✅ | ✅ | |
+| paddingInline | 🟡 | 🟡 | |
+| paddingInlineEnd | 🟡 | 🟡 | |
+| paddingInlineStart | 🟡 | 🟡 | |
 | paddingLeft | ✅ | ✅ | |
 | paddingRight | ✅ | ✅ | |
 | paddingTop | ✅ | ✅ | |
