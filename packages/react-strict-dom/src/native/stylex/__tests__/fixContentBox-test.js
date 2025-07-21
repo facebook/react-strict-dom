@@ -70,6 +70,17 @@ describe('fixContentBox', () => {
         width: 100,
         height: 100
       },
+      logical: {
+        boxSizing: 'content-box',
+        borderBlockWidth: 5,
+        borderInlineWidth: 5,
+        paddingBlock: 10,
+        paddingInline: 20,
+        paddingInlineEnd: 30,
+        paddingLeft: 40,
+        width: 100,
+        height: 100
+      },
       auto: {
         boxSizing: 'content-box',
         borderWidth: 2,
@@ -100,6 +111,7 @@ describe('fixContentBox', () => {
     expect(fixContentBox(styles.minWidth)).toMatchSnapshot('minWidth');
     expect(fixContentBox(styles.minHeight)).toMatchSnapshot('minHeight');
     expect(fixContentBox(styles.allDifferent)).toMatchSnapshot('allDifferent');
+    expect(fixContentBox(styles.logical)).toMatchSnapshot('logical');
     expect(fixContentBox(styles.auto)).toMatchSnapshot('auto');
     expect(fixContentBox(styles.null)).toMatchSnapshot('null');
     expect(fixContentBox(styles.string)).toMatchSnapshot('string');

@@ -32,6 +32,19 @@ exports[`fixContentBox boxSizing: content-box: height 1`] = `
 }
 `;
 
+exports[`fixContentBox boxSizing: content-box: logical 1`] = `
+{
+  "borderBlockWidth": 5,
+  "borderInlineWidth": 5,
+  "height": 100,
+  "paddingBlock": 10,
+  "paddingInline": 20,
+  "paddingInlineEnd": 30,
+  "paddingLeft": 40,
+  "width": 140,
+}
+`;
+
 exports[`fixContentBox boxSizing: content-box: maxHeight 1`] = `
 {
   "borderWidth": 2,
