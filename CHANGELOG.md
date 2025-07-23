@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.42 (Jul 23, 2025)
+
+### Fixes
+
+* [Native] Revert "Use built-in React Native support for logical CSS"
+
 ## 0.0.41 (Jul 17, 2025)
 
 ### New features
