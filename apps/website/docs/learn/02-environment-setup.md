@@ -6,6 +6,9 @@ slug: /learn/setup
 
 <p className="text-xl">Learn how to configure the environment needed to use React Strict DOM.</p>
 
+* [Expo framework](#expo-framework) - Configure React Strict DOM in an Expo app.
+* [Next.js framework](#nextjs-framework) - Configure React Strict DOM in a Next.js website using App Router.
+
 ## Expo framework
 
 [Expo](https://expo.dev/) is a production-grade, cross-platform React framework that is the recommended solution for creating apps with React Strict DOM. The instructions in the rest of this guide are tailored to Expo, but can be adapted by readers to work with other frameworks.
@@ -147,8 +150,174 @@ export function App() {
 }
 ```
 
+## Next.js framework
+
+[Next.js](https://nextjs.org) is a production-grade, web oriented React framework that is the recommended solution that takes full advantage of React’s architecture to enable full-stack React app. Fully compatible with React Strict DOM. The instructions in the rest of this guide are tailored to Next.js, but can be adapted by readers to work with other frameworks.
+
+Follow the Next.js instructions on how to [create a new project](https://nextjs.org/docs/app/getting-started/installation). Then follow the steps in the [Installation](/learn/installation) guide to install React Strict DOM.
+
+## Babel configuration
+
+When using Next.js App Router, babel is not the default compiler, but can still be used.
+Create or modify a `babelLoader.config.js` file as follows (note that it's not a `babel.config.js`). This is used to optimize builds and enables static extraction of CSS for web. Learn how to configure the [babel-preset](/api/babel-preset/) in the API docs.
+
+```js title="babelLoader.config.js"
+import path from "path";
+
+const config = {
+  presets: [
+    [
+      "next/dist/compiled/babel/preset-typescript",
+      {
+        allowNamespaces: true,
+      },
+    ],
+    [
+      "react-strict-dom/babel-preset",
+      {
+        debug: true,
+        dev: process.env.NODE_ENV === "development",
+        rootDir: process.cwd(),
+        // if you want to use @/* from tsconfig
+        // a patch is required in node_modules/react-strict-dom/babel/preset.js
+        // see https://github.com/facebook/react-strict-dom/pull/294 for more information
+        // aliases: {
+        //   "@/*": [path.join(process.cwd(), "*")],
+        // },
+      },
+    ],
+  ],
+};
+
+export default config;
+
+```
+
+## PostCSS configuration
+
+[PostCSS](https://postcss.org/) is a tool for generating CSS. It's enabled by default in Next.js and it's the recommended way to extract React Strict DOM styles to static CSS for web builds. `react-strict-dom/postcss-plugin` can be used to extract styles. Create a `postcss.config.mjs` file as follows.
+
+```js title="postcss.config.mjs"
+// note that you need to import manually the babel loader so configuration is shared between next.js & postcss compilation
+import babelLoader from "./babelLoader.config.js";
+
+const config = {
+  plugins: {
+    "react-strict-dom/postcss-plugin": {
+      include: [
+        // Include source files to watch for style changes
+        'src/**/*.{js,jsx,mjs,ts,tsx}',
+        // List any installed node_modules that include UI built with React Strict DOM
+        'node_modules/<package-name>/*.js'
+      ],
+      babelConfig: babelLoader,
+      useLayers: true,
+    },
+    autoprefixer: {},
+  },
+};
+
+export default config;
+```
+
+## Next.js configuration
+
+Create or edit the `next.config.js` file as follows. Note that below you will find config for both turbopack or webpack.
+
+```js title="next.config.js"
+import type { NextConfig } from "next";
+
+import babelLoader from "./babelLoader.config.js";
+
+function getBabelLoader() {
+  return {
+    loader: "babel-loader",
+    options: babelLoader,
+  };
+}
+
+const nextConfig: NextConfig = {
+  transpilePackages: ["react-strict-dom"],
+
+  turbopack: {
+    rules: {
+      "*.{js,jsx,ts,tsx}": {
+        loaders: [getBabelLoader()],
+      },
+    },
+  },
+
+  webpack: (config, { webpack }) => {
+    config.resolve.mainFields = ["module", "main"];
+
+    config.module.rules.push({
+      test: /\.(js|jsx|ts|tsx)$/,
+      use: [getBabelLoader()],
+    });
+
+    return config;
+  },
+};
+
+export default nextConfig;
+```
+
+## App files
+
+Your app needs to include a CSS file that contains a `@stylex` directive. This acts as a placeholder that is replaced by the generated CSS during builds.
+
+```css title="stylex.css"
+/* This directive is used by the react-strict-dom postcss plugin. */
+/* It is automatically replaced with generated CSS during builds. */
+@stylex;
+```
+
+Next, import the CSS file in your `layout.tsx`
+
+```js title="src/app/layout.tsx"
+// Required for CSS to work on Next.js
+import './stylex.css';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
 ## Platform-specific files
 
 Expo supports [platform-specific extensions](https://docs.expo.dev/router/advanced/platform-specific-modules/#platform-specific-extensions) by default. This allows you to create platform-specific implementations of components, hooks, etc.
 
 Other frameworks will require bundler configuration when building for each platform, so as to resolve files based on their file extensions. For example, web bundles should package `*.web.js` file extensions but not `*.native.js` files. These specific file name suffixes are recommended conventions already used by the React Native ecosystem (see the Expo docs above.)
+
+For example, Next.js can easily handle platform-specific extensions with a change in `next.config.js` with the following additions:
+
+```js title="next.config.js"
+//...
+
+const nextConfig: NextConfig = {
+  // ...
+
+  turbopack: {
+    // ...
+
+    resolveExtensions: [".web.tsx", ".web.ts", ".web.jsx", ".web.js", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+  },
+
+  webpack: (config, { webpack }) => {
+    // ...
+
+    config.resolve.extensions = [ ".web.js", ".web.jsx", ".web.ts", ".web.tsx", ...config.resolve.extensions];
+    return config;
+  },
+};
+
+export default nextConfig;
+```
