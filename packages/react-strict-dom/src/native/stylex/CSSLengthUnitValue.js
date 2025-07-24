@@ -17,16 +17,15 @@ type ResolvePixelValueOptions = $ReadOnly<{
   fontScale: number | void,
   inheritedFontSize: ?number,
   viewportHeight: number,
+  viewportScale: number,
   viewportWidth: number
 }>;
 
-type ParsedValue = [+value: number, +unit: CSSLengthUnitType] | null;
-
-const memoizedValues = new Map<string, ParsedValue>();
+const memoizedValues = new Map<string, CSSLengthUnitValue | null>();
 
 // TODO: this only works on simple values
 export class CSSLengthUnitValue {
-  static parse(input: string): ParsedValue {
+  static parse(input: string): CSSLengthUnitValue | null {
     const memoizedValue = memoizedValues.get(input);
     if (memoizedValue !== undefined) {
       return memoizedValue;
@@ -40,9 +39,9 @@ export class CSSLengthUnitValue {
     const value = match[1];
     const unit: $FlowFixMe = match[2];
     const parsedFloat: number = parseFloat(value);
-    const parsedValue: ParsedValue = [parsedFloat, unit];
-    memoizedValues.set(input, parsedValue);
-    return parsedValue;
+    const cssLengthUnitValue = new CSSLengthUnitValue(parsedFloat, unit);
+    memoizedValues.set(input, cssLengthUnitValue);
+    return cssLengthUnitValue;
   }
 
   value: number;
@@ -58,7 +57,8 @@ export class CSSLengthUnitValue {
       viewportWidth,
       viewportHeight,
       fontScale = 1,
-      inheritedFontSize
+      inheritedFontSize,
+      viewportScale
     } = options;
     const unit = this.unit;
     const value = this.value;
@@ -72,10 +72,10 @@ export class CSSLengthUnitValue {
         }
       }
       case 'px': {
-        return value;
+        return value * viewportScale;
       }
       case 'rem': {
-        return fontScale * 16 * value;
+        return fontScale * 16 * value * viewportScale;
       }
       case 'vh': {
         return viewportHeight * valuePercent;

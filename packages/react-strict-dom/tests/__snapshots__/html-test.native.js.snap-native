@@ -2022,3 +2022,40 @@ exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
   text
 </Text>
 `;
+
+exports[`<html.*> viewport width lengths are scaled according to viewport width: scaled lengths 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 3.75,
+      "boxSizing": "content-box",
+      "height": 75,
+      "margin": 15,
+      "padding": 11.25,
+      "position": "static",
+      "transform": [
+        {
+          "translateX": 7.5,
+        },
+        {
+          "translateY": 15,
+        },
+      ],
+      "width": 150,
+    }
+  }
+>
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  >
+    Scaled content
+  </Text>
+</ViewNativeComponent>
+`;

@@ -1630,4 +1630,40 @@ describe('<html.*>', () => {
     });
     */
   });
+
+  describe('viewport width', () => {
+    test('lengths are scaled according to viewport width', () => {
+      const { ViewportProvider } = contexts;
+      const ReactNative = require('../src/native/react-native');
+      jest
+        .spyOn(ReactNative, 'useWindowDimensions')
+        .mockReturnValue({ width: 960 });
+
+      const styles = css.create({
+        container: {
+          margin: '20px',
+          padding: '15px',
+          width: '200px',
+          height: '100px',
+          borderWidth: '5px',
+          transform: 'translateX(10px) translateY(20px)'
+        }
+      });
+
+      let root;
+      act(() => {
+        root = create(
+          <ViewportProvider viewportWidth={1280}>
+            <html.div style={styles.container}>
+              <html.span>Scaled content</html.span>
+            </html.div>
+          </ViewportProvider>
+        );
+      });
+
+      expect(root.toJSON()).toMatchSnapshot('scaled lengths');
+
+      ReactNative.useWindowDimensions.mockRestore();
+    });
+  });
 });
