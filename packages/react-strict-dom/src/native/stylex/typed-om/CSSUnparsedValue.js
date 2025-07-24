@@ -39,7 +39,7 @@ const memoizedValues = new Map<string, CSSUnparsedValue>();
 
 // https://drafts.css-houdini.org/css-typed-om-1/#cssunparsedvalue
 export class CSSUnparsedValue /*extends CSSStyleValue*/ {
-  static #resolveVariableName(input: PostCSSValueASTNode[]): string | null {
+  static _resolveVariableName(input: PostCSSValueASTNode[]): string | null {
     const cleanedInput = input.filter((i) => i.type === 'word');
     if (cleanedInput.length !== 1) {
       return null;
@@ -47,7 +47,7 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
     return valueParser.stringify(cleanedInput[0]);
   }
 
-  static #resolveUnparsedValue(
+  static _resolveUnparsedValue(
     input: PostCSSValueASTNode[],
     depth: number = 0
   ): CSSUnparsedValue {
@@ -77,7 +77,7 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
       if (currentValue.type === 'function') {
         if (currentValue.value === 'var') {
           const args = splitComponentValueListByComma(currentValue.nodes);
-          const variableName = CSSUnparsedValue.#resolveVariableName(args[0]);
+          const variableName = CSSUnparsedValue._resolveVariableName(args[0]);
           if (variableName == null) {
             if (__DEV__) {
               warnMsg(
@@ -91,7 +91,7 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
 
           const fallbackValue =
             args[1] != null
-              ? CSSUnparsedValue.#resolveUnparsedValue(args[1], depth + 1)
+              ? CSSUnparsedValue._resolveUnparsedValue(args[1], depth + 1)
               : undefined;
 
           try {
@@ -109,7 +109,7 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
         } else {
           // stringify the function manually but still attempt to resolve the args
           appendString(`${currentValue.value}(`);
-          const functionArgs = CSSUnparsedValue.#resolveUnparsedValue(
+          const functionArgs = CSSUnparsedValue._resolveUnparsedValue(
             currentValue.nodes,
             depth + 1
           );
@@ -139,32 +139,32 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
     }
     const componentValueList = valueParser(input).nodes;
     const parsedValue =
-      CSSUnparsedValue.#resolveUnparsedValue(componentValueList);
+      CSSUnparsedValue._resolveUnparsedValue(componentValueList);
     memoizedValues.set(input, parsedValue);
     return parsedValue;
   }
 
-  #tokens: CSSUnparsedSegment[];
+  _tokens: CSSUnparsedSegment[];
 
   constructor(members: CSSUnparsedSegment[]) {
     // No super() call because it's slow in Hermes
-    this.#tokens = members;
+    this._tokens = members;
   }
 
   get(index: number): CSSUnparsedSegment {
-    return this.#tokens[index];
+    return this._tokens[index];
   }
 
   get size(): number {
-    return this.#tokens.length;
+    return this._tokens.length;
   }
 
   values(): Iterator<CSSUnparsedSegment> {
-    return this.#tokens.values();
+    return this._tokens.values();
   }
 
   toString(): string {
-    return this.#tokens
+    return this._tokens
       .map((t) => t.toString())
       .join('')
       .trim();
