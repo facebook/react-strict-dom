@@ -8,7 +8,6 @@
  */
 
 import valueParser from 'postcss-value-parser';
-import { CSSStyleValue } from './CSSStyleValue';
 import { CSSVariableReferenceValue } from './CSSVariableReferenceValue';
 import { errorMsg, warnMsg } from '../../../shared/logUtils';
 
@@ -39,7 +38,7 @@ function splitComponentValueListByComma(
 const memoizedValues = new Map<string, CSSUnparsedValue>();
 
 // https://drafts.css-houdini.org/css-typed-om-1/#cssunparsedvalue
-export class CSSUnparsedValue extends CSSStyleValue {
+export class CSSUnparsedValue /*extends CSSStyleValue*/ {
   static #resolveVariableName(input: PostCSSValueASTNode[]): string | null {
     const cleanedInput = input.filter((i) => i.type === 'word');
     if (cleanedInput.length !== 1) {
@@ -148,7 +147,7 @@ export class CSSUnparsedValue extends CSSStyleValue {
   #tokens: CSSUnparsedSegment[];
 
   constructor(members: CSSUnparsedSegment[]) {
-    super();
+    // No super() call because it's slow in Hermes
     this.#tokens = members;
   }
 
