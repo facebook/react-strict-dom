@@ -9,10 +9,8 @@
 
 import type { CSSUnparsedValue } from './CSSUnparsedValue';
 
-import { CSSStyleValue } from './CSSStyleValue';
-
 // https://drafts.css-houdini.org/css-typed-om-1/#cssvariablereferencevalue
-export class CSSVariableReferenceValue extends CSSStyleValue {
+export class CSSVariableReferenceValue /*extends CSSStyleValue*/ {
   // https://drafts.css-houdini.org/css-typed-om-1/#custom-property-name-string
   static #validateVariableName(variable: string): void {
     if (!variable.startsWith('--')) {
@@ -27,7 +25,7 @@ export class CSSVariableReferenceValue extends CSSStyleValue {
     if (__DEV__) {
       CSSVariableReferenceValue.#validateVariableName(variable);
     }
-    super();
+    // No super() call because it's slow in Hermes
     this.#variable = variable;
     this.#fallback = fallback ?? null;
   }
