@@ -46,7 +46,7 @@ type ResolveStyleOptions = $ReadOnly<{
   hover?: ?boolean,
   inheritedFontSize: ?number,
   viewportHeight: number,
-  viewportScale: number,
+  viewportScale?: number,
   viewportWidth: number,
   writingDirection?: ?'ltr' | 'rtl'
 }>;
@@ -298,7 +298,7 @@ function resolveStyle(
     hover,
     inheritedFontSize,
     viewportHeight,
-    viewportScale,
+    viewportScale = 1,
     viewportWidth
   } = options;
   const colorScheme = options.colorScheme || 'light';
