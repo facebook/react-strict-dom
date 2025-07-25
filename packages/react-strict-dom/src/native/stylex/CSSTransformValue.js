@@ -21,7 +21,7 @@ export class CSSTransformValue {
   }
 
   resolveTransformValue(
-    viewportScale: number
+    viewportScale?: number = 1
   ): $ReadOnlyArray<ReactNativeTransform> {
     if (viewportScale === 1) {
       return this.value;

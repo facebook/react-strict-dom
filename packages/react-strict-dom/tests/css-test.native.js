@@ -10,8 +10,7 @@ import { css } from 'react-strict-dom';
 const mockOptions = {
   hover: false,
   viewportHeight: 600,
-  viewportWidth: 320,
-  viewportScale: 1
+  viewportWidth: 320
 };
 
 /**
@@ -1732,8 +1731,7 @@ expect.extend({
     const theProps = css.props.call(
       {
         viewportHeight: height,
-        viewportWidth: width,
-        viewportScale: 1
+        viewportWidth: width
       },
       underTest
     );

@@ -57,7 +57,7 @@ export class CSSLengthUnitValue {
       fontScale = 1,
       inheritedFontSize,
       viewportHeight,
-      viewportScale,
+      viewportScale = 1,
       viewportWidth
     } = options;
     const unit = this.unit;
