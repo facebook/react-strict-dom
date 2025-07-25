@@ -725,13 +725,8 @@ export function props(
       if (
         nextStyle.alignContent != null ||
         nextStyle.alignItems != null ||
-        nextStyle.alignSelf != null ||
         nextStyle.columnGap != null ||
-        nextStyle.flex != null ||
-        nextStyle.flexBasis != null ||
         nextStyle.flexDirection != null ||
-        nextStyle.flexGrow != null ||
-        nextStyle.flexShrink != null ||
         nextStyle.flexWrap != null ||
         nextStyle.gap != null ||
         nextStyle.justifyContent != null ||
