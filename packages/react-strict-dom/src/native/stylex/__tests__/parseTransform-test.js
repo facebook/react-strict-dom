@@ -5,7 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { parseTransform } from '../parseTransform';
+import { parseTransform as parseTransformImpl } from '../parseTransform';
+
+function parseTransform(transform) {
+  return parseTransformImpl(transform).resolveTransformValue(1);
+}
 
 describe('parseTransform', () => {
   test('perspective', () => {

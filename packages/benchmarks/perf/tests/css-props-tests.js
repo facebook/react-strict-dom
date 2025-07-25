@@ -20,6 +20,7 @@ function runSuite(opts) {
     hover: true,
     inheritedFontSize: 16,
     viewportHeight: 600,
+    viewportScale: 1,
     viewportWidth: 1024
   };
 
@@ -29,6 +30,7 @@ function runSuite(opts) {
     hover: true,
     inheritedFontSize: 16,
     viewportHeight: 600,
+    viewportScale: 1,
     viewportWidth: 1024
   };
 

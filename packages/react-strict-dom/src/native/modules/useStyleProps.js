@@ -20,6 +20,7 @@ import { flattenStyle } from './flattenStyle';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
+import { useViewportScale } from './ContextViewportScale';
 
 type StyleOptions = {
   customProperties: ?CustomProperties,
@@ -66,6 +67,7 @@ export function useStyleProps(
 
   const { fontScale, height, width } = ReactNative.useWindowDimensions();
   const colorScheme = ReactNative.useColorScheme();
+  const { scale: viewportScale } = useViewportScale();
 
   // These values are already computed
   const {
@@ -104,6 +106,7 @@ export function useStyleProps(
       inheritedFontSize:
         typeof inheritedFontSize === 'number' ? inheritedFontSize : undefined,
       viewportHeight: height,
+      viewportScale,
       viewportWidth: width
     },
     flatStyle as $FlowFixMe

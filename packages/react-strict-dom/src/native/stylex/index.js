@@ -19,12 +19,14 @@ import type {
 } from '../../types/styles';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
+import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { isAllowedShortFormValue } from './isAllowedShortFormValue';
 import { isAllowedStyleKey } from './isAllowedStyleKey';
+import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
 import { parseTextShadow } from './parseTextShadow';
 import { parseTimeValue } from './parseTimeValue';
@@ -44,6 +46,7 @@ type ResolveStyleOptions = $ReadOnly<{
   hover?: ?boolean,
   inheritedFontSize: ?number,
   viewportHeight: number,
+  viewportScale: number,
   viewportWidth: number,
   writingDirection?: ?'ltr' | 'rtl'
 }>;
@@ -197,7 +200,7 @@ function processStyle(
 
       const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
       if (maybeLengthUnitValue != null) {
-        result[propName] = new CSSLengthUnitValue(...maybeLengthUnitValue);
+        result[propName] = maybeLengthUnitValue;
         continue;
         // React Native doesn't support these keywords or functions
       } else if (styleValue === 'inherit' || styleValue === 'unset') {
@@ -295,6 +298,7 @@ function resolveStyle(
     hover,
     inheritedFontSize,
     viewportHeight,
+    viewportScale,
     viewportWidth
   } = options;
   const colorScheme = options.colorScheme || 'light';
@@ -331,6 +335,7 @@ function resolveStyle(
           fontScale,
           inheritedFontSize: inheritedFontSize,
           viewportHeight,
+          viewportScale,
           viewportWidth
         });
         continue;
@@ -343,6 +348,7 @@ function resolveStyle(
             fontScale,
             inheritedFontSize: fontSize,
             viewportHeight,
+            viewportScale,
             viewportWidth
           });
         } else {
@@ -350,6 +356,19 @@ function resolveStyle(
         }
         continue;
       }
+    }
+
+    if (styleValue instanceof CSSTransformValue) {
+      result[propName] = styleValue.resolveTransformValue(viewportScale);
+      continue;
+    }
+    if (
+      viewportScale !== 1 &&
+      typeof styleValue === 'number' &&
+      lengthStyleKeySet.has(propName)
+    ) {
+      result[propName] = styleValue * viewportScale;
+      continue;
     }
 
     // Resolve the stylex object-value syntax

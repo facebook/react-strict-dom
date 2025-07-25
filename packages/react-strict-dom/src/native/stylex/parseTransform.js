@@ -9,16 +9,16 @@
 
 import type { ReactNativeTransform } from '../../types/renderer.native';
 
+import { CSSTransformValue } from './CSSTransformValue';
+
 const transformRegex1 =
   /(perspective|scale|scaleX|scaleY|scaleZ|translateX|translateY)\(([0-9.+\-eE]+)(px|%)?\)/;
 const transformRegex2 = /(rotate|rotateX|rotateY|rotateZ|skewX|skewY)\((.*)\)/;
 const transformRegex3 = /matrix\((.*)\)/;
 
-const memoizedValues = new Map<string, ReactNativeTransform[]>();
+const memoizedValues = new Map<string, CSSTransformValue>();
 
-export function parseTransform(
-  transform: string
-): $ReadOnlyArray<ReactNativeTransform> {
+export function parseTransform(transform: string): CSSTransformValue {
   const memoizedValue = memoizedValues.get(transform);
   if (memoizedValue != null) {
     return memoizedValue;
@@ -114,7 +114,7 @@ export function parseTransform(
     }
   }
 
-  memoizedValues.set(transform, parsedTransforms);
-
-  return parsedTransforms;
+  const cssTransformValue = new CSSTransformValue(parsedTransforms);
+  memoizedValues.set(transform, cssTransformValue);
+  return cssTransformValue;
 }

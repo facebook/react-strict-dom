@@ -4,15 +4,16 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict
+ * @flow strict-local
  */
 
 import type { CallbackRef } from '../../types/react';
 
 import * as React from 'react';
 
-import { useElementCallback } from '../../shared/useElementCallback';
 import { errorMsg } from '../../shared/logUtils';
+import { useElementCallback } from '../../shared/useElementCallback';
+import { useViewportScale } from './ContextViewportScale';
 
 function errorUnimplemented(name: string) {
   if (__DEV__) {
@@ -33,6 +34,7 @@ type Options = {
 };
 
 export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
+  const { scale: viewportScale } = useViewportScale();
   const elementCallback = useElementCallback(
     React.useCallback(
       // $FlowFixMe[unclear-type]
@@ -80,6 +82,20 @@ export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
             } else {
               errorUnimplemented('getBoundingClientRect');
             }
+          };
+        }
+
+        if (viewportScale !== 1) {
+          const getBoundingClientRect = node.getBoundingClientRect;
+          node.getBoundingClientRect = function () {
+            const rect = getBoundingClientRect.call(node);
+
+            return new DOMRect(
+              rect.x / viewportScale,
+              rect.y / viewportScale,
+              rect.width / viewportScale,
+              rect.height / viewportScale
+            );
           };
         }
 
@@ -157,7 +173,7 @@ export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
           }
         }
       },
-      [tagName]
+      [tagName, viewportScale]
     )
   );
 

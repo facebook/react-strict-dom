@@ -22,6 +22,7 @@ import * as compat from './compat';
 import * as html from './html';
 import * as stylex from './stylex';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
+import { ProvideViewportScale } from './modules/ContextViewportScale';
 
 type StyleTheme<V, T> = Theme<V, T>;
 type StyleVars<T> = VarGroup<T>;
@@ -48,7 +49,8 @@ function ThemeProvider(props: ProviderProps): React.Node {
 }
 
 const contexts = {
-  ThemeProvider: ThemeProvider as typeof ThemeProvider
+  ThemeProvider: ThemeProvider as typeof ThemeProvider,
+  ViewportProvider: ProvideViewportScale as typeof ProvideViewportScale
 };
 
 // Export using StyleX types as the shim has divergent types internally.
