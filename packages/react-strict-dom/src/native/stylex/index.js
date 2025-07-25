@@ -19,12 +19,14 @@ import type {
 } from '../../types/styles';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
+import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { isAllowedShortFormValue } from './isAllowedShortFormValue';
 import { isAllowedStyleKey } from './isAllowedStyleKey';
+import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
 import { parseTextShadow } from './parseTextShadow';
 import { parseTimeValue } from './parseTimeValue';
@@ -34,8 +36,6 @@ import {
   stringContainsVariables
 } from './customProperties';
 import { version } from '../modules/version';
-import { CSSTransformValue } from './CSSTransformValue';
-import { LENGTH_PROPS } from './lengthProps';
 
 type ResolveStyleOptions = $ReadOnly<{
   active?: ?boolean,
@@ -365,7 +365,7 @@ function resolveStyle(
     if (
       viewportScale !== 1 &&
       typeof styleValue === 'number' &&
-      LENGTH_PROPS.has(propName)
+      lengthStyleKeySet.has(propName)
     ) {
       result[propName] = styleValue * viewportScale;
       continue;

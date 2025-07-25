@@ -2028,11 +2028,11 @@ exports[`<html.*> viewport width lengths are scaled according to viewport width:
   ref={[Function]}
   style={
     {
-      "borderWidth": 3.75,
+      "borderWidth": 0.75,
       "boxSizing": "content-box",
       "height": 75,
       "margin": 15,
-      "padding": 11.25,
+      "padding": 24,
       "position": "static",
       "transform": [
         {
@@ -2051,6 +2051,8 @@ exports[`<html.*> viewport width lengths are scaled according to viewport width:
     style={
       {
         "boxSizing": "content-box",
+        "fontSize": 24,
+        "lineHeight": 24,
         "position": "static",
       }
     }

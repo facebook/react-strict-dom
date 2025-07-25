@@ -18,13 +18,11 @@ import type {
 import typeof * as TStyleX from '@stylexjs/stylex';
 
 import * as React from 'react';
-import { useMemo } from 'react';
 import * as compat from './compat';
 import * as html from './html';
 import * as stylex from './stylex';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 import { ProvideViewportScale } from './modules/ContextViewportScale';
-import * as ReactNative from './react-native';
 
 type StyleTheme<V, T> = Theme<V, T>;
 type StyleVars<T> = VarGroup<T>;
@@ -36,11 +34,6 @@ type ProviderValue = $ReadOnly<{ [string]: string | number }>;
 type ProviderProps = $ReadOnly<{
   children: React.Node,
   customProperties: ProviderValue
-}>;
-
-type ViewportProviderProps = $ReadOnly<{
-  children: React.Node,
-  viewportWidth: number
 }>;
 
 export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
@@ -55,29 +48,9 @@ function ThemeProvider(props: ProviderProps): React.Node {
   );
 }
 
-function ViewportProvider({
-  viewportWidth: logicalViewportWidth,
-  children
-}: ViewportProviderProps): React.Node {
-  const { width: viewportWidth } = ReactNative.useWindowDimensions();
-
-  const viewportScale = useMemo(
-    () => ({
-      scale: viewportWidth / logicalViewportWidth
-    }),
-    [logicalViewportWidth, viewportWidth]
-  );
-
-  return (
-    <ProvideViewportScale value={viewportScale}>
-      {children}
-    </ProvideViewportScale>
-  );
-}
-
 const contexts = {
   ThemeProvider: ThemeProvider as typeof ThemeProvider,
-  ViewportProvider: ViewportProvider as typeof ViewportProvider
+  ViewportProvider: ProvideViewportScale as typeof ProvideViewportScale
 };
 
 // Export using StyleX types as the shim has divergent types internally.

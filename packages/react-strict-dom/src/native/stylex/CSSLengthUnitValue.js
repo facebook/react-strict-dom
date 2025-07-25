@@ -54,11 +54,11 @@ export class CSSLengthUnitValue {
 
   resolvePixelValue(options: ResolvePixelValueOptions): number {
     const {
-      viewportWidth,
-      viewportHeight,
       fontScale = 1,
       inheritedFontSize,
-      viewportScale
+      viewportHeight,
+      viewportScale,
+      viewportWidth
     } = options;
     const unit = this.unit;
     const value = this.value;
@@ -66,7 +66,7 @@ export class CSSLengthUnitValue {
     switch (unit) {
       case 'em': {
         if (inheritedFontSize == null) {
-          return fontScale * 16 * value;
+          return fontScale * 16 * value * viewportScale;
         } else {
           return inheritedFontSize * value;
         }

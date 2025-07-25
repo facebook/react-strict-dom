@@ -1641,12 +1641,16 @@ describe('<html.*>', () => {
 
       const styles = css.create({
         container: {
-          margin: '20px',
-          padding: '15px',
-          width: '200px',
+          borderWidth: '1px',
           height: '100px',
-          borderWidth: '5px',
+          margin: '20px',
+          padding: '2em',
+          width: '200px',
           transform: 'translateX(10px) translateY(20px)'
+        },
+        text: {
+          fontSize: '2rem',
+          lineHeight: '1em'
         }
       });
 
@@ -1655,12 +1659,13 @@ describe('<html.*>', () => {
         root = create(
           <ViewportProvider viewportWidth={1280}>
             <html.div style={styles.container}>
-              <html.span>Scaled content</html.span>
+              <html.span style={styles.text}>Scaled content</html.span>
             </html.div>
           </ViewportProvider>
         );
       });
 
+      // scale factor 0.75
       expect(root.toJSON()).toMatchSnapshot('scaled lengths');
 
       ReactNative.useWindowDimensions.mockRestore();

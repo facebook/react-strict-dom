@@ -4,15 +4,15 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict
+ * @flow strict-local
  */
 
 import type { CallbackRef } from '../../types/react';
 
 import * as React from 'react';
 
-import { useElementCallback } from '../../shared/useElementCallback';
 import { errorMsg } from '../../shared/logUtils';
+import { useElementCallback } from '../../shared/useElementCallback';
 import { useViewportScale } from './ContextViewportScale';
 
 function errorUnimplemented(name: string) {
