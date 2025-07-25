@@ -8,7 +8,7 @@
 import { parseTransform as parseTransformImpl } from '../parseTransform';
 
 function parseTransform(transform) {
-  return parseTransformImpl(transform).resolveTransformValue(1);
+  return parseTransformImpl(transform).resolveTransformValue();
 }
 
 describe('parseTransform', () => {
