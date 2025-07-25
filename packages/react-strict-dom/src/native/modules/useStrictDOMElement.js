@@ -33,12 +33,16 @@ type Options = {
   tagName: string
 };
 
+// $FlowFixMe[unclear-type]
+type Node = any;
+
+const originalGetBoundingClientRects = new WeakMap<Node, () => DOMRect>();
+
 export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
   const { scale: viewportScale } = useViewportScale();
   const elementCallback = useElementCallback(
     React.useCallback(
-      // $FlowFixMe[unclear-type]
-      (node: any) => {
+      (node: Node) => {
         Object.defineProperty(node, 'nodeName', {
           value: tagName.toUpperCase(),
           writable: false
@@ -86,9 +90,14 @@ export function useStrictDOMElement<T>({ tagName }: Options): CallbackRef<T> {
         }
 
         if (viewportScale !== 1) {
-          const getBoundingClientRect = node.getBoundingClientRect;
+          let getBoundingClientRect = originalGetBoundingClientRects.get(node);
+          if (getBoundingClientRect == null) {
+            getBoundingClientRect = node.getBoundingClientRect;
+            originalGetBoundingClientRects.set(node, getBoundingClientRect);
+          }
+          const getBoundingRectConst = getBoundingClientRect;
           node.getBoundingClientRect = function () {
-            const rect = getBoundingClientRect.call(node);
+            const rect = getBoundingRectConst.call(node);
 
             return new DOMRect(
               rect.x / viewportScale,
