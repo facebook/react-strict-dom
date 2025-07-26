@@ -9,6 +9,15 @@ import React from 'react';
 import { css, html, contexts } from 'react-strict-dom';
 import { act, create } from 'react-test-renderer';
 
+global.DOMRect = class DOMRect {
+  constructor(x, y, width, height) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+  }
+};
+
 describe('<html.*>', () => {
   beforeEach(() => {
     // avoid console messages for these tests
@@ -1632,12 +1641,20 @@ describe('<html.*>', () => {
   });
 
   describe('viewport width', () => {
-    test('lengths are scaled according to viewport width', () => {
-      const { ViewportProvider } = contexts;
-      const ReactNative = require('../src/native/react-native');
+    const ReactNative = require('../src/native/react-native');
+
+    beforeEach(() => {
       jest
         .spyOn(ReactNative, 'useWindowDimensions')
         .mockReturnValue({ width: 960 });
+    });
+
+    afterEach(() => {
+      ReactNative.useWindowDimensions.mockRestore();
+    });
+
+    test('lengths are scaled according to viewport width', () => {
+      const { ViewportProvider } = contexts;
 
       const styles = css.create({
         container: {
@@ -1667,8 +1684,36 @@ describe('<html.*>', () => {
 
       // scale factor 0.75
       expect(root.toJSON()).toMatchSnapshot('scaled lengths');
+    });
 
-      ReactNative.useWindowDimensions.mockRestore();
+    test('getClientBoundingRect() returns scaled values', () => {
+      const { ViewportProvider } = contexts;
+
+      function createNodeMock(element) {
+        const obj = {};
+        obj.addEventListener_unstable = () => {};
+        obj.blur = () => {};
+        obj.focus = () => {};
+        obj.removeEventListener_unstable = () => {};
+        obj.getBoundingClientRect = () => new DOMRect(21, 21, 99, 99);
+        return obj;
+      }
+
+      let scaledDomRect;
+      act(() => {
+        create(
+          <ViewportProvider viewportWidth={1280}>
+            <html.input
+              ref={(node) => {
+                scaledDomRect = node.getBoundingClientRect();
+              }}
+            />
+          </ViewportProvider>,
+          { createNodeMock }
+        );
+      });
+
+      expect(scaledDomRect).toEqual(new DOMRect(28, 28, 132, 132));
     });
   });
 });
