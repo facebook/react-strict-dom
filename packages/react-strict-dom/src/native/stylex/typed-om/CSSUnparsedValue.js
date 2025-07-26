@@ -7,6 +7,8 @@
  * @flow strict
  */
 
+import type { CSSValueASTNode } from '../../../types/value-parser';
+
 import valueParser from 'postcss-value-parser';
 import { CSSVariableReferenceValue } from './CSSVariableReferenceValue';
 import { errorMsg, warnMsg } from '../../../shared/logUtils';
@@ -17,8 +19,8 @@ type CSSUnparsedSegment = string | CSSVariableReferenceValue;
 const MAX_RESOLVE_DEPTH = 50;
 
 function splitComponentValueListByComma(
-  input: PostCSSValueASTNode[]
-): PostCSSValueASTNode[][] {
+  input: CSSValueASTNode[]
+): CSSValueASTNode[][] {
   const output = [];
   let current = [];
   for (const value of input) {
@@ -39,7 +41,7 @@ const memoizedValues = new Map<string, CSSUnparsedValue>();
 
 // https://drafts.css-houdini.org/css-typed-om-1/#cssunparsedvalue
 export class CSSUnparsedValue /*extends CSSStyleValue*/ {
-  static _resolveVariableName(input: PostCSSValueASTNode[]): string | null {
+  static _resolveVariableName(input: CSSValueASTNode[]): string | null {
     const cleanedInput = input.filter((i) => i.type === 'word');
     if (cleanedInput.length !== 1) {
       return null;
@@ -48,7 +50,7 @@ export class CSSUnparsedValue /*extends CSSStyleValue*/ {
   }
 
   static _resolveUnparsedValue(
-    input: PostCSSValueASTNode[],
+    input: CSSValueASTNode[],
     depth: number = 0
   ): CSSUnparsedValue {
     if (depth > MAX_RESOLVE_DEPTH) {
