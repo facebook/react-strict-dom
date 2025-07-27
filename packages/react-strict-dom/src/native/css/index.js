@@ -7,433 +7,23 @@
  * @flow strict
  */
 
-import type {
-  ReactNativeProps,
-  ReactNativeStyle
-} from '../../types/renderer.native';
-
-import type {
-  CustomProperties,
-  MutableCustomProperties,
-  IStyleX
-} from '../../types/styles';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { ReactNativeStyle } from '../../types/renderer.native';
+import type { CustomProperties } from '../../types/styles';
+import type { MutableCustomProperties } from '../../types/styles';
+import type { IStyleX } from '../../types/styles';
 
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
-import { errorMsg, warnMsg } from '../../shared/logUtils';
+import { errorMsg } from '../../shared/logUtils';
 import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
-import { isAllowedShortFormValue } from './isAllowedShortFormValue';
-import { isAllowedStyleKey } from './isAllowedStyleKey';
 import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
-import { parseTextShadow } from './parseTextShadow';
-import { parseTimeValue } from './parseTimeValue';
-import { parseTransform } from './parseTransform';
-import {
-  resolveVariableReferences,
-  stringContainsVariables
-} from './customProperties';
+import { processStyle } from './processStyle';
+import { resolveVariableReferences } from './customProperties';
 import { version } from '../modules/version';
-
-type ResolveStyleOptions = $ReadOnly<{
-  active?: ?boolean,
-  colorScheme: ?('light' | 'dark'),
-  customProperties: CustomProperties,
-  focus?: ?boolean,
-  fontScale: number | void,
-  hover?: ?boolean,
-  inheritedFontSize: ?number,
-  viewportHeight: number,
-  viewportScale: number | void,
-  viewportWidth: number,
-  writingDirection?: ?'ltr' | 'rtl'
-}>;
-
-const validPlaceContentValues = new Set<string>([
-  'center',
-  'flex-end',
-  'flex-start',
-  // distributed alignment
-  'space-around',
-  'space-between',
-  'space-evenly'
-]);
-
-/**
- * Pre-process 'create'
- */
-
-function processStyle(
-  style: { +[string]: mixed },
-  skipValidation?: boolean
-): { +[string]: mixed } {
-  const result: { [string]: mixed } = {};
-
-  for (const propName in style) {
-    const styleValue = style[propName];
-
-    if (skipValidation !== true && !isAllowedStyleKey(propName)) {
-      if (__DEV__) {
-        warnMsg(`unsupported style property "${propName}"`);
-      }
-      continue;
-    }
-
-    // Object values
-    else if (typeof styleValue === 'object' && styleValue != null) {
-      if (propName === '::placeholder') {
-        const placeholderStyleProps = Object.keys(styleValue);
-        for (let i = 0; i < placeholderStyleProps.length; i++) {
-          const prop = placeholderStyleProps[i];
-          if (prop === 'color') {
-            result['placeholderTextColor'] = processStyle({
-              color: styleValue.color
-            }).color;
-          } else {
-            if (__DEV__) {
-              warnMsg(`unsupported "::placeholder" style property "${prop}"`);
-            }
-          }
-        }
-        continue;
-      } else if (Object.hasOwn(styleValue, 'default')) {
-        result[propName] = processStyle(styleValue);
-        continue;
-      }
-    }
-
-    // String values
-    else if (typeof styleValue === 'string') {
-      // Polyfill support for string '0' on Android
-      if (styleValue === '0') {
-        result[propName] = 0;
-        continue;
-      }
-      // Polyfill support for string opacity on Android
-      if (propName === 'opacity') {
-        result[propName] = parseFloat(styleValue);
-        continue;
-      }
-      // Polyfill support for custom property references (do this first)
-      else if (stringContainsVariables(styleValue)) {
-        result[propName] = CSSUnparsedValue.parse(propName, styleValue);
-        continue;
-      } else if (
-        propName === 'caretColor' &&
-        (typeof styleValue === 'undefined' || styleValue === 'auto')
-      ) {
-        if (__DEV__) {
-          warnMsg(
-            `unsupported style value in "${propName}:${String(styleValue)}"`
-          );
-        }
-        continue;
-      } else if (propName === 'backgroundImage') {
-        result.experimental_backgroundImage = styleValue;
-        continue;
-      }
-      // Workaround unsupported objectFit values
-      else if (propName === 'objectFit' && styleValue === 'none') {
-        result[propName] = 'scale-down';
-        continue;
-      }
-      // Polyfill placeContent
-      else if (propName === 'placeContent') {
-        // None of these values are supported in RN for both properties.
-        if (!validPlaceContentValues.has(styleValue)) {
-          if (__DEV__) {
-            warnMsg(
-              `unsupported style value in "${propName}:${String(styleValue)}"`
-            );
-          }
-          continue;
-        }
-      }
-      // Workaround unsupported position values
-      else if (
-        propName === 'position' &&
-        (styleValue === 'fixed' || styleValue === 'sticky')
-      ) {
-        const fallback = styleValue === 'fixed' ? 'absolute' : 'relative';
-        if (__DEV__) {
-          warnMsg(
-            `unsupported style value in "position:${styleValue}". Falling back to "position:${fallback}".`
-          );
-        }
-        result[propName] = fallback;
-        continue;
-      }
-      // Workaround unsupported textAlign values
-      // https://github.com/facebook/react-native/issues/45255
-      else if (propName === 'textAlign') {
-        if (styleValue === 'start') {
-          result[propName] = 'left';
-        } else if (styleValue === 'end') {
-          result[propName] = 'right';
-        } else {
-          result[propName] = styleValue;
-        }
-        continue;
-      }
-      // Polyfill textShadow
-      else if (propName === 'textShadow') {
-        result[propName] = parseTextShadow(styleValue);
-        continue;
-      }
-      // Polyfill transform as string value
-      else if (propName === 'transform') {
-        result[propName] = parseTransform(styleValue);
-        continue;
-      }
-      // Polyfill time-valued string values (e.g., '1000ms' => 1000)
-      else if (
-        propName === 'animationDelay' ||
-        propName === 'animationDuration' ||
-        propName === 'transitionDelay' ||
-        propName === 'transitionDuration'
-      ) {
-        result[propName] = parseTimeValue(styleValue);
-        continue;
-      }
-
-      const maybeLengthUnitValue = CSSLengthUnitValue.parse(styleValue);
-      if (maybeLengthUnitValue != null) {
-        result[propName] = maybeLengthUnitValue;
-        continue;
-        // React Native doesn't support these keywords or functions
-      } else if (styleValue === 'inherit' || styleValue === 'unset') {
-        // direction has native support for 'inherit'
-        if (propName === 'direction') {
-          result[propName] = 'inherit';
-          continue;
-        }
-        // inherited properties polyfill 'inherit' in useStyleProps
-        else if (
-          propName !== ':active' &&
-          propName !== ':focus' &&
-          propName !== ':hover' &&
-          propName !== 'default' &&
-          propName !== 'color' &&
-          propName !== 'cursor' &&
-          propName !== 'fontFamily' &&
-          propName !== 'fontSize' &&
-          propName !== 'fontStyle' &&
-          propName !== 'fontVariant' &&
-          propName !== 'fontWeight' &&
-          propName !== 'letterSpacing' &&
-          propName !== 'lineHeight' &&
-          propName !== 'textAlign' &&
-          propName !== 'textDecorationColor' &&
-          propName !== 'textDecorationLine' &&
-          propName !== 'textDecorationStyle' &&
-          propName !== 'textAlign' &&
-          propName !== 'textIndent' &&
-          propName !== 'textTransform' &&
-          propName !== 'whiteSpace'
-        ) {
-          if (__DEV__) {
-            warnMsg(
-              `unsupported style value in "${propName}:${String(styleValue)}"`
-            );
-          }
-          continue;
-        }
-      } else if (
-        styleValue === 'currentcolor' ||
-        styleValue === 'initial' ||
-        styleValue.includes('calc(')
-      ) {
-        if (__DEV__) {
-          warnMsg(
-            `unsupported style value in "${propName}:${String(styleValue)}"`
-          );
-        }
-        continue;
-      } else if (!isAllowedShortFormValue(propName, styleValue)) {
-        if (__DEV__) {
-          errorMsg(
-            `invalid style value in "${propName}:${String(styleValue)}". Shortform properties cannot contain multiple values. Please use longform properties.`
-          );
-        }
-        continue;
-      }
-    }
-
-    // Number values
-    else if (typeof styleValue === 'number') {
-      // Polyfill numeric fontWeight (for desktop)
-      if (propName === 'fontWeight') {
-        result[propName] = styleValue.toString();
-        continue;
-      }
-      // Normalize unitless lineHeight to string
-      if (propName === 'lineHeight') {
-        result[propName] = styleValue.toString();
-        continue;
-      }
-    }
-
-    // Everything else
-    result[propName] = styleValue;
-  }
-
-  return result;
-}
-
-/**
- * Resolve 'props'
- */
-const mqDark = '@media (prefers-color-scheme: dark)';
-
-function resolveStyle(
-  style: $ReadOnlyArray<?{ +[string]: mixed }> | { +[string]: mixed },
-  options: ResolveStyleOptions
-): { +[string]: mixed } {
-  const {
-    active,
-    focus,
-    fontScale,
-    hover,
-    inheritedFontSize,
-    viewportHeight,
-    viewportScale = 1,
-    viewportWidth
-  } = options;
-  const colorScheme = options.colorScheme || 'light';
-  const customProperties = options.customProperties || __customProperties;
-
-  const result: { [string]: mixed } = {};
-  const stylesToReprocess: { [string]: mixed } = {};
-  const flatStyle = flattenStyle(style);
-
-  for (const propName in flatStyle) {
-    const styleValue = flatStyle[propName];
-
-    // Resolve custom property references
-    if (styleValue instanceof CSSUnparsedValue) {
-      const resolvedValue = resolveVariableReferences(
-        propName,
-        styleValue,
-        customProperties,
-        colorScheme
-      );
-      if (resolvedValue != null) {
-        stylesToReprocess[propName] = resolvedValue;
-      }
-      continue;
-    }
-
-    // Resolve length units
-    if (styleValue instanceof CSSLengthUnitValue) {
-      const fontSize = flatStyle.fontSize;
-      // If fontSize is being resolved, or there is no fontSize for this style,
-      // we use the inherited fontSize.
-      if (propName === 'fontSize' || fontSize == null) {
-        result[propName] = styleValue.resolvePixelValue({
-          fontScale,
-          inheritedFontSize: inheritedFontSize,
-          viewportHeight,
-          viewportScale,
-          viewportWidth
-        });
-        continue;
-      }
-      if (fontSize != null) {
-        // If the style contains a fontSize, it must first be resolved and then
-        // used as the "inherited" value to resolve other lengths correctly.
-        if (typeof fontSize === 'number') {
-          result[propName] = styleValue.resolvePixelValue({
-            fontScale,
-            inheritedFontSize: fontSize,
-            viewportHeight,
-            viewportScale,
-            viewportWidth
-          });
-        } else {
-          stylesToReprocess[propName] = styleValue;
-        }
-        continue;
-      }
-    }
-
-    if (styleValue instanceof CSSTransformValue) {
-      result[propName] = styleValue.resolveTransformValue(viewportScale);
-      continue;
-    }
-    if (
-      viewportScale !== 1 &&
-      typeof styleValue === 'number' &&
-      lengthStyleKeySet.has(propName)
-    ) {
-      result[propName] = styleValue * viewportScale;
-      continue;
-    }
-
-    // Resolve the stylex object-value syntax
-    if (
-      styleValue != null &&
-      typeof styleValue === 'object' &&
-      Object.hasOwn(styleValue, 'default')
-    ) {
-      let activeVariant = 'default';
-      if (Object.hasOwn(styleValue, ':hover') && hover === true) {
-        activeVariant = ':hover';
-      }
-      if (Object.hasOwn(styleValue, ':focus') && focus === true) {
-        activeVariant = ':focus';
-      }
-      if (Object.hasOwn(styleValue, ':active') && active === true) {
-        activeVariant = ':active';
-      }
-      if (Object.hasOwn(styleValue, mqDark) && colorScheme === 'dark') {
-        activeVariant = mqDark;
-      }
-      // Just picks the last MQ in order that matches.
-      // TODO: decide how StyleX should handle multiple MQs.
-      for (const variant in styleValue) {
-        if (variant.startsWith('@media') && variant !== mqDark) {
-          const matches = mediaQueryMatches(
-            variant,
-            viewportWidth,
-            viewportHeight
-          );
-          if (matches) {
-            activeVariant = variant;
-          }
-        }
-      }
-      stylesToReprocess[propName] = styleValue[activeVariant];
-      continue;
-    }
-
-    // Resolve textShadow
-    if (propName === 'textShadow') {
-      Object.assign(result, styleValue);
-      continue;
-    }
-
-    result[propName] = styleValue;
-  }
-
-  const propNamesToReprocess = Object.keys(stylesToReprocess);
-  if (propNamesToReprocess.length > 0) {
-    const processedStyles = processStyle(stylesToReprocess, true);
-    // We can end up re-processing values without a fontSize (since it might already be resolved),
-    // which generates incorrect 'em'-based values. Passing the fontSize back in avoids this.
-    const resolvedFontSize = result.fontSize;
-    const fontSizeStyle =
-      resolvedFontSize != null ? { fontSize: resolvedFontSize } : null;
-    const resolvedStyles = resolveStyle(
-      [fontSizeStyle, processedStyles],
-      options
-    );
-    Object.assign(result, resolvedStyles);
-  }
-
-  return result;
-}
 
 export const __customProperties: MutableCustomProperties = {};
 
@@ -525,6 +115,173 @@ function _positionTry(p: PositionTry): PositionTry {
   return p;
 }
 export const positionTry: (PositionTry) => string = _positionTry as $FlowFixMe;
+
+type ResolveStyleOptions = $ReadOnly<{
+  active?: ?boolean,
+  colorScheme: ?('light' | 'dark'),
+  customProperties: CustomProperties,
+  focus?: ?boolean,
+  fontScale: number | void,
+  hover?: ?boolean,
+  inheritedFontSize: ?number,
+  viewportHeight: number,
+  viewportScale: number | void,
+  viewportWidth: number,
+  writingDirection?: ?'ltr' | 'rtl'
+}>;
+
+/**
+ * Resolve 'props'
+ */
+const mqDark = '@media (prefers-color-scheme: dark)';
+
+function resolveStyle(
+  style: $ReadOnlyArray<?{ +[string]: mixed }> | { +[string]: mixed },
+  options: ResolveStyleOptions
+): { +[string]: mixed } {
+  const {
+    active,
+    focus,
+    fontScale,
+    hover,
+    inheritedFontSize,
+    viewportHeight,
+    viewportScale = 1,
+    viewportWidth
+  } = options;
+  const colorScheme = options.colorScheme || 'light';
+  const customProperties = options.customProperties || __customProperties;
+
+  const result: { [string]: mixed } = {};
+  const stylesToReprocess: { [string]: mixed } = {};
+  const flatStyle = flattenStyle(style);
+
+  for (const propName in flatStyle) {
+    const styleValue = flatStyle[propName];
+
+    // Resolve custom property references
+    if (styleValue instanceof CSSUnparsedValue) {
+      const resolvedValue = resolveVariableReferences(
+        propName,
+        styleValue,
+        customProperties,
+        colorScheme
+      );
+      if (resolvedValue != null) {
+        stylesToReprocess[propName] = resolvedValue;
+      }
+      continue;
+    }
+
+    // Resolve length units
+    if (styleValue instanceof CSSLengthUnitValue) {
+      const fontSize = flatStyle.fontSize;
+      // If fontSize is being resolved, or there is no fontSize for this style,
+      // we use the inherited fontSize.
+      if (propName === 'fontSize' || fontSize == null) {
+        result[propName] = styleValue.resolvePixelValue({
+          fontScale,
+          inheritedFontSize: inheritedFontSize,
+          viewportHeight,
+          viewportScale,
+          viewportWidth
+        });
+        continue;
+      }
+      if (fontSize != null) {
+        // If the style contains a fontSize, it must first be resolved and then
+        // used as the "inherited" value to resolve other lengths correctly.
+        if (typeof fontSize === 'number') {
+          result[propName] = styleValue.resolvePixelValue({
+            fontScale,
+            inheritedFontSize: fontSize,
+            viewportHeight,
+            viewportScale,
+            viewportWidth
+          });
+        } else {
+          stylesToReprocess[propName] = styleValue;
+        }
+        continue;
+      }
+    }
+
+    if (styleValue instanceof CSSTransformValue) {
+      result[propName] = styleValue.resolveTransformValue(viewportScale);
+      continue;
+    }
+    if (
+      viewportScale !== 1 &&
+      typeof styleValue === 'number' &&
+      lengthStyleKeySet.has(propName)
+    ) {
+      result[propName] = styleValue * viewportScale;
+      continue;
+    }
+
+    // Resolve the object-value syntax
+    if (
+      styleValue != null &&
+      typeof styleValue === 'object' &&
+      Object.hasOwn(styleValue, 'default')
+    ) {
+      let activeVariant = 'default';
+      if (Object.hasOwn(styleValue, ':hover') && hover === true) {
+        activeVariant = ':hover';
+      }
+      if (Object.hasOwn(styleValue, ':focus') && focus === true) {
+        activeVariant = ':focus';
+      }
+      if (Object.hasOwn(styleValue, ':active') && active === true) {
+        activeVariant = ':active';
+      }
+      if (Object.hasOwn(styleValue, mqDark) && colorScheme === 'dark') {
+        activeVariant = mqDark;
+      }
+      // Just picks the last MQ in order that matches.
+      // TODO: decide how StyleX should handle multiple MQs.
+      for (const variant in styleValue) {
+        if (variant.startsWith('@media') && variant !== mqDark) {
+          const matches = mediaQueryMatches(
+            variant,
+            viewportWidth,
+            viewportHeight
+          );
+          if (matches) {
+            activeVariant = variant;
+          }
+        }
+      }
+      stylesToReprocess[propName] = styleValue[activeVariant];
+      continue;
+    }
+
+    // Resolve textShadow
+    if (propName === 'textShadow') {
+      Object.assign(result, styleValue);
+      continue;
+    }
+
+    result[propName] = styleValue;
+  }
+
+  const propNamesToReprocess = Object.keys(stylesToReprocess);
+  if (propNamesToReprocess.length > 0) {
+    const processedStyles = processStyle(stylesToReprocess, true);
+    // We can end up re-processing values without a fontSize (since it might already be resolved),
+    // which generates incorrect 'em'-based values. Passing the fontSize back in avoids this.
+    const resolvedFontSize = result.fontSize;
+    const fontSizeStyle =
+      resolvedFontSize != null ? { fontSize: resolvedFontSize } : null;
+    const resolvedStyles = resolveStyle(
+      [fontSizeStyle, processedStyles],
+      options
+    );
+    Object.assign(result, resolvedStyles);
+  }
+
+  return result;
+}
 
 export function props(
   this: ResolveStyleOptions,

@@ -29,7 +29,7 @@ if (__DEV__) {
 }
 
 // We do some special-casing to compute inherited fontSize.
-// The 'em' unit polyfill in stylex assumes the inherited fontSize is always a computed number.
+// The 'em' unit polyfill assumes the inherited fontSize is always a computed number.
 export function ProvideInheritedStyles(props: ProviderProps): React.Node {
   const { children, value } = props;
   const inheritedStyles = useInheritedStyles();

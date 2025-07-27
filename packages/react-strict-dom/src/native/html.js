@@ -29,9 +29,9 @@ import { createStrictDOMTextComponent as createStrictText } from './modules/crea
 import { createStrictDOMTextInputComponent as createStrictTextInput } from './modules/createStrictDOMTextInputComponent';
 // $FlowFixMe[nonstrict-import]
 import * as ReactNative from './react-native';
-import * as stylex from './stylex';
+import * as css from './css';
 
-const styles = stylex.create({
+const styles = css.create({
   bold: {
     fontWeight: 'bold'
   },

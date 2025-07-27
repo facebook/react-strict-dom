@@ -10,7 +10,7 @@
 import type { CustomProperties } from '../../types/styles';
 
 import * as React from 'react';
-import { __customProperties } from '../stylex';
+import { __customProperties } from '../css';
 
 const defaultContext = __customProperties;
 const ContextCustomProperties: React.Context<CustomProperties> =

@@ -20,7 +20,7 @@ import typeof * as TStyleX from '@stylexjs/stylex';
 import * as React from 'react';
 import * as compat from './compat';
 import * as html from './html';
-import * as stylex from './stylex';
+import * as _css from './css';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 import { ProvideViewportScale } from './modules/ContextViewportScale';
 
@@ -54,6 +54,6 @@ const contexts = {
 };
 
 // Export using StyleX types as the shim has divergent types internally.
-const css: TStyleX = stylex as $FlowFixMe;
+const css: TStyleX = _css as $FlowFixMe;
 
-export { contexts, compat, css, html };
+export { compat, contexts, css, html };

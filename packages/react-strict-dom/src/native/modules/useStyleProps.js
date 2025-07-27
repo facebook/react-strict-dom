@@ -13,7 +13,7 @@ import type {
   ReactNativeStyle
 } from '../../types/renderer.native';
 
-import * as stylex from '../stylex';
+import * as css from '../css';
 import * as ReactNative from '../react-native';
 
 import { flattenStyle } from './flattenStyle';
@@ -95,7 +95,7 @@ export function useStyleProps(
   const { active, focus, hover, handlers } = usePseudoStates(flatStyle);
 
   // Get the computed style props
-  const styleProps = stylex.props.call(
+  const styleProps = css.props.call(
     {
       active,
       colorScheme: colorScheme === 'unspecified' ? 'light' : colorScheme,

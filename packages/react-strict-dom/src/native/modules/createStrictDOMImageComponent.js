@@ -15,7 +15,7 @@ import * as ReactNative from '../react-native';
 import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
-import * as stylex from '../stylex';
+import * as css from '../css';
 
 export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
   tagName: string,
@@ -126,7 +126,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
   return component;
 }
 
-const styles = stylex.create({
+const styles = css.create({
   aspectRatio: (width: number, height: number) => ({
     aspectRatio: width / height,
     width,

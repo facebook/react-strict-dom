@@ -12,7 +12,7 @@ import type { ReactNativeProps } from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
 
-import * as stylex from '../stylex';
+import * as css from '../css';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
@@ -421,7 +421,7 @@ export function useNativeProps(
   };
 }
 
-const styles = stylex.create({
+const styles = css.create({
   contentBox: {
     boxSizing: 'content-box'
   },

@@ -14,7 +14,7 @@ module.exports = {
     '<rootDir>/src/**/*.{js,jsx}',
     // exclude
     '!<rootDir>/src/**/__tests__/**',
-    '!<rootDir>/src/native/stylex/typed-om/**',
+    '!<rootDir>/src/native/css/typed-om/**',
     '!<rootDir>/src/shared/logUtils.js',
     '!<rootDir>/src/types/**'
   ],
