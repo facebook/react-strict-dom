@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.43 (Jul 27, 2025)
+
+### New features
+
+* [Native] Add experimental support for setting a custom viewport width. See #344
+
+### Fixes
+
+* [Native] Improve e2e performance ~3% by avoiding JS APIs that are more costly in Hermes.
+* [Native] Remove `display:flex` warning for flex item properties.
+
 ## 0.0.42 (Jul 23, 2025)
 
 ### Fixes

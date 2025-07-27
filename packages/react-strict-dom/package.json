@@ -1,6 +1,6 @@
 {
   "name": "react-strict-dom",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "React Strict DOM",
   "exports": {
     ".": {
