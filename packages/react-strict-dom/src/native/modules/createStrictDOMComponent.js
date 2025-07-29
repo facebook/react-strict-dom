@@ -18,7 +18,6 @@ import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
 import { ProvideInheritedStyles } from './ContextInheritedStyles';
 import { TextString } from './TextString';
 import { warnMsg } from '../../shared/logUtils';
-import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
@@ -42,7 +41,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         tagName === 'button'
           ? ReactNative.Pressable
           : ReactNative.ViewNativeComponent;
-      const elementRef = useStrictDOMElement<T>({ tagName });
+      const elementRef = useStrictDOMElement<T>(forwardedRef, { tagName });
       const hasTextAncestor = React.useContext(ReactNative.TextAncestorContext);
 
       /**
@@ -85,10 +84,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
         }
       }
 
-      nativeProps.ref = React.useMemo(
-        () => mergeRefs(elementRef, forwardedRef),
-        [elementRef, forwardedRef]
-      );
+      nativeProps.ref = elementRef;
 
       // Workaround: React Native doesn't support raw text children of View
       // Sometimes we can auto-fix this

@@ -14,7 +14,6 @@ import * as React from 'react';
 import * as ReactNative from '../react-native';
 
 import { errorMsg } from '../../shared/logUtils';
-import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
@@ -35,7 +34,7 @@ export function createStrictDOMTextInputComponent<
       let NativeComponent:
         | typeof ReactNative.TextInput
         | typeof AnimatedTextInput = ReactNative.TextInput;
-      const elementRef = useStrictDOMElement<T>({ tagName });
+      const elementRef = useStrictDOMElement<T>(forwardedRef, { tagName });
 
       const {
         autoComplete,
@@ -180,10 +179,7 @@ export function createStrictDOMTextInputComponent<
         nativeProps.value = value;
       }
 
-      nativeProps.ref = React.useMemo(
-        () => mergeRefs(elementRef, forwardedRef),
-        [elementRef, forwardedRef]
-      );
+      nativeProps.ref = elementRef;
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {

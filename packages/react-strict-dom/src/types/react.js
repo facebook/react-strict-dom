@@ -7,6 +7,8 @@
  * @flow strict
  */
 
+import * as React from 'react';
+
 export type CallbackRef<T> = (node: T | null) => mixed;
 export type ObjectRef<T> = { -current: T, ... };
-export type Ref<T> = CallbackRef<T> | ObjectRef<T | null>;
+export type Ref<T> = CallbackRef<T> | ObjectRef<T | null> | React.RefObject<T>;

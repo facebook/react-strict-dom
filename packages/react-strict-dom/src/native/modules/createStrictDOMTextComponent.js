@@ -16,7 +16,6 @@ import * as ReactNative from '../react-native';
 import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideInheritedStyles } from './ContextInheritedStyles';
 import { errorMsg } from '../../shared/logUtils';
-import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
@@ -36,7 +35,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent = ReactNative.Text;
-      const elementRef = useStrictDOMElement<T>({ tagName });
+      const elementRef = useStrictDOMElement<T>(forwardedRef, { tagName });
 
       const { href, label } = props;
 
@@ -84,10 +83,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
 
       // Component-specific props
 
-      nativeProps.ref = React.useMemo(
-        () => mergeRefs(elementRef, forwardedRef),
-        [elementRef, forwardedRef]
-      );
+      nativeProps.ref = elementRef;
 
       // Workaround: Android doesn't support ellipsis truncation if Text is selectable
       // See #136
