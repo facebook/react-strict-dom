@@ -1668,6 +1668,9 @@ describe('<html.*>', () => {
         text: {
           fontSize: '2rem',
           lineHeight: '1em'
+        },
+        textOther: {
+          fontSize: 24
         }
       });
 
@@ -1677,6 +1680,7 @@ describe('<html.*>', () => {
           <ViewportProvider viewportWidth={1280}>
             <html.div style={styles.container}>
               <html.span style={styles.text}>Scaled content</html.span>
+              <html.span style={styles.textOther}>Scaled content</html.span>
             </html.div>
           </ViewportProvider>
         );

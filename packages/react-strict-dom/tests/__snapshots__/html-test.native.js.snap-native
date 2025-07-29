@@ -2059,5 +2059,17 @@ exports[`<html.*> viewport width lengths are scaled according to viewport width:
   >
     Scaled content
   </Text>
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "fontSize": 18,
+        "position": "static",
+      }
+    }
+  >
+    Scaled content
+  </Text>
 </ViewNativeComponent>
 `;

@@ -122,6 +122,7 @@ type ResolveStyleOptions = $ReadOnly<{
   customProperties: CustomProperties,
   focus?: ?boolean,
   fontScale: number | void,
+  fontSize?: ?number,
   hover?: ?boolean,
   inheritedFontSize: ?number,
   viewportHeight: number,
@@ -143,6 +144,7 @@ function resolveStyle(
     active,
     focus,
     fontScale,
+    fontSize: _fontSize,
     hover,
     inheritedFontSize,
     viewportHeight,
@@ -175,7 +177,8 @@ function resolveStyle(
 
     // Resolve length units
     if (styleValue instanceof CSSLengthUnitValue) {
-      const fontSize = flatStyle.fontSize;
+      const fontSize =
+        flatStyle.fontSize != null ? flatStyle.fontSize : _fontSize;
       // If fontSize is being resolved, or there is no fontSize for this style,
       // we use the inherited fontSize.
       if (propName === 'fontSize' || fontSize == null) {
@@ -270,13 +273,23 @@ function resolveStyle(
     const processedStyles = processStyle(stylesToReprocess, true);
     // We can end up re-processing values without a fontSize (since it might already be resolved),
     // which generates incorrect 'em'-based values. Passing the fontSize back in avoids this.
+    // However, if the fontSize is already a number it could be incorrectly scaled so it must be
+    // passed in as an option instead of a style.
     const resolvedFontSize = result.fontSize;
     const fontSizeStyle =
-      resolvedFontSize != null ? { fontSize: resolvedFontSize } : null;
-    const resolvedStyles = resolveStyle(
-      [fontSizeStyle, processedStyles],
-      options
-    );
+      resolvedFontSize != null && typeof resolvedFontSize !== 'number'
+        ? { fontSize: resolvedFontSize }
+        : null;
+    const nextStyles =
+      fontSizeStyle != null
+        ? [fontSizeStyle, processedStyles]
+        : processedStyles;
+    const nextOptions =
+      resolvedFontSize != null && typeof resolvedFontSize === 'number'
+        ? { ...options, fontSize: resolvedFontSize }
+        : options;
+
+    const resolvedStyles = resolveStyle(nextStyles, nextOptions);
     Object.assign(result, resolvedStyles);
   }
 
