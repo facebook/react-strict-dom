@@ -75,6 +75,7 @@ export class CSSLengthUnitValue {
         return value * viewportScale;
       }
       case 'rem': {
+        console.log('scaling out rem');
         return fontScale * 16 * value * viewportScale;
       }
       case 'vh': {

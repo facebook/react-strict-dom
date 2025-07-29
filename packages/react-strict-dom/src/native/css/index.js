@@ -210,6 +210,7 @@ function resolveStyle(
       result[propName] = styleValue.resolveTransformValue(viewportScale);
       continue;
     }
+
     if (
       viewportScale !== 1 &&
       typeof styleValue === 'number' &&
