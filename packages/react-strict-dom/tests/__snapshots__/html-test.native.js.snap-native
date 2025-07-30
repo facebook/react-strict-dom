@@ -2,7 +2,11 @@
 
 exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -24,7 +28,11 @@ exports[`<html.*> auto-wraps raw strings: auto-wrap raw strings 1`] = `
 
 exports[`<html.*> block layout override of flex layout: block layout override of flex 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "alignItems": "stretch",
@@ -40,7 +48,11 @@ exports[`<html.*> block layout override of flex layout: block layout override of
   }
 >
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -53,7 +65,11 @@ exports[`<html.*> block layout override of flex layout: block layout override of
 
 exports[`<html.*> default block layout: block layout 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -65,7 +81,11 @@ exports[`<html.*> default block layout: block layout 1`] = `
 
 exports[`<html.*> default flex layout: flex layout 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "alignContent": "stretch",
@@ -82,7 +102,11 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
   }
 >
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -92,7 +116,11 @@ exports[`<html.*> default flex layout: flex layout 1`] = `
     }
   />
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -109,7 +137,11 @@ exports[`<html.*> opt in to strict layout conformance: strict layout 1`] = `
   mode="strict"
 >
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -123,7 +155,11 @@ exports[`<html.*> opt in to strict layout conformance: strict layout 1`] = `
 exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   referrerPolicy="no-referrer"
   src="https://src.jpg"
   style={
@@ -139,7 +175,11 @@ exports[`<html.*> prop polyfills <img> "src" prop with loading props 1`] = `
 exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 <Image
   crossOrigin="use-credentials"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   referrerPolicy="no-referrer"
   srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
   style={
@@ -155,7 +195,11 @@ exports[`<html.*> prop polyfills <img> "srcSet" prop with loading props 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 1`] = `
 <TextInput
   autoComplete="additional-name"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -169,7 +213,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "additional-name" 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`] = `
 <TextInput
   autoComplete="address-line1"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -183,7 +231,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line1" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`] = `
 <TextInput
   autoComplete="address-line2"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -197,7 +249,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "address-line2" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
 <TextInput
   autoComplete="bday"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -211,7 +267,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
 <TextInput
   autoComplete="bday-day"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -225,7 +285,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-day" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] = `
 <TextInput
   autoComplete="bday-month"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -239,7 +303,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-month" 1`] =
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = `
 <TextInput
   autoComplete="bday-year"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -253,7 +321,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "bday-year" 1`] = 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
 <TextInput
   autoComplete="cc-csc"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -267,7 +339,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-csc" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
 <TextInput
   autoComplete="cc-exp"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -281,7 +357,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`] = `
 <TextInput
   autoComplete="cc-exp-month"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -295,7 +375,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-month" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] = `
 <TextInput
   autoComplete="cc-exp-year"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -309,7 +393,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-exp-year" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = `
 <TextInput
   autoComplete="cc-number"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -323,7 +411,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "cc-number" 1`] = 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
 <TextInput
   autoComplete="country"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -337,7 +429,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "country" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password" 1`] = `
 <TextInput
   autoComplete="current-password"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -351,7 +447,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "current-password"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
 <TextInput
   autoComplete="email"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -365,7 +465,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "email" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] = `
 <TextInput
   autoComplete="family-name"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -379,7 +483,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "family-name" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] = `
 <TextInput
   autoComplete="given-name"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -393,7 +501,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "given-name" 1`] =
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix" 1`] = `
 <TextInput
   autoComplete="honorific-prefix"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -407,7 +519,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-prefix"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix" 1`] = `
 <TextInput
   autoComplete="honorific-suffix"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -421,7 +537,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "honorific-suffix"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
 <TextInput
   autoComplete="name"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -435,7 +555,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "name" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`] = `
 <TextInput
   autoComplete="new-password"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -449,7 +573,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "new-password" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
 <TextInput
   autoComplete="nickname"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -463,7 +591,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "nickname" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 <TextInput
   autoComplete="off"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -477,7 +609,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "off" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "on" 1`] = `
 <TextInput
   autoComplete="on"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -491,7 +627,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "on" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`] = `
 <TextInput
   autoComplete="one-time-code"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -505,7 +645,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "one-time-code" 1`
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`] = `
 <TextInput
   autoComplete="organization"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -519,7 +663,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-title" 1`] = `
 <TextInput
   autoComplete="organization-title"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -533,7 +681,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "organization-titl
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] = `
 <TextInput
   autoComplete="postal-code"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -547,7 +699,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "postal-code" 1`] 
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
 <TextInput
   autoComplete="sex"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -561,7 +717,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "sex" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1`] = `
 <TextInput
   autoComplete="street-address"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -575,7 +735,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "street-address" 1
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
 <TextInput
   autoComplete="tel"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -589,7 +753,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code" 1`] = `
 <TextInput
   autoComplete="tel-country-code"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -603,7 +771,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-country-code"
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`] = `
 <TextInput
   autoComplete="tel-national"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -617,7 +789,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "tel-national" 1`]
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
 <TextInput
   autoComplete="url"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -631,7 +807,11 @@ exports[`<html.*> prop polyfills <input> "autoComplete" prop: "url" 1`] = `
 exports[`<html.*> prop polyfills <input> "autoComplete" prop: "username" 1`] = `
 <TextInput
   autoComplete="username"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -647,7 +827,11 @@ exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
   disabled={true}
   editable={false}
   focusable={false}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -661,7 +845,11 @@ exports[`<html.*> prop polyfills <input> "disabled" prop 1`] = `
 exports[`<html.*> prop polyfills <input> "style" prop 1`] = `
 <TextInput
   placeholderTextColor="pink"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -677,7 +865,11 @@ exports[`<html.*> prop polyfills <input> "style" prop 1`] = `
 exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 <TextInput
   inputMode="email"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -691,7 +883,11 @@ exports[`<html.*> prop polyfills <input> "type" prop: "email" 1`] = `
 exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
 <TextInput
   inputMode="numeric"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -704,7 +900,11 @@ exports[`<html.*> prop polyfills <input> "type" prop: "number" 1`] = `
 
 exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   secureTextEntry={true}
   style={
     {
@@ -719,7 +919,11 @@ exports[`<html.*> prop polyfills <input> "type" prop: "password" 1`] = `
 exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
 <TextInput
   inputMode="search"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -733,7 +937,11 @@ exports[`<html.*> prop polyfills <input> "type" prop: "search" 1`] = `
 exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
 <TextInput
   inputMode="tel"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -747,7 +955,11 @@ exports[`<html.*> prop polyfills <input> "type" prop: "tel" 1`] = `
 exports[`<html.*> prop polyfills <input> "type" prop: "url" 1`] = `
 <TextInput
   inputMode="url"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -764,7 +976,11 @@ exports[`<html.*> prop polyfills <textarea> "disabled" prop 1`] = `
   editable={false}
   focusable={false}
   multiline={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -780,7 +996,11 @@ exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
 <TextInput
   multiline={true}
   numberOfLines={5}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -794,7 +1014,11 @@ exports[`<html.*> prop polyfills <textarea> "rows" prop 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -806,7 +1030,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 <Text
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -819,7 +1047,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "auto" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -832,7 +1064,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 <Text
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -846,7 +1082,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "ltr" text 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -859,7 +1099,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" block 1`] = `
 
 exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 <Text
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -873,7 +1117,11 @@ exports[`<html.*> prop polyfills global "dir" prop: "rtl" text 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -886,7 +1134,11 @@ exports[`<html.*> prop polyfills global "hidden" prop 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -899,7 +1151,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -913,7 +1169,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "false" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -927,7 +1187,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "hidden" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -941,7 +1205,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -955,7 +1223,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "true" 2`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 <TextInput
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -968,7 +1240,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: "until-found" 1`] = `
 
 exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "alignContent": "stretch",
@@ -989,7 +1265,11 @@ exports[`<html.*> prop polyfills global "hidden" prop: display set 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
 <TextInput
   inputMode="decimal"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1003,7 +1283,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "decimal" 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
 <TextInput
   inputMode="email"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1017,7 +1301,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "email" 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
 <TextInput
   inputMode="numeric"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1031,7 +1319,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "numeric" 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
 <TextInput
   inputMode="search"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1045,7 +1337,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "search" 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
 <TextInput
   inputMode="tel"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1059,7 +1355,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "tel" 1`] = `
 exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 <TextInput
   inputMode="url"
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1073,7 +1373,11 @@ exports[`<html.*> prop polyfills global "inputMode" prop: "url" 1`] = `
 exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 <TextInput
   focusable={false}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 1,
@@ -1087,7 +1391,11 @@ exports[`<html.*> prop polyfills global "tabIndex" prop 1`] = `
 exports[`<html.*> style polyfills "transition" properties  backgroundColor transition: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": {
@@ -1110,7 +1418,11 @@ exports[`<html.*> style polyfills "transition" properties  backgroundColor trans
 exports[`<html.*> style polyfills "transition" properties  backgroundColor transition: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": "rgba(0,0,0,0.1)",
@@ -1124,7 +1436,11 @@ exports[`<html.*> style polyfills "transition" properties  backgroundColor trans
 exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing function: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1147,7 +1463,11 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing
 exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing function: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1160,7 +1480,11 @@ exports[`<html.*> style polyfills "transition" properties  cubic-bezier() timing
 
 exports[`<html.*> style polyfills "transition" properties  default: default 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": "red",
@@ -1174,7 +1498,11 @@ exports[`<html.*> style polyfills "transition" properties  default: default 1`] 
 exports[`<html.*> style polyfills "transition" properties  opacity transition: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1197,7 +1525,11 @@ exports[`<html.*> style polyfills "transition" properties  opacity transition: e
 exports[`<html.*> style polyfills "transition" properties  opacity transition: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1213,7 +1545,11 @@ exports[`<html.*> style polyfills "transition" properties  other element types 1
 exports[`<html.*> style polyfills "transition" properties  other transforms: rotate 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1276,7 +1612,11 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: rot
 exports[`<html.*> style polyfills "transition" properties  other transforms: scale 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1339,7 +1679,11 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: sca
 exports[`<html.*> style polyfills "transition" properties  other transforms: skew 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1378,7 +1722,11 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: ske
 exports[`<html.*> style polyfills "transition" properties  other transforms: translate 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1417,7 +1765,11 @@ exports[`<html.*> style polyfills "transition" properties  other transforms: tra
 exports[`<html.*> style polyfills "transition" properties  spring() timing function: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1440,7 +1792,11 @@ exports[`<html.*> style polyfills "transition" properties  spring() timing funct
 exports[`<html.*> style polyfills "transition" properties  spring() timing function: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1454,7 +1810,11 @@ exports[`<html.*> style polyfills "transition" properties  spring() timing funct
 exports[`<html.*> style polyfills "transition" properties  transform transition: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1493,7 +1853,11 @@ exports[`<html.*> style polyfills "transition" properties  transform transition:
 exports[`<html.*> style polyfills "transition" properties  transform transition: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1514,7 +1878,11 @@ exports[`<html.*> style polyfills "transition" properties  transform transition:
 exports[`<html.*> style polyfills "transition" properties  transition all properties (opacity and transform): end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1575,7 +1943,11 @@ exports[`<html.*> style polyfills "transition" properties  transition all proper
 exports[`<html.*> style polyfills "transition" properties  transition all properties (opacity and transform): start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1600,7 +1972,11 @@ exports[`<html.*> style polyfills "transition" properties  transition all proper
 exports[`<html.*> style polyfills "transition" properties  transition multiple properties: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": {
@@ -1638,7 +2014,11 @@ exports[`<html.*> style polyfills "transition" properties  transition multiple p
 exports[`<html.*> style polyfills "transition" properties  transition multiple properties: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": "red",
@@ -1658,7 +2038,11 @@ exports[`<html.*> style polyfills "transition" properties  transition multiple p
 exports[`<html.*> style polyfills "transition" properties  transition with missing properties 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1671,7 +2055,11 @@ exports[`<html.*> style polyfills "transition" properties  transition with missi
 exports[`<html.*> style polyfills "transition" properties  transition with missing properties 2`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1692,7 +2080,11 @@ exports[`<html.*> style polyfills "transition" properties  transition with missi
 exports[`<html.*> style polyfills "transition" properties  update triggers transition: green to blue 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": {
@@ -1715,7 +2107,11 @@ exports[`<html.*> style polyfills "transition" properties  update triggers trans
 exports[`<html.*> style polyfills "transition" properties  update triggers transition: red to green 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "backgroundColor": {
@@ -1738,7 +2134,11 @@ exports[`<html.*> style polyfills "transition" properties  update triggers trans
 exports[`<html.*> style polyfills "transition" properties  width transition: end 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1761,7 +2161,11 @@ exports[`<html.*> style polyfills "transition" properties  width transition: end
 exports[`<html.*> style polyfills "transition" properties  width transition: start 1`] = `
 <Animated.View
   animated={true}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1774,7 +2178,11 @@ exports[`<html.*> style polyfills "transition" properties  width transition: sta
 
 exports[`<html.*> style polyfills inherited styles 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderColor": "red",
@@ -1784,7 +2192,11 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
   }
 >
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -1793,7 +2205,11 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     }
   >
     <Text
-      ref={[Function]}
+      ref={
+        {
+          "current": null,
+        }
+      }
       style={
         {
           "boxSizing": "content-box",
@@ -1819,7 +2235,11 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
     </Text>
     <TextInput
       placeholder="Does not inherit text styles"
-      ref={[Function]}
+      ref={
+        {
+          "current": null,
+        }
+      }
       style={
         {
           "borderWidth": 1,
@@ -1834,7 +2254,11 @@ exports[`<html.*> style polyfills inherited styles 1`] = `
 
 exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -1843,7 +2267,11 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
   }
 >
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -1869,7 +2297,11 @@ exports[`<html.*> style polyfills inherited styles for auto-fix of raw strings 1
 exports[`<html.*> style polyfills inherited themes 1`] = `
 [
   <Text
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "backgroundColor": "pink",
@@ -1882,7 +2314,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     Expect color:red
   </Text>,
   <Text
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "backgroundColor": "pink",
@@ -1897,7 +2333,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
   <TextInput
     placeholder="Expect placeholderTextColor:green"
     placeholderTextColor="green"
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "borderWidth": 1,
@@ -1907,7 +2347,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     }
   />,
   <ViewNativeComponent
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -1916,7 +2360,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     }
   >
     <Text
-      ref={[Function]}
+      ref={
+        {
+          "current": null,
+        }
+      }
       style={
         {
           "backgroundColor": "pink",
@@ -1931,7 +2379,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     <TextInput
       placeholder="Expect placeholderTextColor:green"
       placeholderTextColor="green"
-      ref={[Function]}
+      ref={
+        {
+          "current": null,
+        }
+      }
       style={
         {
           "borderWidth": 1,
@@ -1941,7 +2393,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       }
     />
     <ViewNativeComponent
-      ref={[Function]}
+      ref={
+        {
+          "current": null,
+        }
+      }
       style={
         {
           "boxSizing": "content-box",
@@ -1950,7 +2406,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       }
     >
       <Text
-        ref={[Function]}
+        ref={
+          {
+            "current": null,
+          }
+        }
         style={
           {
             "backgroundColor": "pink",
@@ -1965,7 +2425,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
       <TextInput
         placeholder="Expect placeholderTextColor:blue"
         placeholderTextColor="blue"
-        ref={[Function]}
+        ref={
+          {
+            "current": null,
+          }
+        }
         style={
           {
             "borderWidth": 1,
@@ -1977,7 +2441,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
     </ViewNativeComponent>
   </ViewNativeComponent>,
   <Text
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "backgroundColor": "pink",
@@ -1994,7 +2462,11 @@ exports[`<html.*> style polyfills inherited themes 1`] = `
 
 exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 <Text
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -2010,7 +2482,11 @@ exports[`<html.*> style polyfills legacy: ThemeProvider 1`] = `
 exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
 <Text
   numberOfLines={3}
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "boxSizing": "content-box",
@@ -2025,7 +2501,11 @@ exports[`<html.*> style polyfills lineClamp workaround for Android 1`] = `
 
 exports[`<html.*> viewport width lengths are scaled according to viewport width: scaled lengths 1`] = `
 <ViewNativeComponent
-  ref={[Function]}
+  ref={
+    {
+      "current": null,
+    }
+  }
   style={
     {
       "borderWidth": 0.75,
@@ -2047,7 +2527,11 @@ exports[`<html.*> viewport width lengths are scaled according to viewport width:
   }
 >
   <Text
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",
@@ -2060,7 +2544,11 @@ exports[`<html.*> viewport width lengths are scaled according to viewport width:
     Scaled content
   </Text>
   <Text
-    ref={[Function]}
+    ref={
+      {
+        "current": null,
+      }
+    }
     style={
       {
         "boxSizing": "content-box",

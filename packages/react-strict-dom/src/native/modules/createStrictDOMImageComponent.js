@@ -12,7 +12,6 @@ import type { StrictReactDOMImageProps } from '../../types/StrictReactDOMImagePr
 import * as React from 'react';
 import * as ReactNative from '../react-native';
 
-import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import * as css from '../css';
@@ -24,7 +23,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
       let NativeComponent = ReactNative.Image;
-      const elementRef = useStrictDOMElement<T>({ tagName });
+      const elementRef = useStrictDOMElement<T>(forwardedRef, { tagName });
 
       const {
         alt,
@@ -100,10 +99,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
 
       // Component-specific props
 
-      nativeProps.ref = React.useMemo(
-        () => mergeRefs(elementRef, forwardedRef),
-        [elementRef, forwardedRef]
-      );
+      nativeProps.ref = elementRef;
 
       // Use Animated components if necessary
       if (nativeProps.animated === true) {
