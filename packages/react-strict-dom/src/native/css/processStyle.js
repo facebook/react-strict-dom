@@ -18,7 +18,34 @@ import { parseTimeValue } from './parseTimeValue';
 import { parseTransform } from './parseTransform';
 import { stringContainsVariables } from './customProperties';
 
-const validPlaceContentValues = new Set<string>([
+// Keys that should be excluded from inherit/unset processing
+const excludedFromInherit = new Set<string>([
+  ':active',
+  ':focus',
+  ':hover',
+  'default'
+]);
+
+const inheritedProperties = new Set<string>([
+  'color',
+  'cursor',
+  'fontFamily',
+  'fontSize',
+  'fontStyle',
+  'fontVariant',
+  'fontWeight',
+  'letterSpacing',
+  'lineHeight',
+  'textAlign',
+  'textDecorationColor',
+  'textDecorationLine',
+  'textDecorationStyle',
+  'textIndent',
+  'textTransform',
+  'whiteSpace'
+]);
+
+const placeContentValidValues = new Set<string>([
   'center',
   'flex-end',
   'flex-start',
@@ -27,6 +54,15 @@ const validPlaceContentValues = new Set<string>([
   'space-between',
   'space-evenly'
 ]);
+
+const timeValuedProperties = new Set<string>([
+  'animationDelay',
+  'animationDuration',
+  'transitionDelay',
+  'transitionDuration'
+]);
+
+const unsupportedValues = new Set<string>(['currentcolor', 'initial']);
 
 export function processStyle(
   style: { +[string]: mixed },
@@ -105,7 +141,7 @@ export function processStyle(
       // Polyfill placeContent
       else if (propName === 'placeContent') {
         // None of these values are supported in RN for both properties.
-        if (!validPlaceContentValues.has(styleValue)) {
+        if (!placeContentValidValues.has(styleValue)) {
           if (__DEV__) {
             warnMsg(
               `unsupported style value in "${propName}:${String(styleValue)}"`
@@ -151,12 +187,7 @@ export function processStyle(
         continue;
       }
       // Polyfill time-valued string values (e.g., '1000ms' => 1000)
-      else if (
-        propName === 'animationDelay' ||
-        propName === 'animationDuration' ||
-        propName === 'transitionDelay' ||
-        propName === 'transitionDuration'
-      ) {
+      else if (timeValuedProperties.has(propName)) {
         result[propName] = parseTimeValue(styleValue);
         continue;
       }
@@ -174,27 +205,8 @@ export function processStyle(
         }
         // inherited properties polyfill 'inherit' in useStyleProps
         else if (
-          propName !== ':active' &&
-          propName !== ':focus' &&
-          propName !== ':hover' &&
-          propName !== 'default' &&
-          propName !== 'color' &&
-          propName !== 'cursor' &&
-          propName !== 'fontFamily' &&
-          propName !== 'fontSize' &&
-          propName !== 'fontStyle' &&
-          propName !== 'fontVariant' &&
-          propName !== 'fontWeight' &&
-          propName !== 'letterSpacing' &&
-          propName !== 'lineHeight' &&
-          propName !== 'textAlign' &&
-          propName !== 'textDecorationColor' &&
-          propName !== 'textDecorationLine' &&
-          propName !== 'textDecorationStyle' &&
-          propName !== 'textAlign' &&
-          propName !== 'textIndent' &&
-          propName !== 'textTransform' &&
-          propName !== 'whiteSpace'
+          !excludedFromInherit.has(propName) &&
+          !inheritedProperties.has(propName)
         ) {
           if (__DEV__) {
             warnMsg(
@@ -204,8 +216,7 @@ export function processStyle(
           continue;
         }
       } else if (
-        styleValue === 'currentcolor' ||
-        styleValue === 'initial' ||
+        unsupportedValues.has(styleValue) ||
         styleValue.includes('calc(')
       ) {
         if (__DEV__) {
