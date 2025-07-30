@@ -8,10 +8,8 @@
  */
 
 import type { CustomProperties, Styles, Style } from '../../types/styles';
-import type {
-  ReactNativeProps,
-  ReactNativeStyle
-} from '../../types/renderer.native';
+import type { ReactNativeProps } from '../../types/renderer.native';
+import type { ReactNativeStyle } from '../../types/renderer.native';
 
 import * as css from '../css';
 import * as ReactNative from '../react-native';
@@ -21,6 +19,38 @@ import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
 import { useViewportScale } from './ContextViewportScale';
+
+const inheritedProperties = [
+  'color',
+  'cursor',
+  'fontFamily',
+  'fontSize',
+  'fontStyle',
+  'fontVariant',
+  'fontWeight',
+  'letterSpacing',
+  'lineHeight',
+  'textAlign',
+  'textDecorationColor',
+  'textDecorationLine',
+  'textDecorationStyle',
+  'textIndent',
+  'textTransform',
+  'whiteSpace',
+  'writingDirection'
+];
+
+const eventHandlerNames = [
+  'onBlur',
+  'onFocus',
+  'onMouseEnter',
+  'onMouseLeave',
+  'onPointerCancel',
+  'onPointerDown',
+  'onPointerEnter',
+  'onPointerLeave',
+  'onPointerUp'
+];
 
 type StyleOptions = {
   customProperties: ?CustomProperties,
@@ -113,19 +143,10 @@ export function useStyleProps(
   );
 
   if (handlers != null) {
-    for (const handler of [
-      'onBlur',
-      'onFocus',
-      'onMouseEnter',
-      'onMouseLeave',
-      'onPointerCancel',
-      'onPointerDown',
-      'onPointerEnter',
-      'onPointerLeave',
-      'onPointerUp'
-    ]) {
-      if (handler != null) {
-        styleProps[handler] = handlers[handler];
+    for (const handler of eventHandlerNames) {
+      const handlerValue = handlers[handler];
+      if (handlerValue != null) {
+        styleProps[handler] = handlerValue;
       }
     }
   }
@@ -146,48 +167,34 @@ export function useStyleProps(
     styleProps.style = styleWithAnimations;
   }
 
-  const {
-    color,
-    cursor,
-    fontFamily,
-    fontSize,
-    fontStyle,
-    fontVariant,
-    fontWeight,
-    letterSpacing,
-    lineHeight,
-    textAlign,
-    textDecorationColor,
-    textDecorationLine,
-    textDecorationStyle,
-    textIndent,
-    textTransform,
-    whiteSpace,
-    writingDirection,
-    ...viewStyle
-  } = styleProps.style;
+  // Create inherited values lookup for performance
+  const inheritedValues = {
+    color: inheritedColor,
+    cursor: inheritedCursor,
+    fontFamily: inheritedFontFamily,
+    fontSize: inheritedFontSize,
+    fontStyle: inheritedFontStyle,
+    fontVariant: inheritedFontVariant,
+    fontWeight: inheritedFontWeight,
+    letterSpacing: inheritedLetterSpacing,
+    lineHeight: inheritedLineHeight,
+    textAlign: inheritedTextAlign,
+    textDecorationColor: inheritedTextDecorationColor,
+    textDecorationLine: inheritedTextDecorationLine,
+    textDecorationStyle: inheritedTextDecorationStyle,
+    textIndent: inheritedTextIndent,
+    textTransform: inheritedTextTransform,
+    whiteSpace: inheritedWhiteSpace,
+    writingDirection: inheritedWritingDirection
+  };
 
   const inheritableStyle = {} as $FlowFixMe;
+  const viewStyle = {} as $FlowFixMe;
 
-  [
-    ['color', color, inheritedColor],
-    ['cursor', cursor, inheritedCursor],
-    ['fontFamily', fontFamily, inheritedFontFamily],
-    ['fontSize', fontSize, inheritedFontSize],
-    ['fontStyle', fontStyle, inheritedFontStyle],
-    ['fontVariant', fontVariant, inheritedFontVariant],
-    ['fontWeight', fontWeight, inheritedFontWeight],
-    ['letterSpacing', letterSpacing, inheritedLetterSpacing],
-    ['lineHeight', lineHeight, inheritedLineHeight],
-    ['textAlign', textAlign, inheritedTextAlign],
-    ['textDecorationColor', textDecorationColor, inheritedTextDecorationColor],
-    ['textDecorationLine', textDecorationLine, inheritedTextDecorationLine],
-    ['textDecorationStyle', textDecorationStyle, inheritedTextDecorationStyle],
-    ['textIndent', textIndent, inheritedTextIndent],
-    ['textTransform', textTransform, inheritedTextTransform],
-    ['whiteSpace', whiteSpace, inheritedWhiteSpace],
-    ['writingDirection', writingDirection, inheritedWritingDirection]
-  ].forEach(([key, value, inheritedValue]) => {
+  for (const key of inheritedProperties) {
+    const value = styleProps.style[key];
+    const inheritedValue = inheritedValues[key];
+
     let val = value;
     if (
       (withInheritedStyle && value == null) ||
@@ -200,7 +207,14 @@ export function useStyleProps(
       inheritableStyle[key] = val;
       styleProps.style[key] = val;
     }
-  });
+  }
+
+  // Copy non-inherited properties to viewStyle
+  for (const key in styleProps.style) {
+    if (!inheritedValues.hasOwnProperty(key)) {
+      viewStyle[key] = styleProps.style[key];
+    }
+  }
 
   if (withTextStyle === true) {
     const textStyle =
