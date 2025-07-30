@@ -26,14 +26,14 @@ export function useCustomProperties(
   customPropertiesFromThemes: ?CustomProperties
 ): CustomProperties {
   const inheritedCustomProperties = React.useContext(ContextCustomProperties);
-  if (customPropertiesFromThemes == null) {
-    return inheritedCustomProperties;
-  }
-  // TODO: optimize
-  const customProperties = Object.assign(
-    {},
-    inheritedCustomProperties,
-    customPropertiesFromThemes
-  );
-  return customProperties;
+  return React.useMemo(() => {
+    if (customPropertiesFromThemes == null) {
+      return inheritedCustomProperties;
+    }
+    return Object.assign(
+      {},
+      inheritedCustomProperties,
+      customPropertiesFromThemes
+    );
+  }, [inheritedCustomProperties, customPropertiesFromThemes]);
 }
