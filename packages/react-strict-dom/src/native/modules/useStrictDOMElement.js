@@ -44,7 +44,10 @@ export function useStrictDOMElement<T>(
 
   React.useImperativeHandle(ref, () => {
     return {
-      __nativeTag: proxy(nativeRef, '__nativeTag'),
+      get __nativeTag() {
+        const node = nativeRef.current as Node;
+        return node?.__nativeTag;
+      },
       addEventListener: proxy(nativeRef, 'addEventListener'),
       animate: proxy(nativeRef, 'animate'),
       blur: proxy(nativeRef, 'blur'),
