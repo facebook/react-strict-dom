@@ -17,13 +17,11 @@ import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { errorMsg } from '../../shared/logUtils';
-import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
 import { processStyle } from './processStyle';
 import { resolveVariableReferences } from './customProperties';
-import { version } from '../modules/version';
 
 export const __customProperties: MutableCustomProperties = {};
 
@@ -303,7 +301,7 @@ export function props(
   const options = this;
 
   const nativeProps: ReactNativeProps = { style: {} };
-  let nextStyle: ReactNativeStyle = nativeProps.style;
+  const nextStyle: ReactNativeStyle = nativeProps.style;
 
   const flatStyle = resolveStyle(style, options) as $FlowFixMe;
 
@@ -475,12 +473,6 @@ export function props(
     else {
       nextStyle[styleProp] = styleValue;
     }
-  }
-
-  // boxSizing:"content-box" polyfill
-  const boxSizingValue = nextStyle.boxSizing;
-  if (boxSizingValue === 'content-box' && !version.experimental) {
-    nextStyle = fixContentBox(nextStyle);
   }
 
   // Print an error message if flex properties are used without
