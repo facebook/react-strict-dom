@@ -1563,6 +1563,20 @@ describe('<html.*>', () => {
     });
     */
 
+    // We shouldn't create a handle if there is no underlying node
+    test('node is null', () => {
+      act(() => {
+        create(
+          <html.input
+            ref={(node) => {
+              expect(() => node.getBoundingClientRect()).toThrow();
+            }}
+          />,
+          { createNodeMock: () => null }
+        );
+      });
+    });
+
     [
       'animate',
       'click',

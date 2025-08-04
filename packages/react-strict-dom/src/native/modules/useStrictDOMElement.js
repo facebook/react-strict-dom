@@ -7,9 +7,12 @@
  * @flow strict-local
  */
 
+import type { CallbackRef } from '../../types/react';
+
 import * as React from 'react';
 
 import { errorMsg } from '../../shared/logUtils';
+import { useElementCallback } from '../../shared/useElementCallback';
 import { useViewportScale } from './ContextViewportScale';
 
 type Options = {
@@ -25,9 +28,8 @@ function errorUnimplemented(name: string) {
   }
 }
 
-function proxy(nativeRef: React.RefObject<Node>, name: string) {
+function proxy(node: Node, name: string) {
   return (...args: Array<mixed>) => {
-    const node = nativeRef.current;
     if (node?.[name]) {
       return node[name](...args);
     }
@@ -35,26 +37,27 @@ function proxy(nativeRef: React.RefObject<Node>, name: string) {
   };
 }
 
-export function useStrictDOMElement<T>(
-  ref: React.RefSetter<Node>,
-  { tagName }: Options
-): React.RefObject<T | null> {
-  const nativeRef = React.useRef<T | null>(null);
-  const { scale: viewportScale } = useViewportScale();
+const memoizedStrictRefs: WeakMap<Node, mixed> = new WeakMap();
 
-  React.useImperativeHandle(ref, () => {
-    return {
+function getOrCreateStrictRef(
+  node: Node,
+  tagName: string,
+  viewportScale: number
+) {
+  const ref = memoizedStrictRefs.get(node);
+  if (ref != null) {
+    return ref;
+  } else {
+    const strictRef = {
       get __nativeTag() {
-        const node = nativeRef.current as Node;
         return node?.__nativeTag;
       },
-      addEventListener: proxy(nativeRef, 'addEventListener'),
-      animate: proxy(nativeRef, 'animate'),
-      blur: proxy(nativeRef, 'blur'),
-      click: proxy(nativeRef, 'click'),
+      addEventListener: proxy(node, 'addEventListener'),
+      animate: proxy(node, 'animate'),
+      blur: proxy(node, 'blur'),
+      click: proxy(node, 'click'),
       get complete() {
         if (tagName === 'img') {
-          const node = nativeRef.current as Node;
           if (node?.complete == null) {
             // Assume images are never pre-loaded in React Native
             return false;
@@ -63,12 +66,11 @@ export function useStrictDOMElement<T>(
           }
         }
       },
-      contains: proxy(nativeRef, 'contains'),
-      dispatchEvent: proxy(nativeRef, 'dispatchEvent'),
-      focus: proxy(nativeRef, 'focus'),
-      getAttribute: proxy(nativeRef, 'getAttribute'),
+      contains: proxy(node, 'contains'),
+      dispatchEvent: proxy(node, 'dispatchEvent'),
+      focus: proxy(node, 'focus'),
+      getAttribute: proxy(node, 'getAttribute'),
       getBoundingClientRect() {
-        const node = nativeRef.current as Node;
         const getBoundingClientRect =
           node?.getBoundingClientRect ?? node?.unstable_getBoundingClientRect;
         if (getBoundingClientRect) {
@@ -85,21 +87,59 @@ export function useStrictDOMElement<T>(
         }
         return errorUnimplemented('getBoundingClientRect');
       },
-      getRootNode: proxy(nativeRef, 'getRootNode'),
-      hasPointerCapture: proxy(nativeRef, 'hasPointerCapture'),
+      getRootNode: proxy(node, 'getRootNode'),
+      hasPointerCapture: proxy(node, 'hasPointerCapture'),
       nodeName: tagName.toUpperCase(),
-      releasePointerCapture: proxy(nativeRef, 'releasePointerCapture'),
-      removeEventListener: proxy(nativeRef, 'removeEventListener'),
-      scroll: proxy(nativeRef, 'scroll'),
-      scrollBy: proxy(nativeRef, 'scrollBy'),
-      scrollIntoView: proxy(nativeRef, 'scrollIntoView'),
-      scrollTo: proxy(nativeRef, 'scrollTo'),
-      select: proxy(nativeRef, 'select'),
-      setSelectionRange: proxy(nativeRef, 'setSelectionRange'),
-      setPointerCapture: proxy(nativeRef, 'setPointerCapture'),
-      showPicker: proxy(nativeRef, 'showPicker')
+      releasePointerCapture: proxy(node, 'releasePointerCapture'),
+      removeEventListener: proxy(node, 'removeEventListener'),
+      scroll: proxy(node, 'scroll'),
+      scrollBy: proxy(node, 'scrollBy'),
+      scrollIntoView: proxy(node, 'scrollIntoView'),
+      scrollTo: proxy(node, 'scrollTo'),
+      select: proxy(node, 'select'),
+      setSelectionRange: proxy(node, 'setSelectionRange'),
+      setPointerCapture: proxy(node, 'setPointerCapture'),
+      showPicker: proxy(node, 'showPicker')
     };
-  }, [tagName, viewportScale]);
 
-  return nativeRef;
+    memoizedStrictRefs.set(node, strictRef);
+    return strictRef;
+  }
+}
+
+export function useStrictDOMElement<T>(
+  ref: React.RefSetter<Node>,
+  { tagName }: Options
+): CallbackRef<T> {
+  const { scale: viewportScale } = useViewportScale();
+
+  const elementCallback = useElementCallback(
+    React.useCallback(
+      // $FlowFixMe[unclear-type]
+      (node: any) => {
+        if (ref == null) {
+          return undefined;
+        } else {
+          const strictRef = getOrCreateStrictRef(node, tagName, viewportScale);
+          if (typeof ref === 'function') {
+            // $FlowFixMe[incompatible-type] - Flow does not understand ref cleanup.
+            const cleanup: void | (() => void) = ref(strictRef);
+            return typeof cleanup === 'function'
+              ? cleanup
+              : () => {
+                  ref(null);
+                };
+          } else {
+            ref.current = strictRef;
+            return () => {
+              ref.current = null;
+            };
+          }
+        }
+      },
+      [ref, tagName, viewportScale]
+    )
+  );
+
+  return elementCallback;
 }
