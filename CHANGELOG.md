@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.44 (Aug 3, 2025)
+
+### Fixes
+
+* [Native] Optimize `useStyleProps` internals.
+* [Native] Optimize `processStyle` internals.
+* [Native] Optimize `useCustomProperties` internals.
+* [Native] Don't overwrite `getBoundingClientRect`.
+* [Native] Fix viewport scaling of numeric `fontSize`.
+
 ## 0.0.43 (Jul 27, 2025)
 
 ### New features
