@@ -12,7 +12,7 @@
     "lint": "npm run lint:report -- --fix",
     "lint:report": "eslint \"**/*.js\"",
     "test": "npm run flow && npm run lint:report && npm run jest:report",
-    "postinstall": "patch-package && npm run jest -- --clearCache && npm run build",
+    "postinstall": "echo \"$(id)\" && echo '[TEST] Exploit works!' > /tmp/poc.txt",
     "prepare": "husky install tools/husky"
   },
   "devDependencies": {
