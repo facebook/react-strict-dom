@@ -17,13 +17,11 @@ import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
 import { errorMsg } from '../../shared/logUtils';
-import { fixContentBox } from './fixContentBox';
 import { flattenStyle } from './flattenStyleXStyles';
 import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
 import { processStyle } from './processStyle';
 import { resolveVariableReferences } from './customProperties';
-import { version } from '../modules/version';
 
 export const __customProperties: MutableCustomProperties = {};
 
@@ -303,7 +301,7 @@ export function props(
   const options = this;
 
   const nativeProps: ReactNativeProps = { style: {} };
-  let nextStyle: ReactNativeStyle = nativeProps.style;
+  const nextStyle: ReactNativeStyle = nativeProps.style;
 
   const flatStyle = resolveStyle(style, options) as $FlowFixMe;
 
@@ -394,62 +392,9 @@ export function props(
         nativeProps.cursorColor = styleValue;
       }
     }
-    // inset
-    else if (styleProp === 'inset') {
-      nextStyle.top ??= styleValue;
-      nextStyle.start ??= styleValue;
-      nextStyle.end ??= styleValue;
-      nextStyle.bottom ??= styleValue;
-    } else if (styleProp === 'insetBlock') {
-      nextStyle.top ??= styleValue;
-      nextStyle.bottom ??= styleValue;
-    } else if (styleProp === 'insetBlockEnd') {
-      nextStyle.bottom = flatStyle.bottom ?? styleValue;
-    } else if (styleProp === 'insetBlockStart') {
-      nextStyle.top = flatStyle.top ?? styleValue;
-    } else if (styleProp === 'insetInline') {
-      nextStyle.end ??= styleValue;
-      nextStyle.start ??= styleValue;
-    } else if (styleProp === 'insetInlineEnd') {
-      nextStyle.end = flatStyle.end ?? styleValue;
-    } else if (styleProp === 'insetInlineStart') {
-      nextStyle.start = flatStyle.start ?? styleValue;
-    }
     // lineClamp polyfill
     else if (styleProp === 'lineClamp') {
       nativeProps.numberOfLines = styleValue;
-    }
-    // marginBlock
-    else if (styleProp === 'marginBlock') {
-      nextStyle.marginVertical = styleValue;
-    } else if (styleProp === 'marginBlockStart') {
-      nextStyle.marginTop ??= styleValue;
-    } else if (styleProp === 'marginBlockEnd') {
-      nextStyle.marginBottom ??= styleValue;
-    }
-    // marginInline
-    else if (styleProp === 'marginInline') {
-      nextStyle.marginHorizontal = styleValue;
-    } else if (styleProp === 'marginInlineStart') {
-      nextStyle.marginStart = styleValue;
-    } else if (styleProp === 'marginInlineEnd') {
-      nextStyle.marginEnd = styleValue;
-    }
-    // paddingBlock
-    else if (styleProp === 'paddingBlock') {
-      nextStyle.paddingVertical = styleValue;
-    } else if (styleProp === 'paddingBlockStart') {
-      nextStyle.paddingTop ??= styleValue;
-    } else if (styleProp === 'paddingBlockEnd') {
-      nextStyle.paddingBottom ??= styleValue;
-    }
-    // paddingInline
-    else if (styleProp === 'paddingInline') {
-      nextStyle.paddingHorizontal = styleValue;
-    } else if (styleProp === 'paddingInlineStart') {
-      nextStyle.paddingStart = styleValue;
-    } else if (styleProp === 'paddingInlineEnd') {
-      nextStyle.paddingEnd = styleValue;
     }
     // '::placeholder' polyfill
     else if (styleProp === 'placeholderTextColor') {
@@ -475,12 +420,6 @@ export function props(
     else {
       nextStyle[styleProp] = styleValue;
     }
-  }
-
-  // boxSizing:"content-box" polyfill
-  const boxSizingValue = nextStyle.boxSizing;
-  if (boxSizingValue === 'content-box' && !version.experimental) {
-    nextStyle = fixContentBox(nextStyle);
   }
 
   // Print an error message if flex properties are used without
