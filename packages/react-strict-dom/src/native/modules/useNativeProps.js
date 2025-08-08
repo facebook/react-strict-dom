@@ -152,20 +152,13 @@ export function useNativeProps(
    * Resolve style props
    */
 
+  const renderStyle = [styles.base, defaultProps?.style ?? null, style];
+
   const [extractedStyle, customPropertiesFromThemes] =
-    extractStyleThemes(style);
+    extractStyleThemes(renderStyle);
   const customProperties = useCustomProperties(customPropertiesFromThemes);
 
-  const renderStyle = [
-    // Use 'static' position by default
-    styles.positionStatic,
-    // Use box-sizing: 'content-box' by default
-    styles.contentBox,
-    defaultProps?.style ?? null,
-    extractedStyle
-  ];
-
-  const { nativeProps, inheritableStyle } = useStyleProps(renderStyle, {
+  const { nativeProps, inheritableStyle } = useStyleProps(extractedStyle, {
     customProperties,
     provideInheritableStyle: options.provideInheritableStyle,
     withTextStyle: options.withTextStyle,
@@ -422,10 +415,9 @@ export function useNativeProps(
 }
 
 const styles = css.create({
-  contentBox: {
-    boxSizing: 'content-box'
-  },
-  positionStatic: {
+  // Default styles on web but missing in React Native
+  base: {
+    boxSizing: 'content-box',
     position: 'static'
   }
 });
