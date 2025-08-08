@@ -9,36 +9,37 @@
 
 import type { CustomProperties, Style, Styles } from '../../types/styles';
 
-const emptyValue = [undefined, undefined];
+const emptyValue = [{}, null];
 
 export function extractStyleThemes(
   mixOfStyleAndTheme: ?Styles | Style | Array<Styles | Style>
-): [?Array<Styles | Style>, ?CustomProperties] {
+): [Style, ?CustomProperties] {
   if (mixOfStyleAndTheme === null || typeof mixOfStyleAndTheme !== 'object') {
     return emptyValue;
   }
 
-  const styles: Array<Styles | Style> = [];
+  const style: { ...Style } = {};
   const theme: { ...CustomProperties } = {};
+  let hasTheme = false;
 
   const flatArray = [mixOfStyleAndTheme].flat(Infinity);
-  for (let i = 0, l = flatArray.length; i < l; ++i) {
+  for (let i = 0; i < flatArray.length; i++) {
     const item = flatArray[i];
     if (item !== null && typeof item === 'object') {
       if (item.$$theme != null) {
         for (const key in item) {
           if (item[key] !== undefined) {
+            hasTheme = true;
             theme[key] = item[key];
           }
         }
       } else {
-        // $FlowFixMe[incompatible-call]
-        styles.push(item);
+        Object.assign(style, item);
       }
     }
   }
 
-  const themeValue = Object.keys(theme).length > 0 ? theme : null;
+  const themeValue = hasTheme ? theme : null;
 
-  return [styles, themeValue];
+  return [style, themeValue];
 }

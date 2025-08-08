@@ -7,14 +7,13 @@
  * @flow strict-local
  */
 
-import type { CustomProperties, Styles, Style } from '../../types/styles';
+import type { CustomProperties, Style } from '../../types/styles';
 import type { ReactNativeProps } from '../../types/renderer.native';
 import type { ReactNativeStyle } from '../../types/renderer.native';
 
 import * as css from '../css';
 import * as ReactNative from '../react-native';
 
-import { flattenStyle } from './flattenStyle';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
@@ -81,7 +80,7 @@ function resolveUnitlessLineHeight(style: ReactNativeStyle): ReactNativeStyle {
  * inheritable text styles that may be required.
  */
 export function useStyleProps(
-  style: Styles,
+  flatStyle: Style,
   options: StyleOptions
 ): {
   nativeProps: ReactNativeProps,
@@ -119,8 +118,6 @@ export function useStyleProps(
     whiteSpace: inheritedWhiteSpace,
     writingDirection: inheritedWritingDirection
   } = useInheritedStyles();
-
-  const flatStyle = flattenStyle(style);
 
   const { active, focus, hover, handlers } = usePseudoStates(flatStyle);
 
