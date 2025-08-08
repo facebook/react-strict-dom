@@ -187,6 +187,7 @@ export function useStyleProps(
 
   const inheritableStyle = {} as $FlowFixMe;
   const viewStyle = {} as $FlowFixMe;
+  let hasInheritableStyle = false;
 
   for (const key of inheritedProperties) {
     const value = styleProps.style[key];
@@ -201,43 +202,34 @@ export function useStyleProps(
       val = inheritedValue;
     }
     if (val != null) {
+      hasInheritableStyle = true;
       inheritableStyle[key] = val;
       styleProps.style[key] = val;
     }
   }
 
   // Copy non-inherited properties to viewStyle
-  for (const key in styleProps.style) {
-    if (!inheritedValues.hasOwnProperty(key)) {
-      viewStyle[key] = styleProps.style[key];
+  if (hasInheritableStyle) {
+    for (const key in styleProps.style) {
+      if (!inheritedValues.hasOwnProperty(key)) {
+        viewStyle[key] = styleProps.style[key];
+      }
     }
-  }
-
-  if (withTextStyle === true) {
-    const textStyle =
-      provideInheritableStyle === true
-        ? { ...inheritableStyle }
-        : inheritableStyle;
-
-    styleProps.style = Object.assign(
-      viewStyle,
-      resolveUnitlessLineHeight(textStyle)
-    );
-  } else {
+    if (withTextStyle === true) {
+      const textStyle =
+        provideInheritableStyle === true
+          ? { ...inheritableStyle }
+          : inheritableStyle;
+      Object.assign(viewStyle, resolveUnitlessLineHeight(textStyle));
+    }
     styleProps.style = viewStyle;
-  }
-
-  if (
-    styleProps.style != null &&
-    typeof styleProps.style === 'object' &&
-    Object.keys(styleProps.style).length === 0
-  ) {
-    // $FlowFixMe (safe to remove style at this point)
-    delete styleProps.style;
   }
 
   return {
     nativeProps: styleProps,
-    inheritableStyle: provideInheritableStyle === true ? inheritableStyle : null
+    inheritableStyle:
+      hasInheritableStyle && provideInheritableStyle === true
+        ? inheritableStyle
+        : null
   };
 }
