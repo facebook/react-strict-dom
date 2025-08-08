@@ -17,12 +17,14 @@ type Props = $ReadOnly<{|
   children: string
 |}>;
 
+const emptyObject = {};
+
 export function TextString(props: Props): React.Node {
   const { children } = props;
 
   const customProperties = useCustomProperties();
 
-  const { nativeProps } = useStyleProps(null, {
+  const { nativeProps } = useStyleProps(emptyObject, {
     customProperties,
     provideInheritableStyle: false,
     withInheritedStyle: true,
