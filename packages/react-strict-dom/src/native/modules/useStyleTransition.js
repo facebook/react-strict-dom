@@ -270,8 +270,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     transitionDelay: _delay,
     transitionDuration: _duration,
     transitionProperty: _transitionProperty,
-    transitionTimingFunction: _timingFunction,
-    ...styleWithAnimations
+    transitionTimingFunction: _timingFunction
   } = style;
 
   const transitionDelay = isNumber(_delay) ? _delay : 0;
@@ -600,6 +599,18 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
 
     return animatedStyle;
   }, {});
+
+  // Only create styleWithAnimations if it's needed, after all the
+  // cases where we don't create animated styles at all.
+  const {
+    /* eslint-disable no-unused-vars */
+    transitionDelay: __delay,
+    transitionDuration: __duration,
+    transitionProperty: __transitionProperty,
+    transitionTimingFunction: __timingFunction,
+    /* eslint-enable no-unused-vars */
+    ...styleWithAnimations
+  } = style;
 
   Object.assign(styleWithAnimations, outputAnimatedStyle);
 
