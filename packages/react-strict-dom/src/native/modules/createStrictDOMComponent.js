@@ -97,13 +97,14 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       let nextDisplayInsideValue = 'flow';
       const displayInsideValue = useDisplayInside();
       const displayValue = nativeProps.style.display;
-      if (
-        displayValue != null &&
-        displayValue !== 'flex' &&
-        displayValue !== 'none' &&
-        displayValue !== 'block'
-      ) {
-        if (__DEV__) {
+
+      if (__DEV__) {
+        if (
+          displayValue != null &&
+          displayValue !== 'flex' &&
+          displayValue !== 'none' &&
+          displayValue !== 'block'
+        ) {
           warnMsg(
             `unsupported style value in "display:${String(displayValue)}"`
           );
