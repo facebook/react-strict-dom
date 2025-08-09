@@ -8,18 +8,19 @@
  */
 
 import type { StyleVars } from 'react-strict-dom';
+import type { Types } from '@stylexjs/stylex';
 
 import { css } from 'react-strict-dom';
 
 export const tokens: StyleVars<
   $ReadOnly<{
-    squareColor: string,
+    squareColor: Types.CSSType<string>,
     textColor: string,
     inputColor: string,
     inputPlaceholderColor: string
   }>
 > = css.defineVars({
-  squareColor: 'red',
+  squareColor: css.types.color('red'),
   textColor: {
     default: 'darkred',
     '@media (prefers-color-scheme: dark)': 'lightred'
