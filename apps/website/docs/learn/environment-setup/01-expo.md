@@ -2,11 +2,11 @@
 slug: /learn/setup
 ---
 
-# Environment setup
+# Expo
 
-<p className="text-xl">Learn how to configure the environment needed to use React Strict DOM.</p>
+<p className="text-xl">Learn how to configure Expo to use React Strict DOM.</p>
 
-## Expo framework
+## About Expo
 
 [Expo](https://expo.dev/) is a production-grade, cross-platform React framework that is the recommended solution for creating apps with React Strict DOM. The instructions in the rest of this guide are tailored to Expo, but can be adapted by readers to work with other frameworks.
 
