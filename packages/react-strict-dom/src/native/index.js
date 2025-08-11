@@ -12,7 +12,6 @@ import type {
   StyleXStylesWithout,
   StaticStyles,
   Theme,
-  Types,
   VarGroup
 } from '@stylexjs/stylex';
 
@@ -25,12 +24,19 @@ import * as _css from './css';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
 import { ProvideViewportScale } from './modules/ContextViewportScale';
 
+type StyleTheme<V, T> = Theme<V, T>;
+type StyleVars<T> = VarGroup<T>;
+type Styles<T> = StyleXStyles<T>;
+type StylesWithout<T> = StyleXStylesWithout<T>;
+
 type ProviderValue = $ReadOnly<{ [string]: string | number }>;
 
 type ProviderProps = $ReadOnly<{
   children: React.Node,
   customProperties: ProviderValue
 }>;
+
+export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
 
 function ThemeProvider(props: ProviderProps): React.Node {
   const { children, customProperties } = props;
@@ -49,12 +55,5 @@ const contexts = {
 
 // Export using StyleX types as the shim has divergent types internally.
 const css: TStyleX = _css as $FlowFixMe;
-
-export type { StaticStyles };
-export type { StyleXStyles as Styles };
-export type { StyleXStylesWithout as StylesWithout };
-export type { Theme as StyleTheme };
-export type { Types as StyleTypes };
-export type { VarGroup as StyleVars };
 
 export { compat, contexts, css, html };
