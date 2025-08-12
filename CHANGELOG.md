@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.46 (Aug 11, 2025)
+
+### Fixes
+
+* [Native] Improve render throughput performance.
+* [Native] Move DEV-only checks into `__DEV__` condition.
+* [Native] Remove `boxSizing:'content-box'` polyfill.
+* [Native] Use ref callback instead of `useImperativeHandle`.
+
 ## 0.0.44 (Aug 3, 2025)
 
 ### Fixes
