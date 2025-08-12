@@ -23,6 +23,7 @@ const tagNames = [
   'button',
   'code',
   'del',
+  'dialog',
   'div',
   'em',
   'fieldset',
