@@ -110,16 +110,18 @@ export function processStyle(
         result[propName] = 0;
         continue;
       }
-      // Polyfill support for string opacity on Android
-      if (propName === 'opacity') {
-        result[propName] = parseFloat(styleValue);
-        continue;
-      }
       // Polyfill support for custom property references (do this first)
-      else if (stringContainsVariables(styleValue)) {
+      if (stringContainsVariables(styleValue)) {
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
-      } else if (
+      }
+      // Polyfill support for backgroundImage using experimental API
+      else if (propName === 'backgroundImage') {
+        result.experimental_backgroundImage = styleValue;
+        continue;
+      }
+      // Warn for unsupported caretColor values
+      else if (
         propName === 'caretColor' &&
         (typeof styleValue === 'undefined' || styleValue === 'auto')
       ) {
@@ -129,13 +131,15 @@ export function processStyle(
           );
         }
         continue;
-      } else if (propName === 'backgroundImage') {
-        result.experimental_backgroundImage = styleValue;
-        continue;
       }
       // Workaround unsupported objectFit values
       else if (propName === 'objectFit' && styleValue === 'none') {
         result[propName] = 'scale-down';
+        continue;
+      }
+      // Polyfill support for string opacity on Android
+      else if (propName === 'opacity') {
+        result[propName] = parseFloat(styleValue);
         continue;
       }
       // Polyfill placeContent

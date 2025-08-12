@@ -1274,11 +1274,17 @@ describe('properties: custom property', () => {
 
   test('parses a basic var correctly', () => {
     const options = {
-      customProperties: { test: 'red' }
+      customProperties: {
+        opacity: '0.25',
+        test: 'red'
+      }
     };
     expect(
       resolveCustomPropertyValue(options, ['color', 'var(--test)'])
     ).toEqual('red');
+    expect(
+      resolveCustomPropertyValue(options, ['opacity', 'var(--opacity)'])
+    ).toEqual(0.25);
   });
 
   test('parses a var with a default value', () => {
