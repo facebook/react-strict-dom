@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.47 (Aug 12, 2025)
+
+### Fixes
+
+* [Native] Fix polyfill for opacity string value on Android.
+
 ## 0.0.46 (Aug 11, 2025)
 
 ### Fixes
