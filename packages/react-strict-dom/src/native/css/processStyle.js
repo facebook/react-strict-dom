@@ -110,12 +110,12 @@ export function processStyle(
         result[propName] = 0;
         continue;
       }
+      // Polyfill support for custom property references (do this first)
       if (stringContainsVariables(styleValue)) {
-        // Polyfill support for custom property references (do this first)
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
+      // Polyfill support for string opacity on Android
       } else if (propName === 'opacity') {
-        // Polyfill support for string opacity on Android
         result[propName] = parseFloat(styleValue);
         continue;
       } else if (
