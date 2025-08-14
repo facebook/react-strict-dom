@@ -79,7 +79,6 @@ export function processStyle(
       }
       continue;
     }
-
     // Object values
     else if (typeof styleValue === 'object' && styleValue != null) {
       if (propName === '::placeholder') {
@@ -93,6 +92,21 @@ export function processStyle(
           } else {
             if (__DEV__) {
               warnMsg(`unsupported "::placeholder" style property "${prop}"`);
+            }
+          }
+        }
+        continue;
+      } else if (propName === '::backdrop') {
+        const backdropStyleProps = Object.keys(styleValue);
+        for (let i = 0; i < backdropStyleProps.length; i++) {
+          const prop = backdropStyleProps[i];
+          if (prop === 'backgroundColor') {
+            result['backdropColor'] = processStyle({
+              backgroundColor: styleValue.backgroundColor
+            }).backgroundColor;
+          } else {
+            if (__DEV__) {
+              warnMsg(`unsupported "::backdrop" style property "${prop}"`);
             }
           }
         }
