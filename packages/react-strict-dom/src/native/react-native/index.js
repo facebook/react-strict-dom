@@ -14,7 +14,8 @@ export {
   Platform,
   Pressable,
   Text,
-  TextInput
+  TextInput,
+  Modal
 } from 'react-native';
 export { LayoutConformance } from './LayoutConformance';
 export { TextAncestorContext } from './TextAncestorContext';
