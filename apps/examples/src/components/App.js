@@ -8,6 +8,7 @@
  */
 
 import * as React from 'react';
+import { useRef } from 'react';
 import { ScrollView } from 'react-native';
 import { css, html } from 'react-strict-dom';
 import { tokens, themeColors, systemColors } from './tokens.stylex';
@@ -639,8 +640,45 @@ function Shell(): React.MixedElement {
           />
           <html.span>{imageErrorText}</html.span>
         </ExampleBlock>
+        <ExampleBlock title="dialog to RN Modal">
+          <DialogExample />
+        </ExampleBlock>
       </html.div>
     </ScrollView>
+  );
+}
+
+function DialogExample(): React.MixedElement {
+  const dialogRef = useRef<?HTMLDialogElement>(null);
+  // const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    if (dialogRef.current) {
+      // dialogRef.current.showModal();
+      // setIsModalVisible(true);
+      console.log('Opening Modal');
+    }
+  };
+
+  const closeModal = () => {
+    if (dialogRef.current) {
+      // dialogRef.current.close();
+      // setIsModalVisible(false);
+      console.log('Closing Modal');
+    }
+  };
+
+  return (
+    <html.div>
+      <html.button onClick={showModal}>Open Dialog</html.button>
+      <html.dialog ref={dialogRef}>
+        <html.div style={styles.dialogcontent}>
+          <html.h2>Dialog Title</html.h2>
+          <html.p>This is a dialog content.</html.p>
+          <html.button onClick={closeModal}>Close</html.button>
+        </html.div>
+      </html.dialog>
+    </html.div>
   );
 }
 
@@ -886,5 +924,20 @@ const styles = css.create({
     borderBlockWidth: 20,
     borderInlineWidth: 20,
     borderStyle: 'solid'
+  },
+  dialog: {
+    width: 200,
+    height: 200,
+    margin: 0,
+    backgroundColor: 'red',
+    '::backdrop': {
+      backgroundColor: 'rgba(30, 41, 196, 0.5)'
+    }
+  },
+  dialogcontent: {
+    width: 200,
+    height: 200,
+    margin: 'auto',
+    position: 'relative'
   }
 });

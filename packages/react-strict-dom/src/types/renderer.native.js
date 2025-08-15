@@ -31,6 +31,10 @@ import type {
   // $FlowFixMe(nonstrict-import)
   ViewProps
 } from 'react-native/Libraries/Components/View/ViewPropTypes';
+import type {
+  // $FlowFixMe(nonstrict-import)
+  ModalProps
+} from 'react-native/Libraries/Modal/Modal';
 
 type ReactNativeProps = {
   accessible?: ViewProps['accessible'],
@@ -105,6 +109,7 @@ type ReactNativeProps = {
   onTouchMove?: ViewProps['onTouchMove'],
   placeholder?: TextInputProps['placeholder'],
   placeholderTextColor?: TextInputProps['placeholderTextColor'],
+  backdropColor?: ModalProps['backdropColor'],
   pointerEvents?: ViewProps['pointerEvents'],
   ref?: $FlowFixMe,
   referrerPolicy?: ImageProps['referrerPolicy'],

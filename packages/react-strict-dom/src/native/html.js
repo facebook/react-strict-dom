@@ -177,6 +177,14 @@ export const del: component(
 ) = createStrictText('del', { style: styles.lineThrough });
 
 /**
+ * "dialog" (block)
+ */
+export const dialog: component(
+  ref?: React.RefSetter<HTMLDialogElement>,
+  ...StrictReactDOMProps
+) = createStrict('dialog');
+
+/**
  * "div" (block)
  */
 export const div: component(

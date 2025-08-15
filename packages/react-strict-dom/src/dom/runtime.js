@@ -90,6 +90,7 @@ const br: StrictReactDOMPropsStyle = null;
 const button: StrictReactDOMPropsStyle = [styles.inlineblock, styles.button];
 const code: StrictReactDOMPropsStyle = [styles.inline, styles.codePre];
 const del: StrictReactDOMPropsStyle = null;
+const dialog: StrictReactDOMPropsStyle = styles.block;
 const div: StrictReactDOMPropsStyle = styles.block;
 const em: StrictReactDOMPropsStyle = styles.inline;
 const fieldset: StrictReactDOMPropsStyle = styles.block;
@@ -139,6 +140,7 @@ export const defaultStyles = {
   button: button as typeof button,
   code: code as typeof code,
   del: del as typeof del,
+  dialog: dialog as typeof dialog,
   div: div as typeof div,
   em: em as typeof em,
   fieldset: fieldset as typeof fieldset,

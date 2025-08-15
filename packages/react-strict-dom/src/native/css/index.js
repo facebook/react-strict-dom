@@ -452,6 +452,8 @@ export function props(
     // '::placeholder' polyfill
     else if (styleProp === 'placeholderTextColor') {
       nativeProps.placeholderTextColor = styleValue;
+    } else if (styleProp === 'backdropColor') {
+      nativeProps.backdropColor = styleValue;
     }
     // visibility polyfill
     // Note: we can't polyfill nested visibility changes

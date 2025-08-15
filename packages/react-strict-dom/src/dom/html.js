@@ -111,6 +111,14 @@ export const del: component(
 ) = createStrict('del', defaultStyles.del);
 
 /**
+ * "dialog" (block)
+ */
+export const dialog: component(
+  ref?: React.RefSetter<HTMLDialogElement>,
+  ...StrictReactDOMProps
+) = createStrict('dialog', defaultStyles.dialog);
+
+/**
  * "div" (block)
  */
 export const div: component(
