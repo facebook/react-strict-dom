@@ -266,15 +266,11 @@ describe('properties: general', () => {
     });
     css.props.call(mockOptions, [styles.flex, styles.align]);
     expect(console.error).not.toHaveBeenCalledWith(
-      expect.stringContaining(
-        '"display:flex" is required to use flexbox properties'
-      )
+      expect.stringContaining('"display:flex" is required')
     );
     css.props.call(mockOptions, [styles.align, styles.row]);
     expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        '"display:flex" is required to use flexbox properties'
-      )
+      expect.stringContaining('"display:flex" is required')
     );
   });
 

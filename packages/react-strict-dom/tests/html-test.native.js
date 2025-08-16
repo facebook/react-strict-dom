@@ -89,6 +89,55 @@ describe('<html.*>', () => {
     expect(root.toJSON()).toMatchSnapshot('block layout override of flex');
   });
 
+  [
+    'alignContent',
+    'alignItems',
+    'columnGap',
+    'flexDirection',
+    'flexWrap',
+    'gap',
+    'justifyContent',
+    'rowGap'
+  ].forEach((styleProp) => {
+    test(`block layout error: "${styleProp}"`, () => {
+      const styles = css.create({
+        root: {
+          [styleProp]: 'center'
+        }
+      });
+      act(() => {
+        create(<html.div style={styles.root} />);
+      });
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `"display:flex" is required for "${styleProp}" to have an effect.`
+        )
+      );
+    });
+  });
+
+  ['flex', 'flexBasis', 'flexGrow', 'flexShrink'].forEach((styleProp) => {
+    test(`block layout error for flex child: "${styleProp}"`, () => {
+      const styles = css.create({
+        root: {
+          [styleProp]: 1
+        }
+      });
+      act(() => {
+        create(
+          <html.div>
+            <html.div style={styles.root} />
+          </html.div>
+        );
+      });
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `"display:flex" is required on the parent for "${styleProp}" to have an effect.`
+        )
+      );
+    });
+  });
+
   test('auto-wraps raw strings', () => {
     const styles = css.create({
       root: {

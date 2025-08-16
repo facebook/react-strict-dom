@@ -17,7 +17,7 @@ import { ProvideCustomProperties } from './ContextCustomProperties';
 import { ProvideDisplayInside, useDisplayInside } from './ContextDisplayInside';
 import { ProvideInheritedStyles } from './ContextInheritedStyles';
 import { TextString } from './TextString';
-import { warnMsg } from '../../shared/logUtils';
+import { errorMsg } from '../../shared/logUtils';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
@@ -99,14 +99,18 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       const displayValue = nativeProps.style.display;
 
       if (__DEV__) {
-        if (
-          displayValue != null &&
-          displayValue !== 'flex' &&
-          displayValue !== 'none' &&
-          displayValue !== 'block'
-        ) {
-          warnMsg(
-            `unsupported style value in "display:${String(displayValue)}"`
+        const nativeStyle = nativeProps.style;
+        if (displayInsideValue !== 'flex') {
+          // Error message if the element is not a flex child but tries to use flex
+          ['flex', 'flexBasis', 'flexGrow', 'flexShrink'].forEach(
+            (styleProp) => {
+              const value = nativeStyle[styleProp];
+              if (value != null) {
+                errorMsg(
+                  `"display:flex" is required on the parent for "${styleProp}" to have an effect.`
+                );
+              }
+            }
           );
         }
       }
@@ -133,7 +137,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       }
 
       if (displayInsideValue === 'flex') {
-        // flex child should not shrink
+        // flex child should not shrink by default
         nativeProps.style.flexShrink ??= 1;
       }
 
