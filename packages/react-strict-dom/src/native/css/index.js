@@ -16,7 +16,7 @@ import type { IStyleX } from '../../types/styles';
 import { CSSLengthUnitValue } from './CSSLengthUnitValue';
 import { CSSTransformValue } from './CSSTransformValue';
 import { CSSUnparsedValue } from './typed-om/CSSUnparsedValue';
-import { errorMsg } from '../../shared/logUtils';
+import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { flattenStyle } from './flattenStyleXStyles';
 import { lengthStyleKeySet } from './isLengthStyleKey';
 import { mediaQueryMatches } from './mediaQueryMatches';
@@ -475,28 +475,44 @@ export function props(
     }
   }
 
-  // Print an error message if flex properties are used without
-  // "display:flex" being set. React Native is always using "flex"
-  // layout but web uses "flow" layout by default, which can lead
-  // to layout divergence if building for native first.
   if (__DEV__) {
+    const displayValue = nextStyle.display;
+
+    // Warning message if using unsupported display style
     if (
-      nextStyle.display == null ||
-      (nextStyle.display !== 'flex' && nextStyle.display !== 'none')
+      displayValue != null &&
+      displayValue !== 'flex' &&
+      displayValue !== 'none' &&
+      displayValue !== 'block'
     ) {
-      if (
-        nextStyle.alignContent != null ||
-        nextStyle.alignItems != null ||
-        nextStyle.columnGap != null ||
-        nextStyle.flexDirection != null ||
-        nextStyle.flexWrap != null ||
-        nextStyle.gap != null ||
-        nextStyle.justifyContent != null ||
-        nextStyle.placeContent != null ||
-        nextStyle.rowGap != null
-      ) {
-        errorMsg('"display:flex" is required to use flexbox properties');
-      }
+      warnMsg(`"display:${String(displayValue)}" is not a supported value`);
+    }
+
+    // Error message if using flex properties without "display:flex"
+    // being set. React Native is always using "flex" layout but web
+    // uses "flow" layout by default, which can lead to layout
+    // divergence if building for native first.
+    if (
+      displayValue == null ||
+      (displayValue !== 'flex' && displayValue !== 'none')
+    ) {
+      [
+        'alignContent',
+        'alignItems',
+        'columnGap',
+        'flexDirection',
+        'flexWrap',
+        'gap',
+        'justifyContent',
+        'rowGap'
+      ].forEach((styleProp) => {
+        const value = nextStyle[styleProp];
+        if (value != null) {
+          errorMsg(
+            `"display:flex" is required for "${styleProp}" to have an effect.`
+          );
+        }
+      });
     }
   }
 
