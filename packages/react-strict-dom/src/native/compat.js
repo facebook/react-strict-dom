@@ -40,7 +40,7 @@ const defaultProps = {};
 
 type StrictPropsOnlyCompat<T> = {
   ...StrictProps,
-  as?: 'image' | 'input' | 'text' | 'textarea' | 'view',
+  as?: 'div' | 'img' | 'input' | 'span' | 'textarea',
   children: (nativeProps: T) => React.Node
 };
 
@@ -58,15 +58,15 @@ component Native<T>(...htmlProps: StrictPropsOnlyCompat<T>) {
     );
   }
   let Component = Strict;
-  if (as === 'image') {
+  if (as === 'img') {
     Component = StrictImage;
   } else if (as === 'input') {
     Component = StrictInput;
-  } else if (as === 'text') {
+  } else if (as === 'span') {
     Component = StrictText;
   } else if (as === 'textarea') {
     Component = StrictTextArea;
-  } else if (as === 'view') {
+  } else if (as === 'div') {
     Component = Strict;
   }
 
