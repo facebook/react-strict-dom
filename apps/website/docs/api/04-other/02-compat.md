@@ -25,7 +25,7 @@ export component Foo(...props: FooProps) {
     <compat.native
       {...props}
       aria-label="label"
-      as="text"
+      as="span"
     >
       {(nativeProps: React.PropsOf<Text>)) => (
         <Text {...nativeProps} />
@@ -41,5 +41,5 @@ export component Foo(...props: FooProps) {
   * Any props accepted by `html.*` elements.
 * `children: (nativeProps) => React.Node`
   * Must be a function, which receives the computed `nativeProps` as the only argument and returns a React Native element.
-* `as: 'image' | 'input' | 'text' | 'textarea' | 'view'`
-  * Tells the component how to translate the props for native. For example, if rendering to a multiline `TextInput`, use `textarea`. Defaults to `view`.
+* `as: 'div' | 'img' | 'input' | 'span' | 'textarea'`
+  * Tells the component which base HTML element type to use when translating the props for native. For example, if rendering to a multiline `TextInput`, use `textarea`. Defaults to `div`.
