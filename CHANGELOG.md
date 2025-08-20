@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.48 (Aug 20, 2025)
+
+### Breaking changes
+
+* [Native] Change the accepted values of `<compat.native>` prop `as`.
+
+### Fixes
+
+* [Native] Add error messages for styles that only work on flex children
+
 ## 0.0.47 (Aug 12, 2025)
 
 ### Fixes
