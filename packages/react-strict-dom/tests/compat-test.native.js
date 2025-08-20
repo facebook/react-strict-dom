@@ -57,7 +57,27 @@ describe('<compat.native>', () => {
     expect(root.toJSON()).toMatchSnapshot('default');
   });
 
-  test('"as" equals "image"', () => {
+  test('"as" equals "div"', () => {
+    const styles = css.create({
+      view: {
+        paddingInline: '2rem'
+      }
+    });
+
+    let root;
+    act(() => {
+      root = create(
+        <compat.native as="div" style={styles.view}>
+          {(nativeProps) => (
+            <View {...nativeProps} accessibilityLabel="label" />
+          )}
+        </compat.native>
+      );
+    });
+    expect(root.toJSON()).toMatchSnapshot('as=div');
+  });
+
+  test('"as" equals "img"', () => {
     const styles = css.create({
       image: {
         aspectRatio: '16/9'
@@ -67,18 +87,14 @@ describe('<compat.native>', () => {
     let root;
     act(() => {
       root = create(
-        <compat.native
-          as="image"
-          srcSet="1x.img, 2x.img 2x"
-          style={styles.image}
-        >
+        <compat.native as="img" srcSet="1x.img, 2x.img 2x" style={styles.image}>
           {(nativeProps) => (
             <Image {...nativeProps} accessibilityLabel="label" />
           )}
         </compat.native>
       );
     });
-    expect(root.toJSON()).toMatchSnapshot('as=image');
+    expect(root.toJSON()).toMatchSnapshot('as=img');
   });
 
   test('"as" equals "input"', () => {
@@ -103,7 +119,7 @@ describe('<compat.native>', () => {
     expect(root.toJSON()).toMatchSnapshot('as=input');
   });
 
-  test('"as" equals "text"', () => {
+  test('"as" equals "span"', () => {
     const styles = css.create({
       text: {
         color: 'blue',
@@ -114,14 +130,14 @@ describe('<compat.native>', () => {
     let root;
     act(() => {
       root = create(
-        <compat.native as="text" style={styles.text}>
+        <compat.native as="span" style={styles.text}>
           {(nativeProps) => (
             <Text {...nativeProps} accessibilityLabel="label" />
           )}
         </compat.native>
       );
     });
-    expect(root.toJSON()).toMatchSnapshot('as=text');
+    expect(root.toJSON()).toMatchSnapshot('as=span');
   });
 
   test('"as" equals "textarea"', () => {
@@ -140,26 +156,6 @@ describe('<compat.native>', () => {
       );
     });
     expect(root.toJSON()).toMatchSnapshot('as=textarea');
-  });
-
-  test('"as" equals "view"', () => {
-    const styles = css.create({
-      view: {
-        paddingInline: '2rem'
-      }
-    });
-
-    let root;
-    act(() => {
-      root = create(
-        <compat.native as="view" style={styles.view}>
-          {(nativeProps) => (
-            <View {...nativeProps} accessibilityLabel="label" />
-          )}
-        </compat.native>
-      );
-    });
-    expect(root.toJSON()).toMatchSnapshot('as=view');
   });
 
   test('nested', () => {
