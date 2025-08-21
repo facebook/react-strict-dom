@@ -37,10 +37,17 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 ): component(ref?: React.RefSetter<T>, ...P) {
   const component: React.AbstractComponent<P, T> = React.forwardRef(
     function (props, forwardedRef) {
-      let NativeComponent =
-        tagName === 'button'
-          ? ReactNative.Pressable
-          : ReactNative.ViewNativeComponent;
+      let NativeComponent = null;
+      switch (tagName) {
+        case 'button':
+          NativeComponent = ReactNative.Pressable;
+          break;
+        case 'dialog':
+          NativeComponent = ReactNative.Modal;
+          break;
+        default:
+          NativeComponent = ReactNative.ViewNativeComponent;
+      }
       const elementRef = useStrictDOMElement<T>(forwardedRef, { tagName });
       const hasTextAncestor = React.useContext(ReactNative.TextAncestorContext);
 
