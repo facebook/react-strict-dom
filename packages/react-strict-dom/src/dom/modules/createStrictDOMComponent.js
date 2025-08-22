@@ -44,7 +44,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
        * get host props
        */
       const { for: htmlFor, style, ...restProps } = props;
-      const hostProps: { ...P, htmlFor?: string } = restProps;
+      const hostProps: { ...P, htmlFor?: string } = { ...restProps };
       validateStrictProps(hostProps);
 
       if (htmlFor != null) {
