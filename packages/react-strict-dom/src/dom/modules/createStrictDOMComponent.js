@@ -38,56 +38,50 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     'debug::name': `html-${TagName}` as $FlowFixMe
   };
 
-  const component: React.AbstractComponent<P, T> = React.forwardRef(
-    function (props, forwardedRef) {
-      /**
-       * get host props
-       */
-      const { for: htmlFor, style, ...restProps } = props;
-      const hostProps: { ...P, htmlFor?: string } = restProps;
-      validateStrictProps(hostProps);
+  component Component(ref?: React.RefSetter<T>, ...props: P) {
+    /**
+     * get host props
+     */
+    const { for: htmlFor, style, ...restProps } = props;
+    const hostProps: { ...P, htmlFor?: string } = restProps;
+    validateStrictProps(hostProps);
 
-      if (htmlFor != null) {
-        hostProps.htmlFor = htmlFor;
-      }
-      if (props.role != null) {
-        // "presentation" synonym has wider browser support
-        // $FlowFixMe
-        hostProps.role = props.role === 'none' ? 'presentation' : props.role;
-      }
-      if (TagName === 'button') {
-        hostProps.type = hostProps.type ? hostProps.type : 'button';
-      } else if (TagName === 'input' || TagName === 'textarea') {
-        hostProps.dir = hostProps.dir ? hostProps.dir : 'auto';
-      }
-
-      /**
-       * get host style props
-       */
-      // Waiting on a diff so we can remove this indirection.
-      const hostStyleProps: ReactDOMStyleProps = stylex.props([
-        debugStyle,
-        defaultStyle,
-        style
-      ]);
-
-      /**
-       * Construct tree
-       *
-       * Intentional flow error as we are asking for a more specific type
-       * than React itself.
-       */
-      const element = (
-        <TagName
-          {...hostProps}
-          {...hostStyleProps}
-          ref={forwardedRef as $FlowFixMe}
-        />
-      );
-      return element;
+    if (htmlFor != null) {
+      hostProps.htmlFor = htmlFor;
     }
-  );
+    if (props.role != null) {
+      // "presentation" synonym has wider browser support
+      // $FlowFixMe
+      hostProps.role = props.role === 'none' ? 'presentation' : props.role;
+    }
+    if (TagName === 'button') {
+      hostProps.type = hostProps.type ? hostProps.type : 'button';
+    } else if (TagName === 'input' || TagName === 'textarea') {
+      hostProps.dir = hostProps.dir ? hostProps.dir : 'auto';
+    }
 
-  component.displayName = `html.${TagName}`;
-  return component;
+    /**
+     * get host style props
+     */
+    // Waiting on a diff so we can remove this indirection.
+    const hostStyleProps: ReactDOMStyleProps = stylex.props([
+      debugStyle,
+      defaultStyle,
+      style
+    ]);
+
+    /**
+     * Construct tree
+     *
+     * Intentional flow error as we are asking for a more specific type
+     * than React itself.
+     */
+    const element = (
+      <TagName {...hostProps} {...hostStyleProps} ref={ref as $FlowFixMe} />
+    );
+    return element;
+  }
+
+  Component.displayName = `html.${TagName}`;
+  return Component;
 }

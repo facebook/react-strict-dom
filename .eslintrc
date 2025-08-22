@@ -2,8 +2,8 @@
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "18.0",
-      "flowVersion": "0.213.1" // Flow version
+      "version": "19.0",
+      "flowVersion": "0.248.1" // Flow version
     }
   },
   // babel parser to support ES6/7 features
