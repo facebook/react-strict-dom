@@ -116,6 +116,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
     return element;
   }
 
+  // eslint-disable-next-line no-unreachable
   Component.displayName = `html.${tagName}`;
   return Component;
 }

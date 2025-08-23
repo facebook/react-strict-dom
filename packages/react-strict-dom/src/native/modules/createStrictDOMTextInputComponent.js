@@ -195,6 +195,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     return element;
   }
 
+  // eslint-disable-next-line no-unreachable
   Component.displayName = `html.${tagName}`;
   return Component;
 }
