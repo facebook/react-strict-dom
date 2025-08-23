@@ -82,6 +82,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     return element;
   }
 
+  // eslint-disable-next-line no-unreachable
   Component.displayName = `html.${TagName}`;
   return Component;
 }
