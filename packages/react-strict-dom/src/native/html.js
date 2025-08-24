@@ -32,6 +32,11 @@ import * as ReactNative from './react-native';
 import * as css from './css';
 
 const styles = css.create({
+  defaults: {
+    // Default styles on web but missing in React Native
+    boxSizing: 'content-box',
+    position: 'static'
+  },
   bold: {
     fontWeight: 'bold'
   },
@@ -39,7 +44,8 @@ const styles = css.create({
     fontStyle: 'italic'
   },
   a: {
-    color: 'blue'
+    color: 'blue',
+    textDecorationLine: 'underline'
   },
   button: {
     borderWidth: 1
@@ -82,7 +88,7 @@ const styles = css.create({
 });
 
 const headingProps = {
-  style: styles.heading
+  style: [styles.defaults, styles.heading]
 };
 
 /**
@@ -91,7 +97,7 @@ const headingProps = {
 export const a: component(
   ref?: React.RefSetter<HTMLAnchorElement>,
   ...StrictReactDOMAnchorProps
-) = createStrictText('a', { style: [styles.a, styles.underline] });
+) = createStrictText('a', { style: [styles.defaults, styles.a] });
 
 /**
  * "article" (block)
@@ -99,7 +105,7 @@ export const a: component(
 export const article: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('article');
+) = createStrict('article', { style: styles.defaults });
 
 /**
  * "aside" (block)
@@ -107,7 +113,7 @@ export const article: component(
 export const aside: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('aside');
+) = createStrict('aside', { style: styles.defaults });
 
 /**
  * "b" (inline)
@@ -115,7 +121,7 @@ export const aside: component(
 export const b: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('b', { style: styles.bold });
+) = createStrictText('b', { style: [styles.defaults, styles.bold] });
 
 /**
  * "bdi" (inline)
@@ -123,7 +129,7 @@ export const b: component(
 export const bdi: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('bdi');
+) = createStrictText('bdi', { style: styles.defaults });
 
 /**
  * "bdo" (inline)
@@ -131,7 +137,7 @@ export const bdi: component(
 export const bdo: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('bdo');
+) = createStrictText('bdo', { style: styles.defaults });
 
 /**
  * "blockquote" (block)
@@ -139,7 +145,7 @@ export const bdo: component(
 export const blockquote: component(
   ref?: React.RefSetter<HTMLQuoteElement>,
   ...StrictReactDOMProps
-) = createStrict('blockquote');
+) = createStrict('blockquote', { style: styles.defaults });
 
 /**
  * "br"
@@ -156,7 +162,7 @@ export const button: component(
   ref?: React.RefSetter<HTMLButtonElement>,
   ...StrictReactDOMButtonProps
 ) = createStrict('button', {
-  style: styles.button,
+  style: [styles.defaults, styles.button],
   type: 'button'
 });
 
@@ -166,7 +172,7 @@ export const button: component(
 export const code: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('code', { style: styles.code });
+) = createStrictText('code', { style: [styles.defaults, styles.code] });
 
 /**
  * "del" (inline)
@@ -174,7 +180,7 @@ export const code: component(
 export const del: component(
   ref?: React.RefSetter<HTMLModElement>,
   ...StrictReactDOMProps
-) = createStrictText('del', { style: styles.lineThrough });
+) = createStrictText('del', { style: [styles.defaults, styles.lineThrough] });
 
 /**
  * "div" (block)
@@ -182,7 +188,7 @@ export const del: component(
 export const div: component(
   ref?: React.RefSetter<HTMLDivElement>,
   ...StrictReactDOMProps
-) = createStrict('div');
+) = createStrict('div', { style: styles.defaults });
 
 /**
  * "em" (inline)
@@ -190,7 +196,7 @@ export const div: component(
 export const em: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('em', { style: styles.italic });
+) = createStrictText('em', { style: [styles.defaults, styles.italic] });
 
 /**
  * "fieldset" (block)
@@ -198,7 +204,7 @@ export const em: component(
 export const fieldset: component(
   ref?: React.RefSetter<HTMLFieldSetElement>,
   ...StrictReactDOMProps
-) = createStrict('fieldset');
+) = createStrict('fieldset', { style: styles.defaults });
 
 /**
  * "footer" (block)
@@ -206,7 +212,7 @@ export const fieldset: component(
 export const footer: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('footer');
+) = createStrict('footer', { style: styles.defaults });
 
 /**
  * "form" (block)
@@ -214,7 +220,7 @@ export const footer: component(
 export const form: component(
   ref?: React.RefSetter<HTMLFormElement>,
   ...StrictReactDOMProps
-) = createStrict('form');
+) = createStrict('form', { style: styles.defaults });
 
 /**
  * "h1-h6" (block)
@@ -250,7 +256,7 @@ export const h6: component(
 export const header: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('header');
+) = createStrict('header', { style: styles.defaults });
 
 /**
  * "hr" (block)
@@ -258,7 +264,7 @@ export const header: component(
 export const hr: component(
   ref?: React.RefSetter<HTMLHRElement>,
   ...StrictReactDOMProps
-) = createStrict('hr', { style: styles.hr });
+) = createStrict('hr', { style: [styles.defaults, styles.hr] });
 
 /**
  * "i" (inline)
@@ -266,7 +272,7 @@ export const hr: component(
 export const i: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('i', { style: styles.italic });
+) = createStrictText('i', { style: [styles.defaults, styles.italic] });
 
 /**
  * "img" (inline)
@@ -274,7 +280,7 @@ export const i: component(
 export const img: component(
   ref?: React.RefSetter<HTMLImageElement>,
   ...StrictReactDOMImageProps
-) = createStrictImage('img', { style: styles.img });
+) = createStrictImage('img', { style: [styles.defaults, styles.img] });
 
 /**
  * "input" (inline-block)
@@ -283,7 +289,7 @@ export const input: component(
   ref?: React.RefSetter<HTMLInputElement>,
   ...StrictReactDOMInputProps
 ) = createStrictTextInput('input', {
-  style: styles.input
+  style: [styles.defaults, styles.input]
 });
 
 /**
@@ -292,7 +298,7 @@ export const input: component(
 export const ins: component(
   ref?: React.RefSetter<HTMLModElement>,
   ...StrictReactDOMProps
-) = createStrictText('ins', { style: styles.underline });
+) = createStrictText('ins', { style: [styles.defaults, styles.underline] });
 
 /**
  * "kbd" (inline)
@@ -300,7 +306,7 @@ export const ins: component(
 export const kbd: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('kbd', { style: styles.code });
+) = createStrictText('kbd', { style: [styles.defaults, styles.code] });
 
 /**
  * "label" (inline)
@@ -308,7 +314,7 @@ export const kbd: component(
 export const label: component(
   ref?: React.RefSetter<HTMLLabelElement>,
   ...StrictReactDOMLabelProps
-) = createStrictText('label');
+) = createStrictText('label', { style: styles.defaults });
 
 /**
  * "li" (block)
@@ -316,7 +322,7 @@ export const label: component(
 export const li: component(
   ref?: React.RefSetter<HTMLLIElement>,
   ...StrictReactDOMListItemProps
-) = createStrict('li');
+) = createStrict('li', { style: styles.defaults });
 
 /**
  * "main" (block)
@@ -324,7 +330,7 @@ export const li: component(
 export const main: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('main');
+) = createStrict('main', { style: styles.defaults });
 
 /**
  * "mark" (inline)
@@ -332,7 +338,7 @@ export const main: component(
 export const mark: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('mark', { style: styles.mark });
+) = createStrictText('mark', { style: [styles.defaults, styles.mark] });
 
 /**
  * "nav" (block)
@@ -340,7 +346,7 @@ export const mark: component(
 export const nav: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('nav');
+) = createStrict('nav', { style: styles.defaults });
 
 /**
  * "ol" (block)
@@ -348,15 +354,15 @@ export const nav: component(
 export const ol: component(
   ref?: React.RefSetter<HTMLOListElement>,
   ...StrictReactDOMProps
-) = createStrict('ol');
+) = createStrict('ol', { style: styles.defaults });
 
 /**
- * "optgroup"
+ * "optgroup" (block)
  */
 export const optgroup: component(
   ref?: React.RefSetter<HTMLOptGroupElement>,
   ...StrictReactDOMOptionGroupProps
-) = createStrict('optgroup');
+) = createStrict('optgroup', { style: styles.defaults });
 
 /**
  * "option"
@@ -364,7 +370,7 @@ export const optgroup: component(
 export const option: component(
   ref?: React.RefSetter<HTMLOptionElement>,
   ...StrictReactDOMOptionProps
-) = createStrictText('option');
+) = createStrictText('option', { style: styles.defaults });
 
 /**
  * "p" (block)
@@ -372,7 +378,7 @@ export const option: component(
 export const p: component(
   ref?: React.RefSetter<HTMLParagraphElement>,
   ...StrictReactDOMProps
-) = createStrictText('p');
+) = createStrictText('p', { style: styles.defaults });
 
 /**
  * "pre" (block)
@@ -380,7 +386,7 @@ export const p: component(
 export const pre: component(
   ref?: React.RefSetter<HTMLPreElement>,
   ...StrictReactDOMProps
-) = createStrictText('pre', { style: styles.code });
+) = createStrictText('pre', { style: [styles.defaults, styles.code] });
 
 /**
  * "s" (inline)
@@ -388,7 +394,7 @@ export const pre: component(
 export const s: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('s', { style: styles.lineThrough });
+) = createStrictText('s', { style: [styles.defaults, styles.lineThrough] });
 
 /**
  * "section" (block)
@@ -396,7 +402,7 @@ export const s: component(
 export const section: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict('section');
+) = createStrict('section', { style: styles.defaults });
 
 /**
  * "select" (inline-block)
@@ -404,7 +410,7 @@ export const section: component(
 export const select: component(
   ref?: React.RefSetter<HTMLSelectElement>,
   ...StrictReactDOMSelectProps
-) = createStrict('select');
+) = createStrict('select', { style: styles.defaults });
 
 /**
  * "span" (inline)
@@ -412,7 +418,7 @@ export const select: component(
 export const span: component(
   ref?: React.RefSetter<HTMLSpanElement>,
   ...StrictReactDOMProps
-) = createStrictText('span');
+) = createStrictText('span', { style: styles.defaults });
 
 /**
  * "strong" (inline)
@@ -420,7 +426,7 @@ export const span: component(
 export const strong: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('strong', { style: styles.bold });
+) = createStrictText('strong', { style: [styles.defaults, styles.bold] });
 
 /**
  * "sub" (inline)
@@ -428,7 +434,7 @@ export const strong: component(
 export const sub: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('sub');
+) = createStrictText('sub', { style: styles.defaults });
 
 /**
  * "sup" (inline)
@@ -436,7 +442,7 @@ export const sub: component(
 export const sup: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('sup');
+) = createStrictText('sup', { style: styles.defaults });
 
 /**
  * "textarea" (inline-block)
@@ -445,7 +451,7 @@ export const textarea: component(
   ref?: React.RefSetter<HTMLTextAreaElement>,
   ...StrictReactDOMTextAreaProps
 ) = createStrictTextInput('textarea', {
-  style: styles.textarea
+  style: [styles.defaults, styles.textarea]
 });
 
 /**
@@ -454,7 +460,7 @@ export const textarea: component(
 export const u: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrictText('u', { style: styles.underline });
+) = createStrictText('u', { style: [styles.defaults, styles.underline] });
 
 /**
  * "ul" (block)
@@ -462,4 +468,4 @@ export const u: component(
 export const ul: component(
   ref?: React.RefSetter<HTMLUListElement>,
   ...StrictReactDOMProps
-) = createStrict('ul');
+) = createStrict('ul', { style: styles.defaults });

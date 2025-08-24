@@ -179,4 +179,28 @@ describe('<compat.native>', () => {
     });
     expect(root.toJSON()).toMatchSnapshot('nested');
   });
+
+  test('styled', () => {
+    const styles = css.create({
+      block: {
+        paddingInline: '2rem'
+      }
+    });
+
+    let root;
+    act(() => {
+      root = create(
+        <compat.native style={styles.block}>
+          {(nativeProps) => (
+            <Pressable
+              {...nativeProps}
+              accessibilityLabel="label"
+              style={[{ position: 'absolute' }, nativeProps.style]}
+            />
+          )}
+        </compat.native>
+      );
+    });
+    expect(root.toJSON()).toMatchSnapshot('styled');
+  });
 });

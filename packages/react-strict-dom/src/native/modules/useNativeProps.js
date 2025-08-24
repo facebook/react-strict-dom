@@ -12,7 +12,6 @@ import type { ReactNativeProps } from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
 
-import * as css from '../css';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 import { extractStyleThemes } from './extractStyleThemes';
 import { isPropAllowed } from '../../shared/isPropAllowed';
@@ -152,7 +151,7 @@ export function useNativeProps(
    * Resolve style props
    */
 
-  const renderStyle = [styles.base, defaultProps?.style ?? null, style];
+  const renderStyle = [defaultProps?.style ?? null, style];
 
   const [extractedStyle, customPropertiesFromThemes] =
     extractStyleThemes(renderStyle);
@@ -403,11 +402,3 @@ export function useNativeProps(
     inheritableStyle
   };
 }
-
-const styles = css.create({
-  // Default styles on web but missing in React Native
-  base: {
-    boxSizing: 'content-box',
-    position: 'static'
-  }
-});

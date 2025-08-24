@@ -10,6 +10,7 @@
 import type { StrictProps } from '../types/StrictProps';
 
 import * as React from 'react';
+
 // $FlowFixMe[nonstrict-import]
 import { createStrictDOMComponent as createStrict } from './modules/createStrictDOMComponent';
 // $FlowFixMe[nonstrict-import]
