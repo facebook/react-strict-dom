@@ -6,9 +6,7 @@ exports[`<compat.native> "as" equals "div": as=div 1`] = `
   ref={[Function]}
   style={
     {
-      "boxSizing": "content-box",
       "paddingHorizontal": 32,
-      "position": "static",
     }
   }
 />
@@ -22,8 +20,6 @@ exports[`<compat.native> "as" equals "img": as=img 1`] = `
   style={
     {
       "aspectRatio": "16/9",
-      "boxSizing": "content-box",
-      "position": "static",
     }
   }
 />
@@ -35,12 +31,7 @@ exports[`<compat.native> "as" equals "input": as=input 1`] = `
   placeholderTextColor="green"
   ref={[Function]}
   secureTextEntry={true}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 />
 `;
 
@@ -51,9 +42,7 @@ exports[`<compat.native> "as" equals "span": as=span 1`] = `
   ref={[Function]}
   style={
     {
-      "boxSizing": "content-box",
       "color": "blue",
-      "position": "static",
       "userSelect": "none",
     }
   }
@@ -66,12 +55,7 @@ exports[`<compat.native> "as" equals "textarea": as=textarea 1`] = `
   multiline={true}
   numberOfLines={3}
   ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 />
 `;
 
@@ -81,9 +65,7 @@ exports[`<compat.native> default: default 1`] = `
   ref={[Function]}
   style={
     {
-      "boxSizing": "content-box",
       "paddingHorizontal": 32,
-      "position": "static",
     }
   }
 />
@@ -93,12 +75,7 @@ exports[`<compat.native> nested: nested 1`] = `
 <View
   accessibilityLabel="label"
   ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 >
   <Text
     ref={[Function]}
@@ -113,4 +90,21 @@ exports[`<compat.native> nested: nested 1`] = `
     back to html
   </Text>
 </View>
+`;
+
+exports[`<compat.native> styled: styled 1`] = `
+<Pressable
+  accessibilityLabel="label"
+  ref={[Function]}
+  style={
+    [
+      {
+        "position": "absolute",
+      },
+      {
+        "paddingHorizontal": 32,
+      },
+    ]
+  }
+/>
 `;
