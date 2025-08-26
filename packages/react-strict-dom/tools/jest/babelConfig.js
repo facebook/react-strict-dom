@@ -51,6 +51,10 @@ const createConfig = ({ modules, target }) => {
       iterableIsArray: true
     },
     comments: false,
+    parserOpts: {
+      enableExperimentalComponentSyntax: true,
+      reactRuntimeTarget: '19'
+    },
     presets,
     plugins
   };
