@@ -10,6 +10,10 @@ const config = {
     iterableIsArray: true
   },
   comments: false,
+  parserOpts: {
+    enableExperimentalComponentSyntax: true,
+    reactRuntimeTarget: '19',
+  },
   plugins: ['babel-plugin-syntax-hermes-parser'],
   presets:[
     [

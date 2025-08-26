@@ -3,14 +3,12 @@
 exports[`html "a" default rendering 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -19,7 +17,6 @@ exports[`html "a" supports additional anchor attributes 1`] = `
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   download="download.png"
   href="https://google.com"
-  ref={null}
   referrerPolicy="no-referrer"
   rel="nofollow"
   target="_blank"
@@ -86,7 +83,6 @@ exports[`html "a" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -146,21 +142,18 @@ exports[`html "a" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "article" default rendering 1`] = `
 <article
   className="html-article x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 <article
   className="html-article x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -224,7 +217,6 @@ exports[`html "article" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -284,21 +276,18 @@ exports[`html "article" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "aside" default rendering 1`] = `
 <aside
   className="html-aside x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 <aside
   className="html-aside x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -362,7 +351,6 @@ exports[`html "aside" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -422,21 +410,18 @@ exports[`html "aside" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "b" default rendering 1`] = `
 <b
   className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 <b
   className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -500,7 +485,6 @@ exports[`html "b" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -560,21 +544,18 @@ exports[`html "b" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "bdi" default rendering 1`] = `
 <bdi
   className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 <bdi
   className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -638,7 +619,6 @@ exports[`html "bdi" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -698,21 +678,18 @@ exports[`html "bdi" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "bdo" default rendering 1`] = `
 <bdo
   className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 <bdo
   className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -776,7 +753,6 @@ exports[`html "bdo" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -836,21 +812,18 @@ exports[`html "bdo" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "blockquote" default rendering 1`] = `
 <blockquote
   className="html-blockquote x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
 <blockquote
   className="html-blockquote x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -914,7 +887,6 @@ exports[`html "blockquote" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -974,21 +946,18 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "br" default rendering 1`] = `
 <br
   className="html-br"
-  ref={null}
 />
 `;
 
 exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 <br
   className="html-br"
-  ref={null}
 />
 `;
 
@@ -1052,7 +1021,6 @@ exports[`html "br" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1112,14 +1080,12 @@ exports[`html "br" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "button" default rendering 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
-  ref={null}
   type="button"
 />
 `;
@@ -1127,7 +1093,6 @@ exports[`html "button" default rendering 1`] = `
 exports[`html "button" ignores and warns about unsupported attributes 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
-  ref={null}
   type="button"
 />
 `;
@@ -1136,7 +1101,6 @@ exports[`html "button" supports additional button attributes 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   disabled={true}
-  ref={null}
   type="submit"
 />
 `;
@@ -1201,7 +1165,6 @@ exports[`html "button" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1262,7 +1225,6 @@ exports[`html "button" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
   type="button"
 />
 `;
@@ -1270,14 +1232,12 @@ exports[`html "button" supports inline event handlers 1`] = `
 exports[`html "code" default rendering 1`] = `
 <code
   className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
-  ref={null}
 />
 `;
 
 exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 <code
   className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
-  ref={null}
 />
 `;
 
@@ -1341,7 +1301,6 @@ exports[`html "code" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1401,21 +1360,18 @@ exports[`html "code" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "del" default rendering 1`] = `
 <del
   className="html-del"
-  ref={null}
 />
 `;
 
 exports[`html "del" ignores and warns about unsupported attributes 1`] = `
 <del
   className="html-del"
-  ref={null}
 />
 `;
 
@@ -1479,7 +1435,6 @@ exports[`html "del" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1539,21 +1494,18 @@ exports[`html "del" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "div" default rendering 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -1617,7 +1569,6 @@ exports[`html "div" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1677,21 +1628,18 @@ exports[`html "div" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "em" default rendering 1`] = `
 <em
   className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 <em
   className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -1755,7 +1703,6 @@ exports[`html "em" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1815,21 +1762,18 @@ exports[`html "em" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "fieldset" default rendering 1`] = `
 <fieldset
   className="html-fieldset x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 <fieldset
   className="html-fieldset x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -1893,7 +1837,6 @@ exports[`html "fieldset" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -1953,21 +1896,18 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "footer" default rendering 1`] = `
 <footer
   className="html-footer x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 <footer
   className="html-footer x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -2031,7 +1971,6 @@ exports[`html "footer" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2091,21 +2030,18 @@ exports[`html "footer" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "form" default rendering 1`] = `
 <form
   className="html-form x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 <form
   className="html-form x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -2169,7 +2105,6 @@ exports[`html "form" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2229,21 +2164,18 @@ exports[`html "form" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h1" default rendering 1`] = `
 <h1
   className="html-h1 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 <h1
   className="html-h1 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2307,7 +2239,6 @@ exports[`html "h1" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2367,21 +2298,18 @@ exports[`html "h1" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h2" default rendering 1`] = `
 <h2
   className="html-h2 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 <h2
   className="html-h2 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2445,7 +2373,6 @@ exports[`html "h2" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2505,21 +2432,18 @@ exports[`html "h2" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h3" default rendering 1`] = `
 <h3
   className="html-h3 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 <h3
   className="html-h3 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2583,7 +2507,6 @@ exports[`html "h3" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2643,21 +2566,18 @@ exports[`html "h3" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h4" default rendering 1`] = `
 <h4
   className="html-h4 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 <h4
   className="html-h4 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2721,7 +2641,6 @@ exports[`html "h4" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2781,21 +2700,18 @@ exports[`html "h4" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h5" default rendering 1`] = `
 <h5
   className="html-h5 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 <h5
   className="html-h5 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2859,7 +2775,6 @@ exports[`html "h5" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -2919,21 +2834,18 @@ exports[`html "h5" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "h6" default rendering 1`] = `
 <h6
   className="html-h6 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 <h6
   className="html-h6 x1ghz6dp x1717udv xngnso2 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -2997,7 +2909,6 @@ exports[`html "h6" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3057,21 +2968,18 @@ exports[`html "h6" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "header" default rendering 1`] = `
 <header
   className="html-header x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 <header
   className="html-header x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -3135,7 +3043,6 @@ exports[`html "header" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3195,21 +3102,18 @@ exports[`html "header" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "hr" default rendering 1`] = `
 <hr
   className="html-hr x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
-  ref={null}
 />
 `;
 
 exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 <hr
   className="html-hr x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
-  ref={null}
 />
 `;
 
@@ -3273,7 +3177,6 @@ exports[`html "hr" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3333,21 +3236,18 @@ exports[`html "hr" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "i" default rendering 1`] = `
 <i
   className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 <i
   className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -3411,7 +3311,6 @@ exports[`html "i" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3471,21 +3370,18 @@ exports[`html "i" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "img" default rendering 1`] = `
 <img
   className="html-img xuw900x xt7dq6l x193iq5w"
-  ref={null}
 />
 `;
 
 exports[`html "img" ignores and warns about unsupported attributes 1`] = `
 <img
   className="html-img xuw900x xt7dq6l x193iq5w"
-  ref={null}
 />
 `;
 
@@ -3500,7 +3396,6 @@ exports[`html "img" supports additional image attributes 1`] = `
   loading="lazy"
   onError={[Function]}
   onLoad={[Function]}
-  ref={null}
   referrerPolicy="no-referrer"
   src="https://src.jpg"
   srcSet="https://srcSet-1x.jpg 1x, https://srcSet-2x.jpg 2x"
@@ -3568,7 +3463,6 @@ exports[`html "img" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3628,7 +3522,6 @@ exports[`html "img" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
@@ -3636,7 +3529,6 @@ exports[`html "input" default rendering 1`] = `
 <input
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
-  ref={null}
 />
 `;
 
@@ -3644,7 +3536,6 @@ exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 <input
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
-  ref={null}
 />
 `;
 
@@ -3670,7 +3561,6 @@ exports[`html "input" supports additional input attributes 1`] = `
   onSelectionChange={[Function]}
   placeholder="Placeholder"
   readOnly={true}
-  ref={null}
   required={true}
   step={3}
   type="text"
@@ -3738,7 +3628,6 @@ exports[`html "input" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3799,21 +3688,18 @@ exports[`html "input" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "ins" default rendering 1`] = `
 <ins
   className="html-ins"
-  ref={null}
 />
 `;
 
 exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
 <ins
   className="html-ins"
-  ref={null}
 />
 `;
 
@@ -3877,7 +3763,6 @@ exports[`html "ins" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -3937,21 +3822,18 @@ exports[`html "ins" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "kbd" default rendering 1`] = `
 <kbd
   className="html-kbd"
-  ref={null}
 />
 `;
 
 exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
 <kbd
   className="html-kbd"
-  ref={null}
 />
 `;
 
@@ -4015,7 +3897,6 @@ exports[`html "kbd" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4075,21 +3956,18 @@ exports[`html "kbd" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "label" default rendering 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "label" ignores and warns about unsupported attributes 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -4097,7 +3975,6 @@ exports[`html "label" supports additional label attributes 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   htmlFor="some-id"
-  ref={null}
 />
 `;
 
@@ -4161,7 +4038,6 @@ exports[`html "label" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4221,28 +4097,24 @@ exports[`html "label" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "li" supports list item attributes 1`] = `
 <li
   className="html-li x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "main" default rendering 1`] = `
 <main
   className="html-main x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 <main
   className="html-main x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -4306,7 +4178,6 @@ exports[`html "main" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4366,21 +4237,18 @@ exports[`html "main" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "mark" default rendering 1`] = `
 <mark
   className="html-mark x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
 <mark
   className="html-mark x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -4444,7 +4312,6 @@ exports[`html "mark" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4504,21 +4371,18 @@ exports[`html "mark" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "nav" default rendering 1`] = `
 <nav
   className="html-nav x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 <nav
   className="html-nav x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -4582,7 +4446,6 @@ exports[`html "nav" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4642,21 +4505,18 @@ exports[`html "nav" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "ol" default rendering 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -4720,7 +4580,6 @@ exports[`html "ol" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4780,28 +4639,24 @@ exports[`html "ol" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "ol" supports list attributes 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "optgroup" default rendering 1`] = `
 <optgroup
   className="html-optgroup"
-  ref={null}
 />
 `;
 
 exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
 <optgroup
   className="html-optgroup"
-  ref={null}
 />
 `;
 
@@ -4865,7 +4720,6 @@ exports[`html "optgroup" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -4925,21 +4779,18 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "option" default rendering 1`] = `
 <option
   className="html-option"
-  ref={null}
 />
 `;
 
 exports[`html "option" ignores and warns about unsupported attributes 1`] = `
 <option
   className="html-option"
-  ref={null}
 />
 `;
 
@@ -5003,7 +4854,6 @@ exports[`html "option" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5063,7 +4913,6 @@ exports[`html "option" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
@@ -5072,7 +4921,6 @@ exports[`html "option" supports input attributes 1`] = `
   className="html-option"
   disabled={true}
   label="label"
-  ref={null}
   value="value"
 />
 `;
@@ -5080,14 +4928,12 @@ exports[`html "option" supports input attributes 1`] = `
 exports[`html "p" default rendering 1`] = `
 <p
   className="html-p x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 <p
   className="html-p x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -5151,7 +4997,6 @@ exports[`html "p" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5211,21 +5056,18 @@ exports[`html "p" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "pre" default rendering 1`] = `
 <pre
   className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
-  ref={null}
 />
 `;
 
 exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 <pre
   className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
-  ref={null}
 />
 `;
 
@@ -5289,7 +5131,6 @@ exports[`html "pre" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5349,21 +5190,18 @@ exports[`html "pre" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "s" default rendering 1`] = `
 <s
   className="html-s"
-  ref={null}
 />
 `;
 
 exports[`html "s" ignores and warns about unsupported attributes 1`] = `
 <s
   className="html-s"
-  ref={null}
 />
 `;
 
@@ -5427,7 +5265,6 @@ exports[`html "s" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5487,21 +5324,18 @@ exports[`html "s" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "section" default rendering 1`] = `
 <section
   className="html-section x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 <section
   className="html-section x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -5565,7 +5399,6 @@ exports[`html "section" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5625,21 +5458,18 @@ exports[`html "section" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "select" default rendering 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -5656,7 +5486,6 @@ exports[`html "select" supports additional select attributes 1`] = `
   onSelect={[Function]}
   onSelectionChange={[Function]}
   readOnly={true}
-  ref={null}
   required={true}
   value="value"
 />
@@ -5722,7 +5551,6 @@ exports[`html "select" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5782,21 +5610,18 @@ exports[`html "select" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "span" default rendering 1`] = `
 <span
   className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 <span
   className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -5860,7 +5685,6 @@ exports[`html "span" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -5920,21 +5744,18 @@ exports[`html "span" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "strong" default rendering 1`] = `
 <strong
   className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
-  ref={null}
 />
 `;
 
 exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 <strong
   className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
-  ref={null}
 />
 `;
 
@@ -5998,7 +5819,6 @@ exports[`html "strong" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6058,21 +5878,18 @@ exports[`html "strong" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "sub" default rendering 1`] = `
 <sub
   className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 <sub
   className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -6136,7 +5953,6 @@ exports[`html "sub" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6196,21 +6012,18 @@ exports[`html "sub" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "sup" default rendering 1`] = `
 <sup
   className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
 exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
 <sup
   className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
-  ref={null}
 />
 `;
 
@@ -6274,7 +6087,6 @@ exports[`html "sup" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6334,7 +6146,6 @@ exports[`html "sup" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
@@ -6342,7 +6153,6 @@ exports[`html "textarea" default rendering 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
-  ref={null}
 />
 `;
 
@@ -6350,7 +6160,6 @@ exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
-  ref={null}
 />
 `;
 
@@ -6371,7 +6180,6 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
   onSelectionChange={[Function]}
   placeholder="Placeholder"
   readOnly={true}
-  ref={null}
   required={true}
   rows={3}
   value="value"
@@ -6438,7 +6246,6 @@ exports[`html "textarea" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6499,21 +6306,18 @@ exports[`html "textarea" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "u" default rendering 1`] = `
 <u
   className="html-u"
-  ref={null}
 />
 `;
 
 exports[`html "u" ignores and warns about unsupported attributes 1`] = `
 <u
   className="html-u"
-  ref={null}
 />
 `;
 
@@ -6577,7 +6381,6 @@ exports[`html "u" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6637,21 +6440,18 @@ exports[`html "u" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "ul" default rendering 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
 exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -6715,7 +6515,6 @@ exports[`html "ul" supports global attributes 1`] = `
   inert={true}
   inputMode="numeric"
   lang="en-US"
-  ref={null}
   role="article"
   spellCheck={true}
   style={
@@ -6775,14 +6574,12 @@ exports[`html "ul" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   onWheel={[Function]}
-  ref={null}
 />
 `;
 
 exports[`html "ul" supports list attributes 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
-  ref={null}
 />
 `;
 
@@ -6791,6 +6588,5 @@ exports[`html temporary data-* props support 1`] = `
   className="html-div x1ghz6dp x1717udv"
   data-imgperflogname="imgperflogname"
   data-visualcompletion="visualcompletion"
-  ref={null}
 />
 `;
