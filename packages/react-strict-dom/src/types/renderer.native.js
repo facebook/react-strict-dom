@@ -7,28 +7,29 @@
  * @flow strict
  */
 
-// $FlowFixMe(nonstrict-import)
+// $FlowFixMe[nonstrict-import]
 import type AnimatedNode from 'react-native/Libraries/Animated/nodes/AnimatedNode';
 import type {
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[nonstrict-import]
   CompositeAnimation
 } from 'react-native/Libraries/Animated/Animated';
 import type {
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[nonstrict-import]
+  // $FlowFixMe[missing-export]
   Props as TextInputProps
 } from 'react-native/Libraries/Components/TextInput/TextInput';
 import type {
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[nonstrict-import]
   ImageProps
 } from 'react-native/Libraries/Image/ImageProps';
 import type {
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[missing-export]
   PressEvent,
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[missing-export]
   SyntheticEvent
 } from 'react-native/Libraries/Types/CoreEventTypes';
 import type {
-  // $FlowFixMe(nonstrict-import)
+  // $FlowFixMe[nonstrict-import]
   ViewProps
 } from 'react-native/Libraries/Components/View/ViewPropTypes';
 
