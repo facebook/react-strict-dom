@@ -832,12 +832,7 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
 exports[`html "br" default rendering 1`] = `
 <Text
   ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 >
   
 
@@ -847,12 +842,7 @@ exports[`html "br" default rendering 1`] = `
 exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 >
   
 
@@ -897,10 +887,8 @@ exports[`html "br" supports global attributes 1`] = `
   style={
     {
       "--custom-property": "inline",
-      "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
-      "position": "static",
       "writingDirection": "ltr",
     }
   }
@@ -938,12 +926,7 @@ exports[`html "br" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
+  style={{}}
 >
   
 
