@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.49 (Sep 4, 2025)
+
+### Breaking changes
+
+* [Native] Exclude default styles from `<compat.native>`.
+
 ## 0.0.48 (Aug 20, 2025)
 
 ### Breaking changes
