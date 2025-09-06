@@ -20,7 +20,6 @@ Babel is not the default compiler when using Next.js App Router, but it can stil
 const dev = process.env.NODE_ENV !== 'production'
 
 const config = {
-  cacheDirectory: true,
   parserOpts: {
     plugins: ['typescript', 'jsx'],
   },
@@ -39,6 +38,13 @@ const config = {
 
 export default config;
 ```
+
+If necessary, run
+
+```
+npm install --dev babel-loader
+```
+
 
 ## PostCSS configuration
 
@@ -65,6 +71,12 @@ const config = {
 };
 
 export default config;
+```
+
+If necessary, run
+
+```
+npm install --dev autoprefixer
 ```
 
 ## Next.js configuration
