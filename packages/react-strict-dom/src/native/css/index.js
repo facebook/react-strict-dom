@@ -469,6 +469,12 @@ export function props(
       nextStyle.alignContent ??= styleValue;
       nextStyle.justifyContent ??= styleValue;
     }
+    // willChange polyfill
+    else if (styleProp === 'willChange') {
+      if (typeof styleValue === 'string' && styleValue !== 'auto') {
+        nativeProps.renderToHardwareTextureAndroid = true;
+      }
+    }
     // Everything else
     else {
       nextStyle[styleProp] = styleValue;

@@ -109,6 +109,7 @@ type ReactNativeProps = {
   pointerEvents?: ViewProps['pointerEvents'],
   ref?: $FlowFixMe,
   referrerPolicy?: ImageProps['referrerPolicy'],
+  renderToHardwareTextureAndroid?: ViewProps['renderToHardwareTextureAndroid'],
   role?: ?string,
   secureTextEntry?: TextInputProps['secureTextEntry'],
   spellCheck?: TextInputProps['spellCheck'],

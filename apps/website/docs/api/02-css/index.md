@@ -277,5 +277,6 @@ The following tables represent the compatibility status of the strict CSS API fo
 | visibility | 🟡 | 🟡 | |
 | whiteSpace | ❌ | ❌ | |
 | width | ✅ | ✅ | |
+| willChange | 🟡 | 🟡 | |
 | wordBreak | ❌ | ❌ | |
 | zIndex | ✅ | ✅ | [#100](https://github.com/facebook/react-strict-dom/issues/100) |
