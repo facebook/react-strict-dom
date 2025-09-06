@@ -110,6 +110,7 @@ type ReactNativeProps = {
   ref?: $FlowFixMe,
   referrerPolicy?: ImageProps['referrerPolicy'],
   role?: ?string,
+  renderToHardwareTextureAndroid?: ViewProps['renderToHardwareTextureAndroid'],
   secureTextEntry?: TextInputProps['secureTextEntry'],
   spellCheck?: TextInputProps['spellCheck'],
   src?: ImageProps['src'],

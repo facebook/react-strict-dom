@@ -775,6 +775,15 @@ describe('properties: general', () => {
       'visible'
     );
   });
+
+  test('willChange', () => {
+    const styles = css.create({
+      root: {
+        willChange: 'transform'
+      }
+    });
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot();
+  });
 });
 
 /**

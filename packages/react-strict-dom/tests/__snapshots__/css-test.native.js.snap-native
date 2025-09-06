@@ -773,6 +773,13 @@ exports[`properties: general visibility: visible 1`] = `
 }
 `;
 
+exports[`properties: general willChange 1`] = `
+{
+  "renderToHardwareTextureAndroid": true,
+  "style": {},
+}
+`;
+
 exports[`properties: logical direction blockSize: blockSize 1`] = `
 {
   "style": {
