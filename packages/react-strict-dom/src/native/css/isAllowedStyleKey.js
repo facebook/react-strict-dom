@@ -156,6 +156,7 @@ const allowedStyleKeySet = new Set<string>([
   'verticalAlign', // Android Only
   'visibility',
   'width',
+  'willChange', // Android Only
   'zIndex',
   // Object-value keys
   'default',
