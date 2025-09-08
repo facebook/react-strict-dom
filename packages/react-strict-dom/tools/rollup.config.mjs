@@ -55,7 +55,10 @@ const webConfigs = [
       file: path.join(__dirname, '../dist/dom/index.js'),
       format: 'es'
     },
-    plugins: [...sharedPlugins]
+    plugins: [...sharedPlugins],
+    treeshake: {
+      moduleSideEffects: false,
+    },
   },
   // Runtime
   {
@@ -65,7 +68,10 @@ const webConfigs = [
       file: path.join(__dirname, '../dist/dom/runtime.js'),
       format: 'es'
     },
-    plugins: [...sharedPlugins]
+    plugins: [...sharedPlugins],
+    treeshake: {
+      moduleSideEffects: false,
+    },
   }
 ];
 
