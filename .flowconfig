@@ -16,6 +16,7 @@ component_syntax=true
 module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict-dom/dist/native/index.js.flow'
 module.system.node.resolve_dirname=flow_modules
 module.system.node.resolve_dirname=node_modules
+react.runtime=automatic
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
 
