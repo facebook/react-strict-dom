@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.50 (Sep 10, 2025)
+
+### New features
+
+* [Native] Add native polyfill for CSS `willChange`.
+
 ## 0.0.49 (Sep 4, 2025)
 
 ### Breaking changes
