@@ -115,6 +115,12 @@ export function createStrictDOMComponent<T, P: StrictProps>(
           }
         });
       }
+
+      if (nativeStyle.zIndex != null && nativeStyle.position === 'static') {
+        errorMsg(
+          '"position:static" prevents "zIndex" from having an effect. Try setting "position" to something other than "static".'
+        );
+      }
     }
 
     if (displayValue === 'flex') {
