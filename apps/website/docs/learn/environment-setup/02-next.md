@@ -66,17 +66,14 @@ const config = {
       babelConfig: babelLoader,
       useLayers: true,
     },
-    autoprefixer: {},
+    // If your pipeline doesn't already do CSS auto-prefixing, feel free to install as well autoprefixer
+    // $ npm install --dev autoprefixer
+    // and uncomment the line below
+    // autoprefixer: {},
   },
 };
 
 export default config;
-```
-
-If necessary, run
-
-```
-npm install --dev autoprefixer
 ```
 
 ## Next.js configuration
