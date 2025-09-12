@@ -118,7 +118,10 @@ const config = {
         theme: prismThemes.github
       }
     },
-  plugins: [require.resolve('docusaurus-lunr-search')]
+  plugins: [
+    require.resolve('docusaurus-lunr-search'),
+    require.resolve('docusaurus-plugin-generate-llms-txt'),
+  ]
 };
 
 export default config;
