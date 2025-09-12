@@ -259,6 +259,7 @@ function resolveStyle(
 
     // Resolve textShadow
     if (propName === 'textShadow') {
+      // $FlowExpectedError[unsafe-object-assign]
       Object.assign(result, styleValue);
       continue;
     }
@@ -288,6 +289,7 @@ function resolveStyle(
         : options;
 
     const resolvedStyles = resolveStyle(nextStyles, nextOptions);
+    // $FlowExpectedError[unsafe-object-assign]
     Object.assign(result, resolvedStyles);
   }
 
