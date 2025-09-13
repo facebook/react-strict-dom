@@ -14,7 +14,7 @@ The preset ensures that production builds have **no runtime performance overhead
 Import the preset from the `react-strict-dom/babel-preset` package subpath. It must be used with an options object.
 
 
-```js title="babel.config.dom.js"
+```js title="babel.config.web.js"
 import reactStrictBabelPreset from 'react-strict-dom/babel-preset';
 
 export default function babelConfig() {

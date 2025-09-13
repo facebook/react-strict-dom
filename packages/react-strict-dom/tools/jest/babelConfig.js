@@ -18,7 +18,7 @@ const createConfig = ({ modules, target }) => {
   ];
 
   if (process.env.NODE_ENV === 'test') {
-    if (target === 'dom') {
+    if (target === 'web') {
       plugins.push([
         '@stylexjs/babel-plugin',
         {

@@ -49,18 +49,18 @@ module.exports = {
         enableGlobally: true
       },
       moduleNameMapper: {
-        '^react-strict-dom$': '<rootDir>/src/dom/index.js'
+        '^react-strict-dom$': '<rootDir>/src/web/index.js'
       },
       rootDir: process.cwd(),
       setupFiles: ['<rootDir>/tools/jest/setup.js'],
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/tools/jest/dom-snapshot-resolver.js',
+      snapshotResolver: '<rootDir>/tools/jest/web-snapshot-resolver.js',
       testEnvironment: 'jsdom',
-      testMatch: ['<rootDir>/tests/*-test.js', '<rootDir>/tests/*-test.dom.js'],
+      testMatch: ['<rootDir>/tests/*-test.js', '<rootDir>/tests/*-test.web.js'],
       transform: {
-        '\\.[jt]sx?$': ['babel-jest', babelConfig(null, { target: 'dom' })]
+        '\\.[jt]sx?$': ['babel-jest', babelConfig(null, { target: 'web' })]
       }
     },
     {

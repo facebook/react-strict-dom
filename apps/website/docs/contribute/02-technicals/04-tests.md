@@ -12,9 +12,9 @@ The public API is the default test surface. This allows the project to quickly i
 
 By default, Jest unit tests are run for **both web and native**. Platform-specific tests are defined as follows:
 
-* Files with `*.dom.js` are run only on web (jsdom).
 * Files with `*.native.js` extension are run only using a React Native mock (Node.js).
 * Files with `*.node.js` extension are run only using Node.js.
+* Files with `*.web.js` are run only on web (jsdom).
 
 React Strict DOM relies heavily on snapshot tests to monitor the trees that are rendered on web and native.
 

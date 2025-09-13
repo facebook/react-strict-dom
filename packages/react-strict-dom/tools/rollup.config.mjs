@@ -50,9 +50,9 @@ const webConfigs = [
   // OSS build
   {
     external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
-    input: path.join(__dirname, '../src/dom/index.js'),
+    input: path.join(__dirname, '../src/web/index.js'),
     output: {
-      file: path.join(__dirname, '../dist/dom/index.js'),
+      file: path.join(__dirname, '../dist/web/index.js'),
       format: 'es'
     },
     plugins: [...sharedPlugins],
@@ -63,9 +63,9 @@ const webConfigs = [
   // Runtime
   {
     external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
-    input: path.join(__dirname, '../src/dom/runtime.js'),
+    input: path.join(__dirname, '../src/web/runtime.js'),
     output: {
-      file: path.join(__dirname, '../dist/dom/runtime.js'),
+      file: path.join(__dirname, '../dist/web/runtime.js'),
       format: 'es'
     },
     plugins: [...sharedPlugins],

@@ -19,7 +19,7 @@ module.exports = {
   resolveSnapshotPath: (testPath) => {
     const snapshotPath = path.join(
       path.join(path.dirname(testPath), '__snapshots__'),
-      path.basename(testPath) + '.snap-dom'
+      path.basename(testPath) + '.snap-web'
     );
     return snapshotPath;
   },

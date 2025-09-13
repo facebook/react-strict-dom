@@ -2,8 +2,8 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react-strict-dom/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react-strict-dom.svg?style=flat)](https://www.npmjs.com/package/react-strict-dom)
 
-![web (prod)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom/runtime.js?label=web%20(prod)&compression=brotli)
-![web (dev)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/dom/index.js?label=web%20(dev)&compression=brotli)
+![web (prod)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/web/runtime.js?label=web%20(prod)&compression=brotli)
+![web (dev)](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/web/index.js?label=web%20(dev)&compression=brotli)
 ![native](https://img.badgesize.io/https:/www.unpkg.com/react-strict-dom@latest/dist/native/index.js?label=native&compression=brotli)
 
 

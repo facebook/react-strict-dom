@@ -9,13 +9,13 @@
         "default": "./dist/native/index.js"
       },
       "default": {
-        "types": "./dist/dom/index.d.ts",
-        "default": "./dist/dom/index.js"
+        "types": "./dist/web/index.d.ts",
+        "default": "./dist/web/index.js"
       }
     },
     "./babel-preset": "./babel/preset.js",
     "./postcss-plugin": "./postcss/plugin.js",
-    "./runtime": "./dist/dom/runtime.js",
+    "./runtime": "./dist/web/runtime.js",
     "./package.json": "./package.json"
   },
   "files": [

@@ -24,8 +24,8 @@ const argv = yargs(hideBin(process.argv)).option('outfile', {
 const outfile = argv.outfile;
 
 const files = [
-  path.join(__dirname, '../../react-strict-dom/dist/dom/index.js'),
-  path.join(__dirname, '../../react-strict-dom/dist/dom/runtime.js'),
+  path.join(__dirname, '../../react-strict-dom/dist/web/index.js'),
+  path.join(__dirname, '../../react-strict-dom/dist/web/runtime.js'),
   path.join(__dirname, '../../react-strict-dom/dist/native/index.js')
 ];
 
