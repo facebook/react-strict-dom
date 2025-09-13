@@ -19,7 +19,8 @@ module.exports = {
   resolveSnapshotPath: (testPath) => {
     const snapshotPath = path.join(
       path.join(path.dirname(testPath), '__snapshots__'),
-      path.basename(testPath) + '.snap-native'
+      path.basename(testPath) +
+        (testPath.includes('.native.js') ? '.snap' : '.snap-native')
     );
     return snapshotPath;
   },

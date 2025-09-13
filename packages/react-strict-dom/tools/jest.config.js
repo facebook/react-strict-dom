@@ -56,7 +56,7 @@ module.exports = {
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/tools/jest/web-snapshot-resolver.js',
+      snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-web.js',
       testEnvironment: 'jsdom',
       testMatch: ['<rootDir>/tests/*-test.js', '<rootDir>/tests/*-test.web.js'],
       transform: {
@@ -76,7 +76,7 @@ module.exports = {
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/tools/jest/native-snapshot-resolver.js',
+      snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-native.js',
       testEnvironment: 'node',
       testMatch: [
         '<rootDir>/tests/*-test.js',
@@ -99,7 +99,7 @@ module.exports = {
       snapshotFormat: {
         printBasicPrototype: false
       },
-      snapshotResolver: '<rootDir>/tools/jest/node-snapshot-resolver.js',
+      snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-node.js',
       testEnvironment: 'node',
       testMatch: ['<rootDir>/tests/*-test.node.js'],
       transform: {
