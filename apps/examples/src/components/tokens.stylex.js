@@ -7,19 +7,19 @@
  * @flow strict-local
  */
 
-import type { StyleVars } from 'react-strict-dom';
+import type { StyleVars, StyleTypes } from 'react-strict-dom';
 
 import { css } from 'react-strict-dom';
 
 export const tokens: StyleVars<
   $ReadOnly<{
-    squareColor: string,
+    squareColor: StyleTypes.Color<string>,
     textColor: string,
     inputColor: string,
     inputPlaceholderColor: string
   }>
 > = css.defineVars({
-  squareColor: 'red',
+  squareColor: css.types.color<string>('red'),
   textColor: {
     default: 'darkred',
     '@media (prefers-color-scheme: dark)': 'lightred'
