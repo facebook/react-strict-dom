@@ -38,7 +38,7 @@ const config = {
       {
         docs: {
           //breadcrumbs: false,
-          //editUrl: 'https://github.com/facebook/react-strict-dom/tree/main/apps/website/',
+          //editUrl: 'https://github.com/facebook/react-strict-dom/tree/main/packages/website/',
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: './sidebars.js',
           sidebarCollapsed: false
