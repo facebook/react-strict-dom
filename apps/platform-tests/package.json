@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "examples",
+  "name": "platform-tests",
   "version": "0.0.0",
   "main": "./src/app/index.js",
   "scripts": {

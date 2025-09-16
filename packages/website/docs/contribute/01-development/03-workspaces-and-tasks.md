@@ -17,12 +17,7 @@ In general, all commands should be run from the root.
 There are currently 2 different directories of workspaces:
 
 * `apps`
-  * `examples`
-  * `website`
 * `packages`
-  * `benchmarks`
-  * `react-strict-dom`
-  * `scripts`
 
 The name of an individual workspace matches the value of the `name` field in that workspace's `package.json`.
 

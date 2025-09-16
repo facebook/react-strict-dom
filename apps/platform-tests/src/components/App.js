@@ -149,7 +149,7 @@ function Shell(): React.MixedElement {
     <ScrollView>
       <html.div data-layoutconformance="strict" style={egStyles.div}>
         <ExampleBlock title="HTML elements">
-          <html.div>Text inside div (kind of) works</html.div>
+          <html.div>dfadsafdsfadsf inside div (kind of) works</html.div>
           <html.span>
             span inside div inside span...
             <html.div style={styles.textAncestorTest}>

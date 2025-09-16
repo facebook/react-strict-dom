@@ -51,8 +51,8 @@
     "npm": ">=10.0.0"
   },
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "lint-staged": {
     "**/*.js": [

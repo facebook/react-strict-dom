@@ -77,7 +77,7 @@ npx patch-package <package-name>
 
 ## Integration testing
 
-Each patch can also be visually tested against the example web and native app built with Expo. This package can be found in the `examples` package within the `apps` directory.
+Each patch can also be visually tested against the `platform-tests` app built with Expo. This package can be found in the `apps` directory.
 
 First, build and automatically rebuild `react-strict-dom` on changes:
 
@@ -85,10 +85,10 @@ First, build and automatically rebuild `react-strict-dom` on changes:
 npm run dev -w react-strict-dom
 ```
 
-In another process, start the examples app:
+In another process, start the Expo example:
 
 ```
-npm run dev -w examples
+npm run dev -w example-expo
 ```
 
 To load the app in a browser or local simulator, follow the Expo instructions in the terminal. You may need to install XCode and Android Studio to use simulators.
