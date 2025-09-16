@@ -6,28 +6,25 @@
  */
 
 import * as React from 'react';
-import { css, html } from 'react-strict-dom';
+import { Pressable, StyleSheet, Text } from 'react-native';
 
 /**
- * Example of a cross-platform button.
+ * Example of a native-fork, where the default is cross-platform.
  */
-export function Button(props) {
+export function NativeForkButton(props) {
   return (
-    <html.button style={styles.pressable}>
-      <html.span style={styles.text}>{props.children}</html.span>
-      <html.span style={styles.text}>(shared)</html.span>
-    </html.button>
+    <Pressable style={styles.pressable}>
+      <Text style={styles.text}>{props.children} (native)</Text>
+    </Pressable>
   );
 }
 
-const styles = css.create({
+const styles = StyleSheet.create({
   pressable: {
     alignSelf: 'flex-start',
     backgroundColor: 'darkgreen',
     borderBottomWidth: 1,
     borderBottomStyle: 'solid',
-    display: 'flex',
-    gap: '0.25rem',
     paddingBlock: 8,
     paddingInline: 32
   },

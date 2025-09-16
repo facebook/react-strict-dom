@@ -11,7 +11,7 @@ import { css, html } from 'react-strict-dom';
 /**
  * Example of a cross-platform button.
  */
-export function Button(props) {
+export function WebForkButton(props) {
   return (
     <html.button style={styles.pressable}>
       <html.span style={styles.text}>{props.children}</html.span>

@@ -6,28 +6,23 @@
  */
 
 import * as React from 'react';
-import { css, html } from 'react-strict-dom';
 
 /**
- * Example of a cross-platform button.
+ * Example of a web-fork, where the default is cross-platform.
  */
-export function Button(props) {
+export function WebForkButton(props) {
   return (
-    <html.button style={styles.pressable}>
-      <html.span style={styles.text}>{props.children}</html.span>
-      <html.span style={styles.text}>(shared)</html.span>
-    </html.button>
+    <button style={styles.pressable} type="button">
+      <span style={styles.text}>{props.children} (web)</span>
+    </button>
   );
 }
 
-const styles = css.create({
+const styles = {
   pressable: {
-    alignSelf: 'flex-start',
     backgroundColor: 'darkgreen',
     borderBottomWidth: 1,
     borderBottomStyle: 'solid',
-    display: 'flex',
-    gap: '0.25rem',
     paddingBlock: 8,
     paddingInline: 32
   },
@@ -38,4 +33,4 @@ const styles = css.create({
     fontWeight: 'bold',
     textAlign: 'center'
   }
-});
+};
