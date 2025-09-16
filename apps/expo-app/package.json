@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "expo-app",
+  "version": "0.0.0",
+  "main": "./src/app/index.js",
+  "scripts": {
+    "dev": "expo start --clear",
+    "dev:android": "expo start --android --clear",
+    "dev:ios": "expo start --ios --clear",
+    "dev:web": "expo start --web --clear"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~5.0.4",
+    "example-ui": "*",
+    "expo": "^53.0.11",
+    "expo-build-properties": "~0.14.6",
+    "expo-status-bar": "~2.2.3",
+    "react": "~19.0.0",
+    "react-dom": "~19.0.0",
+    "react-native": "~0.79.5",
+    "react-native-web": "~0.20.0",
+    "react-strict-dom": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.3"
+  }
+}
