@@ -12,14 +12,17 @@ Development monorepo for "React Strict DOM".
   * Contains workflows used by GitHub Actions.
   * Contains issue templates.
 * `apps`
-  * Applications.
-  * [examples](https://github.com/facebook/react-strict-dom/blob/main/apps/examples)
-  * [website](https://github.com/facebook/react-strict-dom/blob/main/packages/website)
+  * Example applications using React Strict DOM.
+  * [example-ui](https://github.com/facebook/react-strict-dom/blob/main/apps/example-ui)
+  * [expo-app](https://github.com/facebook/react-strict-dom/blob/main/apps/expo)
+  * [nextjs-app](https://github.com/facebook/react-strict-dom/blob/main/apps/nextjs)
+  * [platform-tests](https://github.com/facebook/react-strict-dom/blob/main/apps/platform-tests)
 * `packages`
   * Contains the individual packages managed in the monorepo.
   * [benchmarks](https://github.com/facebook/react-strict-dom/blob/main/packages/benchmarks)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom) ([docs](https://facebook.github.io/react-strict-dom/))
   * [scripts](https://github.com/facebook/react-strict-dom/blob/main/packages/scripts)
+  * [website](https://github.com/facebook/react-strict-dom/blob/main/packages/website)
 * `tools`
   * Tools used by the monorepo (pre-commit tasks, etc.)
 
