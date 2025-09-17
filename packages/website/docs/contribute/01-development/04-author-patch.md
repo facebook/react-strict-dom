@@ -88,7 +88,7 @@ npm run dev -w react-strict-dom
 In another process, start the Expo example:
 
 ```
-npm run dev -w example-expo
+npm run dev -w platform-tests
 ```
 
 To load the app in a browser or local simulator, follow the Expo instructions in the terminal. You may need to install XCode and Android Studio to use simulators.

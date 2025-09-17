@@ -12,9 +12,9 @@ import type { ReactDOMStyleProps } from '../../types/renderer.web';
 import type { StrictProps } from '../../types/StrictProps';
 
 import * as React from 'react';
-import * as stylex from '@stylexjs/stylex';
 import { errorMsg } from '../../shared/logUtils';
 import { isPropAllowed } from '../../shared/isPropAllowed';
+import { merge } from '../css/merge';
 
 // $FlowFixMe[unclear-type]
 function validateStrictProps(props: any) {
@@ -64,7 +64,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
      * get host style props
      */
     // $FlowFixMe
-    const hostStyleProps: ReactDOMStyleProps = stylex.props([
+    const hostStyleProps: ReactDOMStyleProps = merge([
       debugStyle,
       defaultStyle,
       style

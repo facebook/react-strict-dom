@@ -1,75 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements aliased imports 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
-  return <div {..._rsdResolveStyle(_rsdDefaultStyles.div, styles.root)} />;
+  return <div {..._rsdMerge(_rsdDefaultStyles.div, styles.root)} />;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements basic element 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
-  return <div {..._rsdResolveStyle(_rsdDefaultStyles.div)} />;
+  return <div {..._rsdMerge(_rsdDefaultStyles.div)} />;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements debug mode 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html as h } from 'react-strict-dom';
 function App() {
-  return <div data-element-src="bar/baz.js:5" {..._rsdResolveStyle(_rsdDefaultStyles.div)} />;
+  return <div data-element-src="bar/baz.js:5" {..._rsdMerge(_rsdDefaultStyles.div)} />;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements other props 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
-  return <div role="presentation" {..._rsdResolveStyle(_rsdDefaultStyles.div)}>
-                <label htmlFor="for" {..._rsdResolveStyle(_rsdDefaultStyles.label)} />
-                <input dir="auto" {..._rsdResolveStyle(_rsdDefaultStyles.input)} />
-                <textarea dir="auto" {..._rsdResolveStyle(_rsdDefaultStyles.textarea)} />
-                <input dir="rtl" {..._rsdResolveStyle(_rsdDefaultStyles.input)} />
-                <textarea dir="rtl" {..._rsdResolveStyle(_rsdDefaultStyles.textarea)} />
-                <button type="button" {..._rsdResolveStyle(_rsdDefaultStyles.button)} />
-                <button type="submit" {..._rsdResolveStyle(_rsdDefaultStyles.button)} />
+  return <div role="presentation" {..._rsdMerge(_rsdDefaultStyles.div)}>
+                <label htmlFor="for" {..._rsdMerge(_rsdDefaultStyles.label)} />
+                <input dir="auto" {..._rsdMerge(_rsdDefaultStyles.input)} />
+                <textarea dir="auto" {..._rsdMerge(_rsdDefaultStyles.textarea)} />
+                <input dir="rtl" {..._rsdMerge(_rsdDefaultStyles.input)} />
+                <textarea dir="rtl" {..._rsdMerge(_rsdDefaultStyles.textarea)} />
+                <button type="button" {..._rsdMerge(_rsdDefaultStyles.button)} />
+                <button type="submit" {..._rsdMerge(_rsdDefaultStyles.button)} />
               </div>;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements repeated imports 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 import { html as h } from 'react-strict-dom';
 function App() {
-  return <div {..._rsdResolveStyle(_rsdDefaultStyles.div, styles.root)}>
-              <span {..._rsdResolveStyle(_rsdDefaultStyles.span)} />
+  return <div {..._rsdMerge(_rsdDefaultStyles.div, styles.root)}>
+              <span {..._rsdMerge(_rsdDefaultStyles.span)} />
             </div>;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements styled elements: array 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
-  return <div {..._rsdResolveStyle(_rsdDefaultStyles.div, styles.one, styles.two)} />;
+  return <div {..._rsdMerge(_rsdDefaultStyles.div, styles.one, styles.two)} />;
 }
 ;"
 `;
 
 exports[`react-strict-dom/babel-preset [transform] <html.*> elements styled elements: simple 1`] = `
-"import { defaultStyles as _rsdDefaultStyles, resolveStyle as _rsdResolveStyle } from "react-strict-dom/runtime";
+"import { defaultStyles as _rsdDefaultStyles, merge as _rsdMerge } from "react-strict-dom/runtime";
 import { html } from 'react-strict-dom';
 function App() {
-  return <div {..._rsdResolveStyle(_rsdDefaultStyles.div, styles.one)} />;
+  return <div {..._rsdMerge(_rsdDefaultStyles.div, styles.one)} />;
 }
 ;"
 `;

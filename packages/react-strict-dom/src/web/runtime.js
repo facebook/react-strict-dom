@@ -13,6 +13,8 @@ type StrictReactDOMPropsStyle = StrictReactDOMProps['style'];
 
 import * as stylex from '@stylexjs/stylex';
 
+export { merge } from './css/merge';
+
 // set this on the root, probably in the theme context
 // const fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
 
@@ -178,5 +180,3 @@ export const defaultStyles = {
   u: u as typeof u,
   ul: ul as typeof ul
 };
-
-export const resolveStyle = stylex.props;

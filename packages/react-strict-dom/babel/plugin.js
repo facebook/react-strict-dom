@@ -53,9 +53,9 @@ function reactStrictPlugin({ types: t }, options = {}) {
             );
             styleResolverImportIdentifier = addNamed(
               path,
-              'resolveStyle',
+              'merge',
               packageRuntime,
-              { nameHint: '_rsdResolveStyle' }
+              { nameHint: '_rsdMerge' }
             );
             // No need to rename as addNamed already creates unique identifiers
           }
