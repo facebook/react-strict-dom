@@ -113,19 +113,19 @@ TypeScript-based projects should set the following TypeScript compiler options:
 
 ## App files
 
-Your app needs to include a CSS file that contains a `@stylex` directive. This acts as a placeholder that is replaced by the generated CSS during builds.
+Your app needs to include a CSS file that contains a `@react-strict-dom` directive. This acts as a placeholder that is replaced by the generated CSS during builds.
 
-```css title="stylex.css"
+```css title="strict.css"
 /* This directive is used by the react-strict-dom postcss plugin. */
 /* It is automatically replaced with generated CSS during builds. */
-@stylex;
+@react-strict-dom;
 ```
 
 Next, import the CSS file in the entry file of your app.
 
 ```js title="index.js"
 // Required for CSS to work on Expo Web.
-import './stylex.css';
+import './strict.css';
 // Required for Fast Refresh to work on Expo Web
 import '@expo/metro-runtime';
 

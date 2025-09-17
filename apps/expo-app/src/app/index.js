@@ -6,7 +6,7 @@
  */
 
 // Required for CSS to work on Expo Web.
-import './stylex.css';
+import './strict.css';
 // Required for Fast Refresh to work on Expo Web
 import '@expo/metro-runtime';
 

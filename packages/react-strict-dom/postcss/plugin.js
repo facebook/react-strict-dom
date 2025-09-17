@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const styleXPlugin = require('@stylexjs/postcss-plugin');
+const postcssPlugin = require('postcss-react-strict-dom');
 
 const plugin = ({
   cwd = process.cwd(),
@@ -15,24 +15,11 @@ const plugin = ({
   include,
   exclude
 }) => {
-  include = [
-    // Include the React Strict DOM package's source files by default
-    require.resolve('react-strict-dom'),
-    require.resolve('react-strict-dom/runtime'),
-    ...(include ?? [])
-  ];
-
-  return styleXPlugin({
+  return postcssPlugin({
     cwd,
     babelConfig,
     include,
-    exclude,
-    useCSSLayers: true,
-    importSources: [
-      '@stylexjs/stylex',
-      'stylex',
-      { from: 'react-strict-dom', as: 'css' }
-    ]
+    exclude
   });
 };
 
