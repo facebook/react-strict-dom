@@ -22,4 +22,4 @@ body {
   flex-direction: column;
 }
 
-@stylex;
+@react-strict-dom;

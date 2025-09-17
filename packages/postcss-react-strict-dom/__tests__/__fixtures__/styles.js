@@ -5,9 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/**
- * The @stylex directive is used by the react-strict-dom postcss plugin.
- * It is automatically replaced with generated CSS during builds.
- */
+import { css } from 'react-strict-dom';
 
- @stylex;
+export const styles = css.create({
+  container: {
+    backgroundColor: 'red'
+  }
+});

@@ -6,7 +6,7 @@
  */
 
 import type { Metadata } from "next";
-import "@/stylex.css";
+import "@/strict.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
