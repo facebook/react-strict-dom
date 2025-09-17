@@ -1,14 +1,13 @@
 [version]
-0.248.1
+0.281.0
 
 [ignore]
 .*/malformed_package_json/.*
 <PROJECT_ROOT>/.*/__tests__/.*
+<PROJECT_ROOT>/apps/examples/.*
+<PROJECT_ROOT>/apps/website/.*
 
 [include]
-
-[libs]
-tools/flow-typed
 
 [options]
 casting_syntax=as
@@ -17,8 +16,6 @@ module.name_mapper='^react-strict-dom$' -> '<PROJECT_ROOT>/packages/react-strict
 module.system.node.resolve_dirname=flow_modules
 module.system.node.resolve_dirname=node_modules
 react.runtime=automatic
-suppress_type=$FlowIssue
-suppress_type=$FlowFixMe
 
 [strict]
 nonstrict-import
