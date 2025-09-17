@@ -268,6 +268,7 @@ The following tables represent the compatibility status of the strict HTML API s
 | Node.nodeName | ✅ | ✅ | |
 | Node.nodeType | ✅ | ✅ | |
 | Node.nodeValue | ✅ | ✅ | |
+| Node.ownerDocument | ✅ | ✅ | |
 | Node.parentElement | ✅ | ✅ | |
 | Node.parentNode | ✅ | ✅ | |
 | Node.previousSibling | ✅ | ✅ | |

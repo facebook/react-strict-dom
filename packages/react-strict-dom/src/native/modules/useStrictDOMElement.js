@@ -22,23 +22,31 @@ type Options = {
 // $FlowFixMe[unclear-type]
 type Node = any;
 
-function errorUnimplemented(name: string) {
-  if (__DEV__) {
-    errorMsg(`unsupported method node.${name}()`);
-  }
-}
-
-function proxy(node: Node, name: string) {
-  return (...args: Array<mixed>) => {
-    if (node?.[name]) {
-      return node[name](...args);
-    }
-    errorUnimplemented(name);
-  };
-}
-
 const memoizedStrictRefs: WeakMap<Node, mixed> = new WeakMap();
 
+const lengthPropertySet = new Set([
+  'clientHeight',
+  'clientLeft',
+  'clientTop',
+  'clientWidth',
+  'offsetHeight',
+  'offsetLeft',
+  'offsetTop',
+  'offsetWidth',
+  'scrollHeight',
+  'scrollLeft',
+  'scrollTop',
+  'scrollWidth'
+]);
+
+/**
+ * Copying the node is necessary because getBoundingClientRect is replaced to
+ * polyfill viewport scaling. It means we have to forward private fields
+ * to improve compatibility with most React Native code.
+ *
+ * We're not modifying child nodes to account for viewport scaling. Reading
+ * values from those nodes after traversal is not recommended.
+ */
 function getOrCreateStrictRef(
   node: Node,
   tagName: string,
@@ -48,62 +56,82 @@ function getOrCreateStrictRef(
   if (ref != null) {
     return ref;
   } else {
-    const strictRef = {
-      get __nativeTag() {
-        return node?.__nativeTag;
-      },
-      addEventListener: proxy(node, 'addEventListener'),
-      animate: proxy(node, 'animate'),
-      blur: proxy(node, 'blur'),
-      click: proxy(node, 'click'),
-      get complete() {
-        if (tagName === 'img') {
-          if (node?.complete == null) {
-            // Assume images are never pre-loaded in React Native
-            return false;
-          } else {
-            return node.complete;
-          }
-        }
-      },
-      contains: proxy(node, 'contains'),
-      dispatchEvent: proxy(node, 'dispatchEvent'),
-      focus: proxy(node, 'focus'),
-      getAttribute: proxy(node, 'getAttribute'),
-      getBoundingClientRect() {
-        const getBoundingClientRect =
-          node?.getBoundingClientRect ?? node?.unstable_getBoundingClientRect;
-        if (getBoundingClientRect) {
-          const rect = getBoundingClientRect.call(node);
-          if (viewportScale !== 1) {
-            return new DOMRect(
-              rect.x / viewportScale,
-              rect.y / viewportScale,
-              rect.width / viewportScale,
-              rect.height / viewportScale
-            );
-          }
-          return rect;
-        }
-        return errorUnimplemented('getBoundingClientRect');
-      },
-      getRootNode: proxy(node, 'getRootNode'),
-      hasPointerCapture: proxy(node, 'hasPointerCapture'),
-      nodeName: tagName.toUpperCase(),
-      releasePointerCapture: proxy(node, 'releasePointerCapture'),
-      removeEventListener: proxy(node, 'removeEventListener'),
-      scroll: proxy(node, 'scroll'),
-      scrollBy: proxy(node, 'scrollBy'),
-      scrollIntoView: proxy(node, 'scrollIntoView'),
-      scrollTo: proxy(node, 'scrollTo'),
-      select: proxy(node, 'select'),
-      setSelectionRange: proxy(node, 'setSelectionRange'),
-      setPointerCapture: proxy(node, 'setPointerCapture'),
-      showPicker: proxy(node, 'showPicker')
-    };
+    try {
+      // Create object with prototype chain intact (preserves instanceof)
+      const strictRef = Object.create(Object.getPrototypeOf(node));
 
-    memoizedStrictRefs.set(node, strictRef);
-    return strictRef;
+      // Copy all own properties including React Native internals
+      const descriptors = Object.getOwnPropertyDescriptors(node);
+      Object.defineProperties(strictRef, descriptors);
+
+      const scale = (number: number) => number / viewportScale;
+
+      // Override getBoundingClientRect for viewport-scaling
+      const getBoundingClientRect = node?.getBoundingClientRect;
+      if (getBoundingClientRect) {
+        // $FlowFixMe[prop-missing]
+        Object.defineProperty(strictRef, 'getBoundingClientRect', {
+          value: () => {
+            const rect = getBoundingClientRect.call(node);
+            if (viewportScale !== 1) {
+              return new DOMRect(
+                scale(rect.x),
+                scale(rect.y),
+                scale(rect.width),
+                scale(rect.height)
+              );
+            }
+            return rect;
+          },
+          configurable: true,
+          writable: true
+        });
+      }
+
+      // Override length properties for viewport-scaling
+      for (const prop of lengthPropertySet) {
+        if (prop in strictRef) {
+          if (viewportScale !== 1) {
+            // $FlowFixMe[prop-missing]
+            Object.defineProperty(strictRef, prop, {
+              get() {
+                const value = node[prop];
+                return typeof value === 'number' ? scale(value) : value;
+              }
+            });
+          }
+        }
+      }
+
+      // $FlowFixMe[prop-missing]
+      Object.defineProperty(strictRef, 'nodeName', {
+        get() {
+          return tagName.toUpperCase();
+        }
+      });
+      if (tagName === 'img') {
+        // $FlowFixMe[prop-missing]
+        Object.defineProperty(strictRef, 'complete', {
+          get() {
+            if (node?.complete == null) {
+              return false;
+            } else {
+              return node.complete;
+            }
+          }
+        });
+      }
+
+      memoizedStrictRefs.set(node, strictRef);
+      return strictRef;
+    } catch (e) {
+      // Fallback to original node if copying fails
+      if (__DEV__) {
+        errorMsg('failed to create strict ref. Falling back to original node');
+        console.error(e);
+      }
+      return node;
+    }
   }
 }
 
