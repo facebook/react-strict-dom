@@ -49,7 +49,7 @@ const sharedPlugins = [
 const webConfigs = [
   // OSS build
   {
-    external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
+    external: ['react', 'react/jsx-runtime', 'react-dom'],
     input: path.join(__dirname, '../src/web/index.js'),
     output: {
       file: path.join(__dirname, '../dist/web/index.js'),
@@ -62,7 +62,7 @@ const webConfigs = [
   },
   // Runtime
   {
-    external: ['react', 'react/jsx-runtime', 'react-dom', '@stylexjs/stylex'],
+    external: ['react', 'react/jsx-runtime', 'react-dom'],
     input: path.join(__dirname, '../src/web/runtime.js'),
     output: {
       file: path.join(__dirname, '../dist/web/runtime.js'),
