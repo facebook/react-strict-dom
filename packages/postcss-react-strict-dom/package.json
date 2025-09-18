@@ -1,0 +1,25 @@
+{
+  "name": "postcss-react-strict-dom",
+  "version": "0.0.50",
+  "description": "PostCSS plugin for React Strict DOM",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/react-strict-dom.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "jest": "jest",
+    "jest:report": "jest --collect-coverage"
+  },
+  "dependencies": {
+    "@babel/core": "^7.26.8",
+    "@stylexjs/babel-plugin": "^0.14.1",
+    "fast-glob": "^3.3.2",
+    "glob-parent": "^6.0.2",
+    "is-glob": "^4.0.3"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.49"
+  }
+}
