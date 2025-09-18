@@ -71,10 +71,13 @@ describe('<html.*>', () => {
   test('block layout override of flex layout', () => {
     const styles = css.create({
       root: {
+        display: 'block',
+        flexBasis: '25%',
         flexDirection: 'row',
         alignItems: 'start',
         flexShrink: '1',
-        display: 'block'
+        flexWrap: 'wrap',
+        justifyContent: 'flex-end'
       }
     });
 
