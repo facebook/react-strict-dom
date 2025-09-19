@@ -12,7 +12,6 @@ module.exports = {
         'src/**/*.{js,jsx,mjs,ts,tsx}',
         '../../node_modules/example-ui/**/*.js'
       ]
-    }),
-    require('autoprefixer')
+    })
   ]
 };
