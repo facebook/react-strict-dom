@@ -1625,26 +1625,27 @@ describe('<html.*>', () => {
     });
   });
 
-  describe('node imperative methods', () => {
+  describe('node imperative api', () => {
     function createNodeMock(element) {
       const obj = {};
-      obj.addEventListener_unstable = () => {};
       obj.blur = () => {};
       obj.focus = () => {};
-      obj.removeEventListener_unstable = () => {};
+      obj.offsetWidth = 15;
       return obj;
     }
 
-    /*
-    ['addEventListener', 'removeEventListener'].forEach((method) => {
-      test(`"${method}" is supported`, () => {
-        const ref = React.createRef();
-        create(<html.input ref={ref} />, { createNodeMock });
-        ref.current[method]('click', () => {});
-        expect(console.error).not.toBeCalled();
+    test('node is defined', () => {
+      act(() => {
+        create(
+          <html.input
+            ref={(node) => {
+              expect(node.offsetWidth).toBe(15);
+            }}
+          />,
+          { createNodeMock }
+        );
       });
     });
-    */
 
     // We shouldn't create a handle if there is no underlying node
     test('node is null', () => {
@@ -1659,82 +1660,6 @@ describe('<html.*>', () => {
         );
       });
     });
-
-    [
-      'animate',
-      'click',
-      'contains',
-      'dispatchEvent',
-      'getAttribute',
-      'getBoundingClientRect',
-      'getRootNode',
-      'hasPointerCapture',
-      'releasePointerCapture',
-      'scroll',
-      'scrollBy',
-      'scrollIntoView',
-      'scrollTo',
-      'setPointerCapture',
-      'select',
-      'setSelectionRange',
-      'showPicker'
-    ].forEach((method) => {
-      test(`"${method}" is unsupported`, () => {
-        act(() => {
-          create(
-            <html.input
-              ref={(node) => {
-                node[method]();
-              }}
-            />,
-            { createNodeMock }
-          );
-        });
-
-        expect(console.error).toHaveBeenCalledWith(
-          expect.stringContaining('React Strict DOM')
-        );
-      });
-    });
-
-    /*
-    [
-      'blur',
-      'click',
-      'focus',
-      'error',
-      'input',
-      'keydown',
-      'keyup',
-      'load',
-      'pointerdown',
-      'pointerenter',
-      'pointerleave',
-      'pointermove',
-      'pointerout',
-      'pointerover',
-      'pointerup',
-      'scroll'
-    ].forEach((eventType) => {
-      test(`"${eventType}" is supported`, () => {
-        const ref = React.createRef();
-        create(<html.input ref={ref} />, { createNodeMock });
-        ref.current.addEventListener(eventType, () => {});
-        ref.current.removeEventListener(eventType, () => {});
-        expect(console.error).not.toBeCalled();
-      });
-    });
-
-    ['change', 'focusin', 'focusout'].forEach((eventType) => {
-      test(`"${eventType}" is unsupported`, () => {
-        const ref = React.createRef();
-        create(<html.input ref={ref} />, { createNodeMock });
-        ref.current.addEventListener(eventType, () => {});
-        ref.current.removeEventListener(eventType, () => {});
-        expect(console.error).toBeCalled();
-      });
-    });
-    */
   });
 
   describe('viewport width', () => {
@@ -1792,21 +1717,21 @@ describe('<html.*>', () => {
 
       function createNodeMock(element) {
         const obj = {};
-        obj.addEventListener_unstable = () => {};
         obj.blur = () => {};
         obj.focus = () => {};
-        obj.removeEventListener_unstable = () => {};
         obj.getBoundingClientRect = () => new DOMRect(21, 21, 99, 99);
+        obj.offsetWidth = 21;
         return obj;
       }
 
-      let scaledDomRect;
+      let scaledDomRect, scaledOffsetWidth;
       act(() => {
         create(
           <ViewportProvider viewportWidth={1280}>
             <html.input
               ref={(node) => {
                 scaledDomRect = node.getBoundingClientRect();
+                scaledOffsetWidth = node.offsetWidth;
               }}
             />
           </ViewportProvider>,
@@ -1815,6 +1740,7 @@ describe('<html.*>', () => {
       });
 
       expect(scaledDomRect).toEqual(new DOMRect(28, 28, 132, 132));
+      expect(scaledOffsetWidth).toEqual(28);
     });
   });
 });
