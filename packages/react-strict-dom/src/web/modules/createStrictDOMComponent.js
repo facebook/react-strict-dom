@@ -63,7 +63,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     /**
      * get host style props
      */
-    // Waiting on a diff so we can remove this indirection.
+    // $FlowFixMe
     const hostStyleProps: ReactDOMStyleProps = stylex.props([
       debugStyle,
       defaultStyle,
