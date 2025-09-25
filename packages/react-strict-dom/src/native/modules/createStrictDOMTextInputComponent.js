@@ -20,6 +20,7 @@ import { useStrictDOMElement } from './useStrictDOMElement';
 const AnimatedTextInput = ReactNative.Animated.createAnimatedComponent<
   React.ElementConfig<typeof ReactNative.TextInput>,
   typeof ReactNative.TextInput
+  // $FlowFixMe: React Native animated component typing issue
 >(ReactNative.TextInput);
 
 type StrictInputProps = StrictReactDOMInputProps | StrictReactDOMTextAreaProps;

@@ -45,11 +45,14 @@ type StrictPropsOnlyCompat<T> = {
   children: (nativeProps: T) => React.Node
 };
 
-const StrictText = createStrictText('span', defaultProps);
-const StrictInput = createStrictTextInput('input', defaultProps);
-const StrictTextArea = createStrictTextInput('textarea', defaultProps);
-const StrictImage = createStrictImage('img', defaultProps);
-const Strict = createStrict('div', defaultProps);
+const StrictText = createStrictText('span', defaultProps) as $FlowFixMe;
+const StrictInput = createStrictTextInput('input', defaultProps) as $FlowFixMe;
+const StrictTextArea = createStrictTextInput(
+  'textarea',
+  defaultProps
+) as $FlowFixMe;
+const StrictImage = createStrictImage('img', defaultProps) as $FlowFixMe;
+const Strict = createStrict('div', defaultProps) as $FlowFixMe;
 
 component Native<T>(...htmlProps: StrictPropsOnlyCompat<T>) {
   const { as, ...rest } = htmlProps;
