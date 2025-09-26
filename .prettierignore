@@ -2,5 +2,6 @@
 build
 coverage
 dist
+flow-typed
 log
 node_modules
