@@ -220,6 +220,7 @@ export function useStyleProps(
         provideInheritableStyle === true
           ? { ...inheritableStyle }
           : inheritableStyle;
+      // $FlowExpectedError[unsafe-object-assign]
       Object.assign(viewStyle, resolveUnitlessLineHeight(textStyle));
     }
     styleProps.style = viewStyle;

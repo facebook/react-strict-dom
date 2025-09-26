@@ -33,6 +33,7 @@ export function useCustomProperties(
     if (customPropertiesFromThemes == null) {
       return inheritedCustomProperties;
     }
+    // $FlowExpectedError[unsafe-object-assign]
     return Object.assign(
       {},
       inheritedCustomProperties,

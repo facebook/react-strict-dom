@@ -34,6 +34,7 @@ export function extractStyleThemes(
           }
         }
       } else {
+        // $FlowExpectedError[unsafe-object-assign]
         Object.assign(style, item);
       }
     }

@@ -92,6 +92,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       nativeProps.numberOfLines != null &&
       nativeProps.style.userSelect !== 'none';
 
+    // $FlowExpectedError[unsafe-object-assign]
     nativeProps.style = Object.assign(
       nativeProps.style,
       disableUserSelect ? { userSelect: 'none' } : null

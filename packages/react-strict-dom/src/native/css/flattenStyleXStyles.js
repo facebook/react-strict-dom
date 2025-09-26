@@ -26,6 +26,7 @@ export function flattenStyle(styles: InlineStyle | $ReadOnlyArray<Styles>): {
   for (let i = 0; i < flatArray.length; i++) {
     const style = flatArray[i];
     if (style != null && typeof style === 'object') {
+      // $FlowExpectedError[unsafe-object-assign]
       Object.assign(result, style);
     }
   }

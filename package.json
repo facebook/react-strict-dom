@@ -34,7 +34,7 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "6.1.0-canary-12bc60f5-20250613",
     "flow-api-translator": "^0.25.0",
-    "flow-bin": "^0.265.0",
+    "flow-bin": "^0.270.0",
     "hermes-eslint": "^0.32.0",
     "husky": "^8.0.0",
     "jest": "^29.7.0",

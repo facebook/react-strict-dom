@@ -612,6 +612,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
     ...styleWithAnimations
   } = style;
 
+  // $FlowExpectedError[unsafe-object-assign]
   Object.assign(styleWithAnimations, outputAnimatedStyle);
 
   return styleWithAnimations;
