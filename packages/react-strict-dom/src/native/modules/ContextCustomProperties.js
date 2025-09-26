@@ -20,7 +20,10 @@ if (__DEV__) {
   ContextCustomProperties.displayName = 'ContextCustomProperties';
 }
 
-export const ProvideCustomProperties = ContextCustomProperties.Provider;
+export const ProvideCustomProperties: React.ComponentType<{
+  +value: CustomProperties,
+  +children?: React.Node
+}> = ContextCustomProperties.Provider;
 
 export function useCustomProperties(
   customPropertiesFromThemes: ?CustomProperties

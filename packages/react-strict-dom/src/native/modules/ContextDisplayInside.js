@@ -19,7 +19,10 @@ if (__DEV__) {
   ContextDisplayInside.displayName = 'ContextDisplayInside';
 }
 
-export const ProvideDisplayInside = ContextDisplayInside.Provider;
+export const ProvideDisplayInside: React.ComponentType<{
+  +value: Value,
+  +children?: React.Node
+}> = ContextDisplayInside.Provider;
 
 export function useDisplayInside(): Value {
   const context = React.useContext(ContextDisplayInside);

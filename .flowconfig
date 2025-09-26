@@ -1,5 +1,5 @@
 [version]
-0.255.0
+0.260.0
 
 [ignore]
 .*/malformed_package_json/.*
