@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.51 (Sep 28, 2025)
+
+### New features
+
+* [Native] Log an error on native if using `zIndex` without position.
+
+### Fixes
+
+* [Native] Copy DOM APIs from native node to strict ref.
+* Update to Flow 0.270.0.
+
 ## 0.0.50 (Sep 10, 2025)
 
 ### New features
