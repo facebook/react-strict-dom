@@ -8,7 +8,7 @@ slug: /learn/themes
 
 :::info[Requirements]
 
-Variables and constants must be defined in a file that matches the following file extension pattern: `.stylex.{js,jsx,mjs,ts,tsx}`. Only CSS variables can be defined in these files. Every `css.defineConsts` and `css.defineVars` call must be a named export.
+Variables and constants must be defined in a file that matches the following file extension pattern: `.css.{js,jsx,mjs,ts,tsx}`. Only CSS variables can be defined in these files. Every `css.defineConsts` and `css.defineVars` call must be a named export.
 
 :::
 
@@ -16,7 +16,7 @@ Variables and constants must be defined in a file that matches the following fil
 
 CSS variables are defined with a call to `css.defineVars`. This defines global variables which can then be imported for use in any style rules. These variables and their values are essentially a "default theme". If you don't need to override these values in themes, use `css.defineConsts` instead.
 
-```js title="tokens.stylex.js"
+```js title="tokens.css.js"
 import { css } from 'react-strict-dom';
 
 export const tokens = css.defineVars({
@@ -30,7 +30,7 @@ export const tokens = css.defineVars({
 
 Any theme can define a "dark mode" alternate – which is automatically applied when the OS theme matches –  by specifying different values for the `prefers-color-scheme` Media Query:
 
-```js title="tokens.stylex.js"
+```js title="tokens.css.js"
 import { css } from 'react-strict-dom';
 
 const darkMode = '@media (prefers-color-scheme: dark)';
@@ -65,7 +65,7 @@ Once variables or constants have been defined, they can be imported and used dir
 
 ```js title="Component.js"
 import { css } from 'react-strict-dom';
-import { colors } from './tokens.stylex';
+import { colors } from './tokens.css.js';
 
 const styles = css.create({
   container: {
@@ -83,7 +83,7 @@ Themes can be created with `css.createTheme` anywhere in a codebase, and passed 
 
 ```js title="theme.js"
 import { css } from 'react-strict-dom';
-import { colors, spacing } from './tokens.stylex';
+import { colors, spacing } from './tokens.css.js';
 
 const darkMode = '@media (prefers-color-scheme: dark)';
 
@@ -108,7 +108,7 @@ The return value of `css.createTheme` is a style object similar to the ones crea
 
 ```jsx title="Component.js"
 import { css, html } from 'react-strict-dom';
-import { colors, spacing } from './tokens.stylex';
+import { colors, spacing } from './tokens.css.js';
 import { theme } from './theme';
 
 const styles = css.create({

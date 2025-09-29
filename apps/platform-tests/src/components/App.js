@@ -10,7 +10,7 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
 import { css, html } from 'react-strict-dom';
-import { tokens, themeColors, systemColors } from './tokens.stylex';
+import { tokens, themeColors, systemColors } from './tokens.css.js';
 
 type ExampleBlockProps = $ReadOnly<{
   title: string,

@@ -50,7 +50,7 @@ function withReactStrictDOM(nextConfig: NextConfig) {
       ...[config, context]: Parameters<NonNullable<NextConfig['webpack']>>
     )
       {
-      // Configure StyleX / React Strict DOM
+      // Configure React Strict DOM
       config.module.rules.push({
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules(?!\/react-strict-dom)/,
