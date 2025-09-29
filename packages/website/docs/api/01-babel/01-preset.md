@@ -9,7 +9,7 @@ slug: /api/babel-preset
 
 ## Overview
 
-The preset ensures that production builds have **no runtime performance overhead on web** relative to using [React DOM](https://react.dev/) with an advanced atomic CSS solution like [StyleX](https://stylexjs.com). The preset is required to extract styles to static CSS and optimize element rendering.
+The preset ensures that production builds have **no runtime performance overhead on web** relative to using [React DOM](https://react.dev/) with an atomic CSS solution like [StyleX](https://stylexjs.com). The preset is required to extract styles to static CSS and optimize element rendering.
 
 Import the preset from the `react-strict-dom/babel-preset` package subpath. It must be used with an options object.
 

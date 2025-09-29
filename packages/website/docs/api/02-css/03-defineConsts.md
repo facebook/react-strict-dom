@@ -4,13 +4,13 @@
 
 :::warning
 
-Constants must be defined as named exports in files with a `*.stylex.js` (or `*.stylex.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
+Constants must be defined as named exports in files with a `*.css.js` (or `*.css.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
 
 ## Overview
 
 This API creates style variables that can be imported and used within `css.create()` and `css.createTheme()` calls anywhere within a codebase. These values are inlined at build time and do not generate variables.
 
-```js title="constants.stylex.js"
+```js title="constants.css.js"
 import { css } from 'react-strict-dom';
 
 export const breakpoints = css.defineConsts({
@@ -27,7 +27,7 @@ export const breakpoints = css.defineConsts({
 The `defineConsts` function accepts an object of named constants. These constants can be referenced elsewhere by their key name.
 
 ```js title="component.js"
-import { breakpoints } from './constants.stylex.js';
+import { breakpoints } from './constants.css.js';
 
 const styles = css.create({
   box: {

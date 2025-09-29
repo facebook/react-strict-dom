@@ -4,7 +4,7 @@
 
 :::warning
 
-Variables must be defined as named exports in files with a `*.stylex.js` (or `*.stylex.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
+Variables must be defined as named exports in files with a `*.css.js` (or `*.css.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
 
 :::
 
@@ -13,7 +13,7 @@ Variables must be defined as named exports in files with a `*.stylex.js` (or `*.
 This API creates style variables that can be imported and used within `css.create()` and `css.createTheme()` calls anywhere within a codebase. There is also support for using multiple variables in string values.
 
 
-```js title="vars.stylex.js"
+```js title="vars.css.js"
 import { css } from 'react-strict-dom';
 
 export const colors = css.defineVars({
@@ -31,7 +31,7 @@ export const colors = css.defineVars({
 
 The `defineVars` function accepts an object of named variables. These variables can be referenced elsewhere by their key name. The value of a variable must be a valid style value (i.e., number, string, object value, or `null`.)
 
-```js title="vars.stylex.js"
+```js title="vars.css.js"
 export const colors = css.defineVars({
   textPrimary: 'black',
   textSecondary: '#333',
@@ -39,7 +39,7 @@ export const colors = css.defineVars({
 ```
 
 ```js title="component.js"
-import { colors } from './vars.stylex.js';
+import { colors } from './vars.css.js';
 
 const styles = css.create({
   text: {

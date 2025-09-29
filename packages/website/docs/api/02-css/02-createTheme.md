@@ -10,7 +10,7 @@ Example:
 
 ```jsx
 import { css } from 'react-strict-dom';
-import { colors, spacing } from './vars.stylex.js';
+import { colors, spacing } from './vars.css.js';
 
 const themeColors = css.createTheme(colors, {
   accent: 'red',
@@ -35,7 +35,7 @@ const Theme = (props) => <html.div {...props} style={theme} />
 The first argument to `createTheme` must be the return value of a `defineVars` call. This will determine which variables can be overridden by a given `createTheme` call.
 
 ```js
-import { colors } from './vars.stylex.js';
+import { colors } from './vars.css.js';
 
 const themeColors = css.createTheme(colors, { ... })
 ```
@@ -44,7 +44,7 @@ const themeColors = css.createTheme(colors, { ... })
 
 The second argument to `createTheme` is an object of variable value overrides, where each key must match the key of the object provided to `defineVars`.
 
-```js title="vars.stylex.js"
+```js title="vars.css.js"
 export const colors = css.defineVars({
   accent: 'blue',
   textPrimary: 'black',
@@ -53,7 +53,7 @@ export const colors = css.defineVars({
 ```
 
 ```js
-import { colors } from './vars.stylex.js';
+import { colors } from './vars.css.js';
 
 const themeColors = css.createTheme(colors, {
   accent: 'red',
