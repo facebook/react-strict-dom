@@ -19,11 +19,13 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "README.md",
-    "package.json",
     "babel/*",
+    "dist/*",
     "postcss/*",
-    "dist/*"
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json",
+    "README.md"
   ],
   "sideEffects": false,
   "scripts": {
