@@ -1,6 +1,6 @@
 {
   "private": true,
   "name": "example-ui",
-  "version": "0.0.0",
+  "version": "0.0.52",
   "main": "./index.js"
 }
