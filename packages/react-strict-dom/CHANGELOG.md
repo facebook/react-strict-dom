@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.52 (Sep 28, 2025)
+
+### Breaking changes
+
+* Change theme file extension from `stylex` to `css`.
+* Use independent postcss plugin.
+
 ## 0.0.51 (Sep 28, 2025)
 
 ### New features
