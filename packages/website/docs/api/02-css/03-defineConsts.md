@@ -6,6 +6,8 @@
 
 Constants must be defined as named exports in files with a `*.css.js` (or `*.css.ts`) extension. This limitation is currently imposed due to constraints on how styles are compiled on web.
 
+:::
+
 ## Overview
 
 This API creates style variables that can be imported and used within `css.create()` and `css.createTheme()` calls anywhere within a codebase. These values are inlined at build time and do not generate variables.

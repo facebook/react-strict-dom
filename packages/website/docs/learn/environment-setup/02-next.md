@@ -12,9 +12,15 @@ slug: /learn/setup-next
 
 Follow the Next.js instructions on how to [create a new project](https://nextjs.org/docs/app/getting-started/installation). Then follow the steps in the [Installation](/learn/installation) guide to install React Strict DOM.
 
+:::tip
+
+Take a look at the working [example of Next.js with React Strict DOM](https://github.com/facebook/react-strict-dom/tree/main/apps/nextjs-app) on GitHub.
+
+:::
+
 ## Babel configuration
 
-Babel is not the default compiler when using Next.js App Router, but it can still be used. Create or modify a `babelLoader.config.js` (not `babel.config.js`) file as follows. This is used to optimize builds and enables static extraction of CSS for web. Learn how to configure the [babel-preset](/api/babel-preset/) in the API docs.
+Babel is not the default compiler when using Next.js App Router, but it can still be used. Install `babel-loader`. Then create a `babelLoader.config.js` (not `babel.config.js`) file as follows. This is used to optimize builds and enables static extraction of CSS for web. Learn how to configure the [babel-preset](/api/babel-preset/) in the API docs.
 
 ```js title="babelLoader.config.js"
 const dev = process.env.NODE_ENV !== 'production'
@@ -59,8 +65,7 @@ const config = {
       ],
       babelConfig: babelLoader,
       useLayers: true,
-    },
-    autoprefixer: {},
+    }
   },
 };
 

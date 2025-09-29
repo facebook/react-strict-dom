@@ -12,7 +12,11 @@ slug: /learn/setup
 
 Follow the Expo instructions on how to [create a new project](https://docs.expo.dev/get-started/create-a-project/). React Strict DOM requires use of the latest Expo SDK with the New React Native Architecture enabled. Then follow the steps in the [Installation](/learn/installation) guide to install React Strict DOM.
 
-A working example of an Expo setup with React Strict DOM can be found in this [examples app](https://github.com/facebook/react-strict-dom/tree/main/apps/examples).
+:::tip
+
+Take a look at the working [example of Expo with React Strict DOM](https://github.com/facebook/react-strict-dom/tree/main/apps/expo-app) on GitHub.
+
+:::
 
 ## Babel configuration
 
