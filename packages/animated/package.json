@@ -1,0 +1,29 @@
+{
+  "name": "react-strict-animated",
+  "version": "0.0.1",
+  "description": "A subset of React Native's Animated API supported on web and native.",
+  "exports": {
+    ".": {
+      "react-native": {},
+      "default": {}
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "package.json"
+  ],
+  "sideEffects": false,
+  "scripts": {},
+  "dependencies": {
+    "react-strict-dom": "*"
+  },
+  "devDependencies": {
+    "react": "~19.0.0",
+    "react-dom": "~19.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": ">=0.79.5"
+  }
+}
