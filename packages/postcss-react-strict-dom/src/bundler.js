@@ -58,9 +58,7 @@ module.exports = function createBundler() {
   function bundle({ useCSSLayers }) {
     const rules = Array.from(styleXRulesMap.values()).flat();
 
-    const css = stylexBabelPlugin.processStylexRules(rules, {
-      useLayers: useCSSLayers
-    });
+    const css = stylexBabelPlugin.processStylexRules(rules, useCSSLayers);
 
     return css;
   }
