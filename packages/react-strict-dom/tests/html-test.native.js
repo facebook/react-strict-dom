@@ -138,38 +138,64 @@ describe('<html.*>', () => {
     });
   });
 
-  test('zIndex with position:static', () => {
-    const styles = css.create({
-      static: {
-        position: 'static',
-        zIndex: 1
-      }
+  describe('zIndex', () => {
+    test('with position:static', () => {
+      const styles = css.create({
+        static: {
+          position: 'static',
+          zIndex: 1
+        }
+      });
+      act(() => {
+        create(<html.div style={styles.static} />);
+      });
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          '"position:static" prevents "zIndex" from having an effect.'
+        )
+      );
     });
-    act(() => {
-      create(<html.div style={styles.static} />);
-    });
-    expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        '"position:static" prevents "zIndex" from having an effect.'
-      )
-    );
-  });
 
-  test('zIndex with position:relative', () => {
-    const styles = css.create({
-      relative: {
-        position: 'relative',
-        zIndex: 1
-      }
+    test('with position:static flex child', () => {
+      const styles = css.create({
+        flex: {
+          display: 'flex'
+        },
+        static: {
+          position: 'static',
+          zIndex: 1
+        }
+      });
+      act(() => {
+        create(
+          <html.div style={styles.flex}>
+            <html.div style={styles.static} />
+          </html.div>
+        );
+      });
+      expect(console.error).not.toHaveBeenCalledWith(
+        expect.stringContaining(
+          '"position:static" prevents "zIndex" from having an effect.'
+        )
+      );
     });
-    act(() => {
-      create(<html.div style={styles.relative} />);
+
+    test('with position:relative', () => {
+      const styles = css.create({
+        relative: {
+          position: 'relative',
+          zIndex: 1
+        }
+      });
+      act(() => {
+        create(<html.div style={styles.relative} />);
+      });
+      expect(console.error).not.toHaveBeenCalledWith(
+        expect.stringContaining(
+          '"position:static" prevents "zIndex" from having an effect.'
+        )
+      );
     });
-    expect(console.error).not.toHaveBeenCalledWith(
-      expect.stringContaining(
-        '"position:static" prevents "zIndex" from having an effect.'
-      )
-    );
   });
 
   test('auto-wraps raw strings', () => {
