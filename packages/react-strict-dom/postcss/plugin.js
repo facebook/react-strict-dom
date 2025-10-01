@@ -13,13 +13,15 @@ const plugin = ({
   // Use `babelrc: false` to disable this behavior.
   babelConfig = {},
   include,
-  exclude
+  exclude,
+  useCSSLayers = true
 }) => {
   return postcssPlugin({
     cwd,
     babelConfig,
     include,
-    exclude
+    exclude,
+    useCSSLayers
   });
 };
 
