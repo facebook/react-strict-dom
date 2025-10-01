@@ -8,6 +8,7 @@
  */
 
 export {
+  AccessibilityInfo,
   Animated,
   Easing,
   Image,

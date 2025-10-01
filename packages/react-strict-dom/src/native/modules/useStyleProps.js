@@ -15,6 +15,7 @@ import * as css from '../css';
 import * as ReactNative from '../react-native';
 
 import { useInheritedStyles } from './ContextInheritedStyles';
+import { usePrefersReducedMotion } from './usePrefersReducedMotion';
 import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
 import { useViewportScale } from './ContextViewportScale';
@@ -120,6 +121,7 @@ export function useStyleProps(
   } = useInheritedStyles();
 
   const { active, focus, hover, handlers } = usePseudoStates(flatStyle);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   // Get the computed style props
   const styleProps = css.props.call(
@@ -132,6 +134,7 @@ export function useStyleProps(
       hover,
       inheritedFontSize:
         typeof inheritedFontSize === 'number' ? inheritedFontSize : undefined,
+      prefersReducedMotion,
       viewportHeight: height,
       viewportScale,
       viewportWidth: width

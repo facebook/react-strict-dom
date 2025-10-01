@@ -82,7 +82,14 @@ function matchQuery(mediaQuery, values) {
         return false;
       }
 
+      // prefers-reduce-motion without a keyword value is equivalent to
+      // prefers-reduced-motion: reduce.
+      if (feature === 'prefers-reduced-motion' && !expValue) {
+        expValue = 'reduce';
+      }
+
       switch (feature) {
+        case 'prefers-reduced-motion':
         case 'orientation':
         case 'scan':
           return value.toLowerCase() === expValue.toLowerCase();

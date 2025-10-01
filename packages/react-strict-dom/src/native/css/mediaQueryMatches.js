@@ -14,13 +14,15 @@ const MEDIA = '@media';
 export function mediaQueryMatches(
   query: string,
   width: number,
-  height: number
+  height: number,
+  prefersReducedMotion: boolean
 ): boolean {
   const q = query.split(MEDIA)[1];
   return mediaQuery.match(q, {
     width: width,
     height: height,
     orientation: width > height ? 'landscape' : 'portrait',
-    'aspect-ratio': width / height
+    'aspect-ratio': width / height,
+    'prefers-reduced-motion': prefersReducedMotion ? 'reduce' : 'no-preference'
   });
 }

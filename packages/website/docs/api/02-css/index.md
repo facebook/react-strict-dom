@@ -37,6 +37,8 @@ The following tables represent the compatibility status of the strict CSS API fo
 | `:hover` | 🟡 | 🟡 | |
 | `::placeholder` | 🟡 | 🟡 | |
 | `@media` | 🟡 | 🟡 | |
+| `@media (prefers-color-scheme)` | 🟡 | 🟡 | |
+| `@media (prefers-reduced-motion)` | 🟡 | 🟡 | |
 
 | Values | Android | iOS | Issue # |
 | ---- | ---- | ---- | ---- |

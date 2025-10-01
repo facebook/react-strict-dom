@@ -5,6 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export const AccessibilityInfo = {
+  addEventListener: jest.fn().mockReturnValue({ remove: jest.fn() }),
+  isReduceMotionEnabled: jest.fn().mockReturnValue(Promise.resolve(false))
+};
+
 export const Animated = {
   createAnimatedComponent(Component) {
     return `Animated.${Component}`;
