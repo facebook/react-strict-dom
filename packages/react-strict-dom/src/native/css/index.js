@@ -123,6 +123,7 @@ type ResolveStyleOptions = $ReadOnly<{
   fontSize?: ?number,
   hover?: ?boolean,
   inheritedFontSize: ?number,
+  prefersReducedMotion: boolean,
   viewportHeight: number,
   viewportScale: number | void,
   viewportWidth: number,
@@ -145,6 +146,7 @@ function resolveStyle(
     fontSize: _fontSize,
     hover,
     inheritedFontSize,
+    prefersReducedMotion,
     viewportHeight,
     viewportScale = 1,
     viewportWidth
@@ -246,7 +248,8 @@ function resolveStyle(
           const matches = mediaQueryMatches(
             variant,
             viewportWidth,
-            viewportHeight
+            viewportHeight,
+            prefersReducedMotion
           );
           if (matches) {
             activeVariant = variant;

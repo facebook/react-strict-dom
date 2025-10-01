@@ -80,6 +80,38 @@ describe('mediaQuery.match()', function () {
       ).toBe(false);
     });
 
+    test('prefers-reduced-motion: should return true for a correct match (===)', function () {
+      expect(
+        mediaQuery.match('(prefers-reduced-motion: reduce)', {
+          'prefers-reduced-motion': 'reduce'
+        })
+      ).toBe(true);
+    });
+
+    test('prefers-reduced-motion: should return false for an incorrect match (===)', function () {
+      expect(
+        mediaQuery.match('(prefers-reduced-motion: reduce)', {
+          'prefers-reduced-motion': 'no-preference'
+        })
+      ).toBe(false);
+    });
+
+    test('prefers-reduced-motion: should return true for matched default', function () {
+      expect(
+        mediaQuery.match('(prefers-reduced-motion)', {
+          'prefers-reduced-motion': 'reduce'
+        })
+      ).toBe(true);
+    });
+
+    test('prefers-reduced-motion: should return false for not matching default', function () {
+      expect(
+        mediaQuery.match('(prefers-reduced-motion)', {
+          'prefers-reduced-motion': 'no-preference'
+        })
+      ).toBe(false);
+    });
+
     test('scan: should return true for a correct match (===)', function () {
       expect(
         mediaQuery.match('(scan: progressive)', { scan: 'progressive' })

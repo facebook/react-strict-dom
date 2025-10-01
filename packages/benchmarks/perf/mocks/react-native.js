@@ -9,6 +9,13 @@
  * React Native mock for Node.js benchmarks
  */
 
+export const AccessibilityInfo = {
+  addEventListener: () => ({
+    remove: () => {}
+  }),
+  isReduceMotionEnabled: () => Promise.resolve(false)
+};
+
 export const Animated = {
   createAnimatedComponent(c) {
     return c;
