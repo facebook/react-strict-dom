@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.53 (Oct 1, 2025)
+
+### New features
+
+* [Web] Optimize the style runtime and improve readability of debug strings.
+
 ## 0.0.52 (Sep 28, 2025)
 
 ### Breaking changes

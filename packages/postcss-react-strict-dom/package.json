@@ -1,6 +1,6 @@
 {
   "name": "postcss-react-strict-dom",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "PostCSS plugin for React Strict DOM",
   "main": "src/index.js",
   "repository": {

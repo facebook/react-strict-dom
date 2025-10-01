@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "react-strict-dom-scripts",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "Helper scripts for React Strict DOM monorepo.",
   "license": "MIT",
   "bin": {

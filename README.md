@@ -20,6 +20,7 @@ Development monorepo for "React Strict DOM".
 * `packages`
   * Contains the individual packages managed in the monorepo.
   * [benchmarks](https://github.com/facebook/react-strict-dom/blob/main/packages/benchmarks)
+  * [postcss-react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/postcss-react-strict-dom)
   * [react-strict-dom](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom) ([docs](https://facebook.github.io/react-strict-dom/))
   * [scripts](https://github.com/facebook/react-strict-dom/blob/main/packages/scripts)
   * [website](https://github.com/facebook/react-strict-dom/blob/main/packages/website)

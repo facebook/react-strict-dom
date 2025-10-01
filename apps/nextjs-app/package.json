@@ -1,6 +1,6 @@
 {
   "name": "nextjs-app",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -8,11 +8,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "example-ui": "0.0.52",
+    "example-ui": "0.0.53",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-strict-dom": "0.0.52"
+    "react-strict-dom": "0.0.53"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "benchmarks",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "Benchmarks for React Strict DOM.",
   "license": "MIT",
   "scripts": {
