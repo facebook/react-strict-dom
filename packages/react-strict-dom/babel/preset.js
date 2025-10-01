@@ -34,7 +34,7 @@ function reactStrictPreset(_, options = {}) {
         styleResolution: 'property-specificity',
         unstable_moduleResolution: {
           rootDir: process.cwd(),
-          themeFileExtension: '.css.js',
+          themeFileExtension: '.css',
           type: 'commonJS'
         }
       }
