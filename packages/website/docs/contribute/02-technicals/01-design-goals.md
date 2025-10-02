@@ -8,7 +8,7 @@ slug: /contribute/design-goals
 
 ## Motivation
 
-React Strict DOM (RSD) began as a way to prototype and drive the development of "[React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496)". It enables engineers to quickly and easily reuse existing React web code and knowledge on native platforms. Our goal is to quickly and easily reuse React web code to also produce high-quality native interfaces, to reduce product time-to-market, and to improve engineering efficiency and product quality.
+React Strict DOM (RSD) began as a way to prototype and drive the development of "[React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496)". It enables engineers to quickly and easily reuse existing React web code and knowledge on native platforms. Our goal is to reuse React web code to produce high-quality native interfaces, to reduce product time-to-market, and to improve engineering efficiency and product quality.
 
 React Strict DOM aims to leverage the many framework investments we've made to React over the years (e.g., [React Native Fabric](https://reactnative.dev/architecture/fabric-renderer), [React Compiler](https://react.dev/learn/react-compiler), [React Developer Tools](https://react.dev/learn/react-developer-tools), [Yoga](https://www.yogalayout.dev/), etc.) that now make it possible to dramatically improve cross-platform product development.
 
