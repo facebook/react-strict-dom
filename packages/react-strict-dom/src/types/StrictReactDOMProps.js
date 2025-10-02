@@ -173,7 +173,7 @@ type SyntheticEvent<+T> = $ReadOnly<{|
 |}>;
 */
 
-type StrictClickEvent = $ReadOnly<{|
+export type StrictClickEvent = $ReadOnly<{|
   altKey: boolean,
   button: number,
   ctrlKey: boolean,
