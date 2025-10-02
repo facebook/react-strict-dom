@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.54 (Oct 2, 2025)
+
+### New features
+
+* [Native] Add polyfill for CSS `@media prefers-reduced-motion`.
+
+### Fixes
+
+* [Web] Include `useCSSLayers` in `react-strict-dom/postcss-plugin` options.
+* [Web] Update StyleX packages to 0.15.4.
+* [Web] Allow implicit `js` or `ts` extensions for `.css` theme files.
+* [Native] Fix native `zIndex` error condition.
+
 ## 0.0.53 (Oct 1, 2025)
 
 ### New features
