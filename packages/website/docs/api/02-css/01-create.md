@@ -4,7 +4,7 @@
 
 :::warning
 
-On web the style compiler and static types do not yet enforce constraints on the properties and values that can be used (e.g., various short-form properties are disallowed). This is a work in progress that depends on improvements to StyleX.
+On web the style compiler and static types do not yet enforce constraints on the properties and values that can be used (e.g., various short-form properties are disallowed). This is a work in progress.
 
 :::
 
