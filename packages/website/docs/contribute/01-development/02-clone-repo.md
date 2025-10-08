@@ -4,7 +4,7 @@ slug: /contribute/clone-repo
 
 # Clone the repository
 
-<p className="text-xl">React Strict DOM is a Git repository maintained by Meta at [facebook/react-strict-dom](https://github.com/facebook/react-strict-dom) Learn how to fork and clone the source code.</p>
+<p className="text-xl">React Strict DOM is a Git repository maintained by Meta at [facebook/react-strict-dom](https://github.com/facebook/react-strict-dom). Learn how to fork and clone the source code.</p>
 
 ## Install git
 

@@ -41,7 +41,7 @@ git checkout -b <branch-name>
 
 ## Documentation
 
-Documentation changes can be made to the package can be found in the `website` package within the `apps` directory. To run the documentation website locally:
+Documentation changes should be made in `packages/website`. To run the documentation website locally:
 
 ```
 npm run dev -w website
@@ -49,7 +49,7 @@ npm run dev -w website
 
 ## Development tasks
 
-Most contributions will typically be made to the `react-strict-dom` package within the `packages` directory. Each time a commit is made, the linter and code formatting tasks will automatically (auto-fixing where possible).
+Most contributions will typically be made to the `react-strict-dom` package within the `packages` directory. Each time a commit is made, the linter and code formatting tasks will automatically run (auto-fixing where possible).
 
 During development it's good practice to run and watch the unit tests in a separate terminal:
 
@@ -85,7 +85,7 @@ First, build and automatically rebuild `react-strict-dom` on changes:
 npm run dev -w react-strict-dom
 ```
 
-In another process, start the Expo example:
+In another process, start the platform tests:
 
 ```
 npm run dev -w platform-tests
@@ -95,11 +95,11 @@ To load the app in a browser or local simulator, follow the Expo instructions in
 
 To open the React DevTools for native, press `Shift + M` in the terminal running Expo, and select "Open React devtools".
 
-To test on device, install Expo Go on your device per [these instructions](https://reactnative.dev/docs/environment-setup?guide=quickstart#target-os-1). Scan the QR code with Expo Go to load the example app on your phone.
+To test on device, install Expo Go on your device per [these instructions](https://reactnative.dev/docs/environment-setup?guide=quickstart#target-os-1). Scan the QR code with Expo Go to load the app on your phone.
 
 ## Performance testing
 
-If changes are being made to the native code path that may affect performance, it is worth running the performance benchmarks locally to get early signal on any improvements or regressions caused by the patch (CI always runs these tests). There are `perf` and `size` benchmarks available. This package can be found in the `benchmarks` package within the `packages` directory.
+If changes are being made to the native code path, that may affect performance. It's worth running the performance benchmarks locally to get early signal on any improvements or regressions caused by the patch (CI always runs these tests). There are `perf` and `size` benchmarks available in the `benchmarks` package within the `packages` directory.
 
 ```
 npm run perf -w benchmarks
@@ -141,7 +141,7 @@ git rebase main
 
 This will rebase the branch onto `main` and prompt to resolve any potential conflicts. Re-install dependencies after each update.
 
-If changes are made to a branch after it has been put up for review, the branch can be rebased once again (e.g., to update commits with fixes), and then needs to be forced-pushed to GitHub.
+If changes are made to a branch after it has been put up for review, the local branch can be rebased once again (e.g., to update commits with fixes), and then needs to be forced-pushed to GitHub.
 
 ```
 git push -f <remote> <branch>
