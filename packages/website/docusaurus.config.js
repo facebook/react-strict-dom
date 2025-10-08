@@ -16,7 +16,7 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/react-strict-dom/',
-  trailingSlash: true,
+  trailingSlash: undefined,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   // GitHub pages deployment config.
