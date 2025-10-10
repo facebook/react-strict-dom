@@ -136,13 +136,25 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     } else if (displayValue === 'block' && displayInsideValue === 'flow') {
       // Force the block emulation styles
       nextDisplayInsideValue = 'flow';
-      nativeProps.style.alignItems = 'stretch';
       nativeProps.style.display = 'flex';
-      nativeProps.style.flexBasis = 'auto';
-      nativeProps.style.flexDirection = 'column';
-      nativeProps.style.flexShrink = 0;
-      nativeProps.style.flexWrap = 'nowrap';
-      nativeProps.style.justifyContent = 'flex-start';
+      if (nativeProps.style.alignItems != null) {
+        nativeProps.style.alignItems = 'stretch';
+      }
+      if (nativeProps.style.flexBasis != null) {
+        nativeProps.style.flexBasis = 'auto';
+      }
+      if (nativeProps.style.flexDirection != null) {
+        nativeProps.style.flexDirection = 'column';
+      }
+      if (nativeProps.style.flexShrink != null) {
+        nativeProps.style.flexShrink = 0;
+      }
+      if (nativeProps.style.flexWrap != null) {
+        nativeProps.style.flexWrap = 'nowrap';
+      }
+      if (nativeProps.style.justifyContent != null) {
+        nativeProps.style.justifyContent = 'flex-start';
+      }
     }
 
     if (displayInsideValue === 'flex') {
