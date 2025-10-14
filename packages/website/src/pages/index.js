@@ -84,7 +84,7 @@ function Page() {
   return (
     <html.main>
       <html.div>
-        <html.label for="name">Name</label>
+        <html.label for="name">Name</html.label>
         <html.input id="name" />
       </html.div>
     </html.main>
