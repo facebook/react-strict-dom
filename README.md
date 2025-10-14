@@ -14,8 +14,8 @@ Development monorepo for "React Strict DOM".
 * `apps`
   * Example applications using React Strict DOM.
   * [example-ui](https://github.com/facebook/react-strict-dom/blob/main/apps/example-ui)
-  * [expo-app](https://github.com/facebook/react-strict-dom/blob/main/apps/expo)
-  * [nextjs-app](https://github.com/facebook/react-strict-dom/blob/main/apps/nextjs)
+  * [expo-app](https://github.com/facebook/react-strict-dom/tree/main/apps/expo-app)
+  * [nextjs-app](https://github.com/facebook/react-strict-dom/blob/main/apps/nextjs-app)
   * [platform-tests](https://github.com/facebook/react-strict-dom/blob/main/apps/platform-tests)
 * `packages`
   * Contains the individual packages managed in the monorepo.
