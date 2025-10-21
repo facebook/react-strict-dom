@@ -307,32 +307,6 @@ describe('properties: general', () => {
       'Arial'
     );
 
-    const styles2 = css.create({
-      root: {
-        fontFamily: 'Arial !important'
-      }
-    });
-    expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot(
-      'with !important'
-    );
-    // Verify that !important is stripped
-    expect(css.props.call(mockOptions, styles2.root).style.fontFamily).toBe(
-      'Arial'
-    );
-
-    const styles3 = css.create({
-      root: {
-        fontFamily: 'Roboto, sans-serif !important'
-      }
-    });
-    expect(css.props.call(mockOptions, styles3.root)).toMatchSnapshot(
-      'with fallbacks and !important'
-    );
-    // Verify that !important is stripped and only first font is used
-    expect(css.props.call(mockOptions, styles3.root).style.fontFamily).toBe(
-      'Roboto'
-    );
-
     const styles4 = css.create({
       root: {
         fontFamily: 'Roboto, Helvetica, Arial, sans-serif'

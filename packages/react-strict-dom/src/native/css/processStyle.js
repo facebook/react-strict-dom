@@ -115,15 +115,9 @@ export function processStyle(
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
       } else if (propName === 'fontFamily') {
-        let processedValue = styleValue;
-        if (processedValue.endsWith('!important')) {
-          processedValue = processedValue
-            .replace(/\s*!important\s*$/, '')
-            .trim();
-        }
-        const firstFont = processedValue.split(',')[0].trim();
+        const firstFont = styleValue.split(',')[0].trim();
         // Remove surrounding quotes if present
-        // e.g. fontFamily: '"Helvetica Neue"
+        // e.g. fontFamily: '"Helvetica Neue", sans-serif'
         result[propName] = firstFont.replace(/^["']|["']$/g, '');
         continue;
       }
