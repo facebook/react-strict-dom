@@ -114,19 +114,16 @@ export function processStyle(
       if (stringContainsVariables(styleValue)) {
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
-      }
-      // Process fontFamily: strip !important and extract first font (React Native doesn't support fallbacks)
-      else if (propName === 'fontFamily') {
+      } else if (propName === 'fontFamily') {
         let processedValue = styleValue;
-        // Strip !important suffix
         if (processedValue.endsWith('!important')) {
           processedValue = processedValue
             .replace(/\s*!important\s*$/, '')
             .trim();
         }
-        // Extract first font family (before first comma)
         const firstFont = processedValue.split(',')[0].trim();
         // Remove surrounding quotes if present
+        // e.g. fontFamily: '"Helvetica Neue"
         result[propName] = firstFont.replace(/^["']|["']$/g, '');
         continue;
       }
