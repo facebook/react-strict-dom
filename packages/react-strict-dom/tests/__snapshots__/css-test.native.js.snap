@@ -185,6 +185,38 @@ exports[`properties: general filter 1`] = `
 }
 `;
 
+exports[`properties: general fontFamily: normal 1`] = `
+{
+  "style": {
+    "fontFamily": "Arial",
+  },
+}
+`;
+
+exports[`properties: general fontFamily: with multiple fallbacks 1`] = `
+{
+  "style": {
+    "fontFamily": "Roboto",
+  },
+}
+`;
+
+exports[`properties: general fontFamily: with quoted font name 1`] = `
+{
+  "style": {
+    "fontFamily": "SF Pro Display",
+  },
+}
+`;
+
+exports[`properties: general fontFamily: with single quoted font name 1`] = `
+{
+  "style": {
+    "fontFamily": "Helvetica Neue",
+  },
+}
+`;
+
 exports[`properties: general fontSize: default 1`] = `
 {
   "style": {

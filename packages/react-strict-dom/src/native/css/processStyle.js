@@ -114,6 +114,12 @@ export function processStyle(
       if (stringContainsVariables(styleValue)) {
         result[propName] = CSSUnparsedValue.parse(propName, styleValue);
         continue;
+      } else if (propName === 'fontFamily') {
+        const firstFont = styleValue.split(',')[0].trim();
+        // Remove surrounding quotes if present
+        // e.g. fontFamily: '"Helvetica Neue", sans-serif'
+        result[propName] = firstFont.replace(/^["']|["']$/g, '');
+        continue;
       }
       // Polyfill support for backgroundImage using experimental API
       else if (propName === 'backgroundImage') {
