@@ -296,6 +296,83 @@ describe('properties: general', () => {
     ).toMatchSnapshot('fontScale:2');
   });
 
+  test('fontFamily', () => {
+    const styles = css.create({
+      root: {
+        fontFamily: 'Arial'
+      }
+    });
+    expect(css.props.call(mockOptions, styles.root)).toMatchSnapshot('normal');
+    expect(css.props.call(mockOptions, styles.root).style.fontFamily).toBe(
+      'Arial'
+    );
+
+    const styles2 = css.create({
+      root: {
+        fontFamily: 'Arial !important'
+      }
+    });
+    expect(css.props.call(mockOptions, styles2.root)).toMatchSnapshot(
+      'with !important'
+    );
+    // Verify that !important is stripped
+    expect(css.props.call(mockOptions, styles2.root).style.fontFamily).toBe(
+      'Arial'
+    );
+
+    const styles3 = css.create({
+      root: {
+        fontFamily: 'Roboto, sans-serif !important'
+      }
+    });
+    expect(css.props.call(mockOptions, styles3.root)).toMatchSnapshot(
+      'with fallbacks and !important'
+    );
+    // Verify that !important is stripped and only first font is used
+    expect(css.props.call(mockOptions, styles3.root).style.fontFamily).toBe(
+      'Roboto'
+    );
+
+    const styles4 = css.create({
+      root: {
+        fontFamily: 'Roboto, Helvetica, Arial, sans-serif'
+      }
+    });
+    expect(css.props.call(mockOptions, styles4.root)).toMatchSnapshot(
+      'with multiple fallbacks'
+    );
+    // Verify that only the first font is used
+    expect(css.props.call(mockOptions, styles4.root).style.fontFamily).toBe(
+      'Roboto'
+    );
+
+    const styles5 = css.create({
+      root: {
+        fontFamily: '"SF Pro Display", -apple-system, sans-serif'
+      }
+    });
+    expect(css.props.call(mockOptions, styles5.root)).toMatchSnapshot(
+      'with quoted font name'
+    );
+    // Verify that quotes are stripped and only first font is used
+    expect(css.props.call(mockOptions, styles5.root).style.fontFamily).toBe(
+      'SF Pro Display'
+    );
+
+    const styles6 = css.create({
+      root: {
+        fontFamily: "'Helvetica Neue', Helvetica, Arial"
+      }
+    });
+    expect(css.props.call(mockOptions, styles6.root)).toMatchSnapshot(
+      'with single quoted font name'
+    );
+    // Verify that single quotes are stripped
+    expect(css.props.call(mockOptions, styles6.root).style.fontFamily).toBe(
+      'Helvetica Neue'
+    );
+  });
+
   test('fontVariant', () => {
     const styles = css.create({
       root: {
