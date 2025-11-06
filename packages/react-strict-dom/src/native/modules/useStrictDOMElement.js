@@ -67,7 +67,8 @@ function getOrCreateStrictRef(
       const scale = (number: number) => number / viewportScale;
 
       // Override getBoundingClientRect for viewport-scaling
-      const getBoundingClientRect = node?.getBoundingClientRect;
+      const getBoundingClientRect = 
+        node?.getBoundingClientRect ?? node?.unstable_getBoundingClientRect;
       if (getBoundingClientRect) {
         // $FlowFixMe[prop-missing]
         Object.defineProperty(strictRef, 'getBoundingClientRect', {
