@@ -1,0 +1,1179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<html.*> (native polyfills) auto-wraps raw strings: auto-wrap raw strings 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+      }
+    }
+  >
+    text
+  </Text>
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> (native polyfills) opt in to strict layout conformance: strict layout 1`] = `
+<LayoutConformance
+  mode="strict"
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />
+</LayoutConformance>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: inheritence inherited styles 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderColor": "red",
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  >
+    <Text
+      ref={[Function]}
+      style={
+        {
+          "boxSizing": "content-box",
+          "color": "red",
+          "cursor": "pointer",
+          "fontFamily": "Arial",
+          "fontSize": 96,
+          "fontStyle": "italic",
+          "fontVariant": "variant",
+          "fontWeight": "300",
+          "letterSpacing": 10,
+          "lineHeight": 192,
+          "position": "static",
+          "textAlign": "right",
+          "textDecorationColor": "red",
+          "textDecorationLine": "underline",
+          "textDecorationStyle": "solid",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Inherits text styles
+    </Text>
+    <TextInput
+      placeholder="Does not inherit text styles"
+      ref={[Function]}
+      style={
+        {
+          "borderWidth": 1,
+          "boxSizing": "content-box",
+          "position": "static",
+        }
+      }
+    />
+  </ViewNativeComponent>
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: inheritence inherited styles for auto-fix of raw strings 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "green",
+          "fontSize": 64,
+          "lineHeight": 192,
+        }
+      }
+    >
+      text
+    </Text>
+  </ViewNativeComponent>
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: layout block layout override of flex layout: block layout override of flex 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "alignItems": "stretch",
+      "boxSizing": "content-box",
+      "display": "flex",
+      "flexBasis": "auto",
+      "flexDirection": "column",
+      "flexShrink": 0,
+      "flexWrap": "nowrap",
+      "justifyContent": "flex-start",
+      "position": "static",
+    }
+  }
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: layout default block layout: block layout 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: layout default flex layout: flex layout 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "alignContent": "stretch",
+      "alignItems": "stretch",
+      "boxSizing": "content-box",
+      "display": "flex",
+      "flexBasis": "auto",
+      "flexDirection": "row",
+      "flexShrink": 1,
+      "flexWrap": "nowrap",
+      "justifyContent": "flex-start",
+      "position": "static",
+    }
+  }
+>
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "flexShrink": 1,
+        "position": "static",
+      }
+    }
+  />
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "flexShrink": 1,
+        "position": "static",
+      }
+    }
+  />
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <img> "src" prop with loading props 1`] = `
+<Image
+  crossOrigin="use-credentials"
+  ref={[Function]}
+  referrerPolicy="no-referrer"
+  src="https://src.jpg"
+  style={
+    {
+      "boxSizing": "content-box",
+      "objectFit": "fill",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <img> "srcSet" prop with loading props 1`] = `
+<Image
+  crossOrigin="use-credentials"
+  ref={[Function]}
+  referrerPolicy="no-referrer"
+  srcSet="https://src.jpg 1x, https://srcx2.jpg 2x"
+  style={
+    {
+      "boxSizing": "content-box",
+      "objectFit": "fill",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "additional-name" 1`] = `
+<TextInput
+  autoComplete="additional-name"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "address-line1" 1`] = `
+<TextInput
+  autoComplete="address-line1"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "address-line2" 1`] = `
+<TextInput
+  autoComplete="address-line2"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday" 1`] = `
+<TextInput
+  autoComplete="bday"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-day" 1`] = `
+<TextInput
+  autoComplete="bday-day"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-month" 1`] = `
+<TextInput
+  autoComplete="bday-month"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-year" 1`] = `
+<TextInput
+  autoComplete="bday-year"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-csc" 1`] = `
+<TextInput
+  autoComplete="cc-csc"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp" 1`] = `
+<TextInput
+  autoComplete="cc-exp"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp-month" 1`] = `
+<TextInput
+  autoComplete="cc-exp-month"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp-year" 1`] = `
+<TextInput
+  autoComplete="cc-exp-year"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-number" 1`] = `
+<TextInput
+  autoComplete="cc-number"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "country" 1`] = `
+<TextInput
+  autoComplete="country"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "current-password" 1`] = `
+<TextInput
+  autoComplete="current-password"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "email" 1`] = `
+<TextInput
+  autoComplete="email"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "family-name" 1`] = `
+<TextInput
+  autoComplete="family-name"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "given-name" 1`] = `
+<TextInput
+  autoComplete="given-name"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "honorific-prefix" 1`] = `
+<TextInput
+  autoComplete="honorific-prefix"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "honorific-suffix" 1`] = `
+<TextInput
+  autoComplete="honorific-suffix"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "name" 1`] = `
+<TextInput
+  autoComplete="name"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "new-password" 1`] = `
+<TextInput
+  autoComplete="new-password"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "nickname" 1`] = `
+<TextInput
+  autoComplete="nickname"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "off" 1`] = `
+<TextInput
+  autoComplete="off"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "on" 1`] = `
+<TextInput
+  autoComplete="on"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "one-time-code" 1`] = `
+<TextInput
+  autoComplete="one-time-code"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "organization" 1`] = `
+<TextInput
+  autoComplete="organization"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "organization-title" 1`] = `
+<TextInput
+  autoComplete="organization-title"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "postal-code" 1`] = `
+<TextInput
+  autoComplete="postal-code"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "sex" 1`] = `
+<TextInput
+  autoComplete="sex"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "street-address" 1`] = `
+<TextInput
+  autoComplete="street-address"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel" 1`] = `
+<TextInput
+  autoComplete="tel"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel-country-code" 1`] = `
+<TextInput
+  autoComplete="tel-country-code"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel-national" 1`] = `
+<TextInput
+  autoComplete="tel-national"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "url" 1`] = `
+<TextInput
+  autoComplete="url"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "username" 1`] = `
+<TextInput
+  autoComplete="username"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "disabled" prop 1`] = `
+<TextInput
+  disabled={true}
+  editable={false}
+  focusable={false}
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "style" prop 1`] = `
+<TextInput
+  placeholderTextColor="pink"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "color": "red",
+      "fontWeight": "bold",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "email" 1`] = `
+<TextInput
+  inputMode="email"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "number" 1`] = `
+<TextInput
+  inputMode="numeric"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "password" 1`] = `
+<TextInput
+  ref={[Function]}
+  secureTextEntry={true}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "search" 1`] = `
+<TextInput
+  inputMode="search"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "tel" 1`] = `
+<TextInput
+  inputMode="tel"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "url" 1`] = `
+<TextInput
+  inputMode="url"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <textarea> "disabled" prop 1`] = `
+<TextInput
+  disabled={true}
+  editable={false}
+  focusable={false}
+  multiline={true}
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+      "verticalAlign": "top",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props <textarea> "rows" prop 1`] = `
+<TextInput
+  multiline={true}
+  numberOfLines={5}
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+      "verticalAlign": "top",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "auto" block 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "auto" text 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "writingDirection": "auto",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "ltr" block 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "direction": "ltr",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "ltr" text 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "direction": "ltr",
+      "position": "static",
+      "writingDirection": "ltr",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "rtl" block 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "direction": "rtl",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "rtl" text 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "direction": "rtl",
+      "position": "static",
+      "writingDirection": "rtl",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "display": "none",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "false" 1`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "false" 2`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "display": "none",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "hidden" 1`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "display": "none",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "true" 1`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "display": "none",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "true" 2`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "display": "none",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "until-found" 1`] = `
+<TextInput
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: display set 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "alignContent": "stretch",
+      "alignItems": "stretch",
+      "boxSizing": "content-box",
+      "display": "flex",
+      "flexBasis": "auto",
+      "flexDirection": "row",
+      "flexShrink": 1,
+      "flexWrap": "nowrap",
+      "justifyContent": "flex-start",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "decimal" 1`] = `
+<TextInput
+  inputMode="decimal"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "email" 1`] = `
+<TextInput
+  inputMode="email"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "numeric" 1`] = `
+<TextInput
+  inputMode="numeric"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "search" 1`] = `
+<TextInput
+  inputMode="search"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "tel" 1`] = `
+<TextInput
+  inputMode="tel"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "url" 1`] = `
+<TextInput
+  inputMode="url"
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> (native polyfills) polyfills: props global "tabIndex" prop 1`] = `
+<TextInput
+  focusable={false}
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 1,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;

@@ -38,7 +38,7 @@ module.exports = {
         printBasicPrototype: false
       },
       testEnvironment: 'jsdom',
-      testMatch: ['<rootDir>/**/__tests__/*-test.js'],
+      testMatch: ['<rootDir>/**/__tests__/**/*-test.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }
@@ -58,7 +58,10 @@ module.exports = {
       },
       snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-web.js',
       testEnvironment: 'jsdom',
-      testMatch: ['<rootDir>/tests/*-test.js', '<rootDir>/tests/*-test.web.js'],
+      testMatch: [
+        '<rootDir>/tests/**/*-test.js',
+        '<rootDir>/tests/**/*-test.web.js'
+      ],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig(null, { target: 'web' })]
       }
@@ -79,8 +82,8 @@ module.exports = {
       snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-native.js',
       testEnvironment: 'node',
       testMatch: [
-        '<rootDir>/tests/*-test.js',
-        '<rootDir>/tests/*-test.native.js'
+        '<rootDir>/tests/**/*-test.js',
+        '<rootDir>/tests/**/*-test.native.js'
       ],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
@@ -101,7 +104,7 @@ module.exports = {
       },
       snapshotResolver: '<rootDir>/tools/jest/snapshot-resolver-node.js',
       testEnvironment: 'node',
-      testMatch: ['<rootDir>/tests/*-test.node.js'],
+      testMatch: ['<rootDir>/tests/**/*-test.node.js'],
       transform: {
         '\\.[jt]sx?$': ['babel-jest', babelConfig()]
       }

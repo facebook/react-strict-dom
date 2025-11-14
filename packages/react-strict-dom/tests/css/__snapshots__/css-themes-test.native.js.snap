@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css.* themes css.createTheme: theme 1`] = `
+{
+  "$$theme": "theme",
+  "rootColor__id__3": "green",
+}
+`;
+
+exports[`css.* themes css.defineConsts: constants 1`] = `
+{
+  "blueColor": "blue",
+  "redColor": "red",
+}
+`;
+
+exports[`css.* themes css.defineVars: tokens 1`] = `
+{
+  "rootColor": "var(--rootColor__id__1)",
+  "themeAwareColor": "var(--themeAwareColor__id__2)",
+}
+`;
+
+exports[`css.* themes handles undefined variables 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.* themes inherited themes 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "backgroundColor": "pink",
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  >
+    Expect color:red
+  </Text>,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "backgroundColor": "pink",
+        "boxSizing": "content-box",
+        "color": "green",
+        "position": "static",
+      }
+    }
+  >
+    Expect color:green
+  </Text>,
+  <TextInput
+    placeholder="Expect placeholderTextColor:green"
+    placeholderTextColor="green"
+    ref={[Function]}
+    style={
+      {
+        "borderWidth": 1,
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />,
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  >
+    <Text
+      ref={[Function]}
+      style={
+        {
+          "backgroundColor": "pink",
+          "boxSizing": "content-box",
+          "color": "green",
+          "position": "static",
+        }
+      }
+    >
+      Expect color:green (inherited)
+    </Text>
+    <TextInput
+      placeholder="Expect placeholderTextColor:green"
+      placeholderTextColor="green"
+      ref={[Function]}
+      style={
+        {
+          "borderWidth": 1,
+          "boxSizing": "content-box",
+          "position": "static",
+        }
+      }
+    />
+    <ViewNativeComponent
+      ref={[Function]}
+      style={
+        {
+          "boxSizing": "content-box",
+          "position": "static",
+        }
+      }
+    >
+      <Text
+        ref={[Function]}
+        style={
+          {
+            "backgroundColor": "pink",
+            "boxSizing": "content-box",
+            "color": "blue",
+            "position": "static",
+          }
+        }
+      >
+        Expect color:blue (nested)
+      </Text>
+      <TextInput
+        placeholder="Expect placeholderTextColor:blue"
+        placeholderTextColor="blue"
+        ref={[Function]}
+        style={
+          {
+            "borderWidth": 1,
+            "boxSizing": "content-box",
+            "position": "static",
+          }
+        }
+      />
+    </ViewNativeComponent>
+  </ViewNativeComponent>,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "backgroundColor": "pink",
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  >
+    Expect color:red
+  </Text>,
+]
+`;

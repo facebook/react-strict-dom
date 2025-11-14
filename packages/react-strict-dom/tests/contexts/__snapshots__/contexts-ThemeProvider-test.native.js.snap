@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<contexts.*> <ThemeProvider> css variable declaration inside a media query 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "width": 42,
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> defines global custom properties 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  >
+    Expect color:green
+  </Text>,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "backgroundColor": "red",
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  >
+    Expect color:red
+  </Text>,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> kebab case string var to camel case 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  />,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  />,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> number var lookup works 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 10,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> number var value lookup with reference to another var 1`] = `
+[
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "borderWidth": 10,
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />,
+  <ViewNativeComponent
+    ref={[Function]}
+    style={
+      {
+        "borderWidth": 10,
+        "boxSizing": "content-box",
+        "position": "static",
+      }
+    }
+  />,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> rgb(a) function with args applied through a single var 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "rgb(24, 48, 96)",
+        "position": "static",
+      }
+    }
+  />,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "rgba(24, 48, 96, 0.5)",
+        "position": "static",
+      }
+    }
+  />,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> rgba function with args applied through multiple (& nested) vars 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "color": "rgba(255, 96, 16, 0.42)",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "color": "red",
+      "opacity": 0.25,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var and falls back to a default value containing spaces and embedded var 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "color": "rgb(255,255,255)",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var and falls back to default value containing a var 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "color": "red",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var value lookup with em prop conversion 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 160,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var value lookup with pixel prop conversion 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 10,
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var with a default value 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "red",
+        "position": "static",
+      }
+    }
+  />,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "blue",
+        "position": "static",
+      }
+    }
+  />,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> string var with a default value containing spaces 1`] = `
+[
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "rgb(0,0,0)",
+        "position": "static",
+      }
+    }
+  />,
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "color": "rgb(1 , 1 , 1)",
+        "position": "static",
+      }
+    }
+  />,
+]
+`;
+
+exports[`<contexts.*> <ThemeProvider> textShadow with nested/multiple vars 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "textShadowColor": "red",
+      "textShadowOffset": {
+        "height": 20,
+        "width": 10,
+      },
+      "textShadowRadius": 30,
+    }
+  }
+/>
+`;
+
+exports[`<contexts.*> <ThemeProvider> transform with nested/multiple vars 1`] = `
+<Text
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "translateX": 20,
+        },
+        {
+          "rotateX": "45deg",
+        },
+      ],
+    }
+  }
+/>
+`;
