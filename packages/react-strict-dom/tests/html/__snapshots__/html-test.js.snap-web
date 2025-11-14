@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`html "a" default rendering 1`] = `
+exports[`<html.*> "a" default rendering 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "a" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "a" ignores and warns about unsupported attributes 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "a" supports additional anchor attributes 1`] = `
+exports[`<html.*> "a" supports additional anchor attributes 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   download="download.png"
@@ -23,7 +23,7 @@ exports[`html "a" supports additional anchor attributes 1`] = `
 />
 `;
 
-exports[`html "a" supports global attributes 1`] = `
+exports[`<html.*> "a" supports global attributes 1`] = `
 <a
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -96,7 +96,7 @@ exports[`html "a" supports global attributes 1`] = `
 </a>
 `;
 
-exports[`html "a" supports inline event handlers 1`] = `
+exports[`<html.*> "a" supports inline event handlers 1`] = `
 <a
   className="html-a x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -145,19 +145,19 @@ exports[`html "a" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "article" default rendering 1`] = `
+exports[`<html.*> "article" default rendering 1`] = `
 <article
   className="html-article x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "article" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "article" ignores and warns about unsupported attributes 1`] = `
 <article
   className="html-article x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "article" supports global attributes 1`] = `
+exports[`<html.*> "article" supports global attributes 1`] = `
 <article
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -230,7 +230,7 @@ exports[`html "article" supports global attributes 1`] = `
 </article>
 `;
 
-exports[`html "article" supports inline event handlers 1`] = `
+exports[`<html.*> "article" supports inline event handlers 1`] = `
 <article
   className="html-article x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -279,19 +279,19 @@ exports[`html "article" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "aside" default rendering 1`] = `
+exports[`<html.*> "aside" default rendering 1`] = `
 <aside
   className="html-aside x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "aside" ignores and warns about unsupported attributes 1`] = `
 <aside
   className="html-aside x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "aside" supports global attributes 1`] = `
+exports[`<html.*> "aside" supports global attributes 1`] = `
 <aside
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -364,7 +364,7 @@ exports[`html "aside" supports global attributes 1`] = `
 </aside>
 `;
 
-exports[`html "aside" supports inline event handlers 1`] = `
+exports[`<html.*> "aside" supports inline event handlers 1`] = `
 <aside
   className="html-aside x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -413,19 +413,19 @@ exports[`html "aside" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "b" default rendering 1`] = `
+exports[`<html.*> "b" default rendering 1`] = `
 <b
   className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "b" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "b" ignores and warns about unsupported attributes 1`] = `
 <b
   className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "b" supports global attributes 1`] = `
+exports[`<html.*> "b" supports global attributes 1`] = `
 <b
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -498,7 +498,7 @@ exports[`html "b" supports global attributes 1`] = `
 </b>
 `;
 
-exports[`html "b" supports inline event handlers 1`] = `
+exports[`<html.*> "b" supports inline event handlers 1`] = `
 <b
   className="html-b x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -547,19 +547,19 @@ exports[`html "b" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "bdi" default rendering 1`] = `
+exports[`<html.*> "bdi" default rendering 1`] = `
 <bdi
   className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "bdi" ignores and warns about unsupported attributes 1`] = `
 <bdi
   className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "bdi" supports global attributes 1`] = `
+exports[`<html.*> "bdi" supports global attributes 1`] = `
 <bdi
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -632,7 +632,7 @@ exports[`html "bdi" supports global attributes 1`] = `
 </bdi>
 `;
 
-exports[`html "bdi" supports inline event handlers 1`] = `
+exports[`<html.*> "bdi" supports inline event handlers 1`] = `
 <bdi
   className="html-bdi x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -681,19 +681,19 @@ exports[`html "bdi" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "bdo" default rendering 1`] = `
+exports[`<html.*> "bdo" default rendering 1`] = `
 <bdo
   className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "bdo" ignores and warns about unsupported attributes 1`] = `
 <bdo
   className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "bdo" supports global attributes 1`] = `
+exports[`<html.*> "bdo" supports global attributes 1`] = `
 <bdo
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -766,7 +766,7 @@ exports[`html "bdo" supports global attributes 1`] = `
 </bdo>
 `;
 
-exports[`html "bdo" supports inline event handlers 1`] = `
+exports[`<html.*> "bdo" supports inline event handlers 1`] = `
 <bdo
   className="html-bdo x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -815,19 +815,19 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "blockquote" default rendering 1`] = `
+exports[`<html.*> "blockquote" default rendering 1`] = `
 <blockquote
   className="html-blockquote x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "blockquote" ignores and warns about unsupported attributes 1`] = `
 <blockquote
   className="html-blockquote x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "blockquote" supports global attributes 1`] = `
+exports[`<html.*> "blockquote" supports global attributes 1`] = `
 <blockquote
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -900,7 +900,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
 </blockquote>
 `;
 
-exports[`html "blockquote" supports inline event handlers 1`] = `
+exports[`<html.*> "blockquote" supports inline event handlers 1`] = `
 <blockquote
   className="html-blockquote x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -949,19 +949,19 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "br" default rendering 1`] = `
+exports[`<html.*> "br" default rendering 1`] = `
 <br
   className="html-br"
 />
 `;
 
-exports[`html "br" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "br" ignores and warns about unsupported attributes 1`] = `
 <br
   className="html-br"
 />
 `;
 
-exports[`html "br" supports global attributes 1`] = `
+exports[`<html.*> "br" supports global attributes 1`] = `
 <br
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1034,7 +1034,7 @@ exports[`html "br" supports global attributes 1`] = `
 </br>
 `;
 
-exports[`html "br" supports inline event handlers 1`] = `
+exports[`<html.*> "br" supports inline event handlers 1`] = `
 <br
   className="html-br"
   onAuxClick={[Function]}
@@ -1083,21 +1083,21 @@ exports[`html "br" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "button" default rendering 1`] = `
+exports[`<html.*> "button" default rendering 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   type="button"
 />
 `;
 
-exports[`html "button" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "button" ignores and warns about unsupported attributes 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   type="button"
 />
 `;
 
-exports[`html "button" supports additional button attributes 1`] = `
+exports[`<html.*> "button" supports additional button attributes 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   disabled={true}
@@ -1105,7 +1105,7 @@ exports[`html "button" supports additional button attributes 1`] = `
 />
 `;
 
-exports[`html "button" supports global attributes 1`] = `
+exports[`<html.*> "button" supports global attributes 1`] = `
 <button
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1179,7 +1179,7 @@ exports[`html "button" supports global attributes 1`] = `
 </button>
 `;
 
-exports[`html "button" supports inline event handlers 1`] = `
+exports[`<html.*> "button" supports inline event handlers 1`] = `
 <button
   className="html-button x1y0btm7 x1ghz6dp x1717udv xmkeg23"
   onAuxClick={[Function]}
@@ -1229,19 +1229,19 @@ exports[`html "button" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "code" default rendering 1`] = `
+exports[`<html.*> "code" default rendering 1`] = `
 <code
   className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
-exports[`html "code" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "code" ignores and warns about unsupported attributes 1`] = `
 <code
   className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
-exports[`html "code" supports global attributes 1`] = `
+exports[`<html.*> "code" supports global attributes 1`] = `
 <code
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1314,7 +1314,7 @@ exports[`html "code" supports global attributes 1`] = `
 </code>
 `;
 
-exports[`html "code" supports inline event handlers 1`] = `
+exports[`<html.*> "code" supports inline event handlers 1`] = `
 <code
   className="html-code x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x1lxnp44 xrv4cvt xysyzu8"
   onAuxClick={[Function]}
@@ -1363,19 +1363,19 @@ exports[`html "code" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "del" default rendering 1`] = `
+exports[`<html.*> "del" default rendering 1`] = `
 <del
   className="html-del"
 />
 `;
 
-exports[`html "del" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "del" ignores and warns about unsupported attributes 1`] = `
 <del
   className="html-del"
 />
 `;
 
-exports[`html "del" supports global attributes 1`] = `
+exports[`<html.*> "del" supports global attributes 1`] = `
 <del
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1448,7 +1448,7 @@ exports[`html "del" supports global attributes 1`] = `
 </del>
 `;
 
-exports[`html "del" supports inline event handlers 1`] = `
+exports[`<html.*> "del" supports inline event handlers 1`] = `
 <del
   className="html-del"
   onAuxClick={[Function]}
@@ -1497,19 +1497,19 @@ exports[`html "del" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "div" default rendering 1`] = `
+exports[`<html.*> "div" default rendering 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "div" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "div" ignores and warns about unsupported attributes 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "div" supports global attributes 1`] = `
+exports[`<html.*> "div" supports global attributes 1`] = `
 <div
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1582,7 +1582,7 @@ exports[`html "div" supports global attributes 1`] = `
 </div>
 `;
 
-exports[`html "div" supports inline event handlers 1`] = `
+exports[`<html.*> "div" supports inline event handlers 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -1631,19 +1631,19 @@ exports[`html "div" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "em" default rendering 1`] = `
+exports[`<html.*> "em" default rendering 1`] = `
 <em
   className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "em" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "em" ignores and warns about unsupported attributes 1`] = `
 <em
   className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "em" supports global attributes 1`] = `
+exports[`<html.*> "em" supports global attributes 1`] = `
 <em
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1716,7 +1716,7 @@ exports[`html "em" supports global attributes 1`] = `
 </em>
 `;
 
-exports[`html "em" supports inline event handlers 1`] = `
+exports[`<html.*> "em" supports inline event handlers 1`] = `
 <em
   className="html-em x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -1765,19 +1765,19 @@ exports[`html "em" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "fieldset" default rendering 1`] = `
+exports[`<html.*> "fieldset" default rendering 1`] = `
 <fieldset
   className="html-fieldset x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "fieldset" ignores and warns about unsupported attributes 1`] = `
 <fieldset
   className="html-fieldset x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "fieldset" supports global attributes 1`] = `
+exports[`<html.*> "fieldset" supports global attributes 1`] = `
 <fieldset
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1850,7 +1850,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
 </fieldset>
 `;
 
-exports[`html "fieldset" supports inline event handlers 1`] = `
+exports[`<html.*> "fieldset" supports inline event handlers 1`] = `
 <fieldset
   className="html-fieldset x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -1899,19 +1899,19 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "footer" default rendering 1`] = `
+exports[`<html.*> "footer" default rendering 1`] = `
 <footer
   className="html-footer x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "footer" ignores and warns about unsupported attributes 1`] = `
 <footer
   className="html-footer x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "footer" supports global attributes 1`] = `
+exports[`<html.*> "footer" supports global attributes 1`] = `
 <footer
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -1984,7 +1984,7 @@ exports[`html "footer" supports global attributes 1`] = `
 </footer>
 `;
 
-exports[`html "footer" supports inline event handlers 1`] = `
+exports[`<html.*> "footer" supports inline event handlers 1`] = `
 <footer
   className="html-footer x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -2033,19 +2033,19 @@ exports[`html "footer" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "form" default rendering 1`] = `
+exports[`<html.*> "form" default rendering 1`] = `
 <form
   className="html-form x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "form" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "form" ignores and warns about unsupported attributes 1`] = `
 <form
   className="html-form x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "form" supports global attributes 1`] = `
+exports[`<html.*> "form" supports global attributes 1`] = `
 <form
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2118,7 +2118,7 @@ exports[`html "form" supports global attributes 1`] = `
 </form>
 `;
 
-exports[`html "form" supports inline event handlers 1`] = `
+exports[`<html.*> "form" supports inline event handlers 1`] = `
 <form
   className="html-form x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -2167,19 +2167,19 @@ exports[`html "form" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h1" default rendering 1`] = `
+exports[`<html.*> "h1" default rendering 1`] = `
 <h1
   className="html-h1 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h1" ignores and warns about unsupported attributes 1`] = `
 <h1
   className="html-h1 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h1" supports global attributes 1`] = `
+exports[`<html.*> "h1" supports global attributes 1`] = `
 <h1
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2252,7 +2252,7 @@ exports[`html "h1" supports global attributes 1`] = `
 </h1>
 `;
 
-exports[`html "h1" supports inline event handlers 1`] = `
+exports[`<html.*> "h1" supports inline event handlers 1`] = `
 <h1
   className="html-h1 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2301,19 +2301,19 @@ exports[`html "h1" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h2" default rendering 1`] = `
+exports[`<html.*> "h2" default rendering 1`] = `
 <h2
   className="html-h2 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h2" ignores and warns about unsupported attributes 1`] = `
 <h2
   className="html-h2 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h2" supports global attributes 1`] = `
+exports[`<html.*> "h2" supports global attributes 1`] = `
 <h2
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2386,7 +2386,7 @@ exports[`html "h2" supports global attributes 1`] = `
 </h2>
 `;
 
-exports[`html "h2" supports inline event handlers 1`] = `
+exports[`<html.*> "h2" supports inline event handlers 1`] = `
 <h2
   className="html-h2 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2435,19 +2435,19 @@ exports[`html "h2" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h3" default rendering 1`] = `
+exports[`<html.*> "h3" default rendering 1`] = `
 <h3
   className="html-h3 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h3" ignores and warns about unsupported attributes 1`] = `
 <h3
   className="html-h3 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h3" supports global attributes 1`] = `
+exports[`<html.*> "h3" supports global attributes 1`] = `
 <h3
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2520,7 +2520,7 @@ exports[`html "h3" supports global attributes 1`] = `
 </h3>
 `;
 
-exports[`html "h3" supports inline event handlers 1`] = `
+exports[`<html.*> "h3" supports inline event handlers 1`] = `
 <h3
   className="html-h3 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2569,19 +2569,19 @@ exports[`html "h3" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h4" default rendering 1`] = `
+exports[`<html.*> "h4" default rendering 1`] = `
 <h4
   className="html-h4 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h4" ignores and warns about unsupported attributes 1`] = `
 <h4
   className="html-h4 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h4" supports global attributes 1`] = `
+exports[`<html.*> "h4" supports global attributes 1`] = `
 <h4
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2654,7 +2654,7 @@ exports[`html "h4" supports global attributes 1`] = `
 </h4>
 `;
 
-exports[`html "h4" supports inline event handlers 1`] = `
+exports[`<html.*> "h4" supports inline event handlers 1`] = `
 <h4
   className="html-h4 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2703,19 +2703,19 @@ exports[`html "h4" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h5" default rendering 1`] = `
+exports[`<html.*> "h5" default rendering 1`] = `
 <h5
   className="html-h5 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h5" ignores and warns about unsupported attributes 1`] = `
 <h5
   className="html-h5 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h5" supports global attributes 1`] = `
+exports[`<html.*> "h5" supports global attributes 1`] = `
 <h5
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2788,7 +2788,7 @@ exports[`html "h5" supports global attributes 1`] = `
 </h5>
 `;
 
-exports[`html "h5" supports inline event handlers 1`] = `
+exports[`<html.*> "h5" supports inline event handlers 1`] = `
 <h5
   className="html-h5 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2837,19 +2837,19 @@ exports[`html "h5" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h6" default rendering 1`] = `
+exports[`<html.*> "h6" default rendering 1`] = `
 <h6
   className="html-h6 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h6" ignores and warns about unsupported attributes 1`] = `
 <h6
   className="html-h6 x1ghz6dp x1717udv xngnso2 x1vvkbs"
 />
 `;
 
-exports[`html "h6" supports global attributes 1`] = `
+exports[`<html.*> "h6" supports global attributes 1`] = `
 <h6
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -2922,7 +2922,7 @@ exports[`html "h6" supports global attributes 1`] = `
 </h6>
 `;
 
-exports[`html "h6" supports inline event handlers 1`] = `
+exports[`<html.*> "h6" supports inline event handlers 1`] = `
 <h6
   className="html-h6 x1ghz6dp x1717udv xngnso2 x1vvkbs"
   onAuxClick={[Function]}
@@ -2971,19 +2971,19 @@ exports[`html "h6" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "header" default rendering 1`] = `
+exports[`<html.*> "header" default rendering 1`] = `
 <header
   className="html-header x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "header" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "header" ignores and warns about unsupported attributes 1`] = `
 <header
   className="html-header x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "header" supports global attributes 1`] = `
+exports[`<html.*> "header" supports global attributes 1`] = `
 <header
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3056,7 +3056,7 @@ exports[`html "header" supports global attributes 1`] = `
 </header>
 `;
 
-exports[`html "header" supports inline event handlers 1`] = `
+exports[`<html.*> "header" supports inline event handlers 1`] = `
 <header
   className="html-header x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -3105,19 +3105,19 @@ exports[`html "header" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "hr" default rendering 1`] = `
+exports[`<html.*> "hr" default rendering 1`] = `
 <hr
   className="html-hr x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
 />
 `;
 
-exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "hr" ignores and warns about unsupported attributes 1`] = `
 <hr
   className="html-hr x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
 />
 `;
 
-exports[`html "hr" supports global attributes 1`] = `
+exports[`<html.*> "hr" supports global attributes 1`] = `
 <hr
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3190,7 +3190,7 @@ exports[`html "hr" supports global attributes 1`] = `
 </hr>
 `;
 
-exports[`html "hr" supports inline event handlers 1`] = `
+exports[`<html.*> "hr" supports inline event handlers 1`] = `
 <hr
   className="html-hr x1ghz6dp x1717udv x42x0ya xng3xce xc342km x9f619 xjm9jq1"
   onAuxClick={[Function]}
@@ -3239,19 +3239,19 @@ exports[`html "hr" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "i" default rendering 1`] = `
+exports[`<html.*> "i" default rendering 1`] = `
 <i
   className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "i" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "i" ignores and warns about unsupported attributes 1`] = `
 <i
   className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "i" supports global attributes 1`] = `
+exports[`<html.*> "i" supports global attributes 1`] = `
 <i
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3324,7 +3324,7 @@ exports[`html "i" supports global attributes 1`] = `
 </i>
 `;
 
-exports[`html "i" supports inline event handlers 1`] = `
+exports[`<html.*> "i" supports inline event handlers 1`] = `
 <i
   className="html-i x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -3373,19 +3373,19 @@ exports[`html "i" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "img" default rendering 1`] = `
+exports[`<html.*> "img" default rendering 1`] = `
 <img
   className="html-img xuw900x xt7dq6l x193iq5w"
 />
 `;
 
-exports[`html "img" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "img" ignores and warns about unsupported attributes 1`] = `
 <img
   className="html-img xuw900x xt7dq6l x193iq5w"
 />
 `;
 
-exports[`html "img" supports additional image attributes 1`] = `
+exports[`<html.*> "img" supports additional image attributes 1`] = `
 <img
   alt="Alt text"
   className="html-img xuw900x xt7dq6l x193iq5w"
@@ -3403,7 +3403,7 @@ exports[`html "img" supports additional image attributes 1`] = `
 />
 `;
 
-exports[`html "img" supports global attributes 1`] = `
+exports[`<html.*> "img" supports global attributes 1`] = `
 <img
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3476,7 +3476,7 @@ exports[`html "img" supports global attributes 1`] = `
 </img>
 `;
 
-exports[`html "img" supports inline event handlers 1`] = `
+exports[`<html.*> "img" supports inline event handlers 1`] = `
 <img
   className="html-img xuw900x xt7dq6l x193iq5w"
   onAuxClick={[Function]}
@@ -3525,21 +3525,21 @@ exports[`html "img" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "input" default rendering 1`] = `
+exports[`<html.*> "input" default rendering 1`] = `
 <input
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
 />
 `;
 
-exports[`html "input" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "input" ignores and warns about unsupported attributes 1`] = `
 <input
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
 />
 `;
 
-exports[`html "input" supports additional input attributes 1`] = `
+exports[`<html.*> "input" supports additional input attributes 1`] = `
 <input
   checked={true}
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
@@ -3568,7 +3568,7 @@ exports[`html "input" supports additional input attributes 1`] = `
 />
 `;
 
-exports[`html "input" supports global attributes 1`] = `
+exports[`<html.*> "input" supports global attributes 1`] = `
 <input
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3641,7 +3641,7 @@ exports[`html "input" supports global attributes 1`] = `
 </input>
 `;
 
-exports[`html "input" supports inline event handlers 1`] = `
+exports[`<html.*> "input" supports inline event handlers 1`] = `
 <input
   className="html-input x1ghz6dp x1717udv xmkeg23 x1y0btm7"
   dir="auto"
@@ -3691,19 +3691,19 @@ exports[`html "input" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ins" default rendering 1`] = `
+exports[`<html.*> "ins" default rendering 1`] = `
 <ins
   className="html-ins"
 />
 `;
 
-exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "ins" ignores and warns about unsupported attributes 1`] = `
 <ins
   className="html-ins"
 />
 `;
 
-exports[`html "ins" supports global attributes 1`] = `
+exports[`<html.*> "ins" supports global attributes 1`] = `
 <ins
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3776,7 +3776,7 @@ exports[`html "ins" supports global attributes 1`] = `
 </ins>
 `;
 
-exports[`html "ins" supports inline event handlers 1`] = `
+exports[`<html.*> "ins" supports inline event handlers 1`] = `
 <ins
   className="html-ins"
   onAuxClick={[Function]}
@@ -3825,19 +3825,19 @@ exports[`html "ins" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "kbd" default rendering 1`] = `
+exports[`<html.*> "kbd" default rendering 1`] = `
 <kbd
   className="html-kbd"
 />
 `;
 
-exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "kbd" ignores and warns about unsupported attributes 1`] = `
 <kbd
   className="html-kbd"
 />
 `;
 
-exports[`html "kbd" supports global attributes 1`] = `
+exports[`<html.*> "kbd" supports global attributes 1`] = `
 <kbd
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -3910,7 +3910,7 @@ exports[`html "kbd" supports global attributes 1`] = `
 </kbd>
 `;
 
-exports[`html "kbd" supports inline event handlers 1`] = `
+exports[`<html.*> "kbd" supports inline event handlers 1`] = `
 <kbd
   className="html-kbd"
   onAuxClick={[Function]}
@@ -3959,26 +3959,26 @@ exports[`html "kbd" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "label" default rendering 1`] = `
+exports[`<html.*> "label" default rendering 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "label" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "label" ignores and warns about unsupported attributes 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "label" supports additional label attributes 1`] = `
+exports[`<html.*> "label" supports additional label attributes 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   htmlFor="some-id"
 />
 `;
 
-exports[`html "label" supports global attributes 1`] = `
+exports[`<html.*> "label" supports global attributes 1`] = `
 <label
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4051,7 +4051,7 @@ exports[`html "label" supports global attributes 1`] = `
 </label>
 `;
 
-exports[`html "label" supports inline event handlers 1`] = `
+exports[`<html.*> "label" supports inline event handlers 1`] = `
 <label
   className="html-label x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -4100,25 +4100,25 @@ exports[`html "label" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "li" supports list item attributes 1`] = `
+exports[`<html.*> "li" supports list item attributes 1`] = `
 <li
   className="html-li x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "main" default rendering 1`] = `
+exports[`<html.*> "main" default rendering 1`] = `
 <main
   className="html-main x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "main" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "main" ignores and warns about unsupported attributes 1`] = `
 <main
   className="html-main x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "main" supports global attributes 1`] = `
+exports[`<html.*> "main" supports global attributes 1`] = `
 <main
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4191,7 +4191,7 @@ exports[`html "main" supports global attributes 1`] = `
 </main>
 `;
 
-exports[`html "main" supports inline event handlers 1`] = `
+exports[`<html.*> "main" supports inline event handlers 1`] = `
 <main
   className="html-main x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -4240,19 +4240,19 @@ exports[`html "main" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "mark" default rendering 1`] = `
+exports[`<html.*> "mark" default rendering 1`] = `
 <mark
   className="html-mark x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "mark" ignores and warns about unsupported attributes 1`] = `
 <mark
   className="html-mark x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "mark" supports global attributes 1`] = `
+exports[`<html.*> "mark" supports global attributes 1`] = `
 <mark
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4325,7 +4325,7 @@ exports[`html "mark" supports global attributes 1`] = `
 </mark>
 `;
 
-exports[`html "mark" supports inline event handlers 1`] = `
+exports[`<html.*> "mark" supports inline event handlers 1`] = `
 <mark
   className="html-mark x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -4374,19 +4374,19 @@ exports[`html "mark" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "nav" default rendering 1`] = `
+exports[`<html.*> "nav" default rendering 1`] = `
 <nav
   className="html-nav x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "nav" ignores and warns about unsupported attributes 1`] = `
 <nav
   className="html-nav x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "nav" supports global attributes 1`] = `
+exports[`<html.*> "nav" supports global attributes 1`] = `
 <nav
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4459,7 +4459,7 @@ exports[`html "nav" supports global attributes 1`] = `
 </nav>
 `;
 
-exports[`html "nav" supports inline event handlers 1`] = `
+exports[`<html.*> "nav" supports inline event handlers 1`] = `
 <nav
   className="html-nav x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -4508,19 +4508,19 @@ exports[`html "nav" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ol" default rendering 1`] = `
+exports[`<html.*> "ol" default rendering 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "ol" ignores and warns about unsupported attributes 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "ol" supports global attributes 1`] = `
+exports[`<html.*> "ol" supports global attributes 1`] = `
 <ol
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4593,7 +4593,7 @@ exports[`html "ol" supports global attributes 1`] = `
 </ol>
 `;
 
-exports[`html "ol" supports inline event handlers 1`] = `
+exports[`<html.*> "ol" supports inline event handlers 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -4642,25 +4642,25 @@ exports[`html "ol" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ol" supports list attributes 1`] = `
+exports[`<html.*> "ol" supports list attributes 1`] = `
 <ol
   className="html-ol xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "optgroup" default rendering 1`] = `
+exports[`<html.*> "optgroup" default rendering 1`] = `
 <optgroup
   className="html-optgroup"
 />
 `;
 
-exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "optgroup" ignores and warns about unsupported attributes 1`] = `
 <optgroup
   className="html-optgroup"
 />
 `;
 
-exports[`html "optgroup" supports global attributes 1`] = `
+exports[`<html.*> "optgroup" supports global attributes 1`] = `
 <optgroup
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4733,7 +4733,7 @@ exports[`html "optgroup" supports global attributes 1`] = `
 </optgroup>
 `;
 
-exports[`html "optgroup" supports inline event handlers 1`] = `
+exports[`<html.*> "optgroup" supports inline event handlers 1`] = `
 <optgroup
   className="html-optgroup"
   onAuxClick={[Function]}
@@ -4782,19 +4782,19 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "option" default rendering 1`] = `
+exports[`<html.*> "option" default rendering 1`] = `
 <option
   className="html-option"
 />
 `;
 
-exports[`html "option" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "option" ignores and warns about unsupported attributes 1`] = `
 <option
   className="html-option"
 />
 `;
 
-exports[`html "option" supports global attributes 1`] = `
+exports[`<html.*> "option" supports global attributes 1`] = `
 <option
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -4867,7 +4867,7 @@ exports[`html "option" supports global attributes 1`] = `
 </option>
 `;
 
-exports[`html "option" supports inline event handlers 1`] = `
+exports[`<html.*> "option" supports inline event handlers 1`] = `
 <option
   className="html-option"
   onAuxClick={[Function]}
@@ -4916,7 +4916,7 @@ exports[`html "option" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "option" supports input attributes 1`] = `
+exports[`<html.*> "option" supports input attributes 1`] = `
 <option
   className="html-option"
   disabled={true}
@@ -4925,19 +4925,19 @@ exports[`html "option" supports input attributes 1`] = `
 />
 `;
 
-exports[`html "p" default rendering 1`] = `
+exports[`<html.*> "p" default rendering 1`] = `
 <p
   className="html-p x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "p" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "p" ignores and warns about unsupported attributes 1`] = `
 <p
   className="html-p x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "p" supports global attributes 1`] = `
+exports[`<html.*> "p" supports global attributes 1`] = `
 <p
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5010,7 +5010,7 @@ exports[`html "p" supports global attributes 1`] = `
 </p>
 `;
 
-exports[`html "p" supports inline event handlers 1`] = `
+exports[`<html.*> "p" supports inline event handlers 1`] = `
 <p
   className="html-p x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -5059,19 +5059,19 @@ exports[`html "p" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "pre" default rendering 1`] = `
+exports[`<html.*> "pre" default rendering 1`] = `
 <pre
   className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
-exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "pre" ignores and warns about unsupported attributes 1`] = `
 <pre
   className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
 />
 `;
 
-exports[`html "pre" supports global attributes 1`] = `
+exports[`<html.*> "pre" supports global attributes 1`] = `
 <pre
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5144,7 +5144,7 @@ exports[`html "pre" supports global attributes 1`] = `
 </pre>
 `;
 
-exports[`html "pre" supports inline event handlers 1`] = `
+exports[`<html.*> "pre" supports inline event handlers 1`] = `
 <pre
   className="html-pre x1ghz6dp x1717udv x1lxnp44 xrv4cvt xysyzu8"
   onAuxClick={[Function]}
@@ -5193,19 +5193,19 @@ exports[`html "pre" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "s" default rendering 1`] = `
+exports[`<html.*> "s" default rendering 1`] = `
 <s
   className="html-s"
 />
 `;
 
-exports[`html "s" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "s" ignores and warns about unsupported attributes 1`] = `
 <s
   className="html-s"
 />
 `;
 
-exports[`html "s" supports global attributes 1`] = `
+exports[`<html.*> "s" supports global attributes 1`] = `
 <s
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5278,7 +5278,7 @@ exports[`html "s" supports global attributes 1`] = `
 </s>
 `;
 
-exports[`html "s" supports inline event handlers 1`] = `
+exports[`<html.*> "s" supports inline event handlers 1`] = `
 <s
   className="html-s"
   onAuxClick={[Function]}
@@ -5327,19 +5327,19 @@ exports[`html "s" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "section" default rendering 1`] = `
+exports[`<html.*> "section" default rendering 1`] = `
 <section
   className="html-section x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "section" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "section" ignores and warns about unsupported attributes 1`] = `
 <section
   className="html-section x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "section" supports global attributes 1`] = `
+exports[`<html.*> "section" supports global attributes 1`] = `
 <section
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5412,7 +5412,7 @@ exports[`html "section" supports global attributes 1`] = `
 </section>
 `;
 
-exports[`html "section" supports inline event handlers 1`] = `
+exports[`<html.*> "section" supports inline event handlers 1`] = `
 <section
   className="html-section x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -5461,19 +5461,19 @@ exports[`html "section" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "select" default rendering 1`] = `
+exports[`<html.*> "select" default rendering 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "select" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "select" ignores and warns about unsupported attributes 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "select" supports additional select attributes 1`] = `
+exports[`<html.*> "select" supports additional select attributes 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
   defaultValue="defaultValue"
@@ -5491,7 +5491,7 @@ exports[`html "select" supports additional select attributes 1`] = `
 />
 `;
 
-exports[`html "select" supports global attributes 1`] = `
+exports[`<html.*> "select" supports global attributes 1`] = `
 <select
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5564,7 +5564,7 @@ exports[`html "select" supports global attributes 1`] = `
 </select>
 `;
 
-exports[`html "select" supports inline event handlers 1`] = `
+exports[`<html.*> "select" supports inline event handlers 1`] = `
 <select
   className="html-select x1y0btm7 x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -5613,19 +5613,19 @@ exports[`html "select" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "span" default rendering 1`] = `
+exports[`<html.*> "span" default rendering 1`] = `
 <span
   className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "span" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "span" ignores and warns about unsupported attributes 1`] = `
 <span
   className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "span" supports global attributes 1`] = `
+exports[`<html.*> "span" supports global attributes 1`] = `
 <span
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5698,7 +5698,7 @@ exports[`html "span" supports global attributes 1`] = `
 </span>
 `;
 
-exports[`html "span" supports inline event handlers 1`] = `
+exports[`<html.*> "span" supports inline event handlers 1`] = `
 <span
   className="html-span x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -5747,19 +5747,19 @@ exports[`html "span" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "strong" default rendering 1`] = `
+exports[`<html.*> "strong" default rendering 1`] = `
 <strong
   className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
 />
 `;
 
-exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "strong" ignores and warns about unsupported attributes 1`] = `
 <strong
   className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
 />
 `;
 
-exports[`html "strong" supports global attributes 1`] = `
+exports[`<html.*> "strong" supports global attributes 1`] = `
 <strong
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5832,7 +5832,7 @@ exports[`html "strong" supports global attributes 1`] = `
 </strong>
 `;
 
-exports[`html "strong" supports inline event handlers 1`] = `
+exports[`<html.*> "strong" supports inline event handlers 1`] = `
 <strong
   className="html-strong x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs x117nqv4"
   onAuxClick={[Function]}
@@ -5881,19 +5881,19 @@ exports[`html "strong" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "sub" default rendering 1`] = `
+exports[`<html.*> "sub" default rendering 1`] = `
 <sub
   className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "sub" ignores and warns about unsupported attributes 1`] = `
 <sub
   className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "sub" supports global attributes 1`] = `
+exports[`<html.*> "sub" supports global attributes 1`] = `
 <sub
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -5966,7 +5966,7 @@ exports[`html "sub" supports global attributes 1`] = `
 </sub>
 `;
 
-exports[`html "sub" supports inline event handlers 1`] = `
+exports[`<html.*> "sub" supports inline event handlers 1`] = `
 <sub
   className="html-sub x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -6015,19 +6015,19 @@ exports[`html "sub" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "sup" default rendering 1`] = `
+exports[`<html.*> "sup" default rendering 1`] = `
 <sup
   className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "sup" ignores and warns about unsupported attributes 1`] = `
 <sup
   className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
 />
 `;
 
-exports[`html "sup" supports global attributes 1`] = `
+exports[`<html.*> "sup" supports global attributes 1`] = `
 <sup
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -6100,7 +6100,7 @@ exports[`html "sup" supports global attributes 1`] = `
 </sup>
 `;
 
-exports[`html "sup" supports inline event handlers 1`] = `
+exports[`<html.*> "sup" supports inline event handlers 1`] = `
 <sup
   className="html-sup x1ghz6dp x1717udv x1hl2dhg x16tdsg8 x1vvkbs"
   onAuxClick={[Function]}
@@ -6149,21 +6149,21 @@ exports[`html "sup" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "textarea" default rendering 1`] = `
+exports[`<html.*> "textarea" default rendering 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
 />
 `;
 
-exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "textarea" ignores and warns about unsupported attributes 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
 />
 `;
 
-exports[`html "textarea" supports additional textarea attributes 1`] = `
+exports[`<html.*> "textarea" supports additional textarea attributes 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   defaultValue="defaultValue"
@@ -6186,7 +6186,7 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
 />
 `;
 
-exports[`html "textarea" supports global attributes 1`] = `
+exports[`<html.*> "textarea" supports global attributes 1`] = `
 <textarea
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -6259,7 +6259,7 @@ exports[`html "textarea" supports global attributes 1`] = `
 </textarea>
 `;
 
-exports[`html "textarea" supports inline event handlers 1`] = `
+exports[`<html.*> "textarea" supports inline event handlers 1`] = `
 <textarea
   className="html-textarea x1ghz6dp x1717udv xmkeg23 x1y0btm7 x288g5"
   dir="auto"
@@ -6309,19 +6309,19 @@ exports[`html "textarea" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "u" default rendering 1`] = `
+exports[`<html.*> "u" default rendering 1`] = `
 <u
   className="html-u"
 />
 `;
 
-exports[`html "u" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "u" ignores and warns about unsupported attributes 1`] = `
 <u
   className="html-u"
 />
 `;
 
-exports[`html "u" supports global attributes 1`] = `
+exports[`<html.*> "u" supports global attributes 1`] = `
 <u
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -6394,7 +6394,7 @@ exports[`html "u" supports global attributes 1`] = `
 </u>
 `;
 
-exports[`html "u" supports inline event handlers 1`] = `
+exports[`<html.*> "u" supports inline event handlers 1`] = `
 <u
   className="html-u"
   onAuxClick={[Function]}
@@ -6443,19 +6443,19 @@ exports[`html "u" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ul" default rendering 1`] = `
+exports[`<html.*> "ul" default rendering 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "ul" ignores and warns about unsupported attributes 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html "ul" supports global attributes 1`] = `
+exports[`<html.*> "ul" supports global attributes 1`] = `
 <ul
   aria-activedescendant="activedescendant"
   aria-atomic={true}
@@ -6528,7 +6528,7 @@ exports[`html "ul" supports global attributes 1`] = `
 </ul>
 `;
 
-exports[`html "ul" supports inline event handlers 1`] = `
+exports[`<html.*> "ul" supports inline event handlers 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
   onAuxClick={[Function]}
@@ -6577,13 +6577,13 @@ exports[`html "ul" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ul" supports list attributes 1`] = `
+exports[`<html.*> "ul" supports list attributes 1`] = `
 <ul
   className="html-ul xe8uvvx x1ghz6dp x1717udv"
 />
 `;
 
-exports[`html temporary data-* props support 1`] = `
+exports[`<html.*> temporary data-* props support 1`] = `
 <div
   className="html-div x1ghz6dp x1717udv"
   data-imgperflogname="imgperflogname"
