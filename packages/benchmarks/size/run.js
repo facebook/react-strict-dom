@@ -26,7 +26,9 @@ const outfile = argv.outfile;
 const files = [
   path.join(__dirname, '../../react-strict-dom/dist/web/index.js'),
   path.join(__dirname, '../../react-strict-dom/dist/web/runtime.js'),
-  path.join(__dirname, '../../react-strict-dom/dist/native/index.js')
+  path.join(__dirname, '../../react-strict-dom/dist/native/index.js'),
+  path.join(__dirname, '../../react-strict-animated/dist/web/index.js'),
+  path.join(__dirname, '../../react-strict-animated/dist/native/index.js')
 ];
 
 console.log('Running benchmark-size, please wait...');
