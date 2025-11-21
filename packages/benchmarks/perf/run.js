@@ -13,7 +13,6 @@ const { hideBin } = require('yargs/helpers');
 
 const createTests = require('./tests/css-create-tests');
 const createThemeTests = require('./tests/css-createTheme-tests');
-const propsTests = require('./tests/css-props-tests');
 
 // run.js --outfile filename.js
 const argv = yargs(hideBin(process.argv)).option('outfile', {
@@ -42,7 +41,6 @@ console.log('Running performance benchmark, please wait...');
 // Run tests
 createTests(options);
 createThemeTests(options);
-propsTests(options);
 
 const aggregatedResultsString = JSON.stringify(aggregatedResults, null, 2);
 
