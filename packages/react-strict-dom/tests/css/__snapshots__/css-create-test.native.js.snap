@@ -1,0 +1,2111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css.create() properties animationDelay 1`] = `
+{
+  "animationDelay": 300,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties animationDuration 1`] = `
+{
+  "animationDuration": 500,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties backgroundImage 1`] = `
+{
+  "boxSizing": "content-box",
+  "experimental_backgroundImage": "linear-gradient(to bottom right, yellow, green)",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: blockSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": 100,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: blockSize after height 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": 200,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: maxBlockSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "maxHeight": 100,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: maxBlockSize after maxHeight 1`] = `
+{
+  "boxSizing": "content-box",
+  "maxHeight": 200,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: minBlockSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "minHeight": 100,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties blockSize: minBlockSize after minHeight 1`] = `
+{
+  "boxSizing": "content-box",
+  "minHeight": 200,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderBlock: borderBlock 1`] = `
+{
+  "borderBottomColor": "black",
+  "borderBottomStyle": "solid",
+  "borderBottomWidth": 1,
+  "borderTopColor": "black",
+  "borderTopStyle": "solid",
+  "borderTopWidth": 1,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderBlock: borderBlock after borderBlockEnd 1`] = `
+{
+  "borderBottomColor": "red",
+  "borderBottomStyle": "dotted",
+  "borderBottomWidth": 2,
+  "borderTopColor": "black",
+  "borderTopStyle": "solid",
+  "borderTopWidth": 1,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderBlock: borderBlock after borderBlockStart 1`] = `
+{
+  "borderBottomColor": "black",
+  "borderBottomStyle": "solid",
+  "borderBottomWidth": 1,
+  "borderTopColor": "green",
+  "borderTopStyle": "dashed",
+  "borderTopWidth": 3,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderBlock: borderBlockEnd 1`] = `
+{
+  "borderBottomColor": "red",
+  "borderBottomStyle": "dotted",
+  "borderBottomWidth": 2,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderBlock: borderBlockStart 1`] = `
+{
+  "borderTopColor": "green",
+  "borderTopStyle": "dashed",
+  "borderTopWidth": 3,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderColor 1`] = `
+{
+  "borderColor": "rgba(0, 0, 0, 0.5)",
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderInline: borderInline 1`] = `
+{
+  "borderEndColor": "black",
+  "borderEndStyle": "solid",
+  "borderEndWidth": 1,
+  "borderStartColor": "black",
+  "borderStartStyle": "solid",
+  "borderStartWidth": 1,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderInline: borderInline after borderInlineEnd 1`] = `
+{
+  "borderEndColor": "red",
+  "borderEndStyle": "dotted",
+  "borderEndWidth": 2,
+  "borderStartColor": "black",
+  "borderStartStyle": "solid",
+  "borderStartWidth": 1,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderInline: borderInline after borderInlineStart 1`] = `
+{
+  "borderEndColor": "black",
+  "borderEndStyle": "solid",
+  "borderEndWidth": 1,
+  "borderStartColor": "green",
+  "borderStartStyle": "dashed",
+  "borderStartWidth": 3,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderInline: borderInlineEnd 1`] = `
+{
+  "borderEndColor": "red",
+  "borderEndStyle": "dotted",
+  "borderEndWidth": 2,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderInline: borderInlineStart 1`] = `
+{
+  "borderStartColor": "green",
+  "borderStartStyle": "dashed",
+  "borderStartWidth": 3,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderRadius: endend 1`] = `
+{
+  "borderBottomEndRadius": 10,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderRadius: endstart 1`] = `
+{
+  "borderBottomStartRadius": 10,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderRadius: startend 1`] = `
+{
+  "borderTopEndRadius": 10,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderRadius: startstart 1`] = `
+{
+  "borderTopStartRadius": 10,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderStyle 1`] = `
+{
+  "borderWidth": 0,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties borderStyle 2`] = `
+{
+  "borderStyle": "solid",
+  "borderWidth": 10,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties boxShadow: inset 1`] = `
+{
+  "boxShadow": "inset 1px 2px 3px 4px red",
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties boxShadow: multi 1`] = `
+{
+  "boxShadow": "1px 2px 3px 4px red, 2px 3px 4px 5px blue",
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties boxShadow: single 1`] = `
+{
+  "boxShadow": "1px 2px 3px 4px red",
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties boxSizing: content-box 1`] = `
+{
+  "borderWidth": 2,
+  "boxSizing": "content-box",
+  "height": 50,
+  "padding": 10,
+  "position": "static",
+  "width": "50%",
+}
+`;
+
+exports[`css.create() properties caretColor: red caret color 1`] = `
+{
+  "cursorColor": "red",
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties caretColor: transparent caret color 1`] = `
+{
+  "caretHidden": true,
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties caretColor: unsupported caret color 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties direction: ltr 1`] = `
+{
+  "boxSizing": "content-box",
+  "direction": "ltr",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties direction: rtl 1`] = `
+{
+  "boxSizing": "content-box",
+  "direction": "rtl",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties filter 1`] = `
+{
+  "boxSizing": "content-box",
+  "filter": "blur(1px)",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties fontSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": 40,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties fontSize scaling fontScale:2 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": 80,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties fontVariant 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontVariant": "common-ligatures small-caps",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties fontWeight 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontWeight": "900",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties fontWeight 2`] = `
+{
+  "boxSizing": "content-box",
+  "fontWeight": "bold",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inlineSize: inlineSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "width": 100,
+}
+`;
+
+exports[`css.create() properties inlineSize: inlineSize after width 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "width": 200,
+}
+`;
+
+exports[`css.create() properties inlineSize: maxInlineSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "maxWidth": 100,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inlineSize: maxInlineSize after maxWidth 1`] = `
+{
+  "boxSizing": "content-box",
+  "maxWidth": 200,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inlineSize: minInlineSize 1`] = `
+{
+  "boxSizing": "content-box",
+  "minWidth": 100,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inlineSize: minInlineSize after minWidth 1`] = `
+{
+  "boxSizing": "content-box",
+  "minWidth": 200,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inset: inset 1`] = `
+{
+  "bottom": 1,
+  "boxSizing": "content-box",
+  "end": 1,
+  "position": "static",
+  "start": 1,
+  "top": 1,
+}
+`;
+
+exports[`css.create() properties inset: inset vs phys 1`] = `
+{
+  "bottom": 100,
+  "boxSizing": "content-box",
+  "end": 1,
+  "left": 10,
+  "position": "static",
+  "right": 10,
+  "start": 1,
+  "top": 100,
+}
+`;
+
+exports[`css.create() properties inset: insetBlock 1`] = `
+{
+  "bottom": 2,
+  "boxSizing": "content-box",
+  "position": "static",
+  "top": 2,
+}
+`;
+
+exports[`css.create() properties inset: insetBlock vs phys 1`] = `
+{
+  "bottom": 100,
+  "boxSizing": "content-box",
+  "position": "static",
+  "top": 100,
+}
+`;
+
+exports[`css.create() properties inset: insetBlockEnd 1`] = `
+{
+  "bottom": 4,
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inset: insetBlockEnd vs phys 1`] = `
+{
+  "bottom": 4,
+  "boxSizing": "content-box",
+  "position": "static",
+  "top": 100,
+}
+`;
+
+exports[`css.create() properties inset: insetBlockStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "top": 3,
+}
+`;
+
+exports[`css.create() properties inset: insetBlockStart vs phys 1`] = `
+{
+  "bottom": 100,
+  "boxSizing": "content-box",
+  "position": "static",
+  "top": 3,
+}
+`;
+
+exports[`css.create() properties inset: insetInline 1`] = `
+{
+  "boxSizing": "content-box",
+  "end": 5,
+  "position": "static",
+  "start": 5,
+}
+`;
+
+exports[`css.create() properties inset: insetInlineEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "end": 7,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties inset: insetInlineStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "start": 6,
+}
+`;
+
+exports[`css.create() properties isolation 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "isolation": "isolate",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties lineClamp 1`] = `
+<Text
+  numberOfLines={3}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "userSelect": "none",
+    }
+  }
+>
+  text
+</Text>
+`;
+
+exports[`css.create() properties lineHeight: px 1`] = `
+{
+  "boxSizing": "content-box",
+  "lineHeight": 24,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties lineHeight: rem 1`] = `
+{
+  "boxSizing": "content-box",
+  "lineHeight": 24,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties lineHeight: unitless number 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": 16,
+  "lineHeight": 24,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties lineHeight: unitless string 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": 16,
+  "lineHeight": 24,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin (with multiple values) 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginBlock 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginVertical": 1,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginBlockEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginBottom": 3,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginBlockStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginTop": 2,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginInline 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginHorizontal": 1,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginInlineEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginEnd": 3,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties margin*: marginInlineStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "marginStart": 2,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties marginEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties marginHorizontal 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties marginStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties marginVertical 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties mixBlendMode 1`] = `
+{
+  "boxSizing": "content-box",
+  "mixBlendMode": "multiply",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties objectFit: contain 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "objectFit": "contain",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties objectFit: cover 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "objectFit": "cover",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties objectFit: fill 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "objectFit": "fill",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties objectFit: none 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "objectFit": "scale-down",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties objectFit: scaleDown 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "objectFit": "scale-down",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties opacity (string value) 1`] = `
+{
+  "boxSizing": "content-box",
+  "opacity": 0.25,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties outlineColor,Offset,Style,Width 1`] = `
+{
+  "boxSizing": "content-box",
+  "outlineColor": "red",
+  "outlineOffset": 2,
+  "outlineStyle": "solid",
+  "outlineWidth": 3,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding (with multiple values) 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingBlock 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingVertical": 1,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingBlockEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingBottom": 3,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingBlockStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingTop": 2,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingInline 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingHorizontal": 1,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingInlineEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingEnd": 3,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties padding*: paddingInlineStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "paddingStart": 2,
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties paddingEnd 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties paddingHorizontal 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties paddingStart 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties paddingVertical 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: center 1`] = `
+{
+  "alignContent": "center",
+  "boxSizing": "content-box",
+  "justifyContent": "center",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: does not override existing long-forms 1`] = `
+{
+  "alignContent": "flex-start",
+  "boxSizing": "content-box",
+  "justifyContent": "flex-start",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: flexStart 1`] = `
+{
+  "alignContent": "flex-start",
+  "boxSizing": "content-box",
+  "justifyContent": "flex-start",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: invalid 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: safeCenter 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties placeContent: stretch 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties pointerEvents 1`] = `
+{
+  "boxSizing": "content-box",
+  "pointerEvents": "none",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties position: absolute 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "absolute",
+}
+`;
+
+exports[`css.create() properties position: fixed 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "absolute",
+}
+`;
+
+exports[`css.create() properties position: relative 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "relative",
+}
+`;
+
+exports[`css.create() properties position: static 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties position: sticky 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "relative",
+}
+`;
+
+exports[`css.create() properties textAlign: center 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textAlign": "center",
+}
+`;
+
+exports[`css.create() properties textAlign: end 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textAlign": "right",
+}
+`;
+
+exports[`css.create() properties textAlign: left 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textAlign": "left",
+}
+`;
+
+exports[`css.create() properties textAlign: right 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textAlign": "right",
+}
+`;
+
+exports[`css.create() properties textAlign: start 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textAlign": "left",
+}
+`;
+
+exports[`css.create() properties textShadow: multi 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textShadowColor": "red",
+  "textShadowOffset": {
+    "height": 2,
+    "width": 1,
+  },
+  "textShadowRadius": 3,
+}
+`;
+
+exports[`css.create() properties textShadow: single 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "textShadowColor": "red",
+  "textShadowOffset": {
+    "height": 2,
+    "width": 1,
+  },
+  "textShadowRadius": 3,
+}
+`;
+
+exports[`css.create() properties transform: matrix 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "matrix": [
+        0.1,
+        1,
+        0,
+        0,
+        -0.3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+      ],
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: mixed 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "rotateX": "1deg",
+    },
+    {
+      "rotateY": "2deg",
+    },
+    {
+      "rotateZ": "3deg",
+    },
+    {
+      "scale": 1,
+    },
+    {
+      "scaleX": 2,
+    },
+    {
+      "scaleY": 3,
+    },
+    {
+      "scaleZ": 4,
+    },
+    {
+      "translateX": 1,
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: none 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [],
+}
+`;
+
+exports[`css.create() properties transform: perspective 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "perspective": 10,
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: rotate 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "rotate": "10deg",
+    },
+    {
+      "rotateX": "20deg",
+    },
+    {
+      "rotateY": "30deg",
+    },
+    {
+      "rotateZ": "40deg",
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: rotate 2`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "rotate": "10deg",
+    },
+    {
+      "rotateX": "20deg",
+    },
+    {
+      "rotateY": "30deg",
+    },
+    {
+      "rotateZ": "40deg",
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: scale 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "scaleX": 1,
+    },
+    {
+      "scaleY": 2,
+    },
+    {
+      "scaleZ": 3,
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: skew 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "skewX": "20deg",
+    },
+    {
+      "skewY": "30deg",
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: translate (percentages) 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "translateX": "10%",
+    },
+    {
+      "translateY": "20%",
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties transform: translate 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transform": [
+    {
+      "translateX": 11,
+    },
+    {
+      "translateY": 12,
+    },
+  ],
+}
+`;
+
+exports[`css.create() properties userSelect 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "userSelect": "none",
+}
+`;
+
+exports[`css.create() properties verticalAlign: middle 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "verticalAlign": "middle",
+}
+`;
+
+exports[`css.create() properties verticalAlign: top 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "verticalAlign": "top",
+}
+`;
+
+exports[`css.create() properties visibility: collapse 1`] = `
+{
+  "accessibilityElementsHidden": true,
+  "focusable": false,
+  "importantForAccessibility": "no-hide-descendants",
+  "pointerEvents": "none",
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "opacity": 0,
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties visibility: hidden 1`] = `
+{
+  "accessibilityElementsHidden": true,
+  "focusable": false,
+  "importantForAccessibility": "no-hide-descendants",
+  "pointerEvents": "none",
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "opacity": 0,
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties visibility: visible 1`] = `
+{
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties willChange 1`] = `
+{
+  "ref": [Function],
+  "renderToHardwareTextureAndroid": true,
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() properties: "transition" backgroundColor transition: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "rgba(0,0,0,0.1)",
+          "rgba(255,255,255,0.9)",
+        ],
+      },
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" backgroundColor transition: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": "rgba(0,0,0,0.1)",
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" cubic-bezier() timing function: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          0,
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" cubic-bezier() timing function: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" default: default 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": "red",
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" opacity transition: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          0,
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" opacity transition: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" other element types 1`] = `"Animated.Pressable"`;
+
+exports[`css.create() properties: "transition" other transforms: rotate 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "rotate": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "1deg",
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "2deg",
+            ],
+          },
+        },
+        {
+          "rotateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "3deg",
+            ],
+          },
+        },
+        {
+          "rotateZ": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "4deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" other transforms: scale 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "scale": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              1,
+            ],
+          },
+        },
+        {
+          "scaleX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              2,
+            ],
+          },
+        },
+        {
+          "scaleY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              4,
+            ],
+          },
+        },
+        {
+          "scaleZ": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              6,
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" other transforms: skew 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "skewX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0px",
+              "20px",
+            ],
+          },
+        },
+        {
+          "skewY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0px",
+              "21px",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" other transforms: translate 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "translateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              11,
+            ],
+          },
+        },
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              21,
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" spring() timing function: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          1,
+          0,
+        ],
+      },
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" spring() timing function: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": 1,
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transform transition: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              50,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "90deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transform transition: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "translateY": 0,
+        },
+        {
+          "rotateX": "0deg",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition all properties (opacity and transform): end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          0,
+          1,
+        ],
+      },
+      "position": "static",
+      "transform": [
+        {
+          "perspective": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              10,
+            ],
+          },
+        },
+        {
+          "translateY": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              0,
+              100,
+            ],
+          },
+        },
+        {
+          "rotateX": {
+            "inputRange": [
+              0,
+              1,
+            ],
+            "outputRange": [
+              "0deg",
+              "90deg",
+            ],
+          },
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition all properties (opacity and transform): start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "opacity": 0,
+      "position": "static",
+      "transform": [
+        {
+          "perspective": 0,
+        },
+        {
+          "translateY": 0,
+        },
+        {
+          "rotateX": "0deg",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition multiple properties: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "red",
+          "green",
+        ],
+      },
+      "boxSizing": "content-box",
+      "opacity": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          0,
+          1,
+        ],
+      },
+      "position": "static",
+      "transform": [
+        {
+          "translateX": 50,
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition multiple properties: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": "red",
+      "boxSizing": "content-box",
+      "opacity": 0,
+      "position": "static",
+      "transform": [
+        {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition with missing properties 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transition with missing properties 2`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "transform": [
+        {
+          "translateY": 50,
+        },
+        {
+          "rotateX": "90deg",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" transitionDelay 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transitionDelay": 300,
+}
+`;
+
+exports[`css.create() properties: "transition" transitionDuration 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "transitionDuration": 500,
+}
+`;
+
+exports[`css.create() properties: "transition" transitionProperty 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() properties: "transition" update triggers transition: green to blue 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "green",
+          "blue",
+        ],
+      },
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" update triggers transition: red to green 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "backgroundColor": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          "red",
+          "green",
+        ],
+      },
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" width transition: end 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "width": {
+        "inputRange": [
+          0,
+          1,
+        ],
+        "outputRange": [
+          100,
+          200,
+        ],
+      },
+    }
+  }
+/>
+`;
+
+exports[`css.create() properties: "transition" width transition: start 1`] = `
+<Animated.View
+  animated={true}
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+      "width": 100,
+    }
+  }
+/>
+`;
+
+exports[`css.create() pseudo-elements ::placeholder syntax: placeholderTextColor 1`] = `
+{
+  "placeholderTextColor": "red",
+  "ref": [Function],
+  "style": {
+    "boxSizing": "content-box",
+    "position": "static",
+  },
+}
+`;
+
+exports[`css.create() values: general calc() 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: general currentcolor 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: general firstThatWorks 1`] = `
+{
+  "boxSizing": "content-box",
+  "color": "hsl(0,0,0)",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: general inherit 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": "inherit",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: general inherit 2`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: general initial 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
+exports[`css.create() values: length units '0' is resolved to the number 0 1`] = `
+{
+  "borderRadius": 0,
+  "boxSizing": "content-box",
+  "position": "static",
+  "width": 0,
+}
+`;
+
+exports[`css.create() values: length units 10 "em" units are resolved to pixels: em 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": -160,
+  "position": "static",
+  "width": 160,
+}
+`;
+
+exports[`css.create() values: length units 10 "em" units based on font-size 1`] = `
+{
+  "boxSizing": "content-box",
+  "fontSize": 10,
+  "position": "static",
+  "width": 100,
+}
+`;
+
+exports[`css.create() values: length units 10 "em" units based on inherited font-size 1`] = `
+{
+  "boxSizing": "content-box",
+  "position": "static",
+  "width": 120,
+}
+`;
+
+exports[`css.create() values: length units 10 "px" units are resolved to pixels: px 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": -10,
+  "position": "static",
+  "width": 10,
+}
+`;
+
+exports[`css.create() values: length units 10 "rem" units are resolved to pixels: rem 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": -160,
+  "position": "static",
+  "width": 160,
+}
+`;
+
+exports[`css.create() values: length units 10 "vh" units are resolved to pixels: vh 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": NaN,
+  "position": "static",
+  "width": NaN,
+}
+`;
+
+exports[`css.create() values: length units 10 "vmax" units are resolved to pixels: vmax 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": NaN,
+  "position": "static",
+  "width": NaN,
+}
+`;
+
+exports[`css.create() values: length units 10 "vmin" units are resolved to pixels: vmin 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": NaN,
+  "position": "static",
+  "width": NaN,
+}
+`;
+
+exports[`css.create() values: length units 10 "vw" units are resolved to pixels: vw 1`] = `
+{
+  "boxSizing": "content-box",
+  "height": NaN,
+  "position": "static",
+  "width": NaN,
+}
+`;

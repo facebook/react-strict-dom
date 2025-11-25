@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import * as React from 'react';
 import { html } from 'react-strict-dom';
 import { act, create } from 'react-test-renderer';
 
@@ -174,7 +174,7 @@ const eventHandlers = {
   onTouchStart: emptyFunction
 };
 
-describe('html', () => {
+describe('<html.*>', () => {
   beforeEach(() => {
     jest.spyOn(console, 'error');
     jest.spyOn(console, 'warn');

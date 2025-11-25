@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<contexts.*> <ViewportProvider> all CSS lengths are scaled according to viewport width: scaled lengths 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "borderWidth": 0.75,
+      "boxSizing": "content-box",
+      "height": 75,
+      "margin": 15,
+      "padding": 24,
+      "position": "static",
+      "transform": [
+        {
+          "translateX": 7.5,
+        },
+        {
+          "translateY": 15,
+        },
+      ],
+      "width": 150,
+    }
+  }
+>
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "fontSize": 24,
+        "lineHeight": 24,
+        "position": "static",
+      }
+    }
+  >
+    Scaled content
+  </Text>
+  <Text
+    ref={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "fontSize": 18,
+        "position": "static",
+      }
+    }
+  >
+    Scaled content
+  </Text>
+</ViewNativeComponent>
+`;

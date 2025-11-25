@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css.create(): @media query does not match (prefers-color-scheme: dark) 1`] = `
+{
+  "backgroundColor": "blue",
+  "borderColor": "green",
+  "boxSizing": "content-box",
+  "color": "black",
+  "position": "static",
+}
+`;
+
+exports[`css.create(): @media query does not match (prefers-color-scheme: light) 1`] = `
+{
+  "backgroundColor": "darkblue",
+  "borderColor": "darkgreen",
+  "boxSizing": "content-box",
+  "color": "white",
+  "position": "static",
+}
+`;
+
+exports[`css.create(): @media query matches (prefers-color-scheme: dark) 1`] = `
+{
+  "backgroundColor": "darkblue",
+  "borderColor": "darkgreen",
+  "boxSizing": "content-box",
+  "color": "white",
+  "position": "static",
+}
+`;
+
+exports[`css.create(): @media query matches (prefers-color-scheme: light) 1`] = `
+{
+  "backgroundColor": "blue",
+  "borderColor": "green",
+  "boxSizing": "content-box",
+  "color": "black",
+  "position": "static",
+}
+`;

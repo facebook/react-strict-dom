@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`html "a" default rendering 1`] = `
+exports[`<html.*> "a" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="link"
@@ -15,7 +15,7 @@ exports[`html "a" default rendering 1`] = `
 />
 `;
 
-exports[`html "a" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "a" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="link"
@@ -30,7 +30,7 @@ exports[`html "a" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "a" supports additional anchor attributes 1`] = `
+exports[`<html.*> "a" supports additional anchor attributes 1`] = `
 <Text
   onPress={[Function]}
   ref={[Function]}
@@ -46,7 +46,7 @@ exports[`html "a" supports additional anchor attributes 1`] = `
 />
 `;
 
-exports[`html "a" supports global attributes 1`] = `
+exports[`<html.*> "a" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -99,7 +99,7 @@ exports[`html "a" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "a" supports inline event handlers 1`] = `
+exports[`<html.*> "a" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -138,7 +138,7 @@ exports[`html "a" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "article" default rendering 1`] = `
+exports[`<html.*> "article" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -150,7 +150,7 @@ exports[`html "article" default rendering 1`] = `
 />
 `;
 
-exports[`html "article" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "article" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -162,7 +162,7 @@ exports[`html "article" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "article" supports global attributes 1`] = `
+exports[`<html.*> "article" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -220,7 +220,7 @@ exports[`html "article" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "article" supports inline event handlers 1`] = `
+exports[`<html.*> "article" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -256,7 +256,7 @@ exports[`html "article" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "aside" default rendering 1`] = `
+exports[`<html.*> "aside" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -268,7 +268,7 @@ exports[`html "aside" default rendering 1`] = `
 />
 `;
 
-exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "aside" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -280,7 +280,7 @@ exports[`html "aside" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "aside" supports global attributes 1`] = `
+exports[`<html.*> "aside" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -338,7 +338,7 @@ exports[`html "aside" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "aside" supports inline event handlers 1`] = `
+exports[`<html.*> "aside" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -374,7 +374,7 @@ exports[`html "aside" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "b" default rendering 1`] = `
+exports[`<html.*> "b" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -387,7 +387,7 @@ exports[`html "b" default rendering 1`] = `
 />
 `;
 
-exports[`html "b" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "b" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -400,7 +400,7 @@ exports[`html "b" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "b" supports global attributes 1`] = `
+exports[`<html.*> "b" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -452,7 +452,7 @@ exports[`html "b" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "b" supports inline event handlers 1`] = `
+exports[`<html.*> "b" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -489,7 +489,7 @@ exports[`html "b" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "bdi" default rendering 1`] = `
+exports[`<html.*> "bdi" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -501,7 +501,7 @@ exports[`html "bdi" default rendering 1`] = `
 />
 `;
 
-exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "bdi" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -513,7 +513,7 @@ exports[`html "bdi" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "bdi" supports global attributes 1`] = `
+exports[`<html.*> "bdi" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -564,7 +564,7 @@ exports[`html "bdi" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "bdi" supports inline event handlers 1`] = `
+exports[`<html.*> "bdi" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -600,7 +600,7 @@ exports[`html "bdi" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "bdo" default rendering 1`] = `
+exports[`<html.*> "bdo" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -612,7 +612,7 @@ exports[`html "bdo" default rendering 1`] = `
 />
 `;
 
-exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "bdo" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -624,7 +624,7 @@ exports[`html "bdo" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "bdo" supports global attributes 1`] = `
+exports[`<html.*> "bdo" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -675,7 +675,7 @@ exports[`html "bdo" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "bdo" supports inline event handlers 1`] = `
+exports[`<html.*> "bdo" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -711,7 +711,7 @@ exports[`html "bdo" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "blockquote" default rendering 1`] = `
+exports[`<html.*> "blockquote" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -723,7 +723,7 @@ exports[`html "blockquote" default rendering 1`] = `
 />
 `;
 
-exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "blockquote" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -735,7 +735,7 @@ exports[`html "blockquote" ignores and warns about unsupported attributes 1`] = 
 />
 `;
 
-exports[`html "blockquote" supports global attributes 1`] = `
+exports[`<html.*> "blockquote" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -793,7 +793,7 @@ exports[`html "blockquote" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "blockquote" supports inline event handlers 1`] = `
+exports[`<html.*> "blockquote" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -829,7 +829,7 @@ exports[`html "blockquote" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "br" default rendering 1`] = `
+exports[`<html.*> "br" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={{}}
@@ -839,7 +839,7 @@ exports[`html "br" default rendering 1`] = `
 </Text>
 `;
 
-exports[`html "br" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "br" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={{}}
@@ -849,7 +849,7 @@ exports[`html "br" ignores and warns about unsupported attributes 1`] = `
 </Text>
 `;
 
-exports[`html "br" supports global attributes 1`] = `
+exports[`<html.*> "br" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -899,7 +899,7 @@ exports[`html "br" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "br" supports inline event handlers 1`] = `
+exports[`<html.*> "br" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -933,7 +933,7 @@ exports[`html "br" supports inline event handlers 1`] = `
 </Text>
 `;
 
-exports[`html "button" default rendering 1`] = `
+exports[`<html.*> "button" default rendering 1`] = `
 <Pressable
   ref={[Function]}
   role="button"
@@ -947,7 +947,7 @@ exports[`html "button" default rendering 1`] = `
 />
 `;
 
-exports[`html "button" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "button" ignores and warns about unsupported attributes 1`] = `
 <Pressable
   ref={[Function]}
   role="button"
@@ -961,7 +961,7 @@ exports[`html "button" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "button" supports additional button attributes 1`] = `
+exports[`<html.*> "button" supports additional button attributes 1`] = `
 <Pressable
   disabled={true}
   focusable={false}
@@ -977,7 +977,7 @@ exports[`html "button" supports additional button attributes 1`] = `
 />
 `;
 
-exports[`html "button" supports global attributes 1`] = `
+exports[`<html.*> "button" supports global attributes 1`] = `
 <Pressable
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1036,7 +1036,7 @@ exports[`html "button" supports global attributes 1`] = `
 </Pressable>
 `;
 
-exports[`html "button" supports inline event handlers 1`] = `
+exports[`<html.*> "button" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1074,7 +1074,7 @@ exports[`html "button" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "code" default rendering 1`] = `
+exports[`<html.*> "code" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1087,7 +1087,7 @@ exports[`html "code" default rendering 1`] = `
 />
 `;
 
-exports[`html "code" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "code" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1100,7 +1100,7 @@ exports[`html "code" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "code" supports global attributes 1`] = `
+exports[`<html.*> "code" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1152,7 +1152,7 @@ exports[`html "code" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "code" supports inline event handlers 1`] = `
+exports[`<html.*> "code" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1189,7 +1189,7 @@ exports[`html "code" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "del" default rendering 1`] = `
+exports[`<html.*> "del" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1202,7 +1202,7 @@ exports[`html "del" default rendering 1`] = `
 />
 `;
 
-exports[`html "del" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "del" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1215,7 +1215,7 @@ exports[`html "del" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "del" supports global attributes 1`] = `
+exports[`<html.*> "del" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1267,7 +1267,7 @@ exports[`html "del" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "del" supports inline event handlers 1`] = `
+exports[`<html.*> "del" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1304,7 +1304,7 @@ exports[`html "del" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "div" default rendering 1`] = `
+exports[`<html.*> "div" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1316,7 +1316,7 @@ exports[`html "div" default rendering 1`] = `
 />
 `;
 
-exports[`html "div" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "div" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1328,7 +1328,7 @@ exports[`html "div" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "div" supports global attributes 1`] = `
+exports[`<html.*> "div" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1386,7 +1386,7 @@ exports[`html "div" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "div" supports inline event handlers 1`] = `
+exports[`<html.*> "div" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1422,7 +1422,7 @@ exports[`html "div" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "em" default rendering 1`] = `
+exports[`<html.*> "em" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1435,7 +1435,7 @@ exports[`html "em" default rendering 1`] = `
 />
 `;
 
-exports[`html "em" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "em" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -1448,7 +1448,7 @@ exports[`html "em" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "em" supports global attributes 1`] = `
+exports[`<html.*> "em" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1500,7 +1500,7 @@ exports[`html "em" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "em" supports inline event handlers 1`] = `
+exports[`<html.*> "em" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1537,7 +1537,7 @@ exports[`html "em" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "fieldset" default rendering 1`] = `
+exports[`<html.*> "fieldset" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1549,7 +1549,7 @@ exports[`html "fieldset" default rendering 1`] = `
 />
 `;
 
-exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "fieldset" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1561,7 +1561,7 @@ exports[`html "fieldset" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "fieldset" supports global attributes 1`] = `
+exports[`<html.*> "fieldset" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1619,7 +1619,7 @@ exports[`html "fieldset" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "fieldset" supports inline event handlers 1`] = `
+exports[`<html.*> "fieldset" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1655,7 +1655,7 @@ exports[`html "fieldset" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "footer" default rendering 1`] = `
+exports[`<html.*> "footer" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1667,7 +1667,7 @@ exports[`html "footer" default rendering 1`] = `
 />
 `;
 
-exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "footer" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1679,7 +1679,7 @@ exports[`html "footer" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "footer" supports global attributes 1`] = `
+exports[`<html.*> "footer" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1737,7 +1737,7 @@ exports[`html "footer" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "footer" supports inline event handlers 1`] = `
+exports[`<html.*> "footer" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1773,7 +1773,7 @@ exports[`html "footer" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "form" default rendering 1`] = `
+exports[`<html.*> "form" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1785,7 +1785,7 @@ exports[`html "form" default rendering 1`] = `
 />
 `;
 
-exports[`html "form" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "form" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -1797,7 +1797,7 @@ exports[`html "form" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "form" supports global attributes 1`] = `
+exports[`<html.*> "form" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1855,7 +1855,7 @@ exports[`html "form" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "form" supports inline event handlers 1`] = `
+exports[`<html.*> "form" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -1891,7 +1891,7 @@ exports[`html "form" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h1" default rendering 1`] = `
+exports[`<html.*> "h1" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -1906,7 +1906,7 @@ exports[`html "h1" default rendering 1`] = `
 />
 `;
 
-exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h1" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -1921,7 +1921,7 @@ exports[`html "h1" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h1" supports global attributes 1`] = `
+exports[`<html.*> "h1" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -1974,7 +1974,7 @@ exports[`html "h1" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h1" supports inline event handlers 1`] = `
+exports[`<html.*> "h1" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2013,7 +2013,7 @@ exports[`html "h1" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h2" default rendering 1`] = `
+exports[`<html.*> "h2" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2028,7 +2028,7 @@ exports[`html "h2" default rendering 1`] = `
 />
 `;
 
-exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h2" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2043,7 +2043,7 @@ exports[`html "h2" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h2" supports global attributes 1`] = `
+exports[`<html.*> "h2" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2096,7 +2096,7 @@ exports[`html "h2" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h2" supports inline event handlers 1`] = `
+exports[`<html.*> "h2" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2135,7 +2135,7 @@ exports[`html "h2" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h3" default rendering 1`] = `
+exports[`<html.*> "h3" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2150,7 +2150,7 @@ exports[`html "h3" default rendering 1`] = `
 />
 `;
 
-exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h3" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2165,7 +2165,7 @@ exports[`html "h3" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h3" supports global attributes 1`] = `
+exports[`<html.*> "h3" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2218,7 +2218,7 @@ exports[`html "h3" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h3" supports inline event handlers 1`] = `
+exports[`<html.*> "h3" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2257,7 +2257,7 @@ exports[`html "h3" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h4" default rendering 1`] = `
+exports[`<html.*> "h4" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2272,7 +2272,7 @@ exports[`html "h4" default rendering 1`] = `
 />
 `;
 
-exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h4" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2287,7 +2287,7 @@ exports[`html "h4" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h4" supports global attributes 1`] = `
+exports[`<html.*> "h4" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2340,7 +2340,7 @@ exports[`html "h4" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h4" supports inline event handlers 1`] = `
+exports[`<html.*> "h4" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2379,7 +2379,7 @@ exports[`html "h4" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h5" default rendering 1`] = `
+exports[`<html.*> "h5" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2394,7 +2394,7 @@ exports[`html "h5" default rendering 1`] = `
 />
 `;
 
-exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h5" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2409,7 +2409,7 @@ exports[`html "h5" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h5" supports global attributes 1`] = `
+exports[`<html.*> "h5" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2462,7 +2462,7 @@ exports[`html "h5" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h5" supports inline event handlers 1`] = `
+exports[`<html.*> "h5" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2501,7 +2501,7 @@ exports[`html "h5" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "h6" default rendering 1`] = `
+exports[`<html.*> "h6" default rendering 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2516,7 +2516,7 @@ exports[`html "h6" default rendering 1`] = `
 />
 `;
 
-exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "h6" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   role="heading"
@@ -2531,7 +2531,7 @@ exports[`html "h6" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "h6" supports global attributes 1`] = `
+exports[`<html.*> "h6" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2584,7 +2584,7 @@ exports[`html "h6" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "h6" supports inline event handlers 1`] = `
+exports[`<html.*> "h6" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2623,7 +2623,7 @@ exports[`html "h6" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "header" default rendering 1`] = `
+exports[`<html.*> "header" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="header"
@@ -2636,7 +2636,7 @@ exports[`html "header" default rendering 1`] = `
 />
 `;
 
-exports[`html "header" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "header" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="header"
@@ -2649,7 +2649,7 @@ exports[`html "header" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "header" supports global attributes 1`] = `
+exports[`<html.*> "header" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2707,7 +2707,7 @@ exports[`html "header" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "header" supports inline event handlers 1`] = `
+exports[`<html.*> "header" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2744,7 +2744,7 @@ exports[`html "header" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "hr" default rendering 1`] = `
+exports[`<html.*> "hr" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -2758,7 +2758,7 @@ exports[`html "hr" default rendering 1`] = `
 />
 `;
 
-exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "hr" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -2772,7 +2772,7 @@ exports[`html "hr" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "hr" supports global attributes 1`] = `
+exports[`<html.*> "hr" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2832,7 +2832,7 @@ exports[`html "hr" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "hr" supports inline event handlers 1`] = `
+exports[`<html.*> "hr" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2870,7 +2870,7 @@ exports[`html "hr" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "i" default rendering 1`] = `
+exports[`<html.*> "i" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -2883,7 +2883,7 @@ exports[`html "i" default rendering 1`] = `
 />
 `;
 
-exports[`html "i" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "i" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -2896,7 +2896,7 @@ exports[`html "i" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "i" supports global attributes 1`] = `
+exports[`<html.*> "i" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -2948,7 +2948,7 @@ exports[`html "i" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "i" supports inline event handlers 1`] = `
+exports[`<html.*> "i" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -2985,7 +2985,7 @@ exports[`html "i" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "img" default rendering 1`] = `
+exports[`<html.*> "img" default rendering 1`] = `
 <Image
   ref={[Function]}
   style={
@@ -2998,7 +2998,7 @@ exports[`html "img" default rendering 1`] = `
 />
 `;
 
-exports[`html "img" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "img" ignores and warns about unsupported attributes 1`] = `
 <Image
   ref={[Function]}
   style={
@@ -3011,7 +3011,7 @@ exports[`html "img" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "img" supports additional image attributes 1`] = `
+exports[`<html.*> "img" supports additional image attributes 1`] = `
 <Image
   alt="Alt text"
   crossOrigin="anonymous"
@@ -3036,7 +3036,7 @@ exports[`html "img" supports additional image attributes 1`] = `
 />
 `;
 
-exports[`html "img" supports global attributes 1`] = `
+exports[`<html.*> "img" supports global attributes 1`] = `
 <Image
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3087,7 +3087,7 @@ exports[`html "img" supports global attributes 1`] = `
 </Image>
 `;
 
-exports[`html "img" supports inline event handlers 1`] = `
+exports[`<html.*> "img" supports inline event handlers 1`] = `
 <Image
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3124,7 +3124,7 @@ exports[`html "img" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "input" default rendering 1`] = `
+exports[`<html.*> "input" default rendering 1`] = `
 <TextInput
   ref={[Function]}
   style={
@@ -3137,7 +3137,7 @@ exports[`html "input" default rendering 1`] = `
 />
 `;
 
-exports[`html "input" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "input" ignores and warns about unsupported attributes 1`] = `
 <TextInput
   ref={[Function]}
   style={
@@ -3150,7 +3150,7 @@ exports[`html "input" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "input" supports additional input attributes 1`] = `
+exports[`<html.*> "input" supports additional input attributes 1`] = `
 <TextInput
   defaultValue="defaultValue"
   disabled={true}
@@ -3171,7 +3171,7 @@ exports[`html "input" supports additional input attributes 1`] = `
 />
 `;
 
-exports[`html "input" supports global attributes 1`] = `
+exports[`<html.*> "input" supports global attributes 1`] = `
 <TextInput
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3226,7 +3226,7 @@ exports[`html "input" supports global attributes 1`] = `
 </TextInput>
 `;
 
-exports[`html "input" supports inline event handlers 1`] = `
+exports[`<html.*> "input" supports inline event handlers 1`] = `
 <TextInput
   onBlur={[Function]}
   onChange={[Function]}
@@ -3266,7 +3266,7 @@ exports[`html "input" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ins" default rendering 1`] = `
+exports[`<html.*> "ins" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3279,7 +3279,7 @@ exports[`html "ins" default rendering 1`] = `
 />
 `;
 
-exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "ins" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3292,7 +3292,7 @@ exports[`html "ins" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "ins" supports global attributes 1`] = `
+exports[`<html.*> "ins" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3344,7 +3344,7 @@ exports[`html "ins" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "ins" supports inline event handlers 1`] = `
+exports[`<html.*> "ins" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3381,7 +3381,7 @@ exports[`html "ins" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "kbd" default rendering 1`] = `
+exports[`<html.*> "kbd" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3394,7 +3394,7 @@ exports[`html "kbd" default rendering 1`] = `
 />
 `;
 
-exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "kbd" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3407,7 +3407,7 @@ exports[`html "kbd" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "kbd" supports global attributes 1`] = `
+exports[`<html.*> "kbd" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3459,7 +3459,7 @@ exports[`html "kbd" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "kbd" supports inline event handlers 1`] = `
+exports[`<html.*> "kbd" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3496,7 +3496,7 @@ exports[`html "kbd" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "label" default rendering 1`] = `
+exports[`<html.*> "label" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3508,7 +3508,7 @@ exports[`html "label" default rendering 1`] = `
 />
 `;
 
-exports[`html "label" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "label" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3520,7 +3520,7 @@ exports[`html "label" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "label" supports additional label attributes 1`] = `
+exports[`<html.*> "label" supports additional label attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3532,7 +3532,7 @@ exports[`html "label" supports additional label attributes 1`] = `
 />
 `;
 
-exports[`html "label" supports global attributes 1`] = `
+exports[`<html.*> "label" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3583,7 +3583,7 @@ exports[`html "label" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "label" supports inline event handlers 1`] = `
+exports[`<html.*> "label" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3619,7 +3619,7 @@ exports[`html "label" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "li" supports list item attributes 1`] = `
+exports[`<html.*> "li" supports list item attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="listitem"
@@ -3632,7 +3632,7 @@ exports[`html "li" supports list item attributes 1`] = `
 />
 `;
 
-exports[`html "main" default rendering 1`] = `
+exports[`<html.*> "main" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -3644,7 +3644,7 @@ exports[`html "main" default rendering 1`] = `
 />
 `;
 
-exports[`html "main" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "main" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -3656,7 +3656,7 @@ exports[`html "main" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "main" supports global attributes 1`] = `
+exports[`<html.*> "main" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3714,7 +3714,7 @@ exports[`html "main" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "main" supports inline event handlers 1`] = `
+exports[`<html.*> "main" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3750,7 +3750,7 @@ exports[`html "main" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "mark" default rendering 1`] = `
+exports[`<html.*> "mark" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3764,7 +3764,7 @@ exports[`html "mark" default rendering 1`] = `
 />
 `;
 
-exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "mark" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -3778,7 +3778,7 @@ exports[`html "mark" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "mark" supports global attributes 1`] = `
+exports[`<html.*> "mark" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -3831,7 +3831,7 @@ exports[`html "mark" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "mark" supports inline event handlers 1`] = `
+exports[`<html.*> "mark" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -3869,7 +3869,7 @@ exports[`html "mark" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "nav" default rendering 1`] = `
+exports[`<html.*> "nav" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -3881,7 +3881,7 @@ exports[`html "nav" default rendering 1`] = `
 />
 `;
 
-exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "nav" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -3893,127 +3893,7 @@ exports[`html "nav" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "nav" supports global attributes 1`] = `
-<ViewNativeComponent
-  accessibilityElementsHidden={true}
-  accessibilityLabel="Label"
-  accessibilityLabelledBy={
-    [
-      "labelledby",
-    ]
-  }
-  accessibilityLiveRegion={true}
-  accessibilityPosInSet={1}
-  accessibilitySetSize={2}
-  accessibilityState={
-    {
-      "busy": true,
-      "checked": true,
-      "disabled": true,
-      "expanded": true,
-      "selected": true,
-    }
-  }
-  accessibilityValue={
-    {
-      "max": 10,
-      "min": 0,
-      "now": 5,
-      "text": "Five",
-    }
-  }
-  accessibilityViewIsModal={true}
-  focusable={true}
-  importantForAccessibility="no-hide-descendants"
-  nativeID="some-id"
-  ref={[Function]}
-  role="article"
-  style={
-    {
-      "--custom-property": "inline",
-      "boxSizing": "content-box",
-      "direction": "ltr",
-      "display": "none",
-      "position": "static",
-    }
-  }
-  testID="some-test-id"
->
-  <Text
-    style={
-      {
-        "writingDirection": "ltr",
-      }
-    }
-  >
-    children
-  </Text>
-</ViewNativeComponent>
-`;
-
-exports[`html "nav" supports inline event handlers 1`] = `
-<Pressable
-  onBlur={[Function]}
-  onFocus={[Function]}
-  onGotPointerCapture={[Function]}
-  onLostPointerCapture={[Function]}
-  onMouseDown={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
-  onMouseUp={[Function]}
-  onPointerCancel={[Function]}
-  onPointerDown={[Function]}
-  onPointerEnter={[Function]}
-  onPointerLeave={[Function]}
-  onPointerMove={[Function]}
-  onPointerOut={[Function]}
-  onPointerOver={[Function]}
-  onPointerUp={[Function]}
-  onPress={[Function]}
-  onScroll={[Function]}
-  onTouchCancel={[Function]}
-  onTouchEnd={[Function]}
-  onTouchMove={[Function]}
-  onTouchStart={[Function]}
-  ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
-exports[`html "ol" default rendering 1`] = `
-<ViewNativeComponent
-  ref={[Function]}
-  role="list"
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
-exports[`html "ol" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
-  ref={[Function]}
-  role="list"
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
-exports[`html "ol" supports global attributes 1`] = `
+exports[`<html.*> "nav" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4071,7 +3951,7 @@ exports[`html "ol" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "ol" supports inline event handlers 1`] = `
+exports[`<html.*> "nav" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4098,7 +3978,6 @@ exports[`html "ol" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   ref={[Function]}
-  role="list"
   style={
     {
       "boxSizing": "content-box",
@@ -4108,7 +3987,7 @@ exports[`html "ol" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ol" supports list attributes 1`] = `
+exports[`<html.*> "ol" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="list"
@@ -4121,9 +4000,10 @@ exports[`html "ol" supports list attributes 1`] = `
 />
 `;
 
-exports[`html "optgroup" default rendering 1`] = `
+exports[`<html.*> "ol" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
+  role="list"
   style={
     {
       "boxSizing": "content-box",
@@ -4133,19 +4013,7 @@ exports[`html "optgroup" default rendering 1`] = `
 />
 `;
 
-exports[`html "optgroup" ignores and warns about unsupported attributes 1`] = `
-<ViewNativeComponent
-  ref={[Function]}
-  style={
-    {
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
-exports[`html "optgroup" supports global attributes 1`] = `
+exports[`<html.*> "ol" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4203,7 +4071,139 @@ exports[`html "optgroup" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "optgroup" supports inline event handlers 1`] = `
+exports[`<html.*> "ol" supports inline event handlers 1`] = `
+<Pressable
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onGotPointerCapture={[Function]}
+  onLostPointerCapture={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onPointerCancel={[Function]}
+  onPointerDown={[Function]}
+  onPointerEnter={[Function]}
+  onPointerLeave={[Function]}
+  onPointerMove={[Function]}
+  onPointerOut={[Function]}
+  onPointerOver={[Function]}
+  onPointerUp={[Function]}
+  onPress={[Function]}
+  onScroll={[Function]}
+  onTouchCancel={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  ref={[Function]}
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> "ol" supports list attributes 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  role="list"
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> "optgroup" default rendering 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> "optgroup" ignores and warns about unsupported attributes 1`] = `
+<ViewNativeComponent
+  ref={[Function]}
+  style={
+    {
+      "boxSizing": "content-box",
+      "position": "static",
+    }
+  }
+/>
+`;
+
+exports[`<html.*> "optgroup" supports global attributes 1`] = `
+<ViewNativeComponent
+  accessibilityElementsHidden={true}
+  accessibilityLabel="Label"
+  accessibilityLabelledBy={
+    [
+      "labelledby",
+    ]
+  }
+  accessibilityLiveRegion={true}
+  accessibilityPosInSet={1}
+  accessibilitySetSize={2}
+  accessibilityState={
+    {
+      "busy": true,
+      "checked": true,
+      "disabled": true,
+      "expanded": true,
+      "selected": true,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": 10,
+      "min": 0,
+      "now": 5,
+      "text": "Five",
+    }
+  }
+  accessibilityViewIsModal={true}
+  focusable={true}
+  importantForAccessibility="no-hide-descendants"
+  nativeID="some-id"
+  ref={[Function]}
+  role="article"
+  style={
+    {
+      "--custom-property": "inline",
+      "boxSizing": "content-box",
+      "direction": "ltr",
+      "display": "none",
+      "position": "static",
+    }
+  }
+  testID="some-test-id"
+>
+  <Text
+    style={
+      {
+        "writingDirection": "ltr",
+      }
+    }
+  >
+    children
+  </Text>
+</ViewNativeComponent>
+`;
+
+exports[`<html.*> "optgroup" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4239,7 +4239,7 @@ exports[`html "optgroup" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "option" default rendering 1`] = `
+exports[`<html.*> "option" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4251,7 +4251,7 @@ exports[`html "option" default rendering 1`] = `
 />
 `;
 
-exports[`html "option" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "option" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4263,7 +4263,7 @@ exports[`html "option" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "option" supports global attributes 1`] = `
+exports[`<html.*> "option" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4312,7 +4312,7 @@ exports[`html "option" supports global attributes 1`] = `
 />
 `;
 
-exports[`html "option" supports inline event handlers 1`] = `
+exports[`<html.*> "option" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4348,7 +4348,7 @@ exports[`html "option" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "option" supports input attributes 1`] = `
+exports[`<html.*> "option" supports input attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4362,7 +4362,7 @@ exports[`html "option" supports input attributes 1`] = `
 </Text>
 `;
 
-exports[`html "p" default rendering 1`] = `
+exports[`<html.*> "p" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4374,7 +4374,7 @@ exports[`html "p" default rendering 1`] = `
 />
 `;
 
-exports[`html "p" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "p" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4386,7 +4386,7 @@ exports[`html "p" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "p" supports global attributes 1`] = `
+exports[`<html.*> "p" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4437,7 +4437,7 @@ exports[`html "p" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "p" supports inline event handlers 1`] = `
+exports[`<html.*> "p" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4473,7 +4473,7 @@ exports[`html "p" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "pre" default rendering 1`] = `
+exports[`<html.*> "pre" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4486,7 +4486,7 @@ exports[`html "pre" default rendering 1`] = `
 />
 `;
 
-exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "pre" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4499,7 +4499,7 @@ exports[`html "pre" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "pre" supports global attributes 1`] = `
+exports[`<html.*> "pre" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4551,7 +4551,7 @@ exports[`html "pre" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "pre" supports inline event handlers 1`] = `
+exports[`<html.*> "pre" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4588,7 +4588,7 @@ exports[`html "pre" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "s" default rendering 1`] = `
+exports[`<html.*> "s" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4601,7 +4601,7 @@ exports[`html "s" default rendering 1`] = `
 />
 `;
 
-exports[`html "s" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "s" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4614,7 +4614,7 @@ exports[`html "s" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "s" supports global attributes 1`] = `
+exports[`<html.*> "s" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4666,7 +4666,7 @@ exports[`html "s" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "s" supports inline event handlers 1`] = `
+exports[`<html.*> "s" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4703,7 +4703,7 @@ exports[`html "s" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "section" default rendering 1`] = `
+exports[`<html.*> "section" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -4715,7 +4715,7 @@ exports[`html "section" default rendering 1`] = `
 />
 `;
 
-exports[`html "section" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "section" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -4727,7 +4727,7 @@ exports[`html "section" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "section" supports global attributes 1`] = `
+exports[`<html.*> "section" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4785,7 +4785,7 @@ exports[`html "section" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "section" supports inline event handlers 1`] = `
+exports[`<html.*> "section" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4821,7 +4821,7 @@ exports[`html "section" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "select" default rendering 1`] = `
+exports[`<html.*> "select" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -4833,7 +4833,7 @@ exports[`html "select" default rendering 1`] = `
 />
 `;
 
-exports[`html "select" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "select" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -4845,7 +4845,7 @@ exports[`html "select" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "select" supports additional select attributes 1`] = `
+exports[`<html.*> "select" supports additional select attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={
@@ -4857,7 +4857,7 @@ exports[`html "select" supports additional select attributes 1`] = `
 />
 `;
 
-exports[`html "select" supports global attributes 1`] = `
+exports[`<html.*> "select" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -4915,7 +4915,7 @@ exports[`html "select" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "select" supports inline event handlers 1`] = `
+exports[`<html.*> "select" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -4951,7 +4951,7 @@ exports[`html "select" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "span" default rendering 1`] = `
+exports[`<html.*> "span" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4963,7 +4963,7 @@ exports[`html "span" default rendering 1`] = `
 />
 `;
 
-exports[`html "span" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "span" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -4975,7 +4975,7 @@ exports[`html "span" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "span" supports global attributes 1`] = `
+exports[`<html.*> "span" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5026,7 +5026,7 @@ exports[`html "span" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "span" supports inline event handlers 1`] = `
+exports[`<html.*> "span" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5062,7 +5062,7 @@ exports[`html "span" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "strong" default rendering 1`] = `
+exports[`<html.*> "strong" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5075,7 +5075,7 @@ exports[`html "strong" default rendering 1`] = `
 />
 `;
 
-exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "strong" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5088,7 +5088,7 @@ exports[`html "strong" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "strong" supports global attributes 1`] = `
+exports[`<html.*> "strong" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5140,7 +5140,7 @@ exports[`html "strong" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "strong" supports inline event handlers 1`] = `
+exports[`<html.*> "strong" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5177,7 +5177,7 @@ exports[`html "strong" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "sub" default rendering 1`] = `
+exports[`<html.*> "sub" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5189,7 +5189,7 @@ exports[`html "sub" default rendering 1`] = `
 />
 `;
 
-exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "sub" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5201,7 +5201,7 @@ exports[`html "sub" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "sub" supports global attributes 1`] = `
+exports[`<html.*> "sub" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5252,7 +5252,7 @@ exports[`html "sub" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "sub" supports inline event handlers 1`] = `
+exports[`<html.*> "sub" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5288,7 +5288,7 @@ exports[`html "sub" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "sup" default rendering 1`] = `
+exports[`<html.*> "sup" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5300,7 +5300,7 @@ exports[`html "sup" default rendering 1`] = `
 />
 `;
 
-exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "sup" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5312,7 +5312,7 @@ exports[`html "sup" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "sup" supports global attributes 1`] = `
+exports[`<html.*> "sup" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5363,7 +5363,7 @@ exports[`html "sup" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "sup" supports inline event handlers 1`] = `
+exports[`<html.*> "sup" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5399,7 +5399,7 @@ exports[`html "sup" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "textarea" default rendering 1`] = `
+exports[`<html.*> "textarea" default rendering 1`] = `
 <TextInput
   multiline={true}
   ref={[Function]}
@@ -5414,7 +5414,7 @@ exports[`html "textarea" default rendering 1`] = `
 />
 `;
 
-exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "textarea" ignores and warns about unsupported attributes 1`] = `
 <TextInput
   multiline={true}
   ref={[Function]}
@@ -5429,7 +5429,7 @@ exports[`html "textarea" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "textarea" supports additional textarea attributes 1`] = `
+exports[`<html.*> "textarea" supports additional textarea attributes 1`] = `
 <TextInput
   defaultValue="defaultValue"
   disabled={true}
@@ -5453,7 +5453,7 @@ exports[`html "textarea" supports additional textarea attributes 1`] = `
 />
 `;
 
-exports[`html "textarea" supports global attributes 1`] = `
+exports[`<html.*> "textarea" supports global attributes 1`] = `
 <TextInput
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5509,7 +5509,7 @@ exports[`html "textarea" supports global attributes 1`] = `
 </TextInput>
 `;
 
-exports[`html "textarea" supports inline event handlers 1`] = `
+exports[`<html.*> "textarea" supports inline event handlers 1`] = `
 <TextInput
   multiline={true}
   onBlur={[Function]}
@@ -5551,7 +5551,7 @@ exports[`html "textarea" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "u" default rendering 1`] = `
+exports[`<html.*> "u" default rendering 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5564,7 +5564,7 @@ exports[`html "u" default rendering 1`] = `
 />
 `;
 
-exports[`html "u" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "u" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
   style={
@@ -5577,7 +5577,7 @@ exports[`html "u" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "u" supports global attributes 1`] = `
+exports[`<html.*> "u" supports global attributes 1`] = `
 <Text
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5629,7 +5629,7 @@ exports[`html "u" supports global attributes 1`] = `
 </Text>
 `;
 
-exports[`html "u" supports inline event handlers 1`] = `
+exports[`<html.*> "u" supports inline event handlers 1`] = `
 <Text
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5666,7 +5666,7 @@ exports[`html "u" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ul" default rendering 1`] = `
+exports[`<html.*> "ul" default rendering 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="list"
@@ -5679,7 +5679,7 @@ exports[`html "ul" default rendering 1`] = `
 />
 `;
 
-exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
+exports[`<html.*> "ul" ignores and warns about unsupported attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="list"
@@ -5692,7 +5692,7 @@ exports[`html "ul" ignores and warns about unsupported attributes 1`] = `
 />
 `;
 
-exports[`html "ul" supports global attributes 1`] = `
+exports[`<html.*> "ul" supports global attributes 1`] = `
 <ViewNativeComponent
   accessibilityElementsHidden={true}
   accessibilityLabel="Label"
@@ -5750,7 +5750,7 @@ exports[`html "ul" supports global attributes 1`] = `
 </ViewNativeComponent>
 `;
 
-exports[`html "ul" supports inline event handlers 1`] = `
+exports[`<html.*> "ul" supports inline event handlers 1`] = `
 <Pressable
   onBlur={[Function]}
   onFocus={[Function]}
@@ -5787,7 +5787,7 @@ exports[`html "ul" supports inline event handlers 1`] = `
 />
 `;
 
-exports[`html "ul" supports list attributes 1`] = `
+exports[`<html.*> "ul" supports list attributes 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   role="list"
@@ -5800,7 +5800,7 @@ exports[`html "ul" supports list attributes 1`] = `
 />
 `;
 
-exports[`html temporary data-* props support 1`] = `
+exports[`<html.*> temporary data-* props support 1`] = `
 <ViewNativeComponent
   ref={[Function]}
   style={

@@ -18,11 +18,12 @@
   --ifm-code-font-size: 95%;
   --ifm-color-primary: #0866ff;
   --ifm-color-primary-dark: #2a5fe9;
-  --ifm-font-family-base: "Optimistic Text", -apple-system, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --ifm-font-family-base: -apple-system, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --ifm-footer-padding-vertical: var(--ifm-spacing-vertical);
   --ifm-h1-font-size: 2.5rem;
   --ifm-h2-font-size: 1.5rem;
-  --ifm-h3-font-size: 1.25rem;  --ifm-heading-font-family: "Optimistic Display", -apple-system, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-heading-font-family: -apple-system, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --ifm-hero-text-color: unset;
   --ifm-leading-desktop: 1.25;
   --ifm-table-cell-padding: 0.5rem 0.75rem;
