@@ -1,0 +1,48 @@
+{
+  "name": "react-strict-animated",
+  "version": "0.0.1",
+  "description": "A subset of React Native's Animated API supported on web and native.",
+  "exports": {
+    ".": {
+      "react-native": {
+        "types": "./dist/native/index.d.ts",
+        "default": "./dist/native/index.js"
+      },
+      "default": {
+        "types": "./dist/web/index.d.ts",
+        "default": "./dist/web/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/*",
+    "LICENSE",
+    "package.json"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "jest": "jest --config ./jest.config.js",
+    "jest:report": "jest --config ./jest.config.js --collect-coverage",
+    "build": "rollup --config ./tools/rollup.config.mjs",
+    "clean": "del-cli \"./dist/*\"",
+    "prebuild": "npm run clean && generate-types -i src/ -o dist"
+  },
+  "dependencies": {
+    "react-strict-dom": "*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@testing-library/react": "^16.3.0",
+    "react": "~19.0.0",
+    "react-dom": "~19.0.0",
+    "rollup": "^4.22.4"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": ">=0.79.5"
+  }
+}
