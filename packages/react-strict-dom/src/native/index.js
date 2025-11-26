@@ -22,7 +22,10 @@ import * as compat from './compat';
 import * as html from './html';
 import * as _css from './css';
 import { ProvideCustomProperties } from './modules/ContextCustomProperties';
-import { ProvideViewportScale } from './modules/ContextViewportScale';
+import {
+  ProvideViewportScale,
+  useViewportScale
+} from './modules/ContextViewportScale';
 
 type StyleTheme<V, T> = Theme<V, T>;
 type StyleVars<T> = VarGroup<T>;
@@ -56,4 +59,10 @@ const contexts = {
 // Export using StyleX types as the shim has divergent types internally.
 const css: TStyleX = _css as $FlowFixMe;
 
-export { compat, contexts, css, html };
+export {
+  compat,
+  contexts,
+  css,
+  html,
+  useViewportScale as useViewportScale_DO_NOT_USE
+};
