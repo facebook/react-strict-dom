@@ -67,7 +67,9 @@ type DocumentTimelineOptions = {|
 |};
 
 type EffectTiming = {|
+  delay: number,
   direction: PlaybackDirection,
+  duration: number | string,
   easing: string,
   fill: FillMode,
   iterations: number,
@@ -81,14 +83,14 @@ type GetAnimationsOptions = {|
 
 type KeyframeAnimationOptions = {|
   ...KeyframeEffectOptions,
-  id: string,
-  timeline: AnimationTimeline | null,
+  id?: string,
+  timeline?: AnimationTimeline | null,
 |};
 
 type KeyframeEffectOptions = {|
-  ...EffectTiming,
-  composite: CompositeOperation,
-  pseudoElement: string | null,
+  ...Partial<EffectTiming>,
+  composite?: CompositeOperation,
+  pseudoElement?: string | null,
 |};
 
 type Keyframe = {
