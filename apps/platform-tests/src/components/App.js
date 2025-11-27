@@ -144,6 +144,23 @@ function Shell(): React.MixedElement {
   const [fadeUpActive, setFadeUpActive] = React.useState(true);
   const [animate, setAnimate] = React.useState(false);
   const [shouldAnimate, setShouldAnimate] = React.useState(false);
+  // Animation control states
+  const [fadeInKey, setFadeInKey] = React.useState(0);
+  const [bounceActive, setBounceActive] = React.useState(true);
+  const [scaleActive, setScaleActive] = React.useState(true);
+  const [rotateActive, setRotateActive] = React.useState(true);
+  const [complexActive, setComplexActive] = React.useState(true);
+
+  // Advanced animation property examples
+  const [directionNormalActive, setDirectionNormalActive] =
+    React.useState(false);
+  const [directionReverseActive, setDirectionReverseActive] =
+    React.useState(false);
+  const [alternateActive, setAlternateActive] = React.useState(false);
+  const [alternateReverseActive, setAlternateReverseActive] =
+    React.useState(false);
+  const [fillModeKey, setFillModeKey] = React.useState(0);
+  const [dynamicPlayState, setDynamicPlayState] = React.useState(false);
 
   return (
     <ScrollView>
@@ -255,6 +272,7 @@ function Shell(): React.MixedElement {
         </ExampleBlock>
 
         <ExampleBlock title="CSS Animations">
+          <html.p>Basic keyframe animation</html.p>
           <html.div
             style={[
               styles.square,
@@ -265,6 +283,184 @@ function Shell(): React.MixedElement {
           <html.button onClick={() => setAnimate(!animate)}>
             {animate ? 'Reset' : 'Start'}
           </html.button>
+
+          <html.p>Fade in animation with forwards fill</html.p>
+          <html.div
+            key={fadeInKey}
+            style={[styles.square, styles.fadeInAnimation]}
+          />
+          <html.button onClick={() => setFadeInKey((prev) => prev + 1)}>
+            Reset
+          </html.button>
+
+          <html.p>Infinite bounce animation</html.p>
+          <html.div
+            style={[
+              styles.square,
+              styles.bgBlue,
+              bounceActive && styles.bounceAnimation
+            ]}
+          />
+          <html.button onClick={() => setBounceActive(!bounceActive)}>
+            {bounceActive ? 'Stop' : 'Start'}
+          </html.button>
+
+          <html.p>Scale pulse animation</html.p>
+          <html.div
+            style={[
+              styles.square,
+              styles.bgGreen,
+              scaleActive && styles.scaleAnimation
+            ]}
+          />
+          <html.button onClick={() => setScaleActive(!scaleActive)}>
+            {scaleActive ? 'Stop' : 'Start'}
+          </html.button>
+
+          <html.p>Rotation animation</html.p>
+          <html.div
+            style={[
+              styles.square,
+              styles.bgYellow,
+              rotateActive && styles.rotateAnimation
+            ]}
+          />
+          <html.button onClick={() => setRotateActive(!rotateActive)}>
+            {rotateActive ? 'Stop' : 'Start'}
+          </html.button>
+
+          <html.p>Complex multi-property animation</html.p>
+          <html.div
+            style={[styles.square, complexActive && styles.complexAnimation]}
+          />
+          <html.button onClick={() => setComplexActive(!complexActive)}>
+            {complexActive ? 'Stop' : 'Start'}
+          </html.button>
+        </ExampleBlock>
+
+        <ExampleBlock title="Advanced CSS Animation Properties">
+          <html.p>Animation Direction Examples</html.p>
+          <html.div style={styles.row}>
+            <html.div style={styles.squareWithMargin}>
+              <html.div
+                style={[
+                  styles.smallSquare,
+                  directionNormalActive && styles.directionNormal
+                ]}
+              />
+            </html.div>
+            <html.div style={styles.squareWithMarginGreen}>
+              <html.div
+                style={[
+                  styles.smallSquareGreen,
+                  directionReverseActive && styles.directionReverse
+                ]}
+              />
+            </html.div>
+            <html.div style={styles.squareWithMarginYellow}>
+              <html.div
+                style={[
+                  styles.smallSquareOrange,
+                  alternateActive && styles.directionAlternate
+                ]}
+              />
+            </html.div>
+            <html.div style={styles.squareWithMarginPink}>
+              <html.div
+                style={[
+                  styles.smallSquarePurple,
+                  alternateReverseActive && styles.directionAlternateReverse
+                ]}
+              />
+            </html.div>
+          </html.div>
+          <html.div style={styles.directionControls}>
+            <html.button
+              onClick={() => setDirectionNormalActive(!directionNormalActive)}
+              style={styles.directionButton}
+            >
+              {directionNormalActive ? 'Stop Normal' : 'Start Normal'}
+            </html.button>
+            <html.button
+              onClick={() => setDirectionReverseActive(!directionReverseActive)}
+              style={styles.directionButton}
+            >
+              {directionReverseActive ? 'Stop Reverse' : 'Start Reverse'}
+            </html.button>
+            <html.button
+              onClick={() => setAlternateActive(!alternateActive)}
+              style={styles.directionButton}
+            >
+              {alternateActive ? 'Stop Alternate' : 'Start Alternate'}
+            </html.button>
+            <html.button
+              onClick={() => setAlternateReverseActive(!alternateReverseActive)}
+              style={styles.directionButton}
+            >
+              {alternateReverseActive ? 'Stop Alt-Rev' : 'Start Alt-Rev'}
+            </html.button>
+          </html.div>
+
+          <html.p>Animation Fill Mode Examples</html.p>
+          <html.div style={styles.row}>
+            <html.div style={styles.directionButton}>
+              <html.p style={styles.smallText}>none</html.p>
+              <html.div
+                key={`none-${fillModeKey}`}
+                style={[styles.square, styles.fillModeNone]}
+              />
+            </html.div>
+            <html.div style={styles.directionButton}>
+              <html.p style={styles.smallText}>forwards</html.p>
+              <html.div
+                key={`forwards-${fillModeKey}`}
+                style={[styles.square, styles.fillModeForwards]}
+              />
+            </html.div>
+            <html.div style={styles.directionButton}>
+              <html.p style={styles.smallText}>backwards</html.p>
+              <html.div
+                key={`backwards-${fillModeKey}`}
+                style={[styles.square, styles.fillModeBackwards]}
+              />
+            </html.div>
+            <html.div>
+              <html.p style={styles.smallText}>both</html.p>
+              <html.div
+                key={`both-${fillModeKey}`}
+                style={[styles.square, styles.fillModeBoth]}
+              />
+            </html.div>
+          </html.div>
+          <html.button onClick={() => setFillModeKey((prev) => prev + 1)}>
+            Restart Fill Mode Animations
+          </html.button>
+
+          <html.p>Animation Play State Examples</html.p>
+          <html.div style={styles.row}>
+            <html.div style={styles.containerWithMargin}>
+              <html.p style={styles.smallText}>Always Running</html.p>
+              <html.div style={[styles.square, styles.playStateRunning]} />
+            </html.div>
+            <html.div style={styles.containerWithMargin}>
+              <html.p style={styles.smallText}>Always Paused</html.p>
+              <html.div style={[styles.square, styles.playStatePaused]} />
+            </html.div>
+            <html.div>
+              <html.p style={styles.smallText}>Dynamic Control</html.p>
+              <html.div
+                style={[
+                  styles.square,
+                  styles.playStateDynamic(dynamicPlayState)
+                ]}
+              />
+              <html.button
+                onClick={() => setDynamicPlayState(!dynamicPlayState)}
+              >
+                {dynamicPlayState ? 'Resume' : 'Pause'}
+              </html.button>
+            </html.div>
+          </html.div>
         </ExampleBlock>
 
         <ExampleBlock title="CSS Inheritance">
@@ -478,7 +674,7 @@ function Shell(): React.MixedElement {
 
         {/* visibility */}
         <ExampleBlock title="CSS Visibility">
-          <html.div style={styles.flex}>
+          <html.div style={styles.row}>
             <html.div style={[styles.square, styles.visibilityCollapse]} />
             <html.div style={[styles.square, styles.visibilityHidden]} />
             <html.div style={[styles.square, styles.visibilityVisible]} />
@@ -581,7 +777,7 @@ function Shell(): React.MixedElement {
             style={[styles.h100, styles.dynamicBg(clickData.color)]}
           >
             <html.span style={styles.bgWhite}>{clickData.text}</html.span>
-            <html.div style={styles.flex}>
+            <html.div style={styles.row}>
               <html.div style={[styles.flex, styles.flexGrow]}>
                 <html.div>
                   <html.span>
@@ -664,6 +860,130 @@ const animateSequence = css.keyframes({
   }
 });
 
+const fadeInKeyframes = css.keyframes({
+  '0%': {
+    opacity: 0,
+    transform: 'translateY(-10px)'
+  },
+  '100%': {
+    opacity: 1,
+    transform: 'translateY(0px)'
+  }
+});
+
+const bounceKeyframes = css.keyframes({
+  '0%': {
+    transform: 'translateY(0px)'
+  },
+  '25%': {
+    transform: 'translateY(-20px)'
+  },
+  '50%': {
+    transform: 'translateY(0px)'
+  },
+  '75%': {
+    transform: 'translateY(-10px)'
+  },
+  '100%': {
+    transform: 'translateY(0px)'
+  }
+});
+
+const scaleKeyframes = css.keyframes({
+  '0%': {
+    transform: 'scale(1)'
+  },
+  '50%': {
+    transform: 'scale(1.2)'
+  },
+  '100%': {
+    transform: 'scale(1)'
+  }
+});
+
+const rotateKeyframes = css.keyframes({
+  '0%': {
+    transform: 'rotate(0deg)'
+  },
+  '100%': {
+    transform: 'rotate(360deg)'
+  }
+});
+
+const complexKeyframes = css.keyframes({
+  '0%': {
+    opacity: 0,
+    transform: 'translateX(-50px) scale(0.5) rotate(0deg)',
+    backgroundColor: 'red'
+  },
+  '25%': {
+    opacity: 0.5,
+    transform: 'translateX(-25px) scale(0.75) rotate(90deg)',
+    backgroundColor: 'orange'
+  },
+  '50%': {
+    opacity: 1,
+    transform: 'translateX(0px) scale(1) rotate(180deg)',
+    backgroundColor: 'yellow'
+  },
+  '75%': {
+    opacity: 0.8,
+    transform: 'translateX(25px) scale(1.1) rotate(270deg)',
+    backgroundColor: 'green'
+  },
+  '100%': {
+    opacity: 1,
+    transform: 'translateX(0px) scale(1) rotate(360deg)',
+    backgroundColor: 'blue'
+  }
+});
+
+// Advanced animation property keyframes
+const slideKeyframes = css.keyframes({
+  '0%': {
+    transform: 'translateX(0px)'
+  },
+  '100%': {
+    transform: 'translateX(100px)'
+  }
+});
+
+const fillModeKeyframes = css.keyframes({
+  '0%': {
+    opacity: 0,
+    backgroundColor: 'red',
+    transform: 'scale(0.5)'
+  },
+  '100%': {
+    opacity: 1,
+    backgroundColor: 'green',
+    transform: 'scale(1.2)'
+  }
+});
+
+const playStateKeyframes = css.keyframes({
+  '0%': {
+    transform: 'rotate(0deg) translateX(0px)',
+    backgroundColor: 'purple'
+  },
+  '25%': {
+    transform: 'rotate(90deg) translateX(50px)',
+    backgroundColor: 'blue'
+  },
+  '50%': {
+    transform: 'rotate(180deg) translateX(0px)',
+    backgroundColor: 'green'
+  },
+  '75%': {
+    transform: 'rotate(270deg) translateX(-50px)',
+    backgroundColor: 'orange'
+  },
+  '100%': {
+    transform: 'rotate(360deg) translateX(0px)',
+    backgroundColor: 'purple'
+  }
+});
+
 const themedTokens = css.createTheme(tokens, {
   squareColor: 'purple',
   textColor: 'purple',
@@ -683,9 +1003,125 @@ const styles = css.create({
     animationDuration: '1s',
     animationIterationCount: 1,
     animationName: animateSequence,
-    animationTimingFunction: 'ease',
-    transform: 'translateX(150px)'
+    animationTimingFunction: 'ease'
   },
+  fadeInAnimation: {
+    animationName: fadeInKeyframes,
+    animationDuration: '0.8s',
+    animationTimingFunction: 'ease-out',
+    animationFillMode: 'forwards',
+    opacity: 0 // initial state
+  },
+  bounceAnimation: {
+    animationName: bounceKeyframes,
+    animationDuration: '1.5s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite'
+  },
+  scaleAnimation: {
+    animationName: scaleKeyframes,
+    animationDuration: '1s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    animationDirection: 'alternate'
+  },
+  rotateAnimation: {
+    animationName: rotateKeyframes,
+    animationDuration: '2s',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite'
+  },
+  complexAnimation: {
+    animationName: complexKeyframes,
+    animationDuration: '3s',
+    animationTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    animationIterationCount: 'infinite',
+    animationDelay: '0.5s'
+  },
+  // Advanced animation direction examples
+  directionNormal: {
+    animationName: slideKeyframes,
+    animationDuration: '2s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    animationDirection: 'normal'
+  },
+  directionReverse: {
+    animationName: slideKeyframes,
+    animationDuration: '2s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    animationDirection: 'reverse'
+  },
+  directionAlternate: {
+    animationName: slideKeyframes,
+    animationDuration: '1.5s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    animationDirection: 'alternate'
+  },
+  directionAlternateReverse: {
+    animationName: slideKeyframes,
+    animationDuration: '1.5s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    animationDirection: 'alternate-reverse'
+  },
+  // Animation fill mode examples
+  fillModeNone: {
+    animationName: fillModeKeyframes,
+    animationDuration: '2s',
+    animationDelay: '0.5s',
+    animationFillMode: 'none',
+    opacity: 0.5,
+    backgroundColor: 'orange'
+  },
+  fillModeForwards: {
+    animationName: fillModeKeyframes,
+    animationDuration: '2s',
+    animationDelay: '0.5s',
+    animationFillMode: 'forwards',
+    opacity: 0.5,
+    backgroundColor: 'orange'
+  },
+  fillModeBackwards: {
+    animationName: fillModeKeyframes,
+    animationDuration: '2s',
+    animationDelay: '0.5s',
+    animationFillMode: 'backwards',
+    opacity: 0.5,
+    backgroundColor: 'orange'
+  },
+  fillModeBoth: {
+    animationName: fillModeKeyframes,
+    animationDuration: '2s',
+    animationDelay: '0.5s',
+    animationFillMode: 'both',
+    opacity: 0.5,
+    backgroundColor: 'orange'
+  },
+  // Animation play state examples
+  playStateRunning: {
+    animationName: playStateKeyframes,
+    animationDuration: '4s',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite',
+    animationPlayState: 'running'
+  },
+  playStatePaused: {
+    animationName: playStateKeyframes,
+    animationDuration: '4s',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite',
+    animationPlayState: 'paused'
+  },
+  playStateDynamic: (paused: boolean) => ({
+    animationName: playStateKeyframes,
+    animationDuration: '3s',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite',
+    animationPlayState: paused ? 'paused' : 'running'
+  }),
   row: {
     display: 'flex',
     borderColor: 'black',
@@ -886,5 +1322,83 @@ const styles = css.create({
     borderBlockWidth: 20,
     borderInlineWidth: 20,
     borderStyle: 'solid'
+  },
+  directionControls: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 10
+  },
+  directionButton: {
+    marginRight: 10,
+    marginBottom: 5
+  },
+  // Additional styles for proper Flow typing
+  squareWithMargin: {
+    height: 100,
+    width: 100,
+    marginRight: '10px',
+    backgroundColor: 'lightblue'
+  },
+  squareWithMarginGreen: {
+    height: 100,
+    width: 100,
+    marginRight: '10px',
+    backgroundColor: 'lightgreen'
+  },
+  squareWithMarginYellow: {
+    height: 100,
+    width: 100,
+    marginRight: '10px',
+    backgroundColor: 'lightyellow'
+  },
+  squareWithMarginPink: {
+    height: 100,
+    width: 100,
+    marginRight: '10px',
+    backgroundColor: 'lightpink'
+  },
+  smallSquare: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'darkblue',
+    marginTop: 40
+  },
+  smallSquareGreen: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'darkgreen',
+    marginTop: 40
+  },
+  smallSquareYellow: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'darkyellow',
+    marginTop: 40
+  },
+  smallSquarePink: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'darkpink',
+    marginTop: 40
+  },
+  smallSquareOrange: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'orange',
+    marginTop: 40
+  },
+  smallSquarePurple: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'purple',
+    marginTop: 40
+  },
+  containerWithMargin: {
+    marginRight: '20px'
+  },
+  smallText: {
+    fontSize: '12px',
+    marginBottom: '5px'
   }
 });

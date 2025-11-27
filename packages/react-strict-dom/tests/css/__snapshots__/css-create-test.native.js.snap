@@ -16,6 +16,15 @@ exports[`css.create() properties animationDuration 1`] = `
 }
 `;
 
+exports[`css.create() properties animationName 1`] = `
+{
+  "animationDuration": 1000,
+  "animationName": "keyframe_1",
+  "boxSizing": "content-box",
+  "position": "static",
+}
+`;
+
 exports[`css.create() properties backgroundImage 1`] = `
 {
   "boxSizing": "content-box",
