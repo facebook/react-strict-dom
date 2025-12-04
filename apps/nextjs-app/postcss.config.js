@@ -12,7 +12,7 @@ module.exports = {
     'react-strict-dom/postcss-plugin': {
       include: [
         'src/**/*.{js,jsx,ts,tsx}',
-        '../../node_modules/example-ui/**/*.js'
+        '../../node_modules/example-ui/**/*.jsx'
       ],
       babelConfig: {
         babelrc: false,
