@@ -122,7 +122,7 @@ function MyComponent() {
 
 ### Inherited styles
 
-Inheritance is the process by which elements inherit the the values of properties from their ancestors in the DOM tree. Some properties, e.g. `color`, are automatically inherited by the children of the element to which they are applied. Each property defines whether it will be automatically inherited.
+Inheritance is the process by which elements inherit the values of properties from their ancestors in the DOM tree. Some properties, e.g. `color`, are automatically inherited by the children of the element to which they are applied. Each property defines whether it will be automatically inherited.
 
 React Strict DOM currently only supports inheritance for text style properties on native (these style properties can be applied to any element.) The `inherit` or `unset` value can also be set for any of these properties to restore their default behavior.
 
