@@ -97,7 +97,7 @@ This is the same approach used by React Native, so if you are already re-declari
 
 ## Suppressing logs on React Native
 
-RSD provides comprehensive runtime warnings and errors to inform developers of about prop and style incompatibilities on native. If there are certain logs that you wish to suppress, this can be done by configuring the [React Native LogBox](https://reactnative.dev/docs/debugging#logbox) at the root of the native app. Messages follow a common structure, which allows for precise or general suppression. For example:
+RSD provides comprehensive runtime warnings and errors to inform developers about prop and style incompatibilities on native. If there are certain logs that you wish to suppress, this can be done by configuring the [React Native LogBox](https://reactnative.dev/docs/debugging#logbox) at the root of the native app. Messages follow a common structure, which allows for precise or general suppression. For example:
 
 ```js
 import { LogBox } from 'react-native';
