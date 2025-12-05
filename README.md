@@ -17,7 +17,6 @@ Development monorepo for "React Strict DOM".
   * [expo-app](https://github.com/facebook/react-strict-dom/tree/main/apps/expo-app)
   * [nextjs-app](https://github.com/facebook/react-strict-dom/blob/main/apps/nextjs-app)
   * [vite-app](https://github.com/facebook/react-strict-dom/blob/main/apps/vite-app)
-  * [tanstack-start-app](https://github.com/facebook/react-strict-dom/blob/main/apps/tanstack-start-app)
   * [platform-tests](https://github.com/facebook/react-strict-dom/blob/main/apps/platform-tests)
 * `packages`
   * Contains the individual packages managed in the monorepo.
