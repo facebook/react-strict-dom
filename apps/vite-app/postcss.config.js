@@ -1,4 +1,4 @@
-const dev = process.env.NODE_ENV !== 'production';
+import babelConfig from './babel.config.js';
 
 export default {
   plugins: {
@@ -7,22 +7,7 @@ export default {
         'src/**/*.{js,jsx,ts,tsx}',
         '../../node_modules/example-ui/**/*.jsx'
       ],
-      babelConfig: {
-        babelrc: false,
-        parserOpts: {
-          plugins: ['typescript', 'jsx']
-        },
-        presets: [
-          [
-            'react-strict-dom/babel-preset',
-            {
-              debug: dev,
-              dev,
-              rootDir: process.cwd()
-            }
-          ]
-        ]
-      }
+      babelConfig
     },
     autoprefixer: {}
   }
