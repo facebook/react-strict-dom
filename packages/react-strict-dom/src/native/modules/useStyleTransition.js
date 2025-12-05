@@ -18,6 +18,12 @@ import * as React from 'react';
 import * as ReactNative from '../react-native';
 
 import { errorMsg, warnMsg } from '../../shared/logUtils';
+import {
+  isNumber,
+  isString,
+  canUseNativeDriver,
+  getEasingFunction
+} from './sharedAnimationUtils';
 
 type AnimatedStyle = {
   [string]: ?ReactNativeStyleValue | $ReadOnlyArray<mixed>
@@ -31,55 +37,6 @@ type TransitionMetadata = $ReadOnly<{
 }>;
 
 const INPUT_RANGE: $ReadOnlyArray<number> = [0, 1];
-
-function isNumber(num: mixed): num is number {
-  return typeof num === 'number';
-}
-
-function isString(str: mixed): str is string {
-  return typeof str === 'string';
-}
-
-function canUseNativeDriver(
-  transitionProperties: ReactNativeStyle | void
-): boolean {
-  if (transitionProperties === undefined) {
-    return false;
-  }
-  for (const property in transitionProperties) {
-    const value = transitionProperties?.[property];
-    if (property === 'opacity') {
-      continue;
-    }
-    if (
-      property === 'transform' &&
-      Array.isArray(value) &&
-      !value.includes('skew')
-    ) {
-      continue;
-    }
-    return false;
-  }
-  return true;
-}
-
-function getEasingFunction(input: ?string) {
-  if (input === 'ease') {
-    return ReactNative.Easing.ease;
-  } else if (input === 'ease-in') {
-    return ReactNative.Easing.in(ReactNative.Easing.ease);
-  } else if (input === 'ease-out') {
-    return ReactNative.Easing.out(ReactNative.Easing.ease);
-  } else if (input === 'ease-in-out') {
-    return ReactNative.Easing.inOut(ReactNative.Easing.ease);
-  } else if (input != null && input.includes('cubic-bezier')) {
-    const chunk = input.split('cubic-bezier(')[1];
-    const str = chunk.split(')')[0];
-    const curve = str.split(',').map((point) => parseFloat(point.trim()));
-    return ReactNative.Easing.bezier(...curve);
-  }
-  return ReactNative.Easing.linear;
-}
 
 function getTransitionProperties(property: mixed): ?(string[]) {
   if (property === 'all') {
