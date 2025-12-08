@@ -28,6 +28,7 @@ exports[`<compat.native> "as" equals "img": as=img 1`] = `
 exports[`<compat.native> "as" equals "input": as=input 1`] = `
 <TextInput
   accessibilityLabel="label"
+  onSelectionChange={[Function]}
   placeholderTextColor="green"
   ref={[Function]}
   secureTextEntry={true}
@@ -54,6 +55,7 @@ exports[`<compat.native> "as" equals "textarea": as=textarea 1`] = `
   accessibilityLabel="label"
   multiline={true}
   numberOfLines={3}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={{}}
 />

@@ -120,6 +120,39 @@ function getOrCreateStrictRef(
             }
           }
         });
+      } else if (tagName === 'input' || tagName === 'textarea') {
+        const setSelectionRange = node?.setSelectionRange;
+        if (setSelectionRange == null) {
+          // $FlowFixMe[prop-missing]
+          Object.defineProperty(strictRef, 'setSelectionRange', {
+            value: (a: number, b: number) => {
+              node.setSelection(a, b);
+              // Update cached selection state
+              node._selectionStart = a;
+              node._selectionEnd = b;
+            },
+            configurable: true,
+            writable: true
+          });
+        }
+        const selectionStart = node?.selectionStart;
+        if (selectionStart == null) {
+          // $FlowFixMe[prop-missing]
+          Object.defineProperty(strictRef, 'selectionStart', {
+            get() {
+              return node._selectionStart ?? 0;
+            }
+          });
+        }
+        const selectionEnd = node?.selectionEnd;
+        if (selectionEnd == null) {
+          // $FlowFixMe[prop-missing]
+          Object.defineProperty(strictRef, 'selectionEnd', {
+            get() {
+              return node._selectionEnd ?? 0;
+            }
+          });
+        }
       }
 
       memoizedStrictRefs.set(node, strictRef);

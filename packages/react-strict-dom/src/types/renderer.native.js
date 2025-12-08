@@ -99,6 +99,7 @@ type ReactNativeProps = {
   onPointerUp?: ViewProps['onPointerUp'],
   onPress?: ?(event: PressEvent) => void,
   onScroll?: $FlowFixMe,
+  onSelectionChange?: TextInputProps['onSelectionChange'],
   onSubmitEditing?: TextInputProps['onSubmitEditing'],
   onTouchCancel?: ViewProps['onTouchCancel'],
   onTouchStart?: ViewProps['onTouchStart'],
