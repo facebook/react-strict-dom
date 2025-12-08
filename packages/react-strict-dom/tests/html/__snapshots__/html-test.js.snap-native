@@ -3126,6 +3126,7 @@ exports[`<html.*> "img" supports inline event handlers 1`] = `
 
 exports[`<html.*> "input" default rendering 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -3139,6 +3140,7 @@ exports[`<html.*> "input" default rendering 1`] = `
 
 exports[`<html.*> "input" ignores and warns about unsupported attributes 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -3158,6 +3160,7 @@ exports[`<html.*> "input" supports additional input attributes 1`] = `
   focusable={false}
   maxLength="10"
   onChange={[Function]}
+  onSelectionChange={[Function]}
   placeholder="Placeholder"
   ref={[Function]}
   style={
@@ -3206,6 +3209,7 @@ exports[`<html.*> "input" supports global attributes 1`] = `
   importantForAccessibility="no-hide-descendants"
   inputMode="numeric"
   nativeID="some-id"
+  onSelectionChange={[Function]}
   ref={[Function]}
   role="article"
   spellCheck={true}
@@ -3250,6 +3254,7 @@ exports[`<html.*> "input" supports inline event handlers 1`] = `
   onPointerUp={[Function]}
   onPress={[Function]}
   onScroll={[Function]}
+  onSelectionChange={[Function]}
   onSubmitEditing={[Function]}
   onTouchCancel={[Function]}
   onTouchEnd={[Function]}
@@ -5402,6 +5407,7 @@ exports[`<html.*> "sup" supports inline event handlers 1`] = `
 exports[`<html.*> "textarea" default rendering 1`] = `
 <TextInput
   multiline={true}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -5417,6 +5423,7 @@ exports[`<html.*> "textarea" default rendering 1`] = `
 exports[`<html.*> "textarea" ignores and warns about unsupported attributes 1`] = `
 <TextInput
   multiline={true}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -5439,6 +5446,7 @@ exports[`<html.*> "textarea" supports additional textarea attributes 1`] = `
   multiline={true}
   numberOfLines={3}
   onChange={[Function]}
+  onSelectionChange={[Function]}
   placeholder="Placeholder"
   ref={[Function]}
   style={
@@ -5488,6 +5496,7 @@ exports[`<html.*> "textarea" supports global attributes 1`] = `
   importantForAccessibility="no-hide-descendants"
   multiline={true}
   nativeID="some-id"
+  onSelectionChange={[Function]}
   ref={[Function]}
   role="article"
   spellCheck={true}
@@ -5534,6 +5543,7 @@ exports[`<html.*> "textarea" supports inline event handlers 1`] = `
   onPointerUp={[Function]}
   onPress={[Function]}
   onScroll={[Function]}
+  onSelectionChange={[Function]}
   onSubmitEditing={[Function]}
   onTouchCancel={[Function]}
   onTouchEnd={[Function]}

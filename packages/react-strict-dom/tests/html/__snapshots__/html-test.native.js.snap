@@ -84,6 +84,7 @@ exports[`<html.*> (native polyfills) polyfills: inheritence inherited styles 1`]
       Inherits text styles
     </Text>
     <TextInput
+      onSelectionChange={[Function]}
       placeholder="Does not inherit text styles"
       ref={[Function]}
       style={
@@ -249,6 +250,7 @@ exports[`<html.*> (native polyfills) polyfills: props <img> "srcSet" prop with l
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "additional-name" 1`] = `
 <TextInput
   autoComplete="additional-name"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -263,6 +265,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "address-line1" 1`] = `
 <TextInput
   autoComplete="address-line1"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -277,6 +280,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "address-line2" 1`] = `
 <TextInput
   autoComplete="address-line2"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -291,6 +295,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday" 1`] = `
 <TextInput
   autoComplete="bday"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -305,6 +310,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-day" 1`] = `
 <TextInput
   autoComplete="bday-day"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -319,6 +325,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-month" 1`] = `
 <TextInput
   autoComplete="bday-month"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -333,6 +340,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "bday-year" 1`] = `
 <TextInput
   autoComplete="bday-year"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -347,6 +355,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-csc" 1`] = `
 <TextInput
   autoComplete="cc-csc"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -361,6 +370,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp" 1`] = `
 <TextInput
   autoComplete="cc-exp"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -375,6 +385,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp-month" 1`] = `
 <TextInput
   autoComplete="cc-exp-month"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -389,6 +400,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-exp-year" 1`] = `
 <TextInput
   autoComplete="cc-exp-year"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -403,6 +415,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "cc-number" 1`] = `
 <TextInput
   autoComplete="cc-number"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -417,6 +430,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "country" 1`] = `
 <TextInput
   autoComplete="country"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -431,6 +445,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "current-password" 1`] = `
 <TextInput
   autoComplete="current-password"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -445,6 +460,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "email" 1`] = `
 <TextInput
   autoComplete="email"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -459,6 +475,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "family-name" 1`] = `
 <TextInput
   autoComplete="family-name"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -473,6 +490,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "given-name" 1`] = `
 <TextInput
   autoComplete="given-name"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -487,6 +505,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "honorific-prefix" 1`] = `
 <TextInput
   autoComplete="honorific-prefix"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -501,6 +520,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "honorific-suffix" 1`] = `
 <TextInput
   autoComplete="honorific-suffix"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -515,6 +535,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "name" 1`] = `
 <TextInput
   autoComplete="name"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -529,6 +550,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "new-password" 1`] = `
 <TextInput
   autoComplete="new-password"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -543,6 +565,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "nickname" 1`] = `
 <TextInput
   autoComplete="nickname"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -557,6 +580,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "off" 1`] = `
 <TextInput
   autoComplete="off"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -571,6 +595,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "on" 1`] = `
 <TextInput
   autoComplete="on"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -585,6 +610,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "one-time-code" 1`] = `
 <TextInput
   autoComplete="one-time-code"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -599,6 +625,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "organization" 1`] = `
 <TextInput
   autoComplete="organization"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -613,6 +640,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "organization-title" 1`] = `
 <TextInput
   autoComplete="organization-title"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -627,6 +655,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "postal-code" 1`] = `
 <TextInput
   autoComplete="postal-code"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -641,6 +670,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "sex" 1`] = `
 <TextInput
   autoComplete="sex"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -655,6 +685,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "street-address" 1`] = `
 <TextInput
   autoComplete="street-address"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -669,6 +700,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel" 1`] = `
 <TextInput
   autoComplete="tel"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -683,6 +715,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel-country-code" 1`] = `
 <TextInput
   autoComplete="tel-country-code"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -697,6 +730,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "tel-national" 1`] = `
 <TextInput
   autoComplete="tel-national"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -711,6 +745,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "url" 1`] = `
 <TextInput
   autoComplete="url"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -725,6 +760,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" pro
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoComplete" prop: "username" 1`] = `
 <TextInput
   autoComplete="username"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -741,6 +777,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "disabled" prop 1`
   disabled={true}
   editable={false}
   focusable={false}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -754,6 +791,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "disabled" prop 1`
 
 exports[`<html.*> (native polyfills) polyfills: props <input> "style" prop 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   placeholderTextColor="pink"
   ref={[Function]}
   style={
@@ -771,6 +809,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "style" prop 1`] =
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "email" 1`] = `
 <TextInput
   inputMode="email"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -785,6 +824,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "emai
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "number" 1`] = `
 <TextInput
   inputMode="numeric"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -798,6 +838,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "numb
 
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "password" 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   secureTextEntry={true}
   style={
@@ -813,6 +854,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "pass
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "search" 1`] = `
 <TextInput
   inputMode="search"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -827,6 +869,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "sear
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "tel" 1`] = `
 <TextInput
   inputMode="tel"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -841,6 +884,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "tel"
 exports[`<html.*> (native polyfills) polyfills: props <input> "type" prop: "url" 1`] = `
 <TextInput
   inputMode="url"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -858,6 +902,7 @@ exports[`<html.*> (native polyfills) polyfills: props <textarea> "disabled" prop
   editable={false}
   focusable={false}
   multiline={true}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -874,6 +919,7 @@ exports[`<html.*> (native polyfills) polyfills: props <textarea> "rows" prop 1`]
 <TextInput
   multiline={true}
   numberOfLines={5}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -980,6 +1026,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop 1`] =
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "false" 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -993,6 +1040,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "fal
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "false" 2`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1007,6 +1055,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "fal
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "hidden" 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1021,6 +1070,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "hid
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "true" 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1035,6 +1085,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "tru
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "true" 2`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1049,6 +1100,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "tru
 
 exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: "until-found" 1`] = `
 <TextInput
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1083,6 +1135,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "hidden" prop: disp
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "decimal" 1`] = `
 <TextInput
   inputMode="decimal"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1097,6 +1150,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "email" 1`] = `
 <TextInput
   inputMode="email"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1111,6 +1165,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "numeric" 1`] = `
 <TextInput
   inputMode="numeric"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1125,6 +1180,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "search" 1`] = `
 <TextInput
   inputMode="search"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1139,6 +1195,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "tel" 1`] = `
 <TextInput
   inputMode="tel"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1153,6 +1210,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "url" 1`] = `
 <TextInput
   inputMode="url"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -1167,6 +1225,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "inputMode" prop: "
 exports[`<html.*> (native polyfills) polyfills: props global "tabIndex" prop 1`] = `
 <TextInput
   focusable={false}
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {

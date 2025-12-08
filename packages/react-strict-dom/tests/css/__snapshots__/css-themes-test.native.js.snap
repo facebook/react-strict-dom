@@ -57,6 +57,7 @@ exports[`css.* themes inherited themes 1`] = `
     Expect color:green
   </Text>,
   <TextInput
+    onSelectionChange={[Function]}
     placeholder="Expect placeholderTextColor:green"
     placeholderTextColor="green"
     ref={[Function]}
@@ -91,6 +92,7 @@ exports[`css.* themes inherited themes 1`] = `
       Expect color:green (inherited)
     </Text>
     <TextInput
+      onSelectionChange={[Function]}
       placeholder="Expect placeholderTextColor:green"
       placeholderTextColor="green"
       ref={[Function]}
@@ -125,6 +127,7 @@ exports[`css.* themes inherited themes 1`] = `
         Expect color:blue (nested)
       </Text>
       <TextInput
+        onSelectionChange={[Function]}
         placeholder="Expect placeholderTextColor:blue"
         placeholderTextColor="blue"
         ref={[Function]}

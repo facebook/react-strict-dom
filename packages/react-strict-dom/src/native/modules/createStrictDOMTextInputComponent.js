@@ -14,6 +14,7 @@ import * as React from 'react';
 import * as ReactNative from '../react-native';
 
 import { errorMsg } from '../../shared/logUtils';
+import { mergeRefs } from '../../shared/mergeRefs';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
@@ -23,7 +24,21 @@ const AnimatedTextInput = ReactNative.Animated.createAnimatedComponent<
   // $FlowFixMe: React Native animated component typing issue
 >(ReactNative.TextInput);
 
+// $FlowFixMe[unclear-type]
+type Node = any;
+
 type StrictInputProps = StrictReactDOMInputProps | StrictReactDOMTextAreaProps;
+
+// Helper to update cached selection state for selectionStart/End polyfill
+function updateCachedSelection(
+  node: ?Node,
+  selection: ?{ start: number, end: number }
+) {
+  if (node != null && selection != null) {
+    node._selectionStart = selection.start;
+    node._selectionEnd = selection.end;
+  }
+}
 
 export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
   tagName: string,
@@ -33,6 +48,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     let NativeComponent:
       | typeof ReactNative.TextInput
       | typeof AnimatedTextInput = ReactNative.TextInput;
+    const nodeRef = React.useRef<?Node>(null);
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
     const {
@@ -45,6 +61,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       onChange,
       onInput,
       onKeyDown,
+      onSelectionChange,
       placeholder,
       readOnly,
       rows,
@@ -124,7 +141,9 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     }
     if (onChange != null || onInput != null) {
       nativeProps.onChange = function (e) {
-        const { text } = e.nativeEvent;
+        const { text, selection } = e.nativeEvent;
+        // Update cached selection state immediately to ensure sync with onChange
+        updateCachedSelection(nodeRef.current, selection);
         if (onInput != null) {
           onInput({
             target: {
@@ -165,6 +184,14 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
         });
       };
     }
+    // Part of polyfill for selectionStart/End
+    nativeProps.onSelectionChange = function (e) {
+      const { selection } = e.nativeEvent;
+      updateCachedSelection(nodeRef.current, selection);
+      if (onSelectionChange != null) {
+        onSelectionChange(e);
+      }
+    };
     if (placeholder != null) {
       nativeProps.placeholder = placeholder;
     }
@@ -178,7 +205,13 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       nativeProps.value = value;
     }
 
-    nativeProps.ref = elementRef;
+    nativeProps.ref = React.useMemo(
+      () =>
+        mergeRefs((node) => {
+          nodeRef.current = node;
+        }, elementRef),
+      [elementRef]
+    );
 
     // Use Animated components if necessary
     if (nativeProps.animated === true) {

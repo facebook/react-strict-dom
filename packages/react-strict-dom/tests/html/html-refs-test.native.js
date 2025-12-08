@@ -25,11 +25,15 @@ describe('<html.*> refs', () => {
   });
 
   describe('imperative api', () => {
+    const setSelectionMock = jest.fn();
+
+    // This mock should only built-in host element APIs (React Native)
     function createNodeMock(element) {
       const obj = {};
       obj.blur = () => {};
       obj.focus = () => {};
       obj.offsetWidth = 15;
+      obj.setSelection = setSelectionMock;
       return obj;
     }
 
@@ -39,6 +43,12 @@ describe('<html.*> refs', () => {
           <html.input
             ref={(node) => {
               expect(node.offsetWidth).toBe(15);
+              expect(node.selectionStart).toBe(0);
+              expect(node.selectionEnd).toBe(0);
+              expect(() => node.setSelectionRange(1, 5)).not.toThrow();
+              expect(setSelectionMock).toHaveBeenCalledWith(1, 5);
+              expect(node.selectionStart).toBe(1);
+              expect(node.selectionEnd).toBe(5);
             }}
           />,
           { createNodeMock }
