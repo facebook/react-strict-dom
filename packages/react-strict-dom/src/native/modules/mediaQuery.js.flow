@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-type Values = $ReadOnly<{
+type MediaQueryValues = $ReadOnly<{
   type?: 'screen',
   width?: number,
   height?: number,
@@ -18,5 +18,5 @@ type Values = $ReadOnly<{
 }>;
 
 declare export const mediaQuery : {
-  match: (mediaQuery: string, values: Values) => boolean
+  match: (mediaQuery: string, values: MediaQueryValues) => boolean
 };
