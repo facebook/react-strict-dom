@@ -281,6 +281,7 @@ export type StrictReactDOMProps = $ReadOnly<{
 
   // Other
   autoCapitalize?: ?(
+    | true
     | 'off'
     | 'none'
     | 'on'
