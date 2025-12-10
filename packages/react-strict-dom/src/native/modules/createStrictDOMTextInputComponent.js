@@ -52,6 +52,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
     const {
+      autoCapitalize,
       autoComplete,
       defaultValue,
       disabled,
@@ -121,6 +122,9 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
 
     // Component-specific props
 
+    if (autoCapitalize != null) {
+      nativeProps.autoCapitalize = autoCapitalize;
+    }
     if (autoComplete != null) {
       nativeProps.autoComplete = autoComplete;
     }

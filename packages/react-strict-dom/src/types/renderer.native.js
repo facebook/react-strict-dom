@@ -55,6 +55,7 @@ type ReactNativeProps = {
     text?: ?string
   },
   accessibilityViewIsModal?: ?boolean,
+  autoCapitalize?: ?('none' | 'sentences' | 'words' | 'characters'),
   autoComplete?: ?string,
   alt?: ?Stringish,
   animated?: ?boolean, // non-standard
