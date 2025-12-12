@@ -250,6 +250,7 @@ exports[`<html.*> (native polyfills) polyfills: props <img> "srcSet" prop with l
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "characters" 1`] = `
 <TextInput
   autoCapitalize="characters"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -264,6 +265,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "none" 1`] = `
 <TextInput
   autoCapitalize="none"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -278,6 +280,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "off" 1`] = `
 <TextInput
   autoCapitalize="none"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -292,6 +295,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "on" 1`] = `
 <TextInput
   autoCapitalize="sentences"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -306,6 +310,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "sentences" 1`] = `
 <TextInput
   autoCapitalize="sentences"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
@@ -320,6 +325,7 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "words" 1`] = `
 <TextInput
   autoCapitalize="words"
+  onSelectionChange={[Function]}
   ref={[Function]}
   style={
     {
