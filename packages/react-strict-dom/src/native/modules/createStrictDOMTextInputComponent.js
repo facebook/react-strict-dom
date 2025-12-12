@@ -126,7 +126,6 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       let _autoCapitalize;
       switch (autoCapitalize) {
         case 'on':
-        case true:
           _autoCapitalize = 'sentences';
           break;
         case 'off':
