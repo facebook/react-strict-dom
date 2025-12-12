@@ -123,19 +123,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     // Component-specific props
 
     if (autoCapitalize != null) {
-      let _autoCapitalize;
-      switch (autoCapitalize) {
-        case 'on':
-          _autoCapitalize = 'sentences';
-          break;
-        case 'off':
-          _autoCapitalize = 'none';
-          break;
-        default:
-          _autoCapitalize = autoCapitalize;
-          break;
-      }
-      nativeProps.autoCapitalize = _autoCapitalize;
+      nativeProps.autoCapitalize = autoCapitalize;
     }
     if (autoComplete != null) {
       nativeProps.autoComplete = autoComplete;
