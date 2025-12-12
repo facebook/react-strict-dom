@@ -280,15 +280,7 @@ export type StrictReactDOMProps = $ReadOnly<{
   onTouchMove?: $FlowFixMe, // TEMP
 
   // Other
-  autoCapitalize?: ?(
-    | true
-    | 'off'
-    | 'none'
-    | 'on'
-    | 'sentences'
-    | 'words'
-    | 'characters'
-  ),
+  autoCapitalize?: ?('none' | 'sentences' | 'words' | 'characters'),
   autoFocus?: ?boolean,
   children?: React.Node,
   'data-layoutconformance'?: ?('classic' | 'strict'),

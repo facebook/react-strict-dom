@@ -56,15 +56,7 @@ type ReactNativeProps = {
   },
   accessibilityViewIsModal?: ?boolean,
   autoComplete?: ?string,
-  autoCapitalize?: ?(
-    | true
-    | 'off'
-    | 'none'
-    | 'on'
-    | 'sentences'
-    | 'words'
-    | 'characters'
-  ),
+  autoCapitalize?: ?('none' | 'sentences' | 'words' | 'characters'),
   alt?: ?Stringish,
   animated?: ?boolean, // non-standard
   caretHidden?: TextInputProps['caretHidden'],
