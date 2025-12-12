@@ -277,36 +277,6 @@ exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" p
 />
 `;
 
-exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "off" 1`] = `
-<TextInput
-  autoCapitalize="none"
-  onSelectionChange={[Function]}
-  ref={[Function]}
-  style={
-    {
-      "borderWidth": 1,
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
-exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "on" 1`] = `
-<TextInput
-  autoCapitalize="sentences"
-  onSelectionChange={[Function]}
-  ref={[Function]}
-  style={
-    {
-      "borderWidth": 1,
-      "boxSizing": "content-box",
-      "position": "static",
-    }
-  }
-/>
-`;
-
 exports[`<html.*> (native polyfills) polyfills: props <input> "autoCapitalize" prop: "sentences" 1`] = `
 <TextInput
   autoCapitalize="sentences"

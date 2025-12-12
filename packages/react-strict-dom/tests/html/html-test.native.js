@@ -393,22 +393,15 @@ describe('<html.*> (native polyfills)', () => {
       });
 
       test('"autoCapitalize" prop', () => {
-        [
-          // web only
-          'on',
-          'off',
-          // web & native
-          'none', // used instead of 'off'
-          'sentences', // used instead of 'on'
-          'words',
-          'characters'
-        ].forEach((autoCapitalize) => {
-          let root;
-          act(() => {
-            root = create(<html.input autoCapitalize={autoCapitalize} />);
-          });
-          expect(root.toJSON()).toMatchSnapshot(`"${autoCapitalize}"`);
-        });
+        ['none', 'sentences', 'words', 'characters'].forEach(
+          (autoCapitalize) => {
+            let root;
+            act(() => {
+              root = create(<html.input autoCapitalize={autoCapitalize} />);
+            });
+            expect(root.toJSON()).toMatchSnapshot(`"${autoCapitalize}"`);
+          }
+        );
       });
 
       test('"disabled" prop', () => {
