@@ -110,7 +110,7 @@ const globalAttributes = {
   'aria-valuemin': 0,
   'aria-valuenow': 5,
   'aria-valuetext': 'Five',
-  autoCapitalize: true,
+  autoCapitalize: 'on',
   autoFocus: true,
   children: 'children',
   'data-testid': 'some-test-id',
