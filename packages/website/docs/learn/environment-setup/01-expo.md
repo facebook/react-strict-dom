@@ -70,7 +70,7 @@ module.exports = function (api) {
 
 ```js title="postcss.config.js"
 module.exports = {
-  plugins: {
+  plugins: [
     require('react-strict-dom/postcss-plugin')({
       include: [
         // Include source files to watch for style changes
@@ -80,7 +80,7 @@ module.exports = {
       ]
     }),
     require('autoprefixer')
-  }
+  ]
 };
 ```
 

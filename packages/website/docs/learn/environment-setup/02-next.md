@@ -54,7 +54,7 @@ export default config;
 import babelLoader from "./babelLoader.config.js";
 
 const config = {
-  plugins: {
+  plugins: [
     "react-strict-dom/postcss-plugin": {
       include: [
         // Include source files to watch for style changes
@@ -65,7 +65,7 @@ const config = {
       babelConfig: babelLoader,
       useLayers: true,
     }
-  },
+  ],
 };
 
 export default config;
