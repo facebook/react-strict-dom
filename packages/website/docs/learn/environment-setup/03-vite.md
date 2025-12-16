@@ -54,7 +54,7 @@ export default {
     "react-strict-dom/postcss-plugin": {
       include: [
         // Include source files to watch for style changes
-        // Be specific and avoid a non specific glob like "**/*.{js,jsx}" which could cause major performance issues during build
+        // Be specific and avoid a non-specific glob like "**/*.{js,jsx}" which could cause major performance issues during build
         'src/**/*.{js,jsx,mjs,ts,tsx}',
         // List any installed node_modules that include UI built with React Strict DOM
         'node_modules/<package-name>/*.js'
@@ -68,7 +68,7 @@ export default {
 
 ## Vite configuration
 
-If you just created a brand new vite app, you might need to install
+If you just created a brand new Vite app, you might need to install
 
 ```
 npm install vite-plugin-babel vite-tsconfig-paths
@@ -147,7 +147,7 @@ export default defineConfig(() => ({
 
 ## TanStack Start
 
-If you plan to use Tanstack Start, you will need to adjust your vite config with the `ssr` options
+If you plan to use TanStack Start, you will need to adjust your vite config with the `ssr` options
 
 ```js title="vite.config.ts"
 import { defineConfig } from "vite";
