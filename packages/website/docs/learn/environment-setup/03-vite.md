@@ -50,10 +50,11 @@ export default {
 import babelLoader from "./babel.config.js";
 
 export default {
-  plugins: [
+  plugins: {
     "react-strict-dom/postcss-plugin": {
       include: [
         // Include source files to watch for style changes
+        // Be specific and avoid a non specific glob like "**/*.{js,jsx}" which could cause major performance issues during build
         'src/**/*.{js,jsx,mjs,ts,tsx}',
         // List any installed node_modules that include UI built with React Strict DOM
         'node_modules/<package-name>/*.js'
@@ -61,19 +62,25 @@ export default {
       babelConfig: babelLoader,
       useLayers: true,
     },
-  ],
+  },
 };
 ```
 
 ## Vite configuration
 
+If you just created a brand new vite app, you might need to install
+
+```
+npm install vite-plugin-babel vite-tsconfig-paths
+```
+
 Create or edit the `vite.config.ts` file as follows.
 
 ```js title="vite.config.ts"
 import { defineConfig } from "vite";
-import viteBabel from "vite-plugin-babel";
-import viteReact from "@vitejs/plugin-react";
 import tsConfigPaths from "vite-tsconfig-paths";
+import viteReact from "@vitejs/plugin-react";
+import viteBabel from "vite-plugin-babel";
 
 export default defineConfig(() => ({
   plugins: [
@@ -92,7 +99,7 @@ export default defineConfig(() => ({
 
 Your app needs to include a CSS file that contains a `@react-strict-dom` directive. This acts as a placeholder that is replaced by the generated CSS during builds.
 
-```css title="strict.css"
+```css title="src/strict.css"
 /* This directive is used by the react-strict-dom postcss plugin. */
 /* It is automatically replaced with generated CSS during builds. */
 @react-strict-dom;
@@ -101,6 +108,8 @@ Your app needs to include a CSS file that contains a `@react-strict-dom` directi
 Next, import the CSS file in the `main.tsx` file.
 
 ```js title="src/main.tsx"
+// ...
+
 // Required for CSS to work on Vite
 import "./strict.css";
 
@@ -134,5 +143,21 @@ export default defineConfig(() => ({
     ],
   },
 }));
+```
 
+## TanStack Start
+
+If you plan to use Tanstack Start, you will need to adjust your vite config with the `ssr` options
+
+```js title="vite.config.ts"
+import { defineConfig } from "vite";
+
+//...
+
+export default defineConfig(() => ({
+  // ...
+  ssr: {
+    noExternal: ["react-strict-dom"],
+  },
+}));
 ```
