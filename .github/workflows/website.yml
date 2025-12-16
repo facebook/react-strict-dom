@@ -35,7 +35,7 @@ jobs:
       - name: Build website
         run: npm run build -w website
       - name: Upload build artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./packages/website/build
 
