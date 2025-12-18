@@ -8,16 +8,15 @@
  */
 
 import type { SpringAnimationConfig } from '../../shared/SharedAnimatedTypes';
-import type {
-  AnimatedAnimation,
-  GenerateResult,
-  KeyframeMap
-} from './Animation';
 
 import { TIMESTEP_COEFFICIENT } from '../utils/constants';
 import * as SpringConfig from '../utils/SpringConfig';
 
-export default class SpringAnimation implements AnimatedAnimation {
+/**
+ * SpringAnimation simulates a spring physics animation.
+ * It generates a timeline of values from the spring simulation.
+ */
+export default class SpringAnimation {
   #overshootClamping: boolean;
   #restDisplacementThreshold: number;
   #restSpeedThreshold: number;
@@ -121,20 +120,19 @@ export default class SpringAnimation implements AnimatedAnimation {
     return this.#timeline;
   }
 
-  generate(
-    fromValue: number,
-    onUpdate: (value: number, keyframeMap: KeyframeMap) => void
-  ): GenerateResult {
-    const keyframeMap: KeyframeMap = new Map();
-
+  /**
+   * Runs the spring simulation from the given starting value.
+   * Populates the timeline array with sampled positions.
+   */
+  generate(fromValue: number): void {
     this.#fromValue = fromValue;
+    this.#timeline = [];
 
     let elapsedTime = 0;
     let finished = false;
     while (!finished) {
       const [nextValue, isFinished] = this.#sampleSpring(elapsedTime);
       this.#timeline.push(nextValue);
-      onUpdate(nextValue, keyframeMap);
       if (!isFinished) {
         elapsedTime += TIMESTEP_COEFFICIENT;
       }
@@ -142,18 +140,6 @@ export default class SpringAnimation implements AnimatedAnimation {
     }
 
     this.#duration = elapsedTime;
-
-    const config: Partial<EffectTiming> = {
-      delay: this.#delay,
-      direction: 'normal',
-      duration: this.#duration,
-      easing: 'linear',
-      fill: 'backwards',
-      iterations: 1,
-      iterationStart: 0
-    };
-
-    return { config, keyframeMap };
   }
 
   #sampleSpring(elapsedTime: number): [number, boolean] {

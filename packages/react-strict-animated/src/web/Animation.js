@@ -7,24 +7,15 @@
  * @flow strict-local
  */
 
-import type {
-  InterpolationConfig,
-  SpringAnimationConfig,
-  TimingAnimationConfig
-} from '../shared/SharedAnimatedTypes';
-import type AnimatedValue from './nodes/AnimatedValue';
+import type { InterpolationConfig } from '../shared/SharedAnimatedTypes';
 import type AnimatedWithChildren from './nodes/AnimatedWithChildren';
-import type {
-  AnimatedNodeType,
-  CompositeAnimation,
-  EndCallback
-} from './types/AnimatedTypes';
+import type { AnimatedNodeType } from './types/AnimatedTypes';
 
 import Delay from './animations/Delay';
 import ParallelAnimation from './animations/ParallelAnimation';
 import SequenceAnimation from './animations/SequenceAnimation';
-import SpringAnimation from './animations/SpringAnimation';
-import TimingAnimation from './animations/TimingAnimation';
+import createSpringAnimation from './animations/SpringCompositeAnimation';
+import createTimingAnimation from './animations/TimingCompositeAnimation';
 import useAnimatedValue from './hooks/useAnimatedValue';
 import { Interpolate } from './nodes/AnimatedInterpolation';
 
@@ -34,39 +25,8 @@ export const parallel = ParallelAnimation;
 export const sequence = SequenceAnimation;
 export const delay = Delay;
 
-export function timing(
-  value: AnimatedValue,
-  config: TimingAnimationConfig
-): CompositeAnimation {
-  return {
-    reset() {
-      value.resetAnimation();
-    },
-    start(callback?: EndCallback) {
-      value.animate(new TimingAnimation(config), callback);
-    },
-    stop() {
-      value.stopAnimation();
-    }
-  };
-}
-
-export function spring(
-  value: AnimatedValue,
-  config: SpringAnimationConfig
-): CompositeAnimation {
-  return {
-    reset() {
-      value.resetAnimation();
-    },
-    start(callback?: EndCallback) {
-      value.animate(new SpringAnimation(config), callback);
-    },
-    stop() {
-      value.stopAnimation();
-    }
-  };
-}
+export const timing = createTimingAnimation;
+export const spring = createSpringAnimation;
 
 export function interpolate<TOutput: number | string>(
   value: AnimatedNodeType,

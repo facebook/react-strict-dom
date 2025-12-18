@@ -9,7 +9,7 @@
 
 import AnimatedStyle from '../nodes/AnimatedStyle';
 import AnimatedValue from '../nodes/AnimatedValue';
-import TimingAnimation from '../animations/TimingAnimation';
+import * as Animation from '../Animation';
 import mockAnimate from './helpers/mockAnimate';
 
 describe('AnimatedValue (web)', () => {
@@ -52,7 +52,7 @@ describe('AnimatedValue (web)', () => {
     );
 
     style.__attach();
-    animated.animate(new TimingAnimation({ toValue: 1, duration: 33 }));
+    Animation.timing(animated, { toValue: 1, duration: 33 }).start();
 
     await Promise.resolve();
 

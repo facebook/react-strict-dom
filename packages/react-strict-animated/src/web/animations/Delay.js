@@ -7,7 +7,12 @@
  * @flow strict-local
  */
 
-import type { CompositeAnimation, EndCallback } from '../types/AnimatedTypes';
+import type {
+  AnimationTiming,
+  CompositeAnimation,
+  EndCallback,
+  ValueAnimation
+} from '../types/AnimatedTypes';
 
 export default function delay(time: number): CompositeAnimation {
   let timeoutID: TimeoutID | null = null;
@@ -37,6 +42,17 @@ export default function delay(time: number): CompositeAnimation {
     },
     stop() {
       stopDelay();
+    },
+    getTiming(): AnimationTiming {
+      return {
+        delay: time,
+        duration: 0,
+        totalDuration: time
+      };
+    },
+    getValueAnimations(): $ReadOnlyArray<ValueAnimation> {
+      // Delay doesn't animate any values
+      return [];
     }
   };
 }
