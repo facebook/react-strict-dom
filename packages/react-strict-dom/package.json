@@ -1,6 +1,6 @@
 {
   "name": "react-strict-dom",
-  "version": "0.0.54",
+  "version": "0.0.55",
   "description": "React Strict DOM",
   "exports": {
     ".": {
@@ -41,7 +41,7 @@
     "@stylexjs/babel-plugin": "^0.15.4",
     "@stylexjs/stylex": "^0.15.4",
     "postcss-value-parser": "^4.1.0",
-    "postcss-react-strict-dom": "0.0.54",
+    "postcss-react-strict-dom": "0.0.55",
     "styleq": "^0.2.1"
   },
   "devDependencies": {

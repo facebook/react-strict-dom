@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "platform-tests",
-  "version": "0.0.54",
+  "version": "0.0.55",
   "main": "./src/app/index.js",
   "scripts": {
     "dev": "expo start --clear",
@@ -18,7 +18,7 @@
     "react-dom": "~19.0.0",
     "react-native": "~0.79.5",
     "react-native-web": "~0.20.0",
-    "react-strict-dom": "0.0.54"
+    "react-strict-dom": "0.0.55"
   },
   "devDependencies": {
     "@babel/core": "^7.27.3"

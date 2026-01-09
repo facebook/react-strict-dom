@@ -1,6 +1,6 @@
 {
   "name": "react-strict-animated",
-  "version": "0.0.1",
+  "version": "0.0.55",
   "description": "A subset of React Native's Animated API supported on web and native.",
   "exports": {
     ".": {
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@react-native/normalize-colors": "^0.79.6",
-    "react-strict-dom": "*"
+    "react-strict-dom": "0.0.55"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

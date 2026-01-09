@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.55 (Jan 9, 2026)
+
+### New features
+
+* [Native] Add support for `autoCapitalize`.
+* [Native] Polyfill `setSelectionRange`, `selectionStart`, `selectionEnd` (requires future release of React Native).
+
+### Fixes
+
+* [Native] Ignore rejections from `AccessibilityInfo.isReduceMotionEnabled`
+
 ## 0.0.54 (Oct 2, 2025)
 
 ### New features
