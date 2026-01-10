@@ -79,6 +79,7 @@ export function usePseudoStates(style: Style): Interaction {
         value.onPointerCancel = () => setActive(false);
         value.onPointerDown = () => setActive(true);
         value.onPointerUp = () => setActive(false);
+        value.onPointerLeave = () => setActive(false);
       }
     }
     return value;
