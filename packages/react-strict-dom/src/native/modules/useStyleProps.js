@@ -17,6 +17,7 @@ import * as ReactNative from '../react-native';
 import { useInheritedStyles } from './ContextInheritedStyles';
 import { usePrefersReducedMotion } from './usePrefersReducedMotion';
 import { usePseudoStates } from './usePseudoStates';
+import { useStyleAnimation } from './useStyleAnimation';
 import { useStyleTransition } from './useStyleTransition';
 import { useViewportScale } from './ContextViewportScale';
 
@@ -160,7 +161,15 @@ export function useStyleProps(
   }
 
   // Polyfill CSS transitions
-  const styleWithAnimations = useStyleTransition(styleProps.style);
+  const styleWithTransitions = useStyleTransition(styleProps.style);
+  if (styleProps.style !== styleWithTransitions) {
+    // This is an internal prop used to track components that need Animated renderers
+    styleProps.animated = true;
+    styleProps.style = styleWithTransitions;
+  }
+
+  // Polyfill CSS animations
+  const styleWithAnimations = useStyleAnimation(styleProps.style);
   if (styleProps.style !== styleWithAnimations) {
     // This is an internal prop used to track components that need Animated renderers
     styleProps.animated = true;
