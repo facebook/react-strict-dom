@@ -1,0 +1,7 @@
+** BUILD FAILED **
+
+
+The following build commands failed:
+	PhaseScriptExecution [CP]\ Check\ Pods\ Manifest.lock /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-08A4A3CD28434E44B6B9DE2E.sh (in target 'animatedexample' from project 'animatedexample')
+	Building project animatedexample with scheme animatedexample and configuration Debug
+(2 failures)

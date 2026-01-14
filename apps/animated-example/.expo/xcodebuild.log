@@ -1,0 +1,195 @@
+Command line invocation:
+    /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/usr/bin/xcodebuild -project /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj -configuration Debug -scheme animatedexample -destination id=2194F777-C3E0-4116-A91E-B728763FFE90
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'animatedexample' in project 'animatedexample' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample/Images.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: faa2cbc382f811b8cd883473a69f86db
+Build description path: /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/XCBuildData/faa2cbc382f811b8cd883473a69f86db.xcbuilddata
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products
+
+ClangStatCache /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk /Users/vincentriemer/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.0-23A339-1a9d0390108642a294102b1248ece119.sdkstatcache
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -o /Users/vincentriemer/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.0-23A339-1a9d0390108642a294102b1248ece119.sdkstatcache
+
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    builtin-create-build-directory /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample-3c4abb672ba3b2a4f87713f1e3dc46ea-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample.xcodeproj
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample-3c4abb672ba3b2a4f87713f1e3dc46ea-VFS-iphonesimulator/all-product-headers.yaml
+
+MkDir /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator/animatedexample.app (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    /bin/mkdir -p /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator/animatedexample.app
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-project-headers.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-project-headers.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-all-target-headers.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-generated-files.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-generated-files.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-own-target-headers.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-DebugDylibPath-normal-arm64.txt (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-all-non-framework-target-headers.hmap (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-DebugDylibInstallName-normal-arm64.txt (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-08A4A3CD28434E44B6B9DE2E.sh (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-08A4A3CD28434E44B6B9DE2E.sh
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-00DD1BFF1BD5951E006B06BC.sh (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-00DD1BFF1BD5951E006B06BC.sh
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-800E24972A6A228C8D4807E9.sh (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-800E24972A6A228C8D4807E9.sh
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.DependencyStaticMetadataFileList (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.DependencyMetadataFileList (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.DependencyMetadataFileList
+
+ProcessProductPackaging /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample/animatedexample.entitlements /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    
+    Entitlements:
+    
+    {
+}
+    
+    builtin-productPackagingUtility /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample/animatedexample.entitlements -entitlements -format xml -o /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources/animatedexample_vers.c (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources/animatedexample_vers.c
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources/Entitlements-Simulated.plist (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources/Entitlements-Simulated.plist
+
+ProcessProductPackagingDER /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent.der (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    /usr/bin/derq query -f xml -i /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent -o /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app.xcent.der --raw
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample-OutputFileMap.json (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.SwiftFileList (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.SwiftFileList
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample_const_extract_protocols.json (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.SwiftConstValuesFileList (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+-target arm64-apple-ios15.1-simulator '-std=gnu99' -fmodules -gmodules '-fmodules-cache-path=/Users/vincentriemer/Library/Developer/Xcode/DerivedData/ModuleCache.noindex' -fpascal-strings -O0 -fno-common '-DDEBUG=1' '-DFB_SONARKIT_ENABLED=1' -isysroot /Applications/Xcode_26.0.0_17A324_fb.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -g -iquote /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-generated-files.hmap -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-own-target-headers.hmap -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-all-target-headers.hmap -iquote /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample-project-headers.hmap -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator/include -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources-normal/arm64 -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources/arm64 -I/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/DerivedSources -F/Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.LinkFileList (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    write-file /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Objects-normal/arm64/animatedexample.LinkFileList
+
+ProcessProductPackaging /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample/animatedexample.entitlements /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.com.anonymous.animated-example";
+}
+    
+    builtin-productPackagingUtility /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios/animatedexample/animatedexample.entitlements -entitlements -format xml -o /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent.der (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    /usr/bin/derq query -f xml -i /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent -o /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/animatedexample.app-Simulated.xcent.der --raw
+
+PhaseScriptExecution [CP]\ Check\ Pods\ Manifest.lock /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-08A4A3CD28434E44B6B9DE2E.sh (in target 'animatedexample' from project 'animatedexample')
+    cd /Users/vincentriemer/Workspace/react-strict-dom/apps/animated-example/ios
+    /bin/sh -c /Users/vincentriemer/Library/Developer/Xcode/DerivedData/animatedexample-agtbwrveskftttanghtxebtbsfib/Build/Intermediates.noindex/animatedexample.build/Debug-iphonesimulator/animatedexample.build/Script-08A4A3CD28434E44B6B9DE2E.sh
+diff: /Podfile.lock: No such file or directory
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+
+note: Run script build phase 'Bundle React Native code and images' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'animatedexample' from project 'animatedexample')
