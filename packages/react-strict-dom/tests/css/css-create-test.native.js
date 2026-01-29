@@ -55,6 +55,24 @@ describe('css.create()', () => {
       expect(root.toJSON().props.style).toMatchSnapshot();
     });
 
+    test('symbol keys are preserved', () => {
+      const symbolKey = Symbol('raw-style');
+      const rawValue = { token: 'raw' };
+      const styles = css.create({
+        root: {
+          [symbolKey]: rawValue,
+          width: '10px'
+        }
+      });
+      let root;
+      act(() => {
+        root = create(<html.div style={styles.root} />);
+      });
+      const renderedStyle = root.toJSON().props.style;
+      expect(Object.getOwnPropertySymbols(renderedStyle)).toContain(symbolKey);
+      expect(renderedStyle[symbolKey]).toBe(rawValue);
+    });
+
     test('animationName', () => {
       css.keyframes({
         '100%': {
