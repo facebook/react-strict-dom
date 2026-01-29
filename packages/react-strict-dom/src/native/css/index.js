@@ -158,7 +158,21 @@ function resolveStyle(
   const stylesToReprocess: { [string]: mixed } = {};
   const flatStyle = flattenStyle(style);
 
-  for (const propName in flatStyle) {
+  const symbolKeys = Object.getOwnPropertySymbols(flatStyle);
+  if (symbolKeys.length > 0) {
+    for (let i = 0; i < symbolKeys.length; i++) {
+      const symbolKey = symbolKeys[i];
+      const descriptor = Object.getOwnPropertyDescriptor(flatStyle, symbolKey);
+      if (descriptor != null) {
+        // Preserve Symbol-keyed values without processing.
+        Object.defineProperty(result, symbolKey, descriptor);
+      }
+    }
+  }
+
+  const propNames = Object.keys(flatStyle);
+  for (let i = 0; i < propNames.length; i++) {
+    const propName = propNames[i];
     const styleValue = flatStyle[propName];
 
     // Resolve custom property references
@@ -310,7 +324,9 @@ export function props(
 
   const flatStyle = resolveStyle(style, options) as $FlowFixMe;
 
-  for (const styleProp in flatStyle) {
+  const styleKeys = Object.keys(flatStyle);
+  for (let i = 0; i < styleKeys.length; i++) {
+    const styleProp = styleKeys[i];
     const styleValue = flatStyle[styleProp];
 
     // block/inlineSize
@@ -483,6 +499,18 @@ export function props(
     // Everything else
     else {
       nextStyle[styleProp] = styleValue;
+    }
+  }
+
+  const symbolKeys = Object.getOwnPropertySymbols(flatStyle);
+  if (symbolKeys.length > 0) {
+    for (let i = 0; i < symbolKeys.length; i++) {
+      const symbolKey = symbolKeys[i];
+      const descriptor = Object.getOwnPropertyDescriptor(flatStyle, symbolKey);
+      if (descriptor != null) {
+        // Preserve Symbol-keyed values without processing.
+        Object.defineProperty(nextStyle, symbolKey, descriptor);
+      }
     }
   }
 
