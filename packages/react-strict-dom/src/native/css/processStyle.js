@@ -70,7 +70,25 @@ export function processStyle(
 ): { +[string]: mixed } {
   const result: { [string]: mixed } = {};
 
-  for (const propName in style) {
+  const symbolKeys = Object.getOwnPropertySymbols(style);
+  for (let i = 0; i < symbolKeys.length; i++) {
+    const symbolKey = symbolKeys[i];
+    const descriptor = Object.getOwnPropertyDescriptor(style, symbolKey);
+    if (descriptor != null && descriptor.enumerable === true) {
+      // Preserve Symbol-keyed values without processing.
+      const symbolValue = Reflect.get(style, symbolKey);
+      Object.defineProperty(result, symbolKey, {
+        configurable: true,
+        enumerable: true,
+        value: symbolValue,
+        writable: true
+      });
+    }
+  }
+
+  const propNames = Object.keys(style);
+  for (let i = 0; i < propNames.length; i++) {
+    const propName = propNames[i];
     const styleValue = style[propName];
 
     if (skipValidation !== true && !isAllowedStyleKey(propName)) {
