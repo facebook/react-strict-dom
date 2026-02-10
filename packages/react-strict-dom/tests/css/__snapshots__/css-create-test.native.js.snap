@@ -342,6 +342,7 @@ exports[`css.create() properties fontSize 1`] = `
 {
   "boxSizing": "content-box",
   "fontSize": 40,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -350,6 +351,7 @@ exports[`css.create() properties fontSize scaling fontScale:2 1`] = `
 {
   "boxSizing": "content-box",
   "fontSize": 80,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -358,6 +360,7 @@ exports[`css.create() properties fontVariant 1`] = `
 {
   "boxSizing": "content-box",
   "fontVariant": "common-ligatures small-caps",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -366,6 +369,7 @@ exports[`css.create() properties fontWeight 1`] = `
 {
   "boxSizing": "content-box",
   "fontWeight": "900",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -374,6 +378,7 @@ exports[`css.create() properties fontWeight 2`] = `
 {
   "boxSizing": "content-box",
   "fontWeight": "bold",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -431,6 +436,7 @@ exports[`css.create() properties inset: inset 1`] = `
   "bottom": 1,
   "boxSizing": "content-box",
   "end": 1,
+  "overflow": "visible",
   "position": "static",
   "start": 1,
   "top": 1,
@@ -443,6 +449,7 @@ exports[`css.create() properties inset: inset vs phys 1`] = `
   "boxSizing": "content-box",
   "end": 1,
   "left": 10,
+  "overflow": "visible",
   "position": "static",
   "right": 10,
   "start": 1,
@@ -454,6 +461,7 @@ exports[`css.create() properties inset: insetBlock 1`] = `
 {
   "bottom": 2,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "top": 2,
 }
@@ -463,6 +471,7 @@ exports[`css.create() properties inset: insetBlock vs phys 1`] = `
 {
   "bottom": 100,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "top": 100,
 }
@@ -472,6 +481,7 @@ exports[`css.create() properties inset: insetBlockEnd 1`] = `
 {
   "bottom": 4,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -480,6 +490,7 @@ exports[`css.create() properties inset: insetBlockEnd vs phys 1`] = `
 {
   "bottom": 4,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "top": 100,
 }
@@ -488,6 +499,7 @@ exports[`css.create() properties inset: insetBlockEnd vs phys 1`] = `
 exports[`css.create() properties inset: insetBlockStart 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "top": 3,
 }
@@ -497,6 +509,7 @@ exports[`css.create() properties inset: insetBlockStart vs phys 1`] = `
 {
   "bottom": 100,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "top": 3,
 }
@@ -506,6 +519,7 @@ exports[`css.create() properties inset: insetInline 1`] = `
 {
   "boxSizing": "content-box",
   "end": 5,
+  "overflow": "visible",
   "position": "static",
   "start": 5,
 }
@@ -515,6 +529,7 @@ exports[`css.create() properties inset: insetInlineEnd 1`] = `
 {
   "boxSizing": "content-box",
   "end": 7,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -522,6 +537,7 @@ exports[`css.create() properties inset: insetInlineEnd 1`] = `
 exports[`css.create() properties inset: insetInlineStart 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "start": 6,
 }
@@ -533,6 +549,7 @@ exports[`css.create() properties isolation 1`] = `
   "style": {
     "boxSizing": "content-box",
     "isolation": "isolate",
+    "overflow": "visible",
     "position": "static",
   },
 }
@@ -545,6 +562,7 @@ exports[`css.create() properties lineClamp 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "userSelect": "none",
     }
@@ -558,6 +576,7 @@ exports[`css.create() properties lineHeight: px 1`] = `
 {
   "boxSizing": "content-box",
   "lineHeight": 24,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -566,6 +585,7 @@ exports[`css.create() properties lineHeight: rem 1`] = `
 {
   "boxSizing": "content-box",
   "lineHeight": 24,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -575,6 +595,7 @@ exports[`css.create() properties lineHeight: unitless number 1`] = `
   "boxSizing": "content-box",
   "fontSize": 16,
   "lineHeight": 24,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -584,6 +605,7 @@ exports[`css.create() properties lineHeight: unitless string 1`] = `
   "boxSizing": "content-box",
   "fontSize": 16,
   "lineHeight": 24,
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -930,6 +952,7 @@ exports[`css.create() properties position: sticky 1`] = `
 exports[`css.create() properties textAlign: center 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "textAlign": "center",
 }
@@ -938,6 +961,7 @@ exports[`css.create() properties textAlign: center 1`] = `
 exports[`css.create() properties textAlign: end 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "textAlign": "right",
 }
@@ -946,6 +970,7 @@ exports[`css.create() properties textAlign: end 1`] = `
 exports[`css.create() properties textAlign: left 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "textAlign": "left",
 }
@@ -954,6 +979,7 @@ exports[`css.create() properties textAlign: left 1`] = `
 exports[`css.create() properties textAlign: right 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "textAlign": "right",
 }
@@ -962,6 +988,7 @@ exports[`css.create() properties textAlign: right 1`] = `
 exports[`css.create() properties textAlign: start 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "textAlign": "left",
 }
@@ -1183,6 +1210,7 @@ exports[`css.create() properties transform: translate 1`] = `
 exports[`css.create() properties userSelect 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "userSelect": "none",
 }
@@ -1191,6 +1219,7 @@ exports[`css.create() properties userSelect 1`] = `
 exports[`css.create() properties verticalAlign: middle 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "verticalAlign": "middle",
 }
@@ -1199,6 +1228,7 @@ exports[`css.create() properties verticalAlign: middle 1`] = `
 exports[`css.create() properties verticalAlign: top 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "verticalAlign": "top",
 }
@@ -1972,6 +2002,7 @@ exports[`css.create() pseudo-elements ::placeholder syntax: placeholderTextColor
   "ref": [Function],
   "style": {
     "boxSizing": "content-box",
+    "overflow": "visible",
     "position": "static",
   },
 }
@@ -1980,6 +2011,7 @@ exports[`css.create() pseudo-elements ::placeholder syntax: placeholderTextColor
 exports[`css.create() values: general calc() 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -1987,6 +2019,7 @@ exports[`css.create() values: general calc() 1`] = `
 exports[`css.create() values: general currentcolor 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -1995,6 +2028,7 @@ exports[`css.create() values: general firstThatWorks 1`] = `
 {
   "boxSizing": "content-box",
   "color": "hsl(0,0,0)",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -2003,6 +2037,7 @@ exports[`css.create() values: general inherit 1`] = `
 {
   "boxSizing": "content-box",
   "fontSize": "inherit",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -2010,6 +2045,7 @@ exports[`css.create() values: general inherit 1`] = `
 exports[`css.create() values: general inherit 2`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -2017,6 +2053,7 @@ exports[`css.create() values: general inherit 2`] = `
 exports[`css.create() values: general initial 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -2025,6 +2062,7 @@ exports[`css.create() values: length units '0' is resolved to the number 0 1`] =
 {
   "borderRadius": 0,
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
   "width": 0,
 }
@@ -2043,6 +2081,7 @@ exports[`css.create() values: length units 10 "em" units based on font-size 1`] 
 {
   "boxSizing": "content-box",
   "fontSize": 10,
+  "overflow": "visible",
   "position": "static",
   "width": 100,
 }

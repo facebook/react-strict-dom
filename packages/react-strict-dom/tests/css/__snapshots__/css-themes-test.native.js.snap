@@ -24,6 +24,7 @@ exports[`css.* themes css.defineVars: tokens 1`] = `
 exports[`css.* themes handles undefined variables 1`] = `
 {
   "boxSizing": "content-box",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -37,6 +38,7 @@ exports[`css.* themes inherited themes 1`] = `
         "backgroundColor": "pink",
         "boxSizing": "content-box",
         "color": "red",
+        "overflow": "visible",
         "position": "static",
       }
     }
@@ -50,6 +52,7 @@ exports[`css.* themes inherited themes 1`] = `
         "backgroundColor": "pink",
         "boxSizing": "content-box",
         "color": "green",
+        "overflow": "visible",
         "position": "static",
       }
     }
@@ -85,6 +88,7 @@ exports[`css.* themes inherited themes 1`] = `
           "backgroundColor": "pink",
           "boxSizing": "content-box",
           "color": "green",
+          "overflow": "visible",
           "position": "static",
         }
       }
@@ -120,6 +124,7 @@ exports[`css.* themes inherited themes 1`] = `
             "backgroundColor": "pink",
             "boxSizing": "content-box",
             "color": "blue",
+            "overflow": "visible",
             "position": "static",
           }
         }
@@ -148,6 +153,7 @@ exports[`css.* themes inherited themes 1`] = `
         "backgroundColor": "pink",
         "boxSizing": "content-box",
         "color": "red",
+        "overflow": "visible",
         "position": "static",
       }
     }

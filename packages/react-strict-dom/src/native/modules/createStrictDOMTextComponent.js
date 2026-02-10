@@ -98,6 +98,13 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       disableUserSelect ? { userSelect: 'none' } : null
     );
 
+    // Native components historically clip text. Opt into web-style default of
+    // visible overflow by default
+    if (nativeProps.style?.overflow == null) {
+      nativeProps.style = nativeProps.style ?? {};
+      nativeProps.style.overflow = 'visible';
+    }
+
     // Use Animated components if necessary
     if (nativeProps.animated === true) {
       NativeComponent = ReactNative.Animated.Text;
