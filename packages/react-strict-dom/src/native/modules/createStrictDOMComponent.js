@@ -27,10 +27,8 @@ type StrictProps = $ReadOnly<{
 }>;
 
 const AnimatedPressable = ReactNative.Animated.createAnimatedComponent<
-  // $FlowFixMe[invalid-component-prop]
   React.ElementConfig<typeof ReactNative.Pressable>,
   typeof ReactNative.Pressable
-  // $FlowFixMe[incompatible-type]
 >(ReactNative.Pressable);
 
 export function createStrictDOMComponent<T, P: StrictProps>(
@@ -38,14 +36,10 @@ export function createStrictDOMComponent<T, P: StrictProps>(
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
   const provideInheritableStyle =
-    tagName !== 'br' && tagName !== 'hr' && tagName !== 'option';
+    tagName !== 'br' || tagName !== 'hr' || tagName !== 'option';
 
   component Component(ref: React.RefSetter<T>, ...props: P) {
-    let NativeComponent:
-      | typeof ReactNative.Pressable
-      | typeof ReactNative.ViewNativeComponent
-      | typeof ReactNative.Animated.View
-      | typeof AnimatedPressable =
+    let NativeComponent =
       tagName === 'button'
         ? ReactNative.Pressable
         : ReactNative.ViewNativeComponent;
@@ -76,16 +70,12 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     // Tag-specific props
 
     if (tagName === 'button') {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'button';
     } else if (tagName === 'header') {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'header';
     } else if (tagName === 'li') {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'listitem';
     } else if (tagName === 'ol' || tagName === 'ul') {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'list';
     }
 
@@ -93,26 +83,22 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
     if (NativeComponent === ReactNative.Pressable) {
       if (props.disabled === true) {
-        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.disabled = true;
-        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.focusable = false;
       }
     }
 
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.ref = elementRef;
 
     // Workaround: React Native doesn't support raw text children of View
     // Sometimes we can auto-fix this
     if (typeof nativeProps.children === 'string') {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.children = <TextString children={nativeProps.children} />;
     }
 
     // Polyfill for default of "display:block"
     // which implies "displayInside:flow"
-    let nextDisplayInsideValue: 'flow' | 'flex' = 'flow';
+    let nextDisplayInsideValue = 'flow';
     const displayInsideValue = useDisplayInside();
     const displayValue = nativeProps.style.display;
 
@@ -140,42 +126,27 @@ export function createStrictDOMComponent<T, P: StrictProps>(
 
     if (displayValue === 'flex') {
       nextDisplayInsideValue = 'flex';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.alignContent ??= 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.alignItems ??= 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexBasis ??= 'auto';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexDirection ??= 'row';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexShrink ??= 1;
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexWrap ??= 'nowrap';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.justifyContent ??= 'flex-start';
     } else if (displayValue === 'block' && displayInsideValue === 'flow') {
       // Force the block emulation styles
       nextDisplayInsideValue = 'flow';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.alignItems = 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.display = 'flex';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexBasis = 'auto';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexDirection = 'column';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexShrink = 0;
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexWrap = 'nowrap';
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.justifyContent = 'flex-start';
     }
 
     if (displayInsideValue === 'flex') {
       // flex child should not shrink by default
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.flexShrink ??= 1;
     }
 
@@ -197,7 +168,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
-        // $FlowFixMe[incompatible-type]
+        // $FlowFixMe
         <NativeComponent {...nativeProps} />
       );
 

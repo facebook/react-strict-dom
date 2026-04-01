@@ -51,7 +51,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     }
     if (props.role != null) {
       // "presentation" synonym has wider browser support
-      // $FlowFixMe[incompatible-type]
+      // $FlowFixMe
       hostProps.role = props.role === 'none' ? 'presentation' : props.role;
     }
     if (TagName === 'button') {
@@ -63,7 +63,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     /**
      * get host style props
      */
-    // $FlowFixMe[incompatible-type]
+    // $FlowFixMe
     const hostStyleProps: ReactDOMStyleProps = merge([
       debugStyle,
       defaultStyle,

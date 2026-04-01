@@ -28,10 +28,7 @@ import { defaultStyles } from './runtime';
 export const a: component(
   ref?: React.RefSetter<HTMLAnchorElement>,
   ...StrictReactDOMAnchorProps
-) = createStrict<HTMLAnchorElement, StrictReactDOMAnchorProps>(
-  'a',
-  defaultStyles.a
-);
+) = createStrict('a', defaultStyles.a);
 
 /**
  * "article" (block)
@@ -39,10 +36,7 @@ export const a: component(
 export const article: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'article',
-  defaultStyles.article
-);
+) = createStrict('article', defaultStyles.article);
 
 /**
  * "aside" (block)
@@ -50,10 +44,7 @@ export const article: component(
 export const aside: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'aside',
-  defaultStyles.aside
-);
+) = createStrict('aside', defaultStyles.aside);
 
 /**
  * "b" (inline)
@@ -61,7 +52,7 @@ export const aside: component(
 export const b: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('b', defaultStyles.b);
+) = createStrict('b', defaultStyles.b);
 
 /**
  * "bdi" (inline)
@@ -69,7 +60,7 @@ export const b: component(
 export const bdi: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('bdi', defaultStyles.bdi);
+) = createStrict('bdi', defaultStyles.bdi);
 
 /**
  * "bdo" (inline)
@@ -77,7 +68,7 @@ export const bdi: component(
 export const bdo: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('bdo', defaultStyles.bdo);
+) = createStrict('bdo', defaultStyles.bdo);
 
 /**
  * "blockquote" (block)
@@ -85,10 +76,7 @@ export const bdo: component(
 export const blockquote: component(
   ref?: React.RefSetter<HTMLQuoteElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLQuoteElement, StrictReactDOMProps>(
-  'blockquote',
-  defaultStyles.blockquote
-);
+) = createStrict('blockquote', defaultStyles.blockquote);
 
 /**
  * "br"
@@ -96,7 +84,7 @@ export const blockquote: component(
 export const br: component(
   ref?: React.RefSetter<HTMLBRElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLBRElement, StrictReactDOMProps>('br', defaultStyles.br);
+) = createStrict('br', defaultStyles.br);
 
 /**
  * "button" (inline-block)
@@ -104,10 +92,7 @@ export const br: component(
 export const button: component(
   ref?: React.RefSetter<HTMLButtonElement>,
   ...StrictReactDOMButtonProps
-) = createStrict<HTMLButtonElement, StrictReactDOMButtonProps>(
-  'button',
-  defaultStyles.button
-);
+) = createStrict('button', defaultStyles.button);
 
 /**
  * "code" (inline)
@@ -115,7 +100,7 @@ export const button: component(
 export const code: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('code', defaultStyles.code);
+) = createStrict('code', defaultStyles.code);
 
 /**
  * "del" (inline)
@@ -123,7 +108,7 @@ export const code: component(
 export const del: component(
   ref?: React.RefSetter<HTMLModElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLModElement, StrictReactDOMProps>('del', defaultStyles.del);
+) = createStrict('del', defaultStyles.del);
 
 /**
  * "div" (block)
@@ -131,7 +116,7 @@ export const del: component(
 export const div: component(
   ref?: React.RefSetter<HTMLDivElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLDivElement, StrictReactDOMProps>('div', defaultStyles.div);
+) = createStrict('div', defaultStyles.div);
 
 /**
  * "em" (inline)
@@ -139,7 +124,7 @@ export const div: component(
 export const em: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('em', defaultStyles.em);
+) = createStrict('em', defaultStyles.em);
 
 /**
  * "fieldset" (block)
@@ -147,10 +132,7 @@ export const em: component(
 export const fieldset: component(
   ref?: React.RefSetter<HTMLFieldSetElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLFieldSetElement, StrictReactDOMProps>(
-  'fieldset',
-  defaultStyles.fieldset
-);
+) = createStrict('fieldset', defaultStyles.fieldset);
 
 /**
  * "footer" (block)
@@ -158,10 +140,7 @@ export const fieldset: component(
 export const footer: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'footer',
-  defaultStyles.footer
-);
+) = createStrict('footer', defaultStyles.footer);
 
 /**
  * "form" (block)
@@ -169,10 +148,7 @@ export const footer: component(
 export const form: component(
   ref?: React.RefSetter<HTMLFormElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLFormElement, StrictReactDOMProps>(
-  'form',
-  defaultStyles.form
-);
+) = createStrict('form', defaultStyles.form);
 
 /**
  * "h1-h6" (block)
@@ -180,45 +156,27 @@ export const form: component(
 export const h1: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h1',
-  defaultStyles.h1
-);
+) = createStrict('h1', defaultStyles.h1);
 export const h2: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h2',
-  defaultStyles.h2
-);
+) = createStrict('h2', defaultStyles.h2);
 export const h3: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h3',
-  defaultStyles.h3
-);
+) = createStrict('h3', defaultStyles.h3);
 export const h4: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h4',
-  defaultStyles.h4
-);
+) = createStrict('h4', defaultStyles.h4);
 export const h5: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h5',
-  defaultStyles.h5
-);
+) = createStrict('h5', defaultStyles.h5);
 export const h6: component(
   ref?: React.RefSetter<HTMLHeadingElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHeadingElement, StrictReactDOMProps>(
-  'h6',
-  defaultStyles.h6
-);
+) = createStrict('h6', defaultStyles.h6);
 
 /**
  * "header" (block)
@@ -226,10 +184,7 @@ export const h6: component(
 export const header: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'header',
-  defaultStyles.header
-);
+) = createStrict('header', defaultStyles.header);
 
 /**
  * "hr" (block)
@@ -237,7 +192,7 @@ export const header: component(
 export const hr: component(
   ref?: React.RefSetter<HTMLHRElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLHRElement, StrictReactDOMProps>('hr', defaultStyles.hr);
+) = createStrict('hr', defaultStyles.hr);
 
 /**
  * "i" (inline)
@@ -245,7 +200,7 @@ export const hr: component(
 export const i: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('i', defaultStyles.i);
+) = createStrict('i', defaultStyles.i);
 
 /**
  * "img" (inline)
@@ -253,10 +208,7 @@ export const i: component(
 export const img: component(
   ref?: React.RefSetter<HTMLImageElement>,
   ...StrictReactDOMImageProps
-) = createStrict<HTMLImageElement, StrictReactDOMImageProps>(
-  'img',
-  defaultStyles.img
-);
+) = createStrict('img', defaultStyles.img);
 
 /**
  * "input" (inline-block)
@@ -264,10 +216,7 @@ export const img: component(
 export const input: component(
   ref?: React.RefSetter<HTMLInputElement>,
   ...StrictReactDOMInputProps
-) = createStrict<HTMLInputElement, StrictReactDOMInputProps>(
-  'input',
-  defaultStyles.input
-);
+) = createStrict('input', defaultStyles.input);
 
 /**
  * "ins" (inline)
@@ -275,7 +224,7 @@ export const input: component(
 export const ins: component(
   ref?: React.RefSetter<HTMLModElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLModElement, StrictReactDOMProps>('ins', defaultStyles.ins);
+) = createStrict('ins', defaultStyles.ins);
 
 /**
  * "kbd" (inline)
@@ -283,7 +232,7 @@ export const ins: component(
 export const kbd: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('kbd', defaultStyles.kbd);
+) = createStrict('kbd', defaultStyles.kbd);
 
 /**
  * "label" (inline)
@@ -291,10 +240,7 @@ export const kbd: component(
 export const label: component(
   ref?: React.RefSetter<HTMLLabelElement>,
   ...StrictReactDOMLabelProps
-) = createStrict<HTMLLabelElement, StrictReactDOMLabelProps>(
-  'label',
-  defaultStyles.label
-);
+) = createStrict('label', defaultStyles.label);
 
 /**
  * "li" (block)
@@ -302,10 +248,7 @@ export const label: component(
 export const li: component(
   ref?: React.RefSetter<HTMLLIElement>,
   ...StrictReactDOMListItemProps
-) = createStrict<HTMLLIElement, StrictReactDOMListItemProps>(
-  'li',
-  defaultStyles.li
-);
+) = createStrict('li', defaultStyles.li);
 
 /**
  * "main" (block)
@@ -313,7 +256,7 @@ export const li: component(
 export const main: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('main', defaultStyles.main);
+) = createStrict('main', defaultStyles.main);
 
 /**
  * "mark" (inline)
@@ -321,7 +264,7 @@ export const main: component(
 export const mark: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('mark', defaultStyles.mark);
+) = createStrict('mark', defaultStyles.mark);
 
 /**
  * "nav" (block)
@@ -329,7 +272,7 @@ export const mark: component(
 export const nav: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('nav', defaultStyles.nav);
+) = createStrict('nav', defaultStyles.nav);
 
 /**
  * "ol" (block)
@@ -337,7 +280,7 @@ export const nav: component(
 export const ol: component(
   ref?: React.RefSetter<HTMLOListElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLOListElement, StrictReactDOMProps>('ol', defaultStyles.ol);
+) = createStrict('ol', defaultStyles.ol);
 
 /**
  * "optgroup"
@@ -345,10 +288,7 @@ export const ol: component(
 export const optgroup: component(
   ref?: React.RefSetter<HTMLOptGroupElement>,
   ...StrictReactDOMOptionGroupProps
-) = createStrict<HTMLOptGroupElement, StrictReactDOMOptionGroupProps>(
-  'optgroup',
-  defaultStyles.optgroup
-);
+) = createStrict('optgroup', defaultStyles.optgroup);
 
 /**
  * "option"
@@ -367,10 +307,7 @@ export const option: component(
 export const p: component(
   ref?: React.RefSetter<HTMLParagraphElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLParagraphElement, StrictReactDOMProps>(
-  'p',
-  defaultStyles.p
-);
+) = createStrict('p', defaultStyles.p);
 
 /**
  * "pre" (block)
@@ -378,7 +315,7 @@ export const p: component(
 export const pre: component(
   ref?: React.RefSetter<HTMLPreElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLPreElement, StrictReactDOMProps>('pre', defaultStyles.pre);
+) = createStrict('pre', defaultStyles.pre);
 
 /**
  * "s" (inline)
@@ -386,7 +323,7 @@ export const pre: component(
 export const s: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('s', defaultStyles.s);
+) = createStrict('s', defaultStyles.s);
 
 /**
  * "section" (block)
@@ -394,10 +331,7 @@ export const s: component(
 export const section: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'section',
-  defaultStyles.section
-);
+) = createStrict('section', defaultStyles.section);
 
 /**
  * "select" (inline-block)
@@ -405,10 +339,7 @@ export const section: component(
 export const select: component(
   ref?: React.RefSetter<HTMLSelectElement>,
   ...StrictReactDOMSelectProps
-) = createStrict<HTMLSelectElement, StrictReactDOMSelectProps>(
-  'select',
-  defaultStyles.select
-);
+) = createStrict('select', defaultStyles.select);
 
 /**
  * "span" (inline)
@@ -416,10 +347,7 @@ export const select: component(
 export const span: component(
   ref?: React.RefSetter<HTMLSpanElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLSpanElement, StrictReactDOMProps>(
-  'span',
-  defaultStyles.span
-);
+) = createStrict('span', defaultStyles.span);
 
 /**
  * "strong" (inline)
@@ -427,10 +355,7 @@ export const span: component(
 export const strong: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>(
-  'strong',
-  defaultStyles.strong
-);
+) = createStrict('strong', defaultStyles.strong);
 
 /**
  * "sub" (inline)
@@ -438,7 +363,7 @@ export const strong: component(
 export const sub: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('sub', defaultStyles.sub);
+) = createStrict('sub', defaultStyles.sub);
 
 /**
  * "sup" (inline)
@@ -446,7 +371,7 @@ export const sub: component(
 export const sup: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('sup', defaultStyles.sup);
+) = createStrict('sup', defaultStyles.sup);
 
 /**
  * "textarea" (inline-block)
@@ -454,10 +379,7 @@ export const sup: component(
 export const textarea: component(
   ref?: React.RefSetter<HTMLTextAreaElement>,
   ...StrictReactDOMTextAreaProps
-) = createStrict<HTMLTextAreaElement, StrictReactDOMTextAreaProps>(
-  'textarea',
-  defaultStyles.textarea
-);
+) = createStrict('textarea', defaultStyles.textarea);
 
 /**
  * "u" (inline)
@@ -465,7 +387,7 @@ export const textarea: component(
 export const u: component(
   ref?: React.RefSetter<HTMLElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLElement, StrictReactDOMProps>('u', defaultStyles.u);
+) = createStrict('u', defaultStyles.u);
 
 /**
  * "ul" (block)
@@ -473,4 +395,4 @@ export const u: component(
 export const ul: component(
   ref?: React.RefSetter<HTMLUListElement>,
   ...StrictReactDOMProps
-) = createStrict<HTMLUListElement, StrictReactDOMProps>('ul', defaultStyles.ul);
+) = createStrict('ul', defaultStyles.ul);

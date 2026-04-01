@@ -73,7 +73,7 @@ export function interpolate<TOutput: number | string>(
   config: InterpolationConfig<TOutput>
 ): AnimatedNodeType {
   return Interpolate(
-    // $FlowFixMe[incompatible-type] - need a sketchy cast to be compatible with RN version of Animated
+    // $FlowFixMe[incompatible-cast] - need a sketchy cast to be compatible with RN version of Animated
     value as AnimatedWithChildren<number>,
     config
   );

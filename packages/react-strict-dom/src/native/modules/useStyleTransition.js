@@ -54,7 +54,6 @@ function canUseNativeDriver(
     if (
       property === 'transform' &&
       Array.isArray(value) &&
-      // $FlowFixMe[incompatible-type]
       !value.includes('skew')
     ) {
       continue;

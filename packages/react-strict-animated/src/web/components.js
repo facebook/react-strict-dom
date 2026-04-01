@@ -25,7 +25,7 @@ export component AnimatedDiv(
   animatedStyle?: AnimatedStyleValue<AnimatedNodeType>,
   ref?: React.RefSetter<React.RefOf<html.div>>,
   style as incomingStyle?: React.PropsOf<html.div>['style'],
-  ...restProps: Omit<React.PropsOf<html.div>, 'style' | 'ref'>
+  ...restProps: Omit<React.PropsOf<html.div>, 'style'>
 ) {
   const [{ opacity, transform }, animatedRefSetter] =
     useAnimatedStyle<HTMLDivElement | null>(animatedStyle, ref);
@@ -46,7 +46,7 @@ export component AnimatedSpan(
   animatedStyle?: AnimatedStyleValue<AnimatedNodeType>,
   ref?: React.RefSetter<React.RefOf<html.span>>,
   style as incomingStyle?: React.PropsOf<html.span>['style'],
-  ...restProps: Omit<React.PropsOf<html.span>, 'style' | 'ref'>
+  ...restProps: Omit<React.PropsOf<html.span>, 'style'>
 ) {
   const [{ opacity, transform }, animatedRefSetter] =
     useAnimatedStyle<HTMLSpanElement | null>(animatedStyle, ref);
@@ -67,7 +67,7 @@ export component AnimatedImg(
   animatedStyle?: AnimatedStyleValue<AnimatedNodeType>,
   ref?: React.RefSetter<React.RefOf<html.img>>,
   style as incomingStyle?: React.PropsOf<html.img>['style'],
-  ...restProps: Omit<React.PropsOf<html.img>, 'style' | 'ref'>
+  ...restProps: Omit<React.PropsOf<html.img>, 'style'>
 ) {
   const [{ opacity, transform }, animatedRefSetter] =
     useAnimatedStyle<HTMLImageElement | null>(animatedStyle, ref);

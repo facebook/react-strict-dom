@@ -144,10 +144,8 @@ export function useStyleProps(
 
   if (handlers != null) {
     for (const handler of eventHandlerNames) {
-      // $FlowFixMe[invalid-computed-prop]
       const handlerValue = handlers[handler];
       if (handlerValue != null) {
-        // $FlowFixMe[prop-missing]
         styleProps[handler] = handlerValue;
       }
     }
@@ -196,7 +194,6 @@ export function useStyleProps(
 
   for (const key of inheritedProperties) {
     const value = styleProps.style[key];
-    // $FlowFixMe[invalid-computed-prop]
     const inheritedValue = inheritedValues[key];
 
     let val = value;

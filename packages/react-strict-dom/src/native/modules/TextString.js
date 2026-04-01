@@ -32,7 +32,7 @@ export function TextString(props: Props): React.Node {
   });
 
   return (
-    // $FlowFixMe[incompatible-type]
+    // $FlowFixMe
     <ReactNative.Text {...nativeProps} children={children} />
   );
 }

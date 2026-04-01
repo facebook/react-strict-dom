@@ -71,30 +71,24 @@ const themedStyles = css.create({
 
 function ThemeExample() {
   return (
-    // $FlowFixMe[incompatible-type]
     <html.div style={themedStyles.container}>
       {/* default theme */}
-      {/* $FlowFixMe[incompatible-type] */}
       <html.div style={themedStyles.square} />
       {/* redblue theme */}
       <html.div style={redBlueTheme}>
-        {/* $FlowFixMe[incompatible-type] */}
         <html.div style={themedStyles.square} />
       </html.div>
       {/* purpleyellow theme */}
       <html.div style={purpleYellowTheme}>
-        {/* $FlowFixMe[incompatible-type] */}
         <html.div style={themedStyles.square} />
       </html.div>
       {/* greenpink theme */}
       <html.div style={greenPinkTheme}>
-        {/* $FlowFixMe[incompatible-type] */}
         <html.div style={themedStyles.square} />
       </html.div>
       {/* nested theme */}
       <html.div style={redBlueTheme}>
         <html.div style={greenPinkTheme}>
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={themedStyles.square} />
         </html.div>
       </html.div>
@@ -158,7 +152,6 @@ function Shell(): React.MixedElement {
           <html.div>dfadsafdsfadsf inside div (kind of) works</html.div>
           <html.span>
             span inside div inside span...
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={styles.textAncestorTest}>
               <html.span>works</html.span>
             </html.div>
@@ -219,7 +212,6 @@ function Shell(): React.MixedElement {
               console.log(e.type, e);
             }}
             src="http://placehold.jp/150x150.png"
-            // $FlowFixMe[incompatible-type]
             style={styles.objContain}
             width={150}
           />
@@ -298,11 +290,8 @@ function Shell(): React.MixedElement {
 
           {/* flex row undoes block layout emulation and correct flex child layout */}
           <html.p>display:flex defaults and children</html.p>
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={styles.row}>
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.square, styles.w1000]} />
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.square, styles.blueSquare]}>
               <html.div style={styles.whiteBox}>
                 <html.p>Back to block</html.p>
@@ -314,7 +303,6 @@ function Shell(): React.MixedElement {
 
           <html.p>display:block resets flex properties</html.p>
           {/* display block undoes row layout and emulates block again */}
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={[styles.row, styles.blockW300]}>
             <html.div style={styles.square} />
             <html.div style={[styles.square, styles.bgBlue]} />
@@ -340,26 +328,19 @@ function Shell(): React.MixedElement {
         {/* logical styles emulation */}
         <ExampleBlock title="CSS Logical">
           <html.div>
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={styles.logicalPadding} />
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={styles.logicalMargin} />
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={styles.logicalBorder} />
           </html.div>
         </ExampleBlock>
 
         {/* CSS positioning (static by default) */}
         <ExampleBlock title="CSS Position">
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={[styles.p50, styles.relative]}>
             <html.div style={styles.p50}>
-              {/* $FlowFixMe[incompatible-type] */}
               <html.div style={[styles.square, styles.absTopLeft]} />
             </html.div>
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.relative, styles.p50]}>
-              {/* $FlowFixMe[incompatible-type] */}
               <html.div style={[styles.square, styles.absTopLeft]} />
             </html.div>
           </html.div>
@@ -367,13 +348,11 @@ function Shell(): React.MixedElement {
 
         {/* CSS text */}
         <ExampleBlock title="CSS Text styles">
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={styles.lineHeightUnitless}>
             <html.span style={styles.text}>
               <html.span style={styles.text}>test</html.span> (unitless)
             </html.span>
           </html.div>
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={styles.lineHeightEm}>
             <html.span style={styles.text}>test (em)</html.span>
           </html.div>
@@ -483,7 +462,6 @@ function Shell(): React.MixedElement {
           </html.button>
           <html.p>Transform + Opacity</html.p>
           <html.div
-            // $FlowFixMe[incompatible-type]
             style={[
               styles.square,
               styles.transitionAll,
@@ -500,13 +478,9 @@ function Shell(): React.MixedElement {
 
         {/* visibility */}
         <ExampleBlock title="CSS Visibility">
-          {/* $FlowFixMe[incompatible-type] */}
           <html.div style={styles.flex}>
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.square, styles.visibilityCollapse]} />
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.square, styles.visibilityHidden]} />
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={[styles.square, styles.visibilityVisible]} />
           </html.div>
         </ExampleBlock>
@@ -517,7 +491,7 @@ function Shell(): React.MixedElement {
           <html.div style={styles.square} />
           <html.input
             placeholder="input type:text"
-            // $FlowFixMe[incompatible-type]
+            // $FlowFixMe
             style={styles.input}
             type="text"
           />
@@ -537,7 +511,7 @@ function Shell(): React.MixedElement {
             <html.div style={styles.square} />
             <html.input
               placeholder="input type:text"
-              // $FlowFixMe[incompatible-type]
+              // $FlowFixMe
               style={styles.input}
               type="text"
             />
@@ -549,7 +523,7 @@ function Shell(): React.MixedElement {
               <html.div style={styles.square} />
               <html.input
                 placeholder="input type:text"
-                // $FlowFixMe[incompatible-type]
+                // $FlowFixMe
                 style={styles.input}
                 type="text"
               />
@@ -561,7 +535,6 @@ function Shell(): React.MixedElement {
 
         {/* hover */}
         <ExampleBlock title="CSS :hover, :focus, :active">
-          {/* $FlowFixMe[incompatible-type] */}
           <html.textarea style={styles.pseudoStates} />
         </ExampleBlock>
 
@@ -608,9 +581,7 @@ function Shell(): React.MixedElement {
             style={[styles.h100, styles.dynamicBg(clickData.color)]}
           >
             <html.span style={styles.bgWhite}>{clickData.text}</html.span>
-            {/* $FlowFixMe[incompatible-type] */}
             <html.div style={styles.flex}>
-              {/* $FlowFixMe[incompatible-type] */}
               <html.div style={[styles.flex, styles.flexGrow]}>
                 <html.div>
                   <html.span>
@@ -633,7 +604,6 @@ function Shell(): React.MixedElement {
                   </html.span>
                 </html.div>
               </html.div>
-              {/* $FlowFixMe[incompatible-type] */}
               <html.div style={[styles.flex, styles.flexGrow]}>
                 <html.div>
                   <html.span>button: {clickEventData.button}</html.span>
@@ -654,7 +624,6 @@ function Shell(): React.MixedElement {
               setImageLoadText(`${e.type}: loaded`);
             }}
             src="http://placehold.jp/150x150.png"
-            // $FlowFixMe[incompatible-type]
             style={styles.objContain}
             width={150}
           />
@@ -665,7 +634,6 @@ function Shell(): React.MixedElement {
               setImageErrorText(`${e.type}: errored`);
             }}
             src="http://error"
-            // $FlowFixMe[incompatible-type]
             style={styles.objContain}
             width={150}
           />
