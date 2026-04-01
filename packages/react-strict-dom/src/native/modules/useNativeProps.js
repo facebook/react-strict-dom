@@ -60,6 +60,7 @@ type EventHandler =
   | ReactNativeProps['onPointerUp']
   | ReactNativeProps['onPointerLeave'];
 
+// $FlowFixMe[incompatible-type]
 function combineEventHandlers(a: EventHandler, b: EventHandler): $FlowFixMe {
   if (a == null) {
     return b;
@@ -168,6 +169,7 @@ export function useNativeProps(
   const displayValue = nativeProps.style.display;
   // 'hidden' polyfill (only if "display" is not set)
   if (displayValue == null && hidden && hidden !== 'until-found') {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.style.display = 'none';
   }
 
@@ -176,36 +178,46 @@ export function useNativeProps(
    */
 
   if (typeof children !== 'function') {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.children = children;
   }
 
   if (ariaHidden != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityElementsHidden = ariaHidden;
     if (ariaHidden === true) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.importantForAccessibility = 'no-hide-descendants';
     }
   }
   if (ariaLabel != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLabel = ariaLabel;
   }
   if (ariaLabelledBy != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLabelledBy = ariaLabelledBy?.split(/\s*,\s*/g);
   }
   if (ariaLive != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLiveRegion =
       ariaLive === 'off' ? 'none' : ariaLive;
   }
   if (ariaModal != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityViewIsModal = ariaModal;
   }
   if (ariaPosInSet != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityPosInSet = ariaPosInSet;
   }
   const ariaRole = role;
   if (ariaRole) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.role = ariaRole;
   }
   if (ariaSetSize != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilitySetSize = ariaSetSize;
   }
   if (
@@ -215,6 +227,7 @@ export function useNativeProps(
     ariaExpanded != null ||
     ariaSelected != null
   ) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityState = {
       busy: ariaBusy,
       checked: ariaChecked,
@@ -229,6 +242,7 @@ export function useNativeProps(
     ariaValueNow != null ||
     ariaValueText != null
   ) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityValue = {
       max: ariaValueMax,
       min: ariaValueMin,
@@ -237,22 +251,28 @@ export function useNativeProps(
     };
   }
   if (dataTestID != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.testID = dataTestID;
   }
   if (id != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.nativeID = id;
   }
   if (tabIndex != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.focusable = !tabIndex;
   }
 
   // Events
 
   if (onBlur != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onBlur = combineEventHandlers(nativeProps.onBlur, onBlur);
   }
   // TODO: remove once PointerEvent onClick is available
   if (onClick != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
+    // $FlowFixMe[missing-local-annot]
     nativeProps.onPress = function ({ nativeEvent }) {
       const event: mixed = nativeEvent;
       let altKey = false;
@@ -308,90 +328,112 @@ export function useNativeProps(
     };
   }
   if (onFocus != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onFocus = combineEventHandlers(nativeProps.onFocus, onFocus);
   }
   if (onGotPointerCapture != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onGotPointerCapture = onGotPointerCapture;
   }
   if (onLostPointerCapture != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onLostPointerCapture = onLostPointerCapture;
   }
   if (onMouseDown != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseDown = onMouseDown;
   }
   if (onMouseEnter != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseEnter = combineEventHandlers(
       nativeProps.onMouseEnter,
       onMouseEnter
     );
   }
   if (onMouseLeave != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseLeave = combineEventHandlers(
       nativeProps.onMouseLeave,
       onMouseLeave
     );
   }
   if (onMouseOut != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseOut = onMouseOut;
   }
   if (onMouseOver != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseOver = onMouseOver;
   }
   if (onMouseUp != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseUp = onMouseUp;
   }
   if (onPointerCancel != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerCancel = combineEventHandlers(
       nativeProps.onPointerCancel,
       onPointerCancel
     );
   }
   if (onPointerDown != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerDown = combineEventHandlers(
       nativeProps.onPointerDown,
       onPointerDown
     );
   }
   if (onPointerEnter != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerEnter = combineEventHandlers(
       nativeProps.onPointerEnter,
       onPointerEnter
     );
   }
   if (onPointerLeave != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerLeave = combineEventHandlers(
       nativeProps.onPointerLeave,
       onPointerLeave
     );
   }
   if (onPointerMove != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerMove = onPointerMove;
   }
   if (onPointerOut != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerOut = onPointerOut;
   }
   if (onPointerOver != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerOver = onPointerOver;
   }
   if (onPointerUp != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerUp = combineEventHandlers(
       nativeProps.onPointerUp,
       onPointerUp
     );
   }
   if (onScroll != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onScroll = onScroll;
   }
   if (onTouchCancel != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchCancel = onTouchCancel;
   }
   if (onTouchEnd != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchEnd = onTouchEnd;
   }
   if (onTouchMove != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchMove = onTouchMove;
   }
   if (onTouchStart != null) {
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchStart = onTouchStart;
   }
 

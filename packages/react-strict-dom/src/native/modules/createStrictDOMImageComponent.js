@@ -21,7 +21,9 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
   _defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
   component Component(ref: React.RefSetter<T>, ...props: P) {
-    let NativeComponent = ReactNative.Image;
+    let NativeComponent:
+      | typeof ReactNative.Image
+      | typeof ReactNative.Animated.Image = ReactNative.Image;
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
     const {
@@ -56,15 +58,19 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
     // Tag-specific props
 
     if (alt != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.alt = alt;
     }
     if (crossOrigin != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.crossOrigin = crossOrigin;
     }
     if (height != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.height = height;
     }
     if (onError != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.onError = function () {
         onError({
           type: 'error'
@@ -72,6 +78,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
       };
     }
     if (onLoad != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.onLoad = function (e) {
         const { source } = e.nativeEvent;
         onLoad({
@@ -84,20 +91,25 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
       };
     }
     if (referrerPolicy != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.referrerPolicy = referrerPolicy;
     }
     if (src != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.src = src;
     }
     if (srcSet != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.srcSet = srcSet;
     }
     if (width != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.width = width;
     }
 
     // Component-specific props
 
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.ref = elementRef;
 
     // Use Animated components if necessary
@@ -109,7 +121,7 @@ export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
-        // $FlowFixMe
+        // $FlowFixMe[incompatible-type]
         <NativeComponent {...nativeProps} />
       );
 

@@ -27,6 +27,7 @@ declare class SyntheticEvent<+T: EventTarget = EventTarget, +E: Event = Event> {
   isDefaultPrevented(): boolean;
   isPropagationStopped(): boolean;
   isTrusted: boolean;
+  // $FlowFixMe[incompatible-variance]
   nativeEvent: E;
   persist(): void;
   preventDefault(): void;

@@ -21,7 +21,7 @@ import { useStrictDOMElement } from './useStrictDOMElement';
 const AnimatedTextInput = ReactNative.Animated.createAnimatedComponent<
   React.ElementConfig<typeof ReactNative.TextInput>,
   typeof ReactNative.TextInput
-  // $FlowFixMe: React Native animated component typing issue
+  // $FlowFixMe[incompatible-type]: React Native animated component typing issue
 >(ReactNative.TextInput);
 
 // $FlowFixMe[unclear-type]
@@ -101,9 +101,11 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
         _inputMode = 'numeric';
       }
       if (_inputMode != null) {
+        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.inputMode = _inputMode;
       }
       if (type === 'password') {
+        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.secureTextEntry = true;
       }
       if (type === 'checkbox' || type === 'date' || type === 'radio') {
@@ -114,8 +116,10 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
         }
       }
     } else if (tagName === 'textarea') {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.multiline = true;
       if (rows != null) {
+        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.numberOfLines = rows;
       }
     }
@@ -123,27 +127,36 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
     // Component-specific props
 
     if (autoCapitalize != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.autoCapitalize = autoCapitalize;
     }
     if (autoComplete != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.autoComplete = autoComplete;
     }
     if (defaultValue != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.defaultValue = defaultValue;
     }
     if (disabled === true) {
       // polyfill disabled elements
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.disabled = true;
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.editable = false;
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.focusable = false;
     }
     if (enterKeyHint != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.enterKeyHint = enterKeyHint;
     }
     if (maxLength != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.maxLength = maxLength;
     }
     if (onChange != null || onInput != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.onChange = function (e) {
         const { text, selection } = e.nativeEvent;
         // Update cached selection state immediately to ensure sync with onChange
@@ -167,6 +180,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       };
     }
     if (onKeyDown != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.onKeyPress = function (e) {
         const { key } = e.nativeEvent;
         // Filter out bad iOS keypress data on submit
@@ -181,6 +195,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
           });
         }
       };
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.onSubmitEditing = function (e) {
         onKeyDown({
           key: 'Enter',
@@ -189,6 +204,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       };
     }
     // Part of polyfill for selectionStart/End
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onSelectionChange = function (e) {
       const { selection } = e.nativeEvent;
       updateCachedSelection(nodeRef.current, selection);
@@ -197,18 +213,23 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       }
     };
     if (placeholder != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.placeholder = placeholder;
     }
     if (readOnly != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.editable = !readOnly;
     }
     if (spellCheck != null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.spellCheck = spellCheck;
     }
     if (value != null && typeof value === 'string') {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.value = value;
     }
 
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.ref = React.useMemo(
       () =>
         mergeRefs((node) => {
@@ -226,7 +247,7 @@ export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
-        // $FlowFixMe
+        // $FlowFixMe[incompatible-type]
         <NativeComponent {...nativeProps} />
       );
 
