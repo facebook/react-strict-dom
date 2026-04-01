@@ -22,7 +22,7 @@ type Options = {
 // $FlowFixMe[unclear-type]
 type Node = any;
 
-const memoizedStrictRefs: WeakMap<Node, mixed> = new WeakMap();
+const memoizedStrictRefs: WeakMap<Node, unknown> = new WeakMap();
 
 const lengthPropertySet = new Set([
   'clientHeight',

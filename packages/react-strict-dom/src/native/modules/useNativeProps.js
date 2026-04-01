@@ -18,7 +18,7 @@ import { isPropAllowed } from '../../shared/isPropAllowed';
 import { useCustomProperties } from './ContextCustomProperties';
 import { useStyleProps } from './useStyleProps';
 
-type StrictProps = $ReadOnly<{
+type StrictProps = Readonly<{
   ...StrictPropsOriginal,
   children?: React.Node | ((ReactNativeProps) => React.Node)
 }>;
@@ -274,7 +274,7 @@ export function useNativeProps(
     // $FlowFixMe[react-rule-hook-mutation]
     // $FlowFixMe[missing-local-annot]
     nativeProps.onPress = function ({ nativeEvent }) {
-      const event: mixed = nativeEvent;
+      const event: unknown = nativeEvent;
       let altKey = false;
       let ctrlKey = false;
       let metaKey = false;

@@ -27,7 +27,7 @@ function validateStrictProps(props: any) {
   });
 }
 
-export function createStrictDOMComponent<T, P: StrictProps>(
+export function createStrictDOMComponent<T, P extends StrictProps>(
   TagName: string,
   defaultStyle: StrictProps['style']
 ): component(ref?: React.RefSetter<T>, ...P) {

@@ -40,7 +40,10 @@ function updateCachedSelection(
   }
 }
 
-export function createStrictDOMTextInputComponent<P: StrictInputProps, T>(
+export function createStrictDOMTextInputComponent<
+  P extends StrictInputProps,
+  T
+>(
   tagName: string,
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {

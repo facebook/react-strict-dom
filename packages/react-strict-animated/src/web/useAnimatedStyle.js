@@ -29,16 +29,18 @@ import {
 type CallbackRef<T> = (T) => void;
 
 type CompositeKeyComponent =
-  | AnimatedNode<mixed>
-  | $ReadOnlyArray<CompositeKeyComponent | null>
-  | $ReadOnly<{ [string]: CompositeKeyComponent }>;
+  | AnimatedNode<unknown>
+  | ReadonlyArray<CompositeKeyComponent | null>
+  | Readonly<{ [string]: CompositeKeyComponent }>;
 
-type $ReadOnlyCompositeKeyComponent =
-  | AnimatedNode<mixed>
-  | $ReadOnlyArray<$ReadOnlyCompositeKeyComponent | null>
-  | $ReadOnly<{ [string]: $ReadOnlyCompositeKeyComponent }>;
+type ReadOnlyCompositeKeyComponent =
+  | AnimatedNode<unknown>
+  | ReadonlyArray<ReadOnlyCompositeKeyComponent | null>
+  | Readonly<{ [string]: ReadOnlyCompositeKeyComponent }>;
 
-function isPlainObject(value: mixed): value is $ReadOnly<{ [string]: mixed }> {
+function isPlainObject(
+  value: unknown
+): value is Readonly<{ [string]: unknown }> {
   return (
     /* $FlowFixMe[incompatible-type-guard] - Flow does not know that the prototype
    and ReactElement checks preserve the type refinement of `value`. */
@@ -50,9 +52,9 @@ function isPlainObject(value: mixed): value is $ReadOnly<{ [string]: mixed }> {
 }
 
 function createCompositeKeyForArray(
-  array: $ReadOnlyArray<mixed>
-): $ReadOnlyArray<$ReadOnlyCompositeKeyComponent | null> | null {
-  let compositeKey: Array<$ReadOnlyCompositeKeyComponent | null> | null = null;
+  array: ReadonlyArray<unknown>
+): ReadonlyArray<ReadOnlyCompositeKeyComponent | null> | null {
+  let compositeKey: Array<ReadOnlyCompositeKeyComponent | null> | null = null;
 
   for (let ii = 0, length = array.length; ii < length; ii++) {
     const value = array[ii];
@@ -67,7 +69,7 @@ function createCompositeKeyForArray(
     }
     if (compositeKeyComponent != null) {
       if (compositeKey == null) {
-        compositeKey = new Array<$ReadOnlyCompositeKeyComponent | null>(
+        compositeKey = new Array<ReadOnlyCompositeKeyComponent | null>(
           array.length
         ).fill(null);
       }
@@ -79,9 +81,9 @@ function createCompositeKeyForArray(
 }
 
 function createCompositeKeyForObject(
-  object: $ReadOnly<{ [string]: mixed }>
-): $ReadOnly<{ [string]: $ReadOnlyCompositeKeyComponent }> | null {
-  let compositeKey: { [string]: $ReadOnlyCompositeKeyComponent } | null = null;
+  object: Readonly<{ [string]: unknown }>
+): Readonly<{ [string]: ReadOnlyCompositeKeyComponent }> | null {
+  let compositeKey: { [string]: ReadOnlyCompositeKeyComponent } | null = null;
 
   const keys = Object.keys(object);
   for (let ii = 0, length = keys.length; ii < length; ii++) {
@@ -98,7 +100,7 @@ function createCompositeKeyForObject(
     }
     if (compositeKeyComponent != null) {
       if (compositeKey == null) {
-        compositeKey = {} as { [string]: $ReadOnlyCompositeKeyComponent };
+        compositeKey = {} as { [string]: ReadOnlyCompositeKeyComponent };
       }
       compositeKey[key] = compositeKeyComponent;
     }
@@ -108,8 +110,8 @@ function createCompositeKeyForObject(
 }
 
 function areCompositeKeyComponentsEqual(
-  prev: $ReadOnlyCompositeKeyComponent | null,
-  next: $ReadOnlyCompositeKeyComponent | null
+  prev: ReadOnlyCompositeKeyComponent | null,
+  next: ReadOnlyCompositeKeyComponent | null
 ): boolean {
   if (prev === next) {
     return true;
@@ -157,7 +159,7 @@ function areCompositeKeyComponentsEqual(
 
 function useMemoizedAnimatedStyle(
   create: () => ?AnimatedStyle,
-  style: ?AnimatedStyleValue<AnimatedNode<mixed>>
+  style: ?AnimatedStyleValue<AnimatedNode<unknown>>
 ): ?AnimatedStyle {
   const compositeKey = useMemo(
     () => (style != null ? createCompositeKeyForObject(style) : null),
@@ -165,7 +167,7 @@ function useMemoizedAnimatedStyle(
   );
 
   const [currentData, updateData] = useState<
-    $ReadOnly<{
+    Readonly<{
       compositeKey: typeof compositeKey,
       node: ?AnimatedStyle
     }>
@@ -184,8 +186,8 @@ function useMemoizedAnimatedStyle(
   return currentData.node;
 }
 
-export default function useAnimatedStyle<TInstance: HTMLElement | null>(
-  style: ?AnimatedStyleValue<AnimatedNode<mixed>>,
+export default function useAnimatedStyle<TInstance extends HTMLElement | null>(
+  style: ?AnimatedStyleValue<AnimatedNode<unknown>>,
   parentRef?: React.RefSetter<TInstance>
 ): [ReadOnlyOutputAnimatedStyle, CallbackRef<TInstance>] {
   const domElemRef = useRef<TInstance | null>(null);

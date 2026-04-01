@@ -20,23 +20,23 @@ import * as ReactNative from '../react-native';
 import { errorMsg, warnMsg } from '../../shared/logUtils';
 
 type AnimatedStyle = {
-  [string]: ?ReactNativeStyleValue | $ReadOnlyArray<mixed>
+  [string]: ?ReactNativeStyleValue | ReadonlyArray<unknown>
 };
 
-type TransitionMetadata = $ReadOnly<{
+type TransitionMetadata = Readonly<{
   delay: number,
   duration: number,
   timingFunction: string | null,
   shouldUseNativeDriver: boolean
 }>;
 
-const INPUT_RANGE: $ReadOnlyArray<number> = [0, 1];
+const INPUT_RANGE: ReadonlyArray<number> = [0, 1];
 
-function isNumber(num: mixed): num is number {
+function isNumber(num: unknown): num is number {
   return typeof num === 'number';
 }
 
-function isString(str: mixed): str is string {
+function isString(str: unknown): str is string {
   return typeof str === 'string';
 }
 
@@ -82,7 +82,7 @@ function getEasingFunction(input: ?string) {
   return ReactNative.Easing.linear;
 }
 
-function getTransitionProperties(property: mixed): ?(string[]) {
+function getTransitionProperties(property: unknown): ?(string[]) {
   if (property === 'all') {
     return ['opacity', 'transform'];
   }
@@ -93,8 +93,8 @@ function getTransitionProperties(property: mixed): ?(string[]) {
 }
 
 function transformsHaveSameLengthTypesAndOrder(
-  transformsA: $ReadOnlyArray<ReactNativeTransform>,
-  transformsB: $ReadOnlyArray<ReactNativeTransform>
+  transformsA: ReadonlyArray<ReactNativeTransform>,
+  transformsB: ReadonlyArray<ReactNativeTransform>
 ): boolean {
   if (transformsA.length !== transformsB.length) {
     return false;
@@ -124,8 +124,8 @@ function transformsHaveSameLengthTypesAndOrder(
 }
 
 function transformListsAreEqual(
-  transformsA: $ReadOnlyArray<ReactNativeTransform>,
-  transformsB: $ReadOnlyArray<ReactNativeTransform>
+  transformsA: ReadonlyArray<ReactNativeTransform>,
+  transformsB: ReadonlyArray<ReactNativeTransform>
 ): boolean {
   if (!transformsHaveSameLengthTypesAndOrder(transformsA, transformsB)) {
     return false;
@@ -429,7 +429,7 @@ export function useStyleTransition(style: ReactNativeStyle): ReactNativeStyle {
       }
 
       // Animate the transforms
-      const animatedTransforms: Array<mixed> = [];
+      const animatedTransforms: Array<unknown> = [];
       for (let i = 0; i < transforms.length; i++) {
         const singleTransform = transforms[i];
         const singlePrevTransform = prevTransforms[i];

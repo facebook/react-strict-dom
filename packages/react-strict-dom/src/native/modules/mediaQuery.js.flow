@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-type MediaQueryValues = $ReadOnly<{
+type MediaQueryValues = Readonly<{
   type?: 'screen',
   width?: number,
   height?: number,

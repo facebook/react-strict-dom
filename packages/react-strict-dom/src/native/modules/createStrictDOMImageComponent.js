@@ -16,7 +16,10 @@ import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import * as css from '../css';
 
-export function createStrictDOMImageComponent<P: StrictReactDOMImageProps, T>(
+export function createStrictDOMImageComponent<
+  P extends StrictReactDOMImageProps,
+  T
+>(
   tagName: string,
   _defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {

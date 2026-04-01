@@ -68,7 +68,7 @@ export function spring(
   };
 }
 
-export function interpolate<TOutput: number | string>(
+export function interpolate<TOutput extends number | string>(
   value: AnimatedNodeType,
   config: InterpolationConfig<TOutput>
 ): AnimatedNodeType {

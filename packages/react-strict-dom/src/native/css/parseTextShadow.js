@@ -46,9 +46,9 @@ function parseValue(str: string) {
   };
 }
 
-export type TextShadowStyle = $ReadOnly<{
+export type TextShadowStyle = Readonly<{
   textShadowColor: string | null,
-  textShadowOffset: $ReadOnly<{
+  textShadowOffset: Readonly<{
     height: number | string,
     width: number | string
   }>,

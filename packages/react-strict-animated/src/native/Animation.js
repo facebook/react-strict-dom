@@ -51,7 +51,7 @@ export function spring(
   return Animated.spring(value, { ...config, useNativeDriver: true });
 }
 
-export function interpolate<TOutput: string | number>(
+export function interpolate<TOutput extends string | number>(
   value: Animated.Node,
   config: InterpolationConfig<TOutput>
 ): Animated.Node {

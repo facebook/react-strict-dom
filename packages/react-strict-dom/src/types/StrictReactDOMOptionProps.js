@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMOptionProps = $ReadOnly<{
+export type StrictReactDOMOptionProps = Readonly<{
   ...StrictReactDOMProps,
   disabled?: ?boolean,
   label?: ?Stringish,

@@ -15,22 +15,22 @@ export type TimingAnimationConfig = {
 };
 
 export type AnimatedTransformValue<TAnimatedNode> =
-  | $ReadOnly<{ perspective: number | TAnimatedNode }>
-  | $ReadOnly<{ rotate: string | TAnimatedNode }>
-  | $ReadOnly<{ rotateX: string | TAnimatedNode }>
-  | $ReadOnly<{ rotateY: string | TAnimatedNode }>
-  | $ReadOnly<{ rotateZ: string | TAnimatedNode }>
-  | $ReadOnly<{ scale: number | TAnimatedNode }>
-  | $ReadOnly<{ scaleX: number | TAnimatedNode }>
-  | $ReadOnly<{ scaleY: number | TAnimatedNode }>
-  | $ReadOnly<{ translateX: number | string | TAnimatedNode }>
-  | $ReadOnly<{ translateY: number | string | TAnimatedNode }>
-  | $ReadOnly<{ skewX: string | TAnimatedNode }>
-  | $ReadOnly<{ skewY: string | TAnimatedNode }>;
+  | Readonly<{ perspective: number | TAnimatedNode }>
+  | Readonly<{ rotate: string | TAnimatedNode }>
+  | Readonly<{ rotateX: string | TAnimatedNode }>
+  | Readonly<{ rotateY: string | TAnimatedNode }>
+  | Readonly<{ rotateZ: string | TAnimatedNode }>
+  | Readonly<{ scale: number | TAnimatedNode }>
+  | Readonly<{ scaleX: number | TAnimatedNode }>
+  | Readonly<{ scaleY: number | TAnimatedNode }>
+  | Readonly<{ translateX: number | string | TAnimatedNode }>
+  | Readonly<{ translateY: number | string | TAnimatedNode }>
+  | Readonly<{ skewX: string | TAnimatedNode }>
+  | Readonly<{ skewY: string | TAnimatedNode }>;
 
-export type AnimatedStyleValue<TAnimatedNode> = $ReadOnly<{
+export type AnimatedStyleValue<TAnimatedNode> = Readonly<{
   opacity?: number | TAnimatedNode,
-  transform?: $ReadOnlyArray<AnimatedTransformValue<TAnimatedNode>>
+  transform?: ReadonlyArray<AnimatedTransformValue<TAnimatedNode>>
 }>;
 
 export type ParallelConfig = {
@@ -55,7 +55,7 @@ export type SpringAnimationConfig = {
 
 type ExtrapolateType = 'extend' | 'identity' | 'clamp';
 
-export type InterpolationConfig<TOutput: string | number> = {
+export type InterpolationConfig<TOutput extends string | number> = {
   easing?: (input: number) => number,
   extrapolate?: ExtrapolateType,
   extrapolateLeft?: ExtrapolateType,

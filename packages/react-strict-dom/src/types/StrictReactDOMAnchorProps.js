@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMAnchorProps = $ReadOnly<{
+export type StrictReactDOMAnchorProps = Readonly<{
   ...StrictReactDOMProps,
   download?: ?string,
   href?: string,

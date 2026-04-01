@@ -29,7 +29,7 @@ declare class DataTransferItemList {
 declare class DataTransferItem {
   kind: string; // readonly
   type: string; // readonly
-  getAsString(_callback: ?(data: string) => mixed): void;
+  getAsString(_callback: ?(data: string) => unknown): void;
   getAsFile(): ?File;
   /*
    * This is not supported by all browsers, please have a fallback plan for it.
@@ -113,7 +113,7 @@ declare class BroadcastChannel extends EventTarget {
   onmessageerror: ?(event: MessageEvent) => void;
 
   constructor(name: string): void;
-  postMessage(msg: mixed): void;
+  postMessage(msg: unknown): void;
   close(): void;
 }
 
@@ -572,7 +572,7 @@ declare class CanvasRenderingContext2D {
     y: number,
     w: number,
     h: number,
-    radii?: number | DOMPointInit | $ReadOnlyArray<number | DOMPointInit>
+    radii?: number | DOMPointInit | ReadonlyArray<number | DOMPointInit>
   ): void;
   strokeRect(x: number, y: number, w: number, h: number): void;
 

@@ -32,9 +32,9 @@ type StyleVars<T> = VarGroup<T>;
 type Styles<T> = StyleXStyles<T>;
 type StylesWithout<T> = StyleXStylesWithout<T>;
 
-type ProviderValue = $ReadOnly<{ [string]: string | number }>;
+type ProviderValue = Readonly<{ [string]: string | number }>;
 
-type ProviderProps = $ReadOnly<{
+type ProviderProps = Readonly<{
   children: React.Node,
   customProperties: ProviderValue
 }>;

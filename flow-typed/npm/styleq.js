@@ -11,14 +11,14 @@ type InlineStyle = {
   [key: string]: string | number
 };
 
-type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
+type StylesArray<+T> = T | ReadonlyArray<StylesArray<T>>;
 type Styles = StylesArray<?{ ... } | boolean>;
 type Style<+T = { ... }> = StylesArray<boolean | ?T>;
 
 type StyleqOptions = {
   disableCache?: boolean,
   disableMix?: boolean,
-  transform?: (mixed) => { ... }
+  transform?: (unknown) => { ... }
 };
 
 type StyleqResult = [
@@ -30,7 +30,7 @@ type StyleqResult = [
 type Styleq = (styles: Styles) => StyleqResult;
 
 type IStyleq = {
-  (...styles: $ReadOnlyArray<Styles>): StyleqResult,
+  (...styles: ReadonlyArray<Styles>): StyleqResult,
   factory: (options?: StyleqOptions) => Styleq
 };
 
