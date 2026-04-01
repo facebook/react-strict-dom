@@ -33,7 +33,9 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
   component Component(ref?: React.RefSetter<T>, ...props: P) {
-    let NativeComponent = ReactNative.Text;
+    let NativeComponent:
+      | typeof ReactNative.Text
+      | typeof ReactNative.Animated.Text = ReactNative.Text;
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
     const { href, label } = props;
@@ -48,6 +50,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       {
         provideInheritableStyle:
           tagName !== 'br' ||
+          // $FlowFixMe[invalid-compare]
           tagName !== 'option' ||
           hasElementChildren(props.children),
         withInheritedStyle: true,
@@ -58,8 +61,10 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
     // Tag-specific props
 
     if (tagName === 'a') {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'link';
       if (href != null) {
+        // $FlowFixMe[react-rule-hook-mutation]
         nativeProps.onPress = function (e) {
           if (__DEV__) {
             errorMsg('<a> "href" handling is not implemented in React Native.');
@@ -67,6 +72,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
         };
       }
     } else if (tagName === 'br') {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.children = '\n';
     } else if (
       tagName === 'h1' ||
@@ -76,13 +82,16 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       tagName === 'h5' ||
       tagName === 'h6'
     ) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.role ??= 'heading';
     } else if (tagName === 'option') {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.children = label;
     }
 
     // Component-specific props
 
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.ref = elementRef;
 
     // Workaround: Android doesn't support ellipsis truncation if Text is selectable
@@ -93,6 +102,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       nativeProps.style.userSelect !== 'none';
 
     // $FlowExpectedError[unsafe-object-assign]
+    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.style = Object.assign(
       nativeProps.style,
       disableUserSelect ? { userSelect: 'none' } : null
@@ -101,7 +111,9 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
     // Native components historically clip text. Opt into web-style default of
     // visible overflow by default
     if (nativeProps.style?.overflow == null) {
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style = nativeProps.style ?? {};
+      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.style.overflow = 'visible';
     }
 
@@ -118,7 +130,7 @@ export function createStrictDOMTextComponent<T, P: StrictProps>(
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
-        // $FlowFixMe
+        // $FlowFixMe[incompatible-type]
         <NativeComponent {...nativeProps} />
       );
 

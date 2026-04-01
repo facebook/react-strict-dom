@@ -82,20 +82,22 @@ export component AnimatedDiv(
   animatedStyle?: AnimatedStyleValue<Animated.Node>,
   children?: React.Node,
   ref?: React.RefSetter<React.RefOf<html.div>>,
-  ...htmlProps: Omit<React.PropsOf<html.div>, 'children'>
+  ...htmlProps: Omit<React.PropsOf<html.div>, 'children' | 'ref'>
 ) {
   const scaledAnimatedStyle = useViewportScaledAnimatedStyle(animatedStyle);
 
   return (
-    // $FlowFixMe[prop-missing] - RSD missing ref type on compat.native API
+    // $FlowFixMe[incompatible-type]
     <compat.native
       {...htmlProps}
       as="div"
       ref={ref}
+      // $FlowFixMe[incompatible-type]
       style={[styles.defaults, htmlProps.style]}
     >
       {(nativeProps: React.PropsOf<View>) => {
         return (
+          // $FlowFixMe[invalid-component-prop]
           <Animated.View
             {...nativeProps}
             style={[nativeProps.style, scaledAnimatedStyle]}
@@ -112,20 +114,23 @@ export component AnimatedSpan(
   animatedStyle: AnimatedStyleValue<Animated.Node>,
   children?: React.Node,
   ref?: React.RefSetter<React.RefOf<html.span>>,
-  ...htmlProps: Omit<React.PropsOf<html.span>, 'children'>
+  ...htmlProps: Omit<React.PropsOf<html.span>, 'children' | 'ref'>
 ) {
   const scaledAnimatedStyle = useViewportScaledAnimatedStyle(animatedStyle);
 
   return (
-    // $FlowFixMe[prop-missing] - RSD missing ref type on compat.native API
+    // $FlowFixMe[incompatible-type]
     <compat.native
       {...htmlProps}
       as="span"
       ref={ref}
+      // $FlowFixMe[incompatible-type]
       style={[styles.defaults, htmlProps.style]}
     >
       {(nativeProps: React.PropsOf<Text>) => {
         return (
+          // $FlowFixMe[incompatible-type]
+          // $FlowFixMe[invalid-component-prop]
           <Animated.Text
             {...nativeProps}
             style={[nativeProps.style, scaledAnimatedStyle]}
@@ -141,16 +146,17 @@ export component AnimatedSpan(
 export component AnimatedImg(
   animatedStyle: AnimatedStyleValue<Animated.Node>,
   ref?: React.RefSetter<React.RefOf<html.img>>,
-  ...htmlProps: React.PropsOf<html.img>
+  ...htmlProps: Omit<React.PropsOf<html.img>, 'ref'>
 ) {
   const scaledAnimatedStyle = useViewportScaledAnimatedStyle(animatedStyle);
 
   return (
-    // $FlowFixMe[prop-missing] - RSD missing ref type on compat.native API
+    // $FlowFixMe[incompatible-type]
     <compat.native
       {...htmlProps}
       as="img"
       ref={ref}
+      // $FlowFixMe[incompatible-type]
       style={[styles.defaults, htmlProps.style]}
     >
       {(nativeProps: ImageProps) => {
