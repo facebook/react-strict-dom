@@ -7,7 +7,7 @@
  * @flow strict-local
  */
 
-import { useEffect, useState } from 'react';
+import * as React from 'react';
 
 import {
   getPrefersReducedMotionSnapshot,
@@ -15,19 +15,9 @@ import {
 } from './PrefersReducedMotionStore';
 
 export function usePrefersReducedMotion(): boolean {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
-    getPrefersReducedMotionSnapshot()
+  return React.useSyncExternalStore(
+    subscribeToPrefersReducedMotion,
+    getPrefersReducedMotionSnapshot,
+    getPrefersReducedMotionSnapshot
   );
-
-  useEffect(() => {
-    const unsubscribe = subscribeToPrefersReducedMotion(
-      (isReduceMotionEnabled) => {
-        setPrefersReducedMotion(isReduceMotionEnabled);
-      }
-    );
-
-    return unsubscribe;
-  }, []);
-
-  return prefersReducedMotion;
 }

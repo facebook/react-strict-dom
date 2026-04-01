@@ -11,7 +11,7 @@ import type { EventSubscription } from 'react-native/Libraries/vendor/emitter/Ev
 
 import * as ReactNative from '../react-native';
 
-type Listener = (prefersReducedMotion: boolean) => void;
+type Listener = () => void;
 
 const listeners: Set<Listener> = new Set();
 
@@ -24,7 +24,7 @@ function setPrefersReducedMotion(nextValue: boolean) {
     prefersReducedMotion = nextValue;
 
     Array.from(listeners).forEach((listener) => {
-      listener(prefersReducedMotion);
+      listener();
     });
   }
 }
