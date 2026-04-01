@@ -38,6 +38,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {
   const provideInheritableStyle =
+    // $FlowFixMe[invalid-compare]
     tagName !== 'br' || tagName !== 'hr' || tagName !== 'option';
 
   component Component(ref: React.RefSetter<T>, ...props: P) {
