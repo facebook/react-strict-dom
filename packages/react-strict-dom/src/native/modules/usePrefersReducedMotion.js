@@ -7,36 +7,26 @@
  * @flow strict-local
  */
 
-import * as ReactNative from '../react-native';
-
 import { useEffect, useState } from 'react';
 
+import {
+  getPrefersReducedMotionSnapshot,
+  subscribeToPrefersReducedMotion
+} from './PrefersReducedMotionStore';
+
 export function usePrefersReducedMotion(): boolean {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
+    getPrefersReducedMotionSnapshot()
+  );
 
   useEffect(() => {
-    // 1. Get the initial value of reduce motion
-    ReactNative.AccessibilityInfo.isReduceMotionEnabled().then(
+    const unsubscribe = subscribeToPrefersReducedMotion(
       (isReduceMotionEnabled) => {
         setPrefersReducedMotion(isReduceMotionEnabled);
-      },
-      () => {
-        // Silently ignore if the native module is not available (e.g., on VR)
       }
     );
 
-    // 2. Subscribe to changes in reduce motion
-    const reduceMotionChangedSubscription =
-      ReactNative.AccessibilityInfo.addEventListener(
-        'reduceMotionChanged',
-        (isReduceMotionEnabled) => {
-          setPrefersReducedMotion(isReduceMotionEnabled);
-        }
-      );
-
-    return () => {
-      reduceMotionChangedSubscription.remove();
-    };
+    return unsubscribe;
   }, []);
 
   return prefersReducedMotion;
