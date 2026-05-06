@@ -81,52 +81,88 @@ const styles = stylex.create({
   }
 });
 
+// $FlowFixMe[incompatible-type]
 const a: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const article: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const aside: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const b: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const bdi: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const bdo: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const blockquote: StrictReactDOMPropsStyle = styles.block;
 const br: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const button: StrictReactDOMPropsStyle = [styles.inlineblock, styles.button];
+// $FlowFixMe[incompatible-type]
 const code: StrictReactDOMPropsStyle = [styles.inline, styles.codePre];
 const del: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const div: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const em: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const fieldset: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const footer: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const form: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const heading: StrictReactDOMPropsStyle = [styles.block, styles.heading];
+// $FlowFixMe[incompatible-type]
 const header: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const hr: StrictReactDOMPropsStyle = [styles.block, styles.hr];
+// $FlowFixMe[incompatible-type]
 const i: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const img: StrictReactDOMPropsStyle = styles.img;
+// $FlowFixMe[incompatible-type]
 const input: StrictReactDOMPropsStyle = [styles.inlineblock, styles.input];
 const ins: StrictReactDOMPropsStyle = null;
 const kbd: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const label: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const li: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const main: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const mark: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const nav: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const ol: StrictReactDOMPropsStyle = [styles.list, styles.block];
 const optgroup: StrictReactDOMPropsStyle = null;
 const option: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const p: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const pre: StrictReactDOMPropsStyle = [styles.block, styles.codePre];
 const s: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const section: StrictReactDOMPropsStyle = styles.block;
+// $FlowFixMe[incompatible-type]
 const select: StrictReactDOMPropsStyle = styles.inlineblock;
+// $FlowFixMe[incompatible-type]
 const span: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const strong: StrictReactDOMPropsStyle = [styles.inline, styles.strong];
+// $FlowFixMe[incompatible-type]
 const sub: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const sup: StrictReactDOMPropsStyle = styles.inline;
+// $FlowFixMe[incompatible-type]
 const textarea: StrictReactDOMPropsStyle = [
   styles.inlineblock,
   styles.textarea
 ];
 const u: StrictReactDOMPropsStyle = null;
+// $FlowFixMe[incompatible-type]
 const ul: StrictReactDOMPropsStyle = [styles.list, styles.block];
 
 export const defaultStyles = {

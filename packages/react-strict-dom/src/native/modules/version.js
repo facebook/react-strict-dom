@@ -7,7 +7,7 @@
  * @flow strict
  */
 
-// $FlowFixMe(nonstrict-import)
+// $FlowFixMe[nonstrict-import]
 import * as ReactNative from '../react-native';
 
 const reactNativeVersion = ReactNative.Platform.constants.reactNativeVersion;

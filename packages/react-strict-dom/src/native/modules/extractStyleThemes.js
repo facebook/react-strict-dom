@@ -9,7 +9,7 @@
 
 import type { CustomProperties, Style, Styles } from '../../types/styles';
 
-const emptyValue = [{}, null];
+const emptyValue: [Style, ?CustomProperties] = [{}, null];
 
 export function extractStyleThemes(
   mixOfStyleAndTheme: ?Styles | Style | Array<Styles | Style>
