@@ -7,4 +7,4 @@
  * @flow strict
  */
 
-export type ReactRef<T> = { -current: T | null, ... } | ((T | null) => mixed);
+export type ReactRef<T> = { -current: T | null, ... } | ((T | null) => unknown);

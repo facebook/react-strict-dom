@@ -14,13 +14,13 @@ import type { AnimatedAnimation, KeyframeMap } from '../animations/Animation';
 import AnimatedStyle from './AnimatedStyle';
 import AnimatedWithChildren from './AnimatedWithChildren';
 
-type AnimationData = $ReadOnly<{
+type AnimationData = Readonly<{
   animatedAnimation: AnimatedAnimation,
-  webAnimations: $ReadOnlyArray<Animation>
+  webAnimations: ReadonlyArray<Animation>
 }>;
 
 function findAnimatedStyles(
-  node: AnimatedNode<mixed>,
+  node: AnimatedNode<unknown>,
   animatedStyles: Set<AnimatedStyle>
 ) {
   if (node instanceof AnimatedStyle) {

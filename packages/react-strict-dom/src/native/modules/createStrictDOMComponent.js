@@ -21,7 +21,7 @@ import { errorMsg } from '../../shared/logUtils';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
-type StrictProps = $ReadOnly<{
+type StrictProps = Readonly<{
   ...StrictPropsOriginal,
   children?: React.Node | ((ReactNativeProps) => React.Node)
 }>;
@@ -33,7 +33,7 @@ const AnimatedPressable = ReactNative.Animated.createAnimatedComponent<
   // $FlowFixMe[incompatible-type]
 >(ReactNative.Pressable);
 
-export function createStrictDOMComponent<T, P: StrictProps>(
+export function createStrictDOMComponent<T, P extends StrictProps>(
   tagName: string,
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {

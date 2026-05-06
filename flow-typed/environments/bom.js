@@ -18,7 +18,7 @@ declare class Screen {
     lock(): Promise<void>;
     unlock(): void;
     angle: number;
-    onchange: () => mixed;
+    onchange: () => unknown;
     type: 'portrait-primary' | 'portrait-secondary' | 'landscape-primary' | 'landscape-secondary';
     ...
   };
@@ -26,7 +26,7 @@ declare class Screen {
   mozLockOrientation?: (orientation: string | Array<string>) => boolean;
   mozUnlockOrientation?: () => void;
   mozOrientation?: string;
-  onmozorientationchange?: (...args: any[]) => mixed;
+  onmozorientationchange?: (...args: any[]) => unknown;
 }
 
 declare var screen: Screen;
@@ -34,7 +34,7 @@ declare var screen: Screen;
 declare interface Crypto {
   // Not using $TypedArray as that would include Float32Array and Float64Array which are not accepted
   getRandomValues: <
-    T: Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | BigInt64Array | BigUint64Array
+    T extends Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | BigInt64Array | BigUint64Array
   >(typedArray: T) => T;
   randomUUID: () => string;
 }
@@ -84,10 +84,10 @@ type BatteryManager = {
   +chargingTime: number,
   +dischargingTime: number,
   +level: number,
-  onchargingchange: ?((event: any) => mixed),
-  onchargingtimechange: ?((event: any) => mixed),
-  ondischargingtimechange: ?((event: any) => mixed),
-  onlevelchange: ?((event: any) => mixed),
+  onchargingchange: ?((event: any) => unknown),
+  onchargingtimechange: ?((event: any) => unknown),
+  ondischargingtimechange: ?((event: any) => unknown),
+  onlevelchange: ?((event: any) => unknown),
   ...
 }
 
@@ -159,7 +159,7 @@ type FileSystemHandlePermissionDescriptor = {|
 |}
 
 declare class PermissionStatus extends EventTarget {
-  onchange: ?((event: any) => mixed);
+  onchange: ?((event: any) => unknown);
   +state: PermissionState;
 }
 
@@ -212,13 +212,13 @@ declare class MIDIPort extends EventTarget {
   +version?: string;
   +state: MIDIPortDeviceState;
   +connection: MIDIPortConnectionState;
-  onstatechange: ?((ev: MIDIConnectionEvent) => mixed);
+  onstatechange: ?((ev: MIDIConnectionEvent) => unknown);
   open(): Promise<MIDIPort>;
   close(): Promise<MIDIPort>;
 }
 
 declare class MIDIInput extends MIDIPort {
-  onmidimessage: ?((ev: MIDIMessageEvent) => mixed);
+  onmidimessage: ?((ev: MIDIMessageEvent) => unknown);
 }
 
 declare class MIDIOutput extends MIDIPort {
@@ -234,7 +234,7 @@ declare class MIDIAccess extends EventTarget {
   +inputs: MIDIInputMap;
   +outputs: MIDIOutputMap;
   +sysexEnabled: boolean;
-  onstatechange: ?((ev: MIDIConnectionEvent) => mixed);
+  onstatechange: ?((ev: MIDIConnectionEvent) => unknown);
 }
 
 declare class NavigatorID {
@@ -248,7 +248,7 @@ declare class NavigatorID {
 
 declare class NavigatorLanguage {
     +language: string;
-    +languages: $ReadOnlyArray<string>;
+    +languages: ReadonlyArray<string>;
 }
 
 declare class NavigatorContentUtils {
@@ -360,7 +360,7 @@ declare class Navigator mixins
 declare class Clipboard extends EventTarget {
     read(): Promise<DataTransfer>;
     readText(): Promise<string>;
-    write(data: $ReadOnlyArray<ClipboardItem>): Promise<void>;
+    write(data: ReadonlyArray<ClipboardItem>): Promise<void>;
     writeText(data: string): Promise<void>;
 }
 
@@ -504,7 +504,7 @@ declare class TaskAttributionTiming extends PerformanceEntry {
 
 // https://w3c.github.io/longtasks/#sec-PerformanceLongTaskTiming
 declare class PerformanceLongTaskTiming extends PerformanceEntry {
-  attribution: $ReadOnlyArray<TaskAttributionTiming>;
+  attribution: ReadonlyArray<TaskAttributionTiming>;
 }
 
 // https://www.w3.org/TR/navigation-timing-2/
@@ -523,12 +523,12 @@ declare class PerformanceNavigationTiming extends PerformanceResourceTiming {
 
 // https://www.w3.org/TR/user-timing/#extensions-performance-interface
 declare type PerformanceMarkOptions = {|
-  detail?: mixed,
+  detail?: unknown,
   startTime?: number,
 |};
 
 declare type PerformanceMeasureOptions = {|
-  detail?: mixed,
+  detail?: unknown,
   start?: number | string,
   end?: number | string,
   duration?: number,
@@ -560,7 +560,7 @@ declare class Performance {
     navigation: PerformanceNavigation;
     timing: PerformanceTiming;
 
-    onresourcetimingbufferfull: (ev: any) => mixed;
+    onresourcetimingbufferfull: (ev: any) => unknown;
     clearMarks(name?: string): void;
     clearMeasures(name?: string): void;
     clearResourceTimings(): void;
@@ -592,7 +592,7 @@ type PerformanceObserverInit = {
 }
 
 declare class PerformanceObserver {
-  constructor(callback: (entries: PerformanceObserverEntryList, observer: PerformanceObserver) => mixed): void;
+  constructor(callback: (entries: PerformanceObserverEntryList, observer: PerformanceObserver) => unknown): void;
 
   observe(options: ?PerformanceObserverInit): void;
   disconnect(): void;
@@ -677,7 +677,7 @@ declare type IntersectionObserverEntry = {
 declare type IntersectionObserverCallback = (
     entries: Array<IntersectionObserverEntry>,
     observer: IntersectionObserver,
-) => mixed;
+) => unknown;
 
 declare type IntersectionObserverOptions = {
   root?: Node | null,
@@ -721,19 +721,19 @@ declare interface ResizeObserverEntry {
    * An array containing the Element's border box size when
    * ResizeObserverCallback is invoked.
    */
-  +borderBoxSize: $ReadOnlyArray<ResizeObserverSize>;
+  +borderBoxSize: ReadonlyArray<ResizeObserverSize>;
   /**
    * An array containing the Element's content rect size when
    * ResizeObserverCallback is invoked.
    */
-  +contentBoxSize: $ReadOnlyArray<ResizeObserverSize>;
+  +contentBoxSize: ReadonlyArray<ResizeObserverSize>;
   /**
    * An array containing the Element's content rect size in integral device
    * pixels when ResizeObserverCallback is invoked.
    *
    * Not implemented in Firefox or Safari as of July 2021
    */
-  +devicePixelContentBoxSize?: $ReadOnlyArray<ResizeObserverSize> | void;
+  +devicePixelContentBoxSize?: ReadonlyArray<ResizeObserverSize> | void;
 }
 
 /**
@@ -755,7 +755,7 @@ declare type ResizeObserverOptions = {
  * The ResizeObserver interface is used to observe changes to Element's size.
  */
 declare class ResizeObserver {
-  constructor(callback: (entries: ResizeObserverEntry[], observer: ResizeObserver) => mixed): void;
+  constructor(callback: (entries: ResizeObserverEntry[], observer: ResizeObserver) => unknown): void;
   /**
    * Adds target to the list of observed elements.
    */
@@ -783,10 +783,10 @@ declare class WebSocket extends EventTarget {
     readyState: number;
     bufferedAmount: number;
     extensions: string;
-    onopen: (ev: any) => mixed;
-    onmessage: (ev: MessageEvent) => mixed;
-    onclose: (ev: CloseEvent) => mixed;
-    onerror: (ev: any) => mixed;
+    onopen: (ev: any) => unknown;
+    onmessage: (ev: MessageEvent) => unknown;
+    onclose: (ev: CloseEvent) => unknown;
+    onerror: (ev: any) => unknown;
     binaryType: 'blob' | 'arraybuffer';
     url: string;
     close(code?: number, reason?: string): void;
@@ -809,9 +809,9 @@ type WorkerOptions = {
 
 declare class Worker extends EventTarget {
     constructor(stringUrl: string | TrustedScriptURL, workerOptions?: WorkerOptions): void;
-    onerror: null | (ev: any) => mixed;
-    onmessage: null | (ev: MessageEvent) => mixed;
-    onmessageerror: null | (ev: MessageEvent) => mixed;
+    onerror: null | (ev: any) => unknown;
+    onmessage: null | (ev: MessageEvent) => unknown;
+    onmessageerror: null | (ev: MessageEvent) => unknown;
     postMessage(message: any, ports?: any): void;
     terminate(): void;
 }
@@ -820,7 +820,7 @@ declare class SharedWorker extends EventTarget {
     constructor(stringUrl: string | TrustedScriptURL, name?: string): void;
     constructor(stringUrl: string | TrustedScriptURL, workerOptions?: WorkerOptions): void;
     port: MessagePort;
-    onerror: (ev: any) => mixed;
+    onerror: (ev: any) => unknown;
 }
 
 declare function importScripts(...urls: Array<string | TrustedScriptURL>): void;
@@ -832,23 +832,23 @@ declare class WorkerGlobalScope extends EventTarget {
     navigator: WorkerNavigator;
     close(): void;
     importScripts(...urls: Array<string | TrustedScriptURL>): void;
-    onerror: (ev: any) => mixed;
-    onlanguagechange: (ev: any) => mixed;
-    onoffline: (ev: any) => mixed;
-    ononline: (ev: any) => mixed;
-    onrejectionhandled: (ev: PromiseRejectionEvent) => mixed;
-    onunhandledrejection: (ev: PromiseRejectionEvent) => mixed;
+    onerror: (ev: any) => unknown;
+    onlanguagechange: (ev: any) => unknown;
+    onoffline: (ev: any) => unknown;
+    ononline: (ev: any) => unknown;
+    onrejectionhandled: (ev: PromiseRejectionEvent) => unknown;
+    onunhandledrejection: (ev: PromiseRejectionEvent) => unknown;
 }
 
 declare class DedicatedWorkerGlobalScope extends WorkerGlobalScope {
-    onmessage: (ev: MessageEvent) => mixed;
-    onmessageerror: (ev: MessageEvent) => mixed;
+    onmessage: (ev: MessageEvent) => unknown;
+    onmessageerror: (ev: MessageEvent) => unknown;
     postMessage(message: any, transfer?: Iterable<any>): void;
 }
 
 declare class SharedWorkerGlobalScope extends WorkerGlobalScope {
     name: string;
-    onconnect: (ev: MessageEvent) => mixed;
+    onconnect: (ev: MessageEvent) => unknown;
 }
 
 declare class WorkerLocation {
@@ -875,10 +875,10 @@ declare class WorkerNavigator mixins
 // deprecated
 declare class XDomainRequest {
     timeout: number;
-    onerror: () => mixed;
-    onload: () => mixed;
-    onprogress: () => mixed;
-    ontimeout: () => mixed;
+    onerror: () => unknown;
+    onload: () => unknown;
+    onprogress: () => unknown;
+    ontimeout: () => unknown;
     +responseText: string;
     +contentType: string;
     open(method: "GET" | "POST", url: string): void;
@@ -902,7 +902,7 @@ declare class XMLHttpRequest extends EventTarget {
     responseURL: string;
     ontimeout: ProgressEventHandler;
     statusText: string;
-    onreadystatechange: (ev: any) => mixed;
+    onreadystatechange: (ev: any) => unknown;
     timeout: number;
     onload: ProgressEventHandler;
     response: any;
@@ -948,13 +948,13 @@ declare class XMLSerializer {
 
 declare class Geolocation {
     getCurrentPosition(
-        success: (position: Position) => mixed,
-        error?: (error: PositionError) => mixed,
+        success: (position: Position) => unknown,
+        error?: (error: PositionError) => unknown,
         options?: PositionOptions
     ): void;
     watchPosition(
-        success: (position: Position) => mixed,
-        error?: (error: PositionError) => mixed,
+        success: (position: Position) => unknown,
+        error?: (error: PositionError) => unknown,
         options?: PositionOptions
     ): number;
     clearWatch(id: number): void;
@@ -1026,7 +1026,7 @@ declare class BaseAudioContext extends EventTarget {
   listener: AudioListener;
   sampleRate: number;
   state: AudioContextState;
-  onstatechange: (ev: any) => mixed;
+  onstatechange: (ev: any) => unknown;
   createBuffer(numOfChannels: number, length: number, sampleRate: number): AudioBuffer;
   createBufferSource(myMediaElement?: HTMLMediaElement): AudioBufferSourceNode;
   createMediaElementSource(myMediaElement: HTMLMediaElement): MediaElementAudioSourceNode;
@@ -1052,7 +1052,7 @@ declare class BaseAudioContext extends EventTarget {
   createPeriodicWave(real: Float32Array, img: Float32Array, options?: { disableNormalization: boolean, ... }): PeriodicWave;
   createStereoPanner(): StereoPannerNode;
   createWaveShaper(): WaveShaperNode;
-  decodeAudioData(arrayBuffer: ArrayBuffer, decodeSuccessCallback: (decodedData: AudioBuffer) => mixed, decodeErrorCallback: (err: DOMError) => mixed): void;
+  decodeAudioData(arrayBuffer: ArrayBuffer, decodeSuccessCallback: (decodedData: AudioBuffer) => unknown, decodeErrorCallback: (err: DOMError) => unknown): void;
   decodeAudioData(arrayBuffer: ArrayBuffer): Promise<AudioBuffer>;
 }
 
@@ -1079,7 +1079,7 @@ declare class OfflineAudioContext extends BaseAudioContext {
   startRendering(): Promise<AudioBuffer>;
   suspend(suspendTime: number): Promise<void>;
   length: number;
-  oncomplete: (ev: OfflineAudioCompletionEvent) => mixed;
+  oncomplete: (ev: OfflineAudioCompletionEvent) => unknown;
 }
 
 declare class AudioNode extends EventTarget {
@@ -1140,7 +1140,7 @@ declare class AudioBufferSourceNode extends AudioNode {
   loopStart: number;
   loopEnd: number;
   playbackRate: AudioParam;
-  onended: (ev: any) => mixed;
+  onended: (ev: any) => unknown;
   start(when?: number, offset?: number, duration?: number): void;
   stop(when?: number): void;
 }
@@ -1279,7 +1279,7 @@ type MediaTrackCapabilities = {
 }
 
 declare class MediaDevices extends EventTarget {
-  ondevicechange: (ev: any) => mixed;
+  ondevicechange: (ev: any) => unknown;
   enumerateDevices: () => Promise<Array<MediaDeviceInfo>>;
   getSupportedConstraints: () => MediaTrackSupportedConstraints;
   getDisplayMedia: (constraints?: DisplayMediaStreamConstraints) => Promise<MediaStream>;
@@ -1308,12 +1308,12 @@ declare class MediaRecorder extends EventTarget {
   +mimeType: string;
   +state: 'inactive' | 'recording' | 'paused';
 
-  onstart: (ev: any) => mixed;
-  onstop: (ev: any) => mixed;
-  ondataavailable: (ev: any) => mixed;
-  onpause: (ev: any) => mixed;
-  onresume: (ev: any) => mixed;
-  onerror: (ev: any) => mixed;
+  onstart: (ev: any) => unknown;
+  onstop: (ev: any) => unknown;
+  ondataavailable: (ev: any) => unknown;
+  onpause: (ev: any) => unknown;
+  onresume: (ev: any) => unknown;
+  onerror: (ev: any) => unknown;
 
   +videoBitsPerSecond: number;
   +audioBitsPerSecond: number;
@@ -1332,11 +1332,11 @@ declare class MediaStream extends EventTarget {
   active: boolean;
   ended: boolean;
   id: string;
-  onactive: (ev: any) => mixed;
-  oninactive: (ev: any) => mixed;
-  onended: (ev: any) => mixed;
-  onaddtrack: (ev: MediaStreamTrackEvent) => mixed;
-  onremovetrack: (ev: MediaStreamTrackEvent) => mixed;
+  onactive: (ev: any) => unknown;
+  oninactive: (ev: any) => unknown;
+  onended: (ev: any) => unknown;
+  onaddtrack: (ev: MediaStreamTrackEvent) => unknown;
+  onremovetrack: (ev: MediaStreamTrackEvent) => unknown;
   addTrack(track: MediaStreamTrack): void;
   clone(): MediaStream;
   getAudioTracks(): MediaStreamTrack[];
@@ -1356,11 +1356,11 @@ declare class MediaStreamTrack extends EventTarget {
   readyState: 'live' | 'ended';
   remote: boolean;
   contentHint?: string;
-  onstarted: (ev: any) => mixed;
-  onmute: (ev: any) => mixed;
-  onunmute: (ev: any) => mixed;
-  onoverconstrained: (ev: any) => mixed;
-  onended: (ev: any) => mixed;
+  onstarted: (ev: any) => unknown;
+  onmute: (ev: any) => unknown;
+  onunmute: (ev: any) => unknown;
+  onoverconstrained: (ev: any) => unknown;
+  onended: (ev: any) => unknown;
   getConstraints(): MediaTrackConstraints;
   applyConstraints(constraints?: MediaTrackConstraints): Promise<void>;
   getSettings(): MediaTrackSettings;
@@ -1384,7 +1384,7 @@ declare class MediaStreamAudioDestinationNode extends AudioNode {
 // deprecated
 declare class ScriptProcessorNode extends AudioNode {
   bufferSize: number;
-  onaudioprocess: (ev: AudioProcessingEvent) => mixed;
+  onaudioprocess: (ev: AudioProcessingEvent) => unknown;
 }
 
 declare class AnalyserNode extends AudioNode {
@@ -1415,7 +1415,7 @@ type ConstantSourceOptions = { offset?: number, ... }
 declare class ConstantSourceNode extends AudioNode {
   constructor(context: BaseAudioContext, options?: ConstantSourceOptions): void;
   offset: AudioParam;
-  onended: (ev: any) => mixed;
+  onended: (ev: any) => unknown;
   start(when?: number): void;
   stop(when?: number): void;
 }
@@ -1453,7 +1453,7 @@ declare class OscillatorNode extends AudioNode {
   start(when?: number): void;
   stop(when?: number): void;
   setPeriodicWave(periodicWave: PeriodicWave): void;
-  onended: (ev: any) => mixed;
+  onended: (ev: any) => unknown;
 }
 
 declare class StereoPannerNode extends AudioNode {
@@ -1493,7 +1493,7 @@ declare class Headers {
     append(name: string, value: string): void;
     delete(name: string): void;
     entries(): Iterator<[string, string]>;
-    forEach<This>(callback: (this : This, value: string, name: string, headers: Headers) => mixed, thisArg: This): void;
+    forEach<This>(callback: (this : This, value: string, name: string, headers: Headers) => unknown, thisArg: This): void;
     get(name: string): null | string;
     has(name: string): boolean;
     keys(): Iterator<string>;
@@ -1510,7 +1510,7 @@ declare class URLSearchParams {
     append(name: string, value: string): void;
     delete(name: string, value?: string): void;
     entries(): Iterator<[string, string]>;
-    forEach<This>(callback: (this : This, value: string, name: string, params: URLSearchParams) => mixed, thisArg: This): void;
+    forEach<This>(callback: (this : This, value: string, name: string, params: URLSearchParams) => unknown, thisArg: This): void;
     get(name: string): null | string;
     getAll(name: string): Array<string>;
     has(name: string, value?: string): boolean;
@@ -1864,8 +1864,8 @@ declare class MessagePort extends EventTarget {
   start(): void;
   close(): void;
 
-  onmessage: null | (ev: MessageEvent) => mixed;
-  onmessageerror: null | (ev: MessageEvent) => mixed;
+  onmessage: null | (ev: MessageEvent) => unknown;
+  onmessageerror: null | (ev: MessageEvent) => unknown;
 }
 
 declare class MessageChannel {
@@ -1887,7 +1887,7 @@ declare class VRDisplay extends EventTarget {
   getEyeParameters(VREye): VREyeParameters;
   getFrameData(VRFrameData): boolean;
   getLayers(): VRLayerInit[];
-  requestAnimationFrame(cb: (number) => mixed): number;
+  requestAnimationFrame(cb: (number) => unknown): number;
   requestPresent(VRLayerInit[]): Promise<void>;
   submitFrame(): void;
 }
@@ -2021,7 +2021,7 @@ declare class SpeechSynthesis extends EventTarget {
   +speaking: boolean;
   +paused: boolean;
 
-  onvoiceschanged: ?((ev: Event) => mixed);
+  onvoiceschanged: ?((ev: Event) => unknown);
 
   speak(utterance: SpeechSynthesisUtterance): void;
   cancel(): void;
@@ -2042,13 +2042,13 @@ declare class SpeechSynthesisUtterance extends EventTarget {
   rate: number;
   pitch: number;
 
-  onstart: ?((ev: SpeechSynthesisEvent) => mixed);
-  onend: ?((ev: SpeechSynthesisEvent) => mixed);
-  onerror: ?((ev: SpeechSynthesisErrorEvent) => mixed);
-  onpause: ?((ev: SpeechSynthesisEvent) => mixed);
-  onresume: ?((ev: SpeechSynthesisEvent) => mixed);
-  onmark: ?((ev: SpeechSynthesisEvent) => mixed);
-  onboundary: ?((ev: SpeechSynthesisEvent) => mixed);
+  onstart: ?((ev: SpeechSynthesisEvent) => unknown);
+  onend: ?((ev: SpeechSynthesisEvent) => unknown);
+  onerror: ?((ev: SpeechSynthesisErrorEvent) => unknown);
+  onpause: ?((ev: SpeechSynthesisEvent) => unknown);
+  onresume: ?((ev: SpeechSynthesisEvent) => unknown);
+  onmark: ?((ev: SpeechSynthesisEvent) => unknown);
+  onboundary: ?((ev: SpeechSynthesisEvent) => unknown);
 }
 
 type SpeechSynthesisEvent$Init = Event$Init & {
@@ -2168,16 +2168,16 @@ declare class SpeechRecognition extends EventTarget {
   +maxAlternatives: number;
   +serviceURI: string;
 
-  onaudiostart: ?((ev: Event) => mixed);
-  onaudioend: ?((ev: Event) => mixed);
-  onend: ?((ev: Event) => mixed);
-  onerror: ?((ev: Event) => mixed);
-  onnomatch: ?((ev: Event) => mixed);
-  onsoundstart: ?((ev: Event) => mixed);
-  onsoundend: ?((ev: Event) => mixed);
-  onspeechstart: ?((ev: Event) => mixed);
-  onspeechend: ?((ev: Event) => mixed);
-  onstart: ?((ev: Event) => mixed);
+  onaudiostart: ?((ev: Event) => unknown);
+  onaudioend: ?((ev: Event) => unknown);
+  onend: ?((ev: Event) => unknown);
+  onerror: ?((ev: Event) => unknown);
+  onnomatch: ?((ev: Event) => unknown);
+  onsoundstart: ?((ev: Event) => unknown);
+  onsoundend: ?((ev: Event) => unknown);
+  onspeechstart: ?((ev: Event) => unknown);
+  onspeechend: ?((ev: Event) => unknown);
+  onstart: ?((ev: Event) => unknown);
 
   abort(): void;
   start(): void;
@@ -2204,15 +2204,15 @@ declare class TrustedScriptURL {
 
 declare class TrustedTypePolicy {
   +name: string;
-  createHTML(input: string, ...args: Array<mixed>): TrustedHTML;
-  createScript(input: string, ...args: Array<mixed>): TrustedScript;
-  createScriptURL(input: string, ...args: Array<mixed>): TrustedScriptURL;
+  createHTML(input: string, ...args: Array<unknown>): TrustedHTML;
+  createScript(input: string, ...args: Array<unknown>): TrustedScript;
+  createScriptURL(input: string, ...args: Array<unknown>): TrustedScriptURL;
 }
 
 declare type TrustedTypePolicyOptions = {|
-  createHTML?: (string, ...args: Array<mixed>) => string;
-  createScript?: (string, ...args: Array<mixed>) => string;
-  createScriptURL?: (string, ...args: Array<mixed>) => string;
+  createHTML?: (string, ...args: Array<unknown>) => string;
+  createScript?: (string, ...args: Array<unknown>) => string;
+  createScriptURL?: (string, ...args: Array<unknown>) => string;
 |}
 
 // window.trustedTypes?: TrustedTypePolicyFactory
@@ -2220,9 +2220,9 @@ declare class TrustedTypePolicyFactory {
   +emptyHTML: TrustedHTML;
   +emptyScript: TrustedScript;
   +defaultPolicy: ?TrustedTypePolicy;
-  +isHTML: (value: mixed) => value is TrustedHTML;
-  +isScript: (value: mixed) => value is TrustedScript;
-  +isScriptURL: (value: mixed) => value is TrustedScriptURL;
+  +isHTML: (value: unknown) => value is TrustedHTML;
+  +isScript: (value: unknown) => value is TrustedScript;
+  +isScriptURL: (value: unknown) => value is TrustedScriptURL;
   createPolicy(policyName: string, policyOptions?: TrustedTypePolicyOptions): TrustedTypePolicy;
   getAttributeType(tagName: string, attribute?: string, elementNS?: string, attrNS?: string): null | string;
   getPropertyType(tagName: string, property: string, elementNS?: string): null | string;
@@ -2288,7 +2288,7 @@ declare class USBConfiguration {
   constructor(): void;
   configurationName: ?string;
   configurationValue: number;
-  interfaces: $ReadOnlyArray<USBInterface>;
+  interfaces: ReadonlyArray<USBInterface>;
 
 }
 

@@ -46,7 +46,7 @@ declare type FilePropertyBag = {
 };
 declare class File extends Blob {
   constructor(
-    fileBits: $ReadOnlyArray<string | BufferDataSource | Blob>,
+    fileBits: ReadonlyArray<string | BufferDataSource | Blob>,
     filename: string,
     options?: FilePropertyBag,
   ): void;
@@ -94,43 +94,43 @@ declare type ScrollToOptions = {
   ...
 }
 
-type EventHandler = (event: Event) => mixed
+type EventHandler = (event: Event) => unknown
 type EventListener = { handleEvent: EventHandler, ... } | EventHandler
-type MouseEventHandler = (event: MouseEvent) => mixed
+type MouseEventHandler = (event: MouseEvent) => unknown
 type MouseEventListener = { handleEvent: MouseEventHandler, ... } | MouseEventHandler
-type FocusEventHandler = (event: FocusEvent) => mixed
+type FocusEventHandler = (event: FocusEvent) => unknown
 type FocusEventListener = { handleEvent: FocusEventHandler, ... } | FocusEventHandler
-type KeyboardEventHandler = (event: KeyboardEvent) => mixed
+type KeyboardEventHandler = (event: KeyboardEvent) => unknown
 type KeyboardEventListener = { handleEvent: KeyboardEventHandler, ... } | KeyboardEventHandler
-type InputEventHandler = (event: InputEvent) => mixed
+type InputEventHandler = (event: InputEvent) => unknown
 type InputEventListener = { handleEvent: InputEventHandler, ... } | InputEventHandler
-type TouchEventHandler = (event: TouchEvent) => mixed
+type TouchEventHandler = (event: TouchEvent) => unknown
 type TouchEventListener = { handleEvent: TouchEventHandler, ... } | TouchEventHandler
-type WheelEventHandler = (event: WheelEvent) => mixed
+type WheelEventHandler = (event: WheelEvent) => unknown
 type WheelEventListener = { handleEvent: WheelEventHandler, ... } | WheelEventHandler
-type AbortProgressEventHandler = (event: ProgressEvent) => mixed
+type AbortProgressEventHandler = (event: ProgressEvent) => unknown
 type AbortProgressEventListener = { handleEvent: AbortProgressEventHandler, ... } | AbortProgressEventHandler
-type ProgressEventHandler = (event: ProgressEvent) => mixed
+type ProgressEventHandler = (event: ProgressEvent) => unknown
 type ProgressEventListener = { handleEvent: ProgressEventHandler, ... } | ProgressEventHandler
-type DragEventHandler = (event: DragEvent) => mixed
+type DragEventHandler = (event: DragEvent) => unknown
 type DragEventListener = { handleEvent: DragEventHandler, ... } | DragEventHandler
-type PointerEventHandler = (event: PointerEvent) => mixed
+type PointerEventHandler = (event: PointerEvent) => unknown
 type PointerEventListener = { handleEvent: PointerEventHandler, ... } | PointerEventHandler
-type AnimationEventHandler = (event: AnimationEvent) => mixed
+type AnimationEventHandler = (event: AnimationEvent) => unknown
 type AnimationEventListener = { handleEvent: AnimationEventHandler, ... } | AnimationEventHandler
-type ClipboardEventHandler = (event: ClipboardEvent) => mixed
+type ClipboardEventHandler = (event: ClipboardEvent) => unknown
 type ClipboardEventListener = { handleEvent: ClipboardEventHandler, ... } | ClipboardEventHandler
-type TransitionEventHandler = (event: TransitionEvent) => mixed
+type TransitionEventHandler = (event: TransitionEvent) => unknown
 type TransitionEventListener = { handleEvent: TransitionEventHandler, ... } | TransitionEventHandler
-type MessageEventHandler = (event: MessageEvent) => mixed
+type MessageEventHandler = (event: MessageEvent) => unknown
 type MessageEventListener = { handleEvent: MessageEventHandler, ... } | MessageEventHandler
-type BeforeUnloadEventHandler = (event: BeforeUnloadEvent) => mixed
+type BeforeUnloadEventHandler = (event: BeforeUnloadEvent) => unknown
 type BeforeUnloadEventListener = { handleEvent: BeforeUnloadEventHandler, ... } | BeforeUnloadEventHandler
-type StorageEventHandler = (event: StorageEvent) => mixed
+type StorageEventHandler = (event: StorageEvent) => unknown
 type StorageEventListener = { handleEvent: StorageEventHandler, ... } | StorageEventHandler
-type SecurityPolicyViolationEventHandler = (event: SecurityPolicyViolationEvent) => mixed
+type SecurityPolicyViolationEventHandler = (event: SecurityPolicyViolationEvent) => unknown
 type SecurityPolicyViolationEventListener = { handleEvent: SecurityPolicyViolationEventHandler, ... } | SecurityPolicyViolationEventHandler
-type USBConnectionEventHandler = (event: USBConnectionEvent) => mixed
+type USBConnectionEventHandler = (event: USBConnectionEvent) => unknown
 type USBConnectionEventListener = { handleEvent: USBConnectionEventHandler, ... } | USBConnectionEventHandler
 
 type MediaKeySessionType = 'temporary' | 'persistent-license';
@@ -536,7 +536,7 @@ declare class PageTransitionEvent extends Event {
 // and
 // https://html.spec.whatwg.org/multipage/comms.html#the-messageevent-interfaces
 declare class MessageEvent extends Event {
-  data: mixed;
+  data: unknown;
   origin: string;
   lastEventId: string;
   source: WindowProxy;
@@ -776,7 +776,7 @@ type ClipboardItemOptions = {
 }
 
 declare class ClipboardItem {
-  +types: $ReadOnlyArray<string>;
+  +types: ReadonlyArray<string>;
   getType(type: string): Promise<Blob>;
   constructor(items: {[type: string]: ClipboardItemData}, options?: ClipboardItemOptions): void;
 }
@@ -864,7 +864,7 @@ declare class AbortSignal extends EventTarget {
     +aborted: boolean;
     +reason: any;
     abort(reason?: any): AbortSignal;
-    onabort: (event: Event) => mixed;
+    onabort: (event: Event) => unknown;
     throwIfAborted(): void;
     timeout(time: number): AbortSignal;
 }
@@ -885,22 +885,22 @@ declare class Node extends EventTarget {
   previousSibling: ?Node;
   rootNode: Node;
   textContent: string;
-  appendChild<T: Node>(newChild: T): T;
+  appendChild<T extends Node>(newChild: T): T;
   cloneNode(deep?: boolean): this;
   compareDocumentPosition(other: Node): number;
   contains(other: ?Node): boolean;
   getRootNode(options?: { composed: boolean, ... }): Node;
   hasChildNodes(): boolean;
-  insertBefore<T: Node>(newChild: T, refChild?: ?Node): T;
+  insertBefore<T extends Node>(newChild: T, refChild?: ?Node): T;
   isDefaultNamespace(namespaceURI: string): boolean;
   isEqualNode(arg: Node): boolean;
   isSameNode(other: Node): boolean;
   lookupNamespaceURI(prefix: string): string;
   lookupPrefix(namespaceURI: string): string;
   normalize(): void;
-  removeChild<T: Node>(oldChild: T): T;
-  replaceChild<T: Node>(newChild: Node, oldChild: T): T;
-  replaceChildren(...nodes: $ReadOnlyArray<Node | string>): void;
+  removeChild<T extends Node>(oldChild: T): T;
+  replaceChild<T extends Node>(newChild: Node, oldChild: T): T;
+  replaceChildren(...nodes: ReadonlyArray<Node | string>): void;
   static ATTRIBUTE_NODE: number;
   static CDATA_SECTION_NODE: number;
   static COMMENT_NODE: number;
@@ -961,7 +961,7 @@ declare class Attr extends Node {
   localName: string;
 }
 
-declare class HTMLCollection<+Elem: Element> {
+declare class HTMLCollection<+Elem extends Element> {
   @@iterator(): Iterator<Elem>;
   length: number;
   item(nameOrIndex?: any, optionalIndex?: any): Elem | null;
@@ -976,9 +976,9 @@ type ElementRegistrationOptions = {
        +prototype?: {
               // from https://www.w3.org/TR/custom-elements/#types-of-callbacks
               // See also https://github.com/w3c/webcomponents/
-              +createdCallback?: () => mixed,
-              +attachedCallback?: () => mixed,
-              +detachedCallback?: () => mixed,
+              +createdCallback?: () => unknown,
+              +attachedCallback?: () => unknown,
+              +detachedCallback?: () => unknown,
               +attributeChangedCallback?:
               // attribute is set
               ((
@@ -986,21 +986,21 @@ type ElementRegistrationOptions = {
                 oldAttributeValue: null,
                 newAttributeValue: string,
                 attributeNamespace: string
-              ) => mixed) &
+              ) => unknown) &
               // attribute is changed
               ((
                 attributeLocalName: string,
                 oldAttributeValue: string,
                 newAttributeValue: string,
                 attributeNamespace: string
-              ) => mixed) &
+              ) => unknown) &
               // attribute is removed
               ((
                 attributeLocalName: string,
                 oldAttributeValue: string,
                 newAttributeValue: null,
                 attributeNamespace: string
-              ) => mixed),
+              ) => unknown),
               ...
        },
        +extends?: string,
@@ -1035,7 +1035,7 @@ declare type MutationObserverInit = MutationObserverInitRequired & {
 }
 
 declare class MutationObserver {
-  constructor(callback: (arr: Array<MutationRecord>, observer: MutationObserver) => mixed): void;
+  constructor(callback: (arr: Array<MutationRecord>, observer: MutationObserver) => unknown): void;
   observe(target: Node, options: MutationObserverInit): void;
   takeRecords(): Array<MutationRecord>;
   disconnect(): void;
@@ -1045,7 +1045,7 @@ declare class Document extends Node {
   +timeline: DocumentTimeline;
   getAnimations(): Array<Animation>;
   +URL: string;
-  adoptNode<T: Node>(source: T): T;
+  adoptNode<T extends Node>(source: T): T;
   anchors: HTMLCollection<HTMLAnchorElement>;
   applets: HTMLCollection<HTMLAppletElement>;
   body: HTMLBodyElement | null;
@@ -1063,8 +1063,8 @@ declare class Document extends Node {
   createCDATASection(data: string): Text;
   createComment(data: string): Comment;
   createDocumentFragment(): DocumentFragment;
-  createElement<TName: $Keys<HTMLElementTagNameMap>>(localName: TName, options?: string | ElementCreationOptions): HTMLElementTagNameMap[TName];
-  createElementNS<TName: $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName, options?: string | ElementCreationOptions): HTMLElementTagNameMap[TName];
+  createElement<TName extends $Keys<HTMLElementTagNameMap>>(localName: TName, options?: string | ElementCreationOptions): HTMLElementTagNameMap[TName];
+  createElementNS<TName extends $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName, options?: string | ElementCreationOptions): HTMLElementTagNameMap[TName];
   createElementNS(namespaceURI: string | null, qualifiedName: string, options?: string | ElementCreationOptions): Element;
   createTextNode(data: string): Text;
   currentScript: HTMLScriptElement | null;
@@ -1083,13 +1083,13 @@ declare class Document extends Node {
   fullscreenEnabled: boolean;
   getElementsByClassName(classNames: string): HTMLCollection<HTMLElement>;
   getElementsByName(elementName: string): HTMLCollection<HTMLElement>;
-  getElementsByTagName<TName: $Keys<HTMLElementTagNameMap>>(qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
-  getElementsByTagNameNS<TName: $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
+  getElementsByTagName<TName extends $Keys<HTMLElementTagNameMap>>(qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
+  getElementsByTagNameNS<TName extends $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
   getElementsByTagNameNS(namespaceURI: string | null, qualifiedName: string): HTMLCollection<Element>;
   head: HTMLHeadElement | null;
   images: HTMLCollection<HTMLImageElement>;
   +implementation: DOMImplementation;
-  importNode<T: Node>(importedNode: T, deep: boolean): T;
+  importNode<T extends Node>(importedNode: T, deep: boolean): T;
   /**
    * Legacy alias of `characterSet`
    * @deprecated
@@ -1141,8 +1141,8 @@ declare class Document extends Node {
   append(...nodes: Array<string | Node>): void;
   prepend(...nodes: Array<string | Node>): void;
 
-  querySelector<TSelector: $Keys<HTMLElementTagNameMap>>(selector: TSelector): HTMLElementTagNameMap[TSelector] | null;
-  querySelectorAll<TSelector: $Keys<HTMLElementTagNameMap>>(selector: TSelector): NodeList<HTMLElementTagNameMap[TSelector]>;
+  querySelector<TSelector extends $Keys<HTMLElementTagNameMap>>(selector: TSelector): HTMLElementTagNameMap[TSelector] | null;
+  querySelectorAll<TSelector extends $Keys<HTMLElementTagNameMap>>(selector: TSelector): NodeList<HTMLElementTagNameMap[TSelector]>;
   // Interface DocumentTraversal
   // http://www.w3.org/TR/2000/REC-DOM-Level-2-Traversal-Range-20001113/traversal.html#Traversal-Document
 
@@ -1158,104 +1158,104 @@ declare class Document extends Node {
   // NodeFilter.SHOW_ATTRIBUTE === 1), RootNodeT must be Attr, and when
   // RootNodeT is Attr, bitmasks other than NodeFilter.SHOW_ATTRIBUTE are
   // meaningless.
-  createNodeIterator<RootNodeT: Attr>(root: RootNodeT, whatToShow: 2, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Attr>;
-  createTreeWalker<RootNodeT: Attr>(root: RootNodeT, whatToShow: 2, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Attr>;
+  createNodeIterator<RootNodeT extends Attr>(root: RootNodeT, whatToShow: 2, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Attr>;
+  createTreeWalker<RootNodeT extends Attr>(root: RootNodeT, whatToShow: 2, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Attr>;
 
   // NodeFilter.SHOW_PROCESSING_INSTRUCTION is not implemented because Flow
   // does not currently define a ProcessingInstruction class.
 
   // When (whatToShow & NodeFilter.SHOW_DOCUMENT === 1 || whatToShow &
   // NodeFilter.SHOW_DOCUMENT_TYPE === 1), RootNodeT must be Document.
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 256, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 257, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 260, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 261, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 384, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 385, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 388, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Text|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 389, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Text|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 512, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 513, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 516, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 517, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 640, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 641, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 644, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Text|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 645, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Text|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 768, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 769, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 772, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 773, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Text>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 896, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 897, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 900, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Text|Comment>;
-  createNodeIterator<RootNodeT: Document>(root: RootNodeT, whatToShow: 901, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 256, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 257, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 260, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 261, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 384, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 385, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 388, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 389, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 512, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 513, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 516, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 517, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 640, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 641, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 644, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 645, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 768, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 769, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 772, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 773, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Text>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 896, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 897, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 900, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Text|Comment>;
-  createTreeWalker<RootNodeT: Document>(root: RootNodeT, whatToShow: 901, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 256, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 257, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 260, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 261, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 384, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 385, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 388, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 389, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Document|Element|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 512, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 513, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 516, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 517, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 640, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 641, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 644, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 645, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Element|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 768, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 769, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 772, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 773, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Text>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 896, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 897, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 900, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Text|Comment>;
+  createNodeIterator<RootNodeT extends Document>(root: RootNodeT, whatToShow: 901, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentType|Document|Element|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 256, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 257, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 260, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 261, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 384, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 385, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 388, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 389, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Document|Element|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 512, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 513, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 516, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 517, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 640, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 641, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 644, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 645, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Element|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 768, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 769, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 772, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 773, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Text>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 896, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 897, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 900, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Text|Comment>;
+  createTreeWalker<RootNodeT extends Document>(root: RootNodeT, whatToShow: 901, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentType|Document|Element|Text|Comment>;
 
   // When (whatToShow & NodeFilter.SHOW_DOCUMENT_FRAGMENT === 1), RootNodeT
   // must be a DocumentFragment.
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1024, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1025, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1028, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Text>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1029, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Text>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1152, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Comment>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1153, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Comment>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1156, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Text|Comment>;
-  createNodeIterator<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1157, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Text|Comment>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1024, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1025, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1028, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Text>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1029, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Text>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1152, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Comment>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1153, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Comment>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1156, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Text|Comment>;
-  createTreeWalker<RootNodeT: DocumentFragment>(root: RootNodeT, whatToShow: 1157, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Text|Comment>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1024, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1025, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1028, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Text>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1029, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Text>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1152, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Comment>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1153, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Comment>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1156, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Text|Comment>;
+  createNodeIterator<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1157, filter?: NodeFilterInterface): NodeIterator<RootNodeT, DocumentFragment|Element|Text|Comment>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1024, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1025, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1028, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Text>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1029, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Text>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1152, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Comment>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1153, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Comment>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1156, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Text|Comment>;
+  createTreeWalker<RootNodeT extends DocumentFragment>(root: RootNodeT, whatToShow: 1157, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, DocumentFragment|Element|Text|Comment>;
 
   // In the general case, RootNodeT may be any Node and whatToShow may be
   // NodeFilter.SHOW_ALL or any combination of NodeFilter.SHOW_ELEMENT,
   // NodeFilter.SHOW_TEXT and/or NodeFilter.SHOW_COMMENT
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 1, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 4, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 5, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element|Text>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 128, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Comment>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 129, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element|Comment>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 132, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text|Comment>;
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow: 133, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text|Element|Comment>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 1, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 4, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 5, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element|Text>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 128, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Comment>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 129, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element|Comment>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 132, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text|Comment>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow: 133, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text|Element|Comment>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 1, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 4, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 5, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element|Text>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 128, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Comment>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 129, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Element|Comment>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 132, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text|Comment>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow: 133, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Text|Element|Comment>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 1, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 4, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 5, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element|Text>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 128, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Comment>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 129, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Element|Comment>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 132, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text|Comment>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow: 133, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Text|Element|Comment>;
 
   // Catch all for when we don't know the value of `whatToShow`
   // And for when whatToShow is not provided, it is assumed to be SHOW_ALL
-  createNodeIterator<RootNodeT: Node>(root: RootNodeT, whatToShow?: number, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Node>;
-  createTreeWalker<RootNodeT: Node>(root: RootNodeT, whatToShow?: number, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Node>;
+  createNodeIterator<RootNodeT extends Node>(root: RootNodeT, whatToShow?: number, filter?: NodeFilterInterface): NodeIterator<RootNodeT, Node>;
+  createTreeWalker<RootNodeT extends Node>(root: RootNodeT, whatToShow?: number, filter?: NodeFilterInterface, entityReferenceExpansion?: boolean): TreeWalker<RootNodeT, Node>;
 
   // From NonElementParentNode Mixin.
   getElementById(elementId: string): HTMLElement | null;
@@ -1405,8 +1405,8 @@ declare class Element extends Node mixins mixin$Animatable {
   getBoundingClientRect(): DOMRect;
   getClientRects(): DOMRectList;
   getElementsByClassName(names: string): HTMLCollection<HTMLElement>;
-  getElementsByTagName<TName: $Keys<HTMLElementTagNameMap>>(qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
-  getElementsByTagNameNS<TName: $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
+  getElementsByTagName<TName extends $Keys<HTMLElementTagNameMap>>(qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
+  getElementsByTagNameNS<TName extends $Keys<HTMLElementTagNameMap>>(namespaceURI: 'http://www.w3.org/1999/xhtml', qualifiedName: TName): HTMLCollection<HTMLElementTagNameMap[TName]>;
   getElementsByTagNameNS(namespaceURI: string | null, qualifiedName: string): HTMLCollection<Element>;
 
   hasAttribute(name: string): boolean;
@@ -1452,8 +1452,8 @@ declare class Element extends Node mixins mixin$Animatable {
   append(...nodes: Array<string | Node>): void;
   prepend(...nodes: Array<string | Node>): void;
 
-  querySelector<TSelector: $Keys<HTMLElementTagNameMap>>(selector: TSelector): HTMLElementTagNameMap[TSelector] | null;
-  querySelectorAll<TSelector: $Keys<HTMLElementTagNameMap>>(selector: TSelector): NodeList<HTMLElementTagNameMap[TSelector]>;
+  querySelector<TSelector extends $Keys<HTMLElementTagNameMap>>(selector: TSelector): HTMLElementTagNameMap[TSelector] | null;
+  querySelectorAll<TSelector extends $Keys<HTMLElementTagNameMap>>(selector: TSelector): NodeList<HTMLElementTagNameMap[TSelector]>;
 
   // from ChildNode interface
   after(...nodes: Array<string | Node>): void;
@@ -2740,13 +2740,13 @@ declare class Notification extends EventTarget {
   constructor(title: string, options?: NotificationOptions): void;
   static +permission: NotificationPermission;
   static requestPermission(
-    callback?: (perm: NotificationPermission) => mixed
+    callback?: (perm: NotificationPermission) => unknown
   ): Promise<NotificationPermission>;
   static +maxActions: number;
-  onclick: ?(evt: Event) => mixed;
-  onclose: ?(evt: Event) => mixed;
-  onerror: ?(evt: Event) => mixed;
-  onshow: ?(evt: Event) => mixed;
+  onclick: ?(evt: Event) => unknown;
+  onclose: ?(evt: Event) => unknown;
+  onerror: ?(evt: Event) => unknown;
+  onshow: ?(evt: Event) => unknown;
   +title: string;
   +dir: NotificationDirection;
   +lang: string;

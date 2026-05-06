@@ -134,9 +134,9 @@ declare class Animation extends EventTarget {
   +pending: boolean;
   +ready: Promise<Animation>;
   +finished: Promise<Animation>;
-  onfinish: ?(ev: AnimationPlaybackEvent) => mixed;
-  oncancel: ?(ev: AnimationPlaybackEvent) => mixed;
-  onremove: ?(ev: AnimationPlaybackEvent) => mixed;
+  onfinish: ?(ev: AnimationPlaybackEvent) => unknown;
+  oncancel: ?(ev: AnimationPlaybackEvent) => unknown;
+  onremove: ?(ev: AnimationPlaybackEvent) => unknown;
   cancel(): void;
   finish(): void;
   play(): void;

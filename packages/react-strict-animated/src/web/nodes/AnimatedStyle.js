@@ -23,10 +23,10 @@ type OutputAnimatedStyle = {
   transform?: string
 };
 
-export type ReadOnlyOutputAnimatedStyle = $ReadOnly<OutputAnimatedStyle>;
+export type ReadOnlyOutputAnimatedStyle = Readonly<OutputAnimatedStyle>;
 
 export default class AnimatedStyleNode extends AnimatedNode<ReadOnlyOutputAnimatedStyle> {
-  #style: $ReadOnly<{
+  #style: Readonly<{
     ...Omit<AnimatedStyleValue<AnimatedNodeType>, 'transform'>,
     transform?: AnimatedTransform
   }>;

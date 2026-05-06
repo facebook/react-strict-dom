@@ -15,7 +15,7 @@ import type { AnimatedNodeType } from '../types/AnimatedTypes';
 import AnimatedNode from './AnimatedNode';
 import AnimatedWithChildren from './AnimatedWithChildren';
 
-const UNIT: $ReadOnly<{
+const UNIT: Readonly<{
   rotate: string,
   rotateX: string,
   rotateY: string,
@@ -60,7 +60,7 @@ function mapTransform(t: AnimatedTransformValue<AnimatedNodeType>): string {
   throw new Error('value is neither a number or string');
 }
 
-type TransformsArray = $ReadOnlyArray<AnimatedTransformValue<AnimatedNodeType>>;
+type TransformsArray = ReadonlyArray<AnimatedTransformValue<AnimatedNodeType>>;
 
 export default class AnimatedTransform extends AnimatedWithChildren<string> {
   #transforms: TransformsArray;

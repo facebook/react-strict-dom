@@ -16,7 +16,7 @@ type ResultObject = {
 
 // https://github.com/WebAssembly/design/blob/master/JS.md#exported-function-exotic-objects
 declare class ExportedFunctionExoticObject extends Function {
-  (): mixed;
+  (): unknown;
 }
 
 declare class WebAssembly$Module {

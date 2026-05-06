@@ -12,7 +12,7 @@ import type { CallbackRef, Ref } from '../types/react';
 export type RefType<TElement> = null | void | Ref<TElement>;
 
 export function mergeRefs<TElement>(
-  ...args: $ReadOnlyArray<RefType<TElement>>
+  ...args: ReadonlyArray<RefType<TElement>>
 ): CallbackRef<TElement> {
   return function forwardRef(node: TElement | null) {
     args.forEach((ref) => {

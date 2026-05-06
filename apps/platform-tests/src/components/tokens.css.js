@@ -12,7 +12,7 @@ import type { StyleVars } from 'react-strict-dom';
 import { css } from 'react-strict-dom';
 
 export const tokens: StyleVars<
-  $ReadOnly<{
+  Readonly<{
     squareColor: string,
     textColor: string,
     inputColor: string,
@@ -29,7 +29,7 @@ export const tokens: StyleVars<
 });
 
 export const themeColors: StyleVars<
-  $ReadOnly<{
+  Readonly<{
     primary100: string,
     primary200: string
   }>
@@ -39,7 +39,7 @@ export const themeColors: StyleVars<
 });
 
 export const systemColors: StyleVars<
-  $ReadOnly<{
+  Readonly<{
     squareColor: string,
     outlineColor: string
   }>

@@ -10,11 +10,11 @@
 import * as React from 'react';
 import * as ReactNative from '../react-native';
 
-type Value = $ReadOnly<{
+type Value = Readonly<{
   scale: number
 }>;
 
-type ProviderProps = $ReadOnly<{
+type ProviderProps = Readonly<{
   children: React.Node,
   viewportWidth: number
 }>;

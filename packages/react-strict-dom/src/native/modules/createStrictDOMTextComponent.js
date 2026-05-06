@@ -19,16 +19,16 @@ import { errorMsg } from '../../shared/logUtils';
 import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 
-type StrictProps = $ReadOnly<{
+type StrictProps = Readonly<{
   ...StrictPropsOriginal,
   children?: React.Node | ((ReactNativeProps) => React.Node)
 }>;
 
-function hasElementChildren(children: mixed): boolean {
+function hasElementChildren(children: unknown): boolean {
   return children != null && typeof children !== 'string';
 }
 
-export function createStrictDOMTextComponent<T, P: StrictProps>(
+export function createStrictDOMTextComponent<T, P extends StrictProps>(
   tagName: string,
   defaultProps?: P
 ): component(ref?: React.RefSetter<T>, ...P) {

@@ -65,10 +65,10 @@ const timeValuedProperties = new Set<string>([
 const unsupportedValues = new Set<string>(['currentcolor', 'initial']);
 
 export function processStyle(
-  style: { +[string]: mixed },
+  style: { +[string]: unknown },
   skipValidation?: boolean
-): { +[string]: mixed } {
-  const result: { [string]: mixed } = {};
+): { +[string]: unknown } {
+  const result: { [string]: unknown } = {};
 
   for (const propName in style) {
     const styleValue = style[propName];

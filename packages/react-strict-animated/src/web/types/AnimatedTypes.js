@@ -19,7 +19,7 @@ export type AnimatedNodeType = InternalAnimatedNode<$FlowFixMe>;
 export type EndResult = { finished: boolean, ... };
 export type EndCallback = (result: EndResult) => void;
 
-export type CompositeAnimation = $ReadOnly<{
+export type CompositeAnimation = Readonly<{
   reset: () => void,
   start: (callback?: EndCallback) => void,
   stop: () => void

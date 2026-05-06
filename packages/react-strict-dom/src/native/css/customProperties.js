@@ -49,7 +49,7 @@ function resolveVariableReferenceValue(
   const variableName = normalizeVariableName(variable.variable);
   const fallbackValue = variable.fallback;
 
-  let variableValue: mixed = propertyRegistry[variableName];
+  let variableValue: unknown = propertyRegistry[variableName];
 
   // Perform variable resolution on the variable's resolved value if it itself
   // contains variables
@@ -100,7 +100,7 @@ export function resolveVariableReferences(
   propertyRegistry: CustomProperties,
   colorScheme: 'light' | 'dark' = 'light'
 ): string | number | null {
-  const result: Array<mixed> = [];
+  const result: Array<unknown> = [];
   for (const value of propValue.values()) {
     if (value instanceof CSSVariableReferenceValue) {
       const resolvedValue = resolveVariableReferenceValue(

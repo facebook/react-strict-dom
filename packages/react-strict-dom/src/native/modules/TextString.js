@@ -13,7 +13,7 @@ import * as ReactNative from '../react-native';
 import { useCustomProperties } from './ContextCustomProperties';
 import { useStyleProps } from './useStyleProps';
 
-type Props = $ReadOnly<{|
+type Props = Readonly<{|
   children: string
 |}>;
 

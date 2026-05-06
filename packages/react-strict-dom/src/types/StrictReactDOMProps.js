@@ -156,7 +156,7 @@ export type AutoComplete = ?(
 type IDRef = string;
 
 /*
-type SyntheticEvent<+T> = $ReadOnly<{|
+type SyntheticEvent<+T> = Readonly<{|
   ...T,
   bubbles: ?boolean,
   cancelable: ?boolean,
@@ -173,7 +173,7 @@ type SyntheticEvent<+T> = $ReadOnly<{|
 |}>;
 */
 
-type StrictClickEvent = $ReadOnly<{|
+type StrictClickEvent = Readonly<{|
   altKey: boolean,
   button: number,
   ctrlKey: boolean,
@@ -188,7 +188,7 @@ type StrictClickEvent = $ReadOnly<{|
   type: 'click'
 |}>;
 
-export type StrictReactDOMProps = $ReadOnly<{
+export type StrictReactDOMProps = Readonly<{
   ...ReactStrictDOMDataProps,
 
   // ARIA props
@@ -253,7 +253,7 @@ export type StrictReactDOMProps = $ReadOnly<{
   onFullscreenChange?: $FlowFixMe,
   onFullscreenError?: $FlowFixMe,
   onGotPointerCapture?: $FlowFixMe,
-  onKeyDown?: (event: $ReadOnly<{ key: string, type: ?string, ... }>) => void,
+  onKeyDown?: (event: Readonly<{ key: string, type: ?string, ... }>) => void,
   onKeyUp?: $FlowFixMe,
   onLostPointerCapture?: $FlowFixMe,
   onPaste?: $FlowFixMe,

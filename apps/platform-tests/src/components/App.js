@@ -12,7 +12,7 @@ import { ScrollView } from 'react-native';
 import { css, html } from 'react-strict-dom';
 import { tokens, themeColors, systemColors } from './tokens.css.js';
 
-type ExampleBlockProps = $ReadOnly<{
+type ExampleBlockProps = Readonly<{
   title: string,
   children: React.Node
 }>;
