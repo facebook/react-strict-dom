@@ -87,7 +87,7 @@ export function usePseudoStates(style: Style): Interaction {
           if (isActiveStyledElement) {
             setActive(false);
           }
-        }
+        };
       }
     }
     return value;
