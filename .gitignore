@@ -1,4 +1,5 @@
 .cache
+.expo
 .next
 build
 coverage
