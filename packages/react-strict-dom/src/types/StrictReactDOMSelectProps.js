@@ -9,7 +9,7 @@
 
 import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMSelectProps = $ReadOnly<{
+export type StrictReactDOMSelectProps = Readonly<{
   ...StrictReactDOMProps,
   autoComplete?: AutoComplete,
   defaultValue?: ?(Stringish | Array<Stringish>),

@@ -15,7 +15,7 @@ import { shallowEqual } from './shallowEqual';
 
 type Value = Style;
 
-type ProviderProps = $ReadOnly<{
+type ProviderProps = Readonly<{
   children: React.Node,
   value: Value
 }>;

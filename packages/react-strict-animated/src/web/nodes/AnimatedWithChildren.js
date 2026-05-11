@@ -12,21 +12,21 @@ import AnimatedNode from './AnimatedNode';
 export default class AnimatedWithChildren<
   TOutput
 > extends AnimatedNode<TOutput> {
-  #children: Array<AnimatedNode<mixed>>;
+  #children: Array<AnimatedNode<unknown>>;
 
   constructor() {
     super();
     this.#children = [];
   }
 
-  __addChild(child: AnimatedNode<mixed>): void {
+  __addChild(child: AnimatedNode<unknown>): void {
     if (this.#children.length === 0) {
       this.__attach();
     }
     this.#children.push(child);
   }
 
-  __removeChild(child: AnimatedNode<mixed>): void {
+  __removeChild(child: AnimatedNode<unknown>): void {
     const index = this.#children.indexOf(child);
     if (index === -1) {
       console.warn("Trying to remove a child that doesn't exist");
@@ -38,7 +38,7 @@ export default class AnimatedWithChildren<
     }
   }
 
-  __getChildren(): Array<AnimatedNode<mixed>> {
+  __getChildren(): Array<AnimatedNode<unknown>> {
     return this.#children;
   }
 }

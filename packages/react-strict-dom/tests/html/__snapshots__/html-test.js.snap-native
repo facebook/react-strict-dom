@@ -8,6 +8,7 @@ exports[`<html.*> "a" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "color": "blue",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -23,6 +24,7 @@ exports[`<html.*> "a" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "color": "blue",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -39,6 +41,7 @@ exports[`<html.*> "a" supports additional anchor attributes 1`] = `
     {
       "boxSizing": "content-box",
       "color": "blue",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -88,6 +91,7 @@ exports[`<html.*> "a" supports global attributes 1`] = `
       "color": "blue",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
       "writingDirection": "ltr",
@@ -131,6 +135,7 @@ exports[`<html.*> "a" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "color": "blue",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -381,6 +386,7 @@ exports[`<html.*> "b" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -394,6 +400,7 @@ exports[`<html.*> "b" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -442,6 +449,7 @@ exports[`<html.*> "b" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -483,6 +491,7 @@ exports[`<html.*> "b" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -495,6 +504,7 @@ exports[`<html.*> "bdi" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -507,6 +517,7 @@ exports[`<html.*> "bdi" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -554,6 +565,7 @@ exports[`<html.*> "bdi" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -594,6 +606,7 @@ exports[`<html.*> "bdi" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -606,6 +619,7 @@ exports[`<html.*> "bdo" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -618,6 +632,7 @@ exports[`<html.*> "bdo" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -665,6 +680,7 @@ exports[`<html.*> "bdo" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -705,6 +721,7 @@ exports[`<html.*> "bdo" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -832,7 +849,11 @@ exports[`<html.*> "blockquote" supports inline event handlers 1`] = `
 exports[`<html.*> "br" default rendering 1`] = `
 <Text
   ref={[Function]}
-  style={{}}
+  style={
+    {
+      "overflow": "visible",
+    }
+  }
 >
   
 
@@ -842,7 +863,11 @@ exports[`<html.*> "br" default rendering 1`] = `
 exports[`<html.*> "br" ignores and warns about unsupported attributes 1`] = `
 <Text
   ref={[Function]}
-  style={{}}
+  style={
+    {
+      "overflow": "visible",
+    }
+  }
 >
   
 
@@ -889,6 +914,7 @@ exports[`<html.*> "br" supports global attributes 1`] = `
       "--custom-property": "inline",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "writingDirection": "ltr",
     }
   }
@@ -926,7 +952,11 @@ exports[`<html.*> "br" supports inline event handlers 1`] = `
   onTouchMove={[Function]}
   onTouchStart={[Function]}
   ref={[Function]}
-  style={{}}
+  style={
+    {
+      "overflow": "visible",
+    }
+  }
 >
   
 
@@ -1081,6 +1111,7 @@ exports[`<html.*> "code" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1094,6 +1125,7 @@ exports[`<html.*> "code" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1142,6 +1174,7 @@ exports[`<html.*> "code" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -1183,6 +1216,7 @@ exports[`<html.*> "code" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1195,6 +1229,7 @@ exports[`<html.*> "del" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -1208,6 +1243,7 @@ exports[`<html.*> "del" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -1256,6 +1292,7 @@ exports[`<html.*> "del" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
       "writingDirection": "ltr",
@@ -1297,6 +1334,7 @@ exports[`<html.*> "del" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -1429,6 +1467,7 @@ exports[`<html.*> "em" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1442,6 +1481,7 @@ exports[`<html.*> "em" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1490,6 +1530,7 @@ exports[`<html.*> "em" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -1531,6 +1572,7 @@ exports[`<html.*> "em" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1900,6 +1942,7 @@ exports[`<html.*> "h1" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1915,6 +1958,7 @@ exports[`<html.*> "h1" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -1964,6 +2008,7 @@ exports[`<html.*> "h1" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2007,6 +2052,7 @@ exports[`<html.*> "h1" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2022,6 +2068,7 @@ exports[`<html.*> "h2" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2037,6 +2084,7 @@ exports[`<html.*> "h2" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2086,6 +2134,7 @@ exports[`<html.*> "h2" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2129,6 +2178,7 @@ exports[`<html.*> "h2" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2144,6 +2194,7 @@ exports[`<html.*> "h3" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2159,6 +2210,7 @@ exports[`<html.*> "h3" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2208,6 +2260,7 @@ exports[`<html.*> "h3" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2251,6 +2304,7 @@ exports[`<html.*> "h3" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2266,6 +2320,7 @@ exports[`<html.*> "h4" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2281,6 +2336,7 @@ exports[`<html.*> "h4" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2330,6 +2386,7 @@ exports[`<html.*> "h4" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2373,6 +2430,7 @@ exports[`<html.*> "h4" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2388,6 +2446,7 @@ exports[`<html.*> "h5" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2403,6 +2462,7 @@ exports[`<html.*> "h5" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2452,6 +2512,7 @@ exports[`<html.*> "h5" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2495,6 +2556,7 @@ exports[`<html.*> "h5" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2510,6 +2572,7 @@ exports[`<html.*> "h6" default rendering 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2525,6 +2588,7 @@ exports[`<html.*> "h6" ignores and warns about unsupported attributes 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2574,6 +2638,7 @@ exports[`<html.*> "h6" supports global attributes 1`] = `
       "display": "none",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2617,6 +2682,7 @@ exports[`<html.*> "h6" supports inline event handlers 1`] = `
       "boxSizing": "content-box",
       "fontSize": 24,
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2877,6 +2943,7 @@ exports[`<html.*> "i" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2890,6 +2957,7 @@ exports[`<html.*> "i" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -2938,6 +3006,7 @@ exports[`<html.*> "i" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -2979,6 +3048,7 @@ exports[`<html.*> "i" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontStyle": "italic",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3278,6 +3348,7 @@ exports[`<html.*> "ins" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -3291,6 +3362,7 @@ exports[`<html.*> "ins" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -3339,6 +3411,7 @@ exports[`<html.*> "ins" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
       "writingDirection": "ltr",
@@ -3380,6 +3453,7 @@ exports[`<html.*> "ins" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -3394,6 +3468,7 @@ exports[`<html.*> "kbd" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3407,6 +3482,7 @@ exports[`<html.*> "kbd" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3455,6 +3531,7 @@ exports[`<html.*> "kbd" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -3496,6 +3573,7 @@ exports[`<html.*> "kbd" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3508,6 +3586,7 @@ exports[`<html.*> "label" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3520,6 +3599,7 @@ exports[`<html.*> "label" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3532,6 +3612,7 @@ exports[`<html.*> "label" supports additional label attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3579,6 +3660,7 @@ exports[`<html.*> "label" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -3619,6 +3701,7 @@ exports[`<html.*> "label" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3764,6 +3847,7 @@ exports[`<html.*> "mark" default rendering 1`] = `
       "backgroundColor": "yellow",
       "boxSizing": "content-box",
       "color": "black",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3778,6 +3862,7 @@ exports[`<html.*> "mark" ignores and warns about unsupported attributes 1`] = `
       "backgroundColor": "yellow",
       "boxSizing": "content-box",
       "color": "black",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -3827,6 +3912,7 @@ exports[`<html.*> "mark" supports global attributes 1`] = `
       "color": "black",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -3869,6 +3955,7 @@ exports[`<html.*> "mark" supports inline event handlers 1`] = `
       "backgroundColor": "yellow",
       "boxSizing": "content-box",
       "color": "black",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4251,6 +4338,7 @@ exports[`<html.*> "option" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4263,6 +4351,7 @@ exports[`<html.*> "option" ignores and warns about unsupported attributes 1`] = 
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4310,6 +4399,7 @@ exports[`<html.*> "option" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -4348,6 +4438,7 @@ exports[`<html.*> "option" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4360,6 +4451,7 @@ exports[`<html.*> "option" supports input attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4374,6 +4466,7 @@ exports[`<html.*> "p" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4386,6 +4479,7 @@ exports[`<html.*> "p" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4433,6 +4527,7 @@ exports[`<html.*> "p" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -4473,6 +4568,7 @@ exports[`<html.*> "p" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4486,6 +4582,7 @@ exports[`<html.*> "pre" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4499,6 +4596,7 @@ exports[`<html.*> "pre" ignores and warns about unsupported attributes 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4547,6 +4645,7 @@ exports[`<html.*> "pre" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -4588,6 +4687,7 @@ exports[`<html.*> "pre" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontFamily": "Menlo",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4600,6 +4700,7 @@ exports[`<html.*> "s" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -4613,6 +4714,7 @@ exports[`<html.*> "s" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -4661,6 +4763,7 @@ exports[`<html.*> "s" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
       "writingDirection": "ltr",
@@ -4702,6 +4805,7 @@ exports[`<html.*> "s" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "line-through",
     }
@@ -4963,6 +5067,7 @@ exports[`<html.*> "span" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -4975,6 +5080,7 @@ exports[`<html.*> "span" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5022,6 +5128,7 @@ exports[`<html.*> "span" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -5062,6 +5169,7 @@ exports[`<html.*> "span" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5075,6 +5183,7 @@ exports[`<html.*> "strong" default rendering 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5088,6 +5197,7 @@ exports[`<html.*> "strong" ignores and warns about unsupported attributes 1`] = 
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5136,6 +5246,7 @@ exports[`<html.*> "strong" supports global attributes 1`] = `
       "direction": "ltr",
       "display": "none",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -5177,6 +5288,7 @@ exports[`<html.*> "strong" supports inline event handlers 1`] = `
     {
       "boxSizing": "content-box",
       "fontWeight": "bold",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5189,6 +5301,7 @@ exports[`<html.*> "sub" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5201,6 +5314,7 @@ exports[`<html.*> "sub" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5248,6 +5362,7 @@ exports[`<html.*> "sub" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -5288,6 +5403,7 @@ exports[`<html.*> "sub" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5300,6 +5416,7 @@ exports[`<html.*> "sup" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5312,6 +5429,7 @@ exports[`<html.*> "sup" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5359,6 +5477,7 @@ exports[`<html.*> "sup" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -5399,6 +5518,7 @@ exports[`<html.*> "sup" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
     }
   }
@@ -5569,6 +5689,7 @@ exports[`<html.*> "u" default rendering 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -5582,6 +5703,7 @@ exports[`<html.*> "u" ignores and warns about unsupported attributes 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }
@@ -5630,6 +5752,7 @@ exports[`<html.*> "u" supports global attributes 1`] = `
       "boxSizing": "content-box",
       "direction": "ltr",
       "display": "none",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
       "writingDirection": "ltr",
@@ -5671,6 +5794,7 @@ exports[`<html.*> "u" supports inline event handlers 1`] = `
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "textDecorationLine": "underline",
     }

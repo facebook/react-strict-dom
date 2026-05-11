@@ -19,7 +19,7 @@ import type { StrictReactDOMOptionProps } from './StrictReactDOMOptionProps';
 import type { StrictReactDOMSelectProps } from './StrictReactDOMSelectProps';
 import type { StrictReactDOMTextAreaProps } from './StrictReactDOMTextAreaProps';
 
-export type StrictProps = $ReadOnly<{
+export type StrictProps = Readonly<{
   ...StrictReactDOMProps,
   ...StrictReactDOMAnchorProps,
   ...StrictReactDOMButtonProps,

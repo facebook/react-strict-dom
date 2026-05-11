@@ -10,19 +10,19 @@
 import type { ReactNativeTransform } from '../../types/renderer.native';
 
 export class CSSTransformValue {
-  value: $ReadOnlyArray<ReactNativeTransform>;
+  value: ReadonlyArray<ReactNativeTransform>;
   cachedScaledTransform: void | {
     viewportScale: number,
-    value: $ReadOnlyArray<ReactNativeTransform>
+    value: ReadonlyArray<ReactNativeTransform>
   };
 
-  constructor(value: $ReadOnlyArray<ReactNativeTransform>) {
+  constructor(value: ReadonlyArray<ReactNativeTransform>) {
     this.value = value;
   }
 
   resolveTransformValue(
     viewportScale?: number = 1
-  ): $ReadOnlyArray<ReactNativeTransform> {
+  ): ReadonlyArray<ReactNativeTransform> {
     if (viewportScale === 1) {
       return this.value;
     }

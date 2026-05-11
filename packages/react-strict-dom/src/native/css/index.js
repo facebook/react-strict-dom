@@ -31,10 +31,10 @@ export const __customProperties: MutableCustomProperties = {};
  * which can be done at initialization-time (could potentially be done at
  * compile-time in the future).
  */
-function _create<S: { +[string]: { +[string]: mixed } }>(styles: S): {
-  [string]: mixed
+function _create<S extends { +[string]: { +[string]: unknown } }>(styles: S): {
+  [string]: unknown
 } {
-  const result: { [string]: mixed } = {};
+  const result: { [string]: unknown } = {};
   for (const styleName in styles) {
     const val = styles[styleName];
     if (typeof val === 'function') {
@@ -86,8 +86,8 @@ export const defineVars = (tokens: CustomProperties): Tokens => {
   return result;
 };
 
-export const firstThatWorks = <T: string | number>(
-  ...values: $ReadOnlyArray<T>
+export const firstThatWorks = <T extends string | number>(
+  ...values: ReadonlyArray<T>
 ): T => {
   return values[0];
 };
@@ -114,7 +114,7 @@ function _positionTry(p: PositionTry): PositionTry {
 }
 export const positionTry: (PositionTry) => string = _positionTry as $FlowFixMe;
 
-type ResolveStyleOptions = $ReadOnly<{
+type ResolveStyleOptions = Readonly<{
   active?: ?boolean,
   colorScheme: ?('light' | 'dark'),
   customProperties: CustomProperties,
@@ -135,9 +135,9 @@ type ResolveStyleOptions = $ReadOnly<{
 const mqDark = '@media (prefers-color-scheme: dark)';
 
 function resolveStyle(
-  style: $ReadOnlyArray<?{ +[string]: mixed }> | { +[string]: mixed },
+  style: ReadonlyArray<?{ +[string]: unknown }> | { +[string]: unknown },
   options: ResolveStyleOptions
-): { +[string]: mixed } {
+): { +[string]: unknown } {
   const {
     active,
     focus,
@@ -152,8 +152,8 @@ function resolveStyle(
   const colorScheme = options.colorScheme || 'light';
   const customProperties = options.customProperties || __customProperties;
 
-  const result: { [string]: mixed } = {};
-  const stylesToReprocess: { [string]: mixed } = {};
+  const result: { [string]: unknown } = {};
+  const stylesToReprocess: { [string]: unknown } = {};
   const flatStyle = flattenStyle(style);
 
   for (const propName in flatStyle) {
@@ -297,7 +297,7 @@ function resolveStyle(
 
 export function props(
   this: ResolveStyleOptions,
-  ...style: $ReadOnlyArray<?{ [key: string]: mixed }>
+  ...style: ReadonlyArray<?{ [key: string]: unknown }>
 ): ReactNativeProps {
   const options = this;
 

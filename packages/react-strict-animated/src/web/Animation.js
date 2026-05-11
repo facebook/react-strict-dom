@@ -68,12 +68,12 @@ export function spring(
   };
 }
 
-export function interpolate<TOutput: number | string>(
+export function interpolate<TOutput extends number | string>(
   value: AnimatedNodeType,
   config: InterpolationConfig<TOutput>
 ): AnimatedNodeType {
   return Interpolate(
-    // $FlowFixMe[incompatible-cast] - need a sketchy cast to be compatible with RN version of Animated
+    // $FlowFixMe[incompatible-type] - need a sketchy cast to be compatible with RN version of Animated
     value as AnimatedWithChildren<number>,
     config
   );

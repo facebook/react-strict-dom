@@ -27,7 +27,7 @@ function validateStrictProps(props: any) {
   });
 }
 
-export function createStrictDOMComponent<T, P: StrictProps>(
+export function createStrictDOMComponent<T, P extends StrictProps>(
   TagName: string,
   defaultStyle: StrictProps['style']
 ): component(ref?: React.RefSetter<T>, ...P) {
@@ -51,7 +51,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     }
     if (props.role != null) {
       // "presentation" synonym has wider browser support
-      // $FlowFixMe
+      // $FlowFixMe[incompatible-type]
       hostProps.role = props.role === 'none' ? 'presentation' : props.role;
     }
     if (TagName === 'button') {
@@ -63,7 +63,7 @@ export function createStrictDOMComponent<T, P: StrictProps>(
     /**
      * get host style props
      */
-    // $FlowFixMe
+    // $FlowFixMe[incompatible-type]
     const hostStyleProps: ReactDOMStyleProps = merge([
       debugStyle,
       defaultStyle,

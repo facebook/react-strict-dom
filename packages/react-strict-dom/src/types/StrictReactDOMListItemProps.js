@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMListItemProps = $ReadOnly<{
+export type StrictReactDOMListItemProps = Readonly<{
   ...StrictReactDOMProps,
   value?: number
 }>;

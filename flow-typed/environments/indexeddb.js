@@ -34,13 +34,13 @@ declare interface IDBRequest extends EventTarget {
   source: ?(IDBIndex | IDBObjectStore | IDBCursor);
   transaction: IDBTransaction;
   readyState: 'pending'|'done';
-  onerror: (err: any) => mixed;
-  onsuccess: (e: any) => mixed;
+  onerror: (err: any) => unknown;
+  onsuccess: (e: any) => unknown;
 }
 
 declare interface IDBOpenDBRequest extends IDBRequest {
-  onblocked: (e: any) => mixed;
-  onupgradeneeded: (e: any) => mixed;
+  onblocked: (e: any) => unknown;
+  onupgradeneeded: (e: any) => unknown;
 }
 
 declare interface IDBTransactionOptions {
@@ -63,10 +63,10 @@ declare interface IDBDatabase extends EventTarget {
   name: string;
   version: number;
   objectStoreNames: DOMStringList;
-  onabort: (e: any) => mixed;
-  onclose: (e: any) => mixed;
-  onerror: (e: any) => mixed;
-  onversionchange: (e: any) => mixed;
+  onabort: (e: any) => unknown;
+  onclose: (e: any) => unknown;
+  onerror: (e: any) => unknown;
+  onversionchange: (e: any) => unknown;
 }
 
 declare interface IDBTransaction extends EventTarget {
@@ -77,9 +77,9 @@ declare interface IDBTransaction extends EventTarget {
   mode: 'readonly'|'readwrite'|'versionchange';
   name: string;
   objectStore(name: string): IDBObjectStore;
-  onabort: (e: any) => mixed;
-  oncomplete: (e: any) => mixed;
-  onerror: (e: any) => mixed;
+  onabort: (e: any) => unknown;
+  oncomplete: (e: any) => unknown;
+  onerror: (e: any) => unknown;
 }
 
 declare interface IDBObjectStore {

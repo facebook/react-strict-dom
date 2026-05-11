@@ -69,7 +69,6 @@ export function usePseudoStates(style: Style): Interaction {
         value.onMouseEnter = () => setMouseHover(true);
         value.onMouseLeave = () => setMouseHover(false);
         value.onPointerEnter = () => setPointerHover(true);
-        value.onPointerLeave = () => setPointerHover(false);
       }
       if (isFocusStyledElement) {
         value.onBlur = () => setFocus(false);
@@ -79,6 +78,16 @@ export function usePseudoStates(style: Style): Interaction {
         value.onPointerCancel = () => setActive(false);
         value.onPointerDown = () => setActive(true);
         value.onPointerUp = () => setActive(false);
+      }
+      if (isHoverStyledElement || isActiveStyledElement) {
+        value.onPointerLeave = () => {
+          if (isHoverStyledElement) {
+            setPointerHover(false);
+          }
+          if (isActiveStyledElement) {
+            setActive(false);
+          }
+        };
       }
     }
     return value;

@@ -15,7 +15,7 @@ import normalizeColor from '@react-native/normalize-colors';
 
 type ExtrapolateType = 'extend' | 'identity' | 'clamp';
 
-function findRange(input: number, inputRange: $ReadOnlyArray<number>) {
+function findRange(input: number, inputRange: ReadonlyArray<number>) {
   let i;
   for (i = 1; i < inputRange.length - 1; ++i) {
     if (inputRange[i] >= input) {
@@ -100,7 +100,7 @@ function performInterpolation(
 function createNumericInterpolation(
   config: InterpolationConfig<number>
 ): (input: number) => number {
-  const outputRange: $ReadOnlyArray<number> = config.outputRange;
+  const outputRange: ReadonlyArray<number> = config.outputRange;
   const inputRange = config.inputRange;
 
   const easing = config.easing || ((t) => t);
@@ -145,7 +145,7 @@ function mapStringToNumericComponents(
   input: string
 ):
   | { components: [number, number, number, number], isColor: true }
-  | { components: $ReadOnlyArray<number | string>, isColor: false } {
+  | { components: ReadonlyArray<number | string>, isColor: false } {
   let normalizedColor = normalizeColor(input);
 
   if (typeof normalizedColor === 'number') {
@@ -198,7 +198,7 @@ function createStringInterpolation(
 
   const isColor = outputRange[0].isColor;
 
-  const numericComponents: $ReadOnlyArray<$ReadOnlyArray<number>> =
+  const numericComponents: ReadonlyArray<ReadonlyArray<number>> =
     outputRange.map((output) => {
       if (output.isColor) {
         return output.components;
@@ -237,7 +237,7 @@ function createStringInterpolation(
 }
 
 class AnimatedInterpolation<
-  TOutput: number | string
+  TOutput extends number | string
 > extends AnimatedWithChildren<TOutput> {
   #parent: AnimatedWithChildren<number>;
   #interpolation: (input: number) => TOutput;
@@ -265,7 +265,7 @@ class AnimatedInterpolation<
   }
 }
 
-function createInterpolator<TOutput: number | string>(
+function createInterpolator<TOutput extends number | string>(
   config: InterpolationConfig<TOutput>
 ): ((number) => TOutput) | null {
   switch (typeof config.outputRange[0]) {
@@ -281,7 +281,7 @@ function createInterpolator<TOutput: number | string>(
   }
 }
 
-export function Interpolate<TOutput: number | string>(
+export function Interpolate<TOutput extends number | string>(
   value: AnimatedWithChildren<number>,
   config: InterpolationConfig<TOutput>
 ): AnimatedInterpolation<TOutput> {

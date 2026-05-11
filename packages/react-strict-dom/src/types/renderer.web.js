@@ -7,8 +7,8 @@
  * @flow strict
  */
 
-export type ReactDOMStyleProps = $ReadOnly<{
+export type ReactDOMStyleProps = Readonly<{
   className?: string,
   'data-style-src'?: string,
-  style?: $ReadOnly<{ [string]: string | number }>
+  style?: Readonly<{ [string]: string | number }>
 }>;

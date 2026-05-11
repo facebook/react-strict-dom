@@ -6,6 +6,7 @@ exports[`css.create(): @media query does not match (prefers-color-scheme: dark) 
   "borderColor": "green",
   "boxSizing": "content-box",
   "color": "black",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -16,6 +17,7 @@ exports[`css.create(): @media query does not match (prefers-color-scheme: light)
   "borderColor": "darkgreen",
   "boxSizing": "content-box",
   "color": "white",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -26,6 +28,7 @@ exports[`css.create(): @media query matches (prefers-color-scheme: dark) 1`] = `
   "borderColor": "darkgreen",
   "boxSizing": "content-box",
   "color": "white",
+  "overflow": "visible",
   "position": "static",
 }
 `;
@@ -36,6 +39,7 @@ exports[`css.create(): @media query matches (prefers-color-scheme: light) 1`] = 
   "borderColor": "green",
   "boxSizing": "content-box",
   "color": "black",
+  "overflow": "visible",
   "position": "static",
 }
 `;

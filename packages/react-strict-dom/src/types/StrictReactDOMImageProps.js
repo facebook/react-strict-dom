@@ -9,7 +9,7 @@
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
 
-export type StrictReactDOMImageProps = $ReadOnly<{
+export type StrictReactDOMImageProps = Readonly<{
   ...StrictReactDOMProps,
   alt?: ?Stringish,
   crossOrigin?: ?('anonymous' | 'use-credentials'),

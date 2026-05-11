@@ -18,7 +18,7 @@ type ModifierKey =
   | 'Symbol'
   | 'SymbolLock';
 
-declare class SyntheticEvent<+T: EventTarget = EventTarget, +E: Event = Event> {
+declare class SyntheticEvent<+T extends EventTarget = EventTarget, +E extends Event = Event> {
   bubbles: boolean;
   cancelable: boolean;
   +currentTarget: T;
@@ -27,6 +27,7 @@ declare class SyntheticEvent<+T: EventTarget = EventTarget, +E: Event = Event> {
   isDefaultPrevented(): boolean;
   isPropagationStopped(): boolean;
   isTrusted: boolean;
+  // $FlowFixMe[incompatible-variance]
   nativeEvent: E;
   persist(): void;
   preventDefault(): void;
@@ -38,7 +39,7 @@ declare class SyntheticEvent<+T: EventTarget = EventTarget, +E: Event = Event> {
   type: string;
 }
 
-declare class SyntheticAnimationEvent<+T: EventTarget = EventTarget>
+declare class SyntheticAnimationEvent<+T extends EventTarget = EventTarget>
   extends SyntheticEvent<T>
 {
   animationName: string;
@@ -46,39 +47,39 @@ declare class SyntheticAnimationEvent<+T: EventTarget = EventTarget>
   pseudoElement: string;
 }
 
-declare class SyntheticClipboardEvent<+T: EventTarget = EventTarget>
+declare class SyntheticClipboardEvent<+T extends EventTarget = EventTarget>
   extends SyntheticEvent<T>
 {
   clipboardData: any;
 }
 
-declare class SyntheticCompositionEvent<+T: EventTarget = EventTarget>
+declare class SyntheticCompositionEvent<+T extends EventTarget = EventTarget>
   extends SyntheticEvent<T>
 {
   data: any;
 }
 
-declare class SyntheticInputEvent<+T: EventTarget = EventTarget>
+declare class SyntheticInputEvent<+T extends EventTarget = EventTarget>
   extends SyntheticEvent<T>
 {
   data: any;
   +target: HTMLInputElement;
 }
 
-declare class SyntheticUIEvent<+T: EventTarget = EventTarget, +E: Event = Event>
+declare class SyntheticUIEvent<+T extends EventTarget = EventTarget, +E extends Event = Event>
   extends SyntheticEvent<T, E>
 {
   detail: number;
   view: any;
 }
 
-declare class SyntheticFocusEvent<+T: EventTarget = EventTarget>
+declare class SyntheticFocusEvent<+T extends EventTarget = EventTarget>
   extends SyntheticUIEvent<T>
 {
   relatedTarget: EventTarget;
 }
 
-declare class SyntheticKeyboardEvent<+T: EventTarget = EventTarget>
+declare class SyntheticKeyboardEvent<+T extends EventTarget = EventTarget>
   extends SyntheticUIEvent<T, KeyboardEvent>
 {
   altKey: boolean;
@@ -116,13 +117,13 @@ declare class SyntheticMouseEvent<
   shiftKey: boolean;
 }
 
-declare class SyntheticDragEvent<+T: EventTarget = EventTarget>
+declare class SyntheticDragEvent<+T extends EventTarget = EventTarget>
   extends SyntheticMouseEvent<T, DragEvent>
 {
   dataTransfer: any;
 }
 
-declare class SyntheticWheelEvent<+T: EventTarget = EventTarget>
+declare class SyntheticWheelEvent<+T extends EventTarget = EventTarget>
   extends SyntheticMouseEvent<T, WheelEvent>
 {
   deltaMode: number;
@@ -131,7 +132,7 @@ declare class SyntheticWheelEvent<+T: EventTarget = EventTarget>
   deltaZ: number;
 }
 
-declare class SyntheticPointerEvent<+T: EventTarget = EventTarget>
+declare class SyntheticPointerEvent<+T extends EventTarget = EventTarget>
   extends SyntheticMouseEvent<T, PointerEvent>
 {
   height: number;
@@ -146,7 +147,7 @@ declare class SyntheticPointerEvent<+T: EventTarget = EventTarget>
   width: number;
 }
 
-declare class SyntheticTouchEvent<+T: EventTarget = EventTarget>
+declare class SyntheticTouchEvent<+T extends EventTarget = EventTarget>
   extends SyntheticUIEvent<T, TouchEvent>
 {
   altKey: boolean;
@@ -159,7 +160,7 @@ declare class SyntheticTouchEvent<+T: EventTarget = EventTarget>
   touches: TouchList;
 }
 
-declare class SyntheticTransitionEvent<+T: EventTarget = EventTarget>
+declare class SyntheticTransitionEvent<+T extends EventTarget = EventTarget>
   extends SyntheticEvent<T>
 {
   elapsedTime: number;
@@ -369,7 +370,7 @@ type ReactDOM$SVGElementJSXIntrinsic = {
   ...
 };
 
-type ReactDOM$SVGElementJSXIntrinsicTyped<Props: {...}, Instance: Element> = {|
+type ReactDOM$SVGElementJSXIntrinsicTyped<Props extends {...}, Instance extends Element> = {|
   instance: Instance,
   props: {
     ...Props,
@@ -380,7 +381,7 @@ type ReactDOM$SVGElementJSXIntrinsicTyped<Props: {...}, Instance: Element> = {|
 |};
 
 // Override this if you want to add custom props to all HTML elements
-type ReactDOM$CustomHTMLElementProps = $ReadOnly<{||}>;
+type ReactDOM$CustomHTMLElementProps = Readonly<{||}>;
 
 // Override this if you want to change the types accepted by data-prefixed props
 type ReactDOM$DataPropValues = ?(string | boolean | number);
@@ -389,7 +390,7 @@ type ReactDOM$DataPropValues = ?(string | boolean | number);
 type ReactDOM$UserVisibleString = string;
 
 // Override this if you want to add custom events to all HTML elements
-type ReactDOM$CustomEvents<-E> = $ReadOnly<{||}>;
+type ReactDOM$CustomEvents<-E> = Readonly<{||}>;
 
 type ReactDOM$BooleanishString = boolean | 'true' | 'false';
 
@@ -397,7 +398,7 @@ type ReactDOM$Style = any;
 
 type ReactDOM$Number = number | string;
 
-type ReactDOM$Boolean<AttributeName: string> = AttributeName | boolean;
+type ReactDOM$Boolean<AttributeName extends string> = AttributeName | boolean;
 
 type ReactDOM$CrossOrigin = ?('anonymous' | 'use-credentials' | '');
 
@@ -647,206 +648,206 @@ type ReactDOM$AriaAttributes = {|
   'aria-valuetext'?: ?ReactDOM$UserVisibleString,
 |};
 
-type ReactDOM$EventHandlers<-E> = $ReadOnly<{|
+type ReactDOM$EventHandlers<-E> = Readonly<{|
   // Animation Events
-  onAnimationEnd?: ?(SyntheticAnimationEvent<E>) => mixed,
-  onAnimationEndCapture?: ?(SyntheticAnimationEvent<E>) => mixed,
-  onAnimationIteration?: ?(SyntheticAnimationEvent<E>) => mixed,
-  onAnimationIterationCapture?: ?(SyntheticAnimationEvent<E>) => mixed,
-  onAnimationStart?: ?(SyntheticAnimationEvent<E>) => mixed,
-  onAnimationStartCapture?: ?(SyntheticAnimationEvent<E>) => mixed,
+  onAnimationEnd?: ?(SyntheticAnimationEvent<E>) => unknown,
+  onAnimationEndCapture?: ?(SyntheticAnimationEvent<E>) => unknown,
+  onAnimationIteration?: ?(SyntheticAnimationEvent<E>) => unknown,
+  onAnimationIterationCapture?: ?(SyntheticAnimationEvent<E>) => unknown,
+  onAnimationStart?: ?(SyntheticAnimationEvent<E>) => unknown,
+  onAnimationStartCapture?: ?(SyntheticAnimationEvent<E>) => unknown,
 
   // Clipboard Events
-  onCopy?: ?(SyntheticEvent<E>) => mixed,
-  onCopyCapture?: ?(SyntheticEvent<E>) => mixed,
-  onCut?: ?(SyntheticEvent<E>) => mixed,
-  onCutCapture?: ?(SyntheticEvent<E>) => mixed,
-  onPaste?: ?(SyntheticEvent<E>) => mixed,
-  onPasteCapture?: ?(SyntheticEvent<E>) => mixed,
+  onCopy?: ?(SyntheticEvent<E>) => unknown,
+  onCopyCapture?: ?(SyntheticEvent<E>) => unknown,
+  onCut?: ?(SyntheticEvent<E>) => unknown,
+  onCutCapture?: ?(SyntheticEvent<E>) => unknown,
+  onPaste?: ?(SyntheticEvent<E>) => unknown,
+  onPasteCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Composition Events
-  onCompositionEnd?: ?(SyntheticCompositionEvent<E>) => mixed,
-  onCompositionEndCapture?: ?(SyntheticCompositionEvent<E>) => mixed,
-  onCompositionStart?: ?(SyntheticCompositionEvent<E>) => mixed,
-  onCompositionStartCapture?: ?(SyntheticCompositionEvent<E>) => mixed,
-  onCompositionUpdate?: ?(SyntheticCompositionEvent<E>) => mixed,
-  onCompositionUpdateCapture?: ?(SyntheticCompositionEvent<E>) => mixed,
+  onCompositionEnd?: ?(SyntheticCompositionEvent<E>) => unknown,
+  onCompositionEndCapture?: ?(SyntheticCompositionEvent<E>) => unknown,
+  onCompositionStart?: ?(SyntheticCompositionEvent<E>) => unknown,
+  onCompositionStartCapture?: ?(SyntheticCompositionEvent<E>) => unknown,
+  onCompositionUpdate?: ?(SyntheticCompositionEvent<E>) => unknown,
+  onCompositionUpdateCapture?: ?(SyntheticCompositionEvent<E>) => unknown,
 
   // Focus Events
-  onFocus?: ?(SyntheticFocusEvent<E>) => mixed,
-  onFocusCapture?: ?(SyntheticFocusEvent<E>) => mixed,
-  onBlur?: ?(SyntheticFocusEvent<E>) => mixed,
-  onBlurCapture?: ?(SyntheticFocusEvent<E>) => mixed,
+  onFocus?: ?(SyntheticFocusEvent<E>) => unknown,
+  onFocusCapture?: ?(SyntheticFocusEvent<E>) => unknown,
+  onBlur?: ?(SyntheticFocusEvent<E>) => unknown,
+  onBlurCapture?: ?(SyntheticFocusEvent<E>) => unknown,
 
   // Form Events
-  onBeforeInput?: ?(SyntheticInputEvent<E>) => mixed,
-  onBeforeInputCapture?: ?(SyntheticInputEvent<E>) => mixed,
-  onChange?: ?(SyntheticEvent<E>) => mixed,
-  onChangeCapture?: ?(SyntheticEvent<E>) => mixed,
-  onInput?: ?(SyntheticEvent<E>) => mixed,
-  onInputCapture?: ?(SyntheticEvent<E>) => mixed,
-  onInvalid?: ?(SyntheticEvent<E>) => mixed,
-  onInvalidCapture?: ?(SyntheticEvent<E>) => mixed,
-  onReset?: ?(SyntheticEvent<E>) => mixed,
-  onResetCapture?: ?(SyntheticEvent<E>) => mixed,
-  onSubmit?: ?(SyntheticEvent<E>) => mixed,
-  onSubmitCapture?: ?(SyntheticEvent<E>) => mixed,
+  onBeforeInput?: ?(SyntheticInputEvent<E>) => unknown,
+  onBeforeInputCapture?: ?(SyntheticInputEvent<E>) => unknown,
+  onChange?: ?(SyntheticEvent<E>) => unknown,
+  onChangeCapture?: ?(SyntheticEvent<E>) => unknown,
+  onInput?: ?(SyntheticEvent<E>) => unknown,
+  onInputCapture?: ?(SyntheticEvent<E>) => unknown,
+  onInvalid?: ?(SyntheticEvent<E>) => unknown,
+  onInvalidCapture?: ?(SyntheticEvent<E>) => unknown,
+  onReset?: ?(SyntheticEvent<E>) => unknown,
+  onResetCapture?: ?(SyntheticEvent<E>) => unknown,
+  onSubmit?: ?(SyntheticEvent<E>) => unknown,
+  onSubmitCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Image Events
-  onError?: ?(SyntheticEvent<E>) => mixed,
-  onErrorCapture?: ?(SyntheticEvent<E>) => mixed,
-  onLoad?: ?(SyntheticEvent<E>) => mixed,
-  onLoadCapture?: ?(SyntheticEvent<E>) => mixed,
+  onError?: ?(SyntheticEvent<E>) => unknown,
+  onErrorCapture?: ?(SyntheticEvent<E>) => unknown,
+  onLoad?: ?(SyntheticEvent<E>) => unknown,
+  onLoadCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Keyboard Events
-  onKeyDown?: ?(SyntheticKeyboardEvent<E>) => mixed,
-  onKeyDownCapture?: ?(SyntheticKeyboardEvent<E>) => mixed,
-  onKeyPress?: ?(SyntheticKeyboardEvent<E>) => mixed,
-  onKeyPressCapture?: ?(SyntheticKeyboardEvent<E>) => mixed,
-  onKeyUp?: ?(SyntheticKeyboardEvent<E>) => mixed,
-  onKeyUpCapture?: ?(SyntheticKeyboardEvent<E>) => mixed,
+  onKeyDown?: ?(SyntheticKeyboardEvent<E>) => unknown,
+  onKeyDownCapture?: ?(SyntheticKeyboardEvent<E>) => unknown,
+  onKeyPress?: ?(SyntheticKeyboardEvent<E>) => unknown,
+  onKeyPressCapture?: ?(SyntheticKeyboardEvent<E>) => unknown,
+  onKeyUp?: ?(SyntheticKeyboardEvent<E>) => unknown,
+  onKeyUpCapture?: ?(SyntheticKeyboardEvent<E>) => unknown,
 
   // Media Events
-  onAbort?: ?(SyntheticEvent<E>) => mixed,
-  onAbortCapture?: ?(SyntheticEvent<E>) => mixed,
-  onCanPlay?: ?(SyntheticEvent<E>) => mixed,
-  onCanPlayCapture?: ?(SyntheticEvent<E>) => mixed,
-  onCanPlayThrough?: ?(SyntheticEvent<E>) => mixed,
-  onCanPlayThroughCapture?: ?(SyntheticEvent<E>) => mixed,
-  onDurationChange?: ?(SyntheticEvent<E>) => mixed,
-  onDurationChangeCapture?: ?(SyntheticEvent<E>) => mixed,
-  onEmptied?: ?(SyntheticEvent<E>) => mixed,
-  onEmptiedCapture?: ?(SyntheticEvent<E>) => mixed,
-  onEncrypted?: ?(SyntheticEvent<E>) => mixed,
-  onEncryptedCapture?: ?(SyntheticEvent<E>) => mixed,
-  onEnded?: ?(SyntheticEvent<E>) => mixed,
-  onEndedCapture?: ?(SyntheticEvent<E>) => mixed,
-  onLoadedData?: ?(SyntheticEvent<E>) => mixed,
-  onLoadedDataCapture?: ?(SyntheticEvent<E>) => mixed,
-  onLoadedMetadata?: ?(SyntheticEvent<E>) => mixed,
-  onLoadedMetadataCapture?: ?(SyntheticEvent<E>) => mixed,
-  onLoadStart?: ?(SyntheticEvent<E>) => mixed,
-  onLoadStartCapture?: ?(SyntheticEvent<E>) => mixed,
-  onPause?: ?(SyntheticEvent<E>) => mixed,
-  onPauseCapture?: ?(SyntheticEvent<E>) => mixed,
-  onPlay?: ?(SyntheticEvent<E>) => mixed,
-  onPlayCapture?: ?(SyntheticEvent<E>) => mixed,
-  onPlaying?: ?(SyntheticEvent<E>) => mixed,
-  onPlayingCapture?: ?(SyntheticEvent<E>) => mixed,
-  onProgress?: ?(SyntheticEvent<E>) => mixed,
-  onProgressCapture?: ?(SyntheticEvent<E>) => mixed,
-  onRateChange?: ?(SyntheticEvent<E>) => mixed,
-  onRateChangeCapture?: ?(SyntheticEvent<E>) => mixed,
-  onResize?: ?(SyntheticEvent<E>) => mixed,
-  onResizeCapture?: ?(SyntheticEvent<E>) => mixed,
-  onSeeked?: ?(SyntheticEvent<E>) => mixed,
-  onSeekedCapture?: ?(SyntheticEvent<E>) => mixed,
-  onSeeking?: ?(SyntheticEvent<E>) => mixed,
-  onSeekingCapture?: ?(SyntheticEvent<E>) => mixed,
-  onStalled?: ?(SyntheticEvent<E>) => mixed,
-  onStalledCapture?: ?(SyntheticEvent<E>) => mixed,
-  onSuspend?: ?(SyntheticEvent<E>) => mixed,
-  onSuspendCapture?: ?(SyntheticEvent<E>) => mixed,
-  onTimeUpdate?: ?(SyntheticEvent<E>) => mixed,
-  onTimeUpdateCapture?: ?(SyntheticEvent<E>) => mixed,
-  onVolumeChange?: ?(SyntheticEvent<E>) => mixed,
-  onVolumeChangeCapture?: ?(SyntheticEvent<E>) => mixed,
-  onWaiting?: ?(SyntheticEvent<E>) => mixed,
-  onWaitingCapture?: ?(SyntheticEvent<E>) => mixed,
+  onAbort?: ?(SyntheticEvent<E>) => unknown,
+  onAbortCapture?: ?(SyntheticEvent<E>) => unknown,
+  onCanPlay?: ?(SyntheticEvent<E>) => unknown,
+  onCanPlayCapture?: ?(SyntheticEvent<E>) => unknown,
+  onCanPlayThrough?: ?(SyntheticEvent<E>) => unknown,
+  onCanPlayThroughCapture?: ?(SyntheticEvent<E>) => unknown,
+  onDurationChange?: ?(SyntheticEvent<E>) => unknown,
+  onDurationChangeCapture?: ?(SyntheticEvent<E>) => unknown,
+  onEmptied?: ?(SyntheticEvent<E>) => unknown,
+  onEmptiedCapture?: ?(SyntheticEvent<E>) => unknown,
+  onEncrypted?: ?(SyntheticEvent<E>) => unknown,
+  onEncryptedCapture?: ?(SyntheticEvent<E>) => unknown,
+  onEnded?: ?(SyntheticEvent<E>) => unknown,
+  onEndedCapture?: ?(SyntheticEvent<E>) => unknown,
+  onLoadedData?: ?(SyntheticEvent<E>) => unknown,
+  onLoadedDataCapture?: ?(SyntheticEvent<E>) => unknown,
+  onLoadedMetadata?: ?(SyntheticEvent<E>) => unknown,
+  onLoadedMetadataCapture?: ?(SyntheticEvent<E>) => unknown,
+  onLoadStart?: ?(SyntheticEvent<E>) => unknown,
+  onLoadStartCapture?: ?(SyntheticEvent<E>) => unknown,
+  onPause?: ?(SyntheticEvent<E>) => unknown,
+  onPauseCapture?: ?(SyntheticEvent<E>) => unknown,
+  onPlay?: ?(SyntheticEvent<E>) => unknown,
+  onPlayCapture?: ?(SyntheticEvent<E>) => unknown,
+  onPlaying?: ?(SyntheticEvent<E>) => unknown,
+  onPlayingCapture?: ?(SyntheticEvent<E>) => unknown,
+  onProgress?: ?(SyntheticEvent<E>) => unknown,
+  onProgressCapture?: ?(SyntheticEvent<E>) => unknown,
+  onRateChange?: ?(SyntheticEvent<E>) => unknown,
+  onRateChangeCapture?: ?(SyntheticEvent<E>) => unknown,
+  onResize?: ?(SyntheticEvent<E>) => unknown,
+  onResizeCapture?: ?(SyntheticEvent<E>) => unknown,
+  onSeeked?: ?(SyntheticEvent<E>) => unknown,
+  onSeekedCapture?: ?(SyntheticEvent<E>) => unknown,
+  onSeeking?: ?(SyntheticEvent<E>) => unknown,
+  onSeekingCapture?: ?(SyntheticEvent<E>) => unknown,
+  onStalled?: ?(SyntheticEvent<E>) => unknown,
+  onStalledCapture?: ?(SyntheticEvent<E>) => unknown,
+  onSuspend?: ?(SyntheticEvent<E>) => unknown,
+  onSuspendCapture?: ?(SyntheticEvent<E>) => unknown,
+  onTimeUpdate?: ?(SyntheticEvent<E>) => unknown,
+  onTimeUpdateCapture?: ?(SyntheticEvent<E>) => unknown,
+  onVolumeChange?: ?(SyntheticEvent<E>) => unknown,
+  onVolumeChangeCapture?: ?(SyntheticEvent<E>) => unknown,
+  onWaiting?: ?(SyntheticEvent<E>) => unknown,
+  onWaitingCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Mouse Events
-  onAuxClick?: ?(SyntheticMouseEvent<E>) => mixed,
-  onAuxClickCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onClick?: ?(SyntheticMouseEvent<E>) => mixed,
-  onClickCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onContextMenu?: ?(SyntheticMouseEvent<E>) => mixed,
-  onContextMenuCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onDoubleClick?: ?(SyntheticMouseEvent<E>) => mixed,
-  onDoubleClickCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onDrag?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragEnd?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragEndCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragEnter?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragEnterCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragExit?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragExitCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragLeave?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragLeaveCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragOver?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragOverCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragStart?: ?(SyntheticDragEvent<E>) => mixed,
-  onDragStartCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onDrop?: ?(SyntheticDragEvent<E>) => mixed,
-  onDropCapture?: ?(SyntheticDragEvent<E>) => mixed,
-  onMouseDown?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseDownCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseEnter?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseLeave?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseMove?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseMoveCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseOut?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseOutCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseOver?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseOverCapture?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseUp?: ?(SyntheticMouseEvent<E>) => mixed,
-  onMouseUpCapture?: ?(SyntheticMouseEvent<E>) => mixed,
+  onAuxClick?: ?(SyntheticMouseEvent<E>) => unknown,
+  onAuxClickCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onClick?: ?(SyntheticMouseEvent<E>) => unknown,
+  onClickCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onContextMenu?: ?(SyntheticMouseEvent<E>) => unknown,
+  onContextMenuCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onDoubleClick?: ?(SyntheticMouseEvent<E>) => unknown,
+  onDoubleClickCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onDrag?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragEnd?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragEndCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragEnter?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragEnterCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragExit?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragExitCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragLeave?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragLeaveCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragOver?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragOverCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragStart?: ?(SyntheticDragEvent<E>) => unknown,
+  onDragStartCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onDrop?: ?(SyntheticDragEvent<E>) => unknown,
+  onDropCapture?: ?(SyntheticDragEvent<E>) => unknown,
+  onMouseDown?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseDownCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseEnter?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseLeave?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseMove?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseMoveCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseOut?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseOutCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseOver?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseOverCapture?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseUp?: ?(SyntheticMouseEvent<E>) => unknown,
+  onMouseUpCapture?: ?(SyntheticMouseEvent<E>) => unknown,
 
   // Pointer Events
-  onGotPointerCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onGotPointerCaptureCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onLostPointerCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onLostPointerCaptureCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerCancel?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerCancelCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerDown?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerDownCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerEnter?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerLeave?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerMove?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerMoveCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerOut?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerOutCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerOver?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerOverCapture?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerUp?: ?(SyntheticPointerEvent<E>) => mixed,
-  onPointerUpCapture?: ?(SyntheticPointerEvent<E>) => mixed,
+  onGotPointerCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onGotPointerCaptureCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onLostPointerCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onLostPointerCaptureCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerCancel?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerCancelCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerDown?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerDownCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerEnter?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerLeave?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerMove?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerMoveCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerOut?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerOutCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerOver?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerOverCapture?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerUp?: ?(SyntheticPointerEvent<E>) => unknown,
+  onPointerUpCapture?: ?(SyntheticPointerEvent<E>) => unknown,
 
   // Selection Events
-  onSelect?: ?(SyntheticEvent<E>) => mixed,
-  onSelectCapture?: ?(SyntheticEvent<E>) => mixed,
+  onSelect?: ?(SyntheticEvent<E>) => unknown,
+  onSelectCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Toggle Events
-  onToggle?: ?(SyntheticEvent<E>) => mixed,
-  onToggleCapture?: ?(SyntheticEvent<E>) => mixed,
+  onToggle?: ?(SyntheticEvent<E>) => unknown,
+  onToggleCapture?: ?(SyntheticEvent<E>) => unknown,
 
   // Touch Events
-  onTouchCancel?: ?(SyntheticTouchEvent<E>) => mixed,
-  onTouchCancelCapture?: ?(SyntheticTouchEvent<E>) => mixed,
-  onTouchEnd?: ?(SyntheticTouchEvent<E>) => mixed,
-  onTouchEndCapture?: ?(SyntheticTouchEvent<E>) => mixed,
-  onTouchMove?: ?(SyntheticEvent<E>) => mixed,
-  onTouchMoveCapture?: ?(SyntheticEvent<E>) => mixed,
-  onTouchStart?: ?(SyntheticTouchEvent<E>) => mixed,
-  onTouchStartCapture?: ?(SyntheticTouchEvent<E>) => mixed,
+  onTouchCancel?: ?(SyntheticTouchEvent<E>) => unknown,
+  onTouchCancelCapture?: ?(SyntheticTouchEvent<E>) => unknown,
+  onTouchEnd?: ?(SyntheticTouchEvent<E>) => unknown,
+  onTouchEndCapture?: ?(SyntheticTouchEvent<E>) => unknown,
+  onTouchMove?: ?(SyntheticEvent<E>) => unknown,
+  onTouchMoveCapture?: ?(SyntheticEvent<E>) => unknown,
+  onTouchStart?: ?(SyntheticTouchEvent<E>) => unknown,
+  onTouchStartCapture?: ?(SyntheticTouchEvent<E>) => unknown,
 
   // Transition Events
-  onTransitionCancel?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionCancelCapture?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionEnd?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionEndCapture?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionRun?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionRunCapture?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionStart?: ?(SyntheticTransitionEvent<E>) => mixed,
-  onTransitionStartCapture?: ?(SyntheticTransitionEvent<E>) => mixed,
+  onTransitionCancel?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionCancelCapture?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionEnd?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionEndCapture?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionRun?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionRunCapture?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionStart?: ?(SyntheticTransitionEvent<E>) => unknown,
+  onTransitionStartCapture?: ?(SyntheticTransitionEvent<E>) => unknown,
 
   // UI Events
-  onScroll?: ?(SyntheticUIEvent<E>) => mixed,
-  onScrollCapture?: ?(SyntheticUIEvent<E>) => mixed,
+  onScroll?: ?(SyntheticUIEvent<E>) => unknown,
+  onScrollCapture?: ?(SyntheticUIEvent<E>) => unknown,
 
   // Wheel Events
-  onWheel?: ?(SyntheticWheelEvent<E>) => mixed,
-  onWheelCapture?: ?(SyntheticWheelEvent<E>) => mixed,
+  onWheel?: ?(SyntheticWheelEvent<E>) => unknown,
+  onWheelCapture?: ?(SyntheticWheelEvent<E>) => unknown,
 
   ...ReactDOM$CustomEvents<E>,
 |}>;
@@ -858,7 +859,7 @@ type ReactDOM$ReactSpecificProps = {|
     __html: ReactDOM$UserVisibleString,
   |},
   defaultChecked?: ?boolean,
-  defaultValue?: ?(string | number | $ReadOnlyArray<string>),
+  defaultValue?: ?(string | number | ReadonlyArray<string>),
   suppressContentEditableWarning?: ?boolean,
   suppressHydrationWarning?: ?boolean,
 |};
@@ -1050,7 +1051,7 @@ type ReactDOM$buttonProps = {|
   formTarget?: ?string,
   name?: ?string,
   type?: ?('submit' | 'reset' | 'button'),
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$buttonInstance = HTMLButtonElement;
 
@@ -1081,7 +1082,7 @@ type ReactDOM$colgroupInstance = HTMLTableColElement;
 
 type ReactDOM$dataProps = {|
   ...ReactDOM$HTMLElementProps,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 
 type ReactDOM$dataInstance = HTMLDataElement;
@@ -1111,8 +1112,8 @@ type ReactDOM$dfnInstance = HTMLElement;
 
 type ReactDOM$dialogProps = {|
   ...ReactDOM$HTMLElementProps,
-  onCancel?: ?(SyntheticEvent<HTMLDialogElement>) => mixed,
-  onClose?: ?(SyntheticEvent<HTMLDialogElement>) => mixed,
+  onCancel?: ?(SyntheticEvent<HTMLDialogElement>) => unknown,
+  onClose?: ?(SyntheticEvent<HTMLDialogElement>) => unknown,
   open?: ?boolean,
 |};
 type ReactDOM$dialogInstance = HTMLDialogElement;
@@ -1266,7 +1267,7 @@ type ReactDOM$inputProps = {|
   minLength?: ?number,
   multiple?: ?boolean,
   name?: ?string,
-  onChange?: ?(SyntheticInputEvent<HTMLInputElement>) => mixed,
+  onChange?: ?(SyntheticInputEvent<HTMLInputElement>) => unknown,
   pattern?: ?string,
   placeholder?: ?ReactDOM$UserVisibleString,
   readOnly?: ?boolean,
@@ -1275,7 +1276,7 @@ type ReactDOM$inputProps = {|
   src?: ?string,
   step?: ?(number | string),
   type?: ?string,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
   width?: ?(number | string),
 |};
 type ReactDOM$inputInstance = HTMLInputElement;
@@ -1313,7 +1314,7 @@ type ReactDOM$legendInstance = HTMLLegendElement;
 
 type ReactDOM$liProps = {|
   ...ReactDOM$HTMLElementProps,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 
 type ReactDOM$liInstance = HTMLLIElement;
@@ -1391,7 +1392,7 @@ type ReactDOM$meterProps = {|
   max?: ?(number | string),
   min?: ?(number | string),
   optimum?: ?number,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$meterInstance = HTMLMeterElement;
 
@@ -1436,7 +1437,7 @@ type ReactDOM$optionProps = {|
   disabled?: ?boolean,
   label?: ?ReactDOM$UserVisibleString,
   selected?: ?boolean,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$optionInstance = HTMLOptionElement;
 
@@ -1454,7 +1455,7 @@ type ReactDOM$pInstance = HTMLParagraphElement;
 type ReactDOM$paramProps = {|
   ...ReactDOM$SelfClosingHTMLElementProps,
   name?: ?string,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$paramInstance = HTMLParamElement;
 
@@ -1467,7 +1468,7 @@ type ReactDOM$preInstance = HTMLPreElement;
 type ReactDOM$progressProps = {|
   ...ReactDOM$HTMLElementProps,
   max?: ?(number | string),
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$progressInstance = HTMLProgressElement;
 
@@ -1514,10 +1515,10 @@ type ReactDOM$selectProps = {|
   form?: ?string,
   multiple?: ?boolean,
   name?: ?string,
-  onChange?: ?(SyntheticEvent<HTMLSelectElement>) => mixed,
+  onChange?: ?(SyntheticEvent<HTMLSelectElement>) => unknown,
   required?: ?boolean,
   size?: ?number,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
 |};
 type ReactDOM$selectInstance = HTMLSelectElement;
 
@@ -1608,12 +1609,12 @@ type ReactDOM$textareaProps = {|
   maxLength?: ?number,
   minLength?: ?number,
   name?: ?string,
-  onChange?: ?(SyntheticEvent<HTMLTextAreaElement>) => mixed,
+  onChange?: ?(SyntheticEvent<HTMLTextAreaElement>) => unknown,
   placeholder?: ?ReactDOM$UserVisibleString,
   readOnly?: ?boolean,
   required?: ?boolean,
   rows?: ?number,
-  value?: ?(string | $ReadOnlyArray<string> | number),
+  value?: ?(string | ReadonlyArray<string> | number),
   wrap?: ?string,
 |};
 type ReactDOM$textareaInstance = HTMLTextAreaElement;

@@ -8,15 +8,15 @@
  */
 
 type InlineStyle = {
-  +[key: string]: mixed
+  +[key: string]: unknown
 };
 
-type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
+type StylesArray<+T> = T | ReadonlyArray<StylesArray<T>>;
 
 type Styles = StylesArray<InlineStyle | false | void | null>;
 
-export function flattenStyle(styles: InlineStyle | $ReadOnlyArray<Styles>): {
-  +[key: string]: mixed
+export function flattenStyle(styles: InlineStyle | ReadonlyArray<Styles>): {
+  +[key: string]: unknown
 } {
   if (!Array.isArray(styles)) {
     return styles;

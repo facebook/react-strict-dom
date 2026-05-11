@@ -11,22 +11,22 @@
 
 import { styleq } from 'styleq';
 
-type CompiledStyle = $ReadOnly<{
+type CompiledStyle = Readonly<{
   $$css: true,
   [key: string]: string
 }>;
 
-type InlineStyle = $ReadOnly<{
+type InlineStyle = Readonly<{
   $$css?: void,
   [key: string]: string
 }>;
 
-type StylesArray<+T> = T | $ReadOnlyArray<StylesArray<T>>;
+type StylesArray<+T> = T | ReadonlyArray<StylesArray<T>>;
 
-type Props = $ReadOnly<{
+type Props = Readonly<{
   className?: string,
   'data-style-src'?: string,
-  style?: $ReadOnly<{ [string]: string | number }>
+  style?: Readonly<{ [string]: string | number }>
 }>;
 
 const optimizedStyleq = styleq.factory({
@@ -38,9 +38,9 @@ const optimizedStyleq = styleq.factory({
 });
 
 export function merge(
-  ...styles: $ReadOnlyArray<
+  ...styles: ReadonlyArray<
     StylesArray<
-      ?boolean | ?CompiledStyle | ?$ReadOnly<[CompiledStyle, InlineStyle]>
+      ?boolean | ?CompiledStyle | ?Readonly<[CompiledStyle, InlineStyle]>
     >
   >
 ): Props {
@@ -48,7 +48,7 @@ export function merge(
   const result: {
     className?: string,
     'data-style-src'?: string,
-    style?: $ReadOnly<{ [string]: string | number }>
+    style?: Readonly<{ [string]: string | number }>
   } = {};
   if (className != null && className !== '') {
     result.className = className;

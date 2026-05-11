@@ -14,6 +14,7 @@ const LENGTH_REGEX = /^(-?[0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
 type CSSLengthUnitType = 'em' | 'px' | 'rem' | 'vh' | 'vmax' | 'vmin' | 'vw';
 
 type ResolvePixelValueOptions = $ReadOnly<{
+  fontScale: number | void,
   inheritedFontSize: ?number,
   viewportHeight: number,
   viewportScale: number,

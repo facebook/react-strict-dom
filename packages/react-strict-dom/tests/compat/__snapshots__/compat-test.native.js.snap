@@ -44,6 +44,7 @@ exports[`<compat.native> "as" equals "span": as=span 1`] = `
   style={
     {
       "color": "blue",
+      "overflow": "visible",
       "userSelect": "none",
     }
   }
@@ -85,6 +86,7 @@ exports[`<compat.native> nested: nested 1`] = `
       {
         "boxSizing": "content-box",
         "color": "red",
+        "overflow": "visible",
         "position": "static",
       }
     }

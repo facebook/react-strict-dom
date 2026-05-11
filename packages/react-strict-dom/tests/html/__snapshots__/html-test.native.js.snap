@@ -72,6 +72,7 @@ exports[`<html.*> (native polyfills) polyfills: inheritence inherited styles 1`]
           "fontWeight": "300",
           "letterSpacing": 10,
           "lineHeight": 192,
+          "overflow": "visible",
           "position": "static",
           "textAlign": "right",
           "textDecorationColor": "red",
@@ -1010,6 +1011,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "auto" 
   style={
     {
       "boxSizing": "content-box",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "auto",
     }
@@ -1037,6 +1039,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "ltr" t
     {
       "boxSizing": "content-box",
       "direction": "ltr",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "ltr",
     }
@@ -1064,6 +1067,7 @@ exports[`<html.*> (native polyfills) polyfills: props global "dir" prop: "rtl" t
     {
       "boxSizing": "content-box",
       "direction": "rtl",
+      "overflow": "visible",
       "position": "static",
       "writingDirection": "rtl",
     }

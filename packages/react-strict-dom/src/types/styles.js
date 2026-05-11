@@ -20,10 +20,10 @@ import typeof * as TStyleX from '@stylexjs/stylex';
 export type Style = InlineStyles;
 
 export type Styles = StyleXArray<
-  StyleXStyles<> | Theme<VarGroup<{ +[string]: mixed }>>
+  StyleXStyles<> | Theme<VarGroup<{ +[string]: unknown }>>
 >;
 
-export type IStyleX = $ReadOnly<{
+export type IStyleX = Readonly<{
   create: TStyleX['create'],
   createTheme: TStyleX['createTheme'],
   defineConsts: TStyleX['defineConsts'],
@@ -35,5 +35,5 @@ export type IStyleX = $ReadOnly<{
   ...
 }>;
 
-export type MutableCustomProperties = { [string]: mixed };
-export type CustomProperties = $ReadOnly<MutableCustomProperties>;
+export type MutableCustomProperties = { [string]: unknown };
+export type CustomProperties = Readonly<MutableCustomProperties>;
