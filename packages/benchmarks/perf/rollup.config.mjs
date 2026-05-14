@@ -55,6 +55,34 @@ const config = [
       }),
       resolve()
     ]
+  },
+  {
+    external: ['react', 'react/jsx-runtime'],
+    input: path.join(
+      __dirname,
+      '../../react-strict-animated/dist/web/index.js'
+    ),
+    output: {
+      file: path.join(__dirname, './build/react-strict-animated.js'),
+      format: 'commonjs'
+    },
+    plugins: [
+      replace({
+        preventAssignment: true,
+        values: {
+          __DEV__: 'false'
+        }
+      }),
+      alias({
+        entries: [
+          {
+            find: '@stylexjs/stylex',
+            replacement: path.resolve(__dirname, './mocks/stylex.js')
+          }
+        ]
+      }),
+      resolve()
+    ]
   }
 ];
 
