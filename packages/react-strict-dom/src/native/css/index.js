@@ -373,16 +373,6 @@ export function props(
     } else if (styleProp === 'borderInlineStartWidth') {
       nextStyle.borderStartWidth = styleValue;
     }
-    // borderRadius
-    else if (styleProp === 'borderStartStartRadius') {
-      nextStyle.borderTopStartRadius = styleValue;
-    } else if (styleProp === 'borderEndStartRadius') {
-      nextStyle.borderBottomStartRadius = styleValue;
-    } else if (styleProp === 'borderStartEndRadius') {
-      nextStyle.borderTopEndRadius = styleValue;
-    } else if (styleProp === 'borderEndEndRadius') {
-      nextStyle.borderBottomEndRadius = styleValue;
-    }
     // borderStyle:"none" polyfill
     else if (styleProp === 'borderStyle' && styleValue === 'none') {
       nextStyle.borderWidth = 0;

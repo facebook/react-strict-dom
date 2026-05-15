@@ -200,7 +200,7 @@ exports[`css.create() properties borderInline: borderInlineStart 1`] = `
 
 exports[`css.create() properties borderRadius: endend 1`] = `
 {
-  "borderBottomEndRadius": 10,
+  "borderEndEndRadius": 10,
   "boxSizing": "content-box",
   "position": "static",
 }
@@ -208,7 +208,7 @@ exports[`css.create() properties borderRadius: endend 1`] = `
 
 exports[`css.create() properties borderRadius: endstart 1`] = `
 {
-  "borderBottomStartRadius": 10,
+  "borderEndStartRadius": 10,
   "boxSizing": "content-box",
   "position": "static",
 }
@@ -216,7 +216,7 @@ exports[`css.create() properties borderRadius: endstart 1`] = `
 
 exports[`css.create() properties borderRadius: startend 1`] = `
 {
-  "borderTopEndRadius": 10,
+  "borderStartEndRadius": 10,
   "boxSizing": "content-box",
   "position": "static",
 }
@@ -224,7 +224,7 @@ exports[`css.create() properties borderRadius: startend 1`] = `
 
 exports[`css.create() properties borderRadius: startstart 1`] = `
 {
-  "borderTopStartRadius": 10,
+  "borderStartStartRadius": 10,
   "boxSizing": "content-box",
   "position": "static",
 }
