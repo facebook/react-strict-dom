@@ -397,27 +397,6 @@ export function props(
         nativeProps.cursorColor = styleValue;
       }
     }
-    // inset
-    else if (styleProp === 'inset') {
-      nextStyle.top ??= styleValue;
-      nextStyle.start ??= styleValue;
-      nextStyle.end ??= styleValue;
-      nextStyle.bottom ??= styleValue;
-    } else if (styleProp === 'insetBlock') {
-      nextStyle.top ??= styleValue;
-      nextStyle.bottom ??= styleValue;
-    } else if (styleProp === 'insetBlockEnd') {
-      nextStyle.bottom = flatStyle.bottom ?? styleValue;
-    } else if (styleProp === 'insetBlockStart') {
-      nextStyle.top = flatStyle.top ?? styleValue;
-    } else if (styleProp === 'insetInline') {
-      nextStyle.end ??= styleValue;
-      nextStyle.start ??= styleValue;
-    } else if (styleProp === 'insetInlineEnd') {
-      nextStyle.end = flatStyle.end ?? styleValue;
-    } else if (styleProp === 'insetInlineStart') {
-      nextStyle.start = flatStyle.start ?? styleValue;
-    }
     // lineClamp polyfill
     else if (styleProp === 'lineClamp') {
       nativeProps.numberOfLines = styleValue;

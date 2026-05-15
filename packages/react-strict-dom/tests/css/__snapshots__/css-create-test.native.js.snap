@@ -433,13 +433,10 @@ exports[`css.create() properties inlineSize: minInlineSize after minWidth 1`] = 
 
 exports[`css.create() properties inset: inset 1`] = `
 {
-  "bottom": 1,
   "boxSizing": "content-box",
-  "end": 1,
+  "inset": 1,
   "overflow": "visible",
   "position": "static",
-  "start": 1,
-  "top": 1,
 }
 `;
 
@@ -447,23 +444,21 @@ exports[`css.create() properties inset: inset vs phys 1`] = `
 {
   "bottom": 100,
   "boxSizing": "content-box",
-  "end": 1,
+  "inset": 1,
   "left": 10,
   "overflow": "visible",
   "position": "static",
   "right": 10,
-  "start": 1,
   "top": 100,
 }
 `;
 
 exports[`css.create() properties inset: insetBlock 1`] = `
 {
-  "bottom": 2,
   "boxSizing": "content-box",
+  "insetBlock": 2,
   "overflow": "visible",
   "position": "static",
-  "top": 2,
 }
 `;
 
@@ -471,6 +466,7 @@ exports[`css.create() properties inset: insetBlock vs phys 1`] = `
 {
   "bottom": 100,
   "boxSizing": "content-box",
+  "insetBlock": 2,
   "overflow": "visible",
   "position": "static",
   "top": 100,
@@ -479,8 +475,8 @@ exports[`css.create() properties inset: insetBlock vs phys 1`] = `
 
 exports[`css.create() properties inset: insetBlockEnd 1`] = `
 {
-  "bottom": 4,
   "boxSizing": "content-box",
+  "insetBlockEnd": 4,
   "overflow": "visible",
   "position": "static",
 }
@@ -488,8 +484,8 @@ exports[`css.create() properties inset: insetBlockEnd 1`] = `
 
 exports[`css.create() properties inset: insetBlockEnd vs phys 1`] = `
 {
-  "bottom": 4,
   "boxSizing": "content-box",
+  "insetBlockEnd": 4,
   "overflow": "visible",
   "position": "static",
   "top": 100,
@@ -499,9 +495,9 @@ exports[`css.create() properties inset: insetBlockEnd vs phys 1`] = `
 exports[`css.create() properties inset: insetBlockStart 1`] = `
 {
   "boxSizing": "content-box",
+  "insetBlockStart": 3,
   "overflow": "visible",
   "position": "static",
-  "top": 3,
 }
 `;
 
@@ -509,26 +505,25 @@ exports[`css.create() properties inset: insetBlockStart vs phys 1`] = `
 {
   "bottom": 100,
   "boxSizing": "content-box",
+  "insetBlockStart": 3,
   "overflow": "visible",
   "position": "static",
-  "top": 3,
 }
 `;
 
 exports[`css.create() properties inset: insetInline 1`] = `
 {
   "boxSizing": "content-box",
-  "end": 5,
+  "insetInline": 5,
   "overflow": "visible",
   "position": "static",
-  "start": 5,
 }
 `;
 
 exports[`css.create() properties inset: insetInlineEnd 1`] = `
 {
   "boxSizing": "content-box",
-  "end": 7,
+  "insetInlineEnd": 7,
   "overflow": "visible",
   "position": "static",
 }
@@ -537,9 +532,9 @@ exports[`css.create() properties inset: insetInlineEnd 1`] = `
 exports[`css.create() properties inset: insetInlineStart 1`] = `
 {
   "boxSizing": "content-box",
+  "insetInlineStart": 6,
   "overflow": "visible",
   "position": "static",
-  "start": 6,
 }
 `;
 
