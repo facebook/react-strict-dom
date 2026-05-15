@@ -221,8 +221,8 @@ The following tables represent the compatibility status of the strict HTML API s
 | open (dialog) | ❌ | ❌ | |
 | placeholder (input) | 🟡 | 🟡 | |
 | placeholder (textarea) | 🟡 | 🟡 | |
-| readOnly (input) | 🟡 | 🟡 | |
-| readOnly (textarea) | 🟡 | 🟡 | |
+| readOnly (input) | ✅ | ✅ | |
+| readOnly (textarea) | ✅ | ✅ | |
 | referrerPolicy (a) | ❌ | ❌ | |
 | referrerPolicy (img) | 🟡 | 🟡 | |
 | rel (a) | ❌ | ❌ | |
