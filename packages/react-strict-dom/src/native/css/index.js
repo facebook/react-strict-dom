@@ -401,22 +401,6 @@ export function props(
     else if (styleProp === 'lineClamp') {
       nativeProps.numberOfLines = styleValue;
     }
-    // marginBlock
-    else if (styleProp === 'marginBlock') {
-      nextStyle.marginVertical = styleValue;
-    } else if (styleProp === 'marginBlockStart') {
-      nextStyle.marginTop ??= styleValue;
-    } else if (styleProp === 'marginBlockEnd') {
-      nextStyle.marginBottom ??= styleValue;
-    }
-    // marginInline
-    else if (styleProp === 'marginInline') {
-      nextStyle.marginHorizontal = styleValue;
-    } else if (styleProp === 'marginInlineStart') {
-      nextStyle.marginStart = styleValue;
-    } else if (styleProp === 'marginInlineEnd') {
-      nextStyle.marginEnd = styleValue;
-    }
     // paddingBlock
     else if (styleProp === 'paddingBlock') {
       nextStyle.paddingVertical = styleValue;

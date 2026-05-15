@@ -615,7 +615,7 @@ exports[`css.create() properties margin (with multiple values) 1`] = `
 exports[`css.create() properties margin*: marginBlock 1`] = `
 {
   "boxSizing": "content-box",
-  "marginVertical": 1,
+  "marginBlock": 1,
   "position": "static",
 }
 `;
@@ -623,7 +623,7 @@ exports[`css.create() properties margin*: marginBlock 1`] = `
 exports[`css.create() properties margin*: marginBlockEnd 1`] = `
 {
   "boxSizing": "content-box",
-  "marginBottom": 3,
+  "marginBlockEnd": 3,
   "position": "static",
 }
 `;
@@ -631,7 +631,7 @@ exports[`css.create() properties margin*: marginBlockEnd 1`] = `
 exports[`css.create() properties margin*: marginBlockStart 1`] = `
 {
   "boxSizing": "content-box",
-  "marginTop": 2,
+  "marginBlockStart": 2,
   "position": "static",
 }
 `;
@@ -639,7 +639,7 @@ exports[`css.create() properties margin*: marginBlockStart 1`] = `
 exports[`css.create() properties margin*: marginInline 1`] = `
 {
   "boxSizing": "content-box",
-  "marginHorizontal": 1,
+  "marginInline": 1,
   "position": "static",
 }
 `;
@@ -647,7 +647,7 @@ exports[`css.create() properties margin*: marginInline 1`] = `
 exports[`css.create() properties margin*: marginInlineEnd 1`] = `
 {
   "boxSizing": "content-box",
-  "marginEnd": 3,
+  "marginInlineEnd": 3,
   "position": "static",
 }
 `;
@@ -655,7 +655,7 @@ exports[`css.create() properties margin*: marginInlineEnd 1`] = `
 exports[`css.create() properties margin*: marginInlineStart 1`] = `
 {
   "boxSizing": "content-box",
-  "marginStart": 2,
+  "marginInlineStart": 2,
   "position": "static",
 }
 `;
