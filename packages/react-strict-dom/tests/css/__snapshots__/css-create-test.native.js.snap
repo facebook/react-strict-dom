@@ -74,10 +74,9 @@ exports[`css.create() properties blockSize: minBlockSize after minHeight 1`] = `
 
 exports[`css.create() properties borderBlock: borderBlock 1`] = `
 {
-  "borderBottomColor": "black",
+  "borderBlockColor": "black",
   "borderBottomStyle": "solid",
   "borderBottomWidth": 1,
-  "borderTopColor": "black",
   "borderTopStyle": "solid",
   "borderTopWidth": 1,
   "boxSizing": "content-box",
@@ -87,10 +86,10 @@ exports[`css.create() properties borderBlock: borderBlock 1`] = `
 
 exports[`css.create() properties borderBlock: borderBlock after borderBlockEnd 1`] = `
 {
-  "borderBottomColor": "red",
+  "borderBlockColor": "black",
+  "borderBlockEndColor": "red",
   "borderBottomStyle": "dotted",
   "borderBottomWidth": 2,
-  "borderTopColor": "black",
   "borderTopStyle": "solid",
   "borderTopWidth": 1,
   "boxSizing": "content-box",
@@ -100,10 +99,10 @@ exports[`css.create() properties borderBlock: borderBlock after borderBlockEnd 1
 
 exports[`css.create() properties borderBlock: borderBlock after borderBlockStart 1`] = `
 {
-  "borderBottomColor": "black",
+  "borderBlockColor": "black",
+  "borderBlockStartColor": "green",
   "borderBottomStyle": "solid",
   "borderBottomWidth": 1,
-  "borderTopColor": "green",
   "borderTopStyle": "dashed",
   "borderTopWidth": 3,
   "boxSizing": "content-box",
@@ -113,7 +112,7 @@ exports[`css.create() properties borderBlock: borderBlock after borderBlockStart
 
 exports[`css.create() properties borderBlock: borderBlockEnd 1`] = `
 {
-  "borderBottomColor": "red",
+  "borderBlockEndColor": "red",
   "borderBottomStyle": "dotted",
   "borderBottomWidth": 2,
   "boxSizing": "content-box",
@@ -123,7 +122,7 @@ exports[`css.create() properties borderBlock: borderBlockEnd 1`] = `
 
 exports[`css.create() properties borderBlock: borderBlockStart 1`] = `
 {
-  "borderTopColor": "green",
+  "borderBlockStartColor": "green",
   "borderTopStyle": "dashed",
   "borderTopWidth": 3,
   "boxSizing": "content-box",

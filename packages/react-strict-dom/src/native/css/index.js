@@ -328,23 +328,16 @@ export function props(
       nextStyle.minWidth ??= styleValue;
     }
     // borderBlock
-    else if (styleProp === 'borderBlockColor') {
-      nextStyle.borderTopColor ??= styleValue;
-      nextStyle.borderBottomColor ??= styleValue;
-    } else if (styleProp === 'borderBlockStyle') {
+    else if (styleProp === 'borderBlockStyle') {
       nextStyle.borderTopStyle ??= styleValue;
       nextStyle.borderBottomStyle ??= styleValue;
     } else if (styleProp === 'borderBlockWidth') {
       nextStyle.borderTopWidth ??= styleValue;
       nextStyle.borderBottomWidth ??= styleValue;
-    } else if (styleProp === 'borderBlockEndColor') {
-      nextStyle.borderBottomColor = flatStyle.borderBottomColor ?? styleValue;
     } else if (styleProp === 'borderBlockEndStyle') {
       nextStyle.borderBottomStyle = flatStyle.borderBottomStyle ?? styleValue;
     } else if (styleProp === 'borderBlockEndWidth') {
       nextStyle.borderBottomWidth = flatStyle.borderBottomWidth ?? styleValue;
-    } else if (styleProp === 'borderBlockStartColor') {
-      nextStyle.borderTopColor = flatStyle.borderTopColor ?? styleValue;
     } else if (styleProp === 'borderBlockStartStyle') {
       nextStyle.borderTopStyle = flatStyle.borderTopStyle ?? styleValue;
     } else if (styleProp === 'borderBlockStartWidth') {

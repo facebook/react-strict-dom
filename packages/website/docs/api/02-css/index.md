@@ -80,11 +80,11 @@ The following tables represent the compatibility status of the strict CSS API fo
 | backgroundRepeat | ❌ | ❌ | |
 | backgroundSize | ❌ | ❌ | |
 | blockSize | 🟡 | 🟡 | |
-| borderBlockColor | 🟡 | 🟡 | |
-| borderBlockEndColor | 🟡 | 🟡 | |
+| borderBlockColor | ✅ | ✅ | |
+| borderBlockEndColor | ✅ | ✅ | |
 | borderBlockEndStyle | 🟡 | 🟡 | |
 | borderBlockEndWidth | 🟡 | 🟡 | |
-| borderBlockStartColor | 🟡 | 🟡 | |
+| borderBlockStartColor | ✅ | ✅ | |
 | borderBlockStartStyle | 🟡 | 🟡 | |
 | borderBlockStartWidth | 🟡 | 🟡 | |
 | borderBlockStyle | 🟡 | 🟡 | |
