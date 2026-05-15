@@ -780,7 +780,7 @@ exports[`css.create() properties padding (with multiple values) 1`] = `
 exports[`css.create() properties padding*: paddingBlock 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingVertical": 1,
+  "paddingBlock": 1,
   "position": "static",
 }
 `;
@@ -788,7 +788,7 @@ exports[`css.create() properties padding*: paddingBlock 1`] = `
 exports[`css.create() properties padding*: paddingBlockEnd 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingBottom": 3,
+  "paddingBlockEnd": 3,
   "position": "static",
 }
 `;
@@ -796,7 +796,7 @@ exports[`css.create() properties padding*: paddingBlockEnd 1`] = `
 exports[`css.create() properties padding*: paddingBlockStart 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingTop": 2,
+  "paddingBlockStart": 2,
   "position": "static",
 }
 `;
@@ -804,7 +804,7 @@ exports[`css.create() properties padding*: paddingBlockStart 1`] = `
 exports[`css.create() properties padding*: paddingInline 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingHorizontal": 1,
+  "paddingInline": 1,
   "position": "static",
 }
 `;
@@ -812,7 +812,7 @@ exports[`css.create() properties padding*: paddingInline 1`] = `
 exports[`css.create() properties padding*: paddingInlineEnd 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingEnd": 3,
+  "paddingInlineEnd": 3,
   "position": "static",
 }
 `;
@@ -820,7 +820,7 @@ exports[`css.create() properties padding*: paddingInlineEnd 1`] = `
 exports[`css.create() properties padding*: paddingInlineStart 1`] = `
 {
   "boxSizing": "content-box",
-  "paddingStart": 2,
+  "paddingInlineStart": 2,
   "position": "static",
 }
 `;

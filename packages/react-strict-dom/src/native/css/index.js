@@ -401,22 +401,6 @@ export function props(
     else if (styleProp === 'lineClamp') {
       nativeProps.numberOfLines = styleValue;
     }
-    // paddingBlock
-    else if (styleProp === 'paddingBlock') {
-      nextStyle.paddingVertical = styleValue;
-    } else if (styleProp === 'paddingBlockStart') {
-      nextStyle.paddingTop ??= styleValue;
-    } else if (styleProp === 'paddingBlockEnd') {
-      nextStyle.paddingBottom ??= styleValue;
-    }
-    // paddingInline
-    else if (styleProp === 'paddingInline') {
-      nextStyle.paddingHorizontal = styleValue;
-    } else if (styleProp === 'paddingInlineStart') {
-      nextStyle.paddingStart = styleValue;
-    } else if (styleProp === 'paddingInlineEnd') {
-      nextStyle.paddingEnd = styleValue;
-    }
     // '::placeholder' polyfill
     else if (styleProp === 'placeholderTextColor') {
       nativeProps.placeholderTextColor = styleValue;
