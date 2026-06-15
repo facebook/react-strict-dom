@@ -8,6 +8,10 @@
  */
 
 import type { StrictProps } from '../types/StrictProps';
+import type { StrictReactDOMProps } from '../types/StrictReactDOMProps';
+import type { StrictReactDOMImageProps } from '../types/StrictReactDOMImageProps';
+import type { StrictReactDOMInputProps } from '../types/StrictReactDOMInputProps';
+import type { StrictReactDOMTextAreaProps } from '../types/StrictReactDOMTextAreaProps';
 
 import * as React from 'react';
 
@@ -45,14 +49,38 @@ type StrictPropsOnlyCompat<T> = {
   children: (nativeProps: T) => React.Node
 };
 
-const StrictText = createStrictText('span', defaultProps) as $FlowFixMe;
-const StrictInput = createStrictTextInput('input', defaultProps) as $FlowFixMe;
-const StrictTextArea = createStrictTextInput(
+const StrictText: component(
+  ref?: React.RefSetter<HTMLSpanElement>,
+  ...StrictReactDOMProps
+) = createStrictText<HTMLSpanElement, StrictReactDOMProps>(
+  'span',
+  defaultProps
+);
+const StrictInput: component(
+  ref?: React.RefSetter<HTMLInputElement>,
+  ...StrictReactDOMInputProps
+) = createStrictTextInput<HTMLInputElement, StrictReactDOMInputProps>(
+  'input',
+  defaultProps
+);
+const StrictTextArea: component(
+  ref?: React.RefSetter<HTMLTextAreaElement>,
+  ...StrictReactDOMTextAreaProps
+) = createStrictTextInput<HTMLTextAreaElement, StrictReactDOMTextAreaProps>(
   'textarea',
   defaultProps
-) as $FlowFixMe;
-const StrictImage = createStrictImage('img', defaultProps) as $FlowFixMe;
-const Strict = createStrict('div', defaultProps) as $FlowFixMe;
+);
+const StrictImage: component(
+  ref?: React.RefSetter<HTMLImageElement>,
+  ...StrictReactDOMImageProps
+) = createStrictImage<HTMLImageElement, StrictReactDOMImageProps>(
+  'img',
+  defaultProps
+);
+const Strict: component(
+  ref?: React.RefSetter<HTMLDivElement>,
+  ...StrictReactDOMProps
+) = createStrict<HTMLDivElement, StrictReactDOMProps>('div', defaultProps);
 
 component Native<T>(...htmlProps: StrictPropsOnlyCompat<T>) {
   const { as, ...rest } = htmlProps;
@@ -61,7 +89,8 @@ component Native<T>(...htmlProps: StrictPropsOnlyCompat<T>) {
       '<compat.native> requires the "children" prop to be a function.'
     );
   }
-  let Component = Strict;
+  // Untyped: dispatches across components with divergent prop types.
+  let Component = Strict as $FlowFixMe;
   if (as === 'img') {
     Component = StrictImage;
   } else if (as === 'input') {

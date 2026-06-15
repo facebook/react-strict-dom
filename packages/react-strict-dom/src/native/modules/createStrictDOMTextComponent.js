@@ -7,7 +7,11 @@
  * @flow strict-local
  */
 
-import type { ReactNativeProps } from '../../types/renderer.native';
+import type { CallbackRef } from '../../types/react';
+import type {
+  HostInstance,
+  ReactNativeProps
+} from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
@@ -28,6 +32,66 @@ function hasElementChildren(children: unknown): boolean {
   return children != null && typeof children !== 'string';
 }
 
+// Plain (non-hook) helper so it can mutate the caller-owned `nativeProps`
+// without a defensive copy (a hook may not mutate its own return value).
+function applyTextProps(
+  nativeProps: ReactNativeProps,
+  props: StrictProps,
+  tagName: string,
+  elementRef: CallbackRef<HostInstance>
+): void {
+  const { href, label } = props;
+
+  // Tag-specific props
+
+  if (tagName === 'a') {
+    nativeProps.role ??= 'link';
+    if (href != null) {
+      nativeProps.onPress = function (e) {
+        if (__DEV__) {
+          errorMsg('<a> "href" handling is not implemented in React Native.');
+        }
+      };
+    }
+  } else if (tagName === 'br') {
+    nativeProps.children = '\n';
+  } else if (
+    tagName === 'h1' ||
+    tagName === 'h2' ||
+    tagName === 'h3' ||
+    tagName === 'h4' ||
+    tagName === 'h5' ||
+    tagName === 'h6'
+  ) {
+    nativeProps.role ??= 'heading';
+  } else if (tagName === 'option') {
+    nativeProps.children = label;
+  }
+
+  // Component-specific props
+
+  nativeProps.ref = elementRef;
+
+  // Workaround: Android doesn't support ellipsis truncation if Text is selectable
+  // See #136
+  const disableUserSelect =
+    ReactNative.Platform.OS === 'android' &&
+    nativeProps.numberOfLines != null &&
+    nativeProps.style.userSelect !== 'none';
+
+  // $FlowExpectedError[unsafe-object-assign]
+  nativeProps.style = Object.assign(
+    nativeProps.style,
+    disableUserSelect ? { userSelect: 'none' } : null
+  );
+
+  // Native components historically clip text. Opt into web-style default of
+  // visible overflow by default
+  if (nativeProps.style.overflow == null) {
+    nativeProps.style.overflow = 'visible';
+  }
+}
+
 export function createStrictDOMTextComponent<T, P extends StrictProps>(
   tagName: string,
   defaultProps?: P
@@ -38,8 +102,6 @@ export function createStrictDOMTextComponent<T, P extends StrictProps>(
       | typeof ReactNative.Animated.Text = ReactNative.Text;
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
-    const { href, label } = props;
-
     /**
      * Resolve global HTML and style props
      */
@@ -49,73 +111,14 @@ export function createStrictDOMTextComponent<T, P extends StrictProps>(
       props,
       {
         provideInheritableStyle:
-          tagName !== 'br' ||
-          // $FlowFixMe[invalid-compare]
-          tagName !== 'option' ||
+          (tagName !== 'br' && tagName !== 'option') ||
           hasElementChildren(props.children),
         withInheritedStyle: true,
         withTextStyle: true
       }
     );
 
-    // Tag-specific props
-
-    if (tagName === 'a') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'link';
-      if (href != null) {
-        // $FlowFixMe[react-rule-hook-mutation]
-        nativeProps.onPress = function (e) {
-          if (__DEV__) {
-            errorMsg('<a> "href" handling is not implemented in React Native.');
-          }
-        };
-      }
-    } else if (tagName === 'br') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.children = '\n';
-    } else if (
-      tagName === 'h1' ||
-      tagName === 'h2' ||
-      tagName === 'h3' ||
-      tagName === 'h4' ||
-      tagName === 'h5' ||
-      tagName === 'h6'
-    ) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'heading';
-    } else if (tagName === 'option') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.children = label;
-    }
-
-    // Component-specific props
-
-    // $FlowFixMe[react-rule-hook-mutation]
-    nativeProps.ref = elementRef;
-
-    // Workaround: Android doesn't support ellipsis truncation if Text is selectable
-    // See #136
-    const disableUserSelect =
-      ReactNative.Platform.OS === 'android' &&
-      nativeProps.numberOfLines != null &&
-      nativeProps.style.userSelect !== 'none';
-
-    // $FlowExpectedError[unsafe-object-assign]
-    // $FlowFixMe[react-rule-hook-mutation]
-    nativeProps.style = Object.assign(
-      nativeProps.style,
-      disableUserSelect ? { userSelect: 'none' } : null
-    );
-
-    // Native components historically clip text. Opt into web-style default of
-    // visible overflow by default
-    if (nativeProps.style?.overflow == null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style = nativeProps.style ?? {};
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.overflow = 'visible';
-    }
+    applyTextProps(nativeProps, props, tagName, elementRef);
 
     // Use Animated components if necessary
     if (nativeProps.animated === true) {
@@ -130,6 +133,8 @@ export function createStrictDOMTextComponent<T, P extends StrictProps>(
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
+        // strict-dom's wide ReactNativeProps spreads onto RN's exact Text
+        // props; harmless extras are ignored at runtime.
         // $FlowFixMe[incompatible-type]
         <NativeComponent {...nativeProps} />
       );

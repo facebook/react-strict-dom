@@ -11,9 +11,6 @@
 
 'use strict';
 
-// $FlowFixMe[method-unbinding] added when improving typing for this parameters
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-
 /**
  * Performs equality by iterating through keys on an object and returning false
  * when any key has values which are not strictly equal between the arguments.
@@ -40,13 +37,12 @@ export function shallowEqual(objA: unknown, objB: unknown): boolean {
     return false;
   }
 
+  const a: Readonly<{ [string]: unknown }> = objA;
+  const b: Readonly<{ [string]: unknown }> = objB;
+
   // Test for A's keys different from B.
   for (let i = 0; i < keysA.length; i++) {
-    if (
-      !hasOwnProperty.call(objB, keysA[i]) ||
-      // $FlowFixMe[incompatible-use]
-      !Object.is(objA[keysA[i]], objB[keysA[i]])
-    ) {
+    if (!Object.hasOwn(b, keysA[i]) || !Object.is(a[keysA[i]], b[keysA[i]])) {
       return false;
     }
   }
