@@ -24,5 +24,14 @@ type Styles<T> = StyleXStyles<T>;
 type StylesWithout<T> = StyleXStylesWithout<T>;
 
 export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
+export type {
+  StrictChangeEvent,
+  StrictClickEvent,
+  StrictImageErrorEvent,
+  StrictImageLoadEvent,
+  StrictInputEvent,
+  StrictKeyEvent,
+  StrictOpaqueEventHandler
+} from '../types/StrictReactDOMEvents';
 
 export { css, html };

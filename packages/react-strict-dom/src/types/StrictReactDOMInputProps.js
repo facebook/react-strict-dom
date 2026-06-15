@@ -8,6 +8,11 @@
  */
 
 import type { AutoComplete, StrictReactDOMProps } from './StrictReactDOMProps';
+import type {
+  StrictChangeEvent,
+  StrictInputEvent,
+  StrictOpaqueEventHandler
+} from './StrictReactDOMEvents';
 
 export type StrictReactDOMInputProps = Readonly<{
   ...StrictReactDOMProps,
@@ -22,12 +27,12 @@ export type StrictReactDOMInputProps = Readonly<{
   minLength?: ?number,
   multiple?: ?boolean,
   name?: ?string,
-  onBeforeInput?: $FlowFixMe,
-  onChange?: $FlowFixMe,
-  onInput?: $FlowFixMe,
-  onInvalid?: $FlowFixMe,
-  onSelect?: $FlowFixMe,
-  onSelectionChange?: $FlowFixMe,
+  onBeforeInput?: StrictOpaqueEventHandler,
+  onChange?: (event: StrictChangeEvent) => void,
+  onInput?: (event: StrictInputEvent) => void,
+  onInvalid?: StrictOpaqueEventHandler,
+  onSelect?: StrictOpaqueEventHandler,
+  onSelectionChange?: StrictOpaqueEventHandler,
   placeholder?: ?Stringish,
   readOnly?: ?boolean,
   required?: ?boolean,

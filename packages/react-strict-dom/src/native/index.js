@@ -40,6 +40,15 @@ type ProviderProps = Readonly<{
 }>;
 
 export type { StaticStyles, StyleTheme, StyleVars, Styles, StylesWithout };
+export type {
+  StrictChangeEvent,
+  StrictClickEvent,
+  StrictImageErrorEvent,
+  StrictImageLoadEvent,
+  StrictInputEvent,
+  StrictKeyEvent,
+  StrictOpaqueEventHandler
+} from '../types/StrictReactDOMEvents';
 
 function ThemeProvider(props: ProviderProps): React.Node {
   const { children, customProperties } = props;

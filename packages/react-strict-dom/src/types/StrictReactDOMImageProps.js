@@ -8,6 +8,10 @@
  */
 
 import type { StrictReactDOMProps } from './StrictReactDOMProps';
+import type {
+  StrictImageErrorEvent,
+  StrictImageLoadEvent
+} from './StrictReactDOMEvents';
 
 export type StrictReactDOMImageProps = Readonly<{
   ...StrictReactDOMProps,
@@ -18,8 +22,8 @@ export type StrictReactDOMImageProps = Readonly<{
   fetchPriority?: ?('high' | 'low' | 'auto'),
   height?: number,
   loading?: ?('eager' | 'lazy'),
-  onError?: $FlowFixMe,
-  onLoad?: $FlowFixMe,
+  onError?: (event: StrictImageErrorEvent) => void,
+  onLoad?: (event: StrictImageLoadEvent) => void,
   referrerPolicy?: ?(
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
