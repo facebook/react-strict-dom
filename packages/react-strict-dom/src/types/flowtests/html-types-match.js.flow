@@ -177,6 +177,11 @@ declare var main_web: WebHTML['main'];
 declare var main_native: NativeHTML['main'];
 (main_native as WebHTML['main']);
 
+declare var mark_web: WebHTML['mark'];
+(mark_web as NativeHTML['mark']);
+declare var mark_native: NativeHTML['mark'];
+(mark_native as WebHTML['mark']);
+
 declare var nav_web: WebHTML['nav'];
 (nav_web as NativeHTML['nav']);
 declare var nav_native: NativeHTML['nav'];
