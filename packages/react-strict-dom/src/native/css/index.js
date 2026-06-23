@@ -301,7 +301,7 @@ function resolveStyle(
 
 export function props(
   this: ResolveStyleOptions,
-  ...style: ReadonlyArray<?{ [key: string]: unknown }>
+  ...style: ReadonlyArray<?{ +[key: string]: unknown }>
 ): ReactNativeProps {
   const options = this;
 

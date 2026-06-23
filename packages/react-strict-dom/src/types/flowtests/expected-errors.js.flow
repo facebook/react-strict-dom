@@ -1,0 +1,49 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * Type-only NEGATIVE assertions. Each `$FlowExpectedError` is expected to fire,
+ * proving the corresponding API is genuinely typed (not `any` / `$FlowFixMe`).
+ *
+ * @flow strict
+ */
+
+import * as React from 'react';
+
+import * as html from '../../native/html';
+
+import type { StrictReactDOMProps } from '../StrictReactDOMProps';
+import type { StrictChangeEvent } from '../StrictReactDOMEvents';
+
+// `role` must be a valid AriaRole, not an arbitrary number.
+// $FlowExpectedError[incompatible-type]
+export const badRole: StrictReactDOMProps['role'] = 42;
+
+// The onChange payload `target.value` is a string, not a number.
+declare var changeEvent: StrictChangeEvent;
+// $FlowExpectedError[incompatible-type]
+export const wrongValueType: number = changeEvent.target.value;
+
+// A ref to the wrong DOM element type is rejected (refs are not `any`).
+declare var inputRef: React.RefSetter<HTMLInputElement>;
+// $FlowExpectedError[incompatible-type]
+export const wrongRef: React.RefSetter<HTMLDivElement> = inputRef;
+
+// `tabIndex` only accepts 0 or -1.
+// $FlowExpectedError[incompatible-type]
+export const badTabIndex: StrictReactDOMProps['tabIndex'] = 5;
+
+// An html component rejects a ref of the wrong DOM element type.
+declare var divElementRef: React.RefSetter<HTMLDivElement>;
+export const inputRejectsWrongRef: React.Node = (
+  // $FlowExpectedError[incompatible-type]
+  <html.input ref={divElementRef} />
+);
+
+// Pass-through handlers deliver an opaque event; a concrete param is rejected.
+export const opaqueHandlerRejectsConcreteParam: React.Node = (
+  // $FlowExpectedError[incompatible-type]
+  <html.div onScroll={(e: { clientX: number }) => {}} />
+);

@@ -8,6 +8,7 @@
  */
 
 import type { CallbackRef } from '../../types/react';
+import type { HostInstance } from '../../types/renderer.native';
 
 import * as React from 'react';
 
@@ -18,10 +19,35 @@ type Options = {
   tagName: string
 };
 
-// $FlowFixMe[unclear-type]
-type Node = any;
+// Polyfill members shared by both views below; declared once.
+type StrictRefCommonPolyfills = {
+  complete?: boolean,
+  setSelectionRange?: (start: number, end: number) => void,
+  selectionStart?: number,
+  selectionEnd?: number
+};
 
-const memoizedStrictRefs: WeakMap<Node, Node> = new WeakMap();
+// Read view of the strict-dom polyfill members carried by the RN host node but
+// not part of its public `HostInstance` type.
+type StrictRefPolyfills = {
+  ...StrictRefCommonPolyfills,
+  setSelection?: (start: number, end: number) => void,
+  _selectionStart?: number,
+  _selectionEnd?: number,
+  ...
+};
+
+// Writable augmentation target: inherits the host node via the prototype chain
+// and adds these members via `defineProperty`.
+type StrictRefTarget = {
+  ...StrictRefCommonPolyfills,
+  nodeName?: string,
+  getBoundingClientRect?: () => DOMRect,
+  ...
+};
+
+const memoizedStrictRefs: WeakMap<HostInstance, StrictRefTarget> =
+  new WeakMap();
 
 const lengthPropertySet: ReadonlySet<string> = new Set([
   'clientHeight',
@@ -47,18 +73,21 @@ const lengthPropertySet: ReadonlySet<string> = new Set([
  * Descendants are not wrapped; values read after traversal are not scaled.
  */
 function getOrCreateStrictRef(
-  node: Node,
+  node: HostInstance,
   tagName: string,
   viewportScale: number
-): Node {
+): StrictRefTarget {
   const ref = memoizedStrictRefs.get(node);
   if (ref != null) {
     return ref;
   }
 
-  const strictRef: Node = Object.create(node);
+  // `Object.create(node)` is typed as the read-only host node, not the writable
+  // augmentation target.
+  const strictRef: StrictRefTarget = Object.create(node) as $FlowFixMe;
+  // $FlowFixMe[class-object-subtyping] - read the host node's polyfill members.
+  const nodeInternals: StrictRefPolyfills = node;
 
-  // $FlowFixMe[prop-missing]
   Object.defineProperty(strictRef, 'nodeName', {
     value: tagName.toUpperCase(),
     configurable: true
@@ -67,8 +96,7 @@ function getOrCreateStrictRef(
   if (viewportScale !== 1) {
     const scale = (n: number) => n / viewportScale;
 
-    if (typeof node.getBoundingClientRect === 'function') {
-      // $FlowFixMe[prop-missing]
+    if ('getBoundingClientRect' in node) {
       Object.defineProperty(strictRef, 'getBoundingClientRect', {
         value: () => {
           const rect = node.getBoundingClientRect();
@@ -85,9 +113,9 @@ function getOrCreateStrictRef(
 
     for (const prop of lengthPropertySet) {
       if (prop in node) {
-        // $FlowFixMe[prop-missing]
         Object.defineProperty(strictRef, prop, {
           get() {
+            // $FlowFixMe[prop-missing] - dynamic length-property read off the RN host node.
             const value = node[prop];
             return typeof value === 'number' ? scale(value) : value;
           },
@@ -98,39 +126,35 @@ function getOrCreateStrictRef(
   }
 
   if (tagName === 'img') {
-    // $FlowFixMe[prop-missing]
     Object.defineProperty(strictRef, 'complete', {
       get() {
-        return node.complete ?? false;
+        return nodeInternals.complete ?? false;
       },
       configurable: true
     });
   } else if (tagName === 'input' || tagName === 'textarea') {
-    if (node.setSelectionRange == null) {
-      // $FlowFixMe[prop-missing]
+    if (nodeInternals.setSelectionRange == null) {
       Object.defineProperty(strictRef, 'setSelectionRange', {
         value: (a: number, b: number) => {
-          node.setSelection(a, b);
-          node._selectionStart = a;
-          node._selectionEnd = b;
+          nodeInternals.setSelection?.(a, b);
+          nodeInternals._selectionStart = a;
+          nodeInternals._selectionEnd = b;
         },
         configurable: true
       });
     }
-    if (node.selectionStart == null) {
-      // $FlowFixMe[prop-missing]
+    if (nodeInternals.selectionStart == null) {
       Object.defineProperty(strictRef, 'selectionStart', {
         get() {
-          return node._selectionStart ?? 0;
+          return nodeInternals._selectionStart ?? 0;
         },
         configurable: true
       });
     }
-    if (node.selectionEnd == null) {
-      // $FlowFixMe[prop-missing]
+    if (nodeInternals.selectionEnd == null) {
       Object.defineProperty(strictRef, 'selectionEnd', {
         get() {
-          return node._selectionEnd ?? 0;
+          return nodeInternals._selectionEnd ?? 0;
         },
         configurable: true
       });
@@ -142,26 +166,28 @@ function getOrCreateStrictRef(
 }
 
 export function useStrictDOMElement<T>(
-  ref: React.RefSetter<Node>,
+  ref: React.RefSetter<T>,
   { tagName }: Options
-): CallbackRef<T> {
+): CallbackRef<HostInstance> {
   const { scale: viewportScale } = useViewportScale();
 
-  return useElementCallback(
+  return useElementCallback<HostInstance>(
     React.useCallback(
-      // $FlowFixMe[unclear-type]
-      (node: any) => {
+      (node: HostInstance) => {
         if (ref == null) return undefined;
         const strictRef = getOrCreateStrictRef(node, tagName, viewportScale);
         if (typeof ref === 'function') {
+          // Public ref type is the DOM element `T` (web/native parity); at
+          // runtime we hand over the RN-backed strict wrapper.
           // $FlowFixMe[incompatible-type] - Flow does not understand ref cleanup.
-          const cleanup: void | (() => void) = ref(strictRef);
+          const cleanup: void | (() => void) = ref(strictRef as $FlowFixMe);
           return typeof cleanup === 'function'
             ? cleanup
             : () => {
                 ref(null);
               };
         }
+        // $FlowFixMe[incompatible-type] - see the ref-callback note above.
         ref.current = strictRef;
         return () => {
           ref.current = null;

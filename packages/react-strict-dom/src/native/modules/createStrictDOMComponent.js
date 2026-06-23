@@ -7,7 +7,11 @@
  * @flow strict-local
  */
 
-import type { ReactNativeProps } from '../../types/renderer.native';
+import type { CallbackRef } from '../../types/react';
+import type {
+  HostInstance,
+  ReactNativeProps
+} from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 
 import * as React from 'react';
@@ -30,6 +34,99 @@ const AnimatedPressable = ReactNative.Animated.createAnimatedComponent(
   ReactNative.Pressable
 );
 
+// Plain (non-hook) helper so it can mutate the caller-owned `nativeProps`
+// without a defensive copy (a hook may not mutate its own return value).
+function applyViewProps(
+  nativeProps: ReactNativeProps,
+  tagName: string,
+  isPressable: boolean,
+  disabled: boolean,
+  elementRef: CallbackRef<HostInstance>,
+  displayInsideValue: 'flow' | 'flex'
+): 'flow' | 'flex' {
+  // Tag-specific props
+
+  if (tagName === 'button') {
+    nativeProps.role ??= 'button';
+  } else if (tagName === 'header') {
+    nativeProps.role ??= 'header';
+  } else if (tagName === 'li') {
+    nativeProps.role ??= 'listitem';
+  } else if (tagName === 'ol' || tagName === 'ul') {
+    nativeProps.role ??= 'list';
+  }
+
+  // Component-specific props
+
+  if (isPressable && disabled) {
+    nativeProps.disabled = true;
+    nativeProps.focusable = false;
+  }
+
+  nativeProps.ref = elementRef;
+
+  // Workaround: React Native doesn't support raw text children of View
+  // Sometimes we can auto-fix this
+  if (typeof nativeProps.children === 'string') {
+    nativeProps.children = <TextString children={nativeProps.children} />;
+  }
+
+  // Polyfill for default of "display:block"
+  // which implies "displayInside:flow"
+  let nextDisplayInsideValue: 'flow' | 'flex' = 'flow';
+  const displayValue = nativeProps.style.display;
+
+  if (__DEV__) {
+    const nativeStyle = nativeProps.style;
+    if (displayInsideValue !== 'flex') {
+      // Error message if the element is not a flex child but tries to use flex
+      ['flex', 'flexBasis', 'flexGrow', 'flexShrink'].forEach((styleProp) => {
+        const value = nativeStyle[styleProp];
+        if (value != null) {
+          errorMsg(
+            `"display:flex" is required on the parent for "${styleProp}" to have an effect.`
+          );
+        }
+      });
+      // Error message if the element is not a flex child but tries to use
+      // zIndex without non-static position
+      if (nativeStyle.zIndex != null && nativeStyle.position === 'static') {
+        errorMsg(
+          '"position:static" prevents "zIndex" from having an effect. Try setting "position" to something other than "static".'
+        );
+      }
+    }
+  }
+
+  if (displayValue === 'flex') {
+    nextDisplayInsideValue = 'flex';
+    nativeProps.style.alignContent ??= 'stretch';
+    nativeProps.style.alignItems ??= 'stretch';
+    nativeProps.style.flexBasis ??= 'auto';
+    nativeProps.style.flexDirection ??= 'row';
+    nativeProps.style.flexShrink ??= 1;
+    nativeProps.style.flexWrap ??= 'nowrap';
+    nativeProps.style.justifyContent ??= 'flex-start';
+  } else if (displayValue === 'block' && displayInsideValue === 'flow') {
+    // Force the block emulation styles
+    nextDisplayInsideValue = 'flow';
+    nativeProps.style.alignItems = 'stretch';
+    nativeProps.style.display = 'flex';
+    nativeProps.style.flexBasis = 'auto';
+    nativeProps.style.flexDirection = 'column';
+    nativeProps.style.flexShrink = 0;
+    nativeProps.style.flexWrap = 'nowrap';
+    nativeProps.style.justifyContent = 'flex-start';
+  }
+
+  if (displayInsideValue === 'flex') {
+    // flex child should not shrink by default
+    nativeProps.style.flexShrink ??= 1;
+  }
+
+  return nextDisplayInsideValue;
+}
+
 export function createStrictDOMComponent<T, P extends StrictProps>(
   tagName: string,
   defaultProps?: P
@@ -49,6 +146,7 @@ export function createStrictDOMComponent<T, P extends StrictProps>(
         : ReactNative.ViewNativeComponent;
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
     const hasTextAncestor = React.useContext(ReactNative.TextAncestorContext);
+    const displayInsideValue = useDisplayInside();
 
     /**
      * Resolve global HTML and style props
@@ -71,111 +169,14 @@ export function createStrictDOMComponent<T, P extends StrictProps>(
       NativeComponent = ReactNative.Pressable;
     }
 
-    // Tag-specific props
-
-    if (tagName === 'button') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'button';
-    } else if (tagName === 'header') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'header';
-    } else if (tagName === 'li') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'listitem';
-    } else if (tagName === 'ol' || tagName === 'ul') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.role ??= 'list';
-    }
-
-    // Component-specific props
-
-    if (NativeComponent === ReactNative.Pressable) {
-      if (props.disabled === true) {
-        // $FlowFixMe[react-rule-hook-mutation]
-        nativeProps.disabled = true;
-        // $FlowFixMe[react-rule-hook-mutation]
-        nativeProps.focusable = false;
-      }
-    }
-
-    // $FlowFixMe[react-rule-hook-mutation]
-    nativeProps.ref = elementRef;
-
-    // Workaround: React Native doesn't support raw text children of View
-    // Sometimes we can auto-fix this
-    if (typeof nativeProps.children === 'string') {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.children = <TextString children={nativeProps.children} />;
-    }
-
-    // Polyfill for default of "display:block"
-    // which implies "displayInside:flow"
-    let nextDisplayInsideValue: 'flow' | 'flex' = 'flow';
-    const displayInsideValue = useDisplayInside();
-    const displayValue = nativeProps.style.display;
-
-    if (__DEV__) {
-      const nativeStyle = nativeProps.style;
-      if (displayInsideValue !== 'flex') {
-        // Error message if the element is not a flex child but tries to use flex
-        ['flex', 'flexBasis', 'flexGrow', 'flexShrink'].forEach((styleProp) => {
-          const value = nativeStyle[styleProp];
-          if (value != null) {
-            errorMsg(
-              `"display:flex" is required on the parent for "${styleProp}" to have an effect.`
-            );
-          }
-        });
-        // Error message if the element is not a flex child but tries to use
-        // zIndex without non-static position
-        if (nativeStyle.zIndex != null && nativeStyle.position === 'static') {
-          errorMsg(
-            '"position:static" prevents "zIndex" from having an effect. Try setting "position" to something other than "static".'
-          );
-        }
-      }
-    }
-
-    if (displayValue === 'flex') {
-      nextDisplayInsideValue = 'flex';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.alignContent ??= 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.alignItems ??= 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexBasis ??= 'auto';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexDirection ??= 'row';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexShrink ??= 1;
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexWrap ??= 'nowrap';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.justifyContent ??= 'flex-start';
-    } else if (displayValue === 'block' && displayInsideValue === 'flow') {
-      // Force the block emulation styles
-      nextDisplayInsideValue = 'flow';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.alignItems = 'stretch';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.display = 'flex';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexBasis = 'auto';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexDirection = 'column';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexShrink = 0;
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexWrap = 'nowrap';
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.justifyContent = 'flex-start';
-    }
-
-    if (displayInsideValue === 'flex') {
-      // flex child should not shrink by default
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.style.flexShrink ??= 1;
-    }
+    const nextDisplayInsideValue = applyViewProps(
+      nativeProps,
+      tagName,
+      NativeComponent === ReactNative.Pressable,
+      props.disabled === true,
+      elementRef,
+      displayInsideValue
+    );
 
     // Use Animated components if necessary
     if (nativeProps.animated === true) {

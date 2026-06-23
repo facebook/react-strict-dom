@@ -32,6 +32,9 @@ import type {
   // $FlowFixMe[nonstrict-import]
   ViewProps
 } from 'react-native/Libraries/Components/View/ViewPropTypes';
+// $FlowFixMe[nonstrict-import]
+import type { HostInstance } from 'react-native';
+import type { CallbackRef } from './react';
 
 type ReactNativeProps = {
   accessible?: ViewProps['accessible'],
@@ -83,13 +86,15 @@ type ReactNativeProps = {
   onKeyPress?: TextInputProps['onKeyPress'],
   onLoad?: ImageProps['onLoad'],
   onLostPointerCapture?: ViewProps['onLostPointerCapture'],
-  onMouseDown?: $FlowFixMe,
-  onMouseEnter?: $FlowFixMe,
-  onMouseLeave?: $FlowFixMe,
-  onMouseMove?: $FlowFixMe,
-  onMouseOut?: $FlowFixMe,
-  onMouseOver?: $FlowFixMe,
-  onMouseUp?: $FlowFixMe,
+  // Mouse events are not part of RN's ViewProps; strict-dom forwards them as
+  // opaque handlers (the runtime event shape is platform-defined).
+  onMouseDown?: ?(event: unknown) => void,
+  onMouseEnter?: ?(event: unknown) => void,
+  onMouseLeave?: ?(event: unknown) => void,
+  onMouseMove?: ?(event: unknown) => void,
+  onMouseOut?: ?(event: unknown) => void,
+  onMouseOver?: ?(event: unknown) => void,
+  onMouseUp?: ?(event: unknown) => void,
   onPointerCancel?: ViewProps['onPointerCancel'],
   onPointerDown?: ViewProps['onPointerDown'],
   onPointerEnter?: ViewProps['onPointerEnter'],
@@ -99,7 +104,7 @@ type ReactNativeProps = {
   onPointerOver?: ViewProps['onPointerOver'],
   onPointerUp?: ViewProps['onPointerUp'],
   onPress?: ?(event: PressEvent) => void,
-  onScroll?: $FlowFixMe,
+  onScroll?: ?(event: unknown) => void,
   onSelectionChange?: TextInputProps['onSelectionChange'],
   onSubmitEditing?: TextInputProps['onSubmitEditing'],
   onTouchCancel?: ViewProps['onTouchCancel'],
@@ -109,7 +114,7 @@ type ReactNativeProps = {
   placeholder?: TextInputProps['placeholder'],
   placeholderTextColor?: TextInputProps['placeholderTextColor'],
   pointerEvents?: ViewProps['pointerEvents'],
-  ref?: $FlowFixMe,
+  ref?: CallbackRef<HostInstance>,
   referrerPolicy?: ImageProps['referrerPolicy'],
   renderToHardwareTextureAndroid?: ViewProps['renderToHardwareTextureAndroid'],
   role?: ?string,
@@ -149,6 +154,8 @@ type ReactNativeStyle = { [string]: ?ReactNativeStyleValue };
 
 export type {
   CompositeAnimation,
+  HostInstance,
+  PressEvent,
   ReactNativeProps,
   ReactNativeStyle,
   ReactNativeStyleValue,

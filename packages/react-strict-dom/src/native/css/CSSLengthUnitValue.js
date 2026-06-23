@@ -9,9 +9,21 @@
 
 import { warnMsg } from '../../shared/logUtils';
 
-const LENGTH_REGEX = /^(-?[0-9]*[.]?[0-9]+)(em|px|rem|vh|vmax|vmin|vw)$/;
-
 type CSSLengthUnitType = 'em' | 'px' | 'rem' | 'vh' | 'vmax' | 'vmin' | 'vw';
+
+const CSS_LENGTH_UNITS: ReadonlyArray<CSSLengthUnitType> = [
+  'em',
+  'px',
+  'rem',
+  'vh',
+  'vmax',
+  'vmin',
+  'vw'
+];
+
+const LENGTH_REGEX = new RegExp(
+  `^(-?[0-9]*[.]?[0-9]+)(${CSS_LENGTH_UNITS.join('|')})$`
+);
 
 type ResolvePixelValueOptions = Readonly<{
   fontScale: number | void,
@@ -36,8 +48,15 @@ export class CSSLengthUnitValue {
       memoizedValues.set(input, null);
       return null;
     }
+
     const value = match[1];
-    const unit: $FlowFixMe = match[2];
+    const rawUnit = match[2];
+    const unit = CSS_LENGTH_UNITS.find((u) => u === rawUnit);
+    if (unit == null) {
+      memoizedValues.set(input, null);
+      return null;
+    }
+
     const parsedFloat: number = parseFloat(value);
     const cssLengthUnitValue = new CSSLengthUnitValue(parsedFloat, unit);
     memoizedValues.set(input, cssLengthUnitValue);

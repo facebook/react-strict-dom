@@ -8,8 +8,11 @@
  */
 
 import type { CustomProperties, Style } from '../../types/styles';
-import type { ReactNativeProps } from '../../types/renderer.native';
-import type { ReactNativeStyle } from '../../types/renderer.native';
+import type {
+  ReactNativeProps,
+  ReactNativeStyle,
+  ReactNativeStyleValue
+} from '../../types/renderer.native';
 
 import * as css from '../css';
 import * as ReactNative from '../react-native';
@@ -20,7 +23,7 @@ import { usePseudoStates } from './usePseudoStates';
 import { useStyleTransition } from './useStyleTransition';
 import { useViewportScale } from './ContextViewportScale';
 
-const inheritedProperties = [
+const inheritedProperties: ReadonlyArray<string> = [
   'color',
   'cursor',
   'fontFamily',
@@ -40,7 +43,18 @@ const inheritedProperties = [
   'writingDirection'
 ];
 
-const eventHandlerNames = [
+type EventHandlerName =
+  | 'onBlur'
+  | 'onFocus'
+  | 'onMouseEnter'
+  | 'onMouseLeave'
+  | 'onPointerCancel'
+  | 'onPointerDown'
+  | 'onPointerEnter'
+  | 'onPointerLeave'
+  | 'onPointerUp';
+
+const eventHandlerNames: ReadonlyArray<EventHandlerName> = [
   'onBlur',
   'onFocus',
   'onMouseEnter',
@@ -139,15 +153,13 @@ export function useStyleProps(
       viewportScale,
       viewportWidth: width
     },
-    flatStyle as $FlowFixMe
+    flatStyle
   );
 
   if (handlers != null) {
     for (const handler of eventHandlerNames) {
-      // $FlowFixMe[invalid-computed-prop]
       const handlerValue = handlers[handler];
       if (handlerValue != null) {
-        // $FlowFixMe[prop-missing]
         styleProps[handler] = handlerValue;
       }
     }
@@ -170,7 +182,7 @@ export function useStyleProps(
   }
 
   // Create inherited values lookup for performance
-  const inheritedValues = {
+  const inheritedValues: Readonly<{ [string]: ?ReactNativeStyleValue }> = {
     color: inheritedColor,
     cursor: inheritedCursor,
     fontFamily: inheritedFontFamily,
@@ -190,13 +202,12 @@ export function useStyleProps(
     writingDirection: inheritedWritingDirection
   };
 
-  const inheritableStyle = {} as $FlowFixMe;
-  const viewStyle = {} as $FlowFixMe;
+  const inheritableStyle: ReactNativeStyle = {};
+  const viewStyle: ReactNativeStyle = {};
   let hasInheritableStyle = false;
 
   for (const key of inheritedProperties) {
     const value = styleProps.style[key];
-    // $FlowFixMe[invalid-computed-prop]
     const inheritedValue = inheritedValues[key];
 
     let val = value;
@@ -217,7 +228,7 @@ export function useStyleProps(
   // Copy non-inherited properties to viewStyle
   if (hasInheritableStyle) {
     for (const key in styleProps.style) {
-      if (!inheritedValues.hasOwnProperty(key)) {
+      if (!Object.hasOwn(inheritedValues, key)) {
         viewStyle[key] = styleProps.style[key];
       }
     }
@@ -234,9 +245,11 @@ export function useStyleProps(
 
   return {
     nativeProps: styleProps,
+    // Cast the owned, mutable RN-style object to StyleX's read-only `Style`
+    // type expected by the inherited-style subsystem.
     inheritableStyle:
       hasInheritableStyle && provideInheritableStyle === true
-        ? inheritableStyle
+        ? (inheritableStyle as $FlowFixMe)
         : null
   };
 }

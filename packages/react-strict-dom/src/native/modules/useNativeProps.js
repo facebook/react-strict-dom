@@ -8,7 +8,7 @@
  */
 
 import type { CustomProperties } from '../../types/styles';
-import type { ReactNativeProps } from '../../types/renderer.native';
+import type { PressEvent, ReactNativeProps } from '../../types/renderer.native';
 import type { StrictProps as StrictPropsOriginal } from '../../types/StrictProps';
 import type { Style } from '../../types/styles';
 
@@ -47,55 +47,32 @@ function validateStrictProps(props: StrictProps) {
 }
 
 /**
- * Utility to merge event handlers
+ * Utility to merge event handlers. `a` and `b` receive different event shapes at
+ * runtime but the merged handler forwards the same event to both for side effects.
  */
-type EventHandler =
-  | ReactNativeProps['onBlur']
-  | ReactNativeProps['onFocus']
-  | ReactNativeProps['onMouseEnter']
-  | ReactNativeProps['onMouseLeave']
-  | ReactNativeProps['onPointerCancel']
-  | ReactNativeProps['onPointerDown']
-  | ReactNativeProps['onPointerEnter']
-  | ReactNativeProps['onPointerUp']
-  | ReactNativeProps['onPointerLeave'];
-
-// $FlowFixMe[incompatible-type]
-function combineEventHandlers(a: EventHandler, b: EventHandler): $FlowFixMe {
+function combineEventHandlers<A, B>(
+  a: ?(event: A) => void,
+  b: ?(event: B) => void
+): ?(event: B) => void {
   if (a == null) {
     return b;
-  } else {
-    return (e) => {
-      const returnA = typeof a === 'function' ? a(e) : null;
-      const returnB = typeof b === 'function' ? b(e) : null;
-      return returnB || returnA;
-    };
   }
+  return (e: B) => {
+    if (typeof a === 'function') {
+      a(e as $FlowFixMe);
+    }
+    if (typeof b === 'function') {
+      b(e);
+    }
+  };
 }
 
-/**
- * Produces the relevant React Native props to implement the global HTML props.
- */
-type OptionsType = {|
-  provideInheritableStyle: boolean,
-  withTextStyle: boolean,
-  withInheritedStyle: boolean
-|};
-type ReturnType = {|
-  customProperties: ?CustomProperties,
+// Plain (non-hook) helper so it can mutate the caller-owned `nativeProps` (built
+// fresh each render by `useStyleProps`) without a defensive copy.
+function applyHtmlProps(
   nativeProps: ReactNativeProps,
-  inheritableStyle: ?Style
-|};
-
-export function useNativeProps(
-  defaultProps: ?StrictProps,
-  props: StrictProps,
-  options: OptionsType
-): ReturnType {
-  if (__DEV__) {
-    validateStrictProps(props);
-  }
-
+  props: StrictProps
+): void {
   const {
     'aria-busy': ariaBusy,
     'aria-checked': ariaChecked,
@@ -115,8 +92,6 @@ export function useNativeProps(
     'aria-valuetext': ariaValueText,
     children,
     'data-testid': dataTestID,
-    dir,
-    //disabled,
     hidden,
     id,
     onBlur,
@@ -144,32 +119,12 @@ export function useNativeProps(
     onTouchMove,
     onTouchStart,
     role,
-    style,
     tabIndex
   } = props;
-
-  /**
-   * Resolve style props
-   */
-
-  const renderStyle = [defaultProps?.style ?? null, style];
-
-  const [extractedStyle, customPropertiesFromThemes] =
-    extractStyleThemes(renderStyle);
-  const customProperties = useCustomProperties(customPropertiesFromThemes);
-
-  const { nativeProps, inheritableStyle } = useStyleProps(extractedStyle, {
-    customProperties,
-    provideInheritableStyle: options.provideInheritableStyle,
-    withTextStyle: options.withTextStyle,
-    withInheritedStyle: options.withInheritedStyle,
-    writingDirection: dir
-  });
 
   const displayValue = nativeProps.style.display;
   // 'hidden' polyfill (only if "display" is not set)
   if (displayValue == null && hidden && hidden !== 'until-found') {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.style.display = 'none';
   }
 
@@ -178,46 +133,36 @@ export function useNativeProps(
    */
 
   if (typeof children !== 'function') {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.children = children;
   }
 
   if (ariaHidden != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityElementsHidden = ariaHidden;
     if (ariaHidden === true) {
-      // $FlowFixMe[react-rule-hook-mutation]
       nativeProps.importantForAccessibility = 'no-hide-descendants';
     }
   }
   if (ariaLabel != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLabel = ariaLabel;
   }
   if (ariaLabelledBy != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLabelledBy = ariaLabelledBy?.split(/\s*,\s*/g);
   }
   if (ariaLive != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityLiveRegion =
       ariaLive === 'off' ? 'none' : ariaLive;
   }
   if (ariaModal != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityViewIsModal = ariaModal;
   }
   if (ariaPosInSet != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityPosInSet = ariaPosInSet;
   }
   const ariaRole = role;
   if (ariaRole) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.role = ariaRole;
   }
   if (ariaSetSize != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilitySetSize = ariaSetSize;
   }
   if (
@@ -227,7 +172,6 @@ export function useNativeProps(
     ariaExpanded != null ||
     ariaSelected != null
   ) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityState = {
       busy: ariaBusy,
       checked: ariaChecked,
@@ -242,7 +186,6 @@ export function useNativeProps(
     ariaValueNow != null ||
     ariaValueText != null
   ) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.accessibilityValue = {
       max: ariaValueMax,
       min: ariaValueMin,
@@ -251,29 +194,24 @@ export function useNativeProps(
     };
   }
   if (dataTestID != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.testID = dataTestID;
   }
   if (id != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.nativeID = id;
   }
   if (tabIndex != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.focusable = !tabIndex;
   }
 
   // Events
 
   if (onBlur != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onBlur = combineEventHandlers(nativeProps.onBlur, onBlur);
   }
   // TODO: remove once PointerEvent onClick is available
   if (onClick != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
-    // $FlowFixMe[missing-local-annot]
-    nativeProps.onPress = function ({ nativeEvent }) {
+    nativeProps.onPress = function (e: PressEvent) {
+      const { nativeEvent } = e;
       const event: unknown = nativeEvent;
       let altKey = false;
       let ctrlKey = false;
@@ -328,114 +266,138 @@ export function useNativeProps(
     };
   }
   if (onFocus != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onFocus = combineEventHandlers(nativeProps.onFocus, onFocus);
   }
   if (onGotPointerCapture != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onGotPointerCapture = onGotPointerCapture;
   }
   if (onLostPointerCapture != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onLostPointerCapture = onLostPointerCapture;
   }
   if (onMouseDown != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseDown = onMouseDown;
   }
   if (onMouseEnter != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseEnter = combineEventHandlers(
       nativeProps.onMouseEnter,
       onMouseEnter
     );
   }
   if (onMouseLeave != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseLeave = combineEventHandlers(
       nativeProps.onMouseLeave,
       onMouseLeave
     );
   }
   if (onMouseOut != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseOut = onMouseOut;
   }
   if (onMouseOver != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseOver = onMouseOver;
   }
   if (onMouseUp != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onMouseUp = onMouseUp;
   }
   if (onPointerCancel != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerCancel = combineEventHandlers(
       nativeProps.onPointerCancel,
       onPointerCancel
     );
   }
   if (onPointerDown != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerDown = combineEventHandlers(
       nativeProps.onPointerDown,
       onPointerDown
     );
   }
   if (onPointerEnter != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerEnter = combineEventHandlers(
       nativeProps.onPointerEnter,
       onPointerEnter
     );
   }
   if (onPointerLeave != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerLeave = combineEventHandlers(
       nativeProps.onPointerLeave,
       onPointerLeave
     );
   }
   if (onPointerMove != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerMove = onPointerMove;
   }
   if (onPointerOut != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerOut = onPointerOut;
   }
   if (onPointerOver != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerOver = onPointerOver;
   }
   if (onPointerUp != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onPointerUp = combineEventHandlers(
       nativeProps.onPointerUp,
       onPointerUp
     );
   }
   if (onScroll != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onScroll = onScroll;
   }
   if (onTouchCancel != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchCancel = onTouchCancel;
   }
   if (onTouchEnd != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchEnd = onTouchEnd;
   }
   if (onTouchMove != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchMove = onTouchMove;
   }
   if (onTouchStart != null) {
-    // $FlowFixMe[react-rule-hook-mutation]
     nativeProps.onTouchStart = onTouchStart;
   }
+}
+
+/**
+ * Produces the relevant React Native props to implement the global HTML props.
+ */
+type OptionsType = {|
+  provideInheritableStyle: boolean,
+  withTextStyle: boolean,
+  withInheritedStyle: boolean
+|};
+type ReturnType = {|
+  customProperties: ?CustomProperties,
+  nativeProps: ReactNativeProps,
+  inheritableStyle: ?Style
+|};
+
+export function useNativeProps(
+  defaultProps: ?StrictProps,
+  props: StrictProps,
+  options: OptionsType
+): ReturnType {
+  if (__DEV__) {
+    validateStrictProps(props);
+  }
+
+  const { dir, style } = props;
+
+  /**
+   * Resolve style props
+   */
+
+  const renderStyle = [defaultProps?.style ?? null, style];
+
+  const [extractedStyle, customPropertiesFromThemes] =
+    extractStyleThemes(renderStyle);
+  const customProperties = useCustomProperties(customPropertiesFromThemes);
+
+  const { nativeProps, inheritableStyle } = useStyleProps(extractedStyle, {
+    customProperties,
+    provideInheritableStyle: options.provideInheritableStyle,
+    withTextStyle: options.withTextStyle,
+    withInheritedStyle: options.withInheritedStyle,
+    writingDirection: dir
+  });
+
+  applyHtmlProps(nativeProps, props);
 
   return {
     customProperties:

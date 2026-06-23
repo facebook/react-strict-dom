@@ -1,0 +1,63 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * Type-only POSITIVE assertions for the strict-dom public API. These guard
+ * against regressions in the component ref typing and the event-payload typing.
+ *
+ * @flow strict
+ */
+
+import * as React from 'react';
+
+import * as html from '../../native/html';
+
+import type { StrictReactDOMProps } from '../StrictReactDOMProps';
+import type { StrictReactDOMInputProps } from '../StrictReactDOMInputProps';
+import type {
+  StrictChangeEvent,
+  StrictImageLoadEvent,
+  StrictKeyEvent
+} from '../StrictReactDOMEvents';
+
+// The public ref type is the DOM element type, not `any`. (web<->native parity
+// is enforced in html-types-match.js.flow.)
+declare var divRef: React.RefSetter<HTMLDivElement>;
+export const acceptsDomRef: React.RefSetter<HTMLDivElement> = divRef;
+
+// An html component accepts a ref of its DOM element type.
+declare var inputElementRef: React.RefSetter<HTMLInputElement>;
+export const inputAcceptsItsRef: React.Node = (
+  <html.input ref={inputElementRef} />
+);
+
+// A pass-through handler with no/opaque param is accepted.
+export const acceptsOpaqueHandler: React.Node = (
+  <html.div onScroll={() => {}} />
+);
+
+// Re-synthesized event payloads are concretely typed.
+declare var changeEvent: StrictChangeEvent;
+export const changeValue: string = changeEvent.target.value;
+export const changeType: 'change' = changeEvent.type;
+
+declare var loadEvent: StrictImageLoadEvent;
+export const naturalWidth: ?number = loadEvent.target.naturalWidth;
+
+declare var keyEvent: StrictKeyEvent;
+export const keyName: string = keyEvent.key;
+
+// Valid global + input prop objects compile.
+export const validProps: StrictReactDOMProps = {
+  id: 'x',
+  role: 'button',
+  tabIndex: 0
+};
+
+export const validInputProps: StrictReactDOMInputProps = {
+  value: 'hello',
+  disabled: true,
+  type: 'text'
+};

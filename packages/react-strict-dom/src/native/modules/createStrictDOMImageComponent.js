@@ -7,6 +7,11 @@
  * @flow strict-local
  */
 
+import type { CallbackRef } from '../../types/react';
+import type {
+  HostInstance,
+  ReactNativeProps
+} from '../../types/renderer.native';
 import type { StrictReactDOMImageProps } from '../../types/StrictReactDOMImageProps';
 
 import * as React from 'react';
@@ -16,9 +21,76 @@ import { useNativeProps } from './useNativeProps';
 import { useStrictDOMElement } from './useStrictDOMElement';
 import * as css from '../css';
 
+// Plain (non-hook) helper so it can mutate the caller-owned `nativeProps`
+// without a defensive copy (a hook may not mutate its own return value).
+function applyImageProps(
+  nativeProps: ReactNativeProps,
+  props: StrictReactDOMImageProps,
+  elementRef: CallbackRef<HostInstance>
+): void {
+  const {
+    alt,
+    crossOrigin,
+    height,
+    onError,
+    onLoad,
+    referrerPolicy,
+    src,
+    srcSet,
+    width
+  } = props;
+
+  // Tag-specific props
+
+  if (alt != null) {
+    nativeProps.alt = alt;
+  }
+  if (crossOrigin != null) {
+    nativeProps.crossOrigin = crossOrigin;
+  }
+  if (height != null) {
+    nativeProps.height = height;
+  }
+  if (onError != null) {
+    nativeProps.onError = function () {
+      onError({
+        type: 'error'
+      });
+    };
+  }
+  if (onLoad != null) {
+    nativeProps.onLoad = function (e) {
+      const { source } = e.nativeEvent;
+      onLoad({
+        target: {
+          naturalHeight: source?.height,
+          naturalWidth: source?.width
+        },
+        type: 'load'
+      });
+    };
+  }
+  if (referrerPolicy != null) {
+    nativeProps.referrerPolicy = referrerPolicy;
+  }
+  if (src != null) {
+    nativeProps.src = src;
+  }
+  if (srcSet != null) {
+    nativeProps.srcSet = srcSet;
+  }
+  if (width != null) {
+    nativeProps.width = width;
+  }
+
+  // Component-specific props
+
+  nativeProps.ref = elementRef;
+}
+
 export function createStrictDOMImageComponent<
-  P extends StrictReactDOMImageProps,
-  T
+  T,
+  P extends StrictReactDOMImageProps
 >(
   tagName: string,
   _defaultProps?: P
@@ -29,17 +101,7 @@ export function createStrictDOMImageComponent<
       | typeof ReactNative.Animated.Image = ReactNative.Image;
     const elementRef = useStrictDOMElement<T>(ref, { tagName });
 
-    const {
-      alt,
-      crossOrigin,
-      height,
-      onError,
-      onLoad,
-      referrerPolicy,
-      src,
-      srcSet,
-      width
-    } = props;
+    const { height, width } = props;
 
     /**
      * Resolve global HTML and style props
@@ -58,62 +120,7 @@ export function createStrictDOMImageComponent<
       withTextStyle: false
     });
 
-    // Tag-specific props
-
-    if (alt != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.alt = alt;
-    }
-    if (crossOrigin != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.crossOrigin = crossOrigin;
-    }
-    if (height != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.height = height;
-    }
-    if (onError != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.onError = function () {
-        onError({
-          type: 'error'
-        });
-      };
-    }
-    if (onLoad != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.onLoad = function (e) {
-        const { source } = e.nativeEvent;
-        onLoad({
-          target: {
-            naturalHeight: source?.height,
-            naturalWidth: source?.width
-          },
-          type: 'load'
-        });
-      };
-    }
-    if (referrerPolicy != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.referrerPolicy = referrerPolicy;
-    }
-    if (src != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.src = src;
-    }
-    if (srcSet != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.srcSet = srcSet;
-    }
-    if (width != null) {
-      // $FlowFixMe[react-rule-hook-mutation]
-      nativeProps.width = width;
-    }
-
-    // Component-specific props
-
-    // $FlowFixMe[react-rule-hook-mutation]
-    nativeProps.ref = elementRef;
+    applyImageProps(nativeProps, props, elementRef);
 
     // Use Animated components if necessary
     if (nativeProps.animated === true) {
@@ -124,7 +131,7 @@ export function createStrictDOMImageComponent<
       typeof props.children === 'function' ? (
         props.children(nativeProps)
       ) : (
-        // strict-dom's wide ReactNativeProps spreads onto RN 0.83's exact
+        // strict-dom's wide ReactNativeProps spreads onto RN's exact
         // ImageProps; harmless extras are ignored at runtime.
         // $FlowFixMe[incompatible-type]
         // $FlowFixMe[incompatible-use]

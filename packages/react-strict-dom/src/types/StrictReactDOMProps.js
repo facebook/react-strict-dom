@@ -8,6 +8,11 @@
  */
 
 import type { Styles } from './styles';
+import type {
+  StrictClickEvent,
+  StrictKeyEvent,
+  StrictOpaqueEventHandler
+} from './StrictReactDOMEvents';
 
 // Excludes all abstract roles that should not be used by authors.
 type AriaRole =
@@ -173,21 +178,6 @@ type SyntheticEvent<+T> = Readonly<{|
 |}>;
 */
 
-type StrictClickEvent = Readonly<{|
-  altKey: boolean,
-  button: number,
-  ctrlKey: boolean,
-  defaultPrevented: boolean,
-  getModifierState: (key: string) => boolean,
-  metaKey: boolean,
-  pageX: number,
-  pageY: number,
-  preventDefault: () => void,
-  shiftKey: boolean,
-  stopPropagation: () => void,
-  type: 'click'
-|}>;
-
 export type StrictReactDOMProps = Readonly<{
   ...ReactStrictDOMDataProps,
 
@@ -241,43 +231,43 @@ export type StrictReactDOMProps = Readonly<{
   'aria-valuetext'?: ?Stringish,
 
   // Event props
-  onAuxClick?: $FlowFixMe,
-  onBlur?: $FlowFixMe,
+  onAuxClick?: StrictOpaqueEventHandler,
+  onBlur?: StrictOpaqueEventHandler,
   onClick?: (event: StrictClickEvent) => void,
-  onContextMenu?: $FlowFixMe,
-  onCopy?: $FlowFixMe,
-  onCut?: $FlowFixMe,
-  onFocus?: $FlowFixMe,
-  onFocusIn?: $FlowFixMe,
-  onFocusOut?: $FlowFixMe,
-  onFullscreenChange?: $FlowFixMe,
-  onFullscreenError?: $FlowFixMe,
-  onGotPointerCapture?: $FlowFixMe,
-  onKeyDown?: (event: Readonly<{ key: string, type: ?string, ... }>) => void,
-  onKeyUp?: $FlowFixMe,
-  onLostPointerCapture?: $FlowFixMe,
-  onPaste?: $FlowFixMe,
-  onPointerCancel?: $FlowFixMe,
-  onPointerDown?: $FlowFixMe,
-  onPointerEnter?: $FlowFixMe,
-  onPointerLeave?: $FlowFixMe,
-  onPointerMove?: $FlowFixMe,
-  onPointerOut?: $FlowFixMe,
-  onPointerOver?: $FlowFixMe,
-  onPointerUp?: $FlowFixMe,
-  onScroll?: $FlowFixMe,
-  onWheel?: $FlowFixMe,
-  onMouseDown?: $FlowFixMe, // TEMP
-  onMouseEnter?: $FlowFixMe, // TEMP
-  onMouseLeave?: $FlowFixMe, // TEMP
-  onMouseMove?: $FlowFixMe, // TEMP
-  onMouseOut?: $FlowFixMe, // TEMP
-  onMouseOver?: $FlowFixMe, // TEMP
-  onMouseUp?: $FlowFixMe, // TEMP
-  onTouchCancel?: $FlowFixMe, // TEMP
-  onTouchStart?: $FlowFixMe, // TEMP
-  onTouchEnd?: $FlowFixMe, // TEMP
-  onTouchMove?: $FlowFixMe, // TEMP
+  onContextMenu?: StrictOpaqueEventHandler,
+  onCopy?: StrictOpaqueEventHandler,
+  onCut?: StrictOpaqueEventHandler,
+  onFocus?: StrictOpaqueEventHandler,
+  onFocusIn?: StrictOpaqueEventHandler,
+  onFocusOut?: StrictOpaqueEventHandler,
+  onFullscreenChange?: StrictOpaqueEventHandler,
+  onFullscreenError?: StrictOpaqueEventHandler,
+  onGotPointerCapture?: StrictOpaqueEventHandler,
+  onKeyDown?: (event: StrictKeyEvent) => void,
+  onKeyUp?: (event: StrictKeyEvent) => void,
+  onLostPointerCapture?: StrictOpaqueEventHandler,
+  onPaste?: StrictOpaqueEventHandler,
+  onPointerCancel?: StrictOpaqueEventHandler,
+  onPointerDown?: StrictOpaqueEventHandler,
+  onPointerEnter?: StrictOpaqueEventHandler,
+  onPointerLeave?: StrictOpaqueEventHandler,
+  onPointerMove?: StrictOpaqueEventHandler,
+  onPointerOut?: StrictOpaqueEventHandler,
+  onPointerOver?: StrictOpaqueEventHandler,
+  onPointerUp?: StrictOpaqueEventHandler,
+  onScroll?: StrictOpaqueEventHandler,
+  onWheel?: StrictOpaqueEventHandler,
+  onMouseDown?: StrictOpaqueEventHandler,
+  onMouseEnter?: StrictOpaqueEventHandler,
+  onMouseLeave?: StrictOpaqueEventHandler,
+  onMouseMove?: StrictOpaqueEventHandler,
+  onMouseOut?: StrictOpaqueEventHandler,
+  onMouseOver?: StrictOpaqueEventHandler,
+  onMouseUp?: StrictOpaqueEventHandler,
+  onTouchCancel?: StrictOpaqueEventHandler,
+  onTouchStart?: StrictOpaqueEventHandler,
+  onTouchEnd?: StrictOpaqueEventHandler,
+  onTouchMove?: StrictOpaqueEventHandler,
 
   // Other
   autoCapitalize?: ?('none' | 'sentences' | 'words' | 'characters'),

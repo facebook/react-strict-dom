@@ -32,6 +32,8 @@ export function TextString(props: Props): React.Node {
   });
 
   return (
+    // strict-dom's wide ReactNativeProps spreads onto RN's exact TextProps;
+    // harmless extras are ignored at runtime.
     // $FlowFixMe[incompatible-type]
     <ReactNative.Text {...nativeProps} children={children} />
   );
