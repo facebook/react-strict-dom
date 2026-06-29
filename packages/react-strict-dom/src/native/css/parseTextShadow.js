@@ -11,7 +11,7 @@ import { warnMsg } from '../../shared/logUtils';
 
 const VALUES_REG = /,(?![^(]*\))/;
 const PARTS_REG = /\s(?![^(]*\))/;
-const LENGTH_REG = /^[0-9]+[a-zA-Z%]+?$/;
+const LENGTH_REG = /^-?(?:[0-9]*\.)?[0-9]+[a-zA-Z%]+$/;
 
 function isLength(v: string): boolean {
   return v === '0' || LENGTH_REG.test(v);
