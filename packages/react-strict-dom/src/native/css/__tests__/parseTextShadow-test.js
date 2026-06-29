@@ -34,6 +34,15 @@ describe('parseTextShadow', () => {
     });
   });
 
+  test('parses a color that precedes the offset values', () => {
+    // CSS allows the color to be specified before or after the offsets.
+    expect(parseTextShadow('red 1px 2px 3px')).toEqual({
+      textShadowColor: 'red',
+      textShadowOffset: { width: 1, height: 2 },
+      textShadowRadius: 3
+    });
+  });
+
   test('parses a decimal blur radius when no color is provided', () => {
     // The blur radius is a decimal length and is the last token. It must be
     // treated as a length, not as a color.
