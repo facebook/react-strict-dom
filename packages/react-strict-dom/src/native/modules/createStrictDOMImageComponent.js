@@ -26,7 +26,7 @@ import * as css from '../css';
 function applyImageProps(
   nativeProps: ReactNativeProps,
   props: StrictReactDOMImageProps,
-  elementRef: CallbackRef<HostInstance>
+  elementRef: ?CallbackRef<HostInstance>
 ): void {
   const {
     alt,
@@ -85,7 +85,9 @@ function applyImageProps(
 
   // Component-specific props
 
-  nativeProps.ref = elementRef;
+  if (elementRef != null) {
+    nativeProps.ref = elementRef;
+  }
 }
 
 export function createStrictDOMImageComponent<
