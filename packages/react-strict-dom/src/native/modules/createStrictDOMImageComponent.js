@@ -109,12 +109,12 @@ export function createStrictDOMImageComponent<
      * Resolve global HTML and style props
      */
 
-    const defaultProps = {
-      style: [
-        _defaultProps?.style,
-        height != null && width != null && styles.aspectRatio(width, height)
-      ]
-    };
+    const defaultProps =
+      height != null && width != null
+        ? {
+            style: [_defaultProps?.style, styles.aspectRatio(width, height)]
+          }
+        : _defaultProps;
 
     const { nativeProps } = useNativeProps(defaultProps, props, {
       provideInheritableStyle: false,
