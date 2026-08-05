@@ -49,6 +49,8 @@ type StrictRefTarget = {
 const memoizedStrictRefs: WeakMap<HostInstance, StrictRefTarget> =
   new WeakMap();
 
+const objectPrototype: interface {} | null = Object.getPrototypeOf({});
+
 const lengthPropertySet: ReadonlySet<string> = new Set([
   'clientHeight',
   'clientLeft',
@@ -63,6 +65,45 @@ const lengthPropertySet: ReadonlySet<string> = new Set([
   'scrollTop',
   'scrollWidth'
 ]);
+
+/**
+ * Re-exposes the host node's inherited methods as own properties that call
+ * through to the node.
+ *
+ * Reading a method off the wrapper resolves it via the prototype chain but
+ * calls it with the wrapper as the receiver. RN's host node methods read
+ * internals off `this`, and those internals are not reachable from the
+ * wrapper, so `strictRef.focus()` is a no-op while `node.focus()` works.
+ * Own methods of the node are left alone: RN assigns those as closures over
+ * the node, so their receiver does not matter.
+ */
+function bindInheritedMethods(strictRef: StrictRefTarget, node: HostInstance) {
+  let proto: interface {} | null = Object.getPrototypeOf(node);
+  while (proto != null && proto !== objectPrototype) {
+    const names: ReadonlyArray<string> = Object.getOwnPropertyNames(proto);
+    for (const name of names) {
+      if (
+        name === 'constructor' ||
+        Object.getOwnPropertyDescriptor(strictRef, name) != null
+      ) {
+        continue;
+      }
+      const descriptor = Object.getOwnPropertyDescriptor(proto, name);
+      // Accessors are left on the prototype chain: they read the plain
+      // instance fields that the wrapper already inherits.
+      if (descriptor == null || typeof descriptor.value !== 'function') {
+        continue;
+      }
+      Object.defineProperty(strictRef, name, {
+        value: (...args: Array<unknown>) =>
+          // $FlowFixMe[prop-missing] - dynamic method call on the RN host node.
+          node[name](...args),
+        configurable: true
+      });
+    }
+    proto = Object.getPrototypeOf(proto);
+  }
+}
 
 /**
  * Uses the RN host node as the wrapper's prototype so non-overridden reads
@@ -87,6 +128,10 @@ function getOrCreateStrictRef(
   const strictRef: StrictRefTarget = Object.create(node) as $FlowFixMe;
   // $FlowFixMe[class-object-subtyping] - read the host node's polyfill members.
   const nodeInternals: StrictRefPolyfills = node;
+
+  // Runs before the definitions below so the strict-dom overrides, such as the
+  // viewport-scaled `getBoundingClientRect`, still win.
+  bindInheritedMethods(strictRef, node);
 
   Object.defineProperty(strictRef, 'nodeName', {
     value: tagName.toUpperCase(),

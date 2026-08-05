@@ -6,6 +6,10 @@
 
 * [Native] React Strict DOM and React Strict Animated now require `react-native >=0.82.0` for native builds that use RN DOM Node APIs.
 
+### Fixes
+
+* [Native] Call inherited host node methods, such as `focus` and `blur`, on the host node so imperative ref APIs work again.
+
 ### Internal
 
 * [Native] `useStrictDOMElement` now wraps the RN host node with `Object.create(node)` and defines only strict-dom overrides as own properties.

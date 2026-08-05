@@ -94,6 +94,41 @@ describe('<html.*> refs', () => {
       });
     });
 
+    test('input ref calls inherited host node methods on the host node', () => {
+      // RN host instances define `focus` and `blur` on the prototype chain and
+      // read internals off `this`, so the receiver has to stay the host node.
+      const receivers = {};
+      let hostNode;
+      function createNodeMock() {
+        const prototype = {
+          blur() {
+            receivers.blur = this;
+          },
+          focus() {
+            receivers.focus = this;
+          }
+        };
+        const ownProperties = buildHostNodeMock();
+        delete ownProperties.blur;
+        delete ownProperties.focus;
+        hostNode = Object.assign(Object.create(prototype), ownProperties);
+        return hostNode;
+      }
+      act(() => {
+        create(
+          <html.input
+            ref={(node) => {
+              node.focus();
+              node.blur();
+            }}
+          />,
+          { createNodeMock }
+        );
+      });
+      expect(receivers.focus).toBe(hostNode);
+      expect(receivers.blur).toBe(hostNode);
+    });
+
     test('input ref does not throw when host node is null', () => {
       act(() => {
         create(
