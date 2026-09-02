@@ -11,7 +11,7 @@
 
 ## Documentation
 
-Please refer to the [React Strict DOM website](https://facebook.github.io/react-strict-dom/) for detailed documentation. The API section includes detailed compatibility tables for native. Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
+Please refer to the [React Strict DOM website](https://react.github.io/react-strict-dom/) for detailed documentation. The API section includes detailed compatibility tables for native. Please read the linked issues for details on the most significant issues, and register your interest (e.g., thumbsup reaction) in supporting these features on native platforms.
 
 ## Example
 
