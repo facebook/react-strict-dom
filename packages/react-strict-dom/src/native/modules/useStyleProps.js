@@ -90,6 +90,10 @@ function resolveUnitlessLineHeight(style: ReactNativeStyle): ReactNativeStyle {
   return style;
 }
 
+function isAnimatedNode(value: ?ReactNativeStyleValue): boolean {
+  return value instanceof ReactNative.AnimatedNode;
+}
+
 /**
  * Produces the relevant React Native props to implement the given styles, and any
  * inheritable text styles that may be required.
@@ -219,6 +223,9 @@ export function useStyleProps(
       val = inheritedValue;
     }
     if (val != null) {
+      if (isAnimatedNode(val)) {
+        styleProps.animated = true;
+      }
       hasInheritableStyle = true;
       inheritableStyle[key] = val;
       styleProps.style[key] = val;
