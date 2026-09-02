@@ -17,6 +17,7 @@ import type {
 
 import * as html from './html';
 import * as css from '@stylexjs/stylex';
+import { isPropAllowed } from '../shared/isPropAllowed';
 
 type StyleTheme<V, T> = Theme<V, T>;
 type StyleVars<T> = VarGroup<T>;
@@ -34,4 +35,4 @@ export type {
   StrictOpaqueEventHandler
 } from '../types/StrictReactDOMEvents';
 
-export { css, html };
+export { css, html, isPropAllowed as isPropAllowed_DO_NOT_USE };
