@@ -70,6 +70,7 @@ type ReactNativeProps = {
   disabled?: ?boolean,
   editable?: TextInputProps['editable'],
   enterKeyHint?: TextInputProps['enterKeyHint'],
+  fadeDuration?: ImageProps['fadeDuration'],
   focusable?: ?boolean,
   height?: ImageProps['height'],
   importantForAccessibility?: 'no-hide-descendants',
